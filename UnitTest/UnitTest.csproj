@@ -54,9 +54,9 @@
     <Compile Include="UTStopwatchModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Timer\Timer.csproj">
+    <ProjectReference Include="..\Timer\Sprint.csproj">
       <Project>{745e173c-ec98-483b-8804-f2bb65f23b57}</Project>
-      <Name>Timer</Name>
+      <Name>Sprint</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

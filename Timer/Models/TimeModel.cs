@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Timer.Models
+namespace Sprint.Models
 {
     /// <summary>
     /// Модель времени на секундомере.
@@ -28,6 +28,25 @@ namespace Timer.Models
         /// Задать или получиьт время на секундомере в единой структуре.
         /// </summary>
         public TimeSpan TimeSpan { get; set; }
+
+        /// <summary>
+        /// Задать или получить флаг прогревочного времени.
+        /// true - прогревочное время.
+        /// false - обычное время.
+        /// </summary>
+        public bool WarmingUp { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// Конструктор.
+        /// </summary>
+        public TimeModel()
+        {
+            WarmingUp = false;
+        }
 
         #endregion
     }

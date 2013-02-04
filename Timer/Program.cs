@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using Timer.Views;
+using Sprint.Views;
 
-namespace Timer
+namespace Sprint
 {
     static class Program
     {

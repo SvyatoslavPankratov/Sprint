@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Sprint.Models.CarModel">
+    <Position X="8.75" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CarModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CarClass" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sprint.Models.RacerModel">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAACgAQAAAAAAAAAAAAAKACAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\RacerModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Car" />
+      <Property Name="Results" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sprint.Models.ResultsModel">
+    <Position X="8.75" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ResultsModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sprint.Models.TimeModel">
+    <Position X="11.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAABAAAEAAAAAAAAAAAAAEAAAQAAAAAAAA=</HashCode>
+      <FileName>Models\TimeModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sprint.Presenters.MainPresenter">
+    <Position X="5.5" Y="6" Width="2.25" />
+    <AssociationLine Name="Racers" Type="Sprint.Models.RacerModel" FixedFromPoint="true">
+      <Path>
+        <Point X="6.906" Y="6" />
+        <Point X="6.906" Y="5.146" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="RacerGroups" Type="Sprint.Models.RacersGroupModel" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.75" Y="7.009" />
+        <Point X="12.312" Y="7.009" />
+        <Point X="12.312" Y="5.603" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AQEIAABQBCQQFAAAAAAgAAQgAAAEAAACAABCEAQADAA=</HashCode>
+      <FileName>Presenters\MainPresenter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MainView" />
+      <Property Name="Stopwatch" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Racers" />
+      <Property Name="RacerGroups" />
+      <Property Name="LiderRacerGroups" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Sprint.Models.StopwatchModel">
+    <Position X="9" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAACAAAASAAAAAAAAAAAAAAAAAAAAAAIAQAAAAAAQA=</HashCode>
+      <FileName>Models\StopwatchModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Time" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Sprint.Presenters.NewRacerPresenter">
+    <Position X="3.25" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAIAAAABAAAAAAAAAAAEAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Presenters\NewRacerPresenter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="NewRacerView" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Racers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Sprint.Models.PeopleModel">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Models\PeopleModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sprint.Models.RacersGroupModel">
+    <Position X="10.75" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\RacersGroupModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CarClass" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Racers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Interface Name="Sprint.Views.IMainView">
+    <Position X="3" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAIAAAAAIBAAAEAAAAAIAEAAAAAAAAAAEAAEgEAA=</HashCode>
+      <FileName>Views\IMainView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Sprint.Views.INewRacerView">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAFgAAAAAAAAAAAAQAAAAAAAAEAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Views\INewRacerView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Sprint.Models.CarClassesEnum">
+    <Position X="13.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAMAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Models\CarClassesEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

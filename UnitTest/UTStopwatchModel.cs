@@ -3,7 +3,7 @@ using System.Threading;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using Timer.Models;
+using Sprint.Models;
 
 namespace UnitTest
 {

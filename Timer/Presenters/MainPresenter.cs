@@ -1,12 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Threading;
+using System.Linq;
 
-using Timer.Models;
-using Timer.Views;
+using Sprint.Models;
+using Sprint.Views;
 
-namespace Timer.Presenters
+namespace Sprint.Presenters
 {
+    /// <summary>
+    /// Презнетер главного окна.
+    /// </summary>
     class MainPresenter : IDisposable
     {
         #region Properties
@@ -41,6 +46,21 @@ namespace Timer.Presenters
         /// </summary>
         private bool LeftRight { get; set; }
 
+        /// <summary>
+        /// Задать или получить список гонщиков.
+        /// </summary>
+        public List<RacerModel> Racers { get; set; }
+
+        /// <summary>
+        /// Задать или получить список групп гонщиков по классам автомобилей.
+        /// </summary>
+        public List<RacersGroupModel> RacerGroups { get; set; }
+
+        /// <summary>
+        /// Задать или получить список лидеров по классам автомобилей.
+        /// </summary>
+        public List<RacersGroupModel> LiderRacerGroups { get; set; }
+
         #endregion
 
         #region Constructors
@@ -53,8 +73,12 @@ namespace Timer.Presenters
         {
             MainView = mainView;
 
-            Stopwatch = new StopwatchModel();
-            MainView.Results = CreateResTable();
+            Racers              = new List<RacerModel>();
+            Stopwatch           = new StopwatchModel();
+            RacerGroups         = new List<RacersGroupModel>();
+            LiderRacerGroups    = new List<RacersGroupModel>();
+
+            InitializeAllTables();
 
             ThreadSync = new Thread(() => DataBindingProcess(MainView, Stopwatch));
 
@@ -64,6 +88,33 @@ namespace Timer.Presenters
         #endregion
 
         #region Methods
+
+        /// <summary>
+        /// Инициализация всех таблиц.
+        /// </summary>
+        private void InitializeAllTables()
+        {
+            MainView.FwdFirstRace       = InitializeTable();
+            MainView.FwdSecondRace      = InitializeTable();
+            MainView.RwdFirstRace       = InitializeTable();
+            MainView.RwdSecondRace      = InitializeTable();
+            MainView.AwdFirstRace       = InitializeTable();
+            MainView.AwdSecondRace      = InitializeTable();
+            MainView.SportFirstRace     = InitializeTable();
+            MainView.SportSecondRace    = InitializeTable();
+        }
+
+        /// <summary>
+        /// Показать диалог для заполнения участников гонки.
+        /// </summary>
+        public void ShowSetRacersDialog()
+        {
+            MainView.NewRacerView.ShowDialog();
+
+            Racers = MainView.NewRacerView.NewRacerPresenter.Racers;
+
+            SetRacersForTableForFirstRace();
+        }
 
         /// <summary>
         /// Сброс всех флагов в изначальное состояние.
@@ -100,6 +151,10 @@ namespace Timer.Presenters
             Stopwatch.Stop();
             ThreadSync.Suspend();
 
+            MainView.Min = 0;
+            MainView.Sec = 0;
+            MainView.Mlsec = 0;
+
             ResetFlags();
         }
 
@@ -109,46 +164,46 @@ namespace Timer.Presenters
         public void CutOffStopwatch()
         {
             var time = Stopwatch.Time;
-            var row = MainView.Results.NewRow();
+            //var row = MainView.Results.NewRow();
 
-            row[0] = MainView.Results.Rows.Count + 1;
-            row[1] = time.TimeSpan.ToString();
+            //row[0] = MainView.Results.Rows.Count + 1;
+            //row[1] = time.TimeSpan.ToString();
 
-            var value = string.Empty;
+            //var value = string.Empty;
 
-            if (Stoped)
-            {
-                value = string.Format("{0} : {1} : {2}",    time.Min.ToString("00"),
-                                                            time.Sec.ToString("00"),
-                                                            time.Mlsec.ToString("000"));
+            //if (Stoped)
+            //{
+            //    value = string.Format("{0} : {1} : {2}",    time.Min.ToString("00"),
+            //                                                time.Sec.ToString("00"),
+            //                                                time.Mlsec.ToString("000"));
 
-                Stoped = false;
-            }
-            else
-            {
-                var previousRow = MainView.Results.Rows[MainView.Results.Rows.Count - 1];
-                var timeSpan = time.TimeSpan - TimeSpan.Parse(previousRow[1].ToString());
+            //    Stoped = false;
+            //}
+            //else
+            //{
+            //    var previousRow = MainView.Results.Rows[MainView.Results.Rows.Count - 1];
+            //    var timeSpan = time.TimeSpan - TimeSpan.Parse(previousRow[1].ToString());
 
-                value = string.Format("{0} : {1} : {2}",    timeSpan.Minutes.ToString("00"),
-                                                            timeSpan.Seconds.ToString("00"),
-                                                            timeSpan.Milliseconds.ToString("000"));
-            }
+            //    value = string.Format("{0} : {1} : {2}",    timeSpan.Minutes.ToString("00"),
+            //                                                timeSpan.Seconds.ToString("00"),
+            //                                                timeSpan.Milliseconds.ToString("000"));
+            //}
 
-            if (LeftRight)
-            {
-                row[2] = value;
-            }
-            else
-            {
-                row[3] = value;
-            }
+            //if (LeftRight)
+            //{
+            //    row[2] = value;
+            //}
+            //else
+            //{
+            //    row[3] = value;
+            //}
 
-            if (!Reverse)
-            {
-                LeftRight = !LeftRight;
-            }
+            //if (!Reverse)
+            //{
+            //    LeftRight = !LeftRight;
+            //}
 
-            MainView.Results.Rows.Add(row);
+            //MainView.Results.Rows.Add(row);
         }
 
         /// <summary>
@@ -165,27 +220,92 @@ namespace Timer.Presenters
         /// </summary>
         public void ClearResultsTable()
         {
-            MainView.Results = CreateResTable();
+            InitializeAllTables();
+            SetRacersForTableForFirstRace();
         }
 
         /// <summary>
         /// Сгенерировать заголовки для таблицы результатов.
         /// </summary>
-        private DataTable CreateResTable()
+        private DataTable InitializeTable()
         {
             var table = new DataTable();
 
-            var column = new DataColumn("№ отсечки");
+            var column = new DataColumn("№");
             table.Columns.Add(column);
 
-            column = new DataColumn("Отсечка");
+            column = new DataColumn("Ф И О");
             table.Columns.Add(column);
 
-            column = new DataColumn("Водитель №1");
+            column = new DataColumn("Автомобиль");
             table.Columns.Add(column);
 
-            column = new DataColumn("Водитель №2");
+            column = new DataColumn("Круг №1");
             table.Columns.Add(column);
+
+            column = new DataColumn("Круг №2");
+            table.Columns.Add(column);
+
+            column = new DataColumn("Круг №3");
+            table.Columns.Add(column);
+
+            column = new DataColumn("Круг №4");
+            table.Columns.Add(column);
+
+            return table;
+        }
+
+        /// <summary>
+        /// Генерация и заполнение таблицы участниками для первого заезда.
+        /// </summary>
+        public void SetRacersForTableForFirstRace()
+        {
+            RacerGroups.Add(new RacersGroupModel(CarClassesEnum.FWD) { Racers = Racers.Where(r => r.Car.CarClass == CarClassesEnum.FWD) });
+            MainView.FwdFirstRace = SetNamesToTable();
+
+            RacerGroups.Add(new RacersGroupModel(CarClassesEnum.RWD) { Racers = Racers.Where(r => r.Car.CarClass == CarClassesEnum.RWD) });
+            MainView.RwdFirstRace = SetNamesToTable();
+
+            RacerGroups.Add(new RacersGroupModel(CarClassesEnum.AWD) { Racers = Racers.Where(r => r.Car.CarClass == CarClassesEnum.AWD) });
+            MainView.AwdFirstRace = SetNamesToTable();
+
+            RacerGroups.Add(new RacersGroupModel(CarClassesEnum.Sport) { Racers = Racers.Where(r => r.Car.CarClass == CarClassesEnum.Sport) });
+            MainView.SportFirstRace = SetNamesToTable();
+        }
+
+        /// <summary>
+        /// Задать список лидеров по группам.
+        /// </summary>
+        /// <param name="count">Количество получаемых лидеров в каждом классе.</param>
+        /// <returns>Список лидеров по классам.</returns>
+        public void SetLeaders(int count)
+        {
+            foreach (var rg in RacerGroups)
+            {
+                var racers = (from racer in rg.Racers
+                              orderby racer.Results.GetMinTime(1)
+                              select racer).Reverse();
+
+                LiderRacerGroups.Add(new RacersGroupModel(rg.CarClass) { Racers = racers.Take(count) });
+            }
+        }
+
+        /// <summary>
+        /// Заполним таблицу именами из последней группы участников в списке групп.
+        /// </summary>
+        /// <returns>Таблица, заполненная участниками.</returns>
+        private DataTable SetNamesToTable()
+        {
+            var table = InitializeTable();
+
+            foreach (var racer in RacerGroups.Last().Racers)
+            {
+                var row = table.NewRow();
+                row[0] = racer.RacerNumber;
+                row[1] = string.Format("{0} {1} {2}", racer.FirstName, racer.LastName, racer.MiddleName);
+                row[2] = racer.Car.Name;
+                table.Rows.Add(row);
+            }
 
             return table;
         }

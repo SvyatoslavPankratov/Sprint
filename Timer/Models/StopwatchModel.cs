@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Threading;
 
-namespace Timer.Models
+namespace Sprint.Models
 {
+    /// <summary>
+    /// Модель секундомера.
+    /// </summary>
     public class StopwatchModel : IDisposable
     {
         #region Properties

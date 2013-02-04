@@ -1,23 +1,88 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Resources;
 using System.Windows.Forms;
 
-using Timer.Presenters;
+using Sprint.Models;
+using Sprint.Presenters;
 
-namespace Timer.Views
+namespace Sprint.Views
 {
     public partial class MainView : Form, IMainView
     {
         #region Properties
 
         /// <summary>
-        /// Задать или получить таблицу с результатми.
+        /// Задать или получить таблицу с результатами переднеприводных автомобилей за 1 заезд.
         /// </summary>
-        public DataTable Results
+        public DataTable FwdFirstRace
         {
-            get { return (DataTable) resultsGV.DataSource; }
-            set { resultsGV.DataSource = value; }
+            get { return (DataTable)fwdR1DGV.DataSource; }
+            set { fwdR1DGV.DataSource = value; }
+        }
+
+        /// <summary>
+        /// Задать или получить таблицу с результатами переднеприводных автомобилей за 2 заезд.
+        /// </summary>
+        public DataTable FwdSecondRace
+        {
+            get { return (DataTable)fwdR2DGV.DataSource; }
+            set { fwdR2DGV.DataSource = value; }
+        }
+
+        /// <summary>
+        /// Задать или получить таблицу с результатами заднеприводных автомобилей за 1 заезд.
+        /// </summary>
+        public DataTable RwdFirstRace
+        {
+            get { return (DataTable)rwdR1DGV.DataSource; }
+            set { rwdR1DGV.DataSource = value; }
+        }
+
+        /// <summary>
+        /// Задать или получить таблицу с результатами заднеприводных автомобилей за 2 заезд.
+        /// </summary>
+        public DataTable RwdSecondRace
+        {
+            get { return (DataTable)rwdR2DGV.DataSource; }
+            set { rwdR2DGV.DataSource = value; }
+        }
+
+        /// <summary>
+        /// Задать или получить таблицу с результатами полноприводных автомобилей за 1 заезд.
+        /// </summary>
+        public DataTable AwdFirstRace
+        {
+            get { return (DataTable)awdR1DGV.DataSource; }
+            set { awdR1DGV.DataSource = value; }
+        }
+
+        /// <summary>
+        /// Задать или получить таблицу с результатами полноприводных автомобилей за 2 заезд.
+        /// </summary>
+        public DataTable AwdSecondRace
+        {
+            get { return (DataTable)awdR2DGV.DataSource; }
+            set { awdR2DGV.DataSource = value; }
+        }
+
+        /// <summary>
+        /// Задать или получить таблицу с результатами спортивных автомобилей за 1 заезд.
+        /// </summary>
+        public DataTable SportFirstRace
+        {
+            get { return (DataTable)sportR1DGV.DataSource; }
+            set { sportR1DGV.DataSource = value; }
+        }
+
+        /// <summary>
+        /// Задать или получить таблицу с результатами спортивных автомобилей за 2 заезд.
+        /// </summary>
+        public DataTable SportSecondRace
+        {
+            get { return (DataTable)sportR2DGV.DataSource; }
+            set { sportR2DGV.DataSource = value; }
         }
 
         /// <summary>
@@ -49,6 +114,11 @@ namespace Timer.Views
         /// </summary>
         private MainPresenter MainPresenter { get; set; }
 
+        /// <summary>
+        /// Задать или получить диалог для заполнения участников.
+        /// </summary>
+        public NewRacerView NewRacerView { get; set; }
+
         #endregion
 
         #region Constructors
@@ -60,14 +130,25 @@ namespace Timer.Views
         {
             InitializeComponent();
 
-            KeyPreview = true;
+            KeyPreview = true;                          // Изменено, чтобы заработали горячие клавиши
 
-            MainPresenter = new MainPresenter(this);            
+            NewRacerView = new NewRacerView();
+            MainPresenter = new MainPresenter(this);
         }
 
         #endregion
 
         #region Methods
+
+        /// <summary>
+        /// Действия при первом отображении формы.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainView_Shown(object sender, EventArgs e)
+        {
+            MainPresenter.ShowSetRacersDialog();
+        }
 
         /// <summary>
         /// Действия при нажатии на кнопку пуска секундомера.
