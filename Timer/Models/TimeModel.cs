@@ -48,6 +48,18 @@ namespace Sprint.Models
             WarmingUp = false;
         }
 
+        /// <summary>
+        /// Конструктор.
+        /// </summary>
+        /// <param name="time">Время для инициализации объекта.</param>
+        public TimeModel(TimeSpan time) : this()
+        {
+            TimeSpan    = time;
+            Min         = time.Minutes;
+            Sec         = time.Seconds;
+            Mlsec       = time.Milliseconds;
+        }
+
         #endregion
     }
 }

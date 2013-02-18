@@ -17,7 +17,22 @@ namespace Sprint.Models
         /// <summary>
         /// Задать или получить список результатов по кругам по этапам.
         /// </summary>
-        public List<List<TimeModel>> ResultsList { get; set; }
+        public IEnumerable<IEnumerable<TimeModel>> ResultsList { get; private set; }
+
+        /// <summary>
+        /// Задать или получить флаг финиширования гонщика.
+        /// </summary>
+        public bool Finished { get; set; }
+        
+        /// <summary>
+        /// Задать или получить номер проезжаемого круга.
+        /// </summary>
+        public int CurrentCircleNumber { get; set; }
+
+        /// <summary>
+        /// Задать или получить значение времени начала круга.
+        /// </summary>
+        public TimeModel StartTime { get; set; }
 
         #endregion
 
@@ -30,12 +45,21 @@ namespace Sprint.Models
         /// <param name="lap_count">Количество кругов в заезде.</param>
         public ResultsModel(int race_count, int lap_count)
         {
-            ResultsList = new List<List<TimeModel>>(race_count);
+            var resultsList = new List<List<TimeModel>>(1); //race_count
 
-            for (int i = 0; i < race_count; i++)
+            for (int race = 0; race < 1; race++)            //race_count
             {
-                ResultsList[i] = new List<TimeModel>(lap_count);
+                var race_TimeModel = new List<TimeModel>(lap_count);
+
+                for (int lap = 0; lap < lap_count; lap++)
+                {
+                    race_TimeModel.Add(null);
+                }
+
+                resultsList.Add(race_TimeModel);
             }
+
+            ResultsList = resultsList;
         }
 
         #endregion
@@ -49,9 +73,19 @@ namespace Sprint.Models
         /// <returns>Минимальное время за круг.</returns>
         public TimeModel GetMinTime(int raceNumber)
         {
-            return (from result in ResultsList[raceNumber - 1]
-                    where result.TimeSpan == ResultsList[raceNumber - 1].Min(r => r.TimeSpan)
+            return (from result in (ResultsList as List<List<TimeModel>>)[raceNumber - 1]
+                    where result.TimeSpan == (ResultsList as List<List<TimeModel>>)[raceNumber - 1].Min(r => r.TimeSpan)
                     select result).FirstOrDefault();
+        }
+
+        /// <summary>
+        /// Добавить новое время результата.
+        /// </summary>
+        /// <param name="result">Добавляемый результат.</param>
+        public void AddResult(int currentRace, TimeModel result)
+        {
+            (ResultsList as List<List<TimeModel>>)[currentRace][CurrentCircleNumber] = result;
+            CurrentCircleNumber++;
         }
 
         #endregion

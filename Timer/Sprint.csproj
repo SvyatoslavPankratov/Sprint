@@ -65,6 +65,7 @@
     <Compile Include="Models\ResultsModel.cs" />
     <Compile Include="Models\StopwatchModel.cs" />
     <Compile Include="Models\TimeModel.cs" />
+    <Compile Include="Models\TrackModel.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Presenters\NewRacerPresenter.cs" />
     <Compile Include="Program.cs" />
@@ -115,7 +116,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
-    <Folder Include="Resources\Images\" />
     <Folder Include="Resources\Strings\" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +129,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Clear table.png" />
+    <Content Include="Resources\Images\Down.png" />
+    <Content Include="Resources\Images\Excel.png" />
+    <Content Include="Resources\Images\Refresh.png" />
+    <Content Include="Resources\Images\Select.png" />
+    <Content Include="Resources\Images\Stop.png" />
+    <Content Include="Resources\Images\Up.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

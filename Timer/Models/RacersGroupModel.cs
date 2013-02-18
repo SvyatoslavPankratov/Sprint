@@ -32,7 +32,7 @@ namespace Sprint.Models
         /// <param name="carClass">Класс автомобилей в создаваемой группе.</param>
         public RacersGroupModel(CarClassesEnum carClass)
         {
-            CarClass = CarClass;
+            CarClass = carClass;
         }
 
         #endregion

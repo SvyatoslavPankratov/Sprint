@@ -34,26 +34,6 @@ namespace Sprint.Models
         /// </summary>
         public ResultsModel Results { get; set; }
 
-        /// <summary>
-        /// Задать или получить значение времени начала круга.
-        /// </summary>
-        public TimeModel StartTime { get; set; }
-
-        /// <summary>
-        /// Задать или получить значение времени окончания круга.
-        /// </summary>
-        public TimeModel FinishTime { get; set; }
-
-        /// <summary>
-        /// Задать или получить итотговое время круга.
-        /// </summary>
-        public TimeModel LapTime { get; set; }
-
-        /// <summary>
-        /// Задать или получить номер проезжаемого круга.
-        /// </summary>
-        public int LapNumber { get; set; }
-
         #endregion
 
         #region Constructors

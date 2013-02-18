@@ -157,10 +157,27 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void startBtn_Click(object sender, System.EventArgs e)
         {
-            startBtn.Enabled    = false;
-            reverceBtn.Enabled  = true;
-            cutOffBtn.Enabled   = true;
-            stopBtn.Enabled     = true;
+            startBtn.Enabled = false;
+            reverceBtn.Enabled = true;
+            cutOffBtn.Enabled = true;
+            stopBtn.Enabled = true;
+
+            if (carClassesTabs.SelectedIndex == 0)
+            {
+                MainPresenter.SetCurrentCarClass(CarClassesEnum.FWD);
+            }
+            else if (carClassesTabs.SelectedIndex == 1)
+            {
+                MainPresenter.SetCurrentCarClass(CarClassesEnum.RWD);
+            }
+            else if (carClassesTabs.SelectedIndex == 2)
+            {
+                MainPresenter.SetCurrentCarClass(CarClassesEnum.AWD);
+            }
+            else if (carClassesTabs.SelectedIndex == 3)
+            {
+                MainPresenter.SetCurrentCarClass(CarClassesEnum.Sport);
+            }
 
             MainPresenter.StartStopwatch();
         }
@@ -172,10 +189,10 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void stopBtn_Click(object sender, EventArgs e)
         {
-            startBtn.Enabled    = true;
-            reverceBtn.Enabled  = false;
-            cutOffBtn.Enabled   = false;
-            stopBtn.Enabled     = false;
+            startBtn.Enabled = true;
+            reverceBtn.Enabled = false;
+            cutOffBtn.Enabled = false;
+            stopBtn.Enabled = false;
 
             MainPresenter.StopStopwatch();
         }
@@ -209,10 +226,10 @@ namespace Sprint.Views
         {
             if (e.KeyCode == Keys.S && startBtn.Enabled)            // Старт
             {
-                startBtn.Enabled    = false;
-                reverceBtn.Enabled  = true;
-                cutOffBtn.Enabled   = true;
-                stopBtn.Enabled     = true;
+                startBtn.Enabled = false;
+                reverceBtn.Enabled = true;
+                cutOffBtn.Enabled = true;
+                stopBtn.Enabled = true;
 
                 MainPresenter.StartStopwatch();
             }
@@ -236,24 +253,14 @@ namespace Sprint.Views
         }
 
         /// <summary>
-        /// Действия при нажатии в меню очистки таблицы с результатами.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void очиститьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainPresenter.ClearResultsTable();
-        }
-
-        /// <summary>
         /// Действия при закрытии формы.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void MainView_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var res = MessageBox.Show("Вы уверены, что хотите закрыть приложение?", 
-                                        "Подтверждение закрытия приложения", 
+            var res = MessageBox.Show("Вы уверены, что хотите закрыть приложение?",
+                                        "Подтверждение закрытия приложения",
                                         MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (res == System.Windows.Forms.DialogResult.Yes)
@@ -283,8 +290,64 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Автор: Панкратов Святослав \nE-mail: Svatoslav.Pankratov@gmail.com \n\nver 1.0 \n2013 год", "О программе", 
+            MessageBox.Show("Автор: Панкратов Святослав \nE-mail: Svatoslav.Pankratov@gmail.com \n\nver 1.0 \n2013 год", "О программе",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку передвинуть участника вверх.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            var index = fwdR1DGV.SelectedRows[0].Index;
+
+            MainPresenter.MoveUpRacer(index);
+
+            fwdR1DGV.Rows[0].Selected = false;
+
+            if (index > 0)
+            {
+                fwdR1DGV.Rows[index - 1].Selected = true;
+            }
+            else
+            {
+                fwdR1DGV.Rows[0].Selected = true;
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку передвинуть участника вниз.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButton33_Click(object sender, EventArgs e)
+        {
+            var index = fwdR1DGV.SelectedRows[0].Index;
+
+            MainPresenter.MoveDownRacer(index);
+
+            fwdR1DGV.Rows[0].Selected = false;
+
+            if (index < fwdR1DGV.Rows.Count - 1)
+            {
+                fwdR1DGV.Rows[index + 1].Selected = true;
+            }
+            else
+            {
+                fwdR1DGV.Rows[index].Selected = true;
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии в меню очистки таблицы с результатами.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            MainPresenter.ClearResultsTable();
         }
 
         #endregion
