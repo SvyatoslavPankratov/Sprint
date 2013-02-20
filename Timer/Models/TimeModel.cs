@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Timer.Models
+namespace Sprint.Models
 {
     /// <summary>
     /// Модель времени на секундомере.

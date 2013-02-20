@@ -3,9 +3,10 @@ using System.Data;
 using System.Resources;
 using System.Windows.Forms;
 
-using Timer.Presenters;
+using Sprint.Managers;
+using Sprint.Presenters;
 
-namespace Timer.Views
+namespace Sprint.Views
 {
     public partial class MainView : Form, IMainView
     {
@@ -25,7 +26,7 @@ namespace Timer.Views
         /// </summary>
         public int Min
         {
-            set { minLbl.Invoke(new Action(() => minLbl.Text = value.ToString("00"))); }
+            set { minLbl.Invoke(new Action(() => minLbl.Text = value.ToString("000"))); }
         }
 
         /// <summary>
@@ -62,12 +63,40 @@ namespace Timer.Views
 
             KeyPreview = true;
 
-            MainPresenter = new MainPresenter(this);            
+            MainPresenter = new MainPresenter(this);
+        }
+
+        #endregion
+
+        #region System methods
+
+        /// <summary>
+        /// Обработчик сообщений Windows.
+        /// </summary>
+        /// <param name="m">Сообщение Windows.</param>
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == WindowsShellManager.WM_HOTKEY)
+            {
+                MainView_KeyDown(this, new KeyEventArgs(Keys.CapsLock));
+            }
+
+            base.WndProc(ref m);
         }
 
         #endregion
 
         #region Methods
+
+        /// <summary>
+        /// Действия при загрузке формы.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainView_Load(object sender, EventArgs e)
+        {
+            WindowsShellManager.RegisterHotKey(this, Keys.CapsLock);
+        }
 
         /// <summary>
         /// Действия при нажатии на кнопку пуска секундомера.
@@ -77,7 +106,6 @@ namespace Timer.Views
         private void startBtn_Click(object sender, System.EventArgs e)
         {
             startBtn.Enabled    = false;
-            reverceBtn.Enabled  = true;
             cutOffBtn.Enabled   = true;
             stopBtn.Enabled     = true;
 
@@ -92,7 +120,6 @@ namespace Timer.Views
         private void stopBtn_Click(object sender, EventArgs e)
         {
             startBtn.Enabled    = true;
-            reverceBtn.Enabled  = false;
             cutOffBtn.Enabled   = false;
             stopBtn.Enabled     = false;
 
@@ -110,45 +137,29 @@ namespace Timer.Views
         }
 
         /// <summary>
-        /// Действия при инициировании флага реверса выводимой отсечки.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void reverceBtn_Click(object sender, EventArgs e)
-        {
-            MainPresenter.ReverseChange();
-        }
-
-        /// <summary>
         /// Дейсвия при отработке горячих клавиш.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void MainView_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.S && startBtn.Enabled)            // Старт
+            if (e.KeyCode == Keys.S && startBtn.Enabled)                    // Старт
             {
                 startBtn.Enabled    = false;
-                reverceBtn.Enabled  = true;
                 cutOffBtn.Enabled   = true;
                 stopBtn.Enabled     = true;
 
                 MainPresenter.StartStopwatch();
             }
-            else if (e.KeyCode == Keys.F && !startBtn.Enabled)       // Стоп
+            else if (e.KeyCode == Keys.F && !startBtn.Enabled)              // Стоп
             {
                 startBtn.Enabled = true;
-                reverceBtn.Enabled = false;
                 cutOffBtn.Enabled = false;
                 stopBtn.Enabled = false;
 
                 MainPresenter.StopStopwatch();
             }
-            else if (e.KeyCode == Keys.R && !startBtn.Enabled)       // Реверс
-            {
-                MainPresenter.ReverseChange();
-            }
-            else if (e.KeyCode == Keys.C && !startBtn.Enabled)       // Отсечка
+            else if (e.KeyCode == Keys.CapsLock && !startBtn.Enabled)       // Отсечка
             {
                 MainPresenter.CutOffStopwatch();
             }
@@ -177,6 +188,7 @@ namespace Timer.Views
 
             if (res == System.Windows.Forms.DialogResult.Yes)
             {
+                WindowsShellManager.UnregisterHotKey(this, Keys.CapsLock);
                 MainPresenter.Dispose();
             }
             else

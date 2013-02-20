@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace Timer.Views
+namespace Sprint.Views
 {
     interface IMainView
     {

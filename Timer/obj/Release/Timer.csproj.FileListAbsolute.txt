@@ -14,5 +14,5 @@ C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Timer\bin\Relea
 C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Timer\bin\Release\Sprint.pdb
 C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Timer\obj\Release\Timer.csprojResolveAssemblyReference.cache
 C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Timer\obj\Release\Sprint.Properties.Resources.resources
-C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Timer\obj\Release\Timer.Views.MainView.resources
 C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Timer\obj\Release\Timer.csproj.GenerateResource.Cache
+C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Timer\obj\Release\Sprint.Views.MainView.resources

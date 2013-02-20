@@ -2,10 +2,10 @@
 using System.Data;
 using System.Threading;
 
-using Timer.Models;
-using Timer.Views;
+using Sprint.Models;
+using Sprint.Views;
 
-namespace Timer.Presenters
+namespace Sprint.Presenters
 {
     class MainPresenter : IDisposable
     {
@@ -26,21 +26,6 @@ namespace Timer.Presenters
         /// </summary>
         private Thread ThreadSync { get; set; }
 
-        /// <summary>
-        /// Задать или получить флаг реверса выводимой отсечки.
-        /// </summary>
-        private bool Reverse { get; set; }
-
-        /// <summary>
-        /// Задать или получить первая-ли у секундомера отсечка после его остановки.
-        /// </summary>
-        private bool Stoped { get; set; }
-
-        /// <summary>
-        /// Задать или получить в какую колонку нужно добавлять новое значение, без учета флага реверса.
-        /// </summary>
-        private bool LeftRight { get; set; }
-
         #endregion
 
         #region Constructors
@@ -57,24 +42,12 @@ namespace Timer.Presenters
             MainView.Results = CreateResTable();
 
             ThreadSync = new Thread(() => DataBindingProcess(MainView, Stopwatch));
-
-            ResetFlags();
         }
 
         #endregion
 
         #region Methods
-
-        /// <summary>
-        /// Сброс всех флагов в изначальное состояние.
-        /// </summary>
-        private void ResetFlags()
-        {
-            Reverse = false;
-            LeftRight = true;
-            Stoped = true;
-        }
-
+        
         /// <summary>
         /// Запустить секундомер.
         /// </summary>
@@ -99,8 +72,10 @@ namespace Timer.Presenters
         {
             Stopwatch.Stop();
             ThreadSync.Suspend();
-
-            ResetFlags();
+            
+            MainView.Min = Stopwatch.Time.Min;
+            MainView.Sec = Stopwatch.Time.Sec;
+            MainView.Mlsec = Stopwatch.Time.Mlsec;
         }
 
         /// <summary>
@@ -114,50 +89,7 @@ namespace Timer.Presenters
             row[0] = MainView.Results.Rows.Count + 1;
             row[1] = time.TimeSpan.ToString();
 
-            var value = string.Empty;
-
-            if (Stoped)
-            {
-                value = string.Format("{0} : {1} : {2}",    time.Min.ToString("00"),
-                                                            time.Sec.ToString("00"),
-                                                            time.Mlsec.ToString("000"));
-
-                Stoped = false;
-            }
-            else
-            {
-                var previousRow = MainView.Results.Rows[MainView.Results.Rows.Count - 1];
-                var timeSpan = time.TimeSpan - TimeSpan.Parse(previousRow[1].ToString());
-
-                value = string.Format("{0} : {1} : {2}",    timeSpan.Minutes.ToString("00"),
-                                                            timeSpan.Seconds.ToString("00"),
-                                                            timeSpan.Milliseconds.ToString("000"));
-            }
-
-            if (LeftRight)
-            {
-                row[2] = value;
-            }
-            else
-            {
-                row[3] = value;
-            }
-
-            if (!Reverse)
-            {
-                LeftRight = !LeftRight;
-            }
-
             MainView.Results.Rows.Add(row);
-        }
-
-        /// <summary>
-        /// Инициировать флаг реверса выводимой отсечки.
-        /// </summary>
-        public void ReverseChange()
-        {
-            Reverse = !Reverse;
-            LeftRight = !LeftRight;
         }
 
         /// <summary>
@@ -179,12 +111,6 @@ namespace Timer.Presenters
             table.Columns.Add(column);
 
             column = new DataColumn("Отсечка");
-            table.Columns.Add(column);
-
-            column = new DataColumn("Водитель №1");
-            table.Columns.Add(column);
-
-            column = new DataColumn("Водитель №2");
             table.Columns.Add(column);
 
             return table;

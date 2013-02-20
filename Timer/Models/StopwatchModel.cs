@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace Timer.Models
+namespace Sprint.Models
 {
     public class StopwatchModel : IDisposable
     {
@@ -46,6 +46,8 @@ namespace Timer.Models
         public void Stop()
         {
             Thread.Suspend();
+
+            Time = new TimeModel();
         }
 
         /// <summary>
@@ -88,7 +90,7 @@ namespace Timer.Models
             {
                 var StopwatchTime = (DateTime.Now - timeStart);
 
-                time.Min    = StopwatchTime.Minutes;
+                time.Min    = (int)StopwatchTime.TotalMinutes;
                 time.Sec    = StopwatchTime.Seconds;
                 time.Mlsec  = StopwatchTime.Milliseconds;
 
