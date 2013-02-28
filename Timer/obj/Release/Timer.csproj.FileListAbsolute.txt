@@ -16,3 +16,6 @@ C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Timer\obj\Relea
 C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Timer\obj\Release\Sprint.Properties.Resources.resources
 C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Timer\obj\Release\Timer.csproj.GenerateResource.Cache
 C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Timer\obj\Release\Sprint.Views.MainView.resources
+C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v0.5\Timer\bin\Release\Sprint.exe.config
+C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v0.5\Timer\obj\Release\Sprint.exe
+C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v0.5\Timer\obj\Release\Sprint.pdb
