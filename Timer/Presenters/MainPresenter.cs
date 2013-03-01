@@ -6,6 +6,7 @@ using System.Linq;
 
 using Sprint.Models;
 using Sprint.Views;
+using Sprint.Extensions;
 
 namespace Sprint.Presenters
 {
@@ -57,11 +58,6 @@ namespace Sprint.Presenters
         private Thread ThreadSync { get; set; }
 
         /// <summary>
-        /// Задать или получить флаг реверса выводимой отсечки.
-        /// </summary>
-        private bool Reverse { get; set; }
-
-        /// <summary>
         /// Задать или получить первая-ли у секундомера отсечка после его остановки.
         /// </summary>
         private bool Stoped { get; set; }
@@ -86,7 +82,10 @@ namespace Sprint.Presenters
 
                 foreach (var racer in _racers)
                 {
-                    racer.Results = new ResultsModel(MaxRaceCount, MaxCircleCount);
+                    if (racer.Results == null)
+                    {
+                        racer.Results = new ResultsModel(MaxRaceCount, MaxCircleCount);
+                    }
                 }
             }
         }
@@ -100,10 +99,10 @@ namespace Sprint.Presenters
             {
                 var res = new List<RacersGroupModel>();
 
-                res.Add(new RacersGroupModel(CarClassesEnum.FWD) { Racers = Racers.Where(r => r.Car.CarClass == CarClassesEnum.FWD) });
-                res.Add(new RacersGroupModel(CarClassesEnum.RWD) { Racers = Racers.Where(r => r.Car.CarClass == CarClassesEnum.RWD) });
-                res.Add(new RacersGroupModel(CarClassesEnum.AWD) { Racers = Racers.Where(r => r.Car.CarClass == CarClassesEnum.AWD) });
-                res.Add(new RacersGroupModel(CarClassesEnum.Sport) { Racers = Racers.Where(r => r.Car.CarClass == CarClassesEnum.Sport) });
+                res.Add(new RacersGroupModel(CarClassesEnum.FWD, Racers) { Racers = Racers.Where(r => r.Car.CarClass == CarClassesEnum.FWD), RaceNumber = 1 });
+                res.Add(new RacersGroupModel(CarClassesEnum.RWD, Racers) { Racers = Racers.Where(r => r.Car.CarClass == CarClassesEnum.RWD), RaceNumber = 1 });
+                res.Add(new RacersGroupModel(CarClassesEnum.AWD, Racers) { Racers = Racers.Where(r => r.Car.CarClass == CarClassesEnum.AWD), RaceNumber = 1 });
+                res.Add(new RacersGroupModel(CarClassesEnum.Sport, Racers) { Racers = Racers.Where(r => r.Car.CarClass == CarClassesEnum.Sport), RaceNumber = 1 });
 
                 return res;
             }
@@ -130,7 +129,19 @@ namespace Sprint.Presenters
         /// <summary>
         /// Задать или получить текущий класс автомобилей проходящих заезд.
         /// </summary>
-        private CarClassesEnum CurrentCarClass { get; set; }
+        public CarClassesEnum CurrentCarClass { get; set; }
+
+        /// <summary>
+        /// Задать или получить текущий класс автомобилей владельцы которых 
+        /// находятся в режиме редактирования.
+        /// </summary>
+        public CarClassesEnum CurrentEditCarClass { get; set; }
+
+        /// <summary>
+        /// Задать или получить текущий номер заезда участники которого 
+        /// находятся в режиме редактирования.
+        /// </summary>
+        public int CurrentEditRaceNumber { get; set; }
 
         /// <summary>
         /// Задать или получить модель трека.
@@ -166,15 +177,6 @@ namespace Sprint.Presenters
         #region Methods
 
         /// <summary>
-        /// Задать текущий класс автомобилей, участвующий в текущем заезде.
-        /// </summary>
-        /// <param name="carClass">Класс автомобилей.</param>
-        public void SetCurrentCarClass(CarClassesEnum carClass)
-        {
-            CurrentCarClass = carClass;
-        }
-
-        /// <summary>
         /// Инициализация всех таблиц.
         /// </summary>
         private void InitializeAllTables()
@@ -190,7 +192,7 @@ namespace Sprint.Presenters
         }
 
         /// <summary>
-        /// Показать диалог для заполнения участников гонки.
+        /// Показать диалог для заполнения участников гонки и взять из него этот список.
         /// </summary>
         public void ShowSetRacersDialog()
         {
@@ -204,7 +206,6 @@ namespace Sprint.Presenters
         /// </summary>
         private void ResetFlags()
         {
-            Reverse = false;
             LeftRight = true;
             Stoped = true;
         }
@@ -324,7 +325,7 @@ namespace Sprint.Presenters
         }
 
         /// <summary>
-        /// Процесс, осуществляющий моментальный вывод данных секундомера на форму.
+        /// Процесс, осуществляющий постоянный вывод данных секундомера на форму.
         /// </summary>
         /// <param name="mainView"></param>
         private void StopwatchDataBindingProcess(IMainView mainView, StopwatchModel stopwatch)
@@ -335,15 +336,6 @@ namespace Sprint.Presenters
                 mainView.Sec = stopwatch.Time.Sec;
                 mainView.Mlsec = stopwatch.Time.Mlsec;
             }
-        }
-
-        /// <summary>
-        /// Инициировать флаг реверса выводимой отсечки.
-        /// </summary>
-        public void ReverseChange()
-        {
-            Reverse = !Reverse;
-            LeftRight = !LeftRight;
         }
 
         /// <summary>
@@ -414,23 +406,30 @@ namespace Sprint.Presenters
         /// Генерация и заполнение таблицы участниками для первого заезда.
         /// </summary>
         public void SetRacersForTableForFirstRace()
-        {            
-            MainView.FwdFirstRace = SetNamesToTable(0);            
-            MainView.RwdFirstRace = SetNamesToTable(1);            
-            MainView.AwdFirstRace = SetNamesToTable(2);            
-            MainView.SportFirstRace = SetNamesToTable(3);
+        {
+            MainView.FwdFirstRace   = SetNamesToTable(CarClassesEnum.FWD);
+            MainView.RwdFirstRace   = SetNamesToTable(CarClassesEnum.RWD);
+            MainView.AwdFirstRace   = SetNamesToTable(CarClassesEnum.AWD);            
+            MainView.SportFirstRace = SetNamesToTable(CarClassesEnum.Sport);
         }
 
         /// <summary>
-        /// Заполним таблицу именами из последней группы участников в списке групп.
+        /// Заполним таблицу именами из заданной группы участников в списке групп.
         /// </summary>
-        /// <param name="groupNumber">Номер группы гонщиков в списке.</param>
+        /// <param name="carClass">Класс группы автомобилей.</param>
         /// <returns>Таблица, заполненная участниками.</returns>
-        private DataTable SetNamesToTable(int groupNumber)
+        private DataTable SetNamesToTable(CarClassesEnum carClass)
         {
             var table = InitializeTable();
 
-            foreach (var racer in RacerGroups.ElementAt(groupNumber).Racers)
+            var group = RacerGroups.FirstOrDefault(gr => gr.CarClass == carClass);
+
+            if(group == null)
+            {
+                return table;
+            }
+
+            foreach (var racer in group.Racers)
             {
                 var row = table.NewRow();
                 row[0] = racer.RacerNumber;
@@ -443,73 +442,149 @@ namespace Sprint.Presenters
         }
 
         /// <summary>
-        /// Задать список лидеров по группам.
+        /// Задать список лидеров по заданной группе.
         /// </summary>
-        /// <param name="count">Количество получаемых лидеров в каждом классе.</param>
-        /// <returns>Список лидеров по классам.</returns>
-        public void SetLeaders(int count)
+        /// <param name="count">Количество получаемых лидеров в заданном классе.</param>
+        /// <param name="carClass"></param>
+        public void SetLeaders(int count, CarClassesEnum carClass)
         {
-            foreach (var rg in RacerGroups)
-            {
-                var racers = (from racer in rg.Racers
-                              orderby racer.Results.GetMinTime(1)
-                              select racer).Reverse();
+            var rg = RacerGroups.FirstOrDefault(g => g.CarClass == carClass);
 
-                (LiderRacerGroups as List<RacersGroupModel>).Add(new RacersGroupModel(rg.CarClass) { Racers = racers.Take(count) });
+            if (rg == null)
+            {
+                return;
             }
+
+            (LiderRacerGroups as List<RacersGroupModel>).Add(new RacersGroupModel(carClass, Racers) { Racers = rg.GetLeaders(count) });
         }
+
+        #region Перемещение гонщиков по списку участников
 
         /// <summary>
         /// Передвинуть участника вверх на одну позицию.
         /// </summary>
         /// <param name="racerNum">Номер перемещаемого участника.</param>
-        public void MoveUpRacer(int racerNum)
+        public bool MoveUpRacer(int racerNum)
         {
-            var racer = CurrentRaserGroup.Racers.ElementAt(racerNum);
-            var gl_racers = Racers.ToList();
+            var racerGroup = RacerGroups.FirstOrDefault(rg => rg.CarClass == CurrentEditCarClass && rg.RaceNumber == CurrentEditRaceNumber);
+            var racer = racerGroup.Racers.ElementAt(racerNum);
 
-            var gl_index = gl_racers.IndexOf(racer);
-
-            for (int i = gl_index - 1; i >= 0; i--)
+            if (racer == null || !CheckMoveUp(racer, CurrentEditCarClass, CurrentEditRaceNumber))
             {
-                if (gl_racers[i].Car.CarClass == CurrentCarClass)
-                {
-                    gl_racers.Remove(racer);
-                    gl_racers.Insert(i, racer);
-                    break;
-                }
+                return false;
             }
 
-            Racers = gl_racers;
+            racerGroup.MoveUpRacer(racerNum);
+            Racers = racerGroup.GlobalRacers;
 
             DataBind();
+
+            return true;
         }
 
         /// <summary>
         /// Передвинуть участника вниз на одну позицию.
         /// </summary>
         /// <param name="racerNum">Номер перемещаемого участника.</param>
-        public void MoveDownRacer(int racerNum)
+        public bool MoveDownRacer(int racerNum)
         {
-            var racer = CurrentRaserGroup.Racers.ElementAt(racerNum);
-            var gl_racers = Racers.ToList();
+            var racerGroup = RacerGroups.FirstOrDefault(rg => rg.CarClass == CurrentEditCarClass && rg.RaceNumber == CurrentEditRaceNumber);
+            var racer = racerGroup.Racers.ElementAt(racerNum);
 
-            var gl_index = gl_racers.IndexOf(racer);
-
-            for (int i = gl_index + 1; i < gl_racers.Count; i++)
+            if (racer == null || !CheckMoveDown(racer, CurrentEditCarClass, CurrentEditRaceNumber))
             {
-                if (gl_racers[i].Car.CarClass == CurrentCarClass)
+                return false;
+            }
+
+            racerGroup.MoveDownRacer(racerNum);
+            Racers = racerGroup.GlobalRacers;
+
+            DataBind();
+
+            return true;
+        }
+
+        /// <summary>
+        /// Проверить можно-ли передвинуть гонщика на одну позицию вверх по списку участников.
+        /// </summary>
+        /// <param name="racer">Перемещаемый гонщик.</param>
+        /// <param name="carClass">Номер перемещаемого участника.</param>
+        /// <param name="raceNum">Номер заезда внутри которого мы двигаем гонщика.</param>
+        /// <returns></returns>
+        private bool CheckMoveUp(RacerModel racer, CarClassesEnum carClass, int raceNum)
+        {
+            // Посмторим, а вообще присутствуют-ли сейчас на трассе участники?
+            if (!Track.CurrentRacers.Any())
+            {
+                return true;
+            }
+
+            // Посмотрим, перемещаемый гонщик не на трассе-ли случаянно находится?
+            foreach (var r in Track.CurrentRacers)
+            {
+                if (racer.Id == r.Id)
                 {
-                    gl_racers.Remove(racer);
-                    gl_racers.Insert(i, racer);
-                    break;
+                    return false;
                 }
             }
 
-            Racers = gl_racers;
+            // Посмотрим, вышестоящий гонщик не на трассе-ли случаянно находится?
+            var raserGroup = RacerGroups.FirstOrDefault(rg => rg.CarClass == carClass && rg.RaceNumber == raceNum);
+            var currentRacer = raserGroup.Racers.FirstOrDefault(r => r.Id == racer.Id);
+            var currentRacerNumber = raserGroup.Racers.IndexOf(currentRacer);
+            var upper_racer = raserGroup.Racers.ElementAt(currentRacerNumber - 1);
 
-            DataBind();
+            foreach (var r in Track.CurrentRacers)
+            {
+                if (upper_racer.Id == r.Id)
+                {
+                    return false;
+                }
+            }
+
+            // Посмотрим, а не пытаемся-ли мы передвинуть уже проехавшего заезд гонщика?
+            if (racer.Results.ResultsList.ElementAt(raceNum - 1).Where(r => r == null).Count() < MaxCircleCount)
+            {
+                return false;
+            }
+
+            return true;
         }
+
+        /// <summary>
+        /// Проверить можно-ли передвинуть гонщика на одну позицию вниз по списку участников.
+        /// </summary>
+        /// <param name="racer">Перемещаемый гонщик.</param>
+        /// <param name="carClass">Номер перемещаемого участника.</param>
+        /// <param name="raceNum">Номер заезда внутри которого мы двигаем гонщика.</param>
+        /// <returns></returns>
+        private bool CheckMoveDown(RacerModel racer, CarClassesEnum carClass, int raceNum)
+        {
+            // Посмторим, а вообще присутствуют-ли сейчас на трассе участники?
+            if (!Track.CurrentRacers.Any())
+            {
+                return true;
+            }
+
+            // Посмотрим, перемещаемый гонщик не на трассе-ли случаянно находится?
+            foreach (var r in Track.CurrentRacers)
+            {
+                if (racer.Id == r.Id)
+                {
+                    return false;
+                }
+            }
+
+            // Посмотрим, а не пытаемся-ли мы передвинуть уже проехавшего заезд гонщика?
+            if (racer.Results.ResultsList.ElementAt(raceNum - 1).Where(r => r == null).Count() < MaxCircleCount)
+            {
+                return false;
+            }
+
+            return true;
+        } 
+
+        #endregion
 
         #region Data Bind [Есть недоработки]
 
@@ -552,7 +627,7 @@ namespace Sprint.Presenters
         /// <param name="group">Переднеприводная группа гонщиков.</param>
         private void OutFwdResult(RacersGroupModel group)
         {   
-            DataTable table = SetNamesToTable(0);
+            DataTable table = SetNamesToTable(CarClassesEnum.FWD);
 
             for (int row = 0; row < group.Racers.Count(); row++)
             {
@@ -570,12 +645,8 @@ namespace Sprint.Presenters
                     }
                 }
 
-                MainView.FwdFirstRace = table;
-
                 if (racer.Results.ResultsList.Count() > 1)
                 {
-                    table = MainView.FwdSecondRace;
-
                     for (int circle = 0; circle < MaxCircleCount; circle++)
                     {
                         var time = racer.Results.ResultsList.ElementAt(1).ElementAt(circle);
@@ -588,6 +659,8 @@ namespace Sprint.Presenters
                         }
                     }
                 }
+
+                MainView.FwdFirstRace = table;
             }
         }
 
@@ -597,7 +670,7 @@ namespace Sprint.Presenters
         /// <param name="group">Заднеприводная группа гонщиков.</param>
         private void OutRwdResult(RacersGroupModel group)
         {
-            DataTable table = SetNamesToTable(1);
+            DataTable table = SetNamesToTable(CarClassesEnum.RWD);
 
             for (int row = 0; row < group.Racers.Count(); row++)
             {
@@ -614,13 +687,9 @@ namespace Sprint.Presenters
                                                                                         time.Mlsec.ToString("000"));
                     }
                 }
-
-                MainView.RwdFirstRace = table;
                 
                 if (racer.Results.ResultsList.Count() > 1)
                 {
-                    table = MainView.RwdSecondRace;
-
                     for (int circle = 0; circle < MaxCircleCount; circle++)
                     {
                         var time = racer.Results.ResultsList.ElementAt(1).ElementAt(circle);
@@ -633,6 +702,8 @@ namespace Sprint.Presenters
                         }
                     }
                 }
+
+                MainView.RwdFirstRace = table;
             }
         }
 
@@ -642,7 +713,7 @@ namespace Sprint.Presenters
         /// <param name="group">Полноприводная группа гонщиков.</param>
         private void OutAwdResult(RacersGroupModel group)
         {
-            DataTable table = SetNamesToTable(2);
+            DataTable table = SetNamesToTable(CarClassesEnum.AWD);
 
             for (int row = 0; row < group.Racers.Count(); row++)
             {
@@ -660,12 +731,8 @@ namespace Sprint.Presenters
                     }
                 }
 
-                MainView.AwdFirstRace = table;
-
                 if (racer.Results.ResultsList.Count() > 1)
                 {
-                    table = MainView.AwdSecondRace;
-
                     for (int circle = 0; circle < MaxCircleCount; circle++)
                     {
                         var time = racer.Results.ResultsList.ElementAt(1).ElementAt(circle);
@@ -678,6 +745,8 @@ namespace Sprint.Presenters
                         }
                     }
                 }
+
+                MainView.AwdFirstRace = table;
             }
         }
 
@@ -687,7 +756,7 @@ namespace Sprint.Presenters
         /// <param name="group">Спортивная группа гонщиков.</param>
         private void OutSportResult(RacersGroupModel group)
         {
-            DataTable table = SetNamesToTable(3);
+            DataTable table = SetNamesToTable(CarClassesEnum.Sport);
 
             for (int row = 0; row < group.Racers.Count(); row++)
             {
@@ -705,12 +774,8 @@ namespace Sprint.Presenters
                     }
                 }
 
-                MainView.SportFirstRace = table;
-
                 if (racer.Results.ResultsList.Count() > 1)
                 {
-                    table = MainView.SportSecondRace;
-
                     for (int circle = 0; circle < MaxCircleCount; circle++)
                     {
                         var time = racer.Results.ResultsList.ElementAt(1).ElementAt(circle);
@@ -723,11 +788,15 @@ namespace Sprint.Presenters
                         }
                     }
                 }
+
+                MainView.SportFirstRace = table;
             }
         } 
 
         #endregion
 
+        #region IDisposable Members
+        
         /// <summary>
         /// Освободить все занимаемые объектом ресурсы.
         /// </summary>
@@ -749,7 +818,9 @@ namespace Sprint.Presenters
             }
 
             Stopwatch.Dispose();
-        }
+        } 
+
+        #endregion
 
         #endregion
     }

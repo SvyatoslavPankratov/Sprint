@@ -51,10 +51,11 @@ namespace Sprint.Presenters
 
             if (NewRacerView != null)
             {
-                NewRacerView.CarClasses = CarClasses;
-                NewRacerView.RacersTable = CreateTable();
+                NewRacerView.CarClasses = CarClasses;                
 
                 Racers = new List<RacerModel>();
+
+                NewRacerView.RacersTable = CreateTable();
             }
         }
 
@@ -67,24 +68,33 @@ namespace Sprint.Presenters
         /// </summary>
         public void AddNewRacer()
         {
+            var num = 1;
+
+            if (Racers.Count > 0)
+            {
+                num = Racers.Last().RacerNumber + 1;
+            }
+
             // Добавлениее новго гонщика в структуру
-            Racers.Add(new RacerModel(NewRacerView.FirstName, NewRacerView.LastName, NewRacerView.MiddleName,
-                                      NewRacerView.CarName, NewRacerView.CarClass)
-                                        {
-                                            RacerNumber = NewRacerView.RacersTable.Rows.Count + 1
-                                        });
+            Racers.Add(new RacerModel(NewRacerView.FirstName,
+                                        NewRacerView.LastName,
+                                        NewRacerView.MiddleName,
+                                        NewRacerView.CarName,
+                                        NewRacerView.CarClass) { RacerNumber = num });
 
-            // Дбавление нового гонщика в таблицу
-            var row = NewRacerView.RacersTable.NewRow();
+            // Добавление нового гонщика в таблицу
+            var racer   = Racers.Last();
+            var table   = NewRacerView.RacersTable;
+            var row     = table.NewRow();
 
-            row[0] = Racers.Last().RacerNumber;
-            row[1] = NewRacerView.FirstName;
-            row[2] = NewRacerView.LastName;
-            row[3] = NewRacerView.MiddleName;
-            row[4] = NewRacerView.CarName;
-            row[5] = NewRacerView.CarClass.ToString();
+            row[0] = racer.RacerNumber;
+            row[1] = racer.FirstName;
+            row[2] = racer.LastName;
+            row[3] = racer.MiddleName;
+            row[4] = racer.Car.Name;
+            row[5] = racer.Car.CarClass.ToString();
 
-            NewRacerView.RacersTable.Rows.Add(row);
+            table.Rows.Add(row);
 
             NewRacerView.FirstName  = string.Empty;
             NewRacerView.LastName   = string.Empty;
@@ -119,6 +129,15 @@ namespace Sprint.Presenters
             table.Columns.Add(column);
 
             return table;
+        }
+
+        /// <summary>
+        /// Удалить гонщика из списка участников.
+        /// </summary>
+        /// <param name="index"></param>
+        public void DeleteRacer(int index)
+        {
+            Racers.RemoveAt(index);
         }
 
         #endregion

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Resources;
 using System.Windows.Forms;
-
+using Sprint.Managers;
 using Sprint.Models;
 using Sprint.Presenters;
 
@@ -11,7 +12,7 @@ namespace Sprint.Views
 {
     public partial class MainView : Form, IMainView
     {
-        #region Properties
+        #region IMainView Members
 
         /// <summary>
         /// Задать или получить таблицу с результатами переднеприводных автомобилей за 1 заезд.
@@ -109,6 +110,10 @@ namespace Sprint.Views
             set { mlsecLbl.Invoke(new Action(() => mlsecLbl.Text = value.ToString("000"))); }
         }
 
+        #endregion
+
+        #region Properties
+
         /// <summary>
         /// Задать или получить презентер для главного окна.
         /// </summary>
@@ -138,7 +143,35 @@ namespace Sprint.Views
 
         #endregion
 
+        #region System methods
+
+        /// <summary>
+        /// Обработчик сообщений Windows.
+        /// </summary>
+        /// <param name="m">Сообщение Windows.</param>
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == WindowsShellManager.WM_HOTKEY)
+            {
+                MainView_KeyDown(this, new KeyEventArgs(Keys.CapsLock));
+            }
+
+            base.WndProc(ref m);
+        }
+
+        #endregion
+
         #region Methods
+
+        /// <summary>
+        /// Действия при загрузке формы.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainView_Load(object sender, EventArgs e)
+        {
+            WindowsShellManager.RegisterHotKey(this, Keys.CapsLock);
+        }
 
         /// <summary>
         /// Действия при первом отображении формы.
@@ -158,25 +191,24 @@ namespace Sprint.Views
         private void startBtn_Click(object sender, System.EventArgs e)
         {
             startBtn.Enabled = false;
-            reverceBtn.Enabled = true;
             cutOffBtn.Enabled = true;
             stopBtn.Enabled = true;
 
             if (carClassesTabs.SelectedIndex == 0)
             {
-                MainPresenter.SetCurrentCarClass(CarClassesEnum.FWD);
+                MainPresenter.CurrentCarClass = CarClassesEnum.FWD;
             }
             else if (carClassesTabs.SelectedIndex == 1)
             {
-                MainPresenter.SetCurrentCarClass(CarClassesEnum.RWD);
+                MainPresenter.CurrentCarClass = CarClassesEnum.RWD;
             }
             else if (carClassesTabs.SelectedIndex == 2)
             {
-                MainPresenter.SetCurrentCarClass(CarClassesEnum.AWD);
+                MainPresenter.CurrentCarClass = CarClassesEnum.AWD;
             }
             else if (carClassesTabs.SelectedIndex == 3)
             {
-                MainPresenter.SetCurrentCarClass(CarClassesEnum.Sport);
+                MainPresenter.CurrentCarClass = CarClassesEnum.Sport;
             }
 
             MainPresenter.StartStopwatch();
@@ -190,7 +222,6 @@ namespace Sprint.Views
         private void stopBtn_Click(object sender, EventArgs e)
         {
             startBtn.Enabled = true;
-            reverceBtn.Enabled = false;
             cutOffBtn.Enabled = false;
             stopBtn.Enabled = false;
 
@@ -208,45 +239,29 @@ namespace Sprint.Views
         }
 
         /// <summary>
-        /// Действия при инициировании флага реверса выводимой отсечки.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void reverceBtn_Click(object sender, EventArgs e)
-        {
-            MainPresenter.ReverseChange();
-        }
-
-        /// <summary>
         /// Дейсвия при отработке горячих клавиш.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void MainView_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.S && startBtn.Enabled)            // Старт
+            if (e.KeyCode == Keys.S && startBtn.Enabled)                    // Старт
             {
                 startBtn.Enabled = false;
-                reverceBtn.Enabled = true;
                 cutOffBtn.Enabled = true;
                 stopBtn.Enabled = true;
 
                 MainPresenter.StartStopwatch();
             }
-            else if (e.KeyCode == Keys.F && !startBtn.Enabled)       // Стоп
+            else if (e.KeyCode == Keys.F && !startBtn.Enabled)              // Стоп
             {
                 startBtn.Enabled = true;
-                reverceBtn.Enabled = false;
                 cutOffBtn.Enabled = false;
                 stopBtn.Enabled = false;
 
                 MainPresenter.StopStopwatch();
             }
-            else if (e.KeyCode == Keys.R && !startBtn.Enabled)       // Реверс
-            {
-                MainPresenter.ReverseChange();
-            }
-            else if (e.KeyCode == Keys.C && !startBtn.Enabled)       // Отсечка
+            else if (e.KeyCode == Keys.CapsLock && !startBtn.Enabled)       // Отсечка
             {
                 MainPresenter.CutOffStopwatch();
             }
@@ -265,6 +280,7 @@ namespace Sprint.Views
 
             if (res == System.Windows.Forms.DialogResult.Yes)
             {
+                WindowsShellManager.UnregisterHotKey(this, Keys.CapsLock);
                 MainPresenter.Dispose();
             }
             else
@@ -294,51 +310,71 @@ namespace Sprint.Views
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        #region Панель интсрументов
+        
+        #region Первый заезд переднеприводных автомобилей
+
         /// <summary>
-        /// Действия при нажатии на кнопку передвинуть участника вверх.
+        /// Действия при нажатии на кнопку передвинуть участника первого заезда на переднеприводных автомобилях вверх.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
+            if (fwdR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+
             var index = fwdR1DGV.SelectedRows[0].Index;
 
-            MainPresenter.MoveUpRacer(index);
-
-            fwdR1DGV.Rows[0].Selected = false;
-
-            if (index > 0)
+            if (MainPresenter.MoveUpRacer(index))
             {
-                fwdR1DGV.Rows[index - 1].Selected = true;
-            }
-            else
-            {
-                fwdR1DGV.Rows[0].Selected = true;
+                fwdR1DGV.ClearSelection();
+
+                if (index > 0)
+                {
+                    fwdR1DGV.Rows[index - 1].Selected = true;
+                }
+                else
+                {
+                    fwdR1DGV.Rows[0].Selected = true;
+                }
             }
         }
 
         /// <summary>
-        /// Действия при нажатии на кнопку передвинуть участника вниз.
+        /// Действия при нажатии на кнопку передвинуть участника первого заезда на переднеприводных автомобилях вниз.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void toolStripButton33_Click(object sender, EventArgs e)
         {
+            if (fwdR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+
             var index = fwdR1DGV.SelectedRows[0].Index;
 
-            MainPresenter.MoveDownRacer(index);
-
-            fwdR1DGV.Rows[0].Selected = false;
-
-            if (index < fwdR1DGV.Rows.Count - 1)
+            if (MainPresenter.MoveDownRacer(index))
             {
-                fwdR1DGV.Rows[index + 1].Selected = true;
+                fwdR1DGV.ClearSelection();
+
+                if (index < fwdR1DGV.Rows.Count - 1)
+                {
+                    fwdR1DGV.Rows[index + 1].Selected = true;
+                }
+                else
+                {
+                    fwdR1DGV.Rows[index].Selected = true;
+                }
             }
-            else
-            {
-                fwdR1DGV.Rows[index].Selected = true;
-            }
-        }
+        } 
+
+        #endregion
+
+        #endregion
 
         /// <summary>
         /// Действия при нажатии в меню очистки таблицы с результатами.
@@ -350,6 +386,6 @@ namespace Sprint.Views
             MainPresenter.ClearResultsTable();
         }
 
-        #endregion
+        #endregion        
     }
 }

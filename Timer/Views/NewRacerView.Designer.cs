@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewRacerView));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.completeRegistrationBT = new System.Windows.Forms.Button();
             this.newRacerB = new System.Windows.Forms.Button();
@@ -54,31 +59,38 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.completeRegistrationBT);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 353);
+            this.panel1.Location = new System.Drawing.Point(0, 471);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1055, 55);
+            this.panel1.Size = new System.Drawing.Size(1204, 70);
             this.panel1.TabIndex = 0;
             // 
             // completeRegistrationBT
             // 
-            this.completeRegistrationBT.Location = new System.Drawing.Point(890, 14);
+            this.completeRegistrationBT.Image = ((System.Drawing.Image)(resources.GetObject("completeRegistrationBT.Image")));
+            this.completeRegistrationBT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.completeRegistrationBT.Location = new System.Drawing.Point(987, 14);
             this.completeRegistrationBT.Name = "completeRegistrationBT";
-            this.completeRegistrationBT.Size = new System.Drawing.Size(149, 27);
+            this.completeRegistrationBT.Padding = new System.Windows.Forms.Padding(10);
+            this.completeRegistrationBT.Size = new System.Drawing.Size(192, 43);
             this.completeRegistrationBT.TabIndex = 2;
             this.completeRegistrationBT.Text = "Закончить регистрацию";
+            this.completeRegistrationBT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.completeRegistrationBT.UseVisualStyleBackColor = true;
             this.completeRegistrationBT.Click += new System.EventHandler(this.completeRegistrationBT_Click);
             // 
             // newRacerB
             // 
-            this.newRacerB.Location = new System.Drawing.Point(216, 234);
+            this.newRacerB.Image = ((System.Drawing.Image)(resources.GetObject("newRacerB.Image")));
+            this.newRacerB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.newRacerB.Location = new System.Drawing.Point(181, 234);
             this.newRacerB.Name = "newRacerB";
-            this.newRacerB.Size = new System.Drawing.Size(86, 27);
-            this.newRacerB.TabIndex = 1;
+            this.newRacerB.Padding = new System.Windows.Forms.Padding(10);
+            this.newRacerB.Size = new System.Drawing.Size(121, 41);
+            this.newRacerB.TabIndex = 6;
             this.newRacerB.Text = "Добавить";
+            this.newRacerB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.newRacerB.UseVisualStyleBackColor = true;
             this.newRacerB.Click += new System.EventHandler(this.newRacerB_Click);
             // 
@@ -195,38 +207,75 @@
             // 
             // racersDGV
             // 
-            this.racersDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.racersDGV.BackgroundColor = System.Drawing.Color.White;
+            this.racersDGV.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.racersDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.racersDGV.BackgroundColor = System.Drawing.Color.DarkGray;
             this.racersDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.racersDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.racersDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.racersDGV.DefaultCellStyle = dataGridViewCellStyle2;
+            this.racersDGV.GridColor = System.Drawing.Color.Silver;
             this.racersDGV.Location = new System.Drawing.Point(319, 12);
+            this.racersDGV.MultiSelect = false;
             this.racersDGV.Name = "racersDGV";
-            this.racersDGV.Size = new System.Drawing.Size(724, 330);
+            this.racersDGV.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.racersDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.racersDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.racersDGV.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.racersDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.racersDGV.Size = new System.Drawing.Size(873, 446);
             this.racersDGV.TabIndex = 3;
+            this.racersDGV.DataSourceChanged += new System.EventHandler(this.racersDGV_DataSourceChanged);
+            this.racersDGV.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.racersDGV_UserDeletedRow);
+            this.racersDGV.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.racersDGV_UserDeletingRow);
+            this.racersDGV.Paint += new System.Windows.Forms.PaintEventHandler(this.racersDGV_Paint);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1055, 408);
+            this.panel2.Size = new System.Drawing.Size(1204, 541);
             this.panel2.TabIndex = 4;
             // 
             // NewRacerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1055, 408);
+            this.ClientSize = new System.Drawing.Size(1204, 541);
+            this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.racersDGV);
             this.Controls.Add(this.newRacerB);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NewRacerView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление участников";

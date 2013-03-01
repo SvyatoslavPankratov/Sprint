@@ -10,9 +10,9 @@ namespace Sprint.Models
     /// </summary>
     public enum CarClassesEnum
     {
-        FWD,
-        RWD,
-        AWD,
-        Sport,
+        FWD = 0,
+        RWD = 1,
+        AWD = 2,
+        Sport = 3,
     }
 }

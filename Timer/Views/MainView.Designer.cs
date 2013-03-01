@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -76,18 +76,17 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cutOffBtn = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.startBtn = new System.Windows.Forms.Button();
-            this.reverceBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.stopBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.fwdR1DGV = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.печатьРезультатовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.экспортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -102,8 +101,9 @@
             this.toolStripButton32 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton33 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton49 = new System.Windows.Forms.ToolStripButton();
+            this.upRacer_Btn_fwdR1DGV = new System.Windows.Forms.ToolStripButton();
+            this.downRacer_Btn_fwdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -114,10 +114,15 @@
             this.toolStripButton35 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton36 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton37 = new System.Windows.Forms.ToolStripButton();
+            this.upRacer_Btn_fwdR2DGV = new System.Windows.Forms.ToolStripButton();
+            this.downRacer_Btn_fwdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton38 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton42 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton50 = new System.Windows.Forms.ToolStripButton();
+            this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
@@ -127,10 +132,11 @@
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
+            this.upRacer_Btn_rwdR1DGV = new System.Windows.Forms.ToolStripButton();
+            this.downRacer_Btn_rwdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton40 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton43 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton51 = new System.Windows.Forms.ToolStripButton();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.rwdR2DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
@@ -138,10 +144,12 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.upRacer_Btn_rwdR2DGV = new System.Windows.Forms.ToolStripButton();
+            this.downRacer_Btn_rwdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton39 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton44 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton52 = new System.Windows.Forms.ToolStripButton();
+            this.tabPage14 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
@@ -151,10 +159,11 @@
             this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
+            this.upRacer_Btn_awdR1DGV = new System.Windows.Forms.ToolStripButton();
+            this.downRacer_Btn_awdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton41 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton45 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton53 = new System.Windows.Forms.ToolStripButton();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.awdR2DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip5 = new System.Windows.Forms.ToolStrip();
@@ -162,10 +171,12 @@
             this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton19 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton20 = new System.Windows.Forms.ToolStripButton();
+            this.upRacer_Btn_awdR2DGV = new System.Windows.Forms.ToolStripButton();
+            this.downRacer_Btn_awdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton21 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton46 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton54 = new System.Windows.Forms.ToolStripButton();
+            this.tabPage15 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabControl5 = new System.Windows.Forms.TabControl();
             this.tabPage11 = new System.Windows.Forms.TabPage();
@@ -175,10 +186,11 @@
             this.toolStripButton23 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton24 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton25 = new System.Windows.Forms.ToolStripButton();
+            this.upRacer_Btn_sportR1DGV = new System.Windows.Forms.ToolStripButton();
+            this.downRacer_Btn_sportR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton26 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton47 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton55 = new System.Windows.Forms.ToolStripButton();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.sportR2DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip7 = new System.Windows.Forms.ToolStrip();
@@ -186,10 +198,30 @@
             this.toolStripButton28 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton29 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton30 = new System.Windows.Forms.ToolStripButton();
+            this.upRacer_Btn_sportR2DGV = new System.Windows.Forms.ToolStripButton();
+            this.downRacer_Btn_sportR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton31 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton48 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton56 = new System.Windows.Forms.ToolStripButton();
+            this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -210,6 +242,8 @@
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fwdR2DGV)).BeginInit();
             this.toolStrip8.SuspendLayout();
+            this.tabPage13.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage7.SuspendLayout();
@@ -218,6 +252,7 @@
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rwdR2DGV)).BeginInit();
             this.toolStrip2.SuspendLayout();
+            this.tabPage14.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.tabPage9.SuspendLayout();
@@ -226,6 +261,7 @@
             this.tabPage10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.awdR2DGV)).BeginInit();
             this.toolStrip5.SuspendLayout();
+            this.tabPage15.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabControl5.SuspendLayout();
             this.tabPage11.SuspendLayout();
@@ -234,6 +270,11 @@
             this.tabPage12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sportR2DGV)).BeginInit();
             this.toolStrip7.SuspendLayout();
+            this.tabPage16.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel10
@@ -374,19 +415,17 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(685, 0);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.panel2.Size = new System.Drawing.Size(556, 364);
+            this.panel2.Size = new System.Drawing.Size(556, 194);
             this.panel2.TabIndex = 5;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cutOffBtn);
-            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.startBtn);
-            this.groupBox1.Controls.Add(this.reverceBtn);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.stopBtn);
             this.groupBox1.Controls.Add(this.label7);
@@ -398,7 +437,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(10);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox1.Size = new System.Drawing.Size(546, 322);
+            this.groupBox1.Size = new System.Drawing.Size(546, 185);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Секундомер";
@@ -407,45 +446,32 @@
             // 
             this.cutOffBtn.Enabled = false;
             this.cutOffBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cutOffBtn.Location = new System.Drawing.Point(136, 255);
+            this.cutOffBtn.Image = ((System.Drawing.Image)(resources.GetObject("cutOffBtn.Image")));
+            this.cutOffBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cutOffBtn.Location = new System.Drawing.Point(14, 121);
             this.cutOffBtn.Name = "cutOffBtn";
-            this.cutOffBtn.Size = new System.Drawing.Size(120, 50);
+            this.cutOffBtn.Padding = new System.Windows.Forms.Padding(10);
+            this.cutOffBtn.Size = new System.Drawing.Size(172, 50);
             this.cutOffBtn.TabIndex = 4;
-            this.cutOffBtn.Text = "Отсечка [C]";
+            this.cutOffBtn.Text = "Отсечка [CapsLock]";
+            this.cutOffBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cutOffBtn.UseVisualStyleBackColor = true;
             this.cutOffBtn.Click += new System.EventHandler(this.cutOffBtn_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Location = new System.Drawing.Point(10, 122);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(524, 118);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Опции";
             // 
             // startBtn
             // 
             this.startBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startBtn.Location = new System.Drawing.Point(10, 255);
+            this.startBtn.Image = ((System.Drawing.Image)(resources.GetObject("startBtn.Image")));
+            this.startBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.startBtn.Location = new System.Drawing.Point(288, 121);
             this.startBtn.Name = "startBtn";
+            this.startBtn.Padding = new System.Windows.Forms.Padding(10);
             this.startBtn.Size = new System.Drawing.Size(120, 50);
             this.startBtn.TabIndex = 1;
             this.startBtn.Text = "Старт [S]";
+            this.startBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.startBtn.UseVisualStyleBackColor = true;
             this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
-            // 
-            // reverceBtn
-            // 
-            this.reverceBtn.Enabled = false;
-            this.reverceBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reverceBtn.Location = new System.Drawing.Point(262, 255);
-            this.reverceBtn.Name = "reverceBtn";
-            this.reverceBtn.Size = new System.Drawing.Size(120, 50);
-            this.reverceBtn.TabIndex = 3;
-            this.reverceBtn.Text = "Реверс [R]";
-            this.reverceBtn.UseVisualStyleBackColor = true;
-            this.reverceBtn.Click += new System.EventHandler(this.reverceBtn_Click);
             // 
             // label8
             // 
@@ -461,11 +487,15 @@
             // 
             this.stopBtn.Enabled = false;
             this.stopBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stopBtn.Location = new System.Drawing.Point(414, 255);
+            this.stopBtn.Image = ((System.Drawing.Image)(resources.GetObject("stopBtn.Image")));
+            this.stopBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.stopBtn.Location = new System.Drawing.Point(414, 121);
             this.stopBtn.Name = "stopBtn";
+            this.stopBtn.Padding = new System.Windows.Forms.Padding(10);
             this.stopBtn.Size = new System.Drawing.Size(120, 50);
             this.stopBtn.TabIndex = 2;
             this.stopBtn.Text = "Стоп [F]";
+            this.stopBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.stopBtn.UseVisualStyleBackColor = true;
             this.stopBtn.Click += new System.EventHandler(this.stopBtn_Click);
             // 
@@ -493,11 +523,11 @@
             // 
             this.fwdR1DGV.AllowUserToAddRows = false;
             this.fwdR1DGV.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.fwdR1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.fwdR1DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.fwdR1DGV.BackgroundColor = System.Drawing.Color.White;
             this.fwdR1DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fwdR1DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
@@ -512,7 +542,7 @@
             this.fwdR1DGV.DefaultCellStyle = dataGridViewCellStyle2;
             this.fwdR1DGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fwdR1DGV.GridColor = System.Drawing.Color.Silver;
-            this.fwdR1DGV.Location = new System.Drawing.Point(3, 34);
+            this.fwdR1DGV.Location = new System.Drawing.Point(3, 42);
             this.fwdR1DGV.Name = "fwdR1DGV";
             this.fwdR1DGV.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -533,33 +563,35 @@
             this.fwdR1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.fwdR1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.fwdR1DGV.ShowEditingIcon = false;
-            this.fwdR1DGV.Size = new System.Drawing.Size(657, 528);
+            this.fwdR1DGV.Size = new System.Drawing.Size(1203, 316);
             this.fwdR1DGV.TabIndex = 3;
+            this.fwdR1DGV.DataSourceChanged += new System.EventHandler(this.fwdR1DGV_DataSourceChanged);
+            this.fwdR1DGV.Paint += new System.Windows.Forms.PaintEventHandler(this.fwdR1DGV_Paint);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.panel11);
+            this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(685, 24);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(556, 635);
+            this.panel1.Size = new System.Drawing.Size(1241, 194);
             this.panel1.TabIndex = 2;
             // 
-            // panel11
+            // panel9
             // 
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel11.Location = new System.Drawing.Point(0, 465);
-            this.panel11.Margin = new System.Windows.Forms.Padding(5);
-            this.panel11.Name = "panel11";
-            this.panel11.Padding = new System.Windows.Forms.Padding(5);
-            this.panel11.Size = new System.Drawing.Size(556, 170);
-            this.panel11.TabIndex = 6;
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Margin = new System.Windows.Forms.Padding(5);
+            this.panel9.Name = "panel9";
+            this.panel9.Padding = new System.Windows.Forms.Padding(5);
+            this.panel9.Size = new System.Drawing.Size(685, 194);
+            this.panel9.TabIndex = 6;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.BackColor = System.Drawing.Color.Gainsboro;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
             this.помощьToolStripMenuItem});
@@ -572,6 +604,7 @@
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.печатьРезультатовToolStripMenuItem,
             this.экспортToolStripMenuItem,
             this.toolStripSeparator1,
             this.выходToolStripMenuItem});
@@ -579,12 +612,22 @@
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
+            // печатьРезультатовToolStripMenuItem
+            // 
+            this.печатьРезультатовToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("печатьРезультатовToolStripMenuItem.Image")));
+            this.печатьРезультатовToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.печатьРезультатовToolStripMenuItem.Name = "печатьРезультатовToolStripMenuItem";
+            this.печатьРезультатовToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
+            this.печатьРезультатовToolStripMenuItem.Text = "Печать результатов";
+            // 
             // экспортToolStripMenuItem
             // 
             this.экспортToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.excelToolStripMenuItem});
+            this.экспортToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("экспортToolStripMenuItem.Image")));
+            this.экспортToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.экспортToolStripMenuItem.Name = "экспортToolStripMenuItem";
-            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
             this.экспортToolStripMenuItem.Text = "Экспорт данных";
             // 
             // excelToolStripMenuItem
@@ -598,12 +641,14 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(159, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(195, 6);
             // 
             // выходToolStripMenuItem
             // 
+            this.выходToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("выходToolStripMenuItem.Image")));
+            this.выходToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -617,8 +662,10 @@
             // 
             // оПрограммеToolStripMenuItem
             // 
+            this.оПрограммеToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("оПрограммеToolStripMenuItem.Image")));
+            this.оПрограммеToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(165, 38);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
@@ -631,10 +678,10 @@
             this.carClassesTabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.carClassesTabs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.carClassesTabs.ItemSize = new System.Drawing.Size(101, 30);
-            this.carClassesTabs.Location = new System.Drawing.Point(0, 24);
+            this.carClassesTabs.Location = new System.Drawing.Point(5, 5);
             this.carClassesTabs.Name = "carClassesTabs";
             this.carClassesTabs.SelectedIndex = 0;
-            this.carClassesTabs.Size = new System.Drawing.Size(685, 635);
+            this.carClassesTabs.Size = new System.Drawing.Size(1231, 431);
             this.carClassesTabs.TabIndex = 5;
             // 
             // tabPage1
@@ -643,7 +690,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(677, 597);
+            this.tabPage1.Size = new System.Drawing.Size(1223, 393);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Передний привод";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -652,11 +699,12 @@
             // 
             this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Controls.Add(this.tabPage6);
+            this.tabControl2.Controls.Add(this.tabPage13);
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.Location = new System.Drawing.Point(3, 3);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(671, 591);
+            this.tabControl2.Size = new System.Drawing.Size(1217, 387);
             this.tabControl2.TabIndex = 4;
             // 
             // tabPage5
@@ -666,7 +714,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(663, 565);
+            this.tabPage5.Size = new System.Drawing.Size(1209, 361);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "1 тур";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -679,14 +727,15 @@
             this.toolStripButton32,
             this.toolStripButton4,
             this.toolStripSeparator2,
-            this.toolStripButton3,
-            this.toolStripButton33,
+            this.toolStripButton49,
+            this.upRacer_Btn_fwdR1DGV,
+            this.downRacer_Btn_fwdR1DGV,
             this.toolStripSeparator3,
             this.toolStripButton1,
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(3, 3);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(657, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1203, 39);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -697,7 +746,7 @@
             this.toolStripButton32.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton32.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton32.Name = "toolStripButton32";
-            this.toolStripButton32.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton32.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton32.Text = "Выбрать ";
             // 
             // toolStripButton4
@@ -707,41 +756,54 @@
             this.toolStripButton4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(26, 28);
+            this.toolStripButton4.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton4.Text = "Очистить таблицу результатов";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
-            // toolStripButton3
+            // toolStripButton49
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton3.Text = "Передвинуть участника вверх";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            this.toolStripButton49.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton49.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton49.Image")));
+            this.toolStripButton49.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton49.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton49.Name = "toolStripButton49";
+            this.toolStripButton49.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton49.Text = "Включить/ Выключить режим редактирования";
+            this.toolStripButton49.Click += new System.EventHandler(this.toolStripButton49_Click);
             // 
-            // toolStripButton33
+            // upRacer_Btn_fwdR1DGV
             // 
-            this.toolStripButton33.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton33.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton33.Image")));
-            this.toolStripButton33.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton33.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton33.Name = "toolStripButton33";
-            this.toolStripButton33.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton33.Text = "Передвинуть участника вниз";
-            this.toolStripButton33.Click += new System.EventHandler(this.toolStripButton33_Click);
+            this.upRacer_Btn_fwdR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.upRacer_Btn_fwdR1DGV.Enabled = false;
+            this.upRacer_Btn_fwdR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("upRacer_Btn_fwdR1DGV.Image")));
+            this.upRacer_Btn_fwdR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.upRacer_Btn_fwdR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.upRacer_Btn_fwdR1DGV.Name = "upRacer_Btn_fwdR1DGV";
+            this.upRacer_Btn_fwdR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.upRacer_Btn_fwdR1DGV.Text = "Передвинуть участника вверх";
+            this.upRacer_Btn_fwdR1DGV.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // downRacer_Btn_fwdR1DGV
+            // 
+            this.downRacer_Btn_fwdR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.downRacer_Btn_fwdR1DGV.Enabled = false;
+            this.downRacer_Btn_fwdR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("downRacer_Btn_fwdR1DGV.Image")));
+            this.downRacer_Btn_fwdR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.downRacer_Btn_fwdR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.downRacer_Btn_fwdR1DGV.Name = "downRacer_Btn_fwdR1DGV";
+            this.downRacer_Btn_fwdR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.downRacer_Btn_fwdR1DGV.Text = "Передвинуть участника вниз";
+            this.downRacer_Btn_fwdR1DGV.Click += new System.EventHandler(this.toolStripButton33_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripButton1
             // 
@@ -750,7 +812,7 @@
             this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton1.Text = "Обнуление результата";
             // 
             // toolStripButton2
@@ -760,7 +822,7 @@
             this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton2.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton2.Text = "Перезаезд попытки";
             // 
             // tabPage6
@@ -770,7 +832,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(663, 565);
+            this.tabPage6.Size = new System.Drawing.Size(1209, 361);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "2 тур";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -783,7 +845,6 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             this.fwdR2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.fwdR2DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.fwdR2DGV.BackgroundColor = System.Drawing.Color.White;
             this.fwdR2DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fwdR2DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
@@ -798,7 +859,7 @@
             this.fwdR2DGV.DefaultCellStyle = dataGridViewCellStyle6;
             this.fwdR2DGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fwdR2DGV.GridColor = System.Drawing.Color.Silver;
-            this.fwdR2DGV.Location = new System.Drawing.Point(3, 34);
+            this.fwdR2DGV.Location = new System.Drawing.Point(3, 42);
             this.fwdR2DGV.Name = "fwdR2DGV";
             this.fwdR2DGV.ReadOnly = true;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -819,7 +880,7 @@
             this.fwdR2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.fwdR2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.fwdR2DGV.ShowEditingIcon = false;
-            this.fwdR2DGV.Size = new System.Drawing.Size(657, 528);
+            this.fwdR2DGV.Size = new System.Drawing.Size(1203, 316);
             this.fwdR2DGV.TabIndex = 6;
             // 
             // toolStrip8
@@ -831,13 +892,14 @@
             this.toolStripButton35,
             this.toolStripSeparator16,
             this.toolStripButton36,
-            this.toolStripButton37,
+            this.upRacer_Btn_fwdR2DGV,
+            this.downRacer_Btn_fwdR2DGV,
             this.toolStripSeparator17,
-            this.toolStripButton38,
-            this.toolStripButton42});
+            this.toolStripButton42,
+            this.toolStripButton50});
             this.toolStrip8.Location = new System.Drawing.Point(3, 3);
             this.toolStrip8.Name = "toolStrip8";
-            this.toolStrip8.Size = new System.Drawing.Size(657, 31);
+            this.toolStrip8.Size = new System.Drawing.Size(1203, 39);
             this.toolStrip8.TabIndex = 7;
             this.toolStrip8.Text = "toolStrip8";
             // 
@@ -848,7 +910,7 @@
             this.toolStripButton34.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton34.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton34.Name = "toolStripButton34";
-            this.toolStripButton34.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton34.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton34.Text = "Выбрать ";
             // 
             // toolStripButton35
@@ -858,13 +920,13 @@
             this.toolStripButton35.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton35.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton35.Name = "toolStripButton35";
-            this.toolStripButton35.Size = new System.Drawing.Size(26, 28);
+            this.toolStripButton35.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton35.Text = "Очистить таблицу результатов";
             // 
             // toolStripSeparator16
             // 
             this.toolStripSeparator16.Name = "toolStripSeparator16";
-            this.toolStripSeparator16.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator16.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripButton36
             // 
@@ -873,33 +935,36 @@
             this.toolStripButton36.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton36.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton36.Name = "toolStripButton36";
-            this.toolStripButton36.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton36.Text = "Передвинуть участника вверх";
+            this.toolStripButton36.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton36.Text = "Включить/ Выключить режим редактирования";
+            this.toolStripButton36.Click += new System.EventHandler(this.toolStripButton36_Click);
             // 
-            // toolStripButton37
+            // upRacer_Btn_fwdR2DGV
             // 
-            this.toolStripButton37.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton37.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton37.Image")));
-            this.toolStripButton37.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton37.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton37.Name = "toolStripButton37";
-            this.toolStripButton37.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton37.Text = "Передвинуть участника вниз";
+            this.upRacer_Btn_fwdR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.upRacer_Btn_fwdR2DGV.Enabled = false;
+            this.upRacer_Btn_fwdR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("upRacer_Btn_fwdR2DGV.Image")));
+            this.upRacer_Btn_fwdR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.upRacer_Btn_fwdR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.upRacer_Btn_fwdR2DGV.Name = "upRacer_Btn_fwdR2DGV";
+            this.upRacer_Btn_fwdR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.upRacer_Btn_fwdR2DGV.Text = "Передвинуть участника вверх";
+            // 
+            // downRacer_Btn_fwdR2DGV
+            // 
+            this.downRacer_Btn_fwdR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.downRacer_Btn_fwdR2DGV.Enabled = false;
+            this.downRacer_Btn_fwdR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("downRacer_Btn_fwdR2DGV.Image")));
+            this.downRacer_Btn_fwdR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.downRacer_Btn_fwdR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.downRacer_Btn_fwdR2DGV.Name = "downRacer_Btn_fwdR2DGV";
+            this.downRacer_Btn_fwdR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.downRacer_Btn_fwdR2DGV.Text = "Передвинуть участника вниз";
             // 
             // toolStripSeparator17
             // 
             this.toolStripSeparator17.Name = "toolStripSeparator17";
-            this.toolStripSeparator17.Size = new System.Drawing.Size(6, 31);
-            // 
-            // toolStripButton38
-            // 
-            this.toolStripButton38.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton38.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton38.Image")));
-            this.toolStripButton38.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton38.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton38.Name = "toolStripButton38";
-            this.toolStripButton38.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton38.Text = "Обнуление результата";
+            this.toolStripSeparator17.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripButton42
             // 
@@ -908,8 +973,59 @@
             this.toolStripButton42.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton42.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton42.Name = "toolStripButton42";
-            this.toolStripButton42.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton42.Text = "Перезаезд попытки";
+            this.toolStripButton42.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton42.Text = "Обнуление результата";
+            // 
+            // toolStripButton50
+            // 
+            this.toolStripButton50.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton50.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton50.Image")));
+            this.toolStripButton50.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton50.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton50.Name = "toolStripButton50";
+            this.toolStripButton50.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton50.Text = "Перезаезд попытки";
+            // 
+            // tabPage13
+            // 
+            this.tabPage13.Controls.Add(this.groupBox5);
+            this.tabPage13.Location = new System.Drawing.Point(4, 22);
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage13.Size = new System.Drawing.Size(1209, 361);
+            this.tabPage13.TabIndex = 2;
+            this.tabPage13.Text = "Настройки";
+            this.tabPage13.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.comboBox1);
+            this.groupBox5.Controls.Add(this.label10);
+            this.groupBox5.Controls.Add(this.textBox4);
+            this.groupBox5.Controls.Add(this.label9);
+            this.groupBox5.Location = new System.Drawing.Point(6, 6);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(303, 199);
+            this.groupBox5.TabIndex = 1;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Общие для класса";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(198, 57);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(87, 20);
+            this.textBox4.TabIndex = 3;
+            this.textBox4.Text = "5";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(16, 60);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(176, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Количество отбираемых лидеров";
             // 
             // tabPage2
             // 
@@ -917,7 +1033,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(677, 597);
+            this.tabPage2.Size = new System.Drawing.Size(1223, 393);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Задний привод";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -926,11 +1042,12 @@
             // 
             this.tabControl3.Controls.Add(this.tabPage7);
             this.tabControl3.Controls.Add(this.tabPage8);
+            this.tabControl3.Controls.Add(this.tabPage14);
             this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl3.Location = new System.Drawing.Point(3, 3);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(671, 591);
+            this.tabControl3.Size = new System.Drawing.Size(1217, 387);
             this.tabControl3.TabIndex = 5;
             // 
             // tabPage7
@@ -940,7 +1057,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(663, 565);
+            this.tabPage7.Size = new System.Drawing.Size(1209, 361);
             this.tabPage7.TabIndex = 0;
             this.tabPage7.Text = "1 тур";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -953,7 +1070,6 @@
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
             this.rwdR1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.rwdR1DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.rwdR1DGV.BackgroundColor = System.Drawing.Color.White;
             this.rwdR1DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rwdR1DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
@@ -968,7 +1084,7 @@
             this.rwdR1DGV.DefaultCellStyle = dataGridViewCellStyle10;
             this.rwdR1DGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rwdR1DGV.GridColor = System.Drawing.Color.Silver;
-            this.rwdR1DGV.Location = new System.Drawing.Point(3, 34);
+            this.rwdR1DGV.Location = new System.Drawing.Point(3, 42);
             this.rwdR1DGV.Name = "rwdR1DGV";
             this.rwdR1DGV.ReadOnly = true;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -989,8 +1105,10 @@
             this.rwdR1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.rwdR1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.rwdR1DGV.ShowEditingIcon = false;
-            this.rwdR1DGV.Size = new System.Drawing.Size(657, 528);
+            this.rwdR1DGV.Size = new System.Drawing.Size(1203, 316);
             this.rwdR1DGV.TabIndex = 3;
+            this.rwdR1DGV.DataSourceChanged += new System.EventHandler(this.rwdR1DGV_DataSourceChanged);
+            this.rwdR1DGV.Paint += new System.Windows.Forms.PaintEventHandler(this.rwdR1DGV_Paint);
             // 
             // toolStrip3
             // 
@@ -1001,13 +1119,14 @@
             this.toolStripButton10,
             this.toolStripSeparator6,
             this.toolStripButton11,
-            this.toolStripButton12,
+            this.upRacer_Btn_rwdR1DGV,
+            this.downRacer_Btn_rwdR1DGV,
             this.toolStripSeparator7,
-            this.toolStripButton40,
-            this.toolStripButton43});
+            this.toolStripButton43,
+            this.toolStripButton51});
             this.toolStrip3.Location = new System.Drawing.Point(3, 3);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(657, 31);
+            this.toolStrip3.Size = new System.Drawing.Size(1203, 39);
             this.toolStrip3.TabIndex = 5;
             this.toolStrip3.Text = "toolStrip3";
             // 
@@ -1018,7 +1137,7 @@
             this.toolStripButton9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton9.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton9.Text = "Выбрать ";
             // 
             // toolStripButton10
@@ -1028,13 +1147,13 @@
             this.toolStripButton10.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(26, 28);
+            this.toolStripButton10.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton10.Text = "Очистить таблицу результатов";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripButton11
             // 
@@ -1043,33 +1162,36 @@
             this.toolStripButton11.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton11.Name = "toolStripButton11";
-            this.toolStripButton11.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton11.Text = "Передвинуть участника вверх";
+            this.toolStripButton11.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton11.Text = "Включить/ Выключить режим редактирования";
+            this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
             // 
-            // toolStripButton12
+            // upRacer_Btn_rwdR1DGV
             // 
-            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
-            this.toolStripButton12.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton12.Text = "Передвинуть участника вниз";
+            this.upRacer_Btn_rwdR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.upRacer_Btn_rwdR1DGV.Enabled = false;
+            this.upRacer_Btn_rwdR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("upRacer_Btn_rwdR1DGV.Image")));
+            this.upRacer_Btn_rwdR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.upRacer_Btn_rwdR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.upRacer_Btn_rwdR1DGV.Name = "upRacer_Btn_rwdR1DGV";
+            this.upRacer_Btn_rwdR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.upRacer_Btn_rwdR1DGV.Text = "Передвинуть участника вверх";
+            // 
+            // downRacer_Btn_rwdR1DGV
+            // 
+            this.downRacer_Btn_rwdR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.downRacer_Btn_rwdR1DGV.Enabled = false;
+            this.downRacer_Btn_rwdR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("downRacer_Btn_rwdR1DGV.Image")));
+            this.downRacer_Btn_rwdR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.downRacer_Btn_rwdR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.downRacer_Btn_rwdR1DGV.Name = "downRacer_Btn_rwdR1DGV";
+            this.downRacer_Btn_rwdR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.downRacer_Btn_rwdR1DGV.Text = "Передвинуть участника вниз";
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 31);
-            // 
-            // toolStripButton40
-            // 
-            this.toolStripButton40.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton40.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton40.Image")));
-            this.toolStripButton40.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton40.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton40.Name = "toolStripButton40";
-            this.toolStripButton40.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton40.Text = "Обнуление результата";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripButton43
             // 
@@ -1078,8 +1200,18 @@
             this.toolStripButton43.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton43.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton43.Name = "toolStripButton43";
-            this.toolStripButton43.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton43.Text = "Перезаезд попытки";
+            this.toolStripButton43.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton43.Text = "Обнуление результата";
+            // 
+            // toolStripButton51
+            // 
+            this.toolStripButton51.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton51.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton51.Image")));
+            this.toolStripButton51.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton51.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton51.Name = "toolStripButton51";
+            this.toolStripButton51.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton51.Text = "Перезаезд попытки";
             // 
             // tabPage8
             // 
@@ -1088,7 +1220,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(663, 565);
+            this.tabPage8.Size = new System.Drawing.Size(1209, 361);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "2 тур";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1101,7 +1233,6 @@
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
             this.rwdR2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.rwdR2DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.rwdR2DGV.BackgroundColor = System.Drawing.Color.White;
             this.rwdR2DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rwdR2DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
@@ -1116,7 +1247,7 @@
             this.rwdR2DGV.DefaultCellStyle = dataGridViewCellStyle14;
             this.rwdR2DGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rwdR2DGV.GridColor = System.Drawing.Color.Silver;
-            this.rwdR2DGV.Location = new System.Drawing.Point(3, 34);
+            this.rwdR2DGV.Location = new System.Drawing.Point(3, 42);
             this.rwdR2DGV.Name = "rwdR2DGV";
             this.rwdR2DGV.ReadOnly = true;
             this.rwdR2DGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -1138,7 +1269,7 @@
             this.rwdR2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.rwdR2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.rwdR2DGV.ShowEditingIcon = false;
-            this.rwdR2DGV.Size = new System.Drawing.Size(657, 528);
+            this.rwdR2DGV.Size = new System.Drawing.Size(1203, 316);
             this.rwdR2DGV.TabIndex = 6;
             // 
             // toolStrip2
@@ -1150,13 +1281,14 @@
             this.toolStripButton6,
             this.toolStripSeparator4,
             this.toolStripButton7,
-            this.toolStripButton8,
+            this.upRacer_Btn_rwdR2DGV,
+            this.downRacer_Btn_rwdR2DGV,
             this.toolStripSeparator5,
-            this.toolStripButton39,
-            this.toolStripButton44});
+            this.toolStripButton44,
+            this.toolStripButton52});
             this.toolStrip2.Location = new System.Drawing.Point(3, 3);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(657, 31);
+            this.toolStrip2.Size = new System.Drawing.Size(1203, 39);
             this.toolStrip2.TabIndex = 7;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -1167,7 +1299,7 @@
             this.toolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton5.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton5.Text = "Выбрать ";
             // 
             // toolStripButton6
@@ -1177,13 +1309,13 @@
             this.toolStripButton6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(26, 28);
+            this.toolStripButton6.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton6.Text = "Очистить таблицу результатов";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripButton7
             // 
@@ -1192,33 +1324,36 @@
             this.toolStripButton7.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton7.Text = "Передвинуть участника вверх";
+            this.toolStripButton7.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton7.Text = "Включить/ Выключить режим редактирования";
+            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
-            // toolStripButton8
+            // upRacer_Btn_rwdR2DGV
             // 
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
-            this.toolStripButton8.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton8.Text = "Передвинуть участника вниз";
+            this.upRacer_Btn_rwdR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.upRacer_Btn_rwdR2DGV.Enabled = false;
+            this.upRacer_Btn_rwdR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("upRacer_Btn_rwdR2DGV.Image")));
+            this.upRacer_Btn_rwdR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.upRacer_Btn_rwdR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.upRacer_Btn_rwdR2DGV.Name = "upRacer_Btn_rwdR2DGV";
+            this.upRacer_Btn_rwdR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.upRacer_Btn_rwdR2DGV.Text = "Передвинуть участника вверх";
+            // 
+            // downRacer_Btn_rwdR2DGV
+            // 
+            this.downRacer_Btn_rwdR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.downRacer_Btn_rwdR2DGV.Enabled = false;
+            this.downRacer_Btn_rwdR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("downRacer_Btn_rwdR2DGV.Image")));
+            this.downRacer_Btn_rwdR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.downRacer_Btn_rwdR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.downRacer_Btn_rwdR2DGV.Name = "downRacer_Btn_rwdR2DGV";
+            this.downRacer_Btn_rwdR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.downRacer_Btn_rwdR2DGV.Text = "Передвинуть участника вниз";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 31);
-            // 
-            // toolStripButton39
-            // 
-            this.toolStripButton39.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton39.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton39.Image")));
-            this.toolStripButton39.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton39.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton39.Name = "toolStripButton39";
-            this.toolStripButton39.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton39.Text = "Обнуление результата";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripButton44
             // 
@@ -1227,8 +1362,29 @@
             this.toolStripButton44.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton44.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton44.Name = "toolStripButton44";
-            this.toolStripButton44.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton44.Text = "Перезаезд попытки";
+            this.toolStripButton44.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton44.Text = "Обнуление результата";
+            // 
+            // toolStripButton52
+            // 
+            this.toolStripButton52.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton52.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton52.Image")));
+            this.toolStripButton52.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton52.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton52.Name = "toolStripButton52";
+            this.toolStripButton52.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton52.Text = "Перезаезд попытки";
+            // 
+            // tabPage14
+            // 
+            this.tabPage14.Controls.Add(this.groupBox4);
+            this.tabPage14.Location = new System.Drawing.Point(4, 22);
+            this.tabPage14.Name = "tabPage14";
+            this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage14.Size = new System.Drawing.Size(1209, 361);
+            this.tabPage14.TabIndex = 2;
+            this.tabPage14.Text = "Настройки";
+            this.tabPage14.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
@@ -1236,7 +1392,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(677, 597);
+            this.tabPage3.Size = new System.Drawing.Size(1223, 393);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Полный привод";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1245,11 +1401,12 @@
             // 
             this.tabControl4.Controls.Add(this.tabPage9);
             this.tabControl4.Controls.Add(this.tabPage10);
+            this.tabControl4.Controls.Add(this.tabPage15);
             this.tabControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl4.Location = new System.Drawing.Point(3, 3);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(671, 591);
+            this.tabControl4.Size = new System.Drawing.Size(1217, 387);
             this.tabControl4.TabIndex = 5;
             // 
             // tabPage9
@@ -1259,7 +1416,7 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(663, 565);
+            this.tabPage9.Size = new System.Drawing.Size(1209, 361);
             this.tabPage9.TabIndex = 0;
             this.tabPage9.Text = "1 тур";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -1272,7 +1429,6 @@
             dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
             this.awdR1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
-            this.awdR1DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.awdR1DGV.BackgroundColor = System.Drawing.Color.White;
             this.awdR1DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.awdR1DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
@@ -1287,7 +1443,7 @@
             this.awdR1DGV.DefaultCellStyle = dataGridViewCellStyle18;
             this.awdR1DGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.awdR1DGV.GridColor = System.Drawing.Color.Silver;
-            this.awdR1DGV.Location = new System.Drawing.Point(3, 34);
+            this.awdR1DGV.Location = new System.Drawing.Point(3, 42);
             this.awdR1DGV.Name = "awdR1DGV";
             this.awdR1DGV.ReadOnly = true;
             dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1308,8 +1464,10 @@
             this.awdR1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.awdR1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.awdR1DGV.ShowEditingIcon = false;
-            this.awdR1DGV.Size = new System.Drawing.Size(657, 528);
+            this.awdR1DGV.Size = new System.Drawing.Size(1203, 316);
             this.awdR1DGV.TabIndex = 3;
+            this.awdR1DGV.DataSourceChanged += new System.EventHandler(this.awdR1DGV_DataSourceChanged);
+            this.awdR1DGV.Paint += new System.Windows.Forms.PaintEventHandler(this.awdR1DGV_Paint);
             // 
             // toolStrip4
             // 
@@ -1320,13 +1478,14 @@
             this.toolStripButton14,
             this.toolStripSeparator8,
             this.toolStripButton15,
-            this.toolStripButton16,
+            this.upRacer_Btn_awdR1DGV,
+            this.downRacer_Btn_awdR1DGV,
             this.toolStripSeparator9,
-            this.toolStripButton41,
-            this.toolStripButton45});
+            this.toolStripButton45,
+            this.toolStripButton53});
             this.toolStrip4.Location = new System.Drawing.Point(3, 3);
             this.toolStrip4.Name = "toolStrip4";
-            this.toolStrip4.Size = new System.Drawing.Size(657, 31);
+            this.toolStrip4.Size = new System.Drawing.Size(1203, 39);
             this.toolStrip4.TabIndex = 5;
             this.toolStrip4.Text = "toolStrip4";
             // 
@@ -1337,7 +1496,7 @@
             this.toolStripButton13.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton13.Name = "toolStripButton13";
-            this.toolStripButton13.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton13.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton13.Text = "Выбрать ";
             // 
             // toolStripButton14
@@ -1347,13 +1506,13 @@
             this.toolStripButton14.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton14.Name = "toolStripButton14";
-            this.toolStripButton14.Size = new System.Drawing.Size(26, 28);
+            this.toolStripButton14.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton14.Text = "Очистить таблицу результатов";
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripButton15
             // 
@@ -1362,33 +1521,36 @@
             this.toolStripButton15.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton15.Name = "toolStripButton15";
-            this.toolStripButton15.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton15.Text = "Передвинуть участника вверх";
+            this.toolStripButton15.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton15.Text = "Включить/ Выключить режим редактирования";
+            this.toolStripButton15.Click += new System.EventHandler(this.toolStripButton15_Click);
             // 
-            // toolStripButton16
+            // upRacer_Btn_awdR1DGV
             // 
-            this.toolStripButton16.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton16.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton16.Image")));
-            this.toolStripButton16.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton16.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton16.Name = "toolStripButton16";
-            this.toolStripButton16.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton16.Text = "Передвинуть участника вниз";
+            this.upRacer_Btn_awdR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.upRacer_Btn_awdR1DGV.Enabled = false;
+            this.upRacer_Btn_awdR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("upRacer_Btn_awdR1DGV.Image")));
+            this.upRacer_Btn_awdR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.upRacer_Btn_awdR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.upRacer_Btn_awdR1DGV.Name = "upRacer_Btn_awdR1DGV";
+            this.upRacer_Btn_awdR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.upRacer_Btn_awdR1DGV.Text = "Передвинуть участника вверх";
+            // 
+            // downRacer_Btn_awdR1DGV
+            // 
+            this.downRacer_Btn_awdR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.downRacer_Btn_awdR1DGV.Enabled = false;
+            this.downRacer_Btn_awdR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("downRacer_Btn_awdR1DGV.Image")));
+            this.downRacer_Btn_awdR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.downRacer_Btn_awdR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.downRacer_Btn_awdR1DGV.Name = "downRacer_Btn_awdR1DGV";
+            this.downRacer_Btn_awdR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.downRacer_Btn_awdR1DGV.Text = "Передвинуть участника вниз";
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 31);
-            // 
-            // toolStripButton41
-            // 
-            this.toolStripButton41.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton41.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton41.Image")));
-            this.toolStripButton41.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton41.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton41.Name = "toolStripButton41";
-            this.toolStripButton41.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton41.Text = "Обнуление результата";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripButton45
             // 
@@ -1397,8 +1559,18 @@
             this.toolStripButton45.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton45.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton45.Name = "toolStripButton45";
-            this.toolStripButton45.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton45.Text = "Перезаезд попытки";
+            this.toolStripButton45.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton45.Text = "Обнуление результата";
+            // 
+            // toolStripButton53
+            // 
+            this.toolStripButton53.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton53.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton53.Image")));
+            this.toolStripButton53.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton53.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton53.Name = "toolStripButton53";
+            this.toolStripButton53.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton53.Text = "Перезаезд попытки";
             // 
             // tabPage10
             // 
@@ -1407,7 +1579,7 @@
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(663, 565);
+            this.tabPage10.Size = new System.Drawing.Size(1209, 361);
             this.tabPage10.TabIndex = 1;
             this.tabPage10.Text = "2 тур";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -1420,7 +1592,6 @@
             dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
             this.awdR2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
-            this.awdR2DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.awdR2DGV.BackgroundColor = System.Drawing.Color.White;
             this.awdR2DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.awdR2DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
@@ -1435,7 +1606,7 @@
             this.awdR2DGV.DefaultCellStyle = dataGridViewCellStyle22;
             this.awdR2DGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.awdR2DGV.GridColor = System.Drawing.Color.Silver;
-            this.awdR2DGV.Location = new System.Drawing.Point(3, 34);
+            this.awdR2DGV.Location = new System.Drawing.Point(3, 42);
             this.awdR2DGV.Name = "awdR2DGV";
             this.awdR2DGV.ReadOnly = true;
             dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1456,7 +1627,7 @@
             this.awdR2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.awdR2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.awdR2DGV.ShowEditingIcon = false;
-            this.awdR2DGV.Size = new System.Drawing.Size(657, 528);
+            this.awdR2DGV.Size = new System.Drawing.Size(1203, 316);
             this.awdR2DGV.TabIndex = 6;
             // 
             // toolStrip5
@@ -1468,13 +1639,14 @@
             this.toolStripButton18,
             this.toolStripSeparator10,
             this.toolStripButton19,
-            this.toolStripButton20,
+            this.upRacer_Btn_awdR2DGV,
+            this.downRacer_Btn_awdR2DGV,
             this.toolStripSeparator11,
-            this.toolStripButton21,
-            this.toolStripButton46});
+            this.toolStripButton46,
+            this.toolStripButton54});
             this.toolStrip5.Location = new System.Drawing.Point(3, 3);
             this.toolStrip5.Name = "toolStrip5";
-            this.toolStrip5.Size = new System.Drawing.Size(657, 31);
+            this.toolStrip5.Size = new System.Drawing.Size(1203, 39);
             this.toolStrip5.TabIndex = 7;
             this.toolStrip5.Text = "toolStrip5";
             // 
@@ -1485,7 +1657,7 @@
             this.toolStripButton17.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton17.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton17.Name = "toolStripButton17";
-            this.toolStripButton17.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton17.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton17.Text = "Выбрать ";
             // 
             // toolStripButton18
@@ -1495,13 +1667,13 @@
             this.toolStripButton18.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton18.Name = "toolStripButton18";
-            this.toolStripButton18.Size = new System.Drawing.Size(26, 28);
+            this.toolStripButton18.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton18.Text = "Очистить таблицу результатов";
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripButton19
             // 
@@ -1510,33 +1682,36 @@
             this.toolStripButton19.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton19.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton19.Name = "toolStripButton19";
-            this.toolStripButton19.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton19.Text = "Передвинуть участника вверх";
+            this.toolStripButton19.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton19.Text = "Включить/ Выключить режим редактирования";
+            this.toolStripButton19.Click += new System.EventHandler(this.toolStripButton19_Click);
             // 
-            // toolStripButton20
+            // upRacer_Btn_awdR2DGV
             // 
-            this.toolStripButton20.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton20.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton20.Image")));
-            this.toolStripButton20.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton20.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton20.Name = "toolStripButton20";
-            this.toolStripButton20.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton20.Text = "Передвинуть участника вниз";
+            this.upRacer_Btn_awdR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.upRacer_Btn_awdR2DGV.Enabled = false;
+            this.upRacer_Btn_awdR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("upRacer_Btn_awdR2DGV.Image")));
+            this.upRacer_Btn_awdR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.upRacer_Btn_awdR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.upRacer_Btn_awdR2DGV.Name = "upRacer_Btn_awdR2DGV";
+            this.upRacer_Btn_awdR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.upRacer_Btn_awdR2DGV.Text = "Передвинуть участника вверх";
+            // 
+            // downRacer_Btn_awdR2DGV
+            // 
+            this.downRacer_Btn_awdR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.downRacer_Btn_awdR2DGV.Enabled = false;
+            this.downRacer_Btn_awdR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("downRacer_Btn_awdR2DGV.Image")));
+            this.downRacer_Btn_awdR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.downRacer_Btn_awdR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.downRacer_Btn_awdR2DGV.Name = "downRacer_Btn_awdR2DGV";
+            this.downRacer_Btn_awdR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.downRacer_Btn_awdR2DGV.Text = "Передвинуть участника вниз";
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 31);
-            // 
-            // toolStripButton21
-            // 
-            this.toolStripButton21.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton21.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton21.Image")));
-            this.toolStripButton21.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton21.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton21.Name = "toolStripButton21";
-            this.toolStripButton21.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton21.Text = "Обнуление результата";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripButton46
             // 
@@ -1545,8 +1720,29 @@
             this.toolStripButton46.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton46.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton46.Name = "toolStripButton46";
-            this.toolStripButton46.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton46.Text = "Перезаезд попытки";
+            this.toolStripButton46.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton46.Text = "Обнуление результата";
+            // 
+            // toolStripButton54
+            // 
+            this.toolStripButton54.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton54.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton54.Image")));
+            this.toolStripButton54.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton54.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton54.Name = "toolStripButton54";
+            this.toolStripButton54.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton54.Text = "Перезаезд попытки";
+            // 
+            // tabPage15
+            // 
+            this.tabPage15.Controls.Add(this.groupBox3);
+            this.tabPage15.Location = new System.Drawing.Point(4, 22);
+            this.tabPage15.Name = "tabPage15";
+            this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage15.Size = new System.Drawing.Size(1209, 361);
+            this.tabPage15.TabIndex = 2;
+            this.tabPage15.Text = "Настройки";
+            this.tabPage15.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
@@ -1554,7 +1750,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 34);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(677, 597);
+            this.tabPage4.Size = new System.Drawing.Size(1223, 393);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Спорт";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1563,11 +1759,12 @@
             // 
             this.tabControl5.Controls.Add(this.tabPage11);
             this.tabControl5.Controls.Add(this.tabPage12);
+            this.tabControl5.Controls.Add(this.tabPage16);
             this.tabControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl5.Location = new System.Drawing.Point(3, 3);
             this.tabControl5.Name = "tabControl5";
             this.tabControl5.SelectedIndex = 0;
-            this.tabControl5.Size = new System.Drawing.Size(671, 591);
+            this.tabControl5.Size = new System.Drawing.Size(1217, 387);
             this.tabControl5.TabIndex = 5;
             // 
             // tabPage11
@@ -1577,7 +1774,7 @@
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(663, 565);
+            this.tabPage11.Size = new System.Drawing.Size(1209, 361);
             this.tabPage11.TabIndex = 0;
             this.tabPage11.Text = "1 тур";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -1590,7 +1787,6 @@
             dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
             this.sportR1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
-            this.sportR1DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.sportR1DGV.BackgroundColor = System.Drawing.Color.White;
             this.sportR1DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.sportR1DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
@@ -1605,7 +1801,7 @@
             this.sportR1DGV.DefaultCellStyle = dataGridViewCellStyle26;
             this.sportR1DGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sportR1DGV.GridColor = System.Drawing.Color.Silver;
-            this.sportR1DGV.Location = new System.Drawing.Point(3, 34);
+            this.sportR1DGV.Location = new System.Drawing.Point(3, 42);
             this.sportR1DGV.Name = "sportR1DGV";
             this.sportR1DGV.ReadOnly = true;
             dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1626,8 +1822,10 @@
             this.sportR1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.sportR1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.sportR1DGV.ShowEditingIcon = false;
-            this.sportR1DGV.Size = new System.Drawing.Size(657, 528);
+            this.sportR1DGV.Size = new System.Drawing.Size(1203, 316);
             this.sportR1DGV.TabIndex = 3;
+            this.sportR1DGV.DataSourceChanged += new System.EventHandler(this.sportR1DGV_DataSourceChanged);
+            this.sportR1DGV.Paint += new System.Windows.Forms.PaintEventHandler(this.sportR1DGV_Paint);
             // 
             // toolStrip6
             // 
@@ -1638,13 +1836,14 @@
             this.toolStripButton23,
             this.toolStripSeparator12,
             this.toolStripButton24,
-            this.toolStripButton25,
+            this.upRacer_Btn_sportR1DGV,
+            this.downRacer_Btn_sportR1DGV,
             this.toolStripSeparator13,
-            this.toolStripButton26,
-            this.toolStripButton47});
+            this.toolStripButton47,
+            this.toolStripButton55});
             this.toolStrip6.Location = new System.Drawing.Point(3, 3);
             this.toolStrip6.Name = "toolStrip6";
-            this.toolStrip6.Size = new System.Drawing.Size(657, 31);
+            this.toolStrip6.Size = new System.Drawing.Size(1203, 39);
             this.toolStrip6.TabIndex = 5;
             this.toolStrip6.Text = "toolStrip6";
             // 
@@ -1655,7 +1854,7 @@
             this.toolStripButton22.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton22.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton22.Name = "toolStripButton22";
-            this.toolStripButton22.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton22.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton22.Text = "Выбрать ";
             // 
             // toolStripButton23
@@ -1665,13 +1864,13 @@
             this.toolStripButton23.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton23.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton23.Name = "toolStripButton23";
-            this.toolStripButton23.Size = new System.Drawing.Size(26, 28);
+            this.toolStripButton23.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton23.Text = "Очистить таблицу результатов";
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripButton24
             // 
@@ -1680,33 +1879,36 @@
             this.toolStripButton24.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton24.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton24.Name = "toolStripButton24";
-            this.toolStripButton24.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton24.Text = "Передвинуть участника вверх";
+            this.toolStripButton24.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton24.Text = "Включить/ Выключить режим редактирования";
+            this.toolStripButton24.Click += new System.EventHandler(this.toolStripButton24_Click);
             // 
-            // toolStripButton25
+            // upRacer_Btn_sportR1DGV
             // 
-            this.toolStripButton25.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton25.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton25.Image")));
-            this.toolStripButton25.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton25.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton25.Name = "toolStripButton25";
-            this.toolStripButton25.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton25.Text = "Передвинуть участника вниз";
+            this.upRacer_Btn_sportR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.upRacer_Btn_sportR1DGV.Enabled = false;
+            this.upRacer_Btn_sportR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("upRacer_Btn_sportR1DGV.Image")));
+            this.upRacer_Btn_sportR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.upRacer_Btn_sportR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.upRacer_Btn_sportR1DGV.Name = "upRacer_Btn_sportR1DGV";
+            this.upRacer_Btn_sportR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.upRacer_Btn_sportR1DGV.Text = "Передвинуть участника вверх";
+            // 
+            // downRacer_Btn_sportR1DGV
+            // 
+            this.downRacer_Btn_sportR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.downRacer_Btn_sportR1DGV.Enabled = false;
+            this.downRacer_Btn_sportR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("downRacer_Btn_sportR1DGV.Image")));
+            this.downRacer_Btn_sportR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.downRacer_Btn_sportR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.downRacer_Btn_sportR1DGV.Name = "downRacer_Btn_sportR1DGV";
+            this.downRacer_Btn_sportR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.downRacer_Btn_sportR1DGV.Text = "Передвинуть участника вниз";
             // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 31);
-            // 
-            // toolStripButton26
-            // 
-            this.toolStripButton26.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton26.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton26.Image")));
-            this.toolStripButton26.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton26.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton26.Name = "toolStripButton26";
-            this.toolStripButton26.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton26.Text = "Обнуление результата";
+            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripButton47
             // 
@@ -1715,8 +1917,18 @@
             this.toolStripButton47.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton47.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton47.Name = "toolStripButton47";
-            this.toolStripButton47.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton47.Text = "Перезаезд попытки";
+            this.toolStripButton47.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton47.Text = "Обнуление результата";
+            // 
+            // toolStripButton55
+            // 
+            this.toolStripButton55.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton55.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton55.Image")));
+            this.toolStripButton55.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton55.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton55.Name = "toolStripButton55";
+            this.toolStripButton55.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton55.Text = "Перезаезд попытки";
             // 
             // tabPage12
             // 
@@ -1725,7 +1937,7 @@
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(663, 565);
+            this.tabPage12.Size = new System.Drawing.Size(1209, 361);
             this.tabPage12.TabIndex = 1;
             this.tabPage12.Text = "2 тур";
             this.tabPage12.UseVisualStyleBackColor = true;
@@ -1738,7 +1950,6 @@
             dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
             this.sportR2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
-            this.sportR2DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.sportR2DGV.BackgroundColor = System.Drawing.Color.White;
             this.sportR2DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.sportR2DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
@@ -1753,7 +1964,7 @@
             this.sportR2DGV.DefaultCellStyle = dataGridViewCellStyle30;
             this.sportR2DGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sportR2DGV.GridColor = System.Drawing.Color.Silver;
-            this.sportR2DGV.Location = new System.Drawing.Point(3, 34);
+            this.sportR2DGV.Location = new System.Drawing.Point(3, 42);
             this.sportR2DGV.Name = "sportR2DGV";
             this.sportR2DGV.ReadOnly = true;
             dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1774,7 +1985,7 @@
             this.sportR2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.sportR2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.sportR2DGV.ShowEditingIcon = false;
-            this.sportR2DGV.Size = new System.Drawing.Size(657, 528);
+            this.sportR2DGV.Size = new System.Drawing.Size(1203, 316);
             this.sportR2DGV.TabIndex = 6;
             // 
             // toolStrip7
@@ -1786,13 +1997,14 @@
             this.toolStripButton28,
             this.toolStripSeparator14,
             this.toolStripButton29,
-            this.toolStripButton30,
+            this.upRacer_Btn_sportR2DGV,
+            this.downRacer_Btn_sportR2DGV,
             this.toolStripSeparator15,
-            this.toolStripButton31,
-            this.toolStripButton48});
+            this.toolStripButton48,
+            this.toolStripButton56});
             this.toolStrip7.Location = new System.Drawing.Point(3, 3);
             this.toolStrip7.Name = "toolStrip7";
-            this.toolStrip7.Size = new System.Drawing.Size(657, 31);
+            this.toolStrip7.Size = new System.Drawing.Size(1203, 39);
             this.toolStrip7.TabIndex = 7;
             this.toolStrip7.Text = "toolStrip7";
             // 
@@ -1803,7 +2015,7 @@
             this.toolStripButton27.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton27.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton27.Name = "toolStripButton27";
-            this.toolStripButton27.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton27.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton27.Text = "Выбрать ";
             // 
             // toolStripButton28
@@ -1813,13 +2025,13 @@
             this.toolStripButton28.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton28.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton28.Name = "toolStripButton28";
-            this.toolStripButton28.Size = new System.Drawing.Size(26, 28);
+            this.toolStripButton28.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton28.Text = "Очистить таблицу результатов";
             // 
             // toolStripSeparator14
             // 
             this.toolStripSeparator14.Name = "toolStripSeparator14";
-            this.toolStripSeparator14.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator14.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripButton29
             // 
@@ -1828,33 +2040,36 @@
             this.toolStripButton29.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton29.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton29.Name = "toolStripButton29";
-            this.toolStripButton29.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton29.Text = "Передвинуть участника вверх";
+            this.toolStripButton29.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton29.Text = "Включить/ Выключить режим редактирования";
+            this.toolStripButton29.Click += new System.EventHandler(this.toolStripButton29_Click);
             // 
-            // toolStripButton30
+            // upRacer_Btn_sportR2DGV
             // 
-            this.toolStripButton30.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton30.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton30.Image")));
-            this.toolStripButton30.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton30.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton30.Name = "toolStripButton30";
-            this.toolStripButton30.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton30.Text = "Передвинуть участника вниз";
+            this.upRacer_Btn_sportR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.upRacer_Btn_sportR2DGV.Enabled = false;
+            this.upRacer_Btn_sportR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("upRacer_Btn_sportR2DGV.Image")));
+            this.upRacer_Btn_sportR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.upRacer_Btn_sportR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.upRacer_Btn_sportR2DGV.Name = "upRacer_Btn_sportR2DGV";
+            this.upRacer_Btn_sportR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.upRacer_Btn_sportR2DGV.Text = "Передвинуть участника вверх";
+            // 
+            // downRacer_Btn_sportR2DGV
+            // 
+            this.downRacer_Btn_sportR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.downRacer_Btn_sportR2DGV.Enabled = false;
+            this.downRacer_Btn_sportR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("downRacer_Btn_sportR2DGV.Image")));
+            this.downRacer_Btn_sportR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.downRacer_Btn_sportR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.downRacer_Btn_sportR2DGV.Name = "downRacer_Btn_sportR2DGV";
+            this.downRacer_Btn_sportR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.downRacer_Btn_sportR2DGV.Text = "Передвинуть участника вниз";
             // 
             // toolStripSeparator15
             // 
             this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(6, 31);
-            // 
-            // toolStripButton31
-            // 
-            this.toolStripButton31.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton31.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton31.Image")));
-            this.toolStripButton31.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton31.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton31.Name = "toolStripButton31";
-            this.toolStripButton31.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton31.Text = "Обнуление результата";
+            this.toolStripSeparator15.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripButton48
             // 
@@ -1863,8 +2078,214 @@
             this.toolStripButton48.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton48.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton48.Name = "toolStripButton48";
-            this.toolStripButton48.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton48.Text = "Перезаезд попытки";
+            this.toolStripButton48.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton48.Text = "Обнуление результата";
+            // 
+            // toolStripButton56
+            // 
+            this.toolStripButton56.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton56.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton56.Image")));
+            this.toolStripButton56.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton56.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton56.Name = "toolStripButton56";
+            this.toolStripButton56.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton56.Text = "Перезаезд попытки";
+            // 
+            // tabPage16
+            // 
+            this.tabPage16.Controls.Add(this.groupBox2);
+            this.tabPage16.Location = new System.Drawing.Point(4, 22);
+            this.tabPage16.Name = "tabPage16";
+            this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage16.Size = new System.Drawing.Size(1209, 361);
+            this.tabPage16.TabIndex = 2;
+            this.tabPage16.Text = "Настройки";
+            this.tabPage16.UseVisualStyleBackColor = true;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.carClassesTabs);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel11.Location = new System.Drawing.Point(0, 218);
+            this.panel11.Margin = new System.Windows.Forms.Padding(5);
+            this.panel11.Name = "panel11";
+            this.panel11.Padding = new System.Windows.Forms.Padding(5);
+            this.panel11.Size = new System.Drawing.Size(1241, 441);
+            this.panel11.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(16, 26);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(163, 13);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Количество проводимых туров";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.comboBox1.Location = new System.Drawing.Point(200, 23);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(85, 21);
+            this.comboBox1.TabIndex = 5;
+            this.comboBox1.Text = "2";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.comboBox2);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.textBox3);
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Location = new System.Drawing.Point(6, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(303, 199);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Общие для класса";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.comboBox2.Location = new System.Drawing.Point(200, 23);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(85, 21);
+            this.comboBox2.TabIndex = 5;
+            this.comboBox2.Text = "2";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(163, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Количество проводимых туров";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(198, 57);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(87, 20);
+            this.textBox3.TabIndex = 3;
+            this.textBox3.Text = "5";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(16, 60);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(176, 13);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Количество отбираемых лидеров";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.comboBox3);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Location = new System.Drawing.Point(6, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(303, 199);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Общие для класса";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.comboBox3.Location = new System.Drawing.Point(200, 23);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(85, 21);
+            this.comboBox3.TabIndex = 5;
+            this.comboBox3.Text = "2";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(163, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Количество проводимых туров";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(198, 57);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(87, 20);
+            this.textBox2.TabIndex = 3;
+            this.textBox2.Text = "5";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(16, 60);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(176, 13);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Количество отбираемых лидеров";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.comboBox4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Location = new System.Drawing.Point(15, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(303, 199);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Общие для класса";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.comboBox4.Location = new System.Drawing.Point(200, 23);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(85, 21);
+            this.comboBox4.TabIndex = 5;
+            this.comboBox4.Text = "2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(163, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Количество проводимых туров";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(198, 57);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(87, 20);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.Text = "5";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(16, 60);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(176, 13);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Количество отбираемых лидеров";
             // 
             // MainView
             // 
@@ -1872,7 +2293,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1241, 659);
-            this.Controls.Add(this.carClassesTabs);
+            this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1881,6 +2302,7 @@
             this.Text = "Sprint";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainView_FormClosing);
+            this.Load += new System.EventHandler(this.MainView_Load);
             this.Shown += new System.EventHandler(this.MainView_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyDown);
             this.panel10.ResumeLayout(false);
@@ -1914,6 +2336,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.fwdR2DGV)).EndInit();
             this.toolStrip8.ResumeLayout(false);
             this.toolStrip8.PerformLayout();
+            this.tabPage13.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
@@ -1926,6 +2351,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rwdR2DGV)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            this.tabPage14.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
@@ -1938,6 +2364,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.awdR2DGV)).EndInit();
             this.toolStrip5.ResumeLayout(false);
             this.toolStrip5.PerformLayout();
+            this.tabPage15.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabControl5.ResumeLayout(false);
             this.tabPage11.ResumeLayout(false);
@@ -1950,6 +2377,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.sportR2DGV)).EndInit();
             this.toolStrip7.ResumeLayout(false);
             this.toolStrip7.PerformLayout();
+            this.tabPage16.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1970,7 +2405,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView fwdR1DGV;
         private System.Windows.Forms.Button startBtn;
-        private System.Windows.Forms.Button reverceBtn;
         private System.Windows.Forms.Button stopBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label mlsecLbl;
@@ -2000,7 +2434,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton upRacer_Btn_fwdR1DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.DataGridView fwdR2DGV;
@@ -2019,72 +2453,105 @@
         private System.Windows.Forms.DataGridView sportR1DGV;
         private System.Windows.Forms.TabPage tabPage12;
         private System.Windows.Forms.DataGridView sportR2DGV;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ToolStripButton toolStripButton33;
+        private System.Windows.Forms.ToolStripButton downRacer_Btn_fwdR1DGV;
         private System.Windows.Forms.ToolStripButton toolStripButton32;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TabPage tabPage13;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TabPage tabPage14;
+        private System.Windows.Forms.TabPage tabPage15;
+        private System.Windows.Forms.TabPage tabPage16;
+        private System.Windows.Forms.ToolStripButton toolStripButton49;
         private System.Windows.Forms.ToolStrip toolStrip8;
         private System.Windows.Forms.ToolStripButton toolStripButton34;
         private System.Windows.Forms.ToolStripButton toolStripButton35;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
         private System.Windows.Forms.ToolStripButton toolStripButton36;
-        private System.Windows.Forms.ToolStripButton toolStripButton37;
+        private System.Windows.Forms.ToolStripButton upRacer_Btn_fwdR2DGV;
+        private System.Windows.Forms.ToolStripButton downRacer_Btn_fwdR2DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
-        private System.Windows.Forms.ToolStripButton toolStripButton38;
         private System.Windows.Forms.ToolStripButton toolStripButton42;
+        private System.Windows.Forms.ToolStripButton toolStripButton50;
         private System.Windows.Forms.ToolStrip toolStrip3;
         private System.Windows.Forms.ToolStripButton toolStripButton9;
         private System.Windows.Forms.ToolStripButton toolStripButton10;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripButton toolStripButton11;
-        private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStripButton upRacer_Btn_rwdR1DGV;
+        private System.Windows.Forms.ToolStripButton downRacer_Btn_rwdR1DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripButton toolStripButton40;
         private System.Windows.Forms.ToolStripButton toolStripButton43;
+        private System.Windows.Forms.ToolStripButton toolStripButton51;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
-        private System.Windows.Forms.ToolStripButton toolStripButton8;
+        private System.Windows.Forms.ToolStripButton upRacer_Btn_rwdR2DGV;
+        private System.Windows.Forms.ToolStripButton downRacer_Btn_rwdR2DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripButton toolStripButton39;
         private System.Windows.Forms.ToolStripButton toolStripButton44;
+        private System.Windows.Forms.ToolStripButton toolStripButton52;
         private System.Windows.Forms.ToolStrip toolStrip4;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
         private System.Windows.Forms.ToolStripButton toolStripButton14;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripButton toolStripButton15;
-        private System.Windows.Forms.ToolStripButton toolStripButton16;
+        private System.Windows.Forms.ToolStripButton upRacer_Btn_awdR1DGV;
+        private System.Windows.Forms.ToolStripButton downRacer_Btn_awdR1DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
-        private System.Windows.Forms.ToolStripButton toolStripButton41;
         private System.Windows.Forms.ToolStripButton toolStripButton45;
+        private System.Windows.Forms.ToolStripButton toolStripButton53;
         private System.Windows.Forms.ToolStrip toolStrip5;
         private System.Windows.Forms.ToolStripButton toolStripButton17;
         private System.Windows.Forms.ToolStripButton toolStripButton18;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripButton toolStripButton19;
-        private System.Windows.Forms.ToolStripButton toolStripButton20;
+        private System.Windows.Forms.ToolStripButton upRacer_Btn_awdR2DGV;
+        private System.Windows.Forms.ToolStripButton downRacer_Btn_awdR2DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
-        private System.Windows.Forms.ToolStripButton toolStripButton21;
         private System.Windows.Forms.ToolStripButton toolStripButton46;
+        private System.Windows.Forms.ToolStripButton toolStripButton54;
         private System.Windows.Forms.ToolStrip toolStrip6;
         private System.Windows.Forms.ToolStripButton toolStripButton22;
         private System.Windows.Forms.ToolStripButton toolStripButton23;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.ToolStripButton toolStripButton24;
-        private System.Windows.Forms.ToolStripButton toolStripButton25;
+        private System.Windows.Forms.ToolStripButton upRacer_Btn_sportR1DGV;
+        private System.Windows.Forms.ToolStripButton downRacer_Btn_sportR1DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
-        private System.Windows.Forms.ToolStripButton toolStripButton26;
         private System.Windows.Forms.ToolStripButton toolStripButton47;
+        private System.Windows.Forms.ToolStripButton toolStripButton55;
         private System.Windows.Forms.ToolStrip toolStrip7;
         private System.Windows.Forms.ToolStripButton toolStripButton27;
         private System.Windows.Forms.ToolStripButton toolStripButton28;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
         private System.Windows.Forms.ToolStripButton toolStripButton29;
-        private System.Windows.Forms.ToolStripButton toolStripButton30;
+        private System.Windows.Forms.ToolStripButton upRacer_Btn_sportR2DGV;
+        private System.Windows.Forms.ToolStripButton downRacer_Btn_sportR2DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
-        private System.Windows.Forms.ToolStripButton toolStripButton31;
         private System.Windows.Forms.ToolStripButton toolStripButton48;
+        private System.Windows.Forms.ToolStripButton toolStripButton56;
+        private System.Windows.Forms.ToolStripMenuItem печатьРезультатовToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label13;
     }
 }
