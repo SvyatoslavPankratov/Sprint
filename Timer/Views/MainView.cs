@@ -12,7 +12,7 @@ namespace Sprint.Views
 {
     public partial class MainView : Form, IMainView
     {
-        #region IMainView Members
+        #region Члены интерфейса IMainView
 
         /// <summary>
         /// Задать или получить таблицу с результатами переднеприводных автомобилей за 1 заезд.
@@ -91,7 +91,7 @@ namespace Sprint.Views
         /// </summary>
         public int Min
         {
-            set { minLbl.Invoke(new Action(() => minLbl.Text = value.ToString("00"))); }
+            set { minLbl.Invoke(new Action(() => minLbl.Text = value.ToString("000"))); }
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Sprint.Views
 
         #endregion
 
-        #region Properties
+        #region Свойства
 
         /// <summary>
         /// Задать или получить презентер для главного окна.
@@ -126,7 +126,7 @@ namespace Sprint.Views
 
         #endregion
 
-        #region Constructors
+        #region Конструкторы
 
         /// <summary>
         /// Конструктор для главного окна.
@@ -143,7 +143,7 @@ namespace Sprint.Views
 
         #endregion
 
-        #region System methods
+        #region Системные методы
 
         /// <summary>
         /// Обработчик сообщений Windows.
@@ -161,7 +161,7 @@ namespace Sprint.Views
 
         #endregion
 
-        #region Methods
+        #region Методы
 
         /// <summary>
         /// Действия при загрузке формы.

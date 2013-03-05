@@ -11,7 +11,7 @@ namespace Sprint.Views
 {
     public partial class MainView
     {
-        #region Properties
+        #region Свойства
 
         #region Свойства доступности по редактированию списка участников
 
@@ -67,7 +67,7 @@ namespace Sprint.Views
 
         #endregion
 
-        #region Methods
+        #region Методы
 
         #region Внешний вид
 

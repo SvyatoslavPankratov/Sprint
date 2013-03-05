@@ -58,7 +58,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.completeRegistrationBT);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 471);
@@ -70,7 +70,7 @@
             // 
             this.completeRegistrationBT.Image = ((System.Drawing.Image)(resources.GetObject("completeRegistrationBT.Image")));
             this.completeRegistrationBT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.completeRegistrationBT.Location = new System.Drawing.Point(987, 14);
+            this.completeRegistrationBT.Location = new System.Drawing.Point(999, 14);
             this.completeRegistrationBT.Name = "completeRegistrationBT";
             this.completeRegistrationBT.Padding = new System.Windows.Forms.Padding(10);
             this.completeRegistrationBT.Size = new System.Drawing.Size(192, 43);

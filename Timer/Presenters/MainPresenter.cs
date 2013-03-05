@@ -15,7 +15,7 @@ namespace Sprint.Presenters
     /// </summary>
     class MainPresenter : IDisposable
     {
-        #region Constants
+        #region Константы
 
         /// <summary>
         /// Максимальное количество заездов.
@@ -34,13 +34,13 @@ namespace Sprint.Presenters
 
         #endregion
 
-        #region Fields
+        #region Поля
 
         private IEnumerable<RacerModel> _racers;
 
         #endregion
 
-        #region Properties
+        #region Свойства
 
         /// <summary>
         /// Задать или получить интерфейс на главную форму.
@@ -150,7 +150,7 @@ namespace Sprint.Presenters
 
         #endregion
 
-        #region Constructors
+        #region Конструкторы
 
         /// <summary>
         /// Конструктор.
@@ -174,22 +174,7 @@ namespace Sprint.Presenters
 
         #endregion
 
-        #region Methods
-
-        /// <summary>
-        /// Инициализация всех таблиц.
-        /// </summary>
-        private void InitializeAllTables()
-        {
-            MainView.FwdFirstRace       = InitializeTable();
-            MainView.FwdSecondRace      = InitializeTable();
-            MainView.RwdFirstRace       = InitializeTable();
-            MainView.RwdSecondRace      = InitializeTable();
-            MainView.AwdFirstRace       = InitializeTable();
-            MainView.AwdSecondRace      = InitializeTable();
-            MainView.SportFirstRace     = InitializeTable();
-            MainView.SportSecondRace    = InitializeTable();
-        }
+        #region Методы
 
         /// <summary>
         /// Показать диалог для заполнения участников гонки и взять из него этот список.
@@ -363,6 +348,40 @@ namespace Sprint.Presenters
         }
 
         /// <summary>
+        /// Задать список лидеров по заданной группе.
+        /// </summary>
+        /// <param name="count">Количество получаемых лидеров в заданном классе.</param>
+        /// <param name="carClass"></param>
+        public void SetLeaders(int count, CarClassesEnum carClass)
+        {
+            var rg = RacerGroups.FirstOrDefault(g => g.CarClass == carClass);
+
+            if (rg == null)
+            {
+                return;
+            }
+
+            (LiderRacerGroups as List<RacersGroupModel>).Add(new RacersGroupModel(carClass, Racers) { Racers = rg.GetLeaders(count) });
+        }
+
+        #region Работа с таблицами результатов участников
+
+        /// <summary>
+        /// Инициализация всех таблиц.
+        /// </summary>
+        private void InitializeAllTables()
+        {
+            MainView.FwdFirstRace = InitializeTable();
+            MainView.FwdSecondRace = InitializeTable();
+            MainView.RwdFirstRace = InitializeTable();
+            MainView.RwdSecondRace = InitializeTable();
+            MainView.AwdFirstRace = InitializeTable();
+            MainView.AwdSecondRace = InitializeTable();
+            MainView.SportFirstRace = InitializeTable();
+            MainView.SportSecondRace = InitializeTable();
+        }
+
+        /// <summary>
         /// Очистка таблицы с результатами.
         /// </summary>
         public void ClearResultsTable()
@@ -407,9 +426,9 @@ namespace Sprint.Presenters
         /// </summary>
         public void SetRacersForTableForFirstRace()
         {
-            MainView.FwdFirstRace   = SetNamesToTable(CarClassesEnum.FWD);
-            MainView.RwdFirstRace   = SetNamesToTable(CarClassesEnum.RWD);
-            MainView.AwdFirstRace   = SetNamesToTable(CarClassesEnum.AWD);            
+            MainView.FwdFirstRace = SetNamesToTable(CarClassesEnum.FWD);
+            MainView.RwdFirstRace = SetNamesToTable(CarClassesEnum.RWD);
+            MainView.AwdFirstRace = SetNamesToTable(CarClassesEnum.AWD);
             MainView.SportFirstRace = SetNamesToTable(CarClassesEnum.Sport);
         }
 
@@ -424,7 +443,7 @@ namespace Sprint.Presenters
 
             var group = RacerGroups.FirstOrDefault(gr => gr.CarClass == carClass);
 
-            if(group == null)
+            if (group == null)
             {
                 return table;
             }
@@ -439,24 +458,9 @@ namespace Sprint.Presenters
             }
 
             return table;
-        }
+        } 
 
-        /// <summary>
-        /// Задать список лидеров по заданной группе.
-        /// </summary>
-        /// <param name="count">Количество получаемых лидеров в заданном классе.</param>
-        /// <param name="carClass"></param>
-        public void SetLeaders(int count, CarClassesEnum carClass)
-        {
-            var rg = RacerGroups.FirstOrDefault(g => g.CarClass == carClass);
-
-            if (rg == null)
-            {
-                return;
-            }
-
-            (LiderRacerGroups as List<RacersGroupModel>).Add(new RacersGroupModel(carClass, Racers) { Racers = rg.GetLeaders(count) });
-        }
+        #endregion
 
         #region Перемещение гонщиков по списку участников
 

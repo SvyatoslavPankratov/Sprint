@@ -3,9 +3,6 @@ using System.Threading;
 
 namespace Sprint.Models
 {
-    /// <summary>
-    /// Модель секундомера.
-    /// </summary>
     public class StopwatchModel : IDisposable
     {
         #region Properties
@@ -49,6 +46,8 @@ namespace Sprint.Models
         public void Stop()
         {
             Thread.Suspend();
+
+            Time = new TimeModel();
         }
 
         /// <summary>
@@ -91,7 +90,7 @@ namespace Sprint.Models
             {
                 var StopwatchTime = (DateTime.Now - timeStart);
 
-                time.Min    = StopwatchTime.Minutes;
+                time.Min    = (int)StopwatchTime.TotalMinutes;
                 time.Sec    = StopwatchTime.Seconds;
                 time.Mlsec  = StopwatchTime.Milliseconds;
 
