@@ -4,12 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="69eb1835373d4310948596cbb7d786c8" Name="Diagram1" ZoomLevel="97" >
-        <EntityTypeShape EntityType="SprintModel.Result" Width="1.5" PointX="3" PointY="0.5" />
-        <EntityTypeShape EntityType="SprintModel.CarClass" Width="1.5" PointX="7.75" PointY="0.5" />
-        <EntityTypeShape EntityType="SprintModel.Car" Width="1.5" PointX="5.375" PointY="0.5" />
-        <EntityTypeShape EntityType="SprintModel.RacesOption" Width="1.5" PointX="0.5" PointY="4.75" />
+      <Diagram DiagramId="f630c30a98fd4c959b53e2c1709b4087" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="SprintModel.CarClass" Width="1.5" PointX="3" PointY="4.25" />
+        <EntityTypeShape EntityType="SprintModel.Car" Width="1.5" PointX="0.5" PointY="4.125" />
         <EntityTypeShape EntityType="SprintModel.Racer" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="SprintModel.Result" Width="1.5" PointX="3" PointY="0.625" />
+        <AssociationConnector Association="SprintModel.FK_Cars_CarClasses" />
+        <AssociationConnector Association="SprintModel.FK_Racers_Cars" />
+        <AssociationConnector Association="SprintModel.FK_Results_Racers" />
+        <EntityTypeShape EntityType="SprintModel.RacesOption" Width="1.5" PointX="5.375" PointY="4.125" />
+        <AssociationConnector Association="SprintModel.FK_RaceOptions_CarClass" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -15,9 +15,10 @@ namespace Sprint.Data
     public partial class RacesOption
     {
         public System.Guid Id { get; set; }
-        public Nullable<int> RaceNumber { get; set; }
         public Nullable<System.Guid> Id_CarClass { get; set; }
         public int RaceCount { get; set; }
         public int LidersCount { get; set; }
+    
+        public virtual CarClass CarClass { get; set; }
     }
 }

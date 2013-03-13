@@ -14,7 +14,16 @@ namespace Sprint.Data
     
     public partial class CarClass
     {
+        public CarClass()
+        {
+            this.Cars = new HashSet<Car>();
+            this.RacesOptions = new HashSet<RacesOption>();
+        }
+    
         public System.Guid Id { get; set; }
         public string Name { get; set; }
+    
+        public virtual ICollection<Car> Cars { get; set; }
+        public virtual ICollection<RacesOption> RacesOptions { get; set; }
     }
 }

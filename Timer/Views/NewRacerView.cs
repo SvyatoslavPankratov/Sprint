@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 using Sprint.Models;
 using Sprint.Presenters;
+using Sprint.Views.Interfaces;
 
 namespace Sprint.Views
 {
     public partial class NewRacerView : Form, INewRacerView
     {
-        #region Properties
+        #region Свойства
 
         /// <summary>
         /// Задать или получить презентер для окна заполнения участников.
@@ -98,7 +96,7 @@ namespace Sprint.Views
 
         #endregion
 
-        #region Constructors
+        #region Конструкторы
 
         /// <summary>
         /// Конструктор.
@@ -112,7 +110,7 @@ namespace Sprint.Views
 
         #endregion
 
-        #region Methods
+        #region Методы
 
         /// <summary>
         /// Добаивть нового участника.

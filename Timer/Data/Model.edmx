@@ -11,6 +11,22 @@
           <EntitySet Name="Racers" EntityType="SprintModel.Store.Racers" store:Type="Tables" />
           <EntitySet Name="RacesOptions" EntityType="SprintModel.Store.RacesOptions" store:Type="Tables" />
           <EntitySet Name="Results" EntityType="SprintModel.Store.Results" store:Type="Tables" />
+          <AssociationSet Name="FK_Cars_CarClasses" Association="SprintModel.Store.FK_Cars_CarClasses">
+            <End Role="CarClasses" EntitySet="CarClasses" />
+            <End Role="Cars" EntitySet="Cars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RaceOptions_CarClass" Association="SprintModel.Store.FK_RaceOptions_CarClass">
+            <End Role="CarClasses" EntitySet="CarClasses" />
+            <End Role="RacesOptions" EntitySet="RacesOptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Racers_Cars" Association="SprintModel.Store.FK_Racers_Cars">
+            <End Role="Racers" EntitySet="Racers" />
+            <End Role="Cars" EntitySet="Cars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Results_Racers" Association="SprintModel.Store.FK_Results_Racers">
+            <End Role="Racers" EntitySet="Racers" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="CarClasses">
           <Key>
@@ -26,6 +42,7 @@
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Id_CarClass" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Id_Racer" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="Racers">
           <Key>
@@ -42,7 +59,6 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="RaceNumber" Type="int" />
           <Property Name="Id_CarClass" Type="uniqueidentifier" />
           <Property Name="RaceCount" Type="int" Nullable="false" />
           <Property Name="LidersCount" Type="int" Nullable="false" />
@@ -57,33 +73,95 @@
           <Property Name="RaceNumber" Type="int" Nullable="false" />
           <Property Name="WarmingUp" Type="bit" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Cars_CarClasses">
+          <End Role="CarClasses" Type="SprintModel.Store.CarClasses" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Cars" Type="SprintModel.Store.Cars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CarClasses">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cars">
+              <PropertyRef Name="Id_CarClass" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RaceOptions_CarClass">
+          <End Role="CarClasses" Type="SprintModel.Store.CarClasses" Multiplicity="0..1" />
+          <End Role="RacesOptions" Type="SprintModel.Store.RacesOptions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CarClasses">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RacesOptions">
+              <PropertyRef Name="Id_CarClass" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Racers_Cars">
+          <End Role="Racers" Type="SprintModel.Store.Racers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Cars" Type="SprintModel.Store.Cars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Racers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cars">
+              <PropertyRef Name="Id_Racer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Results_Racers">
+          <End Role="Racers" Type="SprintModel.Store.Racers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Results" Type="SprintModel.Store.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Racers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="Id_Racer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SprintModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="SprintEntities1" annotation:LazyLoadingEnabled="true" >
-          <EntitySet Name="Results" EntityType="SprintModel.Result" />
+        <EntityContainer Name="SprintEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CarClasses" EntityType="SprintModel.CarClass" />
           <EntitySet Name="Cars" EntityType="SprintModel.Car" />
-          <EntitySet Name="RacesOptions" EntityType="SprintModel.RacesOption" />
           <EntitySet Name="Racers" EntityType="SprintModel.Racer" />
+          <EntitySet Name="Results" EntityType="SprintModel.Result" />
+          <AssociationSet Name="FK_Cars_CarClasses" Association="SprintModel.FK_Cars_CarClasses">
+            <End Role="CarClass" EntitySet="CarClasses" />
+            <End Role="Car" EntitySet="Cars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Racers_Cars" Association="SprintModel.FK_Racers_Cars">
+            <End Role="Racer" EntitySet="Racers" />
+            <End Role="Car" EntitySet="Cars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Results_Racers" Association="SprintModel.FK_Results_Racers">
+            <End Role="Racer" EntitySet="Racers" />
+            <End Role="Result" EntitySet="Results" />
+          </AssociationSet>
+          <EntitySet Name="RacesOptions" EntityType="SprintModel.RacesOption" />
+          <AssociationSet Name="FK_RaceOptions_CarClass" Association="SprintModel.FK_RaceOptions_CarClass">
+            <End Role="CarClass" EntitySet="CarClasses" />
+            <End Role="RacesOption" EntitySet="RacesOptions" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Result">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Guid" Name="Id" Nullable="false" />
-          <Property Type="Guid" Name="Id_Racer" Nullable="false" />
-          <Property Type="DateTime" Name="Time" Nullable="false" Precision="3" />
-          <Property Type="Boolean" Name="WarmingUp" Nullable="false" />
-          <Property Type="Int32" Name="RaceNumber" Nullable="false" />
-        </EntityType>
         <EntityType Name="CarClass">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Type="Guid" Name="Id" Nullable="false" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cars" Relationship="SprintModel.FK_Cars_CarClasses" FromRole="CarClass" ToRole="Car" />
+          <NavigationProperty Name="RacesOptions" Relationship="SprintModel.FK_RaceOptions_CarClass" FromRole="CarClass" ToRole="RacesOption" />
         </EntityType>
         <EntityType Name="Car">
           <Key>
@@ -92,16 +170,9 @@
           <Property Type="Guid" Name="Id" Nullable="false" />
           <Property Type="Guid" Name="Id_CarClass" Nullable="false" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="RacesOption">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Guid" Name="Id" Nullable="false" />
-          <Property Type="Int32" Name="RaceNumber" />
-          <Property Type="Guid" Name="Id_CarClass" />
-          <Property Type="Int32" Name="RaceCount" Nullable="false" />
-          <Property Type="Int32" Name="LidersCount" Nullable="false" />
+          <Property Type="Guid" Name="Id_Racer" Nullable="false" />
+          <NavigationProperty Name="CarClass" Relationship="SprintModel.FK_Cars_CarClasses" FromRole="Car" ToRole="CarClass" />
+          <NavigationProperty Name="Racer" Relationship="SprintModel.FK_Racers_Cars" FromRole="Car" ToRole="Racer" />
         </EntityType>
         <EntityType Name="Racer">
           <Key>
@@ -112,24 +183,90 @@
           <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="MiddleName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cars" Relationship="SprintModel.FK_Racers_Cars" FromRole="Racer" ToRole="Car" />
+          <NavigationProperty Name="Results" Relationship="SprintModel.FK_Results_Racers" FromRole="Racer" ToRole="Result" />
         </EntityType>
-      </Schema>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="Id_Racer" Nullable="false" />
+          <Property Type="DateTime" Name="Time" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="RaceNumber" Nullable="false" />
+          <Property Type="Boolean" Name="WarmingUp" Nullable="false" />
+          <NavigationProperty Name="Racer" Relationship="SprintModel.FK_Results_Racers" FromRole="Result" ToRole="Racer" />
+        </EntityType>
+        <Association Name="FK_Cars_CarClasses">
+          <End Type="SprintModel.CarClass" Role="CarClass" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SprintModel.Car" Role="Car" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CarClass">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Car">
+              <PropertyRef Name="Id_CarClass" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Racers_Cars">
+          <End Type="SprintModel.Racer" Role="Racer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SprintModel.Car" Role="Car" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Racer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Car">
+              <PropertyRef Name="Id_Racer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Results_Racers">
+          <End Type="SprintModel.Racer" Role="Racer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SprintModel.Result" Role="Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Racer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="Id_Racer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RacesOption">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="Id_CarClass" />
+          <Property Type="Int32" Name="RaceCount" Nullable="false" />
+          <Property Type="Int32" Name="LidersCount" Nullable="false" />
+          <NavigationProperty Name="CarClass" Relationship="SprintModel.FK_RaceOptions_CarClass" FromRole="RacesOption" ToRole="CarClass" />
+        </EntityType>
+        <Association Name="FK_RaceOptions_CarClass">
+          <End Type="SprintModel.CarClass" Role="CarClass" Multiplicity="0..1" />
+          <End Type="SprintModel.RacesOption" Role="RacesOption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CarClass">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RacesOption">
+              <PropertyRef Name="Id_CarClass" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="SprintModelStoreContainer" CdmEntityContainer="SprintEntities1">
-          <EntitySetMapping Name="Results">
-            <EntityTypeMapping TypeName="SprintModel.Result">
-              <MappingFragment StoreEntitySet="Results">
-                <ScalarProperty Name="RaceNumber" ColumnName="RaceNumber" />
-                <ScalarProperty Name="WarmingUp" ColumnName="WarmingUp" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
-                <ScalarProperty Name="Id_Racer" ColumnName="Id_Racer" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SprintModelStoreContainer" CdmEntityContainer="SprintEntities">
           <EntitySetMapping Name="CarClasses">
             <EntityTypeMapping TypeName="SprintModel.CarClass">
               <MappingFragment StoreEntitySet="CarClasses">
@@ -141,19 +278,9 @@
           <EntitySetMapping Name="Cars">
             <EntityTypeMapping TypeName="SprintModel.Car">
               <MappingFragment StoreEntitySet="Cars">
+                <ScalarProperty Name="Id_Racer" ColumnName="Id_Racer" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id_CarClass" ColumnName="Id_CarClass" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="RacesOptions">
-            <EntityTypeMapping TypeName="SprintModel.RacesOption">
-              <MappingFragment StoreEntitySet="RacesOptions">
-                <ScalarProperty Name="LidersCount" ColumnName="LidersCount" />
-                <ScalarProperty Name="RaceCount" ColumnName="RaceCount" />
-                <ScalarProperty Name="Id_CarClass" ColumnName="Id_CarClass" />
-                <ScalarProperty Name="RaceNumber" ColumnName="RaceNumber" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -169,8 +296,30 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Results">
+            <EntityTypeMapping TypeName="SprintModel.Result">
+              <MappingFragment StoreEntitySet="Results">
+                <ScalarProperty Name="WarmingUp" ColumnName="WarmingUp" />
+                <ScalarProperty Name="RaceNumber" ColumnName="RaceNumber" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Id_Racer" ColumnName="Id_Racer" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RacesOptions">
+            <EntityTypeMapping TypeName="SprintModel.RacesOption">
+              <MappingFragment StoreEntitySet="RacesOptions">
+                <ScalarProperty Name="LidersCount" ColumnName="LidersCount" />
+                <ScalarProperty Name="RaceCount" ColumnName="RaceCount" />
+                <ScalarProperty Name="Id_CarClass" ColumnName="Id_CarClass" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
-</Mapping></edmx:Mappings>
+      </Mapping>
+    </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">

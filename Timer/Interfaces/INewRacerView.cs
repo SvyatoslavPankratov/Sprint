@@ -6,14 +6,14 @@ using System.Text;
 
 using Sprint.Models;
 
-namespace Sprint.Views
+namespace Sprint.Views.Interfaces
 {
     /// <summary>
     /// Интерфейс окна ввода участников.
     /// </summary>
     public interface INewRacerView
     {
-        #region Properties
+        #region Свойства
 
         /// <summary>
         /// Задать или получить имя

@@ -551,6 +551,5 @@ namespace Sprint.Views
         #endregion
 
         #endregion
-        
     }
 }

@@ -17,5 +17,9 @@ namespace Sprint.Data
         public System.Guid Id { get; set; }
         public System.Guid Id_CarClass { get; set; }
         public string Name { get; set; }
+        public System.Guid Id_Racer { get; set; }
+    
+        public virtual CarClass CarClass { get; set; }
+        public virtual Racer Racer { get; set; }
     }
 }

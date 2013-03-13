@@ -5,7 +5,7 @@ namespace Sprint.Models
 {
     public class StopwatchModel : IDisposable
     {
-        #region Properties
+        #region Свойства
 
         /// <summary>
         /// Задать или получить время для отсчета секундомера.
@@ -24,7 +24,7 @@ namespace Sprint.Models
 
         #endregion
 
-        #region Methods
+        #region Методы
 
         /// <summary>
         /// Запустить секундомер.

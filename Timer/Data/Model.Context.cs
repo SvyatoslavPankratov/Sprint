@@ -13,10 +13,10 @@ namespace Sprint.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SprintEntities1 : DbContext
+    public partial class SprintEntities : DbContext
     {
-        public SprintEntities1()
-            : base("name=SprintEntities1")
+        public SprintEntities()
+            : base("name=SprintEntities")
         {
         }
     
@@ -25,10 +25,10 @@ namespace Sprint.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Result> Results { get; set; }
         public DbSet<CarClass> CarClasses { get; set; }
         public DbSet<Car> Cars { get; set; }
-        public DbSet<RacesOption> RacesOptions { get; set; }
         public DbSet<Racer> Racers { get; set; }
+        public DbSet<Result> Results { get; set; }
+        public DbSet<RacesOption> RacesOptions { get; set; }
     }
 }

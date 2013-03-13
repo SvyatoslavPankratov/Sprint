@@ -15,7 +15,11 @@ namespace Sprint
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainView());
+
+            var splashScreen = new SplashScreenView();
+            splashScreen.Show();
+
+            Application.Run(new MainView(splashScreen));
         }
     }
 }

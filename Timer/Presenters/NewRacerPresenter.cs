@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
 
 using Sprint.Models;
 using Sprint.Views;
+using Sprint.Views.Interfaces;
 
 namespace Sprint.Presenters
 {
@@ -14,10 +14,10 @@ namespace Sprint.Presenters
     /// </summary>
     public class NewRacerPresenter
     {
-        #region Properties
+        #region Свойства
 
         /// <summary>
-        /// Задать или получить 
+        /// Задать или получить интерфейс на визуальное представление формы.
         /// </summary>
         private INewRacerView NewRacerView { get; set; }
 
@@ -39,7 +39,7 @@ namespace Sprint.Presenters
 
         #endregion
 
-        #region Constructors
+        #region Конструкторы
 
         /// <summary>
         /// Конструктор.
@@ -61,7 +61,7 @@ namespace Sprint.Presenters
 
         #endregion
 
-        #region Methods
+        #region Методы
 
         /// <summary>
         ///  Добавление нового участника.

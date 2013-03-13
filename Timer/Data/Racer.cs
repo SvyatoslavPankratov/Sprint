@@ -14,10 +14,19 @@ namespace Sprint.Data
     
     public partial class Racer
     {
+        public Racer()
+        {
+            this.Cars = new HashSet<Car>();
+            this.Results = new HashSet<Result>();
+        }
+    
         public System.Guid Id { get; set; }
         public int Number { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MiddleName { get; set; }
+    
+        public virtual ICollection<Car> Cars { get; set; }
+        public virtual ICollection<Result> Results { get; set; }
     }
 }

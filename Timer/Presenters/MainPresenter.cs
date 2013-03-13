@@ -7,6 +7,7 @@ using System.Linq;
 using Sprint.Models;
 using Sprint.Views;
 using Sprint.Extensions;
+using Sprint.Views.Interfaces;
 
 namespace Sprint.Presenters
 {
@@ -177,12 +178,11 @@ namespace Sprint.Presenters
         #region Методы
 
         /// <summary>
-        /// Показать диалог для заполнения участников гонки и взять из него этот список.
+        /// Взять из диалдога добавления новых гонщиков список участников.
         /// </summary>
-        public void ShowSetRacersDialog()
+        public void SetRacersFromNewRacersDialog()
         {
-            MainView.NewRacerView.ShowDialog();
-            Racers = MainView.NewRacerView.NewRacerPresenter.Racers;            
+            Racers = MainView.AddedRacers;           
             SetRacersForTableForFirstRace();
         }
 

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
-using System.Resources;
 using System.Windows.Forms;
+
 using Sprint.Managers;
 using Sprint.Models;
 using Sprint.Presenters;
+using Sprint.Views.Interfaces;
 
 namespace Sprint.Views
 {
@@ -110,6 +110,11 @@ namespace Sprint.Views
             set { mlsecLbl.Invoke(new Action(() => mlsecLbl.Text = value.ToString("000"))); }
         }
 
+        /// <summary>
+        /// Задать или получить список участников, которые были добавлены в диалоге регистрации участников.
+        /// </summary>
+        public IEnumerable<RacerModel> AddedRacers { get; private set; }
+
         #endregion
 
         #region Свойства
@@ -120,9 +125,9 @@ namespace Sprint.Views
         private MainPresenter MainPresenter { get; set; }
 
         /// <summary>
-        /// Задать или получить диалог для заполнения участников.
+        /// Задать или получить сплеш скрин.
         /// </summary>
-        public NewRacerView NewRacerView { get; set; }
+        private Form SpleshScreen { get; set; }
 
         #endregion
 
@@ -137,8 +142,17 @@ namespace Sprint.Views
 
             KeyPreview = true;                          // Изменено, чтобы заработали горячие клавиши
 
-            NewRacerView = new NewRacerView();
             MainPresenter = new MainPresenter(this);
+        }
+
+        /// <summary>
+        /// Конструктор для главного окна.
+        /// </summary>
+        /// <param name="splashScreen">Сплеш скрин приложения.</param>
+        public MainView(Form splashScreen) 
+            : this()
+        {
+            SpleshScreen = splashScreen;
         }
 
         #endregion
@@ -151,9 +165,15 @@ namespace Sprint.Views
         /// <param name="m">Сообщение Windows.</param>
         protected override void WndProc(ref Message m)
         {
-            if (m.Msg == WindowsShellManager.WM_HOTKEY)
+            switch (m.Msg)
             {
-                MainView_KeyDown(this, new KeyEventArgs(Keys.CapsLock));
+                case WindowsShellManager.WM_HOTKEY:
+                    {
+                        if (m.LParam == (IntPtr)1310720 && !startBtn.Enabled)
+                        {
+                            MainPresenter.CutOffStopwatch();
+                        }
+                    } break;
             }
 
             base.WndProc(ref m);
@@ -164,23 +184,25 @@ namespace Sprint.Views
         #region Методы
 
         /// <summary>
-        /// Действия при загрузке формы.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MainView_Load(object sender, EventArgs e)
-        {
-            WindowsShellManager.RegisterHotKey(this, Keys.CapsLock);
-        }
-
-        /// <summary>
         /// Действия при первом отображении формы.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void MainView_Shown(object sender, EventArgs e)
         {
-            MainPresenter.ShowSetRacersDialog();
+            SpleshScreen.Close();
+
+            var checkSensorView = new CheckSensorView();
+            checkSensorView.ShowDialog();
+
+            var newRacerView = new NewRacerView();
+            newRacerView.ShowDialog();
+
+            AddedRacers = newRacerView.NewRacerPresenter.Racers;
+
+            MainPresenter.SetRacersFromNewRacersDialog();
+
+            WindowsShellManager.RegisterHotKey(this, Keys.CapsLock);
         }
 
         /// <summary>
@@ -261,10 +283,6 @@ namespace Sprint.Views
 
                 MainPresenter.StopStopwatch();
             }
-            else if (e.KeyCode == Keys.CapsLock && !startBtn.Enabled)       // Отсечка
-            {
-                MainPresenter.CutOffStopwatch();
-            }
         }
 
         /// <summary>
@@ -306,8 +324,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Автор: Панкратов Святослав \nE-mail: Svatoslav.Pankratov@gmail.com \n\nver 1.0 \n2013 год", "О программе",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+            new AboutView().ShowDialog();
         }
 
         #region Панель интсрументов
@@ -384,6 +401,21 @@ namespace Sprint.Views
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             MainPresenter.ClearResultsTable();
+        }
+
+        /// <summary>
+        /// Действия при нажатии пользователем в меню проверки датчика отсечки.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void проверкаДатчикаОтсечкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WindowsShellManager.UnregisterHotKey(this, Keys.CapsLock);
+
+            var checkSensorView = new CheckSensorView();
+            checkSensorView.ShowDialog();
+
+            WindowsShellManager.RegisterHotKey(this, Keys.CapsLock);
         }
 
         #endregion        
