@@ -44,7 +44,7 @@ namespace Sprint.Managers
             }
             catch (Exception ex)
             {
-                var exception = new SprintDataException("Не удалось получить список участников.",
+                var exception = new SprintException("Не удалось получить список участников.",
                                                         "Sprint.Managers.RacersManager.GetRacers()", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 throw exception;
@@ -84,7 +84,7 @@ namespace Sprint.Managers
             }
             catch (Exception ex)
             {
-                var exception = new SprintDataException("Не удалось получить список участников в заданном классе автомобилей.",
+                var exception = new SprintException("Не удалось получить список участников в заданном классе автомобилей.",
                                                         "Sprint.Managers.RacersManager.GetRacers(CarClass carClass)", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 throw exception;
@@ -131,7 +131,7 @@ namespace Sprint.Managers
             }
             catch (Exception ex)
             {
-                var exception = new SprintDataException("Не удалось удалить заданного участника,.",
+                var exception = new SprintException("Не удалось удалить заданного участника.",
                                                         "Sprint.Managers.RacersManager.DeleteRacers(Guid Id)", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 throw exception;

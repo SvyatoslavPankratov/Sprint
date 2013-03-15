@@ -418,6 +418,16 @@ namespace Sprint.Views
             WindowsShellManager.RegisterHotKey(this, Keys.CapsLock);
         }
 
+        /// <summary>
+        /// Действия при нажатии пользователя в меню выгрузки всех данных в Excel.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void excelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPresenter.ExportToExcel();
+        }
+
         #endregion        
     }
 }

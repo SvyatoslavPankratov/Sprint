@@ -8,6 +8,7 @@ using Sprint.Models;
 using Sprint.Views;
 using Sprint.Extensions;
 using Sprint.Views.Interfaces;
+using Sprint.Managers;
 
 namespace Sprint.Presenters
 {
@@ -364,6 +365,21 @@ namespace Sprint.Presenters
             (LiderRacerGroups as List<RacersGroupModel>).Add(new RacersGroupModel(carClass, Racers) { Racers = rg.GetLeaders(count) });
         }
 
+        /// <summary>
+        /// Экспорт всех данных в Excel.
+        /// </summary>
+        public void ExportToExcel()
+        {
+            var tables = new List<TableWithResults>();
+
+            foreach (var group in RacerGroups)
+            {
+                tables.Add(new TableWithResults { Results = GetTableWithResults(group, group.RaceNumber), CarClass = group.CarClass, RaceNumber = group.RaceNumber });
+            }
+
+            ExcelManager.CreateResultExcelDocument(tables);
+        }
+
         #region Работа с таблицами результатов участников
 
         /// <summary>
@@ -603,22 +619,22 @@ namespace Sprint.Presenters
                 {
                     case CarClassesEnum.FWD:
                         {
-                            OutFwdResult(group);
+                            OutFwdResultForGroup(group);
                         } break;
 
                     case CarClassesEnum.RWD:
                         {
-                            OutRwdResult(group);
+                            OutRwdResultForGroup(group);
                         } break;
 
                     case CarClassesEnum.AWD:
                         {
-                            OutAwdResult(group);
+                            OutAwdResultForGroup(group);
                         } break;
 
                     case CarClassesEnum.Sport:
                         {
-                            OutSportResult(group);
+                            OutSportResultForGroup(group);
                         } break;
                     default: break;
                 }
@@ -629,42 +645,18 @@ namespace Sprint.Presenters
         /// Вывести результаты на форму у переднеприводного класса автомобилей.
         /// </summary>
         /// <param name="group">Переднеприводная группа гонщиков.</param>
-        private void OutFwdResult(RacersGroupModel group)
-        {   
-            DataTable table = SetNamesToTable(CarClassesEnum.FWD);
-
-            for (int row = 0; row < group.Racers.Count(); row++)
+        private void OutFwdResultForGroup(RacersGroupModel group)
+        {
+            switch (group.RaceNumber)
             {
-                var racer = group.Racers.ElementAt(row);
-                
-                for (int circle = 0; circle < MaxCircleCount; circle++)
-                {
-                    var time = racer.Results.ResultsList.ElementAt(0).ElementAt(circle);
-
-                    if (time != null)
+                case 1:
                     {
-                        table.Rows[row][circle + 3] = string.Format("{0} : {1} : {2}",  time.Min.ToString("00"),
-                                                                                        time.Sec.ToString("00"),
-                                                                                        time.Mlsec.ToString("000"));
-                    }
-                }
-
-                if (racer.Results.ResultsList.Count() > 1)
-                {
-                    for (int circle = 0; circle < MaxCircleCount; circle++)
+                        MainView.FwdFirstRace = GetTableWithResults(group, 1);
+                    } break;
+                case 2:
                     {
-                        var time = racer.Results.ResultsList.ElementAt(1).ElementAt(circle);
-
-                        if(time != null)
-                        {
-                            table.Rows[row][circle + 3] = string.Format("{0} : {1} : {2}",  time.Min.ToString("00"),
-                                                                                            time.Sec.ToString("00"),
-                                                                                            time.Mlsec.ToString("000"));
-                        }
-                    }
-                }
-
-                MainView.FwdFirstRace = table;
+                        MainView.FwdSecondRace = GetTableWithResults(group, 2);
+                    } break;
             }
         }
 
@@ -672,85 +664,37 @@ namespace Sprint.Presenters
         /// Вывести результаты на форму у заднеприводного класса автомобилей.
         /// </summary>
         /// <param name="group">Заднеприводная группа гонщиков.</param>
-        private void OutRwdResult(RacersGroupModel group)
+        private void OutRwdResultForGroup(RacersGroupModel group)
         {
-            DataTable table = SetNamesToTable(CarClassesEnum.RWD);
-
-            for (int row = 0; row < group.Racers.Count(); row++)
+            switch (group.RaceNumber)
             {
-                var racer = group.Racers.ElementAt(row);
-                
-                for (int circle = 0; circle < MaxCircleCount; circle++)
-                {
-                    var time = racer.Results.ResultsList.ElementAt(0).ElementAt(circle);
-
-                    if (time != null)
+                case 1:
                     {
-                        table.Rows[row][circle + 3] = string.Format("{0} : {1} : {2}",  time.Min.ToString("00"),
-                                                                                        time.Sec.ToString("00"),
-                                                                                        time.Mlsec.ToString("000"));
-                    }
-                }
-                
-                if (racer.Results.ResultsList.Count() > 1)
-                {
-                    for (int circle = 0; circle < MaxCircleCount; circle++)
+                        MainView.RwdFirstRace = GetTableWithResults(group, 1);
+                    } break;
+                case 2:
                     {
-                        var time = racer.Results.ResultsList.ElementAt(1).ElementAt(circle);
-
-                        if (time != null)
-                        {
-                            table.Rows[row][circle + 3] = string.Format("{0} : {1} : {2}",  time.Min.ToString("00"),
-                                                                                            time.Sec.ToString("00"),
-                                                                                            time.Mlsec.ToString("000"));
-                        }
-                    }
-                }
-
-                MainView.RwdFirstRace = table;
-            }
+                        MainView.RwdSecondRace = GetTableWithResults(group, 2);
+                    } break;
+            }            
         }
 
         /// <summary>
         /// Вывести результаты на форму у полноприводного класса автомобилей.
         /// </summary>
         /// <param name="group">Полноприводная группа гонщиков.</param>
-        private void OutAwdResult(RacersGroupModel group)
+        private void OutAwdResultForGroup(RacersGroupModel group)
         {
-            DataTable table = SetNamesToTable(CarClassesEnum.AWD);
-
-            for (int row = 0; row < group.Racers.Count(); row++)
+            switch (group.RaceNumber)
             {
-                var racer = group.Racers.ElementAt(row);
-                
-                for (int circle = 0; circle < MaxCircleCount; circle++)
-                {
-                    var time = racer.Results.ResultsList.ElementAt(0).ElementAt(circle);
-
-                    if (time != null)
+                case 1:
                     {
-                        table.Rows[row][circle + 3] = string.Format("{0} : {1} : {2}",  time.Min.ToString("00"),
-                                                                                        time.Sec.ToString("00"),
-                                                                                        time.Mlsec.ToString("000"));
-                    }
-                }
-
-                if (racer.Results.ResultsList.Count() > 1)
-                {
-                    for (int circle = 0; circle < MaxCircleCount; circle++)
+                        MainView.AwdFirstRace = GetTableWithResults(group, 1);
+                    } break;
+                case 2:
                     {
-                        var time = racer.Results.ResultsList.ElementAt(1).ElementAt(circle);
-
-                        if (time != null)
-                        {
-                            table.Rows[row][circle + 3] = string.Format("{0} : {1} : {2}", time.Min.ToString("00"),
-                                                                                            time.Sec.ToString("00"),
-                                                                                            time.Mlsec.ToString("000"));
-                        }
-                    }
-                }
-
-                MainView.AwdFirstRace = table;
+                        MainView.AwdSecondRace = GetTableWithResults(group, 2);
+                    } break;
             }
         }
 
@@ -758,44 +702,80 @@ namespace Sprint.Presenters
         /// Вывести результаты на форму у спортивного класса автомобилей.
         /// </summary>
         /// <param name="group">Спортивная группа гонщиков.</param>
-        private void OutSportResult(RacersGroupModel group)
+        private void OutSportResultForGroup(RacersGroupModel group)
         {
-            DataTable table = SetNamesToTable(CarClassesEnum.Sport);
+            switch (group.RaceNumber)
+            {
+                case 1:
+                    {
+                        MainView.SportFirstRace = GetTableWithResults(group, 1);
+                    } break;
+                case 2:
+                    {
+                        MainView.SportSecondRace = GetTableWithResults(group, 2);
+                    } break;
+            }
+        }
+
+        /// <summary>
+        /// Получить таблицу с результатами участников заданной группы заданного заезда.
+        /// </summary>
+        /// <param name="group">
+        /// Класс автомобилей, для участников которых будет получена таблица с результатами заданной группы заездов.
+        /// </param>
+        /// <param name="raceNumber">Номер заезда, результаты которого требуется получить.</param>
+        /// <returns>Таблица с результатами.</returns>
+        private DataTable GetTableWithResults(RacersGroupModel group, int raceNumber)
+        {
+            var table = SetNamesToTable(group.CarClass);
 
             for (int row = 0; row < group.Racers.Count(); row++)
             {
                 var racer = group.Racers.ElementAt(row);
-                
-                for (int circle = 0; circle < MaxCircleCount; circle++)
+
+                switch (raceNumber)
                 {
-                    var time = racer.Results.ResultsList.ElementAt(0).ElementAt(circle);
-
-                    if (time != null)
-                    {
-                        table.Rows[row][circle + 3] = string.Format("{0} : {1} : {2}",  time.Min.ToString("00"),
-                                                                                        time.Sec.ToString("00"),
-                                                                                        time.Mlsec.ToString("000"));
-                    }
-                }
-
-                if (racer.Results.ResultsList.Count() > 1)
-                {
-                    for (int circle = 0; circle < MaxCircleCount; circle++)
-                    {
-                        var time = racer.Results.ResultsList.ElementAt(1).ElementAt(circle);
-
-                        if (time != null)
+                    case 1:
                         {
-                            table.Rows[row][circle + 3] = string.Format("{0} : {1} : {2}", time.Min.ToString("00"),
-                                                                                            time.Sec.ToString("00"),
-                                                                                            time.Mlsec.ToString("000"));
-                        }
-                    }
-                }
+                            if (racer.Results.ResultsList.ElementAt(0) == null)
+                            {
+                                return table;
+                            }
 
-                MainView.SportFirstRace = table;
+                            for (int circle = 0; circle < MaxCircleCount; circle++)
+                            {
+                                var time = racer.Results.ResultsList.ElementAt(0).ElementAt(circle);
+
+                                if (time != null)
+                                {
+                                    table.Rows[row][circle + 3] = string.Format("{0} : {1} : {2}", time.Min.ToString("00"),
+                                                                                                   time.Sec.ToString("00"),
+                                                                                                   time.Mlsec.ToString("000"));
+                                }
+                            }
+                        } break;
+                    case 2:
+                        {
+                            break;
+                            throw new NotImplementedException();
+
+                            for (int circle = 0; circle < MaxCircleCount; circle++)
+                            {
+                                var time = racer.Results.ResultsList.ElementAt(1).ElementAt(circle);
+
+                                if (time != null)
+                                {
+                                    table.Rows[row][circle + 3] = string.Format("{0} : {1} : {2}", time.Min.ToString("00"),
+                                                                                                   time.Sec.ToString("00"),
+                                                                                                   time.Mlsec.ToString("000"));
+                                }
+                            }
+                        } break;
+                }
             }
-        } 
+
+            return table;
+        }
 
         #endregion
 

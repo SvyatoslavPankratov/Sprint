@@ -28,6 +28,8 @@ namespace UnitTest
         [TestMethod]
         public void DeleteOptions()
         {
+            SetOptions();
+
             var res = OptionsDbManager.DeleteOptions(CarClassesEnum.FWD);
 
             Assert.IsTrue(res.Result);

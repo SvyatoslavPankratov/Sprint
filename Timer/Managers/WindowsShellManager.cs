@@ -23,7 +23,7 @@ namespace Sprint.Managers
 
         #endregion
 
-        #region Dll Imports
+        #region Импортированные из Dll функции
 
         /// <summary>
         /// Регистрация горячей кнопки.
@@ -47,13 +47,13 @@ namespace Sprint.Managers
 
         #endregion
 
-        #region Constants
+        #region Константы
 
         public const int WM_HOTKEY = 0x312;
 
         #endregion
 
-        #region Methods
+        #region Методы
 
         /// <summary>
         /// Регистрация глобальной горячей кнопки к форме.
@@ -66,7 +66,7 @@ namespace Sprint.Managers
             {
                 if (!RegisterHotKey(f.Handle, f.GetHashCode() + (int)key, 0, (int)key))
                 {
-                    var exception = new SprintDataException("Не удалось зарегистрировать в системе горячую клавишу.",
+                    var exception = new SprintSystemException("Не удалось зарегистрировать в системе горячую клавишу.",
                                                                 "Sprint.Managers.WindowsShellManager.RegisterHotKey(Form f, Keys key)");
                     logger.Trace(ExceptionsManager.CreateExceptionMessage(exception));
                     return new OperationResult(false, exception.Message, exception);
@@ -76,7 +76,7 @@ namespace Sprint.Managers
             }
             catch (Exception ex)
             {
-                var exception = new SprintDataException("Не удалось зарегистрировать в системе горячую клавишу.",
+                var exception = new SprintSystemException("Не удалось зарегистрировать в системе горячую клавишу.",
                                                         "Sprint.Managers.WindowsShellManager.RegisterHotKey(Form f, Keys key)", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 throw exception;
@@ -94,7 +94,7 @@ namespace Sprint.Managers
             {
                 if(!UnregisterHotKey(f.Handle, f.GetHashCode() + (int)key))
                 {
-                    var exception = new SprintDataException("Не удалось снять регистрацию горячей клавиши в системе.",
+                    var exception = new SprintSystemException("Не удалось снять регистрацию горячей клавиши в системе.",
                                                                 "Sprint.Managers.WindowsShellManager.UnregisterHotKey(Form f, Keys key)");
                     logger.Trace(ExceptionsManager.CreateExceptionMessage(exception));
                     return new OperationResult(false, exception.Message, exception);
@@ -104,7 +104,7 @@ namespace Sprint.Managers
             }
             catch (Exception ex)
             {
-                var exception = new SprintDataException("Не удалось получить список участников.",
+                var exception = new SprintSystemException("Не удалось получить список участников.",
                                                         "Sprint.Managers.WindowsShellManager.UnregisterHotKey(Form f, Keys key)", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 throw exception;

@@ -43,7 +43,7 @@ namespace Sprint.Managers
             }
             catch (Exception ex)
             {
-                var exception = new SprintDataException("Не удалось получить список опций заездов.", 
+                var exception = new SprintException("Не удалось получить список опций заездов.",
                                                         "Sprint.Managers.OptionsManager.GetOptions()", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 throw exception;
@@ -85,7 +85,7 @@ namespace Sprint.Managers
             }
             catch (Exception ex)
             {
-                var exception = new SprintDataException("Не удалось получить список опций заездов.", 
+                var exception = new SprintException("Не удалось получить список опций заездов.", 
                                                         "Sprint.Managers.OptionsManager.GetOptions(CarClass carClass)", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 throw exception;
@@ -169,7 +169,7 @@ namespace Sprint.Managers
             }
             catch (Exception ex)
             {
-                var exception = new SprintDataException("Не удалось задать заданные опции заездов в заданном классе автомобилей.",
+                var exception = new SprintException("Не удалось задать заданные опции заездов в заданном классе автомобилей.",
                                                         "Sprint.Managers.OptionsManager.SetOptions(RacesOption options)", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 throw exception;
@@ -213,7 +213,7 @@ namespace Sprint.Managers
             }
             catch (Exception ex)
             {
-                var exception = new SprintDataException("Не удалось удалить заданные опции гонок.", 
+                var exception = new SprintException("Не удалось удалить заданные опции гонок.", 
                                                         "Sprint.Managers.OptionsManager.DeleteOptions(Guid Id)", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 throw exception;

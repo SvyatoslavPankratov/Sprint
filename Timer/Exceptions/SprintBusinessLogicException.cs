@@ -35,7 +35,7 @@ namespace Sprint.Exceptions
         /// <param name="methodName"></param>
         /// <param name="innerException"></param>
         public SprintBusinessLogicException(string message, string methodName, Exception innerException) 
-            : base(message, innerException, methodName)
+            : base(message, methodName, innerException)
         {
         }
 

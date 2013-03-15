@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SprintModelStoreContainer" CdmEntityContainer="SprintEntities">
+    <EntitySetMapping Name="CarClasses">
+      <EntityTypeMapping TypeName="SprintModel.CarClass">
+        <MappingFragment StoreEntitySet="CarClasses">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cars">
+      <EntityTypeMapping TypeName="SprintModel.Car">
+        <MappingFragment StoreEntitySet="Cars">
+          <ScalarProperty Name="Id_Racer" ColumnName="Id_Racer" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id_CarClass" ColumnName="Id_CarClass" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Racers">
+      <EntityTypeMapping TypeName="SprintModel.Racer">
+        <MappingFragment StoreEntitySet="Racers">
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Results">
+      <EntityTypeMapping TypeName="SprintModel.Result">
+        <MappingFragment StoreEntitySet="Results">
+          <ScalarProperty Name="WarmingUp" ColumnName="WarmingUp" />
+          <ScalarProperty Name="RaceNumber" ColumnName="RaceNumber" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Id_Racer" ColumnName="Id_Racer" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RacesOptions">
+      <EntityTypeMapping TypeName="SprintModel.RacesOption">
+        <MappingFragment StoreEntitySet="RacesOptions">
+          <ScalarProperty Name="LidersCount" ColumnName="LidersCount" />
+          <ScalarProperty Name="RaceCount" ColumnName="RaceCount" />
+          <ScalarProperty Name="Id_CarClass" ColumnName="Id_CarClass" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -42,9 +42,9 @@ namespace Sprint.Exceptions
         /// 
         /// </summary>
         /// <param name="message"></param>
-        /// <param name="innerException"></param>
         /// <param name="methodName"></param>
-        public SprintException(string message, Exception innerException, string methodName) 
+        /// <param name="innerException"></param>
+        public SprintException(string message, string methodName, Exception innerException) 
             : base(message, innerException)
         {
             MethodName = methodName;
