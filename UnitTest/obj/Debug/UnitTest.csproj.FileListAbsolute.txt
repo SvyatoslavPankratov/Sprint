@@ -1,7 +1,0 @@
-C:\Users\Svyatoslav\Desktop\Вовану\Timer\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
-C:\Users\Svyatoslav\Desktop\Вовану\Timer\UnitTest\bin\Debug\UnitTest.dll
-C:\Users\Svyatoslav\Desktop\Вовану\Timer\UnitTest\bin\Debug\UnitTest.pdb
-C:\Users\Svyatoslav\Desktop\Вовану\Timer\UnitTest\obj\Debug\UnitTest.dll
-C:\Users\Svyatoslav\Desktop\Вовану\Timer\UnitTest\obj\Debug\UnitTest.pdb
-C:\Users\Svyatoslav\Desktop\Вовану\Timer\UnitTest\bin\Debug\Sprint.exe
-C:\Users\Svyatoslav\Desktop\Вовану\Timer\UnitTest\bin\Debug\Sprint.pdb
