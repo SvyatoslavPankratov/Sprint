@@ -45,8 +45,8 @@
     </AssociationLine>
     <AssociationLine Name="RacerGroups" Type="Sprint.Models.RacersGroupModel" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.75" Y="8.294" />
-        <Point X="9.625" Y="8.294" />
+        <Point X="7.75" Y="8.255" />
+        <Point X="9.625" Y="8.255" />
         <Point X="9.625" Y="7.132" />
       </Path>
     </AssociationLine>
@@ -58,35 +58,35 @@
     </AssociationLine>
     <AssociationLine Name="LiderRacerGroups" Type="Sprint.Models.RacersGroupModel" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.75" Y="8.574" />
-        <Point X="11.125" Y="8.574" />
+        <Point X="7.75" Y="8.529" />
+        <Point X="11.125" Y="8.529" />
         <Point X="11.125" Y="7.132" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="CurrentCarClass" Type="Sprint.Models.CarClassesEnum" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.75" Y="8.848" />
-        <Point X="13.312" Y="8.848" />
+        <Point X="7.75" Y="8.797" />
+        <Point X="13.312" Y="8.797" />
         <Point X="13.312" Y="5.431" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="Track" Type="Sprint.Models.TrackModel" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5.25" Y="7.701" />
-        <Point X="4.312" Y="7.701" />
+        <Point X="5.25" Y="7.675" />
+        <Point X="4.312" Y="7.675" />
         <Point X="4.312" Y="5.305" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AQGIkIJUBOYQBAABIIAgAAQgJAAMAEACAABCECYADAA=</HashCode>
+      <HashCode>QQGIkIJUBOYUBAADIIAkAAQgIAgcAEACAABAEAQIDAA=</HashCode>
       <FileName>Presenters\MainPresenter.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="MainView" />
       <Property Name="Stopwatch" />
       <Property Name="CurrentRaserGroup" />
       <Property Name="CurrentCarClass" />
       <Property Name="Track" />
+      <Property Name="MainView" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="Racers" />
@@ -185,18 +185,18 @@
       <Property Name="CurrentRacers" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Interface Name="Sprint.Views.IMainView">
-    <Position X="2" Y="7.25" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AgAAAIAAAAAIBAAAEAAAAAIAEAAAAAAAAAAEAAEgEAA=</HashCode>
-      <FileName>Views\IMainView.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="Sprint.Views.INewRacerView">
-    <Position X="0.5" Y="0.5" Width="1.75" />
+  <Interface Name="Sprint.Views.Interfaces.INewRacerView">
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAFgAAAAAAAAAAAAQAAAAAAAAEAAAAAAAAAAAAAg=</HashCode>
-      <FileName>Views\INewRacerView.cs</FileName>
+      <FileName>Interfaces\INewRacerView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Sprint.Views.Interfaces.IMainView">
+    <Position X="2" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAIAAAAAABAAAEAAAAAIAEAAgAAAAAAAEAAEgEAA=</HashCode>
+      <FileName>Interfaces\IMainView.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="Sprint.Models.CarClassesEnum">

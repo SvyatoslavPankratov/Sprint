@@ -11,7 +11,7 @@ namespace Sprint.Managers
     /// <summary>
     /// Менеджер для доступа к данным классов автомобилей в БД.
     /// </summary>
-    public static class CarClassesMeneger
+    public static class CarClassesDbMeneger
     {
         #region Поля только для чтения
 

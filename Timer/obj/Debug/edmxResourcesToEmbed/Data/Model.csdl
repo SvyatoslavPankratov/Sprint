@@ -22,8 +22,13 @@
       <End Role="CarClass" EntitySet="CarClasses" />
       <End Role="RacesOption" EntitySet="RacesOptions" />
     </AssociationSet>
+    <EntitySet Name="LogEntries" EntityType="SprintModel.LogEntry" />
   </EntityContainer>
   <EntityType Name="CarClass">
+    <Documentation>
+      <Summary>Классы автомобилей.</Summary>
+      <LongDescription>Классы автомобилей.</LongDescription>
+    </Documentation>
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -33,6 +38,10 @@
     <NavigationProperty Name="RacesOptions" Relationship="SprintModel.FK_RaceOptions_CarClass" FromRole="CarClass" ToRole="RacesOption" />
   </EntityType>
   <EntityType Name="Car">
+    <Documentation>
+      <Summary>Автомобили участников.</Summary>
+      <LongDescription>Автомобили участников.</LongDescription>
+    </Documentation>
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -44,6 +53,10 @@
     <NavigationProperty Name="Racer" Relationship="SprintModel.FK_Racers_Cars" FromRole="Car" ToRole="Racer" />
   </EntityType>
   <EntityType Name="Racer">
+    <Documentation>
+      <Summary>Участники.</Summary>
+      <LongDescription>Участники.</LongDescription>
+    </Documentation>
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -56,6 +69,10 @@
     <NavigationProperty Name="Results" Relationship="SprintModel.FK_Results_Racers" FromRole="Racer" ToRole="Result" />
   </EntityType>
   <EntityType Name="Result">
+    <Documentation>
+      <Summary>Результаты участников.</Summary>
+      <LongDescription>Результаты участников.</LongDescription>
+    </Documentation>
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -109,6 +126,10 @@
     </ReferentialConstraint>
   </Association>
   <EntityType Name="RacesOption">
+    <Documentation>
+      <Summary>Опции заездов по классам автомобилей.</Summary>
+      <LongDescription>Опции заездов по классам автомобилей.</LongDescription>
+    </Documentation>
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -130,4 +151,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="LogEntry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Guid" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Message" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Level" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Logger" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TimeStamp" Precision="3" />
+  </EntityType>
 </Schema>

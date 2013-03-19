@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f630c30a98fd4c959b53e2c1709b4087" Name="Diagram1" ZoomLevel="100">
+      <Diagram DiagramId="f630c30a98fd4c959b53e2c1709b4087" Name="Diagram1" ZoomLevel="86">
         <EntityTypeShape EntityType="SprintModel.CarClass" Width="1.5" PointX="3" PointY="4.25" />
         <EntityTypeShape EntityType="SprintModel.Car" Width="1.5" PointX="0.5" PointY="4.125" />
         <EntityTypeShape EntityType="SprintModel.Racer" Width="1.5" PointX="0.5" PointY="0.5" />
@@ -14,6 +14,7 @@
         <AssociationConnector Association="SprintModel.FK_Results_Racers" />
         <EntityTypeShape EntityType="SprintModel.RacesOption" Width="1.5" PointX="5.375" PointY="4.125" />
         <AssociationConnector Association="SprintModel.FK_RaceOptions_CarClass" />
+        <EntityTypeShape EntityType="SprintModel.LogEntry" Width="1.5" PointX="8.625" PointY="0.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

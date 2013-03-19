@@ -293,7 +293,7 @@ namespace Sprint.Views
         private void MainView_FormClosing(object sender, FormClosingEventArgs e)
         {
             var res = MessageBox.Show("Вы уверены, что хотите закрыть приложение?",
-                                        "Подтверждение закрытия приложения",
+                                        "Подтверждение действия",
                                         MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (res == System.Windows.Forms.DialogResult.Yes)
@@ -403,6 +403,8 @@ namespace Sprint.Views
             MainPresenter.ClearResultsTable();
         }
 
+        #region Главное меню
+
         /// <summary>
         /// Действия при нажатии пользователем в меню проверки датчика отсечки.
         /// </summary>
@@ -425,8 +427,58 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void excelToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var wnd = new ExportProcessView();
+
+            this.Invoke(new Action(() => wnd.Show()));
+
             MainPresenter.ExportToExcel();
+
+            this.Invoke(new Action(() => wnd.Close()));
         }
+
+        /// <summary>
+        /// Действия при нажатии пользователем кнопки очистки данных программы.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void очиститьДанныеПрограммыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var q_res = MessageBox.Show("Вы уверены, что хотите удалить все данные программы?", "Подтверждение действия",
+                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (q_res == System.Windows.Forms.DialogResult.Yes)
+            {
+                var res = MainPresenter.DeleteData();
+
+                if (!res.Result)
+                {
+                    MessageBox.Show("Не удалось удалить данные программы.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии пользователем кнопки очистки логов программы.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void очиститьЛогиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var q_res = MessageBox.Show("Вы уверены, что хотите удалить все логи программы?", "Подтверждение действия", 
+                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (q_res == System.Windows.Forms.DialogResult.Yes)
+            {
+                var res = MainPresenter.DeleteLogs();
+
+                if (!res.Result)
+                {
+                    MessageBox.Show("Не удалось удалить логи программы.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        } 
+
+        #endregion
 
         #endregion        
     }

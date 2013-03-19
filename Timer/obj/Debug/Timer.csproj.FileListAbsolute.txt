@@ -1,9 +1,0 @@
-C:\Users\Svyatoslav\Desktop\Вовану\Timer\Timer\obj\Debug\Sprint.Properties.Resources.resources
-C:\Users\Svyatoslav\Desktop\Вовану\Timer\Timer\obj\Debug\Timer.Views.MainView.resources
-C:\Users\Svyatoslav\Desktop\Вовану\Timer\Timer\obj\Debug\Timer.csproj.GenerateResource.Cache
-C:\Users\Svyatoslav\Desktop\Вовану\Timer\Timer\bin\Debug\Sprint.exe.config
-C:\Users\Svyatoslav\Desktop\Вовану\Timer\Timer\bin\Debug\Sprint.exe
-C:\Users\Svyatoslav\Desktop\Вовану\Timer\Timer\bin\Debug\Sprint.pdb
-C:\Users\Svyatoslav\Desktop\Вовану\Timer\Timer\obj\Debug\Sprint.exe
-C:\Users\Svyatoslav\Desktop\Вовану\Timer\Timer\obj\Debug\Sprint.pdb
-C:\Users\Svyatoslav\Desktop\Вовану\Timer\Timer\obj\Debug\Timer.csprojResolveAssemblyReference.cache

@@ -88,6 +88,9 @@
     <Compile Include="Data\CarClass.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\LogEntry.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -118,9 +121,10 @@
     <Compile Include="Exceptions\SprintException.cs" />
     <Compile Include="Exceptions\SprintSystemException.cs" />
     <Compile Include="Extensions\IEnumerableExtesions.cs" />
-    <Compile Include="Managers\CarClassesMeneger.cs" />
+    <Compile Include="Managers\CarClassesDbMeneger.cs" />
     <Compile Include="Managers\ExcelManager.cs" />
     <Compile Include="Managers\ExceptionsManager.cs" />
+    <Compile Include="Managers\LogsDbManager.cs" />
     <Compile Include="Managers\OptionsDbManager.cs" />
     <Compile Include="Managers\RacersDbManager.cs" />
     <Compile Include="Managers\WindowsShellManager.cs" />
@@ -155,6 +159,12 @@
     <Compile Include="Interfaces\ICheckSensorView.cs" />
     <Compile Include="Interfaces\IMainView.cs" />
     <Compile Include="Interfaces\INewRacerView.cs" />
+    <Compile Include="Views\ExportProcessView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ExportProcessView.Designer.cs">
+      <DependentUpon>ExportProcessView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CheckSensorView.resx">
       <DependentUpon>CheckSensorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ExportProcessView.resx">
+      <DependentUpon>ExportProcessView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
@@ -280,9 +293,13 @@
     <Content Include="Resources\Images\980f9a564a081f2804c0a2a9cbc2c48c.jpg" />
     <Content Include="Resources\Images\Accept.png" />
     <Content Include="Resources\Images\Big logo.png" />
+    <Content Include="Resources\Images\Clear data.png" />
+    <Content Include="Resources\Images\Clear logs.png" />
     <Content Include="Resources\Images\Clear table.png" />
     <Content Include="Resources\Images\Clock.png" />
+    <Content Include="Resources\Images\Data.png" />
     <Content Include="Resources\Images\Down.png" />
+    <Content Include="Resources\Images\Download.png" />
     <Content Include="Resources\Images\Draw freehand.png" />
     <Content Include="Resources\Images\Edit.png" />
     <Content Include="Resources\Images\Excel.png" />

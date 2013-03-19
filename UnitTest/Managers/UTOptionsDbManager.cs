@@ -16,7 +16,7 @@ namespace UnitTest
         {
             var id = Guid.NewGuid();
 
-            var carClasses = CarClassesMeneger.GetCarClasses();
+            var carClasses = CarClassesDbMeneger.GetCarClasses();
             var carClass = carClasses.FirstOrDefault(cc => cc.Name == CarClassesEnum.FWD.ToString());
             var options = new RacesOption { Id = id, CarClass = carClass, LidersCount = 5, RaceCount = 2 };
 

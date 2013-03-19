@@ -51,6 +51,7 @@
             // Off_Panel
             // 
             this.Off_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Off_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Off_Panel.Controls.Add(this.label2);
             this.Off_Panel.Location = new System.Drawing.Point(12, 12);
             this.Off_Panel.Name = "Off_Panel";
@@ -90,6 +91,7 @@
             // On_Panel
             // 
             this.On_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.On_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.On_Panel.Controls.Add(this.label3);
             this.On_Panel.Location = new System.Drawing.Point(12, 12);
             this.On_Panel.Name = "On_Panel";

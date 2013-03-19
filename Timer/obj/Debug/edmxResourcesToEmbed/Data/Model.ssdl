@@ -3,6 +3,7 @@
   <EntityContainer Name="SprintModelStoreContainer">
     <EntitySet Name="CarClasses" EntityType="SprintModel.Store.CarClasses" store:Type="Tables" />
     <EntitySet Name="Cars" EntityType="SprintModel.Store.Cars" store:Type="Tables" />
+    <EntitySet Name="LogEntries" EntityType="SprintModel.Store.LogEntries" store:Type="Tables" />
     <EntitySet Name="Racers" EntityType="SprintModel.Store.Racers" store:Type="Tables" />
     <EntitySet Name="RacesOptions" EntityType="SprintModel.Store.RacesOptions" store:Type="Tables" />
     <EntitySet Name="Results" EntityType="SprintModel.Store.Results" store:Type="Tables" />
@@ -38,6 +39,16 @@
     <Property Name="Id_CarClass" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="Id_Racer" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogEntries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Message" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Level" Type="nvarchar" MaxLength="10" />
+    <Property Name="Logger" Type="nvarchar" MaxLength="128" />
+    <Property Name="TimeStamp" Type="datetime" />
   </EntityType>
   <EntityType Name="Racers">
     <Key>

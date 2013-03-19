@@ -8,6 +8,7 @@
         <EntityContainer Name="SprintModelStoreContainer">
           <EntitySet Name="CarClasses" EntityType="SprintModel.Store.CarClasses" store:Type="Tables" />
           <EntitySet Name="Cars" EntityType="SprintModel.Store.Cars" store:Type="Tables" />
+          <EntitySet Name="LogEntries" EntityType="SprintModel.Store.LogEntries" store:Type="Tables" />
           <EntitySet Name="Racers" EntityType="SprintModel.Store.Racers" store:Type="Tables" />
           <EntitySet Name="RacesOptions" EntityType="SprintModel.Store.RacesOptions" store:Type="Tables" />
           <EntitySet Name="Results" EntityType="SprintModel.Store.Results" store:Type="Tables" />
@@ -43,6 +44,16 @@
           <Property Name="Id_CarClass" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
           <Property Name="Id_Racer" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LogEntries">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Message" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Level" Type="nvarchar" MaxLength="10" />
+          <Property Name="Logger" Type="nvarchar" MaxLength="128" />
+          <Property Name="TimeStamp" Type="datetime" />
         </EntityType>
         <EntityType Name="Racers">
           <Key>
@@ -153,8 +164,13 @@
             <End Role="CarClass" EntitySet="CarClasses" />
             <End Role="RacesOption" EntitySet="RacesOptions" />
           </AssociationSet>
+          <EntitySet Name="LogEntries" EntityType="SprintModel.LogEntry" />
         </EntityContainer>
         <EntityType Name="CarClass">
+          <Documentation>
+            <Summary>Классы автомобилей.</Summary>
+            <LongDescription>Классы автомобилей.</LongDescription>
+          </Documentation>
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -164,6 +180,10 @@
           <NavigationProperty Name="RacesOptions" Relationship="SprintModel.FK_RaceOptions_CarClass" FromRole="CarClass" ToRole="RacesOption" />
         </EntityType>
         <EntityType Name="Car">
+          <Documentation>
+            <Summary>Автомобили участников.</Summary>
+            <LongDescription>Автомобили участников.</LongDescription>
+          </Documentation>
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -175,6 +195,10 @@
           <NavigationProperty Name="Racer" Relationship="SprintModel.FK_Racers_Cars" FromRole="Car" ToRole="Racer" />
         </EntityType>
         <EntityType Name="Racer">
+          <Documentation>
+            <Summary>Участники.</Summary>
+            <LongDescription>Участники.</LongDescription>
+          </Documentation>
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -187,6 +211,10 @@
           <NavigationProperty Name="Results" Relationship="SprintModel.FK_Results_Racers" FromRole="Racer" ToRole="Result" />
         </EntityType>
         <EntityType Name="Result">
+          <Documentation>
+            <Summary>Результаты участников.</Summary>
+            <LongDescription>Результаты участников.</LongDescription>
+          </Documentation>
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -240,6 +268,10 @@
           </ReferentialConstraint>
         </Association>
         <EntityType Name="RacesOption">
+          <Documentation>
+            <Summary>Опции заездов по классам автомобилей.</Summary>
+            <LongDescription>Опции заездов по классам автомобилей.</LongDescription>
+          </Documentation>
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -261,6 +293,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="LogEntry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Message" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Level" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Logger" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="TimeStamp" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -313,6 +355,17 @@
                 <ScalarProperty Name="LidersCount" ColumnName="LidersCount" />
                 <ScalarProperty Name="RaceCount" ColumnName="RaceCount" />
                 <ScalarProperty Name="Id_CarClass" ColumnName="Id_CarClass" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogEntries">
+            <EntityTypeMapping TypeName="SprintModel.LogEntry">
+              <MappingFragment StoreEntitySet="LogEntries">
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="Logger" ColumnName="Logger" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

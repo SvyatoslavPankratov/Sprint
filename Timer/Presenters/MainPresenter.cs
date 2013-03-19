@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Threading;
 using System.Linq;
+using System.Threading;
 
+using Sprint.Extensions;
+using Sprint.Managers;
 using Sprint.Models;
 using Sprint.Views;
-using Sprint.Extensions;
 using Sprint.Views.Interfaces;
-using Sprint.Managers;
 
 namespace Sprint.Presenters
 {
@@ -88,6 +88,8 @@ namespace Sprint.Presenters
                     {
                         racer.Results = new ResultsModel(MaxRaceCount, MaxCircleCount);
                     }
+
+                    RacersDbManager.SetRacer(racer);
                 }
             }
         }
@@ -368,16 +370,43 @@ namespace Sprint.Presenters
         /// <summary>
         /// Экспорт всех данных в Excel.
         /// </summary>
-        public void ExportToExcel()
+        /// <returns>Результат операции.</returns>
+        public OperationResult ExportToExcel()
         {
             var tables = new List<TableWithResults>();
 
             foreach (var group in RacerGroups)
             {
-                tables.Add(new TableWithResults { Results = GetTableWithResults(group, group.RaceNumber), CarClass = group.CarClass, RaceNumber = group.RaceNumber });
+                if (group.Racers.Count() > 0)
+                {
+                    tables.Add(new TableWithResults
+                                    {
+                                        Results = GetTableWithResults(group, group.RaceNumber),
+                                        CarClass = group.CarClass,
+                                        RaceNumber = group.RaceNumber
+                                    });
+                }
             }
 
-            ExcelManager.CreateResultExcelDocument(tables);
+            return ExcelManager.CreateResultExcelDocument(tables);
+        }
+
+        /// <summary>
+        /// Удалить все логи программы в БД.
+        /// </summary>
+        /// <returns>Результат операции.</returns>
+        public OperationResult DeleteLogs()
+        {
+            return LogsDbManager.DeleteLogs();
+        }
+
+        /// <summary>
+        /// Удалить все данные программы в БД.
+        /// </summary>
+        /// <returns>Результат операции.</returns>
+        public OperationResult DeleteData()
+        {
+            throw new NotImplementedException();
         }
 
         #region Работа с таблицами результатов участников

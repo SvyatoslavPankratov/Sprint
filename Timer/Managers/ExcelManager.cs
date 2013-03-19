@@ -180,6 +180,14 @@ namespace Sprint.Managers
                     ws.Cells[rowIndex, colIndex].Value = dr[dc.ColumnName];
                     colIndex++;
                 }
+
+                var fill = ws.Cells[rowIndex, 1].Style.Fill;
+                fill.PatternType = ExcelFillStyle.Solid;
+                fill.BackgroundColor.SetColor(Color.MediumAquamarine);
+
+                fill = ws.Cells[rowIndex, 2].Style.Fill;
+                fill.PatternType = ExcelFillStyle.Solid;
+                fill.BackgroundColor.SetColor(Color.PowderBlue);
             }
         }
 
