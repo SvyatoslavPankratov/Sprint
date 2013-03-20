@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 
+using Sprint.Interfaces;
 using Sprint.Managers;
 using Sprint.Models;
 using Sprint.Presenters;
@@ -12,7 +13,7 @@ namespace Sprint.Views
 {
     public partial class MainView : Form, IMainView
     {
-        #region Члены интерфейса IMainView
+        #region Реализация интерфейса IMainView
 
         /// <summary>
         /// Задать или получить таблицу с результатами переднеприводных автомобилей за 1 заезд.
@@ -111,9 +112,60 @@ namespace Sprint.Views
         }
 
         /// <summary>
-        /// Задать или получить список участников, которые были добавлены в диалоге регистрации участников.
+        /// Задать первого текущего участника на трассе.
         /// </summary>
-        public IEnumerable<RacerModel> AddedRacers { get; private set; }
+        public int FirstCurrentRacer
+        {
+            set 
+            {
+                if (value == 0)
+                {
+                    firstCurrentRacer_L.Text = "-";
+                }
+                else
+                {
+                    firstCurrentRacer_L.Text = value.ToString("D3");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Задать второго текущего участника на трассе.
+        /// </summary>
+        public int SecondCurrentRacer
+        {
+            set
+            {
+                if (value == 0)
+                {
+                    secondCurrentRacer_L.Text = "-";
+                }
+                else
+                {
+                    secondCurrentRacer_L.Text = value.ToString("D3");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Задать следующего текущего участника на трассе.
+        /// </summary>
+        public int NextCurrentRacer
+        {
+            set
+            {
+                if (value == 0)
+                {
+                    nextCurrentRacer_L.Text = "-";
+                }
+                else
+                {
+                    nextCurrentRacer_L.Text = value.ToString("D3");
+                }
+
+                SecondMonitor.NextRacerNumber = value;
+            }
+        }
 
         #endregion
 
@@ -127,7 +179,12 @@ namespace Sprint.Views
         /// <summary>
         /// Задать или получить сплеш скрин.
         /// </summary>
-        private Form SpleshScreen { get; set; }
+        private ISplashScreenView SpleshScreen { get; set; }
+
+        /// <summary>
+        /// Задать или получить второй экран приложения.
+        /// </summary>
+        private ISecondMonitorView SecondMonitor { get; set; }
 
         #endregion
 
@@ -149,10 +206,12 @@ namespace Sprint.Views
         /// Конструктор для главного окна.
         /// </summary>
         /// <param name="splashScreen">Сплеш скрин приложения.</param>
-        public MainView(Form splashScreen) 
+        /// <param name="secondMonitor">Второй монитор приложения.</param>
+        public MainView(ISplashScreenView splashScreen, ISecondMonitorView secondMonitor) 
             : this()
         {
             SpleshScreen = splashScreen;
+            SecondMonitor = secondMonitor;
         }
 
         #endregion
@@ -190,7 +249,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void MainView_Shown(object sender, EventArgs e)
         {
-            SpleshScreen.Close();
+            SpleshScreen.CloseSplashScreen();
 
             var checkSensorView = new CheckSensorView();
             checkSensorView.ShowDialog();
@@ -198,9 +257,7 @@ namespace Sprint.Views
             var newRacerView = new NewRacerView();
             newRacerView.ShowDialog();
 
-            AddedRacers = newRacerView.NewRacerPresenter.Racers;
-
-            MainPresenter.SetRacersFromNewRacersDialog();
+            MainPresenter.SetRacersFromNewRacersDialog(newRacerView.NewRacerPresenter.Racers);
 
             WindowsShellManager.RegisterHotKey(this, Keys.CapsLock);
         }

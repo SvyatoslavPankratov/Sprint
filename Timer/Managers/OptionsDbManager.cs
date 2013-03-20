@@ -220,6 +220,31 @@ namespace Sprint.Managers
             }
         }
 
+        /// <summary>
+        /// Удалить все опции гонок.
+        /// </summary>
+        /// <returns>Результат удаления опций.</returns>
+        public static OperationResult DeleteAllOptions()
+        {
+            try
+            {
+                foreach (var ro in dc.RacesOptions)
+                {
+                    dc.RacesOptions.Remove(ro);
+                }
+
+                dc.SaveChanges();
+                return new OperationResult(true);
+            }
+            catch (Exception ex)
+            {
+                var exception = new SprintException("Не удалось удалить заданные опции гонок.",
+                                                        "Sprint.Managers.OptionsManager.DeleteOptions(Guid Id)", ex);
+                logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
+                throw exception;
+            }
+        }
+
         #endregion
     }
 }

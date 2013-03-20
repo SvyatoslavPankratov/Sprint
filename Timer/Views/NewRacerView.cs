@@ -12,12 +12,7 @@ namespace Sprint.Views
 {
     public partial class NewRacerView : Form, INewRacerView
     {
-        #region Свойства
-
-        /// <summary>
-        /// Задать или получить презентер для окна заполнения участников.
-        /// </summary>
-        public NewRacerPresenter NewRacerPresenter { get; set; }
+        #region Реализация интерфейса INewRacerView
 
         /// <summary>
         /// Задать или получить имя гонщика с формы.
@@ -62,7 +57,7 @@ namespace Sprint.Views
         {
             set
             {
-                foreach(var item in value)
+                foreach (var item in value)
                 {
                     carClassesCB.Items.Add(item);
                 }
@@ -76,7 +71,7 @@ namespace Sprint.Views
         {
             get
             {
-                return (CarClassesEnum) Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), carClassesCB.SelectedItem.ToString());
+                return (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), carClassesCB.SelectedItem.ToString());
             }
         }
 
@@ -88,6 +83,15 @@ namespace Sprint.Views
             get { return (DataTable)racersDGV.DataSource; }
             set { racersDGV.DataSource = value; }
         }
+
+        #endregion
+
+        #region Свойства
+
+        /// <summary>
+        /// Задать или получить презентер для окна заполнения участников.
+        /// </summary>
+        public NewRacerPresenter NewRacerPresenter { get; set; }
 
         /// <summary>
         /// Задать или получить згначение индекса для какого-либо элемента.

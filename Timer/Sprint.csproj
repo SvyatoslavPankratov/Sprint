@@ -121,6 +121,8 @@
     <Compile Include="Exceptions\SprintException.cs" />
     <Compile Include="Exceptions\SprintSystemException.cs" />
     <Compile Include="Extensions\IEnumerableExtesions.cs" />
+    <Compile Include="Interfaces\ISecondMonitorView.cs" />
+    <Compile Include="Interfaces\ISplashScreenView.cs" />
     <Compile Include="Managers\CarClassesDbMeneger.cs" />
     <Compile Include="Managers\ExcelManager.cs" />
     <Compile Include="Managers\ExceptionsManager.cs" />
@@ -133,6 +135,7 @@
     <Compile Include="Models\CarModel.cs" />
     <Compile Include="Models\OperationResult.cs" />
     <Compile Include="Models\PeopleModel.cs" />
+    <Compile Include="Models\RaceOptionsModel.cs" />
     <Compile Include="Models\RacerModel.cs" />
     <Compile Include="Models\RacersGroupModel.cs" />
     <Compile Include="Models\ResultsModel.cs" />
@@ -142,6 +145,7 @@
     <Compile Include="Presenters\CheckSensorPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Presenters\NewRacerPresenter.cs" />
+    <Compile Include="Presenters\SecondMonitorPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\AboutView.cs">
@@ -179,6 +183,12 @@
     </Compile>
     <Compile Include="Views\NewRacerView.Designer.cs">
       <DependentUpon>NewRacerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecondMonitorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SecondMonitorView.Designer.cs">
+      <DependentUpon>SecondMonitorView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SplashScreenView.cs">
       <SubType>Form</SubType>
@@ -219,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NewRacerView.resx">
       <DependentUpon>NewRacerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SecondMonitorView.resx">
+      <DependentUpon>SecondMonitorView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SplashScreenView.resx">
       <DependentUpon>SplashScreenView.cs</DependentUpon>

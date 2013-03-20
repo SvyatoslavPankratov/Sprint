@@ -21,3 +21,4 @@ C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\Timer\
 C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\Timer\bin\Debug\NLog.xml
 C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\Timer\obj\Debug\Sprint.exe
 C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\Timer\obj\Debug\Sprint.pdb
+C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\Timer\obj\Debug\Sprint.Views.SecondMonitorView.resources

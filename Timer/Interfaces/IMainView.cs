@@ -67,9 +67,19 @@ namespace Sprint.Views.Interfaces
         int Mlsec { set; }
 
         /// <summary>
-        /// Задать или получить список участников, которые были добавлены в диалоге регистрации участников.
+        /// Задать первого текущего участника на трассе.
         /// </summary>
-        IEnumerable<RacerModel> AddedRacers { get; }
+        int FirstCurrentRacer { set; }
+
+        /// <summary>
+        /// Задать второго текущего участника на трассе.
+        /// </summary>
+        int SecondCurrentRacer { set; }
+
+        /// <summary>
+        /// Задать следующего текущего участника на трассе.
+        /// </summary>
+        int NextCurrentRacer { set; }
 
         #endregion
     }

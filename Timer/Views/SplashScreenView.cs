@@ -7,13 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using Sprint.Interfaces;
+
 namespace Sprint.Views
 {
-    public partial class SplashScreenView : Form
+    public partial class SplashScreenView : Form, ISplashScreenView
     {
+        #region Реализация интерфейса ISplashScreenView
+
+        /// <summary>
+        /// Закрыть сплеш экран.
+        /// </summary>
+        public void CloseSplashScreen()
+        {
+            Close();
+        }
+
+        #endregion
+
+        #region Конструкторы
+
+        /// <summary>
+        /// Конструктор.
+        /// </summary>
         public SplashScreenView()
         {
             InitializeComponent();
-        }
+        } 
+
+        #endregion
     }
 }

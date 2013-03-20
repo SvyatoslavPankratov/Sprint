@@ -183,9 +183,9 @@ namespace Sprint.Presenters
         /// <summary>
         /// Взять из диалдога добавления новых гонщиков список участников.
         /// </summary>
-        public void SetRacersFromNewRacersDialog()
+        public void SetRacersFromNewRacersDialog(IEnumerable<RacerModel> addedRacers)
         {
-            Racers = MainView.AddedRacers;           
+            Racers = addedRacers;           
             SetRacersForTableForFirstRace();
         }
 
@@ -406,7 +406,20 @@ namespace Sprint.Presenters
         /// <returns>Результат операции.</returns>
         public OperationResult DeleteData()
         {
-            throw new NotImplementedException();
+            var res_1 = RacersDbManager.DeleteRacers();
+            var res_2 = OptionsDbManager.DeleteAllOptions();
+
+            if (!res_1.Result)
+            {
+                return res_1;
+            }
+
+            if (!res_2.Result)
+            {
+                return res_2;
+            }
+
+            return new OperationResult(true);
         }
 
         #region Работа с таблицами результатов участников

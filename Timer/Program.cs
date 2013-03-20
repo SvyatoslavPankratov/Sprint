@@ -19,7 +19,10 @@ namespace Sprint
             var splashScreen = new SplashScreenView();
             splashScreen.Show();
 
-            Application.Run(new MainView(splashScreen));
+            var secondMonitor = new SecondMonitorView();
+            secondMonitor.Show();
+
+            Application.Run(new MainView(splashScreen, secondMonitor));
         }
     }
 }

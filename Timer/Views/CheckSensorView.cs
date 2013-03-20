@@ -9,7 +9,7 @@ namespace Sprint.Views
 {
     public partial class CheckSensorView : Form, ICheckSensorView
     {
-        #region Члены интерфейса ICheckSensorView
+        #region Реализация интерфейса ICheckSensorView
 
         /// <summary>
         /// Задать или получить скрыта или нет панель с информацией о том, что сигнал от датчика отсечки есть.
