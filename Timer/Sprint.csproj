@@ -129,19 +129,21 @@
     <Compile Include="Managers\LogsDbManager.cs" />
     <Compile Include="Managers\OptionsDbManager.cs" />
     <Compile Include="Managers\RacersDbManager.cs" />
+    <Compile Include="Managers\ScreenManager.cs" />
     <Compile Include="Managers\WindowsShellManager.cs" />
     <Compile Include="Models\AllTablesWithResults.cs" />
     <Compile Include="Models\CarClassesEnum.cs" />
     <Compile Include="Models\CarModel.cs" />
     <Compile Include="Models\OperationResult.cs" />
     <Compile Include="Models\PeopleModel.cs" />
-    <Compile Include="Models\RaceOptionsModel.cs" />
+    <Compile Include="Models\RaceOptionsForCarClassModel.cs" />
     <Compile Include="Models\RacerModel.cs" />
     <Compile Include="Models\RacersGroupModel.cs" />
     <Compile Include="Models\ResultsModel.cs" />
     <Compile Include="Models\StopwatchModel.cs" />
     <Compile Include="Models\TimeModel.cs" />
     <Compile Include="Models\TrackModel.cs" />
+    <Compile Include="Presenters\CarClassPresenter.cs" />
     <Compile Include="Presenters\CheckSensorPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Presenters\NewRacerPresenter.cs" />
@@ -153,6 +155,12 @@
     </Compile>
     <Compile Include="Views\AboutView.Designer.cs">
       <DependentUpon>AboutView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddedRacersProcessView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddedRacersProcessView.Designer.cs">
+      <DependentUpon>AddedRacersProcessView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\CheckSensorView.cs">
       <SubType>Form</SubType>
@@ -183,6 +191,12 @@
     </Compile>
     <Compile Include="Views\NewRacerView.Designer.cs">
       <DependentUpon>NewRacerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OptionsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\OptionsView.Designer.cs">
+      <DependentUpon>OptionsView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SecondMonitorView.cs">
       <SubType>Form</SubType>
@@ -218,6 +232,9 @@
     <EmbeddedResource Include="Views\AboutView.resx">
       <DependentUpon>AboutView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddedRacersProcessView.resx">
+      <DependentUpon>AddedRacersProcessView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\CheckSensorView.resx">
       <DependentUpon>CheckSensorView.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NewRacerView.resx">
       <DependentUpon>NewRacerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OptionsView.resx">
+      <DependentUpon>OptionsView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SecondMonitorView.resx">
       <DependentUpon>SecondMonitorView.cs</DependentUpon>
@@ -332,6 +352,7 @@
     <Content Include="Resources\Images\Up.png" />
     <Content Include="Resources\Images\Updae.png" />
     <Content Include="Resources\Images\User accept.png" />
+    <Content Include="Resources\Images\User.png" />
     <Content Include="Resources\Images\User_add.png" />
   </ItemGroup>
   <ItemGroup>

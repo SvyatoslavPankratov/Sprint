@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Sprint.Models;
 
-namespace UnitTest
+namespace UnitTest.Models
 {
     [TestClass]
     public class UTStopwatchModel

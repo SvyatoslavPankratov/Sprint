@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Reflection;
 using System.Windows.Forms;
 
 using Sprint.Interfaces;
@@ -197,6 +198,10 @@ namespace Sprint.Views
         {
             InitializeComponent();
 
+            Type dgvType = fwdR1DGV.GetType();
+            PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(fwdR1DGV, true, null);
+
             KeyPreview = true;                          // Изменено, чтобы заработали горячие клавиши
 
             MainPresenter = new MainPresenter(this);
@@ -257,7 +262,13 @@ namespace Sprint.Views
             var newRacerView = new NewRacerView();
             newRacerView.ShowDialog();
 
+            var wnd = new AddedRacersProcessView();
+
+            this.Invoke(new Action(() => wnd.Show()));
+
             MainPresenter.SetRacersFromNewRacersDialog(newRacerView.NewRacerPresenter.Racers);
+
+            this.Invoke(new Action(() => wnd.Close()));
 
             WindowsShellManager.RegisterHotKey(this, Keys.CapsLock);
         }
@@ -533,7 +544,18 @@ namespace Sprint.Views
                     MessageBox.Show("Не удалось удалить логи программы.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        } 
+        }
+
+        /// <summary>
+        /// Действия при нажатии пользователем в меню настройки программы.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void опцииToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var wnd = new OptionsView();
+            wnd.ShowDialog();
+        }
 
         #endregion
 

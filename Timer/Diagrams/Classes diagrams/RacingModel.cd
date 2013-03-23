@@ -29,7 +29,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Sprint.Models.TimeModel">
-    <Position X="11.75" Y="9.75" Width="2" />
+    <Position X="11.75" Y="12.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAABAAAEAAAAAAAAAAAAAEAAAQAAAAAAAA=</HashCode>
       <FileName>Models\TimeModel.cs</FileName>
@@ -82,11 +82,11 @@
       <FileName>Presenters\MainPresenter.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
+      <Property Name="MainView" />
       <Property Name="Stopwatch" />
       <Property Name="CurrentRaserGroup" />
       <Property Name="CurrentCarClass" />
       <Property Name="Track" />
-      <Property Name="MainView" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="Racers" />
@@ -96,7 +96,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Sprint.Models.StopwatchModel">
-    <Position X="9.5" Y="9.75" Width="1.5" />
+    <Position X="9.5" Y="12.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAACAAAASAAAAAAAAAAAAAAAAAAAAAAIAQAAAAAAQA=</HashCode>
       <FileName>Models\StopwatchModel.cs</FileName>
@@ -185,6 +185,13 @@
       <Property Name="CurrentRacers" />
     </ShowAsCollectionAssociation>
   </Class>
+  <Class Name="Sprint.Presenters.CarClassPresenter">
+    <Position X="2.75" Y="10.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Presenters\CarClassPresenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="Sprint.Views.Interfaces.INewRacerView">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
@@ -193,9 +200,9 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Sprint.Views.Interfaces.IMainView">
-    <Position X="2" Y="5.75" Width="1.5" />
+    <Position X="1.75" Y="5.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AgAAAIAAAAAABAAAEAAAAAIAEAAgAAAAAAAEAAEgEAA=</HashCode>
+      <HashCode>AgAAAIAAAAAABAAAEAAQAAIAEAAAAAAAAAAEAAFgEAA=</HashCode>
       <FileName>Interfaces\IMainView.cs</FileName>
     </TypeIdentifier>
   </Interface>

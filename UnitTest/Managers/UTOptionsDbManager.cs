@@ -6,7 +6,7 @@ using Sprint.Data;
 using Sprint.Managers;
 using Sprint.Models;
 
-namespace UnitTest
+namespace UnitTest.Managers
 {
     [TestClass]
     public class UTOptionsDbManager

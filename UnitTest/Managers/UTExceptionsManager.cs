@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sprint.Managers;
 using Sprint.Exceptions;
 
-namespace UnitTest
+namespace UnitTest.Managers
 {
     [TestClass]
     public class UTExceptionsManager

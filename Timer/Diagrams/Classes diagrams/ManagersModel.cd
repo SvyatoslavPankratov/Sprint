@@ -17,14 +17,14 @@
   <Class Name="Sprint.Managers.OptionsDbManager">
     <Position X="0.5" Y="3" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>BAAAAAIAAAAAAQACAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>BCAAAAIAAAAAAQACAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Managers\OptionsDbManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sprint.Managers.RacersDbManager">
     <Position X="3.5" Y="3" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAIAAAAAEGACAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAIAAAAAEEACAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Managers\RacersDbManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -47,6 +47,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAIAAEAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Managers\LogsDbManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sprint.Managers.ScreenManager">
+    <Position X="3.5" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Managers\ScreenManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
