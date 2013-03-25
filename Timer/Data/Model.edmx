@@ -83,6 +83,7 @@
           <Property Name="Time" Type="datetime" Nullable="false" />
           <Property Name="RaceNumber" Type="int" Nullable="false" />
           <Property Name="WarmingUp" Type="bit" Nullable="false" />
+          <Property Name="LapNumber" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Cars_CarClasses">
           <End Role="CarClasses" Type="SprintModel.Store.CarClasses" Multiplicity="1">
@@ -224,6 +225,7 @@
           <Property Type="Int32" Name="RaceNumber" Nullable="false" />
           <Property Type="Boolean" Name="WarmingUp" Nullable="false" />
           <NavigationProperty Name="Racer" Relationship="SprintModel.FK_Results_Racers" FromRole="Result" ToRole="Racer" />
+          <Property Type="Int32" Name="LapNumber" Nullable="false" />
         </EntityType>
         <Association Name="FK_Cars_CarClasses">
           <End Type="SprintModel.CarClass" Role="CarClass" Multiplicity="1">
@@ -341,6 +343,7 @@
           <EntitySetMapping Name="Results">
             <EntityTypeMapping TypeName="SprintModel.Result">
               <MappingFragment StoreEntitySet="Results">
+                <ScalarProperty Name="LapNumber" ColumnName="LapNumber" />
                 <ScalarProperty Name="WarmingUp" ColumnName="WarmingUp" />
                 <ScalarProperty Name="RaceNumber" ColumnName="RaceNumber" />
                 <ScalarProperty Name="Time" ColumnName="Time" />

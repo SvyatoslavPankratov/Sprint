@@ -17,8 +17,7 @@ namespace UnitTest.Managers
             var id = Guid.NewGuid();
 
             var carClasses = CarClassesDbMeneger.GetCarClasses();
-            var carClass = carClasses.FirstOrDefault(cc => cc.Name == CarClassesEnum.FWD.ToString());
-            var options = new RacesOption { Id = id, CarClass = carClass, LidersCount = 5, RaceCount = 2 };
+            var options = new RaceOptionsModel(CarClassesEnum.FWD) { LidersCount = 5, RaceCount = 2 };
 
             var res = OptionsDbManager.SetOptions(options);
 

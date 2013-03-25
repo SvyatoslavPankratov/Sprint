@@ -121,6 +121,7 @@
     <Compile Include="Exceptions\SprintException.cs" />
     <Compile Include="Exceptions\SprintSystemException.cs" />
     <Compile Include="Extensions\IEnumerableExtesions.cs" />
+    <Compile Include="Interfaces\IOptionsView.cs" />
     <Compile Include="Interfaces\ISecondMonitorView.cs" />
     <Compile Include="Interfaces\ISplashScreenView.cs" />
     <Compile Include="Managers\CarClassesDbMeneger.cs" />
@@ -136,7 +137,7 @@
     <Compile Include="Models\CarModel.cs" />
     <Compile Include="Models\OperationResult.cs" />
     <Compile Include="Models\PeopleModel.cs" />
-    <Compile Include="Models\RaceOptionsForCarClassModel.cs" />
+    <Compile Include="Models\RaceOptionsModel.cs" />
     <Compile Include="Models\RacerModel.cs" />
     <Compile Include="Models\RacersGroupModel.cs" />
     <Compile Include="Models\ResultsModel.cs" />
@@ -147,6 +148,7 @@
     <Compile Include="Presenters\CheckSensorPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Presenters\NewRacerPresenter.cs" />
+    <Compile Include="Presenters\OptionsPresenter.cs" />
     <Compile Include="Presenters\SecondMonitorPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -344,6 +346,7 @@
     <Content Include="Resources\Images\Printer.png" />
     <Content Include="Resources\Images\Refresh.png" />
     <Content Include="Resources\Images\Select.png" />
+    <Content Include="Resources\Images\Settings.png" />
     <Content Include="Resources\Images\Stop.png" />
     <Content Include="Resources\Images\Stopwatch finish.png" />
     <Content Include="Resources\Images\Stopwatch start.png" />

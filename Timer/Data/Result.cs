@@ -19,6 +19,7 @@ namespace Sprint.Data
         public System.DateTime Time { get; set; }
         public int RaceNumber { get; set; }
         public bool WarmingUp { get; set; }
+        public int LapNumber { get; set; }
     
         public virtual Racer Racer { get; set; }
     }

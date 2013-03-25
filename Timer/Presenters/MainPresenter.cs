@@ -152,6 +152,11 @@ namespace Sprint.Presenters
         /// </summary>
         private TrackModel Track { get; set; }
 
+        /// <summary>
+        /// Задать или получить опции гонок по классам автомобилей.
+        /// </summary>
+        private IEnumerable<RaceOptionsModel> RaceOptions { get; set; }
+
         #endregion
 
         #region Конструкторы
