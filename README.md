@@ -9,7 +9,7 @@ Technologies and libraries used in this project:
 	* SQL Server Compact
 	* EPPlus library
 
-Pattern:
+Pattern used in this project:
 
 	* MVP
 
