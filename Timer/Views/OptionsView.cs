@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 
 using Sprint.Interfaces;
-using Sprint.Models;
 using Sprint.Presenters;
 
 namespace Sprint.Views
@@ -11,7 +10,7 @@ namespace Sprint.Views
     {
         #region Fields
 
-        private RaceOptionsModel _raceOptionsForCarClass;
+        private object _raceOptionsForCarClass;
 
         #endregion
 
@@ -20,7 +19,7 @@ namespace Sprint.Views
         /// <summary>
         /// Задать или получить модель с опциями.
         /// </summary>
-        public RaceOptionsModel RaceOptionsForCarClass
+        public object RaceOptionsForCarClass
         {
             get { return _raceOptionsForCarClass; }
             set
@@ -67,9 +66,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var cc = (CarClassesEnum) Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), listWithCarClasses.SelectedItem.ToString());
-
-            OptionsPresenter.ChangeCarClass(cc);
+            OptionsPresenter.ChangeCarClass(listWithCarClasses.SelectedItem.ToString());
         }
 
         /// <summary>
@@ -89,7 +86,12 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            OptionsPresenter.SaveOptions();
+            var res = OptionsPresenter.SaveOptions();
+
+            if (res.Result)
+            {
+                Close();
+            }
         }
 
         #endregion

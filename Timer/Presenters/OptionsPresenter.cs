@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 
 using Sprint.Interfaces;
 using Sprint.Managers;
@@ -55,12 +56,14 @@ namespace Sprint.Presenters
         #region Методы
 
         /// <summary>
-        /// 
+        /// Изменить класс автомобиля.
         /// </summary>
         /// <param name="carClass"></param>
-        public void ChangeCarClass(CarClassesEnum carClass)
+        public void ChangeCarClass(string carClass)
         {
-            OptionsView.RaceOptionsForCarClass = RaceOptions.FirstOrDefault(ro => ro.CarClass == carClass);
+            var cc = (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), carClass);
+
+            OptionsView.RaceOptionsForCarClass = RaceOptions.FirstOrDefault(ro => ro.CarClass == cc);
         }
 
         /// <summary>
@@ -105,9 +108,30 @@ namespace Sprint.Presenters
             return options;
         }
 
+        /// <summary>
+        /// Сохранить опции.
+        /// </summary>
+        /// <returns></returns>
         public OperationResult SaveOptions()
         {
-            throw new NotImplementedException();
+            try
+            {
+                foreach (var options in RaceOptions)
+                {
+                    var res = OptionsDbManager.SetOptions(options);
+
+                    if (!res.Result)
+                    {
+                        throw new Exception(res.Details, res.Exception);
+                    }
+                }
+                return new OperationResult(true);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Не удалось сохранить настройки.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return new OperationResult(false, ex);
+            }
         }
 
         /// <summary>

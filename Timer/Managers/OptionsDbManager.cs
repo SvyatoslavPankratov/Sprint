@@ -126,7 +126,8 @@ namespace Sprint.Managers
                     return new OperationResult(false, exception.Message, exception);
                 }
                 
-                CarClass cc = dc.CarClasses.FirstOrDefault(row => row.Name == options.CarClass.ToString());
+                var str_cc = options.CarClass.ToString();
+                CarClass cc = dc.CarClasses.FirstOrDefault(row => row.Name == str_cc);
 
                 if (cc == null)
                 {

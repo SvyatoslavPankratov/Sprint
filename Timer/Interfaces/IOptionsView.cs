@@ -14,7 +14,7 @@ namespace Sprint.Interfaces
         /// <summary>
         /// Задать или получить опции гонок для заданного класса автомобилей.
         /// </summary>
-        RaceOptionsModel RaceOptionsForCarClass { get; set; }
+        object RaceOptionsForCarClass { get; set; }
 
         #endregion
 
