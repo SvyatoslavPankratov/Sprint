@@ -13,6 +13,16 @@ namespace Sprint.Interfaces{
         /// </summary>
         int NextRacerNumber { set; }
 
+        /// <summary>
+        /// Задать номер первого участника находящегося в данный момент на треке.
+        /// </summary>
+        int FirstCurrentRacerNumber { set; }
+
+        /// <summary>
+        /// Задать номер второго участника находящегося в данный момент на треке.
+        /// </summary>
+        int SecondCurrentRacerNumber { set; }
+
         #endregion
     }
 }

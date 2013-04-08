@@ -50,7 +50,7 @@ namespace Sprint.Views
         public OptionsView()
         {
             InitializeComponent();
-
+            
             OptionsPresenter = new OptionsPresenter(this);
 
             listWithCarClasses.SelectedIndex = 0;

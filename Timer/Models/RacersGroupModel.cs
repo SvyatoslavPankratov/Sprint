@@ -27,11 +27,6 @@ namespace Sprint.Models
         /// </summary>
         public int RaceNumber { get; set; }
 
-        /// <summary>
-        /// Задать или получить глобальную коллекцию гонщиков по всем классам автомобилей в сумме.
-        /// </summary>
-        public IEnumerable<RacerModel> GlobalRacers { get; set; }
-
         #endregion
 
         #region Constructors
@@ -40,10 +35,9 @@ namespace Sprint.Models
         /// Конструктор.
         /// </summary>
         /// <param name="carClass">Класс автомобилей в создаваемой группе.</param>
-        public RacersGroupModel(CarClassesEnum carClass, IEnumerable<RacerModel> globalRacers)
+        public RacersGroupModel(CarClassesEnum carClass)
         {
             CarClass = carClass;
-            GlobalRacers = globalRacers;
         }
 
         #endregion
@@ -56,21 +50,14 @@ namespace Sprint.Models
         /// <param name="racerNum">Номер перемещаемого участника.</param>
         public void MoveUpRacer(int racerNum)
         {
-            var racer       = GlobalRacers.ElementAt(racerNum);
-            var gl_racers   = GlobalRacers.ToList();
-            var gl_index    = gl_racers.IndexOf(racer);
+            var racer = Racers.ElementAt(racerNum);
+            var list = Racers.ToList();
+            var index = list.IndexOf(racer);
 
-            for (int i = gl_index - 1; i >= 0; i--)
-            {
-                if (gl_racers[i].Car.CarClass == CarClass)
-                {
-                    gl_racers.Remove(racer);
-                    gl_racers.Insert(i, racer);
-                    break;
-                }
-            }
+            list.Remove(racer);
+            list.Insert(index - 1, racer);
 
-            GlobalRacers = gl_racers;
+            Racers = list;
         }
 
         /// <summary>
@@ -79,21 +66,14 @@ namespace Sprint.Models
         /// <param name="racerNum">Номер перемещаемого участника.</param>
         public void MoveDownRacer(int racerNum)
         {
-            var racer       = GlobalRacers.ElementAt(racerNum);
-            var gl_racers   = GlobalRacers.ToList();
-            var gl_index    = gl_racers.IndexOf(racer);
+            var racer = Racers.ElementAt(racerNum);
+            var list = Racers.ToList();
+            var index = list.IndexOf(racer);
 
-            for (int i = gl_index + 1; i < gl_racers.Count; i++)
-            {
-                if (gl_racers[i].Car.CarClass == CarClass)
-                {
-                    gl_racers.Remove(racer);
-                    gl_racers.Insert(i, racer);
-                    break;
-                }
-            }
+            list.Remove(racer);
+            list.Insert(index + 1, racer);
 
-            GlobalRacers = gl_racers;
+            Racers = list;
         }
 
         /// <summary>

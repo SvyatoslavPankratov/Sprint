@@ -27,6 +27,42 @@ namespace Sprint.Views
             }
         }
 
+        /// <summary>
+        /// Задать номер первого участника находящегося в данный момент на треке.
+        /// </summary>
+        public int FirstCurrentRacerNumber
+        {
+            set
+            {
+                if (value == 0)
+                {
+                    firstCurrentRacerNumber_L.Text = "-";
+                }
+                else
+                {
+                    firstCurrentRacerNumber_L.Text = value.ToString("D3");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Задать номер второго участника находящегося в данный момент на треке.
+        /// </summary>
+        public int SecondCurrentRacerNumber
+        {
+            set
+            {
+                if (value == 0)
+                {
+                    secondCurrentRacerNumber_L.Text = "-";
+                }
+                else
+                {
+                    secondCurrentRacerNumber_L.Text = value.ToString("D3");
+                }
+            }
+        }
+
         #endregion
 
         #region Свойства

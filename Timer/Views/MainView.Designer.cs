@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -113,11 +114,10 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carClassesTabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.fwdRacesTabs = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton32 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.selectFwdCarClass1_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton49 = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_fwdR1DGV = new System.Windows.Forms.ToolStripButton();
@@ -125,11 +125,12 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.fwdR2DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip8 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton34 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton35 = new System.Windows.Forms.ToolStripButton();
+            this.selectFwdCarClass2_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton36 = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_fwdR2DGV = new System.Windows.Forms.ToolStripButton();
@@ -137,13 +138,15 @@
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton42 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton50 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.rwdRacesTabs = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.rwdR1DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.selectRwdCarClass1_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_rwdR1DGV = new System.Windows.Forms.ToolStripButton();
@@ -151,11 +154,12 @@
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton43 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton51 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator21 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.rwdR2DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.selectRwdCarClass2_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_rwdR2DGV = new System.Windows.Forms.ToolStripButton();
@@ -163,13 +167,14 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton44 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton52 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.awdRacesTabs = new System.Windows.Forms.TabControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.awdR1DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
+            this.selectAwdCarClass1_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_awdR1DGV = new System.Windows.Forms.ToolStripButton();
@@ -177,11 +182,12 @@
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton45 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton53 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton20 = new System.Windows.Forms.ToolStripButton();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.awdR2DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip5 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
+            this.selectAwdCarClass2_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton19 = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_awdR2DGV = new System.Windows.Forms.ToolStripButton();
@@ -189,13 +195,14 @@
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton46 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton54 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton21 = new System.Windows.Forms.ToolStripButton();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabControl5 = new System.Windows.Forms.TabControl();
+            this.sportRacesTabs = new System.Windows.Forms.TabControl();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.sportR1DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip6 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton22 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton23 = new System.Windows.Forms.ToolStripButton();
+            this.selectSportCarClass1_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton24 = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_sportR1DGV = new System.Windows.Forms.ToolStripButton();
@@ -203,11 +210,12 @@
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton47 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton55 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton25 = new System.Windows.Forms.ToolStripButton();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.sportR2DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip7 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton27 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton28 = new System.Windows.Forms.ToolStripButton();
+            this.selectSportCarClass2_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton29 = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_sportR2DGV = new System.Windows.Forms.ToolStripButton();
@@ -215,6 +223,8 @@
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton48 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton56 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton26 = new System.Windows.Forms.ToolStripButton();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -237,14 +247,14 @@
             this.menuStrip1.SuspendLayout();
             this.carClassesTabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            this.fwdRacesTabs.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fwdR2DGV)).BeginInit();
             this.toolStrip8.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabControl3.SuspendLayout();
+            this.rwdRacesTabs.SuspendLayout();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rwdR1DGV)).BeginInit();
             this.toolStrip3.SuspendLayout();
@@ -252,7 +262,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rwdR2DGV)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.tabControl4.SuspendLayout();
+            this.awdRacesTabs.SuspendLayout();
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.awdR1DGV)).BeginInit();
             this.toolStrip4.SuspendLayout();
@@ -260,7 +270,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.awdR2DGV)).BeginInit();
             this.toolStrip5.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            this.tabControl5.SuspendLayout();
+            this.sportRacesTabs.SuspendLayout();
             this.tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sportR1DGV)).BeginInit();
             this.toolStrip6.SuspendLayout();
@@ -456,6 +466,7 @@
             // 
             // startBtn
             // 
+            this.startBtn.Enabled = false;
             this.startBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startBtn.Image = ((System.Drawing.Image)(resources.GetObject("startBtn.Image")));
             this.startBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -559,7 +570,7 @@
             this.fwdR1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.fwdR1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.fwdR1DGV.ShowEditingIcon = false;
-            this.fwdR1DGV.Size = new System.Drawing.Size(1321, 316);
+            this.fwdR1DGV.Size = new System.Drawing.Size(1321, 315);
             this.fwdR1DGV.TabIndex = 3;
             this.fwdR1DGV.DataSourceChanged += new System.EventHandler(this.fwdR1DGV_DataSourceChanged);
             this.fwdR1DGV.Paint += new System.Windows.Forms.PaintEventHandler(this.fwdR1DGV_Paint);
@@ -712,7 +723,7 @@
             // 
             this.nextCurrentRacer_L.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.nextCurrentRacer_L.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nextCurrentRacer_L.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextCurrentRacer_L.Font = new System.Drawing.Font("Microsoft Sans Serif", 70F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nextCurrentRacer_L.Location = new System.Drawing.Point(0, 0);
             this.nextCurrentRacer_L.Margin = new System.Windows.Forms.Padding(0);
             this.nextCurrentRacer_L.Name = "nextCurrentRacer_L";
@@ -752,6 +763,7 @@
             this.печатьРезультатовToolStripMenuItem.Name = "печатьРезультатовToolStripMenuItem";
             this.печатьРезультатовToolStripMenuItem.Size = new System.Drawing.Size(198, 38);
             this.печатьРезультатовToolStripMenuItem.Text = "Печать результатов";
+            this.печатьРезультатовToolStripMenuItem.Click += new System.EventHandler(this.печатьРезультатовToolStripMenuItem_Click);
             // 
             // экспортToolStripMenuItem
             // 
@@ -874,6 +886,7 @@
             this.carClassesTabs.Controls.Add(this.tabPage4);
             this.carClassesTabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.carClassesTabs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.carClassesTabs.ImageList = this.imageList1;
             this.carClassesTabs.ItemSize = new System.Drawing.Size(101, 30);
             this.carClassesTabs.Location = new System.Drawing.Point(5, 5);
             this.carClassesTabs.Name = "carClassesTabs";
@@ -883,7 +896,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.tabControl2);
+            this.tabPage1.Controls.Add(this.fwdRacesTabs);
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -892,25 +905,27 @@
             this.tabPage1.Text = "Передний привод";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabControl2
+            // fwdRacesTabs
             // 
-            this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Controls.Add(this.tabPage6);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.Location = new System.Drawing.Point(3, 3);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1335, 387);
-            this.tabControl2.TabIndex = 4;
+            this.fwdRacesTabs.Controls.Add(this.tabPage5);
+            this.fwdRacesTabs.Controls.Add(this.tabPage6);
+            this.fwdRacesTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fwdRacesTabs.ImageList = this.imageList1;
+            this.fwdRacesTabs.Location = new System.Drawing.Point(3, 3);
+            this.fwdRacesTabs.Multiline = true;
+            this.fwdRacesTabs.Name = "fwdRacesTabs";
+            this.fwdRacesTabs.SelectedIndex = 0;
+            this.fwdRacesTabs.Size = new System.Drawing.Size(1335, 387);
+            this.fwdRacesTabs.TabIndex = 4;
             // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.fwdR1DGV);
             this.tabPage5.Controls.Add(this.toolStrip1);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Location = new System.Drawing.Point(4, 23);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1327, 361);
+            this.tabPage5.Size = new System.Drawing.Size(1327, 360);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "1 тур";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -920,41 +935,32 @@
             this.toolStrip1.BackColor = System.Drawing.Color.Gainsboro;
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton32,
-            this.toolStripButton4,
+            this.selectFwdCarClass1_BT,
             this.toolStripSeparator2,
             this.toolStripButton49,
             this.upRacer_Btn_fwdR1DGV,
             this.downRacer_Btn_fwdR1DGV,
             this.toolStripSeparator3,
             this.toolStripButton1,
-            this.toolStripButton2});
+            this.toolStripButton2,
+            this.toolStripSeparator19,
+            this.toolStripButton3});
             this.toolStrip1.Location = new System.Drawing.Point(3, 3);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1321, 39);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton32
+            // selectFwdCarClass1_BT
             // 
-            this.toolStripButton32.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton32.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton32.Image")));
-            this.toolStripButton32.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton32.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton32.Name = "toolStripButton32";
-            this.toolStripButton32.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton32.Text = "Выбрать ";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton4.Text = "Очистить таблицу результатов";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            this.selectFwdCarClass1_BT.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.selectFwdCarClass1_BT.Image = ((System.Drawing.Image)(resources.GetObject("selectFwdCarClass1_BT.Image")));
+            this.selectFwdCarClass1_BT.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.selectFwdCarClass1_BT.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.selectFwdCarClass1_BT.Name = "selectFwdCarClass1_BT";
+            this.selectFwdCarClass1_BT.Size = new System.Drawing.Size(36, 36);
+            this.selectFwdCarClass1_BT.Text = "Выбрать ";
+            this.selectFwdCarClass1_BT.Click += new System.EventHandler(this.toolStripButton32_Click);
             // 
             // toolStripSeparator2
             // 
@@ -1021,14 +1027,30 @@
             this.toolStripButton2.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton2.Text = "Перезаезд попытки";
             // 
+            // toolStripSeparator19
+            // 
+            this.toolStripSeparator19.Name = "toolStripSeparator19";
+            this.toolStripSeparator19.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton3.Text = "Печать данного списка результатов";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click_1);
+            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.fwdR2DGV);
             this.tabPage6.Controls.Add(this.toolStrip8);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Location = new System.Drawing.Point(4, 23);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1327, 361);
+            this.tabPage6.Size = new System.Drawing.Size(1327, 360);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "2 тур";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1076,7 +1098,7 @@
             this.fwdR2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.fwdR2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.fwdR2DGV.ShowEditingIcon = false;
-            this.fwdR2DGV.Size = new System.Drawing.Size(1321, 316);
+            this.fwdR2DGV.Size = new System.Drawing.Size(1321, 315);
             this.fwdR2DGV.TabIndex = 6;
             // 
             // toolStrip8
@@ -1084,40 +1106,32 @@
             this.toolStrip8.BackColor = System.Drawing.Color.Gainsboro;
             this.toolStrip8.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.toolStrip8.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton34,
-            this.toolStripButton35,
+            this.selectFwdCarClass2_BT,
             this.toolStripSeparator16,
             this.toolStripButton36,
             this.upRacer_Btn_fwdR2DGV,
             this.downRacer_Btn_fwdR2DGV,
             this.toolStripSeparator17,
             this.toolStripButton42,
-            this.toolStripButton50});
+            this.toolStripButton50,
+            this.toolStripSeparator20,
+            this.toolStripButton8});
             this.toolStrip8.Location = new System.Drawing.Point(3, 3);
             this.toolStrip8.Name = "toolStrip8";
             this.toolStrip8.Size = new System.Drawing.Size(1321, 39);
             this.toolStrip8.TabIndex = 7;
             this.toolStrip8.Text = "toolStrip8";
             // 
-            // toolStripButton34
+            // selectFwdCarClass2_BT
             // 
-            this.toolStripButton34.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton34.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton34.Image")));
-            this.toolStripButton34.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton34.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton34.Name = "toolStripButton34";
-            this.toolStripButton34.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton34.Text = "Выбрать ";
-            // 
-            // toolStripButton35
-            // 
-            this.toolStripButton35.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton35.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton35.Image")));
-            this.toolStripButton35.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton35.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton35.Name = "toolStripButton35";
-            this.toolStripButton35.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton35.Text = "Очистить таблицу результатов";
+            this.selectFwdCarClass2_BT.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.selectFwdCarClass2_BT.Image = ((System.Drawing.Image)(resources.GetObject("selectFwdCarClass2_BT.Image")));
+            this.selectFwdCarClass2_BT.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.selectFwdCarClass2_BT.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.selectFwdCarClass2_BT.Name = "selectFwdCarClass2_BT";
+            this.selectFwdCarClass2_BT.Size = new System.Drawing.Size(36, 36);
+            this.selectFwdCarClass2_BT.Text = "Выбрать ";
+            this.selectFwdCarClass2_BT.Click += new System.EventHandler(this.selectFwdCarClass2_BT_Click);
             // 
             // toolStripSeparator16
             // 
@@ -1182,9 +1196,31 @@
             this.toolStripButton50.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton50.Text = "Перезаезд попытки";
             // 
+            // toolStripSeparator20
+            // 
+            this.toolStripSeparator20.Name = "toolStripSeparator20";
+            this.toolStripSeparator20.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
+            this.toolStripButton8.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton8.Text = "Печать данного списка результатов";
+            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Record.png");
+            // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.tabControl3);
+            this.tabPage2.Controls.Add(this.rwdRacesTabs);
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -1193,25 +1229,26 @@
             this.tabPage2.Text = "Задний привод";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabControl3
+            // rwdRacesTabs
             // 
-            this.tabControl3.Controls.Add(this.tabPage7);
-            this.tabControl3.Controls.Add(this.tabPage8);
-            this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl3.Location = new System.Drawing.Point(3, 3);
-            this.tabControl3.Name = "tabControl3";
-            this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(1335, 387);
-            this.tabControl3.TabIndex = 5;
+            this.rwdRacesTabs.Controls.Add(this.tabPage7);
+            this.rwdRacesTabs.Controls.Add(this.tabPage8);
+            this.rwdRacesTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rwdRacesTabs.ImageList = this.imageList1;
+            this.rwdRacesTabs.Location = new System.Drawing.Point(3, 3);
+            this.rwdRacesTabs.Name = "rwdRacesTabs";
+            this.rwdRacesTabs.SelectedIndex = 0;
+            this.rwdRacesTabs.Size = new System.Drawing.Size(1335, 387);
+            this.rwdRacesTabs.TabIndex = 5;
             // 
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.rwdR1DGV);
             this.tabPage7.Controls.Add(this.toolStrip3);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Location = new System.Drawing.Point(4, 23);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1327, 361);
+            this.tabPage7.Size = new System.Drawing.Size(1327, 360);
             this.tabPage7.TabIndex = 0;
             this.tabPage7.Text = "1 тур";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1259,7 +1296,7 @@
             this.rwdR1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.rwdR1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.rwdR1DGV.ShowEditingIcon = false;
-            this.rwdR1DGV.Size = new System.Drawing.Size(1321, 316);
+            this.rwdR1DGV.Size = new System.Drawing.Size(1321, 315);
             this.rwdR1DGV.TabIndex = 3;
             this.rwdR1DGV.DataSourceChanged += new System.EventHandler(this.rwdR1DGV_DataSourceChanged);
             this.rwdR1DGV.Paint += new System.Windows.Forms.PaintEventHandler(this.rwdR1DGV_Paint);
@@ -1269,40 +1306,32 @@
             this.toolStrip3.BackColor = System.Drawing.Color.Gainsboro;
             this.toolStrip3.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton9,
-            this.toolStripButton10,
+            this.selectRwdCarClass1_BT,
             this.toolStripSeparator6,
             this.toolStripButton11,
             this.upRacer_Btn_rwdR1DGV,
             this.downRacer_Btn_rwdR1DGV,
             this.toolStripSeparator7,
             this.toolStripButton43,
-            this.toolStripButton51});
+            this.toolStripButton51,
+            this.toolStripSeparator21,
+            this.toolStripButton12});
             this.toolStrip3.Location = new System.Drawing.Point(3, 3);
             this.toolStrip3.Name = "toolStrip3";
             this.toolStrip3.Size = new System.Drawing.Size(1321, 39);
             this.toolStrip3.TabIndex = 5;
             this.toolStrip3.Text = "toolStrip3";
             // 
-            // toolStripButton9
+            // selectRwdCarClass1_BT
             // 
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
-            this.toolStripButton9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton9.Text = "Выбрать ";
-            // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
-            this.toolStripButton10.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton10.Text = "Очистить таблицу результатов";
+            this.selectRwdCarClass1_BT.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.selectRwdCarClass1_BT.Image = ((System.Drawing.Image)(resources.GetObject("selectRwdCarClass1_BT.Image")));
+            this.selectRwdCarClass1_BT.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.selectRwdCarClass1_BT.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.selectRwdCarClass1_BT.Name = "selectRwdCarClass1_BT";
+            this.selectRwdCarClass1_BT.Size = new System.Drawing.Size(36, 36);
+            this.selectRwdCarClass1_BT.Text = "Выбрать ";
+            this.selectRwdCarClass1_BT.Click += new System.EventHandler(this.toolStripButton9_Click);
             // 
             // toolStripSeparator6
             // 
@@ -1367,14 +1396,30 @@
             this.toolStripButton51.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton51.Text = "Перезаезд попытки";
             // 
+            // toolStripSeparator21
+            // 
+            this.toolStripSeparator21.Name = "toolStripSeparator21";
+            this.toolStripSeparator21.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
+            this.toolStripButton12.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton12.Text = "Печать данного списка результатов";
+            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
+            // 
             // tabPage8
             // 
             this.tabPage8.Controls.Add(this.rwdR2DGV);
             this.tabPage8.Controls.Add(this.toolStrip2);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Location = new System.Drawing.Point(4, 23);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1327, 361);
+            this.tabPage8.Size = new System.Drawing.Size(1327, 360);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "2 тур";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1423,7 +1468,7 @@
             this.rwdR2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.rwdR2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.rwdR2DGV.ShowEditingIcon = false;
-            this.rwdR2DGV.Size = new System.Drawing.Size(1321, 316);
+            this.rwdR2DGV.Size = new System.Drawing.Size(1321, 315);
             this.rwdR2DGV.TabIndex = 6;
             // 
             // toolStrip2
@@ -1431,40 +1476,32 @@
             this.toolStrip2.BackColor = System.Drawing.Color.Gainsboro;
             this.toolStrip2.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton5,
-            this.toolStripButton6,
+            this.selectRwdCarClass2_BT,
             this.toolStripSeparator4,
             this.toolStripButton7,
             this.upRacer_Btn_rwdR2DGV,
             this.downRacer_Btn_rwdR2DGV,
             this.toolStripSeparator5,
             this.toolStripButton44,
-            this.toolStripButton52});
+            this.toolStripButton52,
+            this.toolStripSeparator22,
+            this.toolStripButton16});
             this.toolStrip2.Location = new System.Drawing.Point(3, 3);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(1321, 39);
             this.toolStrip2.TabIndex = 7;
             this.toolStrip2.Text = "toolStrip2";
             // 
-            // toolStripButton5
+            // selectRwdCarClass2_BT
             // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton5.Text = "Выбрать ";
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton6.Text = "Очистить таблицу результатов";
+            this.selectRwdCarClass2_BT.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.selectRwdCarClass2_BT.Image = ((System.Drawing.Image)(resources.GetObject("selectRwdCarClass2_BT.Image")));
+            this.selectRwdCarClass2_BT.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.selectRwdCarClass2_BT.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.selectRwdCarClass2_BT.Name = "selectRwdCarClass2_BT";
+            this.selectRwdCarClass2_BT.Size = new System.Drawing.Size(36, 36);
+            this.selectRwdCarClass2_BT.Text = "Выбрать ";
+            this.selectRwdCarClass2_BT.Click += new System.EventHandler(this.selectRwdCarClass2_BT_Click);
             // 
             // toolStripSeparator4
             // 
@@ -1529,9 +1566,25 @@
             this.toolStripButton52.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton52.Text = "Перезаезд попытки";
             // 
+            // toolStripSeparator22
+            // 
+            this.toolStripSeparator22.Name = "toolStripSeparator22";
+            this.toolStripSeparator22.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton16
+            // 
+            this.toolStripButton16.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton16.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton16.Image")));
+            this.toolStripButton16.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton16.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton16.Name = "toolStripButton16";
+            this.toolStripButton16.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton16.Text = "Печать данного списка результатов";
+            this.toolStripButton16.Click += new System.EventHandler(this.toolStripButton16_Click);
+            // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.tabControl4);
+            this.tabPage3.Controls.Add(this.awdRacesTabs);
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -1540,25 +1593,26 @@
             this.tabPage3.Text = "Полный привод";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabControl4
+            // awdRacesTabs
             // 
-            this.tabControl4.Controls.Add(this.tabPage9);
-            this.tabControl4.Controls.Add(this.tabPage10);
-            this.tabControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl4.Location = new System.Drawing.Point(3, 3);
-            this.tabControl4.Name = "tabControl4";
-            this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(1335, 387);
-            this.tabControl4.TabIndex = 5;
+            this.awdRacesTabs.Controls.Add(this.tabPage9);
+            this.awdRacesTabs.Controls.Add(this.tabPage10);
+            this.awdRacesTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.awdRacesTabs.ImageList = this.imageList1;
+            this.awdRacesTabs.Location = new System.Drawing.Point(3, 3);
+            this.awdRacesTabs.Name = "awdRacesTabs";
+            this.awdRacesTabs.SelectedIndex = 0;
+            this.awdRacesTabs.Size = new System.Drawing.Size(1335, 387);
+            this.awdRacesTabs.TabIndex = 5;
             // 
             // tabPage9
             // 
             this.tabPage9.Controls.Add(this.awdR1DGV);
             this.tabPage9.Controls.Add(this.toolStrip4);
-            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Location = new System.Drawing.Point(4, 23);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(1327, 361);
+            this.tabPage9.Size = new System.Drawing.Size(1327, 360);
             this.tabPage9.TabIndex = 0;
             this.tabPage9.Text = "1 тур";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -1606,7 +1660,7 @@
             this.awdR1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.awdR1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.awdR1DGV.ShowEditingIcon = false;
-            this.awdR1DGV.Size = new System.Drawing.Size(1321, 316);
+            this.awdR1DGV.Size = new System.Drawing.Size(1321, 315);
             this.awdR1DGV.TabIndex = 3;
             this.awdR1DGV.DataSourceChanged += new System.EventHandler(this.awdR1DGV_DataSourceChanged);
             this.awdR1DGV.Paint += new System.Windows.Forms.PaintEventHandler(this.awdR1DGV_Paint);
@@ -1616,40 +1670,32 @@
             this.toolStrip4.BackColor = System.Drawing.Color.Gainsboro;
             this.toolStrip4.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.toolStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton13,
-            this.toolStripButton14,
+            this.selectAwdCarClass1_BT,
             this.toolStripSeparator8,
             this.toolStripButton15,
             this.upRacer_Btn_awdR1DGV,
             this.downRacer_Btn_awdR1DGV,
             this.toolStripSeparator9,
             this.toolStripButton45,
-            this.toolStripButton53});
+            this.toolStripButton53,
+            this.toolStripSeparator23,
+            this.toolStripButton20});
             this.toolStrip4.Location = new System.Drawing.Point(3, 3);
             this.toolStrip4.Name = "toolStrip4";
             this.toolStrip4.Size = new System.Drawing.Size(1321, 39);
             this.toolStrip4.TabIndex = 5;
             this.toolStrip4.Text = "toolStrip4";
             // 
-            // toolStripButton13
+            // selectAwdCarClass1_BT
             // 
-            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton13.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton13.Image")));
-            this.toolStripButton13.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton13.Name = "toolStripButton13";
-            this.toolStripButton13.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton13.Text = "Выбрать ";
-            // 
-            // toolStripButton14
-            // 
-            this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton14.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton14.Image")));
-            this.toolStripButton14.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton14.Name = "toolStripButton14";
-            this.toolStripButton14.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton14.Text = "Очистить таблицу результатов";
+            this.selectAwdCarClass1_BT.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.selectAwdCarClass1_BT.Image = ((System.Drawing.Image)(resources.GetObject("selectAwdCarClass1_BT.Image")));
+            this.selectAwdCarClass1_BT.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.selectAwdCarClass1_BT.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.selectAwdCarClass1_BT.Name = "selectAwdCarClass1_BT";
+            this.selectAwdCarClass1_BT.Size = new System.Drawing.Size(36, 36);
+            this.selectAwdCarClass1_BT.Text = "Выбрать ";
+            this.selectAwdCarClass1_BT.Click += new System.EventHandler(this.toolStripButton13_Click);
             // 
             // toolStripSeparator8
             // 
@@ -1714,14 +1760,30 @@
             this.toolStripButton53.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton53.Text = "Перезаезд попытки";
             // 
+            // toolStripSeparator23
+            // 
+            this.toolStripSeparator23.Name = "toolStripSeparator23";
+            this.toolStripSeparator23.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton20
+            // 
+            this.toolStripButton20.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton20.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton20.Image")));
+            this.toolStripButton20.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton20.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton20.Name = "toolStripButton20";
+            this.toolStripButton20.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton20.Text = "Печать данного списка результатов";
+            this.toolStripButton20.Click += new System.EventHandler(this.toolStripButton20_Click);
+            // 
             // tabPage10
             // 
             this.tabPage10.Controls.Add(this.awdR2DGV);
             this.tabPage10.Controls.Add(this.toolStrip5);
-            this.tabPage10.Location = new System.Drawing.Point(4, 22);
+            this.tabPage10.Location = new System.Drawing.Point(4, 23);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(1327, 361);
+            this.tabPage10.Size = new System.Drawing.Size(1327, 360);
             this.tabPage10.TabIndex = 1;
             this.tabPage10.Text = "2 тур";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -1769,7 +1831,7 @@
             this.awdR2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.awdR2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.awdR2DGV.ShowEditingIcon = false;
-            this.awdR2DGV.Size = new System.Drawing.Size(1321, 316);
+            this.awdR2DGV.Size = new System.Drawing.Size(1321, 315);
             this.awdR2DGV.TabIndex = 6;
             // 
             // toolStrip5
@@ -1777,40 +1839,32 @@
             this.toolStrip5.BackColor = System.Drawing.Color.Gainsboro;
             this.toolStrip5.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.toolStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton17,
-            this.toolStripButton18,
+            this.selectAwdCarClass2_BT,
             this.toolStripSeparator10,
             this.toolStripButton19,
             this.upRacer_Btn_awdR2DGV,
             this.downRacer_Btn_awdR2DGV,
             this.toolStripSeparator11,
             this.toolStripButton46,
-            this.toolStripButton54});
+            this.toolStripButton54,
+            this.toolStripSeparator24,
+            this.toolStripButton21});
             this.toolStrip5.Location = new System.Drawing.Point(3, 3);
             this.toolStrip5.Name = "toolStrip5";
             this.toolStrip5.Size = new System.Drawing.Size(1321, 39);
             this.toolStrip5.TabIndex = 7;
             this.toolStrip5.Text = "toolStrip5";
             // 
-            // toolStripButton17
+            // selectAwdCarClass2_BT
             // 
-            this.toolStripButton17.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton17.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton17.Image")));
-            this.toolStripButton17.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton17.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton17.Name = "toolStripButton17";
-            this.toolStripButton17.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton17.Text = "Выбрать ";
-            // 
-            // toolStripButton18
-            // 
-            this.toolStripButton18.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton18.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton18.Image")));
-            this.toolStripButton18.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton18.Name = "toolStripButton18";
-            this.toolStripButton18.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton18.Text = "Очистить таблицу результатов";
+            this.selectAwdCarClass2_BT.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.selectAwdCarClass2_BT.Image = ((System.Drawing.Image)(resources.GetObject("selectAwdCarClass2_BT.Image")));
+            this.selectAwdCarClass2_BT.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.selectAwdCarClass2_BT.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.selectAwdCarClass2_BT.Name = "selectAwdCarClass2_BT";
+            this.selectAwdCarClass2_BT.Size = new System.Drawing.Size(36, 36);
+            this.selectAwdCarClass2_BT.Text = "Выбрать ";
+            this.selectAwdCarClass2_BT.Click += new System.EventHandler(this.selectAwdCarClass2_BT_Click);
             // 
             // toolStripSeparator10
             // 
@@ -1875,9 +1929,25 @@
             this.toolStripButton54.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton54.Text = "Перезаезд попытки";
             // 
+            // toolStripSeparator24
+            // 
+            this.toolStripSeparator24.Name = "toolStripSeparator24";
+            this.toolStripSeparator24.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton21
+            // 
+            this.toolStripButton21.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton21.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton21.Image")));
+            this.toolStripButton21.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton21.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton21.Name = "toolStripButton21";
+            this.toolStripButton21.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton21.Text = "Печать данного списка результатов";
+            this.toolStripButton21.Click += new System.EventHandler(this.toolStripButton21_Click);
+            // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.tabControl5);
+            this.tabPage4.Controls.Add(this.sportRacesTabs);
             this.tabPage4.Location = new System.Drawing.Point(4, 34);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -1886,25 +1956,26 @@
             this.tabPage4.Text = "Спорт";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // tabControl5
+            // sportRacesTabs
             // 
-            this.tabControl5.Controls.Add(this.tabPage11);
-            this.tabControl5.Controls.Add(this.tabPage12);
-            this.tabControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl5.Location = new System.Drawing.Point(3, 3);
-            this.tabControl5.Name = "tabControl5";
-            this.tabControl5.SelectedIndex = 0;
-            this.tabControl5.Size = new System.Drawing.Size(1335, 387);
-            this.tabControl5.TabIndex = 5;
+            this.sportRacesTabs.Controls.Add(this.tabPage11);
+            this.sportRacesTabs.Controls.Add(this.tabPage12);
+            this.sportRacesTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sportRacesTabs.ImageList = this.imageList1;
+            this.sportRacesTabs.Location = new System.Drawing.Point(3, 3);
+            this.sportRacesTabs.Name = "sportRacesTabs";
+            this.sportRacesTabs.SelectedIndex = 0;
+            this.sportRacesTabs.Size = new System.Drawing.Size(1335, 387);
+            this.sportRacesTabs.TabIndex = 5;
             // 
             // tabPage11
             // 
             this.tabPage11.Controls.Add(this.sportR1DGV);
             this.tabPage11.Controls.Add(this.toolStrip6);
-            this.tabPage11.Location = new System.Drawing.Point(4, 22);
+            this.tabPage11.Location = new System.Drawing.Point(4, 23);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(1327, 361);
+            this.tabPage11.Size = new System.Drawing.Size(1327, 360);
             this.tabPage11.TabIndex = 0;
             this.tabPage11.Text = "1 тур";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -1952,7 +2023,7 @@
             this.sportR1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.sportR1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.sportR1DGV.ShowEditingIcon = false;
-            this.sportR1DGV.Size = new System.Drawing.Size(1321, 316);
+            this.sportR1DGV.Size = new System.Drawing.Size(1321, 315);
             this.sportR1DGV.TabIndex = 3;
             this.sportR1DGV.DataSourceChanged += new System.EventHandler(this.sportR1DGV_DataSourceChanged);
             this.sportR1DGV.Paint += new System.Windows.Forms.PaintEventHandler(this.sportR1DGV_Paint);
@@ -1962,40 +2033,32 @@
             this.toolStrip6.BackColor = System.Drawing.Color.Gainsboro;
             this.toolStrip6.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.toolStrip6.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton22,
-            this.toolStripButton23,
+            this.selectSportCarClass1_BT,
             this.toolStripSeparator12,
             this.toolStripButton24,
             this.upRacer_Btn_sportR1DGV,
             this.downRacer_Btn_sportR1DGV,
             this.toolStripSeparator13,
             this.toolStripButton47,
-            this.toolStripButton55});
+            this.toolStripButton55,
+            this.toolStripSeparator25,
+            this.toolStripButton25});
             this.toolStrip6.Location = new System.Drawing.Point(3, 3);
             this.toolStrip6.Name = "toolStrip6";
             this.toolStrip6.Size = new System.Drawing.Size(1321, 39);
             this.toolStrip6.TabIndex = 5;
             this.toolStrip6.Text = "toolStrip6";
             // 
-            // toolStripButton22
+            // selectSportCarClass1_BT
             // 
-            this.toolStripButton22.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton22.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton22.Image")));
-            this.toolStripButton22.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton22.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton22.Name = "toolStripButton22";
-            this.toolStripButton22.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton22.Text = "Выбрать ";
-            // 
-            // toolStripButton23
-            // 
-            this.toolStripButton23.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton23.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton23.Image")));
-            this.toolStripButton23.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton23.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton23.Name = "toolStripButton23";
-            this.toolStripButton23.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton23.Text = "Очистить таблицу результатов";
+            this.selectSportCarClass1_BT.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.selectSportCarClass1_BT.Image = ((System.Drawing.Image)(resources.GetObject("selectSportCarClass1_BT.Image")));
+            this.selectSportCarClass1_BT.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.selectSportCarClass1_BT.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.selectSportCarClass1_BT.Name = "selectSportCarClass1_BT";
+            this.selectSportCarClass1_BT.Size = new System.Drawing.Size(36, 36);
+            this.selectSportCarClass1_BT.Text = "Выбрать ";
+            this.selectSportCarClass1_BT.Click += new System.EventHandler(this.toolStripButton22_Click);
             // 
             // toolStripSeparator12
             // 
@@ -2060,14 +2123,30 @@
             this.toolStripButton55.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton55.Text = "Перезаезд попытки";
             // 
+            // toolStripSeparator25
+            // 
+            this.toolStripSeparator25.Name = "toolStripSeparator25";
+            this.toolStripSeparator25.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton25
+            // 
+            this.toolStripButton25.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton25.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton25.Image")));
+            this.toolStripButton25.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton25.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton25.Name = "toolStripButton25";
+            this.toolStripButton25.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton25.Text = "Печать данного списка результатов";
+            this.toolStripButton25.Click += new System.EventHandler(this.toolStripButton25_Click);
+            // 
             // tabPage12
             // 
             this.tabPage12.Controls.Add(this.sportR2DGV);
             this.tabPage12.Controls.Add(this.toolStrip7);
-            this.tabPage12.Location = new System.Drawing.Point(4, 22);
+            this.tabPage12.Location = new System.Drawing.Point(4, 23);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(1327, 361);
+            this.tabPage12.Size = new System.Drawing.Size(1327, 360);
             this.tabPage12.TabIndex = 1;
             this.tabPage12.Text = "2 тур";
             this.tabPage12.UseVisualStyleBackColor = true;
@@ -2115,7 +2194,7 @@
             this.sportR2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.sportR2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.sportR2DGV.ShowEditingIcon = false;
-            this.sportR2DGV.Size = new System.Drawing.Size(1321, 316);
+            this.sportR2DGV.Size = new System.Drawing.Size(1321, 315);
             this.sportR2DGV.TabIndex = 6;
             // 
             // toolStrip7
@@ -2123,40 +2202,32 @@
             this.toolStrip7.BackColor = System.Drawing.Color.Gainsboro;
             this.toolStrip7.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.toolStrip7.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton27,
-            this.toolStripButton28,
+            this.selectSportCarClass2_BT,
             this.toolStripSeparator14,
             this.toolStripButton29,
             this.upRacer_Btn_sportR2DGV,
             this.downRacer_Btn_sportR2DGV,
             this.toolStripSeparator15,
             this.toolStripButton48,
-            this.toolStripButton56});
+            this.toolStripButton56,
+            this.toolStripSeparator26,
+            this.toolStripButton26});
             this.toolStrip7.Location = new System.Drawing.Point(3, 3);
             this.toolStrip7.Name = "toolStrip7";
             this.toolStrip7.Size = new System.Drawing.Size(1321, 39);
             this.toolStrip7.TabIndex = 7;
             this.toolStrip7.Text = "toolStrip7";
             // 
-            // toolStripButton27
+            // selectSportCarClass2_BT
             // 
-            this.toolStripButton27.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton27.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton27.Image")));
-            this.toolStripButton27.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton27.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton27.Name = "toolStripButton27";
-            this.toolStripButton27.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton27.Text = "Выбрать ";
-            // 
-            // toolStripButton28
-            // 
-            this.toolStripButton28.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton28.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton28.Image")));
-            this.toolStripButton28.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton28.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton28.Name = "toolStripButton28";
-            this.toolStripButton28.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton28.Text = "Очистить таблицу результатов";
+            this.selectSportCarClass2_BT.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.selectSportCarClass2_BT.Image = ((System.Drawing.Image)(resources.GetObject("selectSportCarClass2_BT.Image")));
+            this.selectSportCarClass2_BT.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.selectSportCarClass2_BT.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.selectSportCarClass2_BT.Name = "selectSportCarClass2_BT";
+            this.selectSportCarClass2_BT.Size = new System.Drawing.Size(36, 36);
+            this.selectSportCarClass2_BT.Text = "Выбрать ";
+            this.selectSportCarClass2_BT.Click += new System.EventHandler(this.selectSportCarClass2_BT_Click);
             // 
             // toolStripSeparator14
             // 
@@ -2221,6 +2292,22 @@
             this.toolStripButton56.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton56.Text = "Перезаезд попытки";
             // 
+            // toolStripSeparator26
+            // 
+            this.toolStripSeparator26.Name = "toolStripSeparator26";
+            this.toolStripSeparator26.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton26
+            // 
+            this.toolStripButton26.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton26.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton26.Image")));
+            this.toolStripButton26.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton26.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton26.Name = "toolStripButton26";
+            this.toolStripButton26.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton26.Text = "Печать данного списка результатов";
+            this.toolStripButton26.Click += new System.EventHandler(this.toolStripButton26_Click);
+            // 
             // panel11
             // 
             this.panel11.Controls.Add(this.carClassesTabs);
@@ -2276,7 +2363,7 @@
             this.menuStrip1.PerformLayout();
             this.carClassesTabs.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
+            this.fwdRacesTabs.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -2287,7 +2374,7 @@
             this.toolStrip8.ResumeLayout(false);
             this.toolStrip8.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabControl3.ResumeLayout(false);
+            this.rwdRacesTabs.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rwdR1DGV)).EndInit();
@@ -2299,7 +2386,7 @@
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            this.tabControl4.ResumeLayout(false);
+            this.awdRacesTabs.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.awdR1DGV)).EndInit();
@@ -2311,7 +2398,7 @@
             this.toolStrip5.ResumeLayout(false);
             this.toolStrip5.PerformLayout();
             this.tabPage4.ResumeLayout(false);
-            this.tabControl5.ResumeLayout(false);
+            this.sportRacesTabs.ResumeLayout(false);
             this.tabPage11.ResumeLayout(false);
             this.tabPage11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sportR1DGV)).EndInit();
@@ -2358,14 +2445,13 @@
         private System.Windows.Forms.ToolStripMenuItem помощьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.TabControl carClassesTabs;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.ToolStripMenuItem экспортToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabControl fwdRacesTabs;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.ToolStrip toolStrip1;
@@ -2374,31 +2460,29 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton upRacer_Btn_fwdR1DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.DataGridView fwdR2DGV;
-        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabControl rwdRacesTabs;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.DataGridView rwdR1DGV;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.DataGridView rwdR2DGV;
-        private System.Windows.Forms.TabControl tabControl4;
+        private System.Windows.Forms.TabControl awdRacesTabs;
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.DataGridView awdR1DGV;
         private System.Windows.Forms.TabPage tabPage10;
         private System.Windows.Forms.DataGridView awdR2DGV;
-        private System.Windows.Forms.TabControl tabControl5;
+        private System.Windows.Forms.TabControl sportRacesTabs;
         private System.Windows.Forms.TabPage tabPage11;
         private System.Windows.Forms.DataGridView sportR1DGV;
         private System.Windows.Forms.TabPage tabPage12;
         private System.Windows.Forms.DataGridView sportR2DGV;
         private System.Windows.Forms.ToolStripButton downRacer_Btn_fwdR1DGV;
-        private System.Windows.Forms.ToolStripButton toolStripButton32;
+        private System.Windows.Forms.ToolStripButton selectFwdCarClass1_BT;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.ToolStripButton toolStripButton49;
         private System.Windows.Forms.ToolStrip toolStrip8;
-        private System.Windows.Forms.ToolStripButton toolStripButton34;
-        private System.Windows.Forms.ToolStripButton toolStripButton35;
+        private System.Windows.Forms.ToolStripButton selectFwdCarClass2_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
         private System.Windows.Forms.ToolStripButton toolStripButton36;
         private System.Windows.Forms.ToolStripButton upRacer_Btn_fwdR2DGV;
@@ -2407,8 +2491,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton42;
         private System.Windows.Forms.ToolStripButton toolStripButton50;
         private System.Windows.Forms.ToolStrip toolStrip3;
-        private System.Windows.Forms.ToolStripButton toolStripButton9;
-        private System.Windows.Forms.ToolStripButton toolStripButton10;
+        private System.Windows.Forms.ToolStripButton selectRwdCarClass1_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripButton toolStripButton11;
         private System.Windows.Forms.ToolStripButton upRacer_Btn_rwdR1DGV;
@@ -2417,8 +2500,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton43;
         private System.Windows.Forms.ToolStripButton toolStripButton51;
         private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripButton selectRwdCarClass2_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripButton upRacer_Btn_rwdR2DGV;
@@ -2427,8 +2509,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton44;
         private System.Windows.Forms.ToolStripButton toolStripButton52;
         private System.Windows.Forms.ToolStrip toolStrip4;
-        private System.Windows.Forms.ToolStripButton toolStripButton13;
-        private System.Windows.Forms.ToolStripButton toolStripButton14;
+        private System.Windows.Forms.ToolStripButton selectAwdCarClass1_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripButton toolStripButton15;
         private System.Windows.Forms.ToolStripButton upRacer_Btn_awdR1DGV;
@@ -2437,8 +2518,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton45;
         private System.Windows.Forms.ToolStripButton toolStripButton53;
         private System.Windows.Forms.ToolStrip toolStrip5;
-        private System.Windows.Forms.ToolStripButton toolStripButton17;
-        private System.Windows.Forms.ToolStripButton toolStripButton18;
+        private System.Windows.Forms.ToolStripButton selectAwdCarClass2_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripButton toolStripButton19;
         private System.Windows.Forms.ToolStripButton upRacer_Btn_awdR2DGV;
@@ -2447,8 +2527,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton46;
         private System.Windows.Forms.ToolStripButton toolStripButton54;
         private System.Windows.Forms.ToolStrip toolStrip6;
-        private System.Windows.Forms.ToolStripButton toolStripButton22;
-        private System.Windows.Forms.ToolStripButton toolStripButton23;
+        private System.Windows.Forms.ToolStripButton selectSportCarClass1_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.ToolStripButton toolStripButton24;
         private System.Windows.Forms.ToolStripButton upRacer_Btn_sportR1DGV;
@@ -2457,8 +2536,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton47;
         private System.Windows.Forms.ToolStripButton toolStripButton55;
         private System.Windows.Forms.ToolStrip toolStrip7;
-        private System.Windows.Forms.ToolStripButton toolStripButton27;
-        private System.Windows.Forms.ToolStripButton toolStripButton28;
+        private System.Windows.Forms.ToolStripButton selectSportCarClass2_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
         private System.Windows.Forms.ToolStripButton toolStripButton29;
         private System.Windows.Forms.ToolStripButton upRacer_Btn_sportR2DGV;
@@ -2485,5 +2563,23 @@
         private System.Windows.Forms.ToolStripMenuItem очиститьЛогиToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
         private System.Windows.Forms.ToolStripMenuItem опцииToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator19;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator20;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator21;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator22;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator23;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator24;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator25;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator26;
+        private System.Windows.Forms.ToolStripButton toolStripButton8;
+        private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStripButton toolStripButton16;
+        private System.Windows.Forms.ToolStripButton toolStripButton20;
+        private System.Windows.Forms.ToolStripButton toolStripButton21;
+        private System.Windows.Forms.ToolStripButton toolStripButton25;
+        private System.Windows.Forms.ToolStripButton toolStripButton26;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

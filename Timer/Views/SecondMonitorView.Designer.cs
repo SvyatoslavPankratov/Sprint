@@ -42,9 +42,9 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.firstCurrentRacerNumber_L = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.secondCurrentRacerNumber_L = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -215,43 +215,43 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.firstCurrentRacerNumber_L);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 58);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(567, 75);
             this.panel5.TabIndex = 2;
             // 
-            // label5
+            // firstCurrentRacerNumber_L
             // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(567, 75);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "-";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.firstCurrentRacerNumber_L.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.firstCurrentRacerNumber_L.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstCurrentRacerNumber_L.Location = new System.Drawing.Point(0, 0);
+            this.firstCurrentRacerNumber_L.Name = "firstCurrentRacerNumber_L";
+            this.firstCurrentRacerNumber_L.Size = new System.Drawing.Size(567, 75);
+            this.firstCurrentRacerNumber_L.TabIndex = 1;
+            this.firstCurrentRacerNumber_L.Text = "-";
+            this.firstCurrentRacerNumber_L.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.label6);
+            this.panel6.Controls.Add(this.secondCurrentRacerNumber_L);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(576, 58);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(567, 75);
             this.panel6.TabIndex = 3;
             // 
-            // label6
+            // secondCurrentRacerNumber_L
             // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(567, 75);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "-";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.secondCurrentRacerNumber_L.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.secondCurrentRacerNumber_L.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondCurrentRacerNumber_L.Location = new System.Drawing.Point(0, 0);
+            this.secondCurrentRacerNumber_L.Name = "secondCurrentRacerNumber_L";
+            this.secondCurrentRacerNumber_L.Size = new System.Drawing.Size(567, 75);
+            this.secondCurrentRacerNumber_L.TabIndex = 2;
+            this.secondCurrentRacerNumber_L.Text = "-";
+            this.secondCurrentRacerNumber_L.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SecondMonitorView
             // 
@@ -295,7 +295,7 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label firstCurrentRacerNumber_L;
+        private System.Windows.Forms.Label secondCurrentRacerNumber_L;
     }
 }

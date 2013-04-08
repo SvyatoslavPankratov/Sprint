@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Sprint.Views.Interfaces;
+using Sprint.Interfaces;
 
 namespace Sprint.Presenters
 {

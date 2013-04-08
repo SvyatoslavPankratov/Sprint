@@ -17,7 +17,7 @@ namespace Sprint.Models
         /// <summary>
         /// Задать или получить номер гонщика, который должен будет пересечь отсечку.
         /// </summary>
-        private int CurrentRacerNum { get; set; }
+        public int CurrentRacerNum { get; set; }
 
         /// <summary>
         /// Задать или получить гонщика, который должен будет пересечь отсечку.

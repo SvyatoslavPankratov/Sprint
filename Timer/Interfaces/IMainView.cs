@@ -2,7 +2,7 @@
 using System.Data;
 using Sprint.Models;
 
-namespace Sprint.Views.Interfaces
+namespace Sprint.Interfaces
 {
     /// <summary>
     /// Интерфейс главного окна.

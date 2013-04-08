@@ -12,7 +12,13 @@ namespace Sprint.Models
     /// </summary>
     public class ResultsModel
     {
-        #region Propeties
+        #region Поля
+
+        int currentCircleNumber;
+
+        #endregion
+
+        #region Свойства
 
         /// <summary>
         /// Задать или получить список результатов по кругам по этапам.
@@ -27,7 +33,27 @@ namespace Sprint.Models
         /// <summary>
         /// Задать или получить номер проезжаемого круга.
         /// </summary>
-        public int CurrentCircleNumber { get; set; }
+        public int CurrentCircleNumber
+        {
+            get
+            {
+                return currentCircleNumber;
+            }
+            set
+            {
+                currentCircleNumber = value;
+
+                if (currentCircleNumber == MaxCircleCount)
+                {
+                    Finished = true;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Задать или получить максимальное количество кругов в заезде.
+        /// </summary>
+        public int MaxCircleCount { get; set; }
 
         /// <summary>
         /// Задать или получить значение времени начала круга.
@@ -36,7 +62,7 @@ namespace Sprint.Models
 
         #endregion
 
-        #region Constructors
+        #region Конструкторы
 
         /// <summary>
         /// Конструктор.
@@ -45,6 +71,8 @@ namespace Sprint.Models
         /// <param name="lap_count">Количество кругов в заезде.</param>
         public ResultsModel(int race_count, int lap_count)
         {
+            MaxCircleCount = lap_count;
+
             var resultsList = new List<List<TimeModel>>(1); //race_count
 
             for (int race = 0; race < 1; race++)            //race_count
@@ -64,7 +92,7 @@ namespace Sprint.Models
 
         #endregion
 
-        #region Methods
+        #region Методы
 
         /// <summary>
         /// Получить минимальное время заданного заезда.
