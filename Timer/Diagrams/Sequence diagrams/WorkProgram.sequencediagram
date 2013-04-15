@@ -113,17 +113,12 @@
               <lifelineMoniker Id="4d40eb77-23d6-4e04-b9da-0d1ad8a45de9" LastKnownName="БД" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="6406ff97-ca74-4c42-880b-27347eebbb5f" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="c623ce97-c408-4edd-9972-ef0fd8c18a2c" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="4d40eb77-23d6-4e04-b9da-0d1ad8a45de9" LastKnownName="БД" />
             </covered>
           </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="5d5652ea-fb40-427b-93fa-055242900eb2" name="MessageOccurrenceSpecification">
+          <messageOccurrenceSpecification Id="6406ff97-ca74-4c42-880b-27347eebbb5f" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
             </covered>
@@ -131,6 +126,11 @@
           <messageOccurrenceSpecification Id="6a42819a-cb57-47f5-a096-98489c35d084" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="4d40eb77-23d6-4e04-b9da-0d1ad8a45de9" LastKnownName="БД" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="5d5652ea-fb40-427b-93fa-055242900eb2" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="c7455ed5-ff56-43d9-8271-a727da1397a4" name="ExecutionOccurrenceSpecification">
@@ -225,14 +225,14 @@
               <lifelineMoniker Id="4d40eb77-23d6-4e04-b9da-0d1ad8a45de9" LastKnownName="БД" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="54770955-a98c-4f02-bb3a-3541f8eac50a" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="d86fcc27-2551-41da-a86a-6758b985be93" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="4d40eb77-23d6-4e04-b9da-0d1ad8a45de9" LastKnownName="БД" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="54770955-a98c-4f02-bb3a-3541f8eac50a" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="ba9eefc3-8871-49f8-b98a-250886619aae" name="MessageOccurrenceSpecification">
@@ -275,6 +275,61 @@
               <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
             </covered>
           </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification Id="c00d897e-f766-443c-a9ec-bf2ea720a5ca" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="5d92c8e1-5315-46e4-b57a-bd773d8871b3" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="b689459d-5ef6-4bcf-ba91-def7c7c78e00" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="820f85db-1bcd-4ce8-bd6b-ad297d704ca4" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="0e56c382-e6a6-4938-a938-ada2e315a88c" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="b689459d-5ef6-4bcf-ba91-def7c7c78e00" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="6c511890-1764-4854-b525-48daa3c875d0" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="822d7b6b-0a31-45b6-ad80-c13810001091" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="81a13701-630d-45e5-9d8c-74cc57f3bb3a" LastKnownName="Оператор" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="820f85db-1bcd-4ce8-bd6b-ad297d704ca4" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="0e56c382-e6a6-4938-a938-ada2e315a88c" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="3eb94f88-3a10-422d-b8e5-56522d353307" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="81a13701-630d-45e5-9d8c-74cc57f3bb3a" LastKnownName="Оператор" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="5d92c8e1-5315-46e4-b57a-bd773d8871b3" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="d6a47461-a9d9-42d6-b969-a68d05e7621b" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
+            </covered>
+          </executionOccurrenceSpecification>
           <behaviorExecutionSpecification Id="0bff1829-b408-48a6-a358-25ca9332c6c6" name="BehaviorExecutionSpecification">
             <coveredLifelines>
               <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
@@ -300,14 +355,14 @@
               <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="1d28022d-e6b3-48bd-8f7f-750591f4bfa8" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="81a13701-630d-45e5-9d8c-74cc57f3bb3a" LastKnownName="Оператор" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="489b0913-7971-47ba-a0cf-b90b0e1b83b1" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="1d28022d-e6b3-48bd-8f7f-750591f4bfa8" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="81a13701-630d-45e5-9d8c-74cc57f3bb3a" LastKnownName="Оператор" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="00ba1f88-ba2c-40de-a4c3-c40116673ac7" name="MessageOccurrenceSpecification">
@@ -390,14 +445,14 @@
               <lifelineMoniker Id="f11ebb43-cc5a-4f2b-9096-8da1da40a9c8" LastKnownName="Датчик" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="0dba2ffd-3836-41af-9b30-ac8a69671e8e" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="f11ebb43-cc5a-4f2b-9096-8da1da40a9c8" LastKnownName="Датчик" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="c709d58e-1df4-4804-9c38-30efb50ac76d" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="a419fcc5-373c-4c38-a9ad-518eea323c2a" LastKnownName="Автомобиль" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="0dba2ffd-3836-41af-9b30-ac8a69671e8e" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="f11ebb43-cc5a-4f2b-9096-8da1da40a9c8" LastKnownName="Датчик" />
             </covered>
           </messageOccurrenceSpecification>
           <behaviorExecutionSpecification Id="ff936442-ae7e-4549-8c1b-805deb95cf4b" name="BehaviorExecutionSpecification">
@@ -652,14 +707,14 @@
               <lifelineMoniker Id="4d40eb77-23d6-4e04-b9da-0d1ad8a45de9" LastKnownName="БД" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="4165ed24-75a3-4aca-b37c-fccce2b162c0" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="8138bde4-de7b-4350-88e3-f65754720b71" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="4d40eb77-23d6-4e04-b9da-0d1ad8a45de9" LastKnownName="БД" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="4165ed24-75a3-4aca-b37c-fccce2b162c0" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="1d7989b8-e782-4c22-95a6-67d0dd4c7b38" name="ExecutionOccurrenceSpecification">
@@ -891,24 +946,24 @@
               <lifelineMoniker Id="4d40eb77-23d6-4e04-b9da-0d1ad8a45de9" LastKnownName="БД" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="fbd68a89-026a-4cbb-a6cb-8198ad3c6d61" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="d1642033-8ab2-4280-85af-216d864bb3ec" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="4d40eb77-23d6-4e04-b9da-0d1ad8a45de9" LastKnownName="БД" />
             </covered>
           </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="c6a9b48d-0b35-401a-8122-047aed75de82" name="MessageOccurrenceSpecification">
+          <messageOccurrenceSpecification Id="fbd68a89-026a-4cbb-a6cb-8198ad3c6d61" name="MessageOccurrenceSpecification">
             <covered>
-              <lifelineMoniker Id="4d40eb77-23d6-4e04-b9da-0d1ad8a45de9" LastKnownName="БД" />
+              <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="1eff42ff-dd57-4728-8538-ef1e13f06ab8" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="be5d32bd-d9df-401d-8836-cfd8d92a5196" LastKnownName="Приложение" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="c6a9b48d-0b35-401a-8122-047aed75de82" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="4d40eb77-23d6-4e04-b9da-0d1ad8a45de9" LastKnownName="БД" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="27ea23fa-e1a0-41a7-8858-0fa8c4ccd666" name="ExecutionOccurrenceSpecification">
@@ -959,6 +1014,8 @@
               <messageOccurrenceSpecificationMoniker Id="2dd126b5-1348-41af-bb6b-d0403a95514d" LastKnownName="MessageOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="8c62081c-2532-49ec-99f8-207c8f6305fa" LastKnownName="MessageOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="9a73de6e-dc53-49ae-ba59-82833a27a811" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="822d7b6b-0a31-45b6-ad80-c13810001091" LastKnownName="MessageOccurrenceSpecification" />
+              <messageOccurrenceSpecificationMoniker Id="3eb94f88-3a10-422d-b8e5-56522d353307" LastKnownName="MessageOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="1d28022d-e6b3-48bd-8f7f-750591f4bfa8" LastKnownName="MessageOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="a5e78d1b-4eb5-453a-afe8-06f08311e87b" LastKnownName="MessageOccurrenceSpecification" />
             </topLevelOccurrences>
@@ -969,6 +1026,8 @@
               <executionOccurrenceSpecificationMoniker Id="14c7c6d7-ad7b-4ab4-a8e0-967b289d3ff5" LastKnownName="ExecutionOccurrenceSpecification" />
               <executionOccurrenceSpecificationMoniker Id="3e6160a0-cb4c-4dcc-93fd-b05a27baa1d6" LastKnownName="ExecutionOccurrenceSpecification" />
               <executionOccurrenceSpecificationMoniker Id="ba4dded0-4529-4c8a-84b0-229e646cdbc6" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="b689459d-5ef6-4bcf-ba91-def7c7c78e00" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="5d92c8e1-5315-46e4-b57a-bd773d8871b3" LastKnownName="ExecutionOccurrenceSpecification" />
               <executionOccurrenceSpecificationMoniker Id="099ad6d1-1739-4896-84b8-2f212b14082b" LastKnownName="ExecutionOccurrenceSpecification" />
               <executionOccurrenceSpecificationMoniker Id="cdfafa8a-5d31-4a90-a654-1bccf132d6e0" LastKnownName="ExecutionOccurrenceSpecification" />
               <executionOccurrenceSpecificationMoniker Id="98c7fbac-2f4b-429f-ae83-72a33986b794" LastKnownName="ExecutionOccurrenceSpecification" />
@@ -1075,6 +1134,22 @@
             </sendEvent>
             <receiveEvent>
               <messageOccurrenceSpecificationMoniker Id="9a73de6e-dc53-49ae-ba59-82833a27a811" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="ceb96be9-d975-4675-a69e-cea734a6a7f8" name="Выбор класса автомобилей, которые поедут" messageKind="Complete" messageSort="SynchCall" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="822d7b6b-0a31-45b6-ad80-c13810001091" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="820f85db-1bcd-4ce8-bd6b-ad297d704ca4" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+          <message Id="ed8b2bad-bf34-4c92-bedb-efcc1bbe3dd7" name="Выбранный класс автомобилей для заезда" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="0e56c382-e6a6-4938-a938-ada2e315a88c" LastKnownName="MessageOccurrenceSpecification" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="3eb94f88-3a10-422d-b8e5-56522d353307" LastKnownName="MessageOccurrenceSpecification" />
             </receiveEvent>
           </message>
           <message Id="4b21d5ae-d3eb-476f-b07e-06947d5586f3" name="Запуск секундомера" messageKind="Complete" messageSort="CreateMessage" createSelfMessage="false">
@@ -1329,6 +1404,12 @@
     </packageHasNamedElement>
     <packageHasNamedElement>
       <executionEvent Id="74f0586a-610b-476a-a9c6-3bea5662af30" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="6c511890-1764-4854-b525-48daa3c875d0" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="d6a47461-a9d9-42d6-b969-a68d05e7621b" name="ExecutionEvent" />
     </packageHasNamedElement>
   </packagedElements>
 </SequenceDesignerModel>

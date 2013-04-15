@@ -292,6 +292,14 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void startBtn_Click(object sender, System.EventArgs e)
         {
+            StartStopwatch();
+        }
+
+        /// <summary>
+        /// Запутить секундомер.
+        /// </summary>
+        private void StartStopwatch()
+        {
             LockAllButtonsForSelectCarClass();
 
             startBtn.Enabled = false;
@@ -414,11 +422,7 @@ namespace Sprint.Views
         {
             if (e.KeyCode == Keys.S && startBtn.Enabled)                    // Старт
             {
-                startBtn.Enabled = false;
-                cutOffBtn.Enabled = true;
-                stopBtn.Enabled = true;
-
-                MainPresenter.StartStopwatch();
+                StartStopwatch();
             }
             else if (e.KeyCode == Keys.F && !startBtn.Enabled)              // Стоп
             {

@@ -110,7 +110,10 @@ namespace Sprint.Presenters
                             new RaceOptionsModel(CarClassesEnum.FWD) { RaceCount = RaceCount, LidersCount = LidersCount },
                             new RaceOptionsModel(CarClassesEnum.RWD) { RaceCount = RaceCount, LidersCount = LidersCount },
                             new RaceOptionsModel(CarClassesEnum.AWD) { RaceCount = RaceCount, LidersCount = LidersCount },
-                            new RaceOptionsModel(CarClassesEnum.Sport) { RaceCount = RaceCount, LidersCount = LidersCount }
+                            new RaceOptionsModel(CarClassesEnum.Sport) { RaceCount = RaceCount, LidersCount = LidersCount },
+                            new RaceOptionsModel(CarClassesEnum.K100) { RaceCount = RaceCount, LidersCount = LidersCount },
+                            new RaceOptionsModel(CarClassesEnum.K160) { RaceCount = RaceCount, LidersCount = LidersCount },
+                            new RaceOptionsModel(CarClassesEnum.KA) { RaceCount = RaceCount, LidersCount = LidersCount }
                         };
         }
 
@@ -119,7 +122,7 @@ namespace Sprint.Presenters
         /// </summary>
         public void SetRaceNumbers()
         {
-            var cc = (CarClassesEnum) Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), PrintView.SelectedCarClass);
+            var cc = ParseCarClass(PrintView.SelectedCarClass);
             var options = Options.FirstOrDefault(o => o.CarClass == cc);
             var list = new List<int>(options.RaceCount);
 
@@ -129,6 +132,103 @@ namespace Sprint.Presenters
             }
 
             PrintView.RacesNumbers = list;
+        }
+
+        /// <summary>
+        /// Получить результаты для подачи их на отчет.
+        /// </summary>
+        /// <param name="carClass">Класс автомобилей для которы получаем отчет.</param>
+        /// <param name="raceNumber">Номер тура, для которого получаем отчет.</param>
+        /// <returns>Результаты заезда.</returns>
+        public static IEnumerable<ResultsForReport> GetResults(string carClass, int raceNumber)
+        {
+            var results = new List<ResultsForReport>();
+            var cc = ParseCarClass(carClass);
+            var racers = RacersDbManager.GetRacers(cc);
+            
+            // Вначале добавяем участников у ктороых есть результаты
+            foreach (var racer in racers.Where(r => r.Results != null).OrderBy(r => r.Results.GetMinTime(raceNumber)))
+            {
+                AddNewRacer(results, racer, cc);
+            }
+
+            // Затем добавляем участников у ктороых нету результатов
+            foreach (var racer in racers.Where(r => r.Results == null))
+            {
+                AddNewRacer(results, racer, cc);
+            }
+            return results;
+        }
+
+        /// <summary>
+        /// Добавить в список участников нового участника на базе модели участника из БД.
+        /// </summary>
+        /// <param name="results">Список участников, в который будет добавлен новый участник.</param>
+        /// <param name="racer">Модель из БД добавляемого участника.</param>
+        /// <param name="carClass">Класс автомобилей.</param>
+        private static void AddNewRacer(List<ResultsForReport> results, RacerModel racer, CarClassesEnum carClass)
+        {
+            var result = new ResultsForReport
+                                {
+                                    RacerName = racer.FirstName + " " + racer.LastName + " " + racer.MiddleName,
+                                    CarName = racer.Car.Name
+                                };
+
+            // Добавить результаты кругов
+
+
+            results.Add(result);
+        }
+
+        /// <summary>
+        /// Отпарсить класс автомобилей в виде строки.
+        /// </summary>
+        /// <param name="carClass">Класс автомобилей.</param>
+        /// <returns></returns>
+        public static CarClassesEnum ParseCarClass(string carClass)
+        {
+            return (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), carClass);
+        }
+
+        /// <summary>
+        /// Перевести класс автомобилей в полное имя.
+        /// </summary>
+        /// <param name="carClass">Класс автомобилей.</param>
+        /// <returns></returns>
+        public static string ConvertCarClass(CarClassesEnum carClass)
+        {
+            switch (carClass)
+            {
+                case CarClassesEnum.FWD:
+                    {
+                        return "Передний привод";
+                    } break;
+                case CarClassesEnum.RWD:
+                    {
+                        return "Задний привод";
+                    } break;
+                case CarClassesEnum.AWD:
+                    {
+                        return "Полный привод";
+                    } break;
+                case CarClassesEnum.Sport:
+                    {
+                        return "Спорт";
+                    } break;
+                case CarClassesEnum.K100:
+                    {
+                        return "До 100 л.с.";
+                    } break;
+                case CarClassesEnum.K160:
+                    {
+                        return "От 100 л.с. до 160 л.с.";
+                    } break;
+                case CarClassesEnum.KA:
+                    {
+                        return "Свыше 160 л.с.";
+                    } break;
+                default: return "";
+            }
         }
 
         #endregion				

@@ -226,6 +226,9 @@
             this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton26 = new System.Windows.Forms.ToolStripButton();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.tabPage15 = new System.Windows.Forms.TabPage();
             this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -884,6 +887,9 @@
             this.carClassesTabs.Controls.Add(this.tabPage2);
             this.carClassesTabs.Controls.Add(this.tabPage3);
             this.carClassesTabs.Controls.Add(this.tabPage4);
+            this.carClassesTabs.Controls.Add(this.tabPage13);
+            this.carClassesTabs.Controls.Add(this.tabPage14);
+            this.carClassesTabs.Controls.Add(this.tabPage15);
             this.carClassesTabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.carClassesTabs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.carClassesTabs.ImageList = this.imageList1;
@@ -2319,6 +2325,33 @@
             this.panel11.Size = new System.Drawing.Size(1359, 441);
             this.panel11.TabIndex = 6;
             // 
+            // tabPage13
+            // 
+            this.tabPage13.Location = new System.Drawing.Point(4, 34);
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Size = new System.Drawing.Size(1341, 393);
+            this.tabPage13.TabIndex = 4;
+            this.tabPage13.Text = "До 100 л.с.";
+            this.tabPage13.UseVisualStyleBackColor = true;
+            // 
+            // tabPage14
+            // 
+            this.tabPage14.Location = new System.Drawing.Point(4, 34);
+            this.tabPage14.Name = "tabPage14";
+            this.tabPage14.Size = new System.Drawing.Size(1341, 393);
+            this.tabPage14.TabIndex = 5;
+            this.tabPage14.Text = "От 100 до 160 л.с.";
+            this.tabPage14.UseVisualStyleBackColor = true;
+            // 
+            // tabPage15
+            // 
+            this.tabPage15.Location = new System.Drawing.Point(4, 34);
+            this.tabPage15.Name = "tabPage15";
+            this.tabPage15.Size = new System.Drawing.Size(1341, 393);
+            this.tabPage15.TabIndex = 6;
+            this.tabPage15.Text = "Свыше 160 л.с.";
+            this.tabPage15.UseVisualStyleBackColor = true;
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2581,5 +2614,8 @@
         private System.Windows.Forms.ToolStripButton toolStripButton26;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.TabPage tabPage13;
+        private System.Windows.Forms.TabPage tabPage14;
+        private System.Windows.Forms.TabPage tabPage15;
     }
 }

@@ -262,10 +262,14 @@ namespace Sprint.Presenters
 
                 var index = CurrentRaserGroup.Racers.IndexOf(Track.CurrentRacer);
 
-                if(CurrentRaserGroup.Racers.Count() > index + 1)
+                if (CurrentRaserGroup.Racers.Count() > index + 1)
                 {
                     racer = CurrentRaserGroup.Racers.ElementAt(index + 1);
                     MainView.NextCurrentRacer = racer.RacerNumber;
+                }
+                else
+                {
+                    MainView.NextCurrentRacer = 0;
                 }
             } 
             // Если на треке уже есть участник и он проезжает уже 2 круг, то добавим еще одного участника
@@ -299,6 +303,8 @@ namespace Sprint.Presenters
             {
                 var res = new TimeModel(time.TimeSpan - Track.CurrentRacer.Results.StartTime.TimeSpan);
                 Track.CurrentRacer.Results.AddResult(CurrentRaceNum, res);
+
+                RacersDbManager.SetRacer(Track.CurrentRacer);
             }
 
             Track.CurrentRacer.Results.StartTime = time;

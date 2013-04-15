@@ -72,7 +72,9 @@
     <Reference Include="System.Activities.Presentation" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
@@ -144,6 +146,7 @@
     <Compile Include="Models\RaceOptionsModel.cs" />
     <Compile Include="Models\RacerModel.cs" />
     <Compile Include="Models\RacersGroupModel.cs" />
+    <Compile Include="Models\ResultsForReport.cs" />
     <Compile Include="Models\ResultsModel.cs" />
     <Compile Include="Models\StopwatchModel.cs" />
     <Compile Include="Models\TimeModel.cs" />
@@ -299,19 +302,12 @@
     </Content>
     <None Include="Diagrams\Sequence diagrams\StartProgram.sequencediagram" />
     <None Include="Diagrams\Sequence diagrams\WorkProgram.sequencediagram" />
+    <None Include="Documentation\Пользовательская документация.docx" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
+    <None Include="Properties\DataSources\Sprint.Models.ResultsForReport.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

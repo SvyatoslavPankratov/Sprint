@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
+using Microsoft.Reporting.WinForms;
+
 using Sprint.Interfaces;
+using Sprint.Managers;
+using Sprint.Models;
 using Sprint.Presenters;
 
 namespace Sprint.Views
@@ -158,6 +158,27 @@ namespace Sprint.Views
         /// </summary>
         private void RefreshReport()
         {
+            var cc = carClassesLB.SelectedItem.ToString();
+            var rn = raceNumberLB.SelectedItem.ToString();
+            var rps = new List<ReportParameter>
+                            {
+                                new ReportParameter("CarClass", PrintPresenter.ConvertCarClass(PrintPresenter.ParseCarClass(cc))),
+                                new ReportParameter("RaceNumber", rn)
+                            };
+
+            if (string.IsNullOrEmpty(cc) || string.IsNullOrWhiteSpace(cc) || string.IsNullOrEmpty(rn) || string.IsNullOrWhiteSpace(rn))
+            {
+                return;
+            }
+
+            reportViewer.LocalReport.DataSources.Clear();
+            reportViewer.LocalReport.SetParameters(rps);
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource
+                                                            {
+                                                                Name = "Results_DS",
+                                                                Value = PrintPresenter.GetResults(cc, int.Parse(rn))
+                                                            });
+
             reportViewer.RefreshReport();
         }
 

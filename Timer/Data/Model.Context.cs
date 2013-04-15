@@ -28,8 +28,8 @@ namespace Sprint.Data
         public DbSet<CarClass> CarClasses { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Racer> Racers { get; set; }
-        public DbSet<Result> Results { get; set; }
         public DbSet<RacesOption> RacesOptions { get; set; }
         public DbSet<LogEntry> LogEntries { get; set; }
+        public DbSet<Result> Results { get; set; }
     }
 }

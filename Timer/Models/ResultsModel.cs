@@ -53,7 +53,7 @@ namespace Sprint.Models
         /// <summary>
         /// Задать или получить максимальное количество кругов в заезде.
         /// </summary>
-        public int MaxCircleCount { get; set; }
+        private int MaxCircleCount { get; set; }
 
         /// <summary>
         /// Задать или получить значение времени начала круга.
@@ -63,7 +63,7 @@ namespace Sprint.Models
         #endregion
 
         #region Конструкторы
-
+        
         /// <summary>
         /// Конструктор.
         /// </summary>
@@ -112,6 +112,11 @@ namespace Sprint.Models
         /// <param name="result">Добавляемый результат.</param>
         public void AddResult(int currentRace, TimeModel result)
         {
+            if (CurrentCircleNumber == 0)
+            {
+                result.WarmingUp = true;
+            }
+
             (ResultsList as List<List<TimeModel>>)[currentRace][CurrentCircleNumber] = result;
             CurrentCircleNumber++;
         }

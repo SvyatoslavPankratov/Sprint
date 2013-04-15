@@ -53,7 +53,7 @@ namespace Sprint.Models
             MiddleName  = middleName;
 
             Car = new CarModel(carName, carClass);
-
+            
             Id = Guid.NewGuid();
         }
 

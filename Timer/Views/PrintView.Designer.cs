@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintView));
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.carClassesLB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -137,12 +139,15 @@
             // 
             this.reportViewer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "CarClasses_DS";
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "Sprint.Reports.ResultsReport.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(10, 70);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.reportViewer.Size = new System.Drawing.Size(963, 305);
             this.reportViewer.TabIndex = 5;
+            this.reportViewer.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage;
             // 
             // groupBox1
             // 

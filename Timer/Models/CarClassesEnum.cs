@@ -14,5 +14,8 @@ namespace Sprint.Models
         RWD = 1,
         AWD = 2,
         Sport = 3,
+        K100 = 4,
+        K160 = 5,
+        KA = 6
     }
 }

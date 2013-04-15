@@ -36,11 +36,24 @@ namespace Sprint.Managers
         /// Получить список всех участников.
         /// </summary>
         /// <returns>Список всех участников.</returns>
-        public static IEnumerable<Racer> GetRacers()
+        public static IEnumerable<RacerModel> GetRacers()
         {
             try
             {
-                return dc.Racers.ToList();
+                var racers = new List<RacerModel>();
+
+                foreach (var racer in dc.Racers)
+                {
+                    var rm = new RacerModel(racer.FirstName, racer.LastName, racer.MiddleName, racer.Cars.First().Name,
+                                            (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), racer.Cars.First().CarClass.Name));
+                    rm.RacerNumber = racer.Number;
+
+                    // Добавить результаты
+
+                    racers.Add(rm);
+                }
+
+                return racers;
             }
             catch (Exception ex)
             {
@@ -56,7 +69,7 @@ namespace Sprint.Managers
         /// </summary>
         /// <param name="carClass">Класс автомобилей.</param>
         /// <returns>Список участников в заданном классе автомобилей.</returns>
-        public static IEnumerable<Racer> GetRacers(CarClassesEnum carClass)
+        public static IEnumerable<RacerModel> GetRacers(CarClassesEnum carClass)
         {
             try
             {
@@ -91,7 +104,20 @@ namespace Sprint.Managers
                     return null;
                 }
 
-                return racers;
+                var results = new List<RacerModel>();
+
+                foreach (var racer in racers)
+                {
+                    var rm = new RacerModel(racer.FirstName, racer.LastName, racer.MiddleName, racer.Cars.First().Name, 
+                                            (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), racer.Cars.First().CarClass.Name));
+                    rm.RacerNumber = racer.Number;
+
+                    // Добавить результаты
+
+                    results.Add(rm);
+                }
+
+                return results;
             }
             catch (Exception ex)
             {
@@ -151,6 +177,8 @@ namespace Sprint.Managers
                                             MiddleName = racerModel.MiddleName,
                                             Number = racerModel.RacerNumber
                                         };
+
+                        dc.Racers.Add(cur_racer);
                     }
                 }
                 else
@@ -165,10 +193,23 @@ namespace Sprint.Managers
                                         MiddleName = racerModel.MiddleName,
                                         Number = racerModel.RacerNumber
                                     };
+
+                    dc.Racers.Add(cur_racer);
                 }
 
-                cur_racer.Cars.Clear();
-                cur_racer.Results.Clear();
+                for (int i = 0; i < cur_racer.Cars.Count; i++)
+                {
+                    var c = cur_racer.Cars.ElementAt(i);
+                    dc.Cars.Remove(c);
+                    i = -1;
+                }
+
+                for (int i = 0; i < cur_racer.Results.Count; i++)
+                {
+                    var r = cur_racer.Results.ElementAt(i);
+                    dc.Results.Remove(r);
+                    i = -1;
+                }
 
                 // Зададим участнику его автомобиль
                 var str_car_class = racerModel.Car.CarClass.ToString();
@@ -196,26 +237,22 @@ namespace Sprint.Managers
                 {
                     var race_result = racerModel.Results.ResultsList.ElementAt(i);
 
-                    foreach (var result in race_result)
+                    for (int n = 0; n < race_result.Count(); n++)
                     {
-                        if(result == null)
-                        {
-                            continue;
-                        }
-
+                        var result = race_result.ElementAt(n);
                         var res = new Result
                                         {
                                             Id = Guid.NewGuid(),
                                             RaceNumber = i,
-                                            Time = new DateTime(result.TimeSpan.Ticks),
-                                            WarmingUp = result.WarmingUp
+                                            LapNumber = n,
+                                            Time = result == null ? (Nullable<long>)null : result.TimeSpan.Ticks,
+                                            WarmingUp = result == null ? false : result.WarmingUp
                                         };
 
                         cur_racer.Results.Add(res);
                     }
                 }
 
-                dc.Racers.Add(cur_racer);
                 dc.SaveChanges();
 
                 return new OperationResult(true);

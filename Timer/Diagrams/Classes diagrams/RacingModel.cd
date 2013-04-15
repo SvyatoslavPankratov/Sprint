@@ -68,9 +68,9 @@
     </AssociationLine>
     <AssociationLine Name="CurrentCarClass" Type="Sprint.Models.CarClassesEnum" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.75" Y="8.797" />
-        <Point X="12.688" Y="8.797" />
-        <Point X="12.688" Y="5.431" />
+        <Point X="7.75" Y="8.812" />
+        <Point X="12.688" Y="8.812" />
+        <Point X="12.688" Y="6.008" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="Track" Type="Sprint.Models.TrackModel" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
@@ -116,6 +116,9 @@
       <HashCode>AQAAAAAAAAAIAEAABAAAAAAAAAAAEAEAAAAAAAAAAAA=</HashCode>
       <FileName>Presenters\NewRacerPresenter.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="NewRacerView" />
+    </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="Racers" />
     </ShowAsCollectionAssociation>
@@ -192,8 +195,8 @@
     <Position X="12.25" Y="9.25" Width="1.75" />
     <AssociationLine Name="CarClass" Type="Sprint.Models.CarClassesEnum" FixedFromPoint="true">
       <Path>
-        <Point X="13.868" Y="9.25" />
-        <Point X="13.868" Y="5.431" />
+        <Point X="13.875" Y="9.25" />
+        <Point X="13.875" Y="6.008" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -218,14 +221,21 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Sprint.Presenters.PrintPresenter">
-    <Position X="15" Y="1.75" Width="1.75" />
+    <Position X="17.25" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAAAAAAAFAAAAAAAAQAEAAAAAQAAABAAAA=</HashCode>
+      <HashCode>CAAAAAAAAQAAAAAAAFAAAAAAAAQAEAEAAAQAAABAAAA=</HashCode>
       <FileName>Presenters\PrintPresenter.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="PrintView" />
     </ShowAsAssociation>
+  </Class>
+  <Class Name="Sprint.Models.ResultsForReport">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEgAAAAAAAAAAAAAAACAAAAAAAAEIABgAAAABgA=</HashCode>
+      <FileName>Models\ResultsForReport.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Interface Name="Sprint.Interfaces.IMainView">
     <Position X="1.75" Y="5.75" Width="1.75" />
@@ -242,16 +252,23 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Sprint.Interfaces.IPrintView">
-    <Position X="17.75" Y="2" Width="1.75" />
+    <Position X="20" Y="0.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AABQAAAAAAACAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IPrintView.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="Sprint.Views.Interfaces.INewRacerView">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAFgAAAAAAAAAAAAQAAAAAAAAEAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Interfaces\INewRacerView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Enum Name="Sprint.Models.CarClassesEnum">
     <Position X="12.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAMAAAAAACAAAAAAAA=</HashCode>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAACAAAAMAAAAAACAAAAAAEA=</HashCode>
       <FileName>Models\CarClassesEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>

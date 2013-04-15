@@ -148,7 +148,10 @@
             "FWD",
             "RWD",
             "AWD",
-            "Sport"});
+            "Sport",
+            "K100",
+            "K160",
+            "KA"});
             this.listWithCarClasses.Location = new System.Drawing.Point(0, 47);
             this.listWithCarClasses.Name = "listWithCarClasses";
             this.listWithCarClasses.Size = new System.Drawing.Size(171, 456);

@@ -8,13 +8,13 @@
         <EntityTypeShape EntityType="SprintModel.CarClass" Width="1.5" PointX="3" PointY="4.25" />
         <EntityTypeShape EntityType="SprintModel.Car" Width="1.5" PointX="0.5" PointY="4.125" />
         <EntityTypeShape EntityType="SprintModel.Racer" Width="1.5" PointX="0.5" PointY="0.5" />
-        <EntityTypeShape EntityType="SprintModel.Result" Width="1.5" PointX="3" PointY="0.625" />
         <AssociationConnector Association="SprintModel.FK_Cars_CarClasses" />
         <AssociationConnector Association="SprintModel.FK_Racers_Cars" />
-        <AssociationConnector Association="SprintModel.FK_Results_Racers" />
         <EntityTypeShape EntityType="SprintModel.RacesOption" Width="1.5" PointX="5.375" PointY="4.125" />
         <AssociationConnector Association="SprintModel.FK_RaceOptions_CarClass" />
         <EntityTypeShape EntityType="SprintModel.LogEntry" Width="1.5" PointX="8.625" PointY="0.5" />
+        <EntityTypeShape EntityType="SprintModel.Result" Width="1.5" PointX="3.625" PointY="0.625" />
+        <AssociationConnector Association="SprintModel.FK_Results_Racers" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

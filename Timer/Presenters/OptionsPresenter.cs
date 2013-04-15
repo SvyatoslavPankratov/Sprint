@@ -145,7 +145,10 @@ namespace Sprint.Presenters
                             new RaceOptionsModel(CarClassesEnum.FWD) { RaceCount = RaceCount, LidersCount = LidersCount },
                             new RaceOptionsModel(CarClassesEnum.RWD) { RaceCount = RaceCount, LidersCount = LidersCount },
                             new RaceOptionsModel(CarClassesEnum.AWD) { RaceCount = RaceCount, LidersCount = LidersCount },
-                            new RaceOptionsModel(CarClassesEnum.Sport) { RaceCount = RaceCount, LidersCount = LidersCount }
+                            new RaceOptionsModel(CarClassesEnum.Sport) { RaceCount = RaceCount, LidersCount = LidersCount },
+                            new RaceOptionsModel(CarClassesEnum.K100) { RaceCount = RaceCount, LidersCount = LidersCount },
+                            new RaceOptionsModel(CarClassesEnum.K160) { RaceCount = RaceCount, LidersCount = LidersCount },
+                            new RaceOptionsModel(CarClassesEnum.KA) { RaceCount = RaceCount, LidersCount = LidersCount }
                         };
         }
 
