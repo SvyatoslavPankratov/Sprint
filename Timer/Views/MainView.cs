@@ -244,7 +244,7 @@ namespace Sprint.Views
         {
             switch (m.Msg)
             {
-                case WindowsShellManager.WM_HOTKEY:
+                case WindowsHotKeysManager.WM_HOTKEY:
                     {
                         if (m.LParam == (IntPtr)1310720 && !startBtn.Enabled)
                         {
@@ -282,7 +282,7 @@ namespace Sprint.Views
 
             Invoke(new Action(() => wnd.Close()));
 
-            WindowsShellManager.RegisterHotKey(this, Keys.CapsLock);
+            WindowsHotKeysManager.RegisterHotKey(this, Keys.CapsLock);
         }
 
         /// <summary>
@@ -447,7 +447,7 @@ namespace Sprint.Views
 
             if (res == System.Windows.Forms.DialogResult.Yes)
             {
-                WindowsShellManager.UnregisterHotKey(this, Keys.CapsLock);
+                WindowsHotKeysManager.UnregisterHotKey(this, Keys.CapsLock);
                 MainPresenter.Dispose();
             }
             else
@@ -561,12 +561,12 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void проверкаДатчикаОтсечкиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WindowsShellManager.UnregisterHotKey(this, Keys.CapsLock);
+            WindowsHotKeysManager.UnregisterHotKey(this, Keys.CapsLock);
 
             var checkSensorView = new CheckSensorView();
             checkSensorView.ShowDialog();
 
-            WindowsShellManager.RegisterHotKey(this, Keys.CapsLock);
+            WindowsHotKeysManager.RegisterHotKey(this, Keys.CapsLock);
         }
 
         /// <summary>

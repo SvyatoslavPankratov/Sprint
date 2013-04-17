@@ -10,7 +10,7 @@ namespace Sprint.Models
     /// </summary>
     class RacersGroupModel
     {
-        #region Properties
+        #region Свойства
 
         /// <summary>
         /// Задать или получить класс автомобилей в данной группе.
@@ -29,7 +29,7 @@ namespace Sprint.Models
 
         #endregion
 
-        #region Constructors
+        #region Конструкторы
 
         /// <summary>
         /// Конструктор.
@@ -42,7 +42,7 @@ namespace Sprint.Models
 
         #endregion
 
-        #region Methods
+        #region Методы
 
         /// <summary>
         /// Передвинуть участника вверх на одну позицию.

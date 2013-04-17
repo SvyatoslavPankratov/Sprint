@@ -202,31 +202,31 @@ namespace Sprint.Presenters
                 case CarClassesEnum.FWD:
                     {
                         return "Передний привод";
-                    } break;
+                    }
                 case CarClassesEnum.RWD:
                     {
                         return "Задний привод";
-                    } break;
+                    }
                 case CarClassesEnum.AWD:
                     {
                         return "Полный привод";
-                    } break;
+                    }
                 case CarClassesEnum.Sport:
                     {
                         return "Спорт";
-                    } break;
+                    }
                 case CarClassesEnum.K100:
                     {
                         return "До 100 л.с.";
-                    } break;
+                    }
                 case CarClassesEnum.K160:
                     {
                         return "От 100 л.с. до 160 л.с.";
-                    } break;
+                    }
                 case CarClassesEnum.KA:
                     {
                         return "Свыше 160 л.с.";
-                    } break;
+                    }
                 default: return "";
             }
         }

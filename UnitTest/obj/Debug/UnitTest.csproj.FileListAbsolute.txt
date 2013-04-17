@@ -1,9 +1,4 @@
-C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTest\bin\Debug\NLog.config
-C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTest\bin\Debug\Data\Sprint.sdf
-C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTest\bin\Debug\App.config
-C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTest\bin\Debug\UnitTest.dll.config
 C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTest\bin\Debug\UnitTest.dll
-C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTest\bin\Debug\UnitTest.pdb
 C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTest\bin\Debug\NLog.dll
 C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTest\bin\Debug\Sprint.exe
 C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTest\bin\Debug\EntityFramework.dll
@@ -15,3 +10,8 @@ C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTe
 C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
 C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTest\obj\Debug\UnitTest.dll
 C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTest\obj\Debug\UnitTest.pdb
+C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTest\bin\Debug\NLog.config
+C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTest\bin\Debug\Data\Sprint.sdf
+C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTest\bin\Debug\App.config
+C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTest\bin\Debug\UnitTest.dll.config
+C:\Users\Svyatoslav\Documents\Visual Studio 2012\Projects\Sprint\Dev_v1.0\UnitTest\bin\Debug\UnitTest.pdb

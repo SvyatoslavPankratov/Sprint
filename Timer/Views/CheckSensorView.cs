@@ -64,7 +64,7 @@ namespace Sprint.Views
         {
             switch (m.Msg)
             {
-                case WindowsShellManager.WM_HOTKEY:
+                case WindowsHotKeysManager.WM_HOTKEY:
                     {
                         if (m.LParam == (IntPtr)1310720)
                         {
@@ -87,7 +87,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void CheckSensorView_Load(object sender, System.EventArgs e)
         {
-            WindowsShellManager.RegisterHotKey(this, Keys.CapsLock);
+            WindowsHotKeysManager.RegisterHotKey(this, Keys.CapsLock);
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void CheckSensorView_FormClosing(object sender, FormClosingEventArgs e)
         {
-            WindowsShellManager.UnregisterHotKey(this, Keys.CapsLock);
+            WindowsHotKeysManager.UnregisterHotKey(this, Keys.CapsLock);
         }
 
         #endregion

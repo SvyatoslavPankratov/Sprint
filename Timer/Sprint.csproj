@@ -131,13 +131,14 @@
     <Compile Include="Interfaces\ISecondMonitorView.cs" />
     <Compile Include="Interfaces\ISplashScreenView.cs" />
     <Compile Include="Managers\CarClassesDbMeneger.cs" />
+    <Compile Include="Managers\WindowHookManager.cs" />
     <Compile Include="Managers\ExcelManager.cs" />
     <Compile Include="Managers\ExceptionsManager.cs" />
     <Compile Include="Managers\LogsDbManager.cs" />
     <Compile Include="Managers\OptionsDbManager.cs" />
     <Compile Include="Managers\RacersDbManager.cs" />
     <Compile Include="Managers\ScreenManager.cs" />
-    <Compile Include="Managers\WindowsShellManager.cs" />
+    <Compile Include="Managers\WindowsHotKeysManager.cs" />
     <Compile Include="Models\AllTablesWithResults.cs" />
     <Compile Include="Models\CarClassesEnum.cs" />
     <Compile Include="Models\CarModel.cs" />

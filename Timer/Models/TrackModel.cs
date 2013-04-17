@@ -7,7 +7,7 @@ namespace Sprint.Models
 {
     public class TrackModel
     {
-        #region Properties
+        #region Свойства
 
         /// <summary>
         /// Задать или получить текущих гонщиков на треке.
@@ -37,7 +37,7 @@ namespace Sprint.Models
 
         #endregion
 
-        #region Constructors
+        #region Конструкторы
 
         /// <summary>
         /// Конструктор.

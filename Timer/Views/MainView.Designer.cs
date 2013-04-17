@@ -225,10 +225,10 @@
             this.toolStripButton56 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton26 = new System.Windows.Forms.ToolStripButton();
-            this.panel11 = new System.Windows.Forms.Panel();
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.tabPage14 = new System.Windows.Forms.TabPage();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -2314,17 +2314,6 @@
             this.toolStripButton26.Text = "Печать данного списка результатов";
             this.toolStripButton26.Click += new System.EventHandler(this.toolStripButton26_Click);
             // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.carClassesTabs);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(0, 218);
-            this.panel11.Margin = new System.Windows.Forms.Padding(5);
-            this.panel11.Name = "panel11";
-            this.panel11.Padding = new System.Windows.Forms.Padding(5);
-            this.panel11.Size = new System.Drawing.Size(1359, 441);
-            this.panel11.TabIndex = 6;
-            // 
             // tabPage13
             // 
             this.tabPage13.Location = new System.Drawing.Point(4, 34);
@@ -2351,6 +2340,17 @@
             this.tabPage15.TabIndex = 6;
             this.tabPage15.Text = "Свыше 160 л.с.";
             this.tabPage15.UseVisualStyleBackColor = true;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.carClassesTabs);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel11.Location = new System.Drawing.Point(0, 218);
+            this.panel11.Margin = new System.Windows.Forms.Padding(5);
+            this.panel11.Name = "panel11";
+            this.panel11.Padding = new System.Windows.Forms.Padding(5);
+            this.panel11.Size = new System.Drawing.Size(1359, 441);
+            this.panel11.TabIndex = 6;
             // 
             // MainView
             // 

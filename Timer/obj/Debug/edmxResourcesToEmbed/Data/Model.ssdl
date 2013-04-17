@@ -75,9 +75,10 @@
     </Key>
     <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Id_Racer" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Time" Type="datetime" Nullable="false" />
     <Property Name="RaceNumber" Type="int" Nullable="false" />
     <Property Name="WarmingUp" Type="bit" Nullable="false" />
+    <Property Name="LapNumber" Type="int" Nullable="false" />
+    <Property Name="Time" Type="bigint" Nullable="true" />
   </EntityType>
   <Association Name="FK_Cars_CarClasses">
     <End Role="CarClasses" Type="SprintModel.Store.CarClasses" Multiplicity="1">

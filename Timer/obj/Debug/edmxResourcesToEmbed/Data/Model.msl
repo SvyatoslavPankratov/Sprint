@@ -30,17 +30,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Results">
-      <EntityTypeMapping TypeName="SprintModel.Result">
-        <MappingFragment StoreEntitySet="Results">
-          <ScalarProperty Name="WarmingUp" ColumnName="WarmingUp" />
-          <ScalarProperty Name="RaceNumber" ColumnName="RaceNumber" />
-          <ScalarProperty Name="Time" ColumnName="Time" />
-          <ScalarProperty Name="Id_Racer" ColumnName="Id_Racer" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="RacesOptions">
       <EntityTypeMapping TypeName="SprintModel.RacesOption">
         <MappingFragment StoreEntitySet="RacesOptions">
@@ -58,6 +47,18 @@
           <ScalarProperty Name="Logger" ColumnName="Logger" />
           <ScalarProperty Name="Level" ColumnName="Level" />
           <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Results">
+      <EntityTypeMapping TypeName="SprintModel.Result">
+        <MappingFragment StoreEntitySet="Results">
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="LapNumber" ColumnName="LapNumber" />
+          <ScalarProperty Name="WarmingUp" ColumnName="WarmingUp" />
+          <ScalarProperty Name="RaceNumber" ColumnName="RaceNumber" />
+          <ScalarProperty Name="Id_Racer" ColumnName="Id_Racer" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

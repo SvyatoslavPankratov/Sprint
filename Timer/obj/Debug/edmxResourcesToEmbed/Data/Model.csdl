@@ -4,7 +4,6 @@
     <EntitySet Name="CarClasses" EntityType="SprintModel.CarClass" />
     <EntitySet Name="Cars" EntityType="SprintModel.Car" />
     <EntitySet Name="Racers" EntityType="SprintModel.Racer" />
-    <EntitySet Name="Results" EntityType="SprintModel.Result" />
     <AssociationSet Name="FK_Cars_CarClasses" Association="SprintModel.FK_Cars_CarClasses">
       <End Role="CarClass" EntitySet="CarClasses" />
       <End Role="Car" EntitySet="Cars" />
@@ -13,16 +12,17 @@
       <End Role="Racer" EntitySet="Racers" />
       <End Role="Car" EntitySet="Cars" />
     </AssociationSet>
-    <AssociationSet Name="FK_Results_Racers" Association="SprintModel.FK_Results_Racers">
-      <End Role="Racer" EntitySet="Racers" />
-      <End Role="Result" EntitySet="Results" />
-    </AssociationSet>
     <EntitySet Name="RacesOptions" EntityType="SprintModel.RacesOption" />
     <AssociationSet Name="FK_RaceOptions_CarClass" Association="SprintModel.FK_RaceOptions_CarClass">
       <End Role="CarClass" EntitySet="CarClasses" />
       <End Role="RacesOption" EntitySet="RacesOptions" />
     </AssociationSet>
     <EntitySet Name="LogEntries" EntityType="SprintModel.LogEntry" />
+    <EntitySet Name="Results" EntityType="SprintModel.Result" />
+    <AssociationSet Name="FK_Results_Racers" Association="SprintModel.FK_Results_Racers">
+      <End Role="Racer" EntitySet="Racers" />
+      <End Role="Result" EntitySet="Results" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="CarClass">
     <Documentation>
@@ -68,21 +68,6 @@
     <NavigationProperty Name="Cars" Relationship="SprintModel.FK_Racers_Cars" FromRole="Racer" ToRole="Car" />
     <NavigationProperty Name="Results" Relationship="SprintModel.FK_Results_Racers" FromRole="Racer" ToRole="Result" />
   </EntityType>
-  <EntityType Name="Result">
-    <Documentation>
-      <Summary>Результаты участников.</Summary>
-      <LongDescription>Результаты участников.</LongDescription>
-    </Documentation>
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Type="Guid" Name="Id" Nullable="false" />
-    <Property Type="Guid" Name="Id_Racer" Nullable="false" />
-    <Property Type="DateTime" Name="Time" Nullable="false" Precision="3" />
-    <Property Type="Int32" Name="RaceNumber" Nullable="false" />
-    <Property Type="Boolean" Name="WarmingUp" Nullable="false" />
-    <NavigationProperty Name="Racer" Relationship="SprintModel.FK_Results_Racers" FromRole="Result" ToRole="Racer" />
-  </EntityType>
   <Association Name="FK_Cars_CarClasses">
     <End Type="SprintModel.CarClass" Role="CarClass" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -107,20 +92,6 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Car">
-        <PropertyRef Name="Id_Racer" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Results_Racers">
-    <End Type="SprintModel.Racer" Role="Racer" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="SprintModel.Result" Role="Result" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Racer">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Result">
         <PropertyRef Name="Id_Racer" />
       </Dependent>
     </ReferentialConstraint>
@@ -161,4 +132,30 @@
     <Property Type="String" Name="Logger" MaxLength="128" FixedLength="false" Unicode="true" />
     <Property Type="DateTime" Name="TimeStamp" Precision="3" />
   </EntityType>
+  <EntityType Name="Result">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Guid" Name="Id" Nullable="false" />
+    <Property Type="Guid" Name="Id_Racer" Nullable="false" />
+    <Property Type="Int32" Name="RaceNumber" Nullable="false" />
+    <Property Type="Boolean" Name="WarmingUp" Nullable="false" />
+    <Property Type="Int32" Name="LapNumber" Nullable="false" />
+    <Property Type="Int64" Name="Time" />
+    <NavigationProperty Name="Racer" Relationship="SprintModel.FK_Results_Racers" FromRole="Result" ToRole="Racer" />
+  </EntityType>
+  <Association Name="FK_Results_Racers">
+    <End Type="SprintModel.Racer" Role="Racer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SprintModel.Result" Role="Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Racer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Result">
+        <PropertyRef Name="Id_Racer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
