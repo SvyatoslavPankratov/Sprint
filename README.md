@@ -8,6 +8,7 @@ Technologies and libraries used in this project:
 	* Microsoft Unit Testing Framework
 	* SQL Server Compact
 	* EPPlus library
+	* Windows API
 
 Pattern used in this project:
 
