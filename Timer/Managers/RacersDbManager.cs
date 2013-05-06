@@ -47,8 +47,35 @@ namespace Sprint.Managers
                     var rm = new RacerModel(racer.FirstName, racer.LastName, racer.MiddleName, racer.Cars.First().Name,
                                             (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), racer.Cars.First().CarClass.Name));
                     rm.RacerNumber = racer.Number;
+                    rm.Results = new ResultsModel(ConstantsModel.MaxRaceCount, ConstantsModel.MaxCircleCount);
 
-                    // Добавить результаты
+                    // Добавить результаты 1 тура
+                    foreach (var result in racer.Results.Where(r => r.RaceNumber == 0))
+                    {
+                        if (result.Time.HasValue)
+                        {
+                            rm.Results.AddResult(result.RaceNumber, new TimeModel(new TimeSpan(result.Time.GetValueOrDefault())));
+                        }
+                        else
+                        {
+                            rm.Results.AddResult(result.RaceNumber, null);
+                        }
+                    }
+
+                    rm.Results.ResetState();
+
+                    // Добавить результаты 2 тура
+                    foreach (var result in racer.Results.Where(r => r.RaceNumber == 1))
+                    {
+                        if (result.Time.HasValue)
+                        {
+                            rm.Results.AddResult(result.RaceNumber, new TimeModel(new TimeSpan(result.Time.GetValueOrDefault())));
+                        }
+                        else
+                        {
+                            rm.Results.AddResult(result.RaceNumber, null);
+                        }
+                    }
 
                     racers.Add(rm);
                 }
@@ -111,8 +138,35 @@ namespace Sprint.Managers
                     var rm = new RacerModel(racer.FirstName, racer.LastName, racer.MiddleName, racer.Cars.First().Name, 
                                             (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), racer.Cars.First().CarClass.Name));
                     rm.RacerNumber = racer.Number;
+                    rm.Results = new ResultsModel(ConstantsModel.MaxRaceCount, ConstantsModel.MaxCircleCount);
 
-                    // Добавить результаты
+                    // Добавить результаты 1 тура
+                    foreach (var result in racer.Results.Where(r => r.RaceNumber == 0))
+                    {
+                        if (result.Time.HasValue)
+                        {
+                            rm.Results.AddResult(result.RaceNumber, new TimeModel(new TimeSpan(result.Time.GetValueOrDefault())));
+                        }
+                        else
+                        {
+                            rm.Results.AddResult(result.RaceNumber, null);
+                        }
+                    }
+
+                    rm.Results.ResetState();
+
+                    // Добавить результаты 2 тура
+                    foreach (var result in racer.Results.Where(r => r.RaceNumber == 1))
+                    {
+                        if (result.Time.HasValue)
+                        {
+                            rm.Results.AddResult(result.RaceNumber, new TimeModel(new TimeSpan(result.Time.GetValueOrDefault())));
+                        }
+                        else
+                        {
+                            rm.Results.AddResult(result.RaceNumber, null);
+                        }
+                    }
 
                     results.Add(rm);
                 }
@@ -245,8 +299,7 @@ namespace Sprint.Managers
                                             Id = Guid.NewGuid(),
                                             RaceNumber = i,
                                             LapNumber = n,
-                                            Time = result == null ? (Nullable<long>)null : result.TimeSpan.Ticks,
-                                            WarmingUp = result == null ? false : result.WarmingUp
+                                            Time = result == null ? (Nullable<long>)null : result.TimeSpan.Ticks
                                         };
 
                         cur_racer.Results.Add(res);

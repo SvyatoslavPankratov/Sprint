@@ -87,6 +87,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\ApplicationState.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\Car.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -114,6 +117,9 @@
     <Compile Include="Data\Racer.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\RacersAtTheTrack.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\RacesOption.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -130,6 +136,7 @@
     <Compile Include="Interfaces\IPrintView.cs" />
     <Compile Include="Interfaces\ISecondMonitorView.cs" />
     <Compile Include="Interfaces\ISplashScreenView.cs" />
+    <Compile Include="Managers\ApplicationStateDbManager.cs" />
     <Compile Include="Managers\CarClassesDbMeneger.cs" />
     <Compile Include="Managers\WindowHookManager.cs" />
     <Compile Include="Managers\ExcelManager.cs" />
@@ -140,8 +147,10 @@
     <Compile Include="Managers\ScreenManager.cs" />
     <Compile Include="Managers\WindowsHotKeysManager.cs" />
     <Compile Include="Models\AllTablesWithResults.cs" />
+    <Compile Include="Models\ApplicationStateModel.cs" />
     <Compile Include="Models\CarClassesEnum.cs" />
     <Compile Include="Models\CarModel.cs" />
+    <Compile Include="Models\ConstantsModel.cs" />
     <Compile Include="Models\OperationResult.cs" />
     <Compile Include="Models\PeopleModel.cs" />
     <Compile Include="Models\RaceOptionsModel.cs" />

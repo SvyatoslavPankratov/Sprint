@@ -38,6 +38,11 @@ namespace Sprint.Views
         /// </summary>
         private CheckSensorPresenter CheckSensorPresenter { get; set; }
 
+        /// <summary>
+        /// Задать или получить менеджер системных хуков.
+        /// </summary>
+        private WindowHookManager WindowHookManager { get; set; }
+
         #endregion
 
         #region Конструкторы
@@ -50,45 +55,13 @@ namespace Sprint.Views
             InitializeComponent();
 
             CheckSensorPresenter = new CheckSensorPresenter(this);
+            WindowHookManager = new WindowHookManager(true, false);
+            WindowHookManager.OnMouseActivity += CheckSensorView_KeyUp;
         } 
 
         #endregion
 
-        #region Системные методы
-
-         /// <summary>
-         /// Обработчик сообщений Windows.
-         /// </summary>
-         /// <param name="m">Сообщение Windows.</param>
-        protected override void WndProc(ref Message m)
-        {
-            switch (m.Msg)
-            {
-                case WindowsHotKeysManager.WM_HOTKEY:
-                    {
-                        if (m.LParam == (IntPtr)1310720)
-                        {
-                            CheckSensorView_KeyDown(this, new KeyEventArgs(Keys.CapsLock));
-                        }
-                    } break;
-            }
-
-            base.WndProc(ref m);
-        }
-
-        #endregion
-
         #region Методы
-
-        /// <summary>
-        /// Действия при загрузке формы.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CheckSensorView_Load(object sender, System.EventArgs e)
-        {
-            WindowsHotKeysManager.RegisterHotKey(this, Keys.CapsLock);
-        }
 
         /// <summary>
         /// Действия, происходящие при закрытии диалога.
@@ -101,6 +74,22 @@ namespace Sprint.Views
         }
 
         /// <summary>
+        /// Дейсвия при отработке горячих клавиш.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckSensorView_KeyUp(object sender, MouseEventArgs e)
+        {
+            switch (e.Button)
+            {
+                case MouseButtons.Middle:
+                    {
+                        CheckSensorPresenter.SetOnSignal();
+                    } break;
+            }
+        }
+
+        /// <summary>
         /// Действия при попытке повторно провети проверку сигнала от датчика отсечки.
         /// </summary>
         /// <param name="sender"></param>
@@ -109,20 +98,7 @@ namespace Sprint.Views
         {
             CheckSensorPresenter.ClearDialog();
         }
-
-        /// <summary>
-        /// Дейсвия при отработке горячих клавиш.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CheckSensorView_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.CapsLock)       // Отсечка
-            {
-                CheckSensorPresenter.SetOnSignal();
-            }
-        }
-
+        
         /// <summary>
         /// Действия при закрытии формы.
         /// </summary>
@@ -130,7 +106,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void CheckSensorView_FormClosing(object sender, FormClosingEventArgs e)
         {
-            WindowsHotKeysManager.UnregisterHotKey(this, Keys.CapsLock);
+            WindowHookManager.UnregisterHooks();
         }
 
         #endregion

@@ -16,10 +16,9 @@ namespace Sprint.Data
     {
         public System.Guid Id { get; set; }
         public System.Guid Id_Racer { get; set; }
-        public System.Nullable<long> Time { get; set; }
         public int RaceNumber { get; set; }
-        public bool WarmingUp { get; set; }
         public int LapNumber { get; set; }
+        public Nullable<long> Time { get; set; }
     
         public virtual Racer Racer { get; set; }
     }

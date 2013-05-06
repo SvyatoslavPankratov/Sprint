@@ -11,20 +11,6 @@ namespace Sprint.Presenters
 {
     public class PrintPresenter
     {
-        #region Константы
-
-        /// <summary>
-        /// Количество проводимых туров по умолчанию в каждом классе автомобилей (максимум 2).
-        /// </summary>
-        private const int RaceCount = 2;
-
-        /// <summary>
-        /// Количество отбираемых лидеров по результатам первого тура для проведения финального тура.
-        /// </summary>
-        private const int LidersCount = 5;
-
-        #endregion
-
         #region Свойства
 
         /// <summary>
@@ -90,8 +76,8 @@ namespace Sprint.Presenters
                 {
                     options.Add(new RaceOptionsModel(carClass)
                     {
-                        RaceCount = RaceCount,
-                        LidersCount = LidersCount
+                        RaceCount = ConstantsModel.RaceCount,
+                        LidersCount = ConstantsModel.LidersCount
                     });
                 }
             }
@@ -107,13 +93,13 @@ namespace Sprint.Presenters
         {
             return new List<RaceOptionsModel> 
                         { 
-                            new RaceOptionsModel(CarClassesEnum.FWD) { RaceCount = RaceCount, LidersCount = LidersCount },
-                            new RaceOptionsModel(CarClassesEnum.RWD) { RaceCount = RaceCount, LidersCount = LidersCount },
-                            new RaceOptionsModel(CarClassesEnum.AWD) { RaceCount = RaceCount, LidersCount = LidersCount },
-                            new RaceOptionsModel(CarClassesEnum.Sport) { RaceCount = RaceCount, LidersCount = LidersCount },
-                            new RaceOptionsModel(CarClassesEnum.K100) { RaceCount = RaceCount, LidersCount = LidersCount },
-                            new RaceOptionsModel(CarClassesEnum.K160) { RaceCount = RaceCount, LidersCount = LidersCount },
-                            new RaceOptionsModel(CarClassesEnum.KA) { RaceCount = RaceCount, LidersCount = LidersCount }
+                            new RaceOptionsModel(CarClassesEnum.FWD) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
+                            new RaceOptionsModel(CarClassesEnum.RWD) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
+                            new RaceOptionsModel(CarClassesEnum.AWD) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
+                            new RaceOptionsModel(CarClassesEnum.Sport) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
+                            new RaceOptionsModel(CarClassesEnum.K100) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
+                            new RaceOptionsModel(CarClassesEnum.K160) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
+                            new RaceOptionsModel(CarClassesEnum.KA) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount }
                         };
         }
 
@@ -149,13 +135,13 @@ namespace Sprint.Presenters
             // Вначале добавяем участников у ктороых есть результаты
             foreach (var racer in racers.Where(r => r.Results != null).OrderBy(r => r.Results.GetMinTime(raceNumber)))
             {
-                AddNewRacer(results, racer, cc);
+                AddNewRacer(results, racer, cc, raceNumber);
             }
 
             // Затем добавляем участников у ктороых нету результатов
             foreach (var racer in racers.Where(r => r.Results == null))
             {
-                AddNewRacer(results, racer, cc);
+                AddNewRacer(results, racer, cc, raceNumber);
             }
             return results;
         }
@@ -166,7 +152,7 @@ namespace Sprint.Presenters
         /// <param name="results">Список участников, в который будет добавлен новый участник.</param>
         /// <param name="racer">Модель из БД добавляемого участника.</param>
         /// <param name="carClass">Класс автомобилей.</param>
-        private static void AddNewRacer(List<ResultsForReport> results, RacerModel racer, CarClassesEnum carClass)
+        private static void AddNewRacer(List<ResultsForReport> results, RacerModel racer, CarClassesEnum carClass,  int raceNumber)
         {
             var result = new ResultsForReport
                                 {
@@ -175,7 +161,19 @@ namespace Sprint.Presenters
                                 };
 
             // Добавить результаты кругов
+            TimeModel time = null;
 
+            time = racer.Results.GetMinTime(raceNumber);
+            result.MinTime = time == null ? string.Empty : time.ToString();
+
+            time = racer.Results.ResultsList.ElementAt(raceNumber - 1).ElementAt(1);
+            result.Time1 = time == null ? string.Empty : time.ToString();
+
+            time = racer.Results.ResultsList.ElementAt(raceNumber - 1).ElementAt(2);
+            result.Time2 = time == null ? string.Empty : time.ToString();
+
+            time = racer.Results.ResultsList.ElementAt(raceNumber - 1).ElementAt(3);
+            result.Time3 = time == null ? string.Empty : time.ToString();
 
             results.Add(result);
         }

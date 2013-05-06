@@ -17,25 +17,6 @@ namespace Sprint.Presenters
     /// </summary>
     class MainPresenter : IDisposable
     {
-        #region Константы
-
-        /// <summary>
-        /// Максимальное количество заездов.
-        /// </summary>
-        public const int MaxRaceCount = 2;
-
-        /// <summary>
-        /// Максимальное количество кругов в заезде.
-        /// </summary>
-        public const int MaxCircleCount = 4;
-
-        /// <summary>
-        /// Максимальное количество гонщиков одновременно присутствующих на треке.
-        /// </summary>
-        public const int MaxRacersForRace = 2;
-
-        #endregion
-
         #region Поля
 
         private IEnumerable<RacerModel> _racers;
@@ -60,16 +41,6 @@ namespace Sprint.Presenters
         private Thread ThreadSync { get; set; }
 
         /// <summary>
-        /// Задать или получить первая-ли у секундомера отсечка после его остановки.
-        /// </summary>
-        private bool Stoped { get; set; }
-
-        /// <summary>
-        /// Задать или получить в какую колонку нужно добавлять новое значение, без учета флага реверса.
-        /// </summary>
-        private bool LeftRight { get; set; }
-
-        /// <summary>
         /// Задать или получить список гонщиков.
         /// </summary>
         public IEnumerable<RacerModel> Racers
@@ -86,7 +57,7 @@ namespace Sprint.Presenters
                 {
                     if (racer.Results == null)
                     {
-                        racer.Results = new ResultsModel(MaxRaceCount, MaxCircleCount);
+                        racer.Results = new ResultsModel(ConstantsModel.MaxRaceCount, ConstantsModel.MaxCircleCount);
                     }
 
                     RacersDbManager.SetRacer(racer);
@@ -173,7 +144,14 @@ namespace Sprint.Presenters
 
             ThreadSync = new Thread(() => StopwatchDataBindingProcess(MainView, Stopwatch));
 
-            ResetFlags();
+            // Попробуем  загрузить гонщиков из бд
+            var racers = RacersDbManager.GetRacers();
+
+            if (racers.Any())
+            {
+                _racers = racers;
+                DataBind();
+            }
         }
 
         #endregion
@@ -187,15 +165,6 @@ namespace Sprint.Presenters
         {
             Racers = addedRacers;           
             SetRacersForTableForFirstRace();
-        }
-
-        /// <summary>
-        /// Сброс всех флагов в изначальное состояние.
-        /// </summary>
-        private void ResetFlags()
-        {
-            LeftRight = true;
-            Stoped = true;
         }
 
         /// <summary>
@@ -231,8 +200,6 @@ namespace Sprint.Presenters
             MainView.Min = 0;
             MainView.Sec = 0;
             MainView.Mlsec = 0;
-
-            ResetFlags();
         }
 
         /// <summary>
@@ -247,6 +214,7 @@ namespace Sprint.Presenters
 
             if (CheckCurrentGroupFinishedRace())
             {
+                SaveApplicationState();
                 StopStopwatch();
                 return;
             }
@@ -294,6 +262,7 @@ namespace Sprint.Presenters
                         MainView.NextCurrentRacer = 0;
                     }
 
+                    SaveApplicationState();
                     return;
                 }
             }
@@ -343,6 +312,19 @@ namespace Sprint.Presenters
 
 
             DataBind();
+        }
+
+        /// <summary>
+        /// Сохраним состояние приложения.
+        /// </summary>
+        private void SaveApplicationState()
+        {
+            ApplicationStateDbManager.SetApplicationState(new ApplicationStateModel
+            {
+                CurrentCarClass = CurrentCarClass,
+                CurrentRacer = Track.CurrentRacer.Id,
+                RacersAtTheTrack = Track.CurrentRacers.Select(r => r.Id)
+            });
         }
 
         /// <summary>
@@ -441,6 +423,7 @@ namespace Sprint.Presenters
         {
             var res_1 = RacersDbManager.DeleteRacers();
             var res_2 = OptionsDbManager.DeleteAllOptions();
+            var res_3 = ApplicationStateDbManager.DeleteApplicationState();
 
             if (!res_1.Result)
             {
@@ -450,6 +433,11 @@ namespace Sprint.Presenters
             if (!res_2.Result)
             {
                 return res_2;
+            }
+
+            if (!res_3.Result)
+            {
+                return res_3;
             }
 
             return new OperationResult(true);
@@ -497,7 +485,7 @@ namespace Sprint.Presenters
             column = new DataColumn("Автомобиль");
             table.Columns.Add(column);
 
-            column = new DataColumn("Круг №1");
+            column = new DataColumn("Прогревочный круг");
             table.Columns.Add(column);
 
             column = new DataColumn("Круг №2");
@@ -636,7 +624,7 @@ namespace Sprint.Presenters
             }
 
             // Посмотрим, а не пытаемся-ли мы передвинуть уже проехавшего заезд гонщика?
-            if (racer.Results.ResultsList.ElementAt(raceNum - 1).Where(r => r == null).Count() < MaxCircleCount)
+            if (racer.Results.ResultsList.ElementAt(raceNum - 1).Where(r => r == null).Count() < ConstantsModel.MaxCircleCount)
             {
                 return false;
             }
@@ -669,7 +657,7 @@ namespace Sprint.Presenters
             }
 
             // Посмотрим, а не пытаемся-ли мы передвинуть уже проехавшего заезд гонщика?
-            if (racer.Results.ResultsList.ElementAt(raceNum - 1).Where(r => r == null).Count() < MaxCircleCount)
+            if (racer.Results.ResultsList.ElementAt(raceNum - 1).Where(r => r == null).Count() < ConstantsModel.MaxCircleCount)
             {
                 return false;
             }
@@ -815,15 +803,13 @@ namespace Sprint.Presenters
                                 return table;
                             }
 
-                            for (int circle = 0; circle < MaxCircleCount; circle++)
+                            for (int circle = 0; circle < ConstantsModel.MaxCircleCount; circle++)
                             {
                                 var time = racer.Results.ResultsList.ElementAt(0).ElementAt(circle);
 
                                 if (time != null)
                                 {
-                                    table.Rows[row][circle + 3] = string.Format("{0} : {1} : {2}", time.Min.ToString("00"),
-                                                                                                   time.Sec.ToString("00"),
-                                                                                                   time.Mlsec.ToString("000"));
+                                    table.Rows[row][circle + 3] = time.ToString();
                                 }
                             }
                         } break;
@@ -832,15 +818,13 @@ namespace Sprint.Presenters
                             break;
                             throw new NotImplementedException();
 
-                            for (int circle = 0; circle < MaxCircleCount; circle++)
+                            for (int circle = 0; circle < ConstantsModel.MaxCircleCount; circle++)
                             {
                                 var time = racer.Results.ResultsList.ElementAt(1).ElementAt(circle);
 
                                 if (time != null)
                                 {
-                                    table.Rows[row][circle + 3] = string.Format("{0} : {1} : {2}", time.Min.ToString("00"),
-                                                                                                   time.Sec.ToString("00"),
-                                                                                                   time.Mlsec.ToString("000"));
+                                    table.Rows[row][circle + 3] = time.ToString();
                                 }
                             }
                         } break;

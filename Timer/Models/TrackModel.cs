@@ -15,7 +15,8 @@ namespace Sprint.Models
         public IEnumerable<RacerModel> CurrentRacers { get; set; }
 
         /// <summary>
-        /// Задать или получить номер гонщика, который должен будет пересечь отсечку.
+        /// Задать или получить номер гонщика, который должен будет пересечь отсечку 
+        /// (0 или 1, в зависимости от того, сколько участников одновременно могут находиться на треке).
         /// </summary>
         public int CurrentRacerNum { get; set; }
 

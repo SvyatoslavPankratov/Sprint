@@ -73,9 +73,9 @@ namespace Sprint.Models
         {
             MaxCircleCount = lap_count;
 
-            var resultsList = new List<List<TimeModel>>(1); //race_count
+            var resultsList = new List<List<TimeModel>>(race_count);
 
-            for (int race = 0; race < 1; race++)            //race_count
+            for (int race = 0; race < race_count; race++)
             {
                 var race_TimeModel = new List<TimeModel>(lap_count);
 
@@ -101,24 +101,46 @@ namespace Sprint.Models
         /// <returns>Минимальное время за круг.</returns>
         public TimeModel GetMinTime(int raceNumber)
         {
-            return (from result in (ResultsList as List<List<TimeModel>>)[raceNumber - 1]
-                    where result.TimeSpan == (ResultsList as List<List<TimeModel>>)[raceNumber - 1].Min(r => r.TimeSpan)
-                    select result).FirstOrDefault();
+            TimeModel min = null;
+            var results = ResultsList.ElementAt(raceNumber - 1);
+
+            for(int i = 1; i < results.Count(); i++)
+            {
+                var time = results.ElementAt(i);
+
+                if(time != null)
+                {
+                    if (min == null)
+                    {
+                        min = time;
+                    }
+                    else if(min.TimeSpan > time.TimeSpan)
+                    {
+                        min = time;
+                    }
+                }
+            }
+
+            return min;
         }
 
         /// <summary>
         /// Добавить новое время результата.
         /// </summary>
+        /// <param name="currentRace">Номер тура результат гонщика в котором добавляется (начинается с 0).</param>
         /// <param name="result">Добавляемый результат.</param>
         public void AddResult(int currentRace, TimeModel result)
         {
-            if (CurrentCircleNumber == 0)
-            {
-                result.WarmingUp = true;
-            }
-
             (ResultsList as List<List<TimeModel>>)[currentRace][CurrentCircleNumber] = result;
             CurrentCircleNumber++;
+        }
+
+        /// <summary>
+        /// Сбросить состояние счетчиков.
+        /// </summary>
+        public void ResetState()
+        {
+            CurrentCircleNumber = 0;
         }
 
         #endregion

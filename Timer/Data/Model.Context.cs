@@ -31,5 +31,7 @@ namespace Sprint.Data
         public DbSet<RacesOption> RacesOptions { get; set; }
         public DbSet<LogEntry> LogEntries { get; set; }
         public DbSet<Result> Results { get; set; }
+        public DbSet<ApplicationState> ApplicationStates { get; set; }
+        public DbSet<RacersAtTheTrack> RacersAtTheTracks { get; set; }
     }
 }

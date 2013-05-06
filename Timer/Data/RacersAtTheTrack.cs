@@ -12,20 +12,11 @@ namespace Sprint.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class CarClass
+    public partial class RacersAtTheTrack
     {
-        public CarClass()
-        {
-            this.Cars = new HashSet<Car>();
-            this.RacesOptions = new HashSet<RacesOption>();
-            this.ApplicationStates = new HashSet<ApplicationState>();
-        }
-    
         public System.Guid Id { get; set; }
-        public string Name { get; set; }
+        public System.Guid FK_Racer { get; set; }
     
-        public virtual ICollection<Car> Cars { get; set; }
-        public virtual ICollection<RacesOption> RacesOptions { get; set; }
-        public virtual ICollection<ApplicationState> ApplicationStates { get; set; }
+        public virtual Racer Racer { get; set; }
     }
 }

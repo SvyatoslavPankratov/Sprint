@@ -29,13 +29,6 @@ namespace Sprint.Models
         /// </summary>
         public TimeSpan TimeSpan { get; set; }
 
-        /// <summary>
-        /// Задать или получить флаг прогревочного времени.
-        /// true - прогревочное время.
-        /// false - обычное время.
-        /// </summary>
-        public bool WarmingUp { get; set; }
-
         #endregion
 
         #region Constructors
@@ -45,7 +38,6 @@ namespace Sprint.Models
         /// </summary>
         public TimeModel()
         {
-            WarmingUp = false;
         }
 
         /// <summary>
@@ -58,6 +50,19 @@ namespace Sprint.Models
             Min         = time.Minutes;
             Sec         = time.Seconds;
             Mlsec       = time.Milliseconds;
+        }
+
+        #endregion
+
+        #region Методы
+
+        /// <summary>
+        /// Получить текстовое представление заданного времени.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return Min.ToString("D3") + " : " + Sec.ToString("D2") + " : " + Mlsec.ToString("D3");
         }
 
         #endregion

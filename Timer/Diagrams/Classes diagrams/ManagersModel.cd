@@ -31,9 +31,10 @@
   <Class Name="Sprint.Managers.WindowsHotKeysManager">
     <Position X="4.25" Y="0.5" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQCAAAACAAAAAAAAAAAAQAAAAEACAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAQCAAAACAAAAAAAAAAAAQAAAAEACAA=</HashCode>
       <FileName>Managers\WindowsHotKeysManager.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Sprint.Managers.CarClassesDbMeneger">
     <Position X="12.25" Y="4" Width="1.75" />
@@ -89,8 +90,16 @@
       </Delegate>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AMAAADAAASMAigCSAAgADAAAAYAAAAwALSEAApEkoKQ=</HashCode>
+      <HashCode>AMAAADAACWMAigCSAAgADAAAAYAAAAwADSEAApEkoKQ=</HashCode>
       <FileName>Managers\WindowHookManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Sprint.Managers.ApplicationStateDbManager">
+    <Position X="14.75" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAACEAAAAAAAAAAAAAAAAEAABAAAAAA=</HashCode>
+      <FileName>Managers\ApplicationStateDbManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

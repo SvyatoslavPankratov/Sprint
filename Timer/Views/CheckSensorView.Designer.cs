@@ -187,8 +187,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Проверка датчика";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CheckSensorView_FormClosing);
-            this.Load += new System.EventHandler(this.CheckSensorView_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CheckSensorView_KeyDown);
             this.Off_Panel.ResumeLayout(false);
             this.Off_Panel.PerformLayout();
             this.groupBox1.ResumeLayout(false);

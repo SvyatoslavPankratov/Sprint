@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 using NLog;
+using Sprint.Exceptions;
 
 namespace Sprint.Managers
 {
@@ -13,7 +14,7 @@ namespace Sprint.Managers
     /// application runes in background or does not have any user interface at all. This class raises 
     /// common .NET events with KeyEventArgs and MouseEventArgs so you can easily retrive any information you need.
     /// </summary>
-    public class WindowHookManager
+    public class WindowHookManager : IDisposable
     {
         #region Поля только для чтения
 
@@ -444,7 +445,7 @@ namespace Sprint.Managers
         /// <exception cref="Win32Exception">Any windows problem.</exception>
         public WindowHookManager()
         {
-            Start();
+            RegisterHooks();
         }
 
         /// <summary>
@@ -458,7 +459,7 @@ namespace Sprint.Managers
         /// </remarks>
         public WindowHookManager(bool InstallMouseHook, bool InstallKeyboardHook)
         {
-            Start(InstallMouseHook, InstallKeyboardHook);
+            RegisterHooks(InstallMouseHook, InstallKeyboardHook);
         }
 
         /// <summary>
@@ -466,8 +467,7 @@ namespace Sprint.Managers
         /// </summary>
         ~WindowHookManager()
         {
-            //uninstall hooks and do not throw exceptions
-            Stop(true, true, false);
+            Dispose();
         } 
 
         #endregion
@@ -522,9 +522,9 @@ namespace Sprint.Managers
         /// Installs both mouse and keyboard hooks and starts rasing events
         /// </summary>
         /// <exception cref="Win32Exception">Any windows problem.</exception>
-        public void Start()
+        public void RegisterHooks()
         {
-            Start(true, true);
+            RegisterHooks(true, true);
         }
 
         /// <summary>
@@ -533,50 +533,60 @@ namespace Sprint.Managers
         /// <param name="InstallMouseHook"><b>true</b> if mouse events must be monitored</param>
         /// <param name="InstallKeyboardHook"><b>true</b> if keyboard events must be monitored</param>
         /// <exception cref="Win32Exception">Any windows problem.</exception>
-        public void Start(bool InstallMouseHook, bool InstallKeyboardHook)
+        public void RegisterHooks(bool InstallMouseHook, bool InstallKeyboardHook)
         {
-            // install Mouse hook only if it is not installed and must be installed
-            if (hMouseHook == 0 && InstallMouseHook)
+            try
             {
-                // Create an instance of HookProc.
-                MouseHookProcedure = new HookProc(MouseHookProc);
-                //install hook
-                hMouseHook = SetWindowsHookEx(WH_MOUSE_LL,
-                                              MouseHookProcedure,
-                                              IntPtr.Zero,
-                                              0);
-                //If SetWindowsHookEx fails.
-                if (hMouseHook == 0)
+                // install Mouse hook only if it is not installed and must be installed
+                if (hMouseHook == 0 && InstallMouseHook)
                 {
-                    //Returns the error code returned by the last unmanaged function called using platform invoke that has the DllImportAttribute.SetLastError flag set. 
-                    int errorCode = Marshal.GetLastWin32Error();
-                    //do cleanup
-                    Stop(true, false, false);
-                    //Initializes and throws a new instance of the Win32Exception class with the specified error. 
-                    throw new Win32Exception(errorCode);
+                    // Create an instance of HookProc.
+                    MouseHookProcedure = new HookProc(MouseHookProc);
+                    //install hook
+                    hMouseHook = SetWindowsHookEx(WH_MOUSE_LL,
+                                                  MouseHookProcedure,
+                                                  IntPtr.Zero,
+                                                  0);
+                    //If SetWindowsHookEx fails.
+                    if (hMouseHook == 0)
+                    {
+                        //Returns the error code returned by the last unmanaged function called using platform invoke that has the DllImportAttribute.SetLastError flag set. 
+                        int errorCode = Marshal.GetLastWin32Error();
+                        //do cleanup
+                        UnregisterHooks(true, false, false);
+                        //Initializes and throws a new instance of the Win32Exception class with the specified error. 
+                        throw new Win32Exception(errorCode);
+                    }
+                }
+
+                // install Keyboard hook only if it is not installed and must be installed
+                if (hKeyboardHook == 0 && InstallKeyboardHook)
+                {
+                    // Create an instance of HookProc.
+                    KeyboardHookProcedure = new HookProc(KeyboardHookProc);
+                    //install hook
+                    hKeyboardHook = SetWindowsHookEx(WH_KEYBOARD_LL,
+                                                     KeyboardHookProcedure,
+                                                     IntPtr.Zero,
+                                                     0);
+                    //If SetWindowsHookEx fails.
+                    if (hKeyboardHook == 0)
+                    {
+                        //Returns the error code returned by the last unmanaged function called using platform invoke that has the DllImportAttribute.SetLastError flag set. 
+                        int errorCode = Marshal.GetLastWin32Error();
+                        //do cleanup
+                        UnregisterHooks(false, true, false);
+                        //Initializes and throws a new instance of the Win32Exception class with the specified error. 
+                        throw new Win32Exception(errorCode);
+                    }
                 }
             }
-
-            // install Keyboard hook only if it is not installed and must be installed
-            if (hKeyboardHook == 0 && InstallKeyboardHook)
+            catch (Exception ex)
             {
-                // Create an instance of HookProc.
-                KeyboardHookProcedure = new HookProc(KeyboardHookProc);
-                //install hook
-                hKeyboardHook = SetWindowsHookEx(WH_KEYBOARD_LL,
-                                                 KeyboardHookProcedure,
-                                                 IntPtr.Zero,
-                                                 0);
-                //If SetWindowsHookEx fails.
-                if (hKeyboardHook == 0)
-                {
-                    //Returns the error code returned by the last unmanaged function called using platform invoke that has the DllImportAttribute.SetLastError flag set. 
-                    int errorCode = Marshal.GetLastWin32Error();
-                    //do cleanup
-                    Stop(false, true, false);
-                    //Initializes and throws a new instance of the Win32Exception class with the specified error. 
-                    throw new Win32Exception(errorCode);
-                }
+                var exception = new SprintSystemException("Не удалось зарегистрировать в системе хуки.",
+                                                          "Sprint.Managers.WindowHookManager.Start(bool InstallMouseHook, bool InstallKeyboardHook)", ex);
+                logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
+                throw exception;
             }
         }
 
@@ -584,9 +594,9 @@ namespace Sprint.Managers
         /// Stops monitoring both mouse and keyboard events and rasing events.
         /// </summary>
         /// <exception cref="Win32Exception">Any windows problem.</exception>
-        public void Stop()
+        public void UnregisterHooks()
         {
-            Stop(true, true, true);
+            UnregisterHooks(true, true, true);
         }
 
         /// <summary>
@@ -596,40 +606,50 @@ namespace Sprint.Managers
         /// <param name="UninstallKeyboardHook"><b>true</b> if keyboard hook must be uninstalled</param>
         /// <param name="ThrowExceptions"><b>true</b> if exceptions which occured during uninstalling must be thrown</param>
         /// <exception cref="Win32Exception">Any windows problem.</exception>
-        public void Stop(bool UninstallMouseHook, bool UninstallKeyboardHook, bool ThrowExceptions)
+        public void UnregisterHooks(bool UninstallMouseHook, bool UninstallKeyboardHook, bool ThrowExceptions)
         {
-            //if mouse hook set and must be uninstalled
-            if (hMouseHook != 0 && UninstallMouseHook)
-            {
-                //uninstall hook
-                int retMouse = UnhookWindowsHookEx(hMouseHook);
-                //reset invalid handle
-                hMouseHook = 0;
-                //if failed and exception must be thrown
-                if (retMouse == 0 && ThrowExceptions)
+            try
+            { 
+                //if mouse hook set and must be uninstalled
+                if (hMouseHook != 0 && UninstallMouseHook)
                 {
-                    //Returns the error code returned by the last unmanaged function called using platform invoke that has the DllImportAttribute.SetLastError flag set. 
-                    int errorCode = Marshal.GetLastWin32Error();
-                    //Initializes and throws a new instance of the Win32Exception class with the specified error. 
-                    throw new Win32Exception(errorCode);
+                    //uninstall hook
+                    int retMouse = UnhookWindowsHookEx(hMouseHook);
+                    //reset invalid handle
+                    hMouseHook = 0;
+                    //if failed and exception must be thrown
+                    if (retMouse == 0 && ThrowExceptions)
+                    {
+                        //Returns the error code returned by the last unmanaged function called using platform invoke that has the DllImportAttribute.SetLastError flag set. 
+                        int errorCode = Marshal.GetLastWin32Error();
+                        //Initializes and throws a new instance of the Win32Exception class with the specified error. 
+                        throw new Win32Exception(errorCode);
+                    }
+                }
+
+                //if keyboard hook set and must be uninstalled
+                if (hKeyboardHook != 0 && UninstallKeyboardHook)
+                {
+                    //uninstall hook
+                    int retKeyboard = UnhookWindowsHookEx(hKeyboardHook);
+                    //reset invalid handle
+                    hKeyboardHook = 0;
+                    //if failed and exception must be thrown
+                    if (retKeyboard == 0 && ThrowExceptions)
+                    {
+                        //Returns the error code returned by the last unmanaged function called using platform invoke that has the DllImportAttribute.SetLastError flag set. 
+                        int errorCode = Marshal.GetLastWin32Error();
+                        //Initializes and throws a new instance of the Win32Exception class with the specified error. 
+                        throw new Win32Exception(errorCode);
+                    }
                 }
             }
-
-            //if keyboard hook set and must be uninstalled
-            if (hKeyboardHook != 0 && UninstallKeyboardHook)
+            catch (Exception ex)
             {
-                //uninstall hook
-                int retKeyboard = UnhookWindowsHookEx(hKeyboardHook);
-                //reset invalid handle
-                hKeyboardHook = 0;
-                //if failed and exception must be thrown
-                if (retKeyboard == 0 && ThrowExceptions)
-                {
-                    //Returns the error code returned by the last unmanaged function called using platform invoke that has the DllImportAttribute.SetLastError flag set. 
-                    int errorCode = Marshal.GetLastWin32Error();
-                    //Initializes and throws a new instance of the Win32Exception class with the specified error. 
-                    throw new Win32Exception(errorCode);
-                }
+                var exception = new SprintSystemException("Не удалось снять регистрацию в системе хуков.",
+                                                          "Sprint.Managers.WindowHookManager.Stop(bool UninstallMouseHook, bool UninstallKeyboardHook, bool ThrowExceptions)", ex);
+                logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
+                throw exception;
             }
         }
 
@@ -804,6 +824,19 @@ namespace Sprint.Managers
                 return CallNextHookEx(hKeyboardHook, nCode, wParam, lParam);
             }
         } 
+
+        #endregion
+
+        #region Реализация интерфейса IDisposable
+
+        /// <summary>
+        /// Освобождение занимаемых ресурсов.ы
+        /// </summary>
+        public void Dispose()
+        {
+            //uninstall hooks and do not throw exceptions
+            UnregisterHooks(true, true, false);
+        }
 
         #endregion
     }

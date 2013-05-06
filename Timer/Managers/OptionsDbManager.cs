@@ -232,7 +232,7 @@ namespace Sprint.Managers
             catch (Exception ex)
             {
                 var exception = new SprintException("Не удалось удалить заданные опции гонок.",
-                                                        "Sprint.Managers.OptionsManager.DeleteOptions(Guid Id)", ex);
+                                                        "Sprint.Managers.OptionsManager.DeleteOptions()", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 throw exception;
             }

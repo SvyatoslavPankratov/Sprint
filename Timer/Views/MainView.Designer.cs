@@ -62,6 +62,30 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel10 = new System.Windows.Forms.Panel();
             this.mlsecLbl = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -120,6 +144,7 @@
             this.selectFwdCarClass1_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton49 = new System.Windows.Forms.ToolStripButton();
+            this.addRacer_Btn_fwdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_fwdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_fwdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -133,6 +158,7 @@
             this.selectFwdCarClass2_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton36 = new System.Windows.Forms.ToolStripButton();
+            this.addRacer_Btn_fwdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_fwdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_fwdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
@@ -149,6 +175,7 @@
             this.selectRwdCarClass1_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
+            this.addRacer_Btn_rwdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_rwdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_rwdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
@@ -162,6 +189,7 @@
             this.selectRwdCarClass2_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.addRacer_Btn_rwdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_rwdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_rwdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -177,6 +205,7 @@
             this.selectAwdCarClass1_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
+            this.addRacer_Btn_awdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_awdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_awdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
@@ -190,6 +219,7 @@
             this.selectAwdCarClass2_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton19 = new System.Windows.Forms.ToolStripButton();
+            this.addRacer_Btn_awdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_awdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_awdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
@@ -205,6 +235,7 @@
             this.selectSportCarClass1_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton24 = new System.Windows.Forms.ToolStripButton();
+            this.addRacer_Btn_sportR1DGV = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_sportR1DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_sportR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
@@ -218,6 +249,7 @@
             this.selectSportCarClass2_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton29 = new System.Windows.Forms.ToolStripButton();
+            this.addRacer_Btn_sportR2DGV = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_sportR2DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_sportR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
@@ -226,8 +258,95 @@
             this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton26 = new System.Windows.Forms.ToolStripButton();
             this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.toolStrip9 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
+            this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.toolStrip10 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator30 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton22 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton23 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton27 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton28 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator31 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton30 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton31 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator32 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton32 = new System.Windows.Forms.ToolStripButton();
             this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage18 = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.toolStrip11 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton33 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator33 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton34 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton35 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton37 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton38 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator34 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton39 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton40 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator35 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton41 = new System.Windows.Forms.ToolStripButton();
+            this.tabPage19 = new System.Windows.Forms.TabPage();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.toolStrip12 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton57 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator36 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton58 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton59 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton60 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton61 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator37 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton62 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton63 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator38 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton64 = new System.Windows.Forms.ToolStripButton();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabPage20 = new System.Windows.Forms.TabPage();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.toolStrip13 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton65 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator39 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton66 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton67 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton68 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton69 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator40 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton70 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton71 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator41 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton72 = new System.Windows.Forms.ToolStripButton();
+            this.tabPage21 = new System.Windows.Forms.TabPage();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.toolStrip14 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton73 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator42 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton74 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton75 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton76 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton77 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator43 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton78 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton79 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator44 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton80 = new System.Windows.Forms.ToolStripButton();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -280,6 +399,30 @@
             this.tabPage12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sportR2DGV)).BeginInit();
             this.toolStrip7.SuspendLayout();
+            this.tabPage13.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.toolStrip9.SuspendLayout();
+            this.tabPage17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.toolStrip10.SuspendLayout();
+            this.tabPage14.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.toolStrip11.SuspendLayout();
+            this.tabPage19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.toolStrip12.SuspendLayout();
+            this.tabPage15.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            this.tabPage20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            this.toolStrip13.SuspendLayout();
+            this.tabPage21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            this.toolStrip14.SuspendLayout();
             this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -460,9 +603,9 @@
             this.cutOffBtn.Location = new System.Drawing.Point(14, 121);
             this.cutOffBtn.Name = "cutOffBtn";
             this.cutOffBtn.Padding = new System.Windows.Forms.Padding(10);
-            this.cutOffBtn.Size = new System.Drawing.Size(172, 50);
+            this.cutOffBtn.Size = new System.Drawing.Size(197, 50);
             this.cutOffBtn.TabIndex = 4;
-            this.cutOffBtn.Text = "Отсечка [CapsLock]";
+            this.cutOffBtn.Text = "Отсечка [Ср. кн. мыши]";
             this.cutOffBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cutOffBtn.UseVisualStyleBackColor = true;
             this.cutOffBtn.Click += new System.EventHandler(this.cutOffBtn_Click);
@@ -944,6 +1087,7 @@
             this.selectFwdCarClass1_BT,
             this.toolStripSeparator2,
             this.toolStripButton49,
+            this.addRacer_Btn_fwdR1DGV,
             this.upRacer_Btn_fwdR1DGV,
             this.downRacer_Btn_fwdR1DGV,
             this.toolStripSeparator3,
@@ -983,6 +1127,17 @@
             this.toolStripButton49.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton49.Text = "Включить/ Выключить режим редактирования";
             this.toolStripButton49.Click += new System.EventHandler(this.toolStripButton49_Click);
+            // 
+            // addRacer_Btn_fwdR1DGV
+            // 
+            this.addRacer_Btn_fwdR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addRacer_Btn_fwdR1DGV.Enabled = false;
+            this.addRacer_Btn_fwdR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("addRacer_Btn_fwdR1DGV.Image")));
+            this.addRacer_Btn_fwdR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addRacer_Btn_fwdR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addRacer_Btn_fwdR1DGV.Name = "addRacer_Btn_fwdR1DGV";
+            this.addRacer_Btn_fwdR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.addRacer_Btn_fwdR1DGV.Text = "toolStripButton4";
             // 
             // upRacer_Btn_fwdR1DGV
             // 
@@ -1115,6 +1270,7 @@
             this.selectFwdCarClass2_BT,
             this.toolStripSeparator16,
             this.toolStripButton36,
+            this.addRacer_Btn_fwdR2DGV,
             this.upRacer_Btn_fwdR2DGV,
             this.downRacer_Btn_fwdR2DGV,
             this.toolStripSeparator17,
@@ -1154,6 +1310,17 @@
             this.toolStripButton36.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton36.Text = "Включить/ Выключить режим редактирования";
             this.toolStripButton36.Click += new System.EventHandler(this.toolStripButton36_Click);
+            // 
+            // addRacer_Btn_fwdR2DGV
+            // 
+            this.addRacer_Btn_fwdR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addRacer_Btn_fwdR2DGV.Enabled = false;
+            this.addRacer_Btn_fwdR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("addRacer_Btn_fwdR2DGV.Image")));
+            this.addRacer_Btn_fwdR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addRacer_Btn_fwdR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addRacer_Btn_fwdR2DGV.Name = "addRacer_Btn_fwdR2DGV";
+            this.addRacer_Btn_fwdR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.addRacer_Btn_fwdR2DGV.Text = "toolStripButton4";
             // 
             // upRacer_Btn_fwdR2DGV
             // 
@@ -1315,6 +1482,7 @@
             this.selectRwdCarClass1_BT,
             this.toolStripSeparator6,
             this.toolStripButton11,
+            this.addRacer_Btn_rwdR1DGV,
             this.upRacer_Btn_rwdR1DGV,
             this.downRacer_Btn_rwdR1DGV,
             this.toolStripSeparator7,
@@ -1354,6 +1522,17 @@
             this.toolStripButton11.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton11.Text = "Включить/ Выключить режим редактирования";
             this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
+            // 
+            // addRacer_Btn_rwdR1DGV
+            // 
+            this.addRacer_Btn_rwdR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addRacer_Btn_rwdR1DGV.Enabled = false;
+            this.addRacer_Btn_rwdR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("addRacer_Btn_rwdR1DGV.Image")));
+            this.addRacer_Btn_rwdR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addRacer_Btn_rwdR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addRacer_Btn_rwdR1DGV.Name = "addRacer_Btn_rwdR1DGV";
+            this.addRacer_Btn_rwdR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.addRacer_Btn_rwdR1DGV.Text = "toolStripButton4";
             // 
             // upRacer_Btn_rwdR1DGV
             // 
@@ -1485,6 +1664,7 @@
             this.selectRwdCarClass2_BT,
             this.toolStripSeparator4,
             this.toolStripButton7,
+            this.addRacer_Btn_rwdR2DGV,
             this.upRacer_Btn_rwdR2DGV,
             this.downRacer_Btn_rwdR2DGV,
             this.toolStripSeparator5,
@@ -1524,6 +1704,17 @@
             this.toolStripButton7.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton7.Text = "Включить/ Выключить режим редактирования";
             this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
+            // 
+            // addRacer_Btn_rwdR2DGV
+            // 
+            this.addRacer_Btn_rwdR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addRacer_Btn_rwdR2DGV.Enabled = false;
+            this.addRacer_Btn_rwdR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("addRacer_Btn_rwdR2DGV.Image")));
+            this.addRacer_Btn_rwdR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addRacer_Btn_rwdR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addRacer_Btn_rwdR2DGV.Name = "addRacer_Btn_rwdR2DGV";
+            this.addRacer_Btn_rwdR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.addRacer_Btn_rwdR2DGV.Text = "toolStripButton4";
             // 
             // upRacer_Btn_rwdR2DGV
             // 
@@ -1679,6 +1870,7 @@
             this.selectAwdCarClass1_BT,
             this.toolStripSeparator8,
             this.toolStripButton15,
+            this.addRacer_Btn_awdR1DGV,
             this.upRacer_Btn_awdR1DGV,
             this.downRacer_Btn_awdR1DGV,
             this.toolStripSeparator9,
@@ -1718,6 +1910,17 @@
             this.toolStripButton15.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton15.Text = "Включить/ Выключить режим редактирования";
             this.toolStripButton15.Click += new System.EventHandler(this.toolStripButton15_Click);
+            // 
+            // addRacer_Btn_awdR1DGV
+            // 
+            this.addRacer_Btn_awdR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addRacer_Btn_awdR1DGV.Enabled = false;
+            this.addRacer_Btn_awdR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("addRacer_Btn_awdR1DGV.Image")));
+            this.addRacer_Btn_awdR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addRacer_Btn_awdR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addRacer_Btn_awdR1DGV.Name = "addRacer_Btn_awdR1DGV";
+            this.addRacer_Btn_awdR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.addRacer_Btn_awdR1DGV.Text = "toolStripButton4";
             // 
             // upRacer_Btn_awdR1DGV
             // 
@@ -1848,6 +2051,7 @@
             this.selectAwdCarClass2_BT,
             this.toolStripSeparator10,
             this.toolStripButton19,
+            this.addRacer_Btn_awdR2DGV,
             this.upRacer_Btn_awdR2DGV,
             this.downRacer_Btn_awdR2DGV,
             this.toolStripSeparator11,
@@ -1887,6 +2091,17 @@
             this.toolStripButton19.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton19.Text = "Включить/ Выключить режим редактирования";
             this.toolStripButton19.Click += new System.EventHandler(this.toolStripButton19_Click);
+            // 
+            // addRacer_Btn_awdR2DGV
+            // 
+            this.addRacer_Btn_awdR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addRacer_Btn_awdR2DGV.Enabled = false;
+            this.addRacer_Btn_awdR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("addRacer_Btn_awdR2DGV.Image")));
+            this.addRacer_Btn_awdR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addRacer_Btn_awdR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addRacer_Btn_awdR2DGV.Name = "addRacer_Btn_awdR2DGV";
+            this.addRacer_Btn_awdR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.addRacer_Btn_awdR2DGV.Text = "toolStripButton4";
             // 
             // upRacer_Btn_awdR2DGV
             // 
@@ -2042,6 +2257,7 @@
             this.selectSportCarClass1_BT,
             this.toolStripSeparator12,
             this.toolStripButton24,
+            this.addRacer_Btn_sportR1DGV,
             this.upRacer_Btn_sportR1DGV,
             this.downRacer_Btn_sportR1DGV,
             this.toolStripSeparator13,
@@ -2081,6 +2297,17 @@
             this.toolStripButton24.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton24.Text = "Включить/ Выключить режим редактирования";
             this.toolStripButton24.Click += new System.EventHandler(this.toolStripButton24_Click);
+            // 
+            // addRacer_Btn_sportR1DGV
+            // 
+            this.addRacer_Btn_sportR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addRacer_Btn_sportR1DGV.Enabled = false;
+            this.addRacer_Btn_sportR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("addRacer_Btn_sportR1DGV.Image")));
+            this.addRacer_Btn_sportR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addRacer_Btn_sportR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addRacer_Btn_sportR1DGV.Name = "addRacer_Btn_sportR1DGV";
+            this.addRacer_Btn_sportR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.addRacer_Btn_sportR1DGV.Text = "toolStripButton4";
             // 
             // upRacer_Btn_sportR1DGV
             // 
@@ -2211,6 +2438,7 @@
             this.selectSportCarClass2_BT,
             this.toolStripSeparator14,
             this.toolStripButton29,
+            this.addRacer_Btn_sportR2DGV,
             this.upRacer_Btn_sportR2DGV,
             this.downRacer_Btn_sportR2DGV,
             this.toolStripSeparator15,
@@ -2250,6 +2478,17 @@
             this.toolStripButton29.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton29.Text = "Включить/ Выключить режим редактирования";
             this.toolStripButton29.Click += new System.EventHandler(this.toolStripButton29_Click);
+            // 
+            // addRacer_Btn_sportR2DGV
+            // 
+            this.addRacer_Btn_sportR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addRacer_Btn_sportR2DGV.Enabled = false;
+            this.addRacer_Btn_sportR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("addRacer_Btn_sportR2DGV.Image")));
+            this.addRacer_Btn_sportR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addRacer_Btn_sportR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addRacer_Btn_sportR2DGV.Name = "addRacer_Btn_sportR2DGV";
+            this.addRacer_Btn_sportR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.addRacer_Btn_sportR2DGV.Text = "toolStripButton4";
             // 
             // upRacer_Btn_sportR2DGV
             // 
@@ -2316,6 +2555,7 @@
             // 
             // tabPage13
             // 
+            this.tabPage13.Controls.Add(this.tabControl1);
             this.tabPage13.Location = new System.Drawing.Point(4, 34);
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.Size = new System.Drawing.Size(1341, 393);
@@ -2323,8 +2563,377 @@
             this.tabPage13.Text = "До 100 л.с.";
             this.tabPage13.UseVisualStyleBackColor = true;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage16);
+            this.tabControl1.Controls.Add(this.tabPage17);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.ImageList = this.imageList1;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1341, 393);
+            this.tabControl1.TabIndex = 6;
+            // 
+            // tabPage16
+            // 
+            this.tabPage16.Controls.Add(this.dataGridView1);
+            this.tabPage16.Controls.Add(this.toolStrip9);
+            this.tabPage16.Location = new System.Drawing.Point(4, 23);
+            this.tabPage16.Name = "tabPage16";
+            this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage16.Size = new System.Drawing.Size(1333, 366);
+            this.tabPage16.TabIndex = 0;
+            this.tabPage16.Text = "1 тур";
+            this.tabPage16.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle34;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.GridColor = System.Drawing.Color.Silver;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 42);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle36;
+            this.dataGridView1.RowTemplate.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.ShowEditingIcon = false;
+            this.dataGridView1.Size = new System.Drawing.Size(1327, 321);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // toolStrip9
+            // 
+            this.toolStrip9.BackColor = System.Drawing.Color.Gainsboro;
+            this.toolStrip9.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.toolStrip9.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton4,
+            this.toolStripSeparator27,
+            this.toolStripButton5,
+            this.toolStripButton6,
+            this.toolStripButton9,
+            this.toolStripButton10,
+            this.toolStripSeparator28,
+            this.toolStripButton13,
+            this.toolStripButton14,
+            this.toolStripSeparator29,
+            this.toolStripButton17});
+            this.toolStrip9.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip9.Name = "toolStrip9";
+            this.toolStrip9.Size = new System.Drawing.Size(1327, 39);
+            this.toolStrip9.TabIndex = 5;
+            this.toolStrip9.Text = "toolStrip9";
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton4.Text = "Выбрать ";
+            // 
+            // toolStripSeparator27
+            // 
+            this.toolStripSeparator27.Name = "toolStripSeparator27";
+            this.toolStripSeparator27.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton5.Text = "Включить/ Выключить режим редактирования";
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton6.Enabled = false;
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton6.Text = "toolStripButton4";
+            // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton9.Enabled = false;
+            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
+            this.toolStripButton9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton9.Text = "Передвинуть участника вверх";
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton10.Enabled = false;
+            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
+            this.toolStripButton10.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton10.Text = "Передвинуть участника вниз";
+            // 
+            // toolStripSeparator28
+            // 
+            this.toolStripSeparator28.Name = "toolStripSeparator28";
+            this.toolStripSeparator28.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton13
+            // 
+            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton13.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton13.Image")));
+            this.toolStripButton13.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton13.Name = "toolStripButton13";
+            this.toolStripButton13.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton13.Text = "Обнуление результата";
+            // 
+            // toolStripButton14
+            // 
+            this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton14.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton14.Image")));
+            this.toolStripButton14.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton14.Name = "toolStripButton14";
+            this.toolStripButton14.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton14.Text = "Перезаезд попытки";
+            // 
+            // toolStripSeparator29
+            // 
+            this.toolStripSeparator29.Name = "toolStripSeparator29";
+            this.toolStripSeparator29.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton17
+            // 
+            this.toolStripButton17.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton17.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton17.Image")));
+            this.toolStripButton17.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton17.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton17.Name = "toolStripButton17";
+            this.toolStripButton17.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton17.Text = "Печать данного списка результатов";
+            // 
+            // tabPage17
+            // 
+            this.tabPage17.Controls.Add(this.dataGridView2);
+            this.tabPage17.Controls.Add(this.toolStrip10);
+            this.tabPage17.Location = new System.Drawing.Point(4, 23);
+            this.tabPage17.Name = "tabPage17";
+            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage17.Size = new System.Drawing.Size(1333, 366);
+            this.tabPage17.TabIndex = 1;
+            this.tabPage17.Text = "2 тур";
+            this.tabPage17.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle38;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.GridColor = System.Drawing.Color.Silver;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 42);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle39;
+            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle40.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle40;
+            this.dataGridView2.RowTemplate.ReadOnly = true;
+            this.dataGridView2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.ShowEditingIcon = false;
+            this.dataGridView2.Size = new System.Drawing.Size(1327, 321);
+            this.dataGridView2.TabIndex = 6;
+            // 
+            // toolStrip10
+            // 
+            this.toolStrip10.BackColor = System.Drawing.Color.Gainsboro;
+            this.toolStrip10.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.toolStrip10.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton18,
+            this.toolStripSeparator30,
+            this.toolStripButton22,
+            this.toolStripButton23,
+            this.toolStripButton27,
+            this.toolStripButton28,
+            this.toolStripSeparator31,
+            this.toolStripButton30,
+            this.toolStripButton31,
+            this.toolStripSeparator32,
+            this.toolStripButton32});
+            this.toolStrip10.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip10.Name = "toolStrip10";
+            this.toolStrip10.Size = new System.Drawing.Size(1327, 39);
+            this.toolStrip10.TabIndex = 7;
+            this.toolStrip10.Text = "toolStrip10";
+            // 
+            // toolStripButton18
+            // 
+            this.toolStripButton18.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton18.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton18.Image")));
+            this.toolStripButton18.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton18.Name = "toolStripButton18";
+            this.toolStripButton18.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton18.Text = "Выбрать ";
+            // 
+            // toolStripSeparator30
+            // 
+            this.toolStripSeparator30.Name = "toolStripSeparator30";
+            this.toolStripSeparator30.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton22
+            // 
+            this.toolStripButton22.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton22.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton22.Image")));
+            this.toolStripButton22.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton22.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton22.Name = "toolStripButton22";
+            this.toolStripButton22.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton22.Text = "Включить/ Выключить режим редактирования";
+            // 
+            // toolStripButton23
+            // 
+            this.toolStripButton23.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton23.Enabled = false;
+            this.toolStripButton23.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton23.Image")));
+            this.toolStripButton23.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton23.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton23.Name = "toolStripButton23";
+            this.toolStripButton23.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton23.Text = "toolStripButton4";
+            // 
+            // toolStripButton27
+            // 
+            this.toolStripButton27.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton27.Enabled = false;
+            this.toolStripButton27.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton27.Image")));
+            this.toolStripButton27.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton27.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton27.Name = "toolStripButton27";
+            this.toolStripButton27.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton27.Text = "Передвинуть участника вверх";
+            // 
+            // toolStripButton28
+            // 
+            this.toolStripButton28.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton28.Enabled = false;
+            this.toolStripButton28.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton28.Image")));
+            this.toolStripButton28.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton28.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton28.Name = "toolStripButton28";
+            this.toolStripButton28.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton28.Text = "Передвинуть участника вниз";
+            // 
+            // toolStripSeparator31
+            // 
+            this.toolStripSeparator31.Name = "toolStripSeparator31";
+            this.toolStripSeparator31.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton30
+            // 
+            this.toolStripButton30.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton30.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton30.Image")));
+            this.toolStripButton30.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton30.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton30.Name = "toolStripButton30";
+            this.toolStripButton30.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton30.Text = "Обнуление результата";
+            // 
+            // toolStripButton31
+            // 
+            this.toolStripButton31.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton31.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton31.Image")));
+            this.toolStripButton31.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton31.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton31.Name = "toolStripButton31";
+            this.toolStripButton31.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton31.Text = "Перезаезд попытки";
+            // 
+            // toolStripSeparator32
+            // 
+            this.toolStripSeparator32.Name = "toolStripSeparator32";
+            this.toolStripSeparator32.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton32
+            // 
+            this.toolStripButton32.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton32.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton32.Image")));
+            this.toolStripButton32.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton32.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton32.Name = "toolStripButton32";
+            this.toolStripButton32.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton32.Text = "Печать данного списка результатов";
+            // 
             // tabPage14
             // 
+            this.tabPage14.Controls.Add(this.tabControl2);
             this.tabPage14.Location = new System.Drawing.Point(4, 34);
             this.tabPage14.Name = "tabPage14";
             this.tabPage14.Size = new System.Drawing.Size(1341, 393);
@@ -2332,14 +2941,751 @@
             this.tabPage14.Text = "От 100 до 160 л.с.";
             this.tabPage14.UseVisualStyleBackColor = true;
             // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage18);
+            this.tabControl2.Controls.Add(this.tabPage19);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.ImageList = this.imageList1;
+            this.tabControl2.Location = new System.Drawing.Point(0, 0);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(1341, 393);
+            this.tabControl2.TabIndex = 6;
+            // 
+            // tabPage18
+            // 
+            this.tabPage18.Controls.Add(this.dataGridView3);
+            this.tabPage18.Controls.Add(this.toolStrip11);
+            this.tabPage18.Location = new System.Drawing.Point(4, 23);
+            this.tabPage18.Name = "tabPage18";
+            this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage18.Size = new System.Drawing.Size(1333, 366);
+            this.tabPage18.TabIndex = 0;
+            this.tabPage18.Text = "1 тур";
+            this.tabPage18.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle41.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
+            this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle42;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView3.GridColor = System.Drawing.Color.Silver;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 42);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle43;
+            this.dataGridView3.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle44.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle44;
+            this.dataGridView3.RowTemplate.ReadOnly = true;
+            this.dataGridView3.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.ShowEditingIcon = false;
+            this.dataGridView3.Size = new System.Drawing.Size(1327, 321);
+            this.dataGridView3.TabIndex = 3;
+            // 
+            // toolStrip11
+            // 
+            this.toolStrip11.BackColor = System.Drawing.Color.Gainsboro;
+            this.toolStrip11.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.toolStrip11.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton33,
+            this.toolStripSeparator33,
+            this.toolStripButton34,
+            this.toolStripButton35,
+            this.toolStripButton37,
+            this.toolStripButton38,
+            this.toolStripSeparator34,
+            this.toolStripButton39,
+            this.toolStripButton40,
+            this.toolStripSeparator35,
+            this.toolStripButton41});
+            this.toolStrip11.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip11.Name = "toolStrip11";
+            this.toolStrip11.Size = new System.Drawing.Size(1327, 39);
+            this.toolStrip11.TabIndex = 5;
+            this.toolStrip11.Text = "toolStrip11";
+            // 
+            // toolStripButton33
+            // 
+            this.toolStripButton33.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton33.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton33.Image")));
+            this.toolStripButton33.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton33.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton33.Name = "toolStripButton33";
+            this.toolStripButton33.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton33.Text = "Выбрать ";
+            // 
+            // toolStripSeparator33
+            // 
+            this.toolStripSeparator33.Name = "toolStripSeparator33";
+            this.toolStripSeparator33.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton34
+            // 
+            this.toolStripButton34.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton34.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton34.Image")));
+            this.toolStripButton34.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton34.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton34.Name = "toolStripButton34";
+            this.toolStripButton34.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton34.Text = "Включить/ Выключить режим редактирования";
+            // 
+            // toolStripButton35
+            // 
+            this.toolStripButton35.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton35.Enabled = false;
+            this.toolStripButton35.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton35.Image")));
+            this.toolStripButton35.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton35.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton35.Name = "toolStripButton35";
+            this.toolStripButton35.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton35.Text = "toolStripButton4";
+            // 
+            // toolStripButton37
+            // 
+            this.toolStripButton37.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton37.Enabled = false;
+            this.toolStripButton37.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton37.Image")));
+            this.toolStripButton37.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton37.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton37.Name = "toolStripButton37";
+            this.toolStripButton37.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton37.Text = "Передвинуть участника вверх";
+            // 
+            // toolStripButton38
+            // 
+            this.toolStripButton38.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton38.Enabled = false;
+            this.toolStripButton38.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton38.Image")));
+            this.toolStripButton38.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton38.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton38.Name = "toolStripButton38";
+            this.toolStripButton38.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton38.Text = "Передвинуть участника вниз";
+            // 
+            // toolStripSeparator34
+            // 
+            this.toolStripSeparator34.Name = "toolStripSeparator34";
+            this.toolStripSeparator34.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton39
+            // 
+            this.toolStripButton39.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton39.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton39.Image")));
+            this.toolStripButton39.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton39.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton39.Name = "toolStripButton39";
+            this.toolStripButton39.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton39.Text = "Обнуление результата";
+            // 
+            // toolStripButton40
+            // 
+            this.toolStripButton40.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton40.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton40.Image")));
+            this.toolStripButton40.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton40.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton40.Name = "toolStripButton40";
+            this.toolStripButton40.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton40.Text = "Перезаезд попытки";
+            // 
+            // toolStripSeparator35
+            // 
+            this.toolStripSeparator35.Name = "toolStripSeparator35";
+            this.toolStripSeparator35.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton41
+            // 
+            this.toolStripButton41.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton41.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton41.Image")));
+            this.toolStripButton41.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton41.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton41.Name = "toolStripButton41";
+            this.toolStripButton41.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton41.Text = "Печать данного списка результатов";
+            // 
+            // tabPage19
+            // 
+            this.tabPage19.Controls.Add(this.dataGridView4);
+            this.tabPage19.Controls.Add(this.toolStrip12);
+            this.tabPage19.Location = new System.Drawing.Point(4, 23);
+            this.tabPage19.Name = "tabPage19";
+            this.tabPage19.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage19.Size = new System.Drawing.Size(1333, 366);
+            this.tabPage19.TabIndex = 1;
+            this.tabPage19.Text = "2 тур";
+            this.tabPage19.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView4.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle45;
+            this.dataGridView4.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView4.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle46.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView4.DefaultCellStyle = dataGridViewCellStyle46;
+            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView4.GridColor = System.Drawing.Color.Silver;
+            this.dataGridView4.Location = new System.Drawing.Point(3, 42);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView4.RowHeadersDefaultCellStyle = dataGridViewCellStyle47;
+            this.dataGridView4.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle48.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView4.RowsDefaultCellStyle = dataGridViewCellStyle48;
+            this.dataGridView4.RowTemplate.ReadOnly = true;
+            this.dataGridView4.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView4.ShowEditingIcon = false;
+            this.dataGridView4.Size = new System.Drawing.Size(1327, 321);
+            this.dataGridView4.TabIndex = 6;
+            // 
+            // toolStrip12
+            // 
+            this.toolStrip12.BackColor = System.Drawing.Color.Gainsboro;
+            this.toolStrip12.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.toolStrip12.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton57,
+            this.toolStripSeparator36,
+            this.toolStripButton58,
+            this.toolStripButton59,
+            this.toolStripButton60,
+            this.toolStripButton61,
+            this.toolStripSeparator37,
+            this.toolStripButton62,
+            this.toolStripButton63,
+            this.toolStripSeparator38,
+            this.toolStripButton64});
+            this.toolStrip12.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip12.Name = "toolStrip12";
+            this.toolStrip12.Size = new System.Drawing.Size(1327, 39);
+            this.toolStrip12.TabIndex = 7;
+            this.toolStrip12.Text = "toolStrip12";
+            // 
+            // toolStripButton57
+            // 
+            this.toolStripButton57.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton57.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton57.Image")));
+            this.toolStripButton57.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton57.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton57.Name = "toolStripButton57";
+            this.toolStripButton57.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton57.Text = "Выбрать ";
+            // 
+            // toolStripSeparator36
+            // 
+            this.toolStripSeparator36.Name = "toolStripSeparator36";
+            this.toolStripSeparator36.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton58
+            // 
+            this.toolStripButton58.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton58.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton58.Image")));
+            this.toolStripButton58.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton58.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton58.Name = "toolStripButton58";
+            this.toolStripButton58.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton58.Text = "Включить/ Выключить режим редактирования";
+            // 
+            // toolStripButton59
+            // 
+            this.toolStripButton59.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton59.Enabled = false;
+            this.toolStripButton59.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton59.Image")));
+            this.toolStripButton59.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton59.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton59.Name = "toolStripButton59";
+            this.toolStripButton59.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton59.Text = "toolStripButton4";
+            // 
+            // toolStripButton60
+            // 
+            this.toolStripButton60.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton60.Enabled = false;
+            this.toolStripButton60.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton60.Image")));
+            this.toolStripButton60.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton60.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton60.Name = "toolStripButton60";
+            this.toolStripButton60.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton60.Text = "Передвинуть участника вверх";
+            // 
+            // toolStripButton61
+            // 
+            this.toolStripButton61.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton61.Enabled = false;
+            this.toolStripButton61.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton61.Image")));
+            this.toolStripButton61.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton61.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton61.Name = "toolStripButton61";
+            this.toolStripButton61.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton61.Text = "Передвинуть участника вниз";
+            // 
+            // toolStripSeparator37
+            // 
+            this.toolStripSeparator37.Name = "toolStripSeparator37";
+            this.toolStripSeparator37.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton62
+            // 
+            this.toolStripButton62.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton62.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton62.Image")));
+            this.toolStripButton62.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton62.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton62.Name = "toolStripButton62";
+            this.toolStripButton62.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton62.Text = "Обнуление результата";
+            // 
+            // toolStripButton63
+            // 
+            this.toolStripButton63.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton63.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton63.Image")));
+            this.toolStripButton63.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton63.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton63.Name = "toolStripButton63";
+            this.toolStripButton63.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton63.Text = "Перезаезд попытки";
+            // 
+            // toolStripSeparator38
+            // 
+            this.toolStripSeparator38.Name = "toolStripSeparator38";
+            this.toolStripSeparator38.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton64
+            // 
+            this.toolStripButton64.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton64.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton64.Image")));
+            this.toolStripButton64.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton64.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton64.Name = "toolStripButton64";
+            this.toolStripButton64.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton64.Text = "Печать данного списка результатов";
+            // 
             // tabPage15
             // 
+            this.tabPage15.Controls.Add(this.tabControl3);
             this.tabPage15.Location = new System.Drawing.Point(4, 34);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Size = new System.Drawing.Size(1341, 393);
             this.tabPage15.TabIndex = 6;
             this.tabPage15.Text = "Свыше 160 л.с.";
             this.tabPage15.UseVisualStyleBackColor = true;
+            // 
+            // tabControl3
+            // 
+            this.tabControl3.Controls.Add(this.tabPage20);
+            this.tabControl3.Controls.Add(this.tabPage21);
+            this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl3.ImageList = this.imageList1;
+            this.tabControl3.Location = new System.Drawing.Point(0, 0);
+            this.tabControl3.Name = "tabControl3";
+            this.tabControl3.SelectedIndex = 0;
+            this.tabControl3.Size = new System.Drawing.Size(1341, 393);
+            this.tabControl3.TabIndex = 6;
+            // 
+            // tabPage20
+            // 
+            this.tabPage20.Controls.Add(this.dataGridView5);
+            this.tabPage20.Controls.Add(this.toolStrip13);
+            this.tabPage20.Location = new System.Drawing.Point(4, 23);
+            this.tabPage20.Name = "tabPage20";
+            this.tabPage20.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage20.Size = new System.Drawing.Size(1333, 366);
+            this.tabPage20.TabIndex = 0;
+            this.tabPage20.Text = "1 тур";
+            this.tabPage20.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle49.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView5.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle49;
+            this.dataGridView5.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView5.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle50.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle50.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView5.DefaultCellStyle = dataGridViewCellStyle50;
+            this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView5.GridColor = System.Drawing.Color.Silver;
+            this.dataGridView5.Location = new System.Drawing.Point(3, 42);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.ReadOnly = true;
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle51.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle51.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView5.RowHeadersDefaultCellStyle = dataGridViewCellStyle51;
+            this.dataGridView5.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle52.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle52.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView5.RowsDefaultCellStyle = dataGridViewCellStyle52;
+            this.dataGridView5.RowTemplate.ReadOnly = true;
+            this.dataGridView5.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView5.ShowEditingIcon = false;
+            this.dataGridView5.Size = new System.Drawing.Size(1327, 321);
+            this.dataGridView5.TabIndex = 3;
+            // 
+            // toolStrip13
+            // 
+            this.toolStrip13.BackColor = System.Drawing.Color.Gainsboro;
+            this.toolStrip13.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.toolStrip13.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton65,
+            this.toolStripSeparator39,
+            this.toolStripButton66,
+            this.toolStripButton67,
+            this.toolStripButton68,
+            this.toolStripButton69,
+            this.toolStripSeparator40,
+            this.toolStripButton70,
+            this.toolStripButton71,
+            this.toolStripSeparator41,
+            this.toolStripButton72});
+            this.toolStrip13.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip13.Name = "toolStrip13";
+            this.toolStrip13.Size = new System.Drawing.Size(1327, 39);
+            this.toolStrip13.TabIndex = 5;
+            this.toolStrip13.Text = "toolStrip13";
+            // 
+            // toolStripButton65
+            // 
+            this.toolStripButton65.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton65.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton65.Image")));
+            this.toolStripButton65.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton65.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton65.Name = "toolStripButton65";
+            this.toolStripButton65.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton65.Text = "Выбрать ";
+            // 
+            // toolStripSeparator39
+            // 
+            this.toolStripSeparator39.Name = "toolStripSeparator39";
+            this.toolStripSeparator39.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton66
+            // 
+            this.toolStripButton66.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton66.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton66.Image")));
+            this.toolStripButton66.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton66.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton66.Name = "toolStripButton66";
+            this.toolStripButton66.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton66.Text = "Включить/ Выключить режим редактирования";
+            // 
+            // toolStripButton67
+            // 
+            this.toolStripButton67.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton67.Enabled = false;
+            this.toolStripButton67.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton67.Image")));
+            this.toolStripButton67.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton67.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton67.Name = "toolStripButton67";
+            this.toolStripButton67.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton67.Text = "toolStripButton4";
+            // 
+            // toolStripButton68
+            // 
+            this.toolStripButton68.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton68.Enabled = false;
+            this.toolStripButton68.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton68.Image")));
+            this.toolStripButton68.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton68.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton68.Name = "toolStripButton68";
+            this.toolStripButton68.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton68.Text = "Передвинуть участника вверх";
+            // 
+            // toolStripButton69
+            // 
+            this.toolStripButton69.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton69.Enabled = false;
+            this.toolStripButton69.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton69.Image")));
+            this.toolStripButton69.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton69.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton69.Name = "toolStripButton69";
+            this.toolStripButton69.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton69.Text = "Передвинуть участника вниз";
+            // 
+            // toolStripSeparator40
+            // 
+            this.toolStripSeparator40.Name = "toolStripSeparator40";
+            this.toolStripSeparator40.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton70
+            // 
+            this.toolStripButton70.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton70.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton70.Image")));
+            this.toolStripButton70.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton70.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton70.Name = "toolStripButton70";
+            this.toolStripButton70.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton70.Text = "Обнуление результата";
+            // 
+            // toolStripButton71
+            // 
+            this.toolStripButton71.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton71.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton71.Image")));
+            this.toolStripButton71.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton71.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton71.Name = "toolStripButton71";
+            this.toolStripButton71.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton71.Text = "Перезаезд попытки";
+            // 
+            // toolStripSeparator41
+            // 
+            this.toolStripSeparator41.Name = "toolStripSeparator41";
+            this.toolStripSeparator41.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton72
+            // 
+            this.toolStripButton72.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton72.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton72.Image")));
+            this.toolStripButton72.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton72.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton72.Name = "toolStripButton72";
+            this.toolStripButton72.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton72.Text = "Печать данного списка результатов";
+            // 
+            // tabPage21
+            // 
+            this.tabPage21.Controls.Add(this.dataGridView6);
+            this.tabPage21.Controls.Add(this.toolStrip14);
+            this.tabPage21.Location = new System.Drawing.Point(4, 23);
+            this.tabPage21.Name = "tabPage21";
+            this.tabPage21.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage21.Size = new System.Drawing.Size(1333, 366);
+            this.tabPage21.TabIndex = 1;
+            this.tabPage21.Text = "2 тур";
+            this.tabPage21.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.AllowUserToAddRows = false;
+            this.dataGridView6.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle53.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView6.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle53;
+            this.dataGridView6.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView6.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle54.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle54.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle54.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView6.DefaultCellStyle = dataGridViewCellStyle54;
+            this.dataGridView6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView6.GridColor = System.Drawing.Color.Silver;
+            this.dataGridView6.Location = new System.Drawing.Point(3, 42);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.ReadOnly = true;
+            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle55.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle55.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView6.RowHeadersDefaultCellStyle = dataGridViewCellStyle55;
+            this.dataGridView6.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle56.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle56.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView6.RowsDefaultCellStyle = dataGridViewCellStyle56;
+            this.dataGridView6.RowTemplate.ReadOnly = true;
+            this.dataGridView6.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView6.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView6.ShowEditingIcon = false;
+            this.dataGridView6.Size = new System.Drawing.Size(1327, 321);
+            this.dataGridView6.TabIndex = 6;
+            // 
+            // toolStrip14
+            // 
+            this.toolStrip14.BackColor = System.Drawing.Color.Gainsboro;
+            this.toolStrip14.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.toolStrip14.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton73,
+            this.toolStripSeparator42,
+            this.toolStripButton74,
+            this.toolStripButton75,
+            this.toolStripButton76,
+            this.toolStripButton77,
+            this.toolStripSeparator43,
+            this.toolStripButton78,
+            this.toolStripButton79,
+            this.toolStripSeparator44,
+            this.toolStripButton80});
+            this.toolStrip14.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip14.Name = "toolStrip14";
+            this.toolStrip14.Size = new System.Drawing.Size(1327, 39);
+            this.toolStrip14.TabIndex = 7;
+            this.toolStrip14.Text = "toolStrip14";
+            // 
+            // toolStripButton73
+            // 
+            this.toolStripButton73.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton73.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton73.Image")));
+            this.toolStripButton73.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton73.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton73.Name = "toolStripButton73";
+            this.toolStripButton73.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton73.Text = "Выбрать ";
+            // 
+            // toolStripSeparator42
+            // 
+            this.toolStripSeparator42.Name = "toolStripSeparator42";
+            this.toolStripSeparator42.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton74
+            // 
+            this.toolStripButton74.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton74.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton74.Image")));
+            this.toolStripButton74.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton74.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton74.Name = "toolStripButton74";
+            this.toolStripButton74.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton74.Text = "Включить/ Выключить режим редактирования";
+            // 
+            // toolStripButton75
+            // 
+            this.toolStripButton75.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton75.Enabled = false;
+            this.toolStripButton75.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton75.Image")));
+            this.toolStripButton75.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton75.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton75.Name = "toolStripButton75";
+            this.toolStripButton75.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton75.Text = "toolStripButton4";
+            // 
+            // toolStripButton76
+            // 
+            this.toolStripButton76.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton76.Enabled = false;
+            this.toolStripButton76.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton76.Image")));
+            this.toolStripButton76.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton76.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton76.Name = "toolStripButton76";
+            this.toolStripButton76.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton76.Text = "Передвинуть участника вверх";
+            // 
+            // toolStripButton77
+            // 
+            this.toolStripButton77.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton77.Enabled = false;
+            this.toolStripButton77.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton77.Image")));
+            this.toolStripButton77.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton77.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton77.Name = "toolStripButton77";
+            this.toolStripButton77.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton77.Text = "Передвинуть участника вниз";
+            // 
+            // toolStripSeparator43
+            // 
+            this.toolStripSeparator43.Name = "toolStripSeparator43";
+            this.toolStripSeparator43.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton78
+            // 
+            this.toolStripButton78.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton78.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton78.Image")));
+            this.toolStripButton78.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton78.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton78.Name = "toolStripButton78";
+            this.toolStripButton78.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton78.Text = "Обнуление результата";
+            // 
+            // toolStripButton79
+            // 
+            this.toolStripButton79.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton79.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton79.Image")));
+            this.toolStripButton79.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton79.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton79.Name = "toolStripButton79";
+            this.toolStripButton79.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton79.Text = "Перезаезд попытки";
+            // 
+            // toolStripSeparator44
+            // 
+            this.toolStripSeparator44.Name = "toolStripSeparator44";
+            this.toolStripSeparator44.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton80
+            // 
+            this.toolStripButton80.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton80.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton80.Image")));
+            this.toolStripButton80.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton80.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton80.Name = "toolStripButton80";
+            this.toolStripButton80.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton80.Text = "Печать данного списка результатов";
             // 
             // panel11
             // 
@@ -2369,7 +3715,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainView_FormClosing);
             this.Shown += new System.EventHandler(this.MainView_Shown);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyUp);
             this.panel10.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -2442,6 +3788,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.sportR2DGV)).EndInit();
             this.toolStrip7.ResumeLayout(false);
             this.toolStrip7.PerformLayout();
+            this.tabPage13.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage16.ResumeLayout(false);
+            this.tabPage16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.toolStrip9.ResumeLayout(false);
+            this.toolStrip9.PerformLayout();
+            this.tabPage17.ResumeLayout(false);
+            this.tabPage17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.toolStrip10.ResumeLayout(false);
+            this.toolStrip10.PerformLayout();
+            this.tabPage14.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage18.ResumeLayout(false);
+            this.tabPage18.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.toolStrip11.ResumeLayout(false);
+            this.toolStrip11.PerformLayout();
+            this.tabPage19.ResumeLayout(false);
+            this.tabPage19.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.toolStrip12.ResumeLayout(false);
+            this.toolStrip12.PerformLayout();
+            this.tabPage15.ResumeLayout(false);
+            this.tabControl3.ResumeLayout(false);
+            this.tabPage20.ResumeLayout(false);
+            this.tabPage20.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            this.toolStrip13.ResumeLayout(false);
+            this.toolStrip13.PerformLayout();
+            this.tabPage21.ResumeLayout(false);
+            this.tabPage21.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            this.toolStrip14.ResumeLayout(false);
+            this.toolStrip14.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2617,5 +3999,100 @@
         private System.Windows.Forms.TabPage tabPage13;
         private System.Windows.Forms.TabPage tabPage14;
         private System.Windows.Forms.TabPage tabPage15;
+        private System.Windows.Forms.ToolStripButton addRacer_Btn_fwdR1DGV;
+        private System.Windows.Forms.ToolStripButton addRacer_Btn_fwdR2DGV;
+        private System.Windows.Forms.ToolStripButton addRacer_Btn_rwdR1DGV;
+        private System.Windows.Forms.ToolStripButton addRacer_Btn_rwdR2DGV;
+        private System.Windows.Forms.ToolStripButton addRacer_Btn_awdR1DGV;
+        private System.Windows.Forms.ToolStripButton addRacer_Btn_awdR2DGV;
+        private System.Windows.Forms.ToolStripButton addRacer_Btn_sportR1DGV;
+        private System.Windows.Forms.ToolStripButton addRacer_Btn_sportR2DGV;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage16;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStrip toolStrip9;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator27;
+        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripButton toolStripButton9;
+        private System.Windows.Forms.ToolStripButton toolStripButton10;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator28;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.ToolStripButton toolStripButton14;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator29;
+        private System.Windows.Forms.ToolStripButton toolStripButton17;
+        private System.Windows.Forms.TabPage tabPage17;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ToolStrip toolStrip10;
+        private System.Windows.Forms.ToolStripButton toolStripButton18;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator30;
+        private System.Windows.Forms.ToolStripButton toolStripButton22;
+        private System.Windows.Forms.ToolStripButton toolStripButton23;
+        private System.Windows.Forms.ToolStripButton toolStripButton27;
+        private System.Windows.Forms.ToolStripButton toolStripButton28;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator31;
+        private System.Windows.Forms.ToolStripButton toolStripButton30;
+        private System.Windows.Forms.ToolStripButton toolStripButton31;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator32;
+        private System.Windows.Forms.ToolStripButton toolStripButton32;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage18;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.ToolStrip toolStrip11;
+        private System.Windows.Forms.ToolStripButton toolStripButton33;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator33;
+        private System.Windows.Forms.ToolStripButton toolStripButton34;
+        private System.Windows.Forms.ToolStripButton toolStripButton35;
+        private System.Windows.Forms.ToolStripButton toolStripButton37;
+        private System.Windows.Forms.ToolStripButton toolStripButton38;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator34;
+        private System.Windows.Forms.ToolStripButton toolStripButton39;
+        private System.Windows.Forms.ToolStripButton toolStripButton40;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator35;
+        private System.Windows.Forms.ToolStripButton toolStripButton41;
+        private System.Windows.Forms.TabPage tabPage19;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.ToolStrip toolStrip12;
+        private System.Windows.Forms.ToolStripButton toolStripButton57;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator36;
+        private System.Windows.Forms.ToolStripButton toolStripButton58;
+        private System.Windows.Forms.ToolStripButton toolStripButton59;
+        private System.Windows.Forms.ToolStripButton toolStripButton60;
+        private System.Windows.Forms.ToolStripButton toolStripButton61;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator37;
+        private System.Windows.Forms.ToolStripButton toolStripButton62;
+        private System.Windows.Forms.ToolStripButton toolStripButton63;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator38;
+        private System.Windows.Forms.ToolStripButton toolStripButton64;
+        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabPage tabPage20;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.ToolStrip toolStrip13;
+        private System.Windows.Forms.ToolStripButton toolStripButton65;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator39;
+        private System.Windows.Forms.ToolStripButton toolStripButton66;
+        private System.Windows.Forms.ToolStripButton toolStripButton67;
+        private System.Windows.Forms.ToolStripButton toolStripButton68;
+        private System.Windows.Forms.ToolStripButton toolStripButton69;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator40;
+        private System.Windows.Forms.ToolStripButton toolStripButton70;
+        private System.Windows.Forms.ToolStripButton toolStripButton71;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator41;
+        private System.Windows.Forms.ToolStripButton toolStripButton72;
+        private System.Windows.Forms.TabPage tabPage21;
+        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.ToolStrip toolStrip14;
+        private System.Windows.Forms.ToolStripButton toolStripButton73;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator42;
+        private System.Windows.Forms.ToolStripButton toolStripButton74;
+        private System.Windows.Forms.ToolStripButton toolStripButton75;
+        private System.Windows.Forms.ToolStripButton toolStripButton76;
+        private System.Windows.Forms.ToolStripButton toolStripButton77;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator43;
+        private System.Windows.Forms.ToolStripButton toolStripButton78;
+        private System.Windows.Forms.ToolStripButton toolStripButton79;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator44;
+        private System.Windows.Forms.ToolStripButton toolStripButton80;
     }
 }

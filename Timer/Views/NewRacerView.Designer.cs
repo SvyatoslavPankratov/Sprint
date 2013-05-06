@@ -190,6 +190,7 @@
             // 
             // carClassesCB
             // 
+            this.carClassesCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.carClassesCB.FormattingEnabled = true;
             this.carClassesCB.Location = new System.Drawing.Point(103, 54);
             this.carClassesCB.Name = "carClassesCB";

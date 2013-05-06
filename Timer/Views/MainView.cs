@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
+using System.Linq;
 using System.Windows.Forms;
 
 using Sprint.Interfaces;
@@ -200,6 +201,11 @@ namespace Sprint.Views
         /// </summary>
         private ISecondMonitorView SecondMonitor { get; set; }
 
+        /// <summary>
+        /// Задать или получить менеджер системных хуков.
+        /// </summary>
+        private WindowHookManager WindowHookManager { get; set; }
+
         #endregion
 
         #region Конструкторы
@@ -218,6 +224,7 @@ namespace Sprint.Views
             KeyPreview = true;                          // Изменено, чтобы заработали горячие клавиши
 
             MainPresenter = new MainPresenter(this);
+            WindowHookManager = new WindowHookManager(false, false);
         }
 
         /// <summary>
@@ -233,31 +240,7 @@ namespace Sprint.Views
         }
 
         #endregion
-
-        #region Системные методы
-
-        /// <summary>
-        /// Обработчик сообщений Windows.
-        /// </summary>
-        /// <param name="m">Сообщение Windows.</param>
-        protected override void WndProc(ref Message m)
-        {
-            switch (m.Msg)
-            {
-                case WindowsHotKeysManager.WM_HOTKEY:
-                    {
-                        if (m.LParam == (IntPtr)1310720 && !startBtn.Enabled)
-                        {
-                            MainPresenter.CutOffStopwatch();
-                        }
-                    } break;
-            }
-
-            base.WndProc(ref m);
-        }
-
-        #endregion
-
+        
         #region Методы
 
         /// <summary>
@@ -272,17 +255,21 @@ namespace Sprint.Views
             var checkSensorView = new CheckSensorView();
             checkSensorView.ShowDialog();
 
-            var newRacerView = new NewRacerView();
-            newRacerView.ShowDialog();
+            if (!MainPresenter.Racers.Any())
+            {
+                var newRacerView = new NewRacerView();
+                newRacerView.ShowDialog();
 
-            var wnd = new AddedRacersProcessView();
-            Invoke(new Action(() => wnd.Show()));
+                var wnd = new AddedRacersProcessView();
+                Invoke(new Action(() => wnd.Show()));
 
-            MainPresenter.SetRacersFromNewRacersDialog(newRacerView.NewRacerPresenter.Racers);
+                MainPresenter.SetRacersFromNewRacersDialog(newRacerView.NewRacerPresenter.Racers);
 
-            Invoke(new Action(() => wnd.Close()));
+                Invoke(new Action(() => wnd.Close()));
+            }
 
-            WindowsHotKeysManager.RegisterHotKey(this, Keys.CapsLock);
+            WindowHookManager.RegisterHooks(true, false);
+            WindowHookManager.OnMouseActivity += CutOffStopwatch;
         }
 
         /// <summary>
@@ -386,6 +373,40 @@ namespace Sprint.Views
         }
 
         /// <summary>
+        /// Произвести отсечку.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CutOffStopwatch(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Middle)                    // Отсечка
+            {
+                MainPresenter.CutOffStopwatch();
+            }
+        }
+
+        /// <summary>
+        /// Дейсвия при отработке горячих клавиш.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainView_KeyUp(object sender, KeyEventArgs e)
+        {            
+            if (e.KeyCode == Keys.S && startBtn.Enabled)            // Старт
+            {
+                StartStopwatch();
+            }
+            else if (e.KeyCode == Keys.F && !startBtn.Enabled)      // Стоп
+            {
+                startBtn.Enabled = true;
+                cutOffBtn.Enabled = false;
+                stopBtn.Enabled = false;
+
+                MainPresenter.StopStopwatch();
+            }
+        }
+
+        /// <summary>
         /// Действия при остановке секундомера.
         /// </summary>
         /// <param name="sender"></param>
@@ -412,28 +433,7 @@ namespace Sprint.Views
         {
             MainPresenter.CutOffStopwatch();
         }
-
-        /// <summary>
-        /// Дейсвия при отработке горячих клавиш.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MainView_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.S && startBtn.Enabled)                    // Старт
-            {
-                StartStopwatch();
-            }
-            else if (e.KeyCode == Keys.F && !startBtn.Enabled)              // Стоп
-            {
-                startBtn.Enabled = true;
-                cutOffBtn.Enabled = false;
-                stopBtn.Enabled = false;
-
-                MainPresenter.StopStopwatch();
-            }
-        }
-
+        
         /// <summary>
         /// Действия при закрытии формы.
         /// </summary>
@@ -447,7 +447,7 @@ namespace Sprint.Views
 
             if (res == System.Windows.Forms.DialogResult.Yes)
             {
-                WindowsHotKeysManager.UnregisterHotKey(this, Keys.CapsLock);
+                WindowHookManager.UnregisterHooks();
                 MainPresenter.Dispose();
             }
             else
@@ -561,12 +561,12 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void проверкаДатчикаОтсечкиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WindowsHotKeysManager.UnregisterHotKey(this, Keys.CapsLock);
+            WindowHookManager.UnregisterHooks();
 
             var checkSensorView = new CheckSensorView();
             checkSensorView.ShowDialog();
 
-            WindowsHotKeysManager.RegisterHotKey(this, Keys.CapsLock);
+            WindowHookManager.RegisterHooks(false, true);
         }
 
         /// <summary>
@@ -887,8 +887,8 @@ namespace Sprint.Views
             startBtn.Enabled = !startBtn.Enabled;
         } 
 
-        #endregion
+        #endregion        
 
-        #endregion
+        #endregion        
     }
 }
