@@ -111,10 +111,11 @@
             // 
             // panel12
             // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel12.Controls.Add(this.panel1);
             this.panel12.Controls.Add(this.panel16);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel12.Location = new System.Drawing.Point(0, 176);
+            this.panel12.Location = new System.Drawing.Point(0, 186);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(420, 65);
             this.panel12.TabIndex = 8;
@@ -175,7 +176,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 241);
+            this.ClientSize = new System.Drawing.Size(420, 251);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.On_Panel);
             this.Controls.Add(this.groupBox1);

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Sprint.Managers
 {
@@ -22,6 +23,11 @@ namespace Sprint.Managers
         /// </summary>
         public List<Point> ScreenPoints { get; private set; }
 
+        /// <summary>
+        /// Получить список с параметрами подключенных к ПК экранов.
+        /// </summary>
+        public List<Screen> Screens { get; private set; }
+
         #endregion
 
         #region Конструкторы
@@ -34,6 +40,7 @@ namespace Sprint.Managers
             MonitorCount = System.Windows.Forms.Screen.AllScreens.Count();
 
             ScreenPoints = new List<Point>(MonitorCount);
+            Screens = new List<Screen>(MonitorCount);
 
             var i = 0;
 
@@ -41,7 +48,8 @@ namespace Sprint.Managers
                                     {
                                         X = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.X,
                                         Y = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Y
-                                    });       
+                                    });
+            Screens.Add(System.Windows.Forms.Screen.PrimaryScreen);
             i++;
 
             foreach (var screen in System.Windows.Forms.Screen.AllScreens)
@@ -53,6 +61,7 @@ namespace Sprint.Managers
                                                 X = screen.WorkingArea.X,
                                                 Y = screen.WorkingArea.Y
                                             });
+                    Screens.Add(screen);
                     i++;
                 }
             }

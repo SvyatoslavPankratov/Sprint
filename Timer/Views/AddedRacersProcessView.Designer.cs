@@ -76,6 +76,7 @@
             this.ClientSize = new System.Drawing.Size(413, 100);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

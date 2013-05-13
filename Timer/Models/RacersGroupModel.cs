@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using Sprint.Managers;
+
 namespace Sprint.Models
 {
     /// <summary>
@@ -38,11 +40,23 @@ namespace Sprint.Models
         public RacersGroupModel(CarClassesEnum carClass)
         {
             CarClass = carClass;
+            Racers = new List<RacerModel>();
         }
 
         #endregion
 
         #region Методы
+
+        /// <summary>
+        /// Добавим в группу нового участника.
+        /// </summary>
+        /// <param name="racer"></param>
+        public void AddRacer(RacerModel racer)
+        {
+            var racers = (List<RacerModel>)Racers;
+            racers.Add(racer);
+            RacersDbManager.SetRacer(racer);
+        }
 
         /// <summary>
         /// Передвинуть участника вверх на одну позицию.

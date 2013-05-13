@@ -38,7 +38,7 @@ namespace Sprint.Views.Interfaces
         /// <summary>
         /// Получить выбранный класс автомобиля.
         /// </summary>
-        CarClassesEnum CarClass { get; }
+        CarClassesEnum CarClass { get; set; }
 
         /// <summary>
         /// Задать список классов автомобилей.

@@ -1138,6 +1138,7 @@
             this.addRacer_Btn_fwdR1DGV.Name = "addRacer_Btn_fwdR1DGV";
             this.addRacer_Btn_fwdR1DGV.Size = new System.Drawing.Size(36, 36);
             this.addRacer_Btn_fwdR1DGV.Text = "toolStripButton4";
+            this.addRacer_Btn_fwdR1DGV.Click += new System.EventHandler(this.addRacer_Btn_fwdR1DGV_Click);
             // 
             // upRacer_Btn_fwdR1DGV
             // 
@@ -2558,6 +2559,7 @@
             this.tabPage13.Controls.Add(this.tabControl1);
             this.tabPage13.Location = new System.Drawing.Point(4, 34);
             this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage13.Size = new System.Drawing.Size(1341, 393);
             this.tabPage13.TabIndex = 4;
             this.tabPage13.Text = "До 100 л.с.";
@@ -2569,10 +2571,10 @@
             this.tabControl1.Controls.Add(this.tabPage17);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ImageList = this.imageList1;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1341, 393);
+            this.tabControl1.Size = new System.Drawing.Size(1335, 387);
             this.tabControl1.TabIndex = 6;
             // 
             // tabPage16
@@ -2582,7 +2584,7 @@
             this.tabPage16.Location = new System.Drawing.Point(4, 23);
             this.tabPage16.Name = "tabPage16";
             this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage16.Size = new System.Drawing.Size(1333, 366);
+            this.tabPage16.Size = new System.Drawing.Size(1327, 360);
             this.tabPage16.TabIndex = 0;
             this.tabPage16.Text = "1 тур";
             this.tabPage16.UseVisualStyleBackColor = true;
@@ -2630,7 +2632,7 @@
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1327, 321);
+            this.dataGridView1.Size = new System.Drawing.Size(1321, 315);
             this.dataGridView1.TabIndex = 3;
             // 
             // toolStrip9
@@ -2651,7 +2653,7 @@
             this.toolStripButton17});
             this.toolStrip9.Location = new System.Drawing.Point(3, 3);
             this.toolStrip9.Name = "toolStrip9";
-            this.toolStrip9.Size = new System.Drawing.Size(1327, 39);
+            this.toolStrip9.Size = new System.Drawing.Size(1321, 39);
             this.toolStrip9.TabIndex = 5;
             this.toolStrip9.Text = "toolStrip9";
             // 
@@ -2760,7 +2762,7 @@
             this.tabPage17.Location = new System.Drawing.Point(4, 23);
             this.tabPage17.Name = "tabPage17";
             this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage17.Size = new System.Drawing.Size(1333, 366);
+            this.tabPage17.Size = new System.Drawing.Size(1327, 360);
             this.tabPage17.TabIndex = 1;
             this.tabPage17.Text = "2 тур";
             this.tabPage17.UseVisualStyleBackColor = true;
@@ -2808,7 +2810,7 @@
             this.dataGridView2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.ShowEditingIcon = false;
-            this.dataGridView2.Size = new System.Drawing.Size(1327, 321);
+            this.dataGridView2.Size = new System.Drawing.Size(1321, 315);
             this.dataGridView2.TabIndex = 6;
             // 
             // toolStrip10
@@ -2829,7 +2831,7 @@
             this.toolStripButton32});
             this.toolStrip10.Location = new System.Drawing.Point(3, 3);
             this.toolStrip10.Name = "toolStrip10";
-            this.toolStrip10.Size = new System.Drawing.Size(1327, 39);
+            this.toolStrip10.Size = new System.Drawing.Size(1321, 39);
             this.toolStrip10.TabIndex = 7;
             this.toolStrip10.Text = "toolStrip10";
             // 
@@ -2936,6 +2938,7 @@
             this.tabPage14.Controls.Add(this.tabControl2);
             this.tabPage14.Location = new System.Drawing.Point(4, 34);
             this.tabPage14.Name = "tabPage14";
+            this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage14.Size = new System.Drawing.Size(1341, 393);
             this.tabPage14.TabIndex = 5;
             this.tabPage14.Text = "От 100 до 160 л.с.";
@@ -2947,10 +2950,10 @@
             this.tabControl2.Controls.Add(this.tabPage19);
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.ImageList = this.imageList1;
-            this.tabControl2.Location = new System.Drawing.Point(0, 0);
+            this.tabControl2.Location = new System.Drawing.Point(3, 3);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1341, 393);
+            this.tabControl2.Size = new System.Drawing.Size(1335, 387);
             this.tabControl2.TabIndex = 6;
             // 
             // tabPage18
@@ -2960,7 +2963,7 @@
             this.tabPage18.Location = new System.Drawing.Point(4, 23);
             this.tabPage18.Name = "tabPage18";
             this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage18.Size = new System.Drawing.Size(1333, 366);
+            this.tabPage18.Size = new System.Drawing.Size(1327, 360);
             this.tabPage18.TabIndex = 0;
             this.tabPage18.Text = "1 тур";
             this.tabPage18.UseVisualStyleBackColor = true;
@@ -3008,7 +3011,7 @@
             this.dataGridView3.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView3.ShowEditingIcon = false;
-            this.dataGridView3.Size = new System.Drawing.Size(1327, 321);
+            this.dataGridView3.Size = new System.Drawing.Size(1321, 315);
             this.dataGridView3.TabIndex = 3;
             // 
             // toolStrip11
@@ -3029,7 +3032,7 @@
             this.toolStripButton41});
             this.toolStrip11.Location = new System.Drawing.Point(3, 3);
             this.toolStrip11.Name = "toolStrip11";
-            this.toolStrip11.Size = new System.Drawing.Size(1327, 39);
+            this.toolStrip11.Size = new System.Drawing.Size(1321, 39);
             this.toolStrip11.TabIndex = 5;
             this.toolStrip11.Text = "toolStrip11";
             // 
@@ -3138,7 +3141,7 @@
             this.tabPage19.Location = new System.Drawing.Point(4, 23);
             this.tabPage19.Name = "tabPage19";
             this.tabPage19.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage19.Size = new System.Drawing.Size(1333, 366);
+            this.tabPage19.Size = new System.Drawing.Size(1327, 360);
             this.tabPage19.TabIndex = 1;
             this.tabPage19.Text = "2 тур";
             this.tabPage19.UseVisualStyleBackColor = true;
@@ -3186,7 +3189,7 @@
             this.dataGridView4.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView4.ShowEditingIcon = false;
-            this.dataGridView4.Size = new System.Drawing.Size(1327, 321);
+            this.dataGridView4.Size = new System.Drawing.Size(1321, 315);
             this.dataGridView4.TabIndex = 6;
             // 
             // toolStrip12
@@ -3207,7 +3210,7 @@
             this.toolStripButton64});
             this.toolStrip12.Location = new System.Drawing.Point(3, 3);
             this.toolStrip12.Name = "toolStrip12";
-            this.toolStrip12.Size = new System.Drawing.Size(1327, 39);
+            this.toolStrip12.Size = new System.Drawing.Size(1321, 39);
             this.toolStrip12.TabIndex = 7;
             this.toolStrip12.Text = "toolStrip12";
             // 
@@ -3314,6 +3317,7 @@
             this.tabPage15.Controls.Add(this.tabControl3);
             this.tabPage15.Location = new System.Drawing.Point(4, 34);
             this.tabPage15.Name = "tabPage15";
+            this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage15.Size = new System.Drawing.Size(1341, 393);
             this.tabPage15.TabIndex = 6;
             this.tabPage15.Text = "Свыше 160 л.с.";
@@ -3325,10 +3329,10 @@
             this.tabControl3.Controls.Add(this.tabPage21);
             this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl3.ImageList = this.imageList1;
-            this.tabControl3.Location = new System.Drawing.Point(0, 0);
+            this.tabControl3.Location = new System.Drawing.Point(3, 3);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(1341, 393);
+            this.tabControl3.Size = new System.Drawing.Size(1335, 387);
             this.tabControl3.TabIndex = 6;
             // 
             // tabPage20
@@ -3338,7 +3342,7 @@
             this.tabPage20.Location = new System.Drawing.Point(4, 23);
             this.tabPage20.Name = "tabPage20";
             this.tabPage20.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage20.Size = new System.Drawing.Size(1333, 366);
+            this.tabPage20.Size = new System.Drawing.Size(1327, 360);
             this.tabPage20.TabIndex = 0;
             this.tabPage20.Text = "1 тур";
             this.tabPage20.UseVisualStyleBackColor = true;
@@ -3386,7 +3390,7 @@
             this.dataGridView5.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView5.ShowEditingIcon = false;
-            this.dataGridView5.Size = new System.Drawing.Size(1327, 321);
+            this.dataGridView5.Size = new System.Drawing.Size(1321, 315);
             this.dataGridView5.TabIndex = 3;
             // 
             // toolStrip13
@@ -3407,7 +3411,7 @@
             this.toolStripButton72});
             this.toolStrip13.Location = new System.Drawing.Point(3, 3);
             this.toolStrip13.Name = "toolStrip13";
-            this.toolStrip13.Size = new System.Drawing.Size(1327, 39);
+            this.toolStrip13.Size = new System.Drawing.Size(1321, 39);
             this.toolStrip13.TabIndex = 5;
             this.toolStrip13.Text = "toolStrip13";
             // 
@@ -3516,7 +3520,7 @@
             this.tabPage21.Location = new System.Drawing.Point(4, 23);
             this.tabPage21.Name = "tabPage21";
             this.tabPage21.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage21.Size = new System.Drawing.Size(1333, 366);
+            this.tabPage21.Size = new System.Drawing.Size(1327, 360);
             this.tabPage21.TabIndex = 1;
             this.tabPage21.Text = "2 тур";
             this.tabPage21.UseVisualStyleBackColor = true;
@@ -3564,7 +3568,7 @@
             this.dataGridView6.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView6.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView6.ShowEditingIcon = false;
-            this.dataGridView6.Size = new System.Drawing.Size(1327, 321);
+            this.dataGridView6.Size = new System.Drawing.Size(1321, 315);
             this.dataGridView6.TabIndex = 6;
             // 
             // toolStrip14
@@ -3585,7 +3589,7 @@
             this.toolStripButton80});
             this.toolStrip14.Location = new System.Drawing.Point(3, 3);
             this.toolStrip14.Name = "toolStrip14";
-            this.toolStrip14.Size = new System.Drawing.Size(1327, 39);
+            this.toolStrip14.Size = new System.Drawing.Size(1321, 39);
             this.toolStrip14.TabIndex = 7;
             this.toolStrip14.Text = "toolStrip14";
             // 
@@ -3707,6 +3711,7 @@
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainView";

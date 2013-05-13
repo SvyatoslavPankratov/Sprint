@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintView));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.carClassesLB = new System.Windows.Forms.ComboBox();
@@ -85,6 +84,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panel16, 0, 1);
@@ -105,8 +105,8 @@
             this.panel16.Location = new System.Drawing.Point(702, 391);
             this.panel16.Margin = new System.Windows.Forms.Padding(0);
             this.panel16.Name = "panel16";
-            this.panel16.Padding = new System.Windows.Forms.Padding(10);
-            this.panel16.Size = new System.Drawing.Size(287, 65);
+            this.panel16.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
+            this.panel16.Size = new System.Drawing.Size(287, 60);
             this.panel16.TabIndex = 5;
             // 
             // button1
@@ -114,7 +114,7 @@
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(159, 10);
+            this.button1.Location = new System.Drawing.Point(159, 5);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(10);
             this.button1.Size = new System.Drawing.Size(118, 45);
@@ -126,6 +126,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.reportViewer);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -137,9 +138,11 @@
             // 
             // reportViewer
             // 
+            this.reportViewer.BackColor = System.Drawing.SystemColors.Control;
             this.reportViewer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "CarClasses_DS";
+            reportDataSource1.Value = null;
             this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "Sprint.Reports.ResultsReport.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(10, 70);

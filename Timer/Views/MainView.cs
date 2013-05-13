@@ -258,14 +258,17 @@ namespace Sprint.Views
             if (!MainPresenter.Racers.Any())
             {
                 var newRacerView = new NewRacerView();
-                newRacerView.ShowDialog();
+                var res = newRacerView.ShowDialog();
 
-                var wnd = new AddedRacersProcessView();
-                Invoke(new Action(() => wnd.Show()));
+                if (res == DialogResult.OK)
+                {
+                    var wnd = new AddedRacersProcessView();
+                    Invoke(new Action(() => wnd.Show()));
 
-                MainPresenter.SetRacersFromNewRacersDialog(newRacerView.NewRacerPresenter.Racers);
+                    MainPresenter.SetRacersFromNewRacersDialog(newRacerView.NewRacerPresenter.Racers);
 
-                Invoke(new Action(() => wnd.Close()));
+                    Invoke(new Action(() => wnd.Close()));
+                }
             }
 
             WindowHookManager.RegisterHooks(true, false);
@@ -464,6 +467,16 @@ namespace Sprint.Views
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }        
+
+        /// <summary>
+        /// Действия при нажатии в меню очистки таблицы с результатами.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            MainPresenter.ClearResultsTable();
         }
 
         /// <summary>
@@ -474,82 +487,6 @@ namespace Sprint.Views
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new AboutView().ShowDialog();
-        }
-
-        #region Панель интсрументов
-        
-        #region Первый заезд переднеприводных автомобилей
-
-        /// <summary>
-        /// Действия при нажатии на кнопку передвинуть участника первого заезда на переднеприводных автомобилях вверх.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toolStripButton3_Click(object sender, EventArgs e)
-        {
-            if (fwdR1DGV.SelectedRows.Count == 0)
-            {
-                return;
-            }
-
-            var index = fwdR1DGV.SelectedRows[0].Index;
-
-            if (MainPresenter.MoveUpRacer(index))
-            {
-                fwdR1DGV.ClearSelection();
-
-                if (index > 0)
-                {
-                    fwdR1DGV.Rows[index - 1].Selected = true;
-                }
-                else
-                {
-                    fwdR1DGV.Rows[0].Selected = true;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Действия при нажатии на кнопку передвинуть участника первого заезда на переднеприводных автомобилях вниз.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toolStripButton33_Click(object sender, EventArgs e)
-        {
-            if (fwdR1DGV.SelectedRows.Count == 0)
-            {
-                return;
-            }
-
-            var index = fwdR1DGV.SelectedRows[0].Index;
-
-            if (MainPresenter.MoveDownRacer(index))
-            {
-                fwdR1DGV.ClearSelection();
-
-                if (index < fwdR1DGV.Rows.Count - 1)
-                {
-                    fwdR1DGV.Rows[index + 1].Selected = true;
-                }
-                else
-                {
-                    fwdR1DGV.Rows[index].Selected = true;
-                }
-            }
-        } 
-
-        #endregion
-
-        #endregion
-
-        /// <summary>
-        /// Действия при нажатии в меню очистки таблицы с результатами.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toolStripButton4_Click(object sender, EventArgs e)
-        {
-            MainPresenter.ClearResultsTable();
         }
 
         #region Главное меню

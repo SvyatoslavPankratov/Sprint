@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading;
+using System.Windows;
 
 using Sprint.Extensions;
 using Sprint.Interfaces;
@@ -49,27 +50,19 @@ namespace Sprint.Presenters
             {
                 return _racers;
             }
-            set
+            private set
             {
                 _racers = value;
 
-                foreach (var racer in _racers)
+                foreach (var racer in Racers)
                 {
                     if (racer.Results == null)
                     {
                         racer.Results = new ResultsModel(ConstantsModel.MaxRaceCount, ConstantsModel.MaxCircleCount);
                     }
-
-                    RacersDbManager.SetRacer(racer);
+                    var racer_group = RacerGroups.FirstOrDefault(rg => rg.CarClass == racer.Car.CarClass);
+                    racer_group.AddRacer(racer);
                 }
-
-                RacerGroups = new List<RacersGroupModel>
-                                    {
-                                        new RacersGroupModel(CarClassesEnum.FWD) { Racers = Racers.Where(r => r.Car.CarClass == CarClassesEnum.FWD), RaceNumber = 1 },
-                                        new RacersGroupModel(CarClassesEnum.RWD) { Racers = Racers.Where(r => r.Car.CarClass == CarClassesEnum.RWD), RaceNumber = 1 },
-                                        new RacersGroupModel(CarClassesEnum.AWD) { Racers = Racers.Where(r => r.Car.CarClass == CarClassesEnum.AWD), RaceNumber = 1 },
-                                        new RacersGroupModel(CarClassesEnum.Sport) { Racers = Racers.Where(r => r.Car.CarClass == CarClassesEnum.Sport), RaceNumber = 1 }
-                                    };
             }
         }
 
@@ -138,7 +131,17 @@ namespace Sprint.Presenters
             Racers              = new List<RacerModel>();
             Stopwatch           = new StopwatchModel();
             LiderRacerGroups    = new List<RacersGroupModel>();
-            Track               = new TrackModel(2);
+            Track               = new TrackModel(ConstantsModel.MaxRacersForRace);
+            RacerGroups = new List<RacersGroupModel>
+                                    {
+                                        new RacersGroupModel(CarClassesEnum.FWD) { RaceNumber = 1 },
+                                        new RacersGroupModel(CarClassesEnum.RWD) { RaceNumber = 1 },
+                                        new RacersGroupModel(CarClassesEnum.AWD) { RaceNumber = 1 },
+                                        new RacersGroupModel(CarClassesEnum.Sport) { RaceNumber = 1 },
+                                        new RacersGroupModel(CarClassesEnum.K100) { RaceNumber = 1 },
+                                        new RacersGroupModel(CarClassesEnum.K160) { RaceNumber = 1 },
+                                        new RacersGroupModel(CarClassesEnum.KA) { RaceNumber = 1 },
+                                    };
 
             InitializeAllTables();
 
@@ -149,8 +152,31 @@ namespace Sprint.Presenters
 
             if (racers.Any())
             {
-                _racers = racers;
-                DataBind();
+                var sm = new ScreenManager();
+
+                var reg_dlg = new RegenerationDialogView();
+                var center_screen = new Point(sm.Screens[0].WorkingArea.Width / 2, sm.Screens[0].WorkingArea.Height / 2);
+                var center_window = new Point(reg_dlg.Width / 2, reg_dlg.Height / 2);
+                reg_dlg.SetDesktopLocation(sm.ScreenPoints[0].X + (int)center_screen.X - (int)center_window.X, 
+                                           sm.ScreenPoints[0].Y + (int)center_screen.Y - (int)center_window.Y);
+                reg_dlg.ShowDialog();
+
+                switch (((IRegenerationDialogView)reg_dlg).SelectedAppRegenerationType)
+                {
+                    case AppRegenerationTypesEnum.AllLapReRun:
+                        {
+
+                        } break;
+                    case AppRegenerationTypesEnum.NullLapReRun:
+                        {
+
+                        } break;
+                    case AppRegenerationTypesEnum.LoadData:
+                        {
+                            Racers = racers;
+                            DataBind();
+                        } break;
+                }
             }
         }
 
@@ -159,12 +185,36 @@ namespace Sprint.Presenters
         #region Методы
 
         /// <summary>
-        /// Взять из диалдога добавления новых гонщиков список участников.
+        /// Задать в приложении новых гонщиков.
         /// </summary>
         public void SetRacersFromNewRacersDialog(IEnumerable<RacerModel> addedRacers)
         {
             Racers = addedRacers;           
             SetRacersForTableForFirstRace();
+        }
+
+        /// <summary>
+        /// Добавить в приложение новых гонщиков.
+        /// </summary>
+        /// <param name="adding_racers">Список добавляемых участников.</param>
+        public void AddRacerAddNewRacer(IEnumerable<RacerModel> adding_racers)
+        {
+            if (adding_racers == null)
+            {
+                return;
+            }
+
+            foreach(var racer in adding_racers)
+            {
+                if (racer.Results == null)
+                {
+                    racer.Results = new ResultsModel(ConstantsModel.MaxRaceCount, ConstantsModel.MaxCircleCount);
+                }
+
+                var racer_group = RacerGroups.FirstOrDefault(rg => rg.CarClass == racer.Car.CarClass);
+                racer_group.AddRacer(racer);
+            }
+            DataBind();
         }
 
         /// <summary>
@@ -320,11 +370,11 @@ namespace Sprint.Presenters
         private void SaveApplicationState()
         {
             ApplicationStateDbManager.SetApplicationState(new ApplicationStateModel
-            {
-                CurrentCarClass = CurrentCarClass,
-                CurrentRacer = Track.CurrentRacer.Id,
-                RacersAtTheTrack = Track.CurrentRacers.Select(r => r.Id)
-            });
+                                                                {
+                                                                    CurrentCarClass = CurrentCarClass,
+                                                                    CurrentRacer = Track.CurrentRacer.Id,
+                                                                    RacersAtTheTrack = Track.CurrentRacers.Select(r => r.Id)
+                                                                });
         }
 
         /// <summary>
@@ -421,9 +471,9 @@ namespace Sprint.Presenters
         /// <returns>Результат операции.</returns>
         public OperationResult DeleteData()
         {
-            var res_1 = RacersDbManager.DeleteRacers();
-            var res_2 = OptionsDbManager.DeleteAllOptions();
-            var res_3 = ApplicationStateDbManager.DeleteApplicationState();
+            var res_1 = ApplicationStateDbManager.DeleteApplicationState();
+            var res_2 = RacersDbManager.DeleteRacers();
+            var res_3 = OptionsDbManager.DeleteAllOptions();
 
             if (!res_1.Result)
             {
@@ -488,13 +538,13 @@ namespace Sprint.Presenters
             column = new DataColumn("Прогревочный круг");
             table.Columns.Add(column);
 
+            column = new DataColumn("Круг №1");
+            table.Columns.Add(column);
+
             column = new DataColumn("Круг №2");
             table.Columns.Add(column);
 
             column = new DataColumn("Круг №3");
-            table.Columns.Add(column);
-
-            column = new DataColumn("Круг №4");
             table.Columns.Add(column);
 
             return table;
@@ -594,42 +644,55 @@ namespace Sprint.Presenters
         /// <returns></returns>
         private bool CheckMoveUp(RacerModel racer, CarClassesEnum carClass, int raceNum)
         {
+            var res = false;
+
             // Посмторим, а вообще присутствуют-ли сейчас на трассе участники?
             if (!Track.CurrentRacers.Any())
             {
-                return true;
+                res = true;
             }
 
-            // Посмотрим, перемещаемый гонщик не на трассе-ли случаянно находится?
-            foreach (var r in Track.CurrentRacers)
-            {
-                if (racer.Id == r.Id)
-                {
-                    return false;
-                }
-            }
-
-            // Посмотрим, вышестоящий гонщик не на трассе-ли случаянно находится?
+            // Посмотрим, а не первым-ли в списке находится перемещаемый участник
             var raserGroup = RacerGroups.FirstOrDefault(rg => rg.CarClass == carClass && rg.RaceNumber == raceNum);
             var currentRacer = raserGroup.Racers.FirstOrDefault(r => r.Id == racer.Id);
             var currentRacerNumber = raserGroup.Racers.IndexOf(currentRacer);
-            var upper_racer = raserGroup.Racers.ElementAt(currentRacerNumber - 1);
 
-            foreach (var r in Track.CurrentRacers)
+            if (currentRacerNumber == 0)
             {
-                if (upper_racer.Id == r.Id)
+                res = false;
+            }
+
+            // Посмотрим, перемещаемый гонщик не на трассе-ли случаянно находится?
+            if (Track.CurrentRacers.Any() && currentRacerNumber > 0)
+            {
+                foreach (var r in Track.CurrentRacers)
                 {
-                    return false;
+                    if (racer.Id == r.Id)
+                    {
+                        res = false;
+                    }
                 }
+
+                // Посмотрим, вышестоящий гонщик не на трассе-ли случаянно находится?
+                var upper_racer = raserGroup.Racers.ElementAt(currentRacerNumber - 1);
+
+                foreach (var r in Track.CurrentRacers)
+                {
+                    if (upper_racer.Id == r.Id)
+                    {
+                        res = false;
+                    }
+                }
+
+                // Посмотрим, а не пытаемся-ли мы передвинуть уже проехавшего заезд гонщика?
+                if (racer.Results.ResultsList.ElementAt(raceNum - 1).Where(r => r == null).Count() < ConstantsModel.MaxCircleCount)
+                {
+                    res = false;
+                }
+
             }
 
-            // Посмотрим, а не пытаемся-ли мы передвинуть уже проехавшего заезд гонщика?
-            if (racer.Results.ResultsList.ElementAt(raceNum - 1).Where(r => r == null).Count() < ConstantsModel.MaxCircleCount)
-            {
-                return false;
-            }
-
-            return true;
+            return res;
         }
 
         /// <summary>
@@ -641,28 +704,43 @@ namespace Sprint.Presenters
         /// <returns></returns>
         private bool CheckMoveDown(RacerModel racer, CarClassesEnum carClass, int raceNum)
         {
+            var res = false;
+
             // Посмторим, а вообще присутствуют-ли сейчас на трассе участники?
             if (!Track.CurrentRacers.Any())
             {
-                return true;
+                res = true;
+            }
+
+            // Посмотрим, а не последним-ли в списке находится перемещаемый участник
+            var raserGroup = RacerGroups.FirstOrDefault(rg => rg.CarClass == carClass && rg.RaceNumber == raceNum);
+            var currentRacer = raserGroup.Racers.FirstOrDefault(r => r.Id == racer.Id);
+            var currentRacerNumber = raserGroup.Racers.IndexOf(currentRacer);
+
+            if (currentRacerNumber == raserGroup.Racers.Count() - 1)
+            {
+                res = false;
             }
 
             // Посмотрим, перемещаемый гонщик не на трассе-ли случаянно находится?
-            foreach (var r in Track.CurrentRacers)
+            if (Track.CurrentRacers.Any() && currentRacerNumber < raserGroup.Racers.Count() - 1)
             {
-                if (racer.Id == r.Id)
+                foreach (var r in Track.CurrentRacers)
                 {
-                    return false;
+                    if (racer.Id == r.Id)
+                    {
+                        res = false;
+                    }
+                }
+
+                // Посмотрим, а не пытаемся-ли мы передвинуть уже проехавшего заезд гонщика?
+                if (racer.Results.ResultsList.ElementAt(raceNum - 1).Where(r => r == null).Count() < ConstantsModel.MaxCircleCount)
+                {
+                    res = false;
                 }
             }
 
-            // Посмотрим, а не пытаемся-ли мы передвинуть уже проехавшего заезд гонщика?
-            if (racer.Results.ResultsList.ElementAt(raceNum - 1).Where(r => r == null).Count() < ConstantsModel.MaxCircleCount)
-            {
-                return false;
-            }
-
-            return true;
+            return res;
         } 
 
         #endregion

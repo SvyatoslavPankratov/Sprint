@@ -134,6 +134,7 @@
     <Compile Include="Extensions\IEnumerableExtesions.cs" />
     <Compile Include="Interfaces\IOptionsView.cs" />
     <Compile Include="Interfaces\IPrintView.cs" />
+    <Compile Include="Interfaces\IRegenerationDialogView.cs" />
     <Compile Include="Interfaces\ISecondMonitorView.cs" />
     <Compile Include="Interfaces\ISplashScreenView.cs" />
     <Compile Include="Managers\ApplicationStateDbManager.cs" />
@@ -148,6 +149,7 @@
     <Compile Include="Managers\WindowsHotKeysManager.cs" />
     <Compile Include="Models\AllTablesWithResults.cs" />
     <Compile Include="Models\ApplicationStateModel.cs" />
+    <Compile Include="Models\AppRegenerationTypesEnum.cs" />
     <Compile Include="Models\CarClassesEnum.cs" />
     <Compile Include="Models\CarModel.cs" />
     <Compile Include="Models\ConstantsModel.cs" />
@@ -167,6 +169,7 @@
     <Compile Include="Presenters\NewRacerPresenter.cs" />
     <Compile Include="Presenters\OptionsPresenter.cs" />
     <Compile Include="Presenters\PrintPresenter.cs" />
+    <Compile Include="Presenters\RegenerationDialogPresenter.cs" />
     <Compile Include="Presenters\SecondMonitorPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -224,6 +227,12 @@
     <Compile Include="Views\PrintView.Designer.cs">
       <DependentUpon>PrintView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\RegenerationDialogView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RegenerationDialogView.Designer.cs">
+      <DependentUpon>RegenerationDialogView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SecondMonitorView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PrintView.resx">
       <DependentUpon>PrintView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RegenerationDialogView.resx">
+      <DependentUpon>RegenerationDialogView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SecondMonitorView.resx">
       <DependentUpon>SecondMonitorView.cs</DependentUpon>

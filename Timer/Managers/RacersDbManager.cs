@@ -46,11 +46,12 @@ namespace Sprint.Managers
                 {
                     var rm = new RacerModel(racer.FirstName, racer.LastName, racer.MiddleName, racer.Cars.First().Name,
                                             (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), racer.Cars.First().CarClass.Name));
+                    rm.Id = racer.Id;
                     rm.RacerNumber = racer.Number;
                     rm.Results = new ResultsModel(ConstantsModel.MaxRaceCount, ConstantsModel.MaxCircleCount);
 
                     // Добавить результаты 1 тура
-                    foreach (var result in racer.Results.Where(r => r.RaceNumber == 0))
+                    foreach (var result in racer.Results.Where(r => r.RaceNumber == 0).OrderBy(r => r.LapNumber))
                     {
                         if (result.Time.HasValue)
                         {
@@ -65,7 +66,7 @@ namespace Sprint.Managers
                     rm.Results.ResetState();
 
                     // Добавить результаты 2 тура
-                    foreach (var result in racer.Results.Where(r => r.RaceNumber == 1))
+                    foreach (var result in racer.Results.Where(r => r.RaceNumber == 1).OrderBy(r => r.LapNumber))
                     {
                         if (result.Time.HasValue)
                         {
@@ -137,11 +138,12 @@ namespace Sprint.Managers
                 {
                     var rm = new RacerModel(racer.FirstName, racer.LastName, racer.MiddleName, racer.Cars.First().Name, 
                                             (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), racer.Cars.First().CarClass.Name));
+                    rm.Id = racer.Id;
                     rm.RacerNumber = racer.Number;
                     rm.Results = new ResultsModel(ConstantsModel.MaxRaceCount, ConstantsModel.MaxCircleCount);
 
                     // Добавить результаты 1 тура
-                    foreach (var result in racer.Results.Where(r => r.RaceNumber == 0))
+                    foreach (var result in racer.Results.Where(r => r.RaceNumber == 0).OrderBy(r => r.LapNumber))
                     {
                         if (result.Time.HasValue)
                         {
@@ -156,7 +158,7 @@ namespace Sprint.Managers
                     rm.Results.ResetState();
 
                     // Добавить результаты 2 тура
-                    foreach (var result in racer.Results.Where(r => r.RaceNumber == 1))
+                    foreach (var result in racer.Results.Where(r => r.RaceNumber == 1).OrderBy(r => r.LapNumber))
                     {
                         if (result.Time.HasValue)
                         {

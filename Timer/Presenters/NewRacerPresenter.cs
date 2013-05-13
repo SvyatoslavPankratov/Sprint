@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
+using Sprint.Managers;
 using Sprint.Models;
 using Sprint.Views;
 using Sprint.Views.Interfaces;
@@ -37,6 +38,11 @@ namespace Sprint.Presenters
             }
         }
 
+        /// <summary>
+        /// Задать или получить номер следующего добавляемого гонщика.
+        /// </summary>
+        private int NextRacerNumber { get; set; }
+
         #endregion
 
         #region Конструкторы
@@ -57,6 +63,8 @@ namespace Sprint.Presenters
 
                 NewRacerView.RacersTable = CreateTable();
             }
+
+            NextRacerNumber = RacersDbManager.GetRacers().Count() + 1;
         }
 
         #endregion
@@ -68,19 +76,12 @@ namespace Sprint.Presenters
         /// </summary>
         public void AddNewRacer()
         {
-            var num = 1;
-
-            if (Racers.Count > 0)
-            {
-                num = Racers.Last().RacerNumber + 1;
-            }
-
             // Добавлениее новго гонщика в структуру
             Racers.Add(new RacerModel(NewRacerView.FirstName,
                                         NewRacerView.LastName,
                                         NewRacerView.MiddleName,
                                         NewRacerView.CarName,
-                                        NewRacerView.CarClass) { RacerNumber = num });
+                                        NewRacerView.CarClass) { RacerNumber = NextRacerNumber });
 
             // Добавление нового гонщика в таблицу
             var racer   = Racers.Last();
@@ -100,6 +101,8 @@ namespace Sprint.Presenters
             NewRacerView.LastName   = string.Empty;
             NewRacerView.MiddleName = string.Empty;
             NewRacerView.CarName    = string.Empty;
+
+            NextRacerNumber++;
         }
 
         /// <summary>

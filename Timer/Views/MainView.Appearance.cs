@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 using Sprint.Models;
+using Sprint.Views.Interfaces;
 
 namespace Sprint.Views
 {
@@ -125,6 +126,74 @@ namespace Sprint.Views
             addRacer_Btn_fwdR1DGV.Enabled = Editable_fwdR1DGV;
             upRacer_Btn_fwdR1DGV.Enabled = Editable_fwdR1DGV;
             downRacer_Btn_fwdR1DGV.Enabled = Editable_fwdR1DGV;
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку передвинуть участника первого заезда на переднеприводных автомобилях вверх.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            if (fwdR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+
+            var index = fwdR1DGV.SelectedRows[0].Index;
+
+            if (MainPresenter.MoveUpRacer(index))
+            {
+                fwdR1DGV.ClearSelection();
+
+                if (index > 0)
+                {
+                    fwdR1DGV.Rows[index - 1].Selected = true;
+                }
+                else
+                {
+                    fwdR1DGV.Rows[0].Selected = true;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку передвинуть участника первого заезда на переднеприводных автомобилях вниз.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButton33_Click(object sender, EventArgs e)
+        {
+            if (fwdR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+
+            var index = fwdR1DGV.SelectedRows[0].Index;
+
+            if (MainPresenter.MoveDownRacer(index))
+            {
+                fwdR1DGV.ClearSelection();
+
+                if (index < fwdR1DGV.Rows.Count - 1)
+                {
+                    fwdR1DGV.Rows[index + 1].Selected = true;
+                }
+                else
+                {
+                    fwdR1DGV.Rows[index].Selected = true;
+                }
+            }
+        } 
+
+        /// <summary>
+        /// Действия при нажатии на кнопку добавить новых участников.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void addRacer_Btn_fwdR1DGV_Click(object sender, EventArgs e)
+        {
+            AddNewRacers(CarClassesEnum.FWD);
         }
 
         #endregion
@@ -553,11 +622,67 @@ namespace Sprint.Views
 
         #endregion
 
+        #region Таблица первого заезда автомобилей мощностью до 100 л/с
+
+
+
         #endregion
 
-        #region Диалоги
+        #region Таблица второго заезда автомобилей мощностью до 100 л/с
 
 
+
+        #endregion
+
+        #region Таблица первого заезда автомобилей мощностью от 100 л/с до 160 л/с
+
+
+
+        #endregion
+
+        #region Таблица второго заезда автомобилей мощностью от 100 л/с до 160 л/с
+
+
+
+        #endregion
+
+        #region Таблица первого заезда автомобилей мощностью свыше 160 л/с
+
+
+
+        #endregion
+
+        #region Таблица второго заезда автомобилей мощностью свыше 160 л/с
+
+
+
+        #endregion
+
+        #endregion
+
+        #region Общие методы
+
+        /// <summary>
+        /// Показать диалог добавления новых участников после чего 
+        /// добавить новых участников к списку уже зарегистрированных участников.
+        /// </summary>
+        /// <param name="car_class_selected">Выбранный по умолчанию класс автомобилей.</param>
+        private void AddNewRacers(CarClassesEnum car_class_selected)
+        {
+            var newRacerView = new NewRacerView();
+            ((INewRacerView)newRacerView).CarClass = car_class_selected;
+            var res = newRacerView.ShowDialog();
+
+            if (res == DialogResult.OK)
+            {
+                var wnd = new AddedRacersProcessView();
+                Invoke(new Action(() => wnd.Show()));
+
+                MainPresenter.AddRacerAddNewRacer(newRacerView.NewRacerPresenter.Racers);
+
+                Invoke(new Action(() => wnd.Close()));
+            }
+        }
 
         #endregion
 

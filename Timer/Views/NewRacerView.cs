@@ -73,6 +73,10 @@ namespace Sprint.Views
             {
                 return (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), carClassesCB.SelectedItem.ToString());
             }
+            set
+            {
+                carClassesCB.SelectedItem = value.ToString();
+            }
         }
 
         /// <summary>
@@ -145,6 +149,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void completeRegistrationBT_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.OK;
             Close();
         }
 

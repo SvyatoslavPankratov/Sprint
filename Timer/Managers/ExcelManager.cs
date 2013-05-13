@@ -143,12 +143,49 @@ namespace Sprint.Managers
 
             foreach (DataColumn dc in dt.Columns)
             {
+                switch(colIndex)
+                {
+                    case 1:
+                        {
+                            ws.Column(colIndex).Width = 5;
+                        } break;
+                    case 2:
+                        {
+                            ws.Column(colIndex).Width = 45;
+                        } break;
+                    case 3:
+                        {
+                            ws.Column(colIndex).Width = 40;
+                        } break;
+                    case 4:
+                        {
+                            ws.Column(colIndex).Width = 20;
+                        } break;
+                    case 5:
+                        {
+                            ws.Column(colIndex).Width = 20;
+                        } break;
+                    case 6:
+                        {
+                            ws.Column(colIndex).Width = 20;
+                        } break;
+                    case 7:
+                        {
+                            ws.Column(colIndex).Width = 20;
+                        } break;
+                }
+
+                ws.Row(1).Height = 20;
+
                 var cell = ws.Cells[rowIndex, colIndex];
+                cell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                cell.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                cell.Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+                cell.Style.Border.Bottom.Color.SetColor(Color.Black);
 
                 var fill = cell.Style.Fill;
                 fill.PatternType = ExcelFillStyle.Solid;
-                fill.Gradient.Color1.SetColor(Color.LightGray);
-                fill.Gradient.Color2.SetColor(Color.Gray);
+                fill.BackgroundColor.SetColor(Color.LightSlateGray);
 
                 var font = cell.Style.Font;
                 font.Bold = true;
@@ -177,17 +214,47 @@ namespace Sprint.Managers
 
                 foreach (DataColumn dc in dt.Columns)
                 {
-                    ws.Cells[rowIndex, colIndex].Value = dr[dc.ColumnName];
+                    var cell = ws.Cells[rowIndex, colIndex];
+                    cell.Value = dr[dc.ColumnName];
+
+                    switch (colIndex)
+                    {
+                        case 1:
+                            {
+                                cell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                            } break;
+                        case 2:
+                            {
+                                cell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+                            } break;
+                        case 3:
+                            {
+                                cell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+                            } break;
+                        case 4:
+                            {
+                                cell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                            } break;
+                        case 5:
+                            {
+                                cell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                            } break;
+                        case 6:
+                            {
+                                cell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                            } break;
+                        case 7:
+                            {
+                                cell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                            } break;
+                    }
+
                     colIndex++;
                 }
 
                 var fill = ws.Cells[rowIndex, 1].Style.Fill;
                 fill.PatternType = ExcelFillStyle.Solid;
-                fill.BackgroundColor.SetColor(Color.MediumAquamarine);
-
-                fill = ws.Cells[rowIndex, 2].Style.Fill;
-                fill.PatternType = ExcelFillStyle.Solid;
-                fill.BackgroundColor.SetColor(Color.PowderBlue);
+                fill.BackgroundColor.SetColor(Color.Orange);
             }
         }
 
