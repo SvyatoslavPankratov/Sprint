@@ -25,6 +25,11 @@ namespace Sprint.Models
         public int RaceNumber { get; set; }
 
         /// <summary>
+        /// Задать или получить номер участника.
+        /// </summary>
+        public int RacerNumber { get; set; }
+
+        /// <summary>
         /// Задать или получить время лучшего круга.
         /// </summary>
         public string MinTime { get; set; }

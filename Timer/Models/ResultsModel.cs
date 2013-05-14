@@ -95,6 +95,26 @@ namespace Sprint.Models
         #region Методы
 
         /// <summary>
+        /// Узнать имеет участник в заданном заезде какие-либо результаты.
+        /// </summary>
+        /// <param name="raceNumber">Номер заезда (начиная с 1).</param>
+        /// <returns>Имеет-ли участник результаты в заданном заезде.</returns>
+        public bool HasValues(int raceNumber)
+        {
+            var results = ResultsList.ElementAt(raceNumber - 1);
+
+            for (int i = 1; i < results.Count(); i++)
+            {
+                if (results.ElementAt(i) != null)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
         /// Получить минимальное время заданного заезда.
         /// </summary>
         /// <param name="raceNumber">Номер заезда (начиная с 1).</param>

@@ -133,13 +133,26 @@ namespace Sprint.Presenters
             var racers = RacersDbManager.GetRacers(cc);
             
             // Вначале добавяем участников у ктороых есть результаты
-            foreach (var racer in racers.Where(r => r.Results != null).OrderBy(r => r.Results.GetMinTime(raceNumber)))
+            var racers_with_results = from racer in
+                                          (from racer in racers
+                                           where racer.Results.HasValues(raceNumber)
+                                           orderby racer.Results.GetMinTime(raceNumber)
+                                           select racer)
+                                      orderby racer.RacerNumber
+                                      select racer;
+
+            foreach (var racer in racers_with_results)
             {
                 AddNewRacer(results, racer, cc, raceNumber);
             }
 
             // Затем добавляем участников у ктороых нету результатов
-            foreach (var racer in racers.Where(r => r.Results == null))
+            var racers_without_results = from racer in racers
+                                         where !racer.Results.HasValues(raceNumber)
+                                         orderby racer.RacerNumber
+                                         select racer;
+
+            foreach (var racer in racers_without_results)
             {
                 AddNewRacer(results, racer, cc, raceNumber);
             }
@@ -152,12 +165,14 @@ namespace Sprint.Presenters
         /// <param name="results">Список участников, в который будет добавлен новый участник.</param>
         /// <param name="racer">Модель из БД добавляемого участника.</param>
         /// <param name="carClass">Класс автомобилей.</param>
-        private static void AddNewRacer(List<ResultsForReport> results, RacerModel racer, CarClassesEnum carClass,  int raceNumber)
+        /// <param name="raceNumber">Номер тура, для которого получаем отчет.</param>
+        private static void AddNewRacer(List<ResultsForReport> results, RacerModel racer, CarClassesEnum carClass, int raceNumber)
         {
             var result = new ResultsForReport
                                 {
                                     RacerName = racer.FirstName + " " + racer.LastName + " " + racer.MiddleName,
-                                    CarName = racer.Car.Name
+                                    CarName = racer.Car.Name,
+                                    RacerNumber = racer.RacerNumber
                                 };
 
             // Добавить результаты кругов

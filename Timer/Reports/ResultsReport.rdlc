@@ -330,6 +330,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -823,7 +824,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>602e8545-2a43-4b26-8d06-c2ab1ce05f0a</rd:DataSourceID>
+      <rd:DataSourceID>27c29f8f-40fe-46d4-84ae-f8d863bfdc09</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -833,10 +834,6 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="CarClass">
-          <DataField>CarClass</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="CarName">
           <DataField>CarName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
