@@ -17,6 +17,7 @@ namespace Sprint.Data
         public System.Guid Id { get; set; }
         public Nullable<System.Guid> FK_CurrentRacer { get; set; }
         public Nullable<System.Guid> FK_CurrentCarClass { get; set; }
+        public Nullable<int> CurrentRaceNumber { get; set; }
     
         public virtual Racer CurrentRacer { get; set; }
         public virtual CarClass CarClass { get; set; }

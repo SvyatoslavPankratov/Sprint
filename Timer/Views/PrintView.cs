@@ -64,9 +64,7 @@ namespace Sprint.Views
         public PrintView()
         {
             InitializeComponent();
-
             PrintPresenter = new PrintPresenter(this);
-
             carClassesLB_SelectedIndexChanged(this, EventArgs.Empty);
         }
 
@@ -176,7 +174,7 @@ namespace Sprint.Views
             reportViewer.LocalReport.DataSources.Add(new ReportDataSource
                                                             {
                                                                 Name = "Results_DS",
-                                                                Value = PrintPresenter.GetResults(cc, int.Parse(rn))
+                                                                Value = PrintPresenter.GetResults(cc, int.Parse(rn) - 1)
                                                             });
 
             reportViewer.RefreshReport();

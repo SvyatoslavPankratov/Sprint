@@ -48,7 +48,7 @@ namespace Sprint.Managers
                                             (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), racer.Cars.First().CarClass.Name));
                     rm.Id = racer.Id;
                     rm.RacerNumber = racer.Number;
-                    rm.Results = new ResultsModel(ConstantsModel.MaxRaceCount, ConstantsModel.MaxCircleCount);
+                    rm.Results = new ResultsModel();
 
                     // Добавить результаты 1 тура
                     foreach (var result in racer.Results.Where(r => r.RaceNumber == 0).OrderBy(r => r.LapNumber))
@@ -76,6 +76,13 @@ namespace Sprint.Managers
                         {
                             rm.Results.AddResult(result.RaceNumber, null);
                         }
+                    }
+
+                    rm.Results.ResetState();
+
+                    if (racer.CurrentCircleNumber.HasValue)
+                    {
+                        rm.Results.CurrentCircleNumber = racer.CurrentCircleNumber;
                     }
 
                     racers.Add(rm);
@@ -140,7 +147,7 @@ namespace Sprint.Managers
                                             (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), racer.Cars.First().CarClass.Name));
                     rm.Id = racer.Id;
                     rm.RacerNumber = racer.Number;
-                    rm.Results = new ResultsModel(ConstantsModel.MaxRaceCount, ConstantsModel.MaxCircleCount);
+                    rm.Results = new ResultsModel();
 
                     // Добавить результаты 1 тура
                     foreach (var result in racer.Results.Where(r => r.RaceNumber == 0).OrderBy(r => r.LapNumber))
@@ -168,6 +175,13 @@ namespace Sprint.Managers
                         {
                             rm.Results.AddResult(result.RaceNumber, null);
                         }
+                    }
+
+                    rm.Results.ResetState();
+
+                    if (racer.CurrentCircleNumber.HasValue)
+                    {
+                        rm.Results.CurrentCircleNumber = racer.CurrentCircleNumber;
                     }
 
                     results.Add(rm);
@@ -222,6 +236,7 @@ namespace Sprint.Managers
                         cur_racer.LastName = racerModel.LastName;
                         cur_racer.MiddleName = racerModel.MiddleName;
                         cur_racer.Number = racerModel.RacerNumber;
+                        cur_racer.CurrentCircleNumber = racerModel.Results.CurrentCircleNumber;
                     }
                     else
                     {
@@ -231,7 +246,8 @@ namespace Sprint.Managers
                                             FirstName = racerModel.FirstName,
                                             LastName = racerModel.LastName,
                                             MiddleName = racerModel.MiddleName,
-                                            Number = racerModel.RacerNumber
+                                            Number = racerModel.RacerNumber,
+                                            CurrentCircleNumber = racerModel.Results.CurrentCircleNumber
                                         };
 
                         dc.Racers.Add(cur_racer);
@@ -247,7 +263,8 @@ namespace Sprint.Managers
                                         FirstName = racerModel.FirstName,
                                         LastName = racerModel.LastName,
                                         MiddleName = racerModel.MiddleName,
-                                        Number = racerModel.RacerNumber
+                                        Number = racerModel.RacerNumber,
+                                        CurrentCircleNumber = racerModel.Results.CurrentCircleNumber
                                     };
 
                     dc.Racers.Add(cur_racer);

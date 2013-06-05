@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
-using Sprint.Models;
 
 namespace Sprint.Models
 {
@@ -12,12 +9,6 @@ namespace Sprint.Models
     /// </summary>
     public class ResultsModel
     {
-        #region Поля
-
-        int currentCircleNumber;
-
-        #endregion
-
         #region Свойства
 
         /// <summary>
@@ -26,34 +17,17 @@ namespace Sprint.Models
         public IEnumerable<IEnumerable<TimeModel>> ResultsList { get; private set; }
 
         /// <summary>
-        /// Задать или получить флаг финиширования гонщика.
+        /// Получить флаг финиширования гонщика.
         /// </summary>
-        public bool Finished { get; set; }
-        
-        /// <summary>
-        /// Задать или получить номер проезжаемого круга.
-        /// </summary>
-        public int CurrentCircleNumber
+        public bool Finished
         {
-            get
-            {
-                return currentCircleNumber;
-            }
-            set
-            {
-                currentCircleNumber = value;
-
-                if (currentCircleNumber == MaxCircleCount)
-                {
-                    Finished = true;
-                }
-            }
+            get { return CurrentCircleNumber == ConstantsModel.MaxCircleCount; }
         }
 
         /// <summary>
-        /// Задать или получить максимальное количество кругов в заезде.
+        /// Задать или получить номер проезжаемого круга начиная с 1.
         /// </summary>
-        private int MaxCircleCount { get; set; }
+        public int? CurrentCircleNumber { get; set; }
 
         /// <summary>
         /// Задать или получить значение времени начала круга.
@@ -67,19 +41,28 @@ namespace Sprint.Models
         /// <summary>
         /// Конструктор.
         /// </summary>
-        /// <param name="race_count">Количество заездов.</param>
-        /// <param name="lap_count">Количество кругов в заезде.</param>
-        public ResultsModel(int race_count, int lap_count)
+        public ResultsModel()
         {
-            MaxCircleCount = lap_count;
+            InitializeObject();
+            ResetState();
+        }
 
-            var resultsList = new List<List<TimeModel>>(race_count);
+        #endregion
 
-            for (int race = 0; race < race_count; race++)
+        #region Методы
+
+        /// <summary>
+        /// Инициализация объекта.
+        /// </summary>
+        private void InitializeObject()
+        {
+            var resultsList = new List<List<TimeModel>>(ConstantsModel.MaxRaceCount);
+
+            for (int race = 0; race < ConstantsModel.MaxRaceCount; race++)
             {
-                var race_TimeModel = new List<TimeModel>(lap_count);
+                var race_TimeModel = new List<TimeModel>(ConstantsModel.MaxCircleCount);
 
-                for (int lap = 0; lap < lap_count; lap++)
+                for (int lap = 0; lap < ConstantsModel.MaxCircleCount; lap++)
                 {
                     race_TimeModel.Add(null);
                 }
@@ -90,18 +73,14 @@ namespace Sprint.Models
             ResultsList = resultsList;
         }
 
-        #endregion
-
-        #region Методы
-
         /// <summary>
         /// Узнать имеет участник в заданном заезде какие-либо результаты.
         /// </summary>
-        /// <param name="raceNumber">Номер заезда (начиная с 1).</param>
+        /// <param name="raceNumber">Номер заезда (начиная с 0).</param>
         /// <returns>Имеет-ли участник результаты в заданном заезде.</returns>
         public bool HasValues(int raceNumber)
         {
-            var results = ResultsList.ElementAt(raceNumber - 1);
+            var results = ResultsList.ElementAt(raceNumber);
 
             for (int i = 1; i < results.Count(); i++)
             {
@@ -117,12 +96,12 @@ namespace Sprint.Models
         /// <summary>
         /// Получить минимальное время заданного заезда.
         /// </summary>
-        /// <param name="raceNumber">Номер заезда (начиная с 1).</param>
+        /// <param name="raceNumber">Номер заезда (начиная с 0).</param>
         /// <returns>Минимальное время за круг.</returns>
-        public TimeModel GetMinTime(int raceNumber)
+        public TimeSpan GetMinTime(int raceNumber)
         {
             TimeModel min = null;
-            var results = ResultsList.ElementAt(raceNumber - 1);
+            var results = ResultsList.ElementAt(raceNumber);
 
             for(int i = 1; i < results.Count(); i++)
             {
@@ -141,7 +120,7 @@ namespace Sprint.Models
                 }
             }
 
-            return min;
+            return min.TimeSpan;
         }
 
         /// <summary>
@@ -151,8 +130,16 @@ namespace Sprint.Models
         /// <param name="result">Добавляемый результат.</param>
         public void AddResult(int currentRace, TimeModel result)
         {
-            (ResultsList as List<List<TimeModel>>)[currentRace][CurrentCircleNumber] = result;
-            CurrentCircleNumber++;
+            if (!CurrentCircleNumber.HasValue)
+            {
+                CurrentCircleNumber = 0;
+            }
+
+            if (ResultsList as List<List<TimeModel>> != null)
+            {
+                (ResultsList as List<List<TimeModel>>)[currentRace][CurrentCircleNumber.Value] = result;
+                CurrentCircleNumber = CurrentCircleNumber.Value + 1;
+            }
         }
 
         /// <summary>
@@ -160,7 +147,16 @@ namespace Sprint.Models
         /// </summary>
         public void ResetState()
         {
-            CurrentCircleNumber = 0;
+            CurrentCircleNumber = null;
+        }
+
+        /// <summary>
+        /// Очистить все результаты.
+        /// </summary>
+        public void Clear()
+        {
+            InitializeObject();
+            ResetState();
         }
 
         #endregion

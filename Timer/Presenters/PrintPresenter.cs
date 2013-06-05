@@ -124,7 +124,7 @@ namespace Sprint.Presenters
         /// Получить результаты для подачи их на отчет.
         /// </summary>
         /// <param name="carClass">Класс автомобилей для которы получаем отчет.</param>
-        /// <param name="raceNumber">Номер тура, для которого получаем отчет.</param>
+        /// <param name="raceNumber">Номер тура, для которого получаем отчет, начиная с 0.</param>
         /// <returns>Результаты заезда.</returns>
         public static IEnumerable<ResultsForReport> GetResults(string carClass, int raceNumber)
         {
@@ -141,9 +141,12 @@ namespace Sprint.Presenters
                                       orderby racer.RacerNumber
                                       select racer;
 
-            foreach (var racer in racers_with_results)
+            if (racers_with_results.Any())
             {
-                AddNewRacer(results, racer, cc, raceNumber);
+                foreach (var racer in racers_with_results)
+                {
+                    AddNewRacer(results, racer, cc, raceNumber);
+                }
             }
 
             // Затем добавляем участников у ктороых нету результатов
@@ -152,9 +155,12 @@ namespace Sprint.Presenters
                                          orderby racer.RacerNumber
                                          select racer;
 
-            foreach (var racer in racers_without_results)
+            if (racers_without_results.Any())
             {
-                AddNewRacer(results, racer, cc, raceNumber);
+                foreach (var racer in racers_without_results)
+                {
+                    AddNewRacer(results, racer, cc, raceNumber);
+                }
             }
             return results;
         }
@@ -165,7 +171,7 @@ namespace Sprint.Presenters
         /// <param name="results">Список участников, в который будет добавлен новый участник.</param>
         /// <param name="racer">Модель из БД добавляемого участника.</param>
         /// <param name="carClass">Класс автомобилей.</param>
-        /// <param name="raceNumber">Номер тура, для которого получаем отчет.</param>
+        /// <param name="raceNumber">Номер тура, для которого получаем отчет, начиная с 0.</param>
         private static void AddNewRacer(List<ResultsForReport> results, RacerModel racer, CarClassesEnum carClass, int raceNumber)
         {
             var result = new ResultsForReport
@@ -178,16 +184,16 @@ namespace Sprint.Presenters
             // Добавить результаты кругов
             TimeModel time = null;
 
-            time = racer.Results.GetMinTime(raceNumber);
+            time = new TimeModel(racer.Results.GetMinTime(raceNumber));
             result.MinTime = time == null ? string.Empty : time.ToString();
 
-            time = racer.Results.ResultsList.ElementAt(raceNumber - 1).ElementAt(1);
+            time = racer.Results.ResultsList.ElementAt(raceNumber).ElementAt(1);
             result.Time1 = time == null ? string.Empty : time.ToString();
 
-            time = racer.Results.ResultsList.ElementAt(raceNumber - 1).ElementAt(2);
+            time = racer.Results.ResultsList.ElementAt(raceNumber).ElementAt(2);
             result.Time2 = time == null ? string.Empty : time.ToString();
 
-            time = racer.Results.ResultsList.ElementAt(raceNumber - 1).ElementAt(3);
+            time = racer.Results.ResultsList.ElementAt(raceNumber).ElementAt(3);
             result.Time3 = time == null ? string.Empty : time.ToString();
 
             results.Add(result);

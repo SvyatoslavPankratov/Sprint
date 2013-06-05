@@ -67,12 +67,12 @@ namespace Sprint.Managers
                             {
                                 switch (table.RaceNumber)
                                 {
-                                   case 1:
+                                   case 0:
                                         {                                            
                                             CreateHeader(ws_1, 1, table.Results);
                                             CreateData(ws_1, 1, table.Results);
                                         } break;
-                                    case 2:
+                                    case 1:
                                         {                                            
                                             CreateHeader(ws_2, 1, table.Results);
                                             CreateData(ws_2, 1, table.Results);

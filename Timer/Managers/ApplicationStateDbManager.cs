@@ -42,12 +42,16 @@ namespace Sprint.Managers
                 var state = dc.ApplicationStates.FirstOrDefault();
                 var racers = dc.RacersAtTheTracks.ToArray();
 
-                return new ApplicationStateModel
-                            {
-                                CurrentCarClass = (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), state.CarClass.Name),
-                                CurrentRacer = state.CurrentRacer.Id,
-                                RacersAtTheTrack = racers.Select(r => r.Id).ToList()
-                            };
+                var app_state = new ApplicationStateModel { RacersAtTheTrack = racers.Select(r => r.Racer.Id).ToList() };
+
+                if (state != null)
+                {
+                    app_state.CurrentCarClass = (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), state.CarClass.Name);
+                    app_state.CurrentRacer = state.CurrentRacer == null ? (Guid?) null : state.CurrentRacer.Id;
+                    app_state.CurrentRaceNumber = state.CurrentRaceNumber;
+                }
+
+                return app_state;
             }
             catch (Exception ex)
             {
@@ -97,7 +101,8 @@ namespace Sprint.Managers
                                                 {
                                                     Id = Guid.NewGuid(),
                                                     FK_CurrentCarClass = cc.Id,
-                                                    FK_CurrentRacer = state.CurrentRacer
+                                                    FK_CurrentRacer = state.CurrentRacer,
+                                                    CurrentRaceNumber = state.CurrentRaceNumber
                                                 });
 
                 foreach (var id in state.RacersAtTheTrack)

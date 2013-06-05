@@ -26,7 +26,12 @@ namespace Sprint.Models
         /// <summary>
         /// Задать или получить id текущего гонщика, который пересекет финишную прямую.
         /// </summary>
-        public Guid CurrentRacer { get; set; }
+        public Guid? CurrentRacer { get; set; }
+
+        /// <summary>
+        /// Задать или получить номер проводимого тура.
+        /// </summary>
+        public int? CurrentRaceNumber { get; set; }
         
         #endregion
     }

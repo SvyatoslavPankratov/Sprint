@@ -21,7 +21,7 @@
           <AssociationSet Name="FK_ApplicationState_CurrentRacer_Racer" Association="SprintModel.Store.FK_ApplicationState_CurrentRacer_Racer">
             <End Role="Racers" EntitySet="Racers" />
             <End Role="ApplicationState" EntitySet="ApplicationState" />
-          </AssociationSet>          
+          </AssociationSet>
           <AssociationSet Name="FK_Cars_CarClasses" Association="SprintModel.Store.FK_Cars_CarClasses">
             <End Role="CarClasses" EntitySet="CarClasses" />
             <End Role="Cars" EntitySet="Cars" />
@@ -50,6 +50,7 @@
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="FK_CurrentRacer" Type="uniqueidentifier" />
           <Property Name="FK_CurrentCarClass" Type="uniqueidentifier" />
+          <Property Name="CurrentRaceNumber" Type="int" />
         </EntityType>
         <EntityType Name="CarClasses">
           <Key>
@@ -86,6 +87,7 @@
           <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="100" />
           <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="100" />
           <Property Name="MiddleName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="CurrentCircleNumber" Type="int" />
         </EntityType>
         <EntityType Name="RacersAtTheTrack">
           <Key>
@@ -291,6 +293,7 @@
           <NavigationProperty Name="Results" Relationship="SprintModel.FK_Results_Racers" FromRole="Racer" ToRole="Result" />
           <NavigationProperty Name="ApplicationStates" Relationship="SprintModel.FK_ApplicationState_CurrentRacer_Racer" FromRole="Racer" ToRole="ApplicationState" />
           <NavigationProperty Name="RacersAtTheTracks" Relationship="SprintModel.FK_RacersAtTheTrack_Racer" FromRole="Racer" ToRole="RacersAtTheTrack" />
+          <Property Type="Int32" Name="CurrentCircleNumber" />
         </EntityType>
         <Association Name="FK_Cars_CarClasses">
           <End Type="SprintModel.CarClass" Role="CarClass" Multiplicity="1">
@@ -390,6 +393,7 @@
           <NavigationProperty Name="CurrentRacer" Relationship="SprintModel.FK_ApplicationState_CurrentRacer_Racer" FromRole="ApplicationState" ToRole="Racer" />
           <Property Type="Guid" Name="FK_CurrentCarClass" />
           <NavigationProperty Name="CarClass" Relationship="SprintModel.FK_ApplicationState_CurrentCarClass" FromRole="ApplicationState" ToRole="CarClass" />
+          <Property Type="Int32" Name="CurrentRaceNumber" />
         </EntityType>
         <EntityType Name="RacersAtTheTrack">
           <Key>
@@ -462,6 +466,7 @@
           <EntitySetMapping Name="Racers">
             <EntityTypeMapping TypeName="SprintModel.Racer">
               <MappingFragment StoreEntitySet="Racers">
+                <ScalarProperty Name="CurrentCircleNumber" ColumnName="CurrentCircleNumber" />
                 <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -505,6 +510,7 @@
           <EntitySetMapping Name="ApplicationStates">
             <EntityTypeMapping TypeName="SprintModel.ApplicationState">
               <MappingFragment StoreEntitySet="ApplicationState">
+                <ScalarProperty Name="CurrentRaceNumber" ColumnName="CurrentRaceNumber" />
                 <ScalarProperty Name="FK_CurrentCarClass" ColumnName="FK_CurrentCarClass" />
                 <ScalarProperty Name="FK_CurrentRacer" ColumnName="FK_CurrentRacer" />
                 <ScalarProperty Name="Id" ColumnName="Id" />

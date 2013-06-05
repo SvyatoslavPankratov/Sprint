@@ -81,6 +81,11 @@ namespace Sprint.Interfaces
         /// </summary>
         int NextCurrentRacer { set; }
 
+        /// <summary>
+        /// Задать или получить состояние секундомера.
+        /// </summary>
+        StopwatchStatesEnum StopwatchState { get; set; }
+
         #endregion
     }
 }

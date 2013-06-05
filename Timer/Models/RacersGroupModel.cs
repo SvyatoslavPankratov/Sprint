@@ -25,9 +25,14 @@ namespace Sprint.Models
         public IEnumerable<RacerModel> Racers { get; set; }
 
         /// <summary>
-        /// Задать или получить номер заезда.
+        /// Задать или получить номер заезда начиная с 0.
         /// </summary>
         public int RaceNumber { get; set; }
+
+        /// <summary>
+        /// Задать или получить значение финишировала-ли группа.
+        /// </summary>
+        public bool IsFinished { get; set; }
 
         #endregion
 
@@ -101,6 +106,39 @@ namespace Sprint.Models
                           select racer).Reverse();
 
             return racers.Take(count);
+        }
+
+        /// <summary>
+        /// Получить следующего участника, который будет готовиться к выезду на трассу.
+        /// </summary>
+        /// <param name="last_racer">Последний участник, вышедший на трассу.</param>
+        /// <returns>Участник, который будет готовиться к выезду на трассу.</returns>
+        public RacerModel GetNextRacer(RacerModel last_racer)
+        {
+            if (last_racer == null)
+            {
+                foreach (var racer in Racers)
+                {
+                    if (!racer.Results.Finished)
+                    {
+                        return racer;
+                    }
+                }
+            }
+            else
+            {
+                for(int i = 0; i < Racers.Count(); i++)
+                {
+                    var racer = Racers.ElementAt(i);
+
+                    if (racer.Id == last_racer.Id)
+                    {
+                        return Racers.Count() == i + 1 ? null : Racers.ElementAt(i + 1);
+                    }
+                }
+            }
+
+            return null;
         }
 
         #endregion

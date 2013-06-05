@@ -15,6 +15,12 @@ namespace Sprint.Views
 {
     public partial class MainView : Form, IMainView
     {
+        #region Поля
+
+        private StopwatchStatesEnum _stopwatchState;
+
+        #endregion
+
         #region Реализация интерфейса IMainView
 
         /// <summary>
@@ -182,6 +188,36 @@ namespace Sprint.Views
             }
         }
 
+        /// <summary>
+        /// Задать или получить состояние секундомера.
+        /// </summary>
+        public StopwatchStatesEnum StopwatchState
+        {
+            get
+            {
+                return _stopwatchState;
+            }
+            set
+            {
+                if (value != _stopwatchState)
+                {
+                    _stopwatchState = value;
+
+                    switch (value)
+                    {
+                        case StopwatchStatesEnum.Start:
+                            {
+                                StartStopwatch();
+                            } break;
+                        case StopwatchStatesEnum.Stop:
+                            {
+                                StopStopwatch();
+                            } break;
+                    }
+                }
+            }
+        }
+
         #endregion
 
         #region Свойства
@@ -282,7 +318,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void startBtn_Click(object sender, System.EventArgs e)
         {
-            StartStopwatch();
+            StopwatchState = StopwatchStatesEnum.Start;
         }
 
         /// <summary>
@@ -356,6 +392,72 @@ namespace Sprint.Views
         }
 
         /// <summary>
+        /// Действия при остановке секундомера.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void stopBtn_Click(object sender, EventArgs e)
+        {
+            StopwatchState = StopwatchStatesEnum.Stop;
+        }
+
+        /// <summary>
+        /// Остановить секундомер.
+        /// </summary>
+        private void StopStopwatch()
+        {
+            startBtn.Enabled = false;
+            cutOffBtn.Enabled = false;
+            stopBtn.Enabled = false;
+
+            MainPresenter.StopStopwatch();
+
+            UnlockAllButtonsForSelectCarClass();
+
+            ResetSelectedCarClass();
+        }
+
+        /// <summary>
+        /// Произвести отсечку.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CutOffStopwatch(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Middle)                    // Отсечка
+            {
+                MainPresenter.CutOffStopwatch();
+            }
+        }
+
+        /// <summary>
+        /// Действия при отсечке секундомера.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cutOffBtn_Click(object sender, EventArgs e)
+        {
+            MainPresenter.CutOffStopwatch();
+        }
+
+        /// <summary>
+        /// Дейсвия при отработке горячих клавиш.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainView_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.S && startBtn.Enabled)            // Старт
+            {
+                StopwatchState = StopwatchStatesEnum.Start;
+            }
+            else if (e.KeyCode == Keys.F && !startBtn.Enabled)      // Стоп
+            {
+                StopwatchState = StopwatchStatesEnum.Stop;
+            }
+        }
+
+        /// <summary>
         /// Сбросить выделенный класс автомобилей которые проходят в данный момент заезд.
         /// </summary>
         private void ResetSelectedCarClass()
@@ -373,68 +475,6 @@ namespace Sprint.Views
             awdRacesTabs.TabPages[1].ImageIndex = -1;
             sportRacesTabs.TabPages[0].ImageIndex = -1;
             sportRacesTabs.TabPages[1].ImageIndex = -1;
-        }
-
-        /// <summary>
-        /// Произвести отсечку.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CutOffStopwatch(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Middle)                    // Отсечка
-            {
-                MainPresenter.CutOffStopwatch();
-            }
-        }
-
-        /// <summary>
-        /// Дейсвия при отработке горячих клавиш.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MainView_KeyUp(object sender, KeyEventArgs e)
-        {            
-            if (e.KeyCode == Keys.S && startBtn.Enabled)            // Старт
-            {
-                StartStopwatch();
-            }
-            else if (e.KeyCode == Keys.F && !startBtn.Enabled)      // Стоп
-            {
-                startBtn.Enabled = true;
-                cutOffBtn.Enabled = false;
-                stopBtn.Enabled = false;
-
-                MainPresenter.StopStopwatch();
-            }
-        }
-
-        /// <summary>
-        /// Действия при остановке секундомера.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void stopBtn_Click(object sender, EventArgs e)
-        {
-            startBtn.Enabled = false;
-            cutOffBtn.Enabled = false;
-            stopBtn.Enabled = false;
-
-            MainPresenter.StopStopwatch();
-
-            UnlockAllButtonsForSelectCarClass();
-
-            ResetSelectedCarClass();
-        }
-
-        /// <summary>
-        /// Действия при отсечке секундомера.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void cutOffBtn_Click(object sender, EventArgs e)
-        {
-            MainPresenter.CutOffStopwatch();
         }
         
         /// <summary>
@@ -467,16 +507,6 @@ namespace Sprint.Views
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }        
-
-        /// <summary>
-        /// Действия при нажатии в меню очистки таблицы с результатами.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toolStripButton4_Click(object sender, EventArgs e)
-        {
-            MainPresenter.ClearResultsTable();
         }
 
         /// <summary>
