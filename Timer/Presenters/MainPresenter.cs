@@ -164,6 +164,8 @@ namespace Sprint.Presenters
 
                 reg_dlg.ShowDialog();
 
+                DatabaseBackupManager.CreateNewDatabaseBackup();
+
                 switch (((IRegenerationDialogView)reg_dlg).SelectedAppRegenerationType)
                 {
                     case AppRegenerationTypesEnum.AllLapReRun:                              // Текущие участники на треке перезаезжают полностью свои заезды
@@ -669,6 +671,15 @@ namespace Sprint.Presenters
 
             return res;
         } 
+
+        /// <summary>
+        /// Удалить все резервные копии данных приложения.
+        /// </summary>
+        /// <returns>Результат выполнения операции.</returns>
+        public OperationResult DeleteBackupFiles()
+        {
+            return DatabaseBackupManager.DeleteDatabaseBackups();
+        }
 
         #endregion
 

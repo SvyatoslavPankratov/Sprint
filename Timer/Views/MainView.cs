@@ -616,6 +616,27 @@ namespace Sprint.Views
             wnd.Show();
         }
 
+        /// <summary>
+        /// Действия при нажатии пользователем по кнопке удаления всех резервных копий данных приложения.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void удалитьРезервныеКопииToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var q_res = MessageBox.Show("Вы уверены, что хотите удалить все резервные копии данных программы?", "Подтверждение действия",
+                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (q_res == System.Windows.Forms.DialogResult.Yes)
+            {
+                var res = MainPresenter.DeleteBackupFiles();
+
+                if (!res.Result)
+                {
+                    MessageBox.Show("Не удалось удалить резервные копии базы данных приложения.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         #endregion
 
         #region Печать

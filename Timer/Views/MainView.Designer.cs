@@ -132,6 +132,7 @@
             this.базаДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.очиститьДанныеПрограммыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.очиститьЛогиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьРезервныеКопииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
             this.опцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -968,7 +969,8 @@
             // 
             this.базаДанныхToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.очиститьДанныеПрограммыToolStripMenuItem,
-            this.очиститьЛогиToolStripMenuItem});
+            this.очиститьЛогиToolStripMenuItem,
+            this.удалитьРезервныеКопииToolStripMenuItem});
             this.базаДанныхToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("базаДанныхToolStripMenuItem.Image")));
             this.базаДанныхToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.базаДанныхToolStripMenuItem.Name = "базаДанныхToolStripMenuItem";
@@ -980,8 +982,8 @@
             this.очиститьДанныеПрограммыToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("очиститьДанныеПрограммыToolStripMenuItem.Image")));
             this.очиститьДанныеПрограммыToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.очиститьДанныеПрограммыToolStripMenuItem.Name = "очиститьДанныеПрограммыToolStripMenuItem";
-            this.очиститьДанныеПрограммыToolStripMenuItem.Size = new System.Drawing.Size(255, 38);
-            this.очиститьДанныеПрограммыToolStripMenuItem.Text = "Очистить данные программы";
+            this.очиститьДанныеПрограммыToolStripMenuItem.Size = new System.Drawing.Size(276, 38);
+            this.очиститьДанныеПрограммыToolStripMenuItem.Text = "Удалить данные";
             this.очиститьДанныеПрограммыToolStripMenuItem.Click += new System.EventHandler(this.очиститьДанныеПрограммыToolStripMenuItem_Click);
             // 
             // очиститьЛогиToolStripMenuItem
@@ -989,9 +991,18 @@
             this.очиститьЛогиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("очиститьЛогиToolStripMenuItem.Image")));
             this.очиститьЛогиToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.очиститьЛогиToolStripMenuItem.Name = "очиститьЛогиToolStripMenuItem";
-            this.очиститьЛогиToolStripMenuItem.Size = new System.Drawing.Size(255, 38);
-            this.очиститьЛогиToolStripMenuItem.Text = "Очистить логи";
+            this.очиститьЛогиToolStripMenuItem.Size = new System.Drawing.Size(276, 38);
+            this.очиститьЛогиToolStripMenuItem.Text = "Удалить логи";
             this.очиститьЛогиToolStripMenuItem.Click += new System.EventHandler(this.очиститьЛогиToolStripMenuItem_Click);
+            // 
+            // удалитьРезервныеКопииToolStripMenuItem
+            // 
+            this.удалитьРезервныеКопииToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("удалитьРезервныеКопииToolStripMenuItem.Image")));
+            this.удалитьРезервныеКопииToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.удалитьРезервныеКопииToolStripMenuItem.Name = "удалитьРезервныеКопииToolStripMenuItem";
+            this.удалитьРезервныеКопииToolStripMenuItem.Size = new System.Drawing.Size(276, 38);
+            this.удалитьРезервныеКопииToolStripMenuItem.Text = "Удалить резервные копии данных";
+            this.удалитьРезервныеКопииToolStripMenuItem.Click += new System.EventHandler(this.удалитьРезервныеКопииToolStripMenuItem_Click);
             // 
             // toolStripSeparator18
             // 
@@ -4099,5 +4110,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton79;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator44;
         private System.Windows.Forms.ToolStripButton toolStripButton80;
+        private System.Windows.Forms.ToolStripMenuItem удалитьРезервныеКопииToolStripMenuItem;
     }
 }

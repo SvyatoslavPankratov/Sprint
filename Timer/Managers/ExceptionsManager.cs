@@ -24,7 +24,10 @@ namespace Sprint.Managers
                 message += "Message: " + ex.Message;
                 message += (string.IsNullOrWhiteSpace(message) && string.IsNullOrEmpty(message))
                                 ? string.Empty
-                                : Environment.NewLine + Environment.NewLine + "StackTrace: " + ex.StackTrace;
+                                : Environment.NewLine + Environment.NewLine +
+                                    "--------------------------------------------------------------------------------------" + Environment.NewLine +
+                                    "StackTrace: " + Environment.NewLine + Environment.NewLine + 
+                                    ex.StackTrace;
 
                 message += CreateExceptionMessage(ex.InnerException);
             }

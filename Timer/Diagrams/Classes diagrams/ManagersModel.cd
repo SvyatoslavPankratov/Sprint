@@ -53,7 +53,7 @@
   <Class Name="Sprint.Managers.ScreenManager">
     <Position X="7.25" Y="7" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAIAAACAAAAA=</HashCode>
       <FileName>Managers\ScreenManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -100,6 +100,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAAAAACEAAAAAAAAAAAAAAAAEAABAAAAAA=</HashCode>
       <FileName>Managers\ApplicationStateDbManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sprint.Managers.DatabaseBackupManager">
+    <Position X="10.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Managers\DatabaseBackupManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
