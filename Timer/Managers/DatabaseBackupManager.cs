@@ -107,6 +107,59 @@ namespace Sprint.Managers
             }
         }
 
+        /// <summary>
+        /// Восстановить бд приложения из заданной резервной копии.
+        /// </summary>
+        /// <param name="backup_file_name">Имя резервной копии из которой будет восстанавливаться бд приложения.</param>
+        /// <returns>Результат выполнения операции.</returns>
+        public static OperationResult RestoreDatabaseBackups(string backup_file_name)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(backup_file_name) || string.IsNullOrWhiteSpace(backup_file_name))
+                {
+                    var ex = new SprintException("Не задано имя файла с резервной копией.",
+                                                    "Sprint.Managers.DatabaseBackupManager.RestoreDatabaseBackups()");
+                }
+
+                var app_dir = AppDomain.CurrentDomain.BaseDirectory;
+
+#if UT
+                var backup_dir = new DirectoryInfo(@"..\..\..\UnitTest\bin\Debug\Backup");
+                var db_dir = new DirectoryInfo(@"..\..\..\UnitTest\bin\Debug\Data");
+#else
+                var backup_dir = new DirectoryInfo(app_dir + @"\Backup");
+                var db_dir = new DirectoryInfo(app_dir + @"\Data");
+#endif
+
+                // Если директории для бд приложения нету, то попробуем ее создать
+                if (!db_dir.Exists)
+                {
+                    backup_dir = Directory.CreateDirectory(db_dir.FullName);
+
+                    if (!db_dir.Exists)
+                    {
+                        throw new SprintException("Не удалось создать директорию для базы данных приложения.",
+                                                    "Sprint.Managers.DatabaseBackupManager.RestoreDatabaseBackups()");
+                    }
+                }
+
+                var target_file = string.Format(@"{0}\Sprint.sdf", db_dir.FullName);
+                var source_file = string.Format(@"{0}\{1}", backup_dir.FullName, backup_file_name);
+
+                File.Copy(source_file, target_file, true);
+
+                return new OperationResult(true);
+            }
+            catch (Exception ex)
+            {
+                var exception = new SprintException("Не удалось восстановить базу данных приложения из резервной копии.",
+                                                    "Sprint.Managers.DatabaseBackupManager.RestoreDatabaseBackups()", ex);
+                logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
+                throw exception;
+            }
+        }
+
         #endregion
     }
 }

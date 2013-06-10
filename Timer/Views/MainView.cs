@@ -242,6 +242,12 @@ namespace Sprint.Views
         /// </summary>
         private WindowHookManager WindowHookManager { get; set; }
 
+        /// <summary>
+        /// Задать или получить флаг, показывающий происходит 
+        /// автоматическая перезагрузка приложения или ручная.
+        /// </summary>
+        public bool AutomationResetOrClose { get; set; }
+
         #endregion
 
         #region Конструкторы
@@ -258,6 +264,7 @@ namespace Sprint.Views
             pi.SetValue(fwdR1DGV, true, null);
 
             KeyPreview = true;                          // Изменено, чтобы заработали горячие клавиши
+            AutomationResetOrClose = false;
 
             MainPresenter = new MainPresenter(this);
             WindowHookManager = new WindowHookManager(false, false);
@@ -484,11 +491,15 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void MainView_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var res = MessageBox.Show("Вы уверены, что хотите закрыть приложение?",
-                                        "Подтверждение действия",
-                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var res = DialogResult.No;
 
-            if (res == System.Windows.Forms.DialogResult.Yes)
+            if (!AutomationResetOrClose)
+            {
+                res = MessageBox.Show("Вы уверены, что хотите закрыть приложение?", "Подтверждение действия",
+                                          MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            }
+
+            if (res == System.Windows.Forms.DialogResult.Yes || AutomationResetOrClose)
             {
                 WindowHookManager.UnregisterHooks();
                 MainPresenter.Dispose();
@@ -506,6 +517,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            AutomationResetOrClose = false; 
             Application.Exit();
         }
 
@@ -628,13 +640,25 @@ namespace Sprint.Views
 
             if (q_res == System.Windows.Forms.DialogResult.Yes)
             {
-                var res = MainPresenter.DeleteBackupFiles();
+                var res_1 = MainPresenter.DeleteBackupFiles();
+                //var res_2 удалим все резервные копии файлов Excel
 
-                if (!res.Result)
+                if (!res_1.Result)
                 {
                     MessageBox.Show("Не удалось удалить резервные копии базы данных приложения.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        /// <summary>
+        /// Действия при нажатии пользователем по кнопке восстановления данных программы из файла резервной копии.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void восстановитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var dialog = new RestoreAppDateFromBackupView();
+            dialog.ShowDialog();
         }
 
         #endregion
@@ -876,7 +900,7 @@ namespace Sprint.Views
         } 
 
         #endregion        
-
+        
         #endregion        
     }
 }
