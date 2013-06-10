@@ -8,7 +8,7 @@ using Sprint.Views;
 namespace Sprint.Presenters
 {
     /// <summary>
-    /// Часть презентера, отвечающая на привязку данных на представление.
+    /// Часть презентера, отвечающая на привязку данных на представление главного окна.
     /// </summary>
     partial class MainPresenter
     {

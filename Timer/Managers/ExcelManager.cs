@@ -274,6 +274,37 @@ namespace Sprint.Managers
             }
         }
 
+        /// <summary>
+        /// Удалить все экземпляры сгенерированных Excel-документов.
+        /// </summary>
+        /// <returns></returns>
+        public static OperationResult DeleteAllExcelDocs()
+        {
+            try
+            {
+                var app_dir = AppDomain.CurrentDomain.BaseDirectory;
+                var file_dir = new DirectoryInfo(app_dir + @"\Excels");
+
+                // Если директории для сохранения файлов Excel нету, то попробуем ее создать
+                if (file_dir.Exists)
+                {
+                    foreach (var file in file_dir.GetFiles())
+                    {
+                        File.Delete(file.FullName);
+                    }
+                }
+
+                return new OperationResult(true);
+            }
+            catch (Exception ex)
+            {
+                var exception = new SprintException("Не удалось удалить все экземпляры сгенерированных Excel-документов.",
+                                                    "Sprint.Managers.ExcelManager.DeleteAllExcelDocs()", ex);
+                logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
+                throw exception;
+            }
+        }
+
         #endregion
     }
 }

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows;
 
+using Sprint.Exceptions;
 using Sprint.Extensions;
 using Sprint.Interfaces;
 using Sprint.Managers;
@@ -633,13 +635,8 @@ namespace Sprint.Presenters
         /// <returns></returns>
         private bool CheckMoveDown(RacerModel racer, CarClassesEnum carClass, int raceNum)
         {
-            var res = false;
-
             // Посмторим, а вообще присутствуют-ли сейчас на трассе участники?
-            if (!Track.CurrentRacers.Any())
-            {
-                res = true;
-            }
+            bool res = !Track.CurrentRacers.Any();
 
             // Посмотрим, а не последним-ли в списке находится перемещаемый участник
             var raserGroup = RacerGroups.FirstOrDefault(rg => rg.CarClass == carClass && rg.RaceNumber == raceNum);
@@ -678,7 +675,34 @@ namespace Sprint.Presenters
         /// <returns>Результат выполнения операции.</returns>
         public OperationResult DeleteBackupFiles()
         {
-            return DatabaseBackupManager.DeleteDatabaseBackups();
+            try
+            {
+                return DatabaseBackupManager.DeleteDatabaseBackups();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Не удалось удалить резервные копии данных приложения.", "Сообщение",
+                                MessageBoxButton.OK, MessageBoxImage.Information);
+                return new OperationResult(false);
+            }
+        }
+
+        /// <summary>
+        /// Удалить все экземпляры сгенерированных Excel-документов.
+        /// </summary>
+        /// <returns></returns>
+        public OperationResult DeleteAllExcelDocs()
+        {
+            try
+            {
+                return ExcelManager.DeleteAllExcelDocs();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Не удалось удалить экземпляры сгенерированных Excel-документов.", "Сообщение",
+                                MessageBoxButton.OK, MessageBoxImage.Information);
+                return new OperationResult(false);
+            }
         }
 
         #endregion

@@ -501,6 +501,7 @@ namespace Sprint.Views
 
             if (res == System.Windows.Forms.DialogResult.Yes || AutomationResetOrClose)
             {
+                MainPresenter.DeleteAllExcelDocs();
                 WindowHookManager.UnregisterHooks();
                 MainPresenter.Dispose();
             }
