@@ -36,10 +36,10 @@ namespace Sprint.Managers
                 var app_dir = AppDomain.CurrentDomain.BaseDirectory;
 
 #if UT
-                var backup_dir = new DirectoryInfo(@"..\..\..\UnitTest\bin\Debug\Backup");
+                var backup_dir = new DirectoryInfo(@"..\..\..\UnitTest\bin\Debug\Backups");
                 var db_dir = new DirectoryInfo(@"..\..\..\UnitTest\bin\Debug\Data");
 #else
-                var backup_dir = new DirectoryInfo(app_dir + @"\Backup");
+                var backup_dir = new DirectoryInfo(app_dir + @"\Backups");
                 var db_dir = new DirectoryInfo(app_dir + @"\Data");
 #endif
 
@@ -56,7 +56,7 @@ namespace Sprint.Managers
                 }
 
                 var source_file = string.Format(@"{0}\Sprint.sdf", db_dir.FullName);
-                var target_file = string.Format(@"{0}\Sprint [ {1} ].sdf", backup_dir.FullName, DateTime.Now.ToString("dd MMM yyyy HH-mm-ss"));
+                var target_file = string.Format(@"{0}\Sprint [ {1} ].sdf", backup_dir.FullName, DateTime.Now.ToString("dd MMMM yyyy HH-mm-ss"));
 
                 File.Copy(source_file, target_file);
 
@@ -82,9 +82,9 @@ namespace Sprint.Managers
                 var app_dir = AppDomain.CurrentDomain.BaseDirectory;
 
 #if UT
-                var backup_dir = new DirectoryInfo(@"..\..\..\UnitTest\bin\Debug\Backup");
+                var backup_dir = new DirectoryInfo(@"..\..\..\UnitTest\bin\Debug\Backups");
 #else
-                var backup_dir = new DirectoryInfo(app_dir + @"\Backup");
+                var backup_dir = new DirectoryInfo(app_dir + @"\Backups");
 #endif
 
                 // Если директории для резервных копий нету, то и удалять нечего, а если есть, то почитсим из нее все
@@ -125,10 +125,10 @@ namespace Sprint.Managers
                 var app_dir = AppDomain.CurrentDomain.BaseDirectory;
 
 #if UT
-                var backup_dir = new DirectoryInfo(@"..\..\..\UnitTest\bin\Debug\Backup");
+                var backup_dir = new DirectoryInfo(@"..\..\..\UnitTest\bin\Debug\Backups");
                 var db_dir = new DirectoryInfo(@"..\..\..\UnitTest\bin\Debug\Data");
 #else
-                var backup_dir = new DirectoryInfo(app_dir + @"\Backup");
+                var backup_dir = new DirectoryInfo(app_dir + @"\Backups");
                 var db_dir = new DirectoryInfo(app_dir + @"\Data");
 #endif
 

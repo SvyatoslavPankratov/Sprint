@@ -63,7 +63,7 @@ namespace Sprint.Presenters
         /// </summary>
         private void LoadBackupFileList()
         {
-            var backup_dir = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + @"\Backup");
+            var backup_dir = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + @"\Backups");
 
             View.Files = backup_dir.GetFiles().OrderBy(f => f.CreationTime).ToList();
         }

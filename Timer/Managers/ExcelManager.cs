@@ -38,7 +38,7 @@ namespace Sprint.Managers
         /// <returns>Результат операции.</returns>
         public static OperationResult CreateResultExcelDocument(IEnumerable<TableWithResults> all_tables)
         {
-            if (all_tables == null || all_tables.Count() == 0)
+            if (all_tables == null || !all_tables.Any())
             {
                 var exception = new SprintExcelException("Не удалось создать документ Ecxel, т.к. для его создания не были переданы таблицы с текущими результатами гонок.",
                                                             "Sprint.Managers.ExcelManager.CreateResultExcelDocument(IEnumerable<TableWithResults> all_tables)");
@@ -83,10 +83,26 @@ namespace Sprint.Managers
                     }
 
                     var bin = doc.GetAsByteArray();
-                    var file = Guid.NewGuid().ToString() + ".xlsx";
+
+                    var app_dir = AppDomain.CurrentDomain.BaseDirectory;
+                    var file_dir = new DirectoryInfo(app_dir + @"\Excels");
+
+                    // Если директории для сохранения файлов Excel нету, то попробуем ее создать
+                    if (!file_dir.Exists)
+                    {
+                        file_dir = Directory.CreateDirectory(file_dir.FullName);
+
+                        if (!file_dir.Exists)
+                        {
+                            throw new SprintException("Не удалось создать директорию для сохранения файлов Excel приложения.",
+                                                        "Sprint.Managers.ExcelManager.CreateResultExcelDocument(IEnumerable<TableWithResults> all_tables)");
+                        }
+                    }
+
+                    var guid = Guid.NewGuid().ToString();
+                    var file = string.Format(@"{0}\{1}", file_dir.FullName, guid + ".xlsx");
 
                     File.WriteAllBytes(file, bin);
-
 
                     // Открываем файл в Excel
                     var pi = new ProcessStartInfo(file);
