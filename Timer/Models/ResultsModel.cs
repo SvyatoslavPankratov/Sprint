@@ -98,7 +98,7 @@ namespace Sprint.Models
         /// </summary>
         /// <param name="raceNumber">Номер заезда (начиная с 0).</param>
         /// <returns>Минимальное время за круг.</returns>
-        public TimeSpan GetMinTime(int raceNumber)
+        public TimeSpan? GetMinTime(int raceNumber)
         {
             TimeModel min = null;
             var results = ResultsList.ElementAt(raceNumber);
@@ -120,7 +120,7 @@ namespace Sprint.Models
                 }
             }
 
-            return min.TimeSpan;
+            return min == null ? (TimeSpan?) null : min.TimeSpan;
         }
 
         /// <summary>

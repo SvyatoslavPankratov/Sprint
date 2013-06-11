@@ -184,7 +184,9 @@ namespace Sprint.Presenters
             // Добавить результаты кругов
             TimeModel time = null;
 
-            time = new TimeModel(racer.Results.GetMinTime(raceNumber));
+            var min_time = racer.Results.GetMinTime(raceNumber);
+
+            time = min_time.HasValue ? new TimeModel(min_time.Value) : null;
             result.MinTime = time == null ? string.Empty : time.ToString();
 
             time = racer.Results.ResultsList.ElementAt(raceNumber).ElementAt(1);

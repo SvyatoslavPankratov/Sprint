@@ -39,7 +39,7 @@
   <Class Name="Sprint.Models.ResultsModel">
     <Position X="12.25" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAAABAAAAQAAAAIJAhAAAAIAAAAAABQAAA=</HashCode>
+      <HashCode>AAAAAAAAAEAAABAAAAQAAAAIJAhAAAAAAAAAAABQAAA=</HashCode>
       <FileName>Models\ResultsModel.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -60,8 +60,8 @@
     </AssociationLine>
     <AssociationLine Name="RacerGroups" Type="Sprint.Models.RacersGroupModel" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.75" Y="8.75" />
-        <Point X="9.625" Y="8.75" />
+        <Point X="7.75" Y="8.798" />
+        <Point X="9.625" Y="8.798" />
         <Point X="9.625" Y="8.208" />
       </Path>
     </AssociationLine>
@@ -73,22 +73,22 @@
     </AssociationLine>
     <AssociationLine Name="LiderRacerGroups" Type="Sprint.Models.RacersGroupModel" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.75" Y="9" />
-        <Point X="11.125" Y="9" />
+        <Point X="7.75" Y="9.054" />
+        <Point X="11.125" Y="9.054" />
         <Point X="11.125" Y="8.208" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="CurrentCarClass" Type="Sprint.Models.CarClassesEnum" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.75" Y="9.25" />
-        <Point X="12.688" Y="9.25" />
+        <Point X="7.75" Y="9.309" />
+        <Point X="12.688" Y="9.309" />
         <Point X="12.688" Y="6.758" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="CurrentEditCarClass" Type="Sprint.Models.CarClassesEnum" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.75" Y="9.5" />
-        <Point X="12.938" Y="9.5" />
+        <Point X="7.75" Y="9.565" />
+        <Point X="12.938" Y="9.565" />
         <Point X="12.938" Y="6.758" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
@@ -97,13 +97,13 @@
     </AssociationLine>
     <AssociationLine Name="Track" Type="Sprint.Models.TrackModel" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5" Y="7.624" />
-        <Point X="4.312" Y="7.624" />
+        <Point X="5" Y="7.648" />
+        <Point X="4.312" Y="7.648" />
         <Point X="4.312" Y="5.305" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>QQGKkAJUBPYUAAADIIAkAAwgAAgcAEACAEAgAAQILAA=</HashCode>
+      <HashCode>QQGKkAtUBPYUAAADIIAkAAwoAAgcAEECAEAgAAQILAA=</HashCode>
       <FileName>Presenters\MainPresenter.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -290,7 +290,7 @@
   <Interface Name="Sprint.Interfaces.IMainView">
     <Position X="1.75" Y="5.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AgAAAIAAAAAABAAAEAAQAAIAEAAAAAAAAAAEAAFgEAA=</HashCode>
+      <HashCode>ggAAAIAAAAAABAAAEAAQAAIAEAAAAAAAAAAEAAFgEAA=</HashCode>
       <FileName>Interfaces\IMainView.cs</FileName>
     </TypeIdentifier>
   </Interface>

@@ -705,6 +705,40 @@ namespace Sprint.Presenters
             }
         }
 
+        /// <summary>
+        /// Получить участника по индексу.
+        /// </summary>
+        /// <param name="index">Индексу участника в списке класса.</param>
+        /// <returns>Требуемый участник.</returns>
+        public RacerModel GetRacerFromIndex(int index)
+        {
+            var car_class = RacerGroups.FirstOrDefault(rg => rg.CarClass == CurrentEditCarClass);
+
+            if (car_class == null)
+            {
+                return null;
+            }
+
+            var racers = car_class.Racers;
+
+            if (racers.Any() && racers.Count() >= index + 1)
+            {
+                return racers.ElementAt(index);
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Обновить данные участника в БД.
+        /// </summary>
+        /// <param name="racer">Данные обновляемого участника.</param>
+        /// <returns>Результат выполнения операции.</returns>
+        public OperationResult UpdateRacer(RacerModel racer)
+        {
+            return RacersDbManager.SetRacer(racer);
+        }
+
         #endregion
 
         #region IDisposable Members

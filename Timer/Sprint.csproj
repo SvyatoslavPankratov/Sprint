@@ -135,6 +135,7 @@
     <Compile Include="Exceptions\SprintException.cs" />
     <Compile Include="Exceptions\SprintSystemException.cs" />
     <Compile Include="Extensions\IEnumerableExtesions.cs" />
+    <Compile Include="Interfaces\IEditRacer.cs" />
     <Compile Include="Interfaces\IOptionsView.cs" />
     <Compile Include="Interfaces\IPrintView.cs" />
     <Compile Include="Interfaces\IRegenerationDialogView.cs" />
@@ -171,6 +172,7 @@
     <Compile Include="Models\TrackModel.cs" />
     <Compile Include="Presenters\CarClassPresenter.cs" />
     <Compile Include="Presenters\CheckSensorPresenter.cs" />
+    <Compile Include="Presenters\EditRacerPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.DataBinding.cs" />
     <Compile Include="Presenters\NewRacerPresenter.cs" />
@@ -202,6 +204,12 @@
     <Compile Include="Interfaces\ICheckSensorView.cs" />
     <Compile Include="Interfaces\IMainView.cs" />
     <Compile Include="Interfaces\INewRacerView.cs" />
+    <Compile Include="Views\EditRacerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EditRacerView.Designer.cs">
+      <DependentUpon>EditRacerView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ExportProcessView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CheckSensorView.resx">
       <DependentUpon>CheckSensorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EditRacerView.resx">
+      <DependentUpon>EditRacerView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ExportProcessView.resx">
       <DependentUpon>ExportProcessView.cs</DependentUpon>
@@ -387,6 +398,7 @@
     <Content Include="Resources\Images\Down.png" />
     <Content Include="Resources\Images\Download.png" />
     <Content Include="Resources\Images\Draw freehand.png" />
+    <Content Include="Resources\Images\Edit user.png" />
     <Content Include="Resources\Images\Edit.png" />
     <Content Include="Resources\Images\Excel.png" />
     <Content Include="Resources\Images\Exit.png" />

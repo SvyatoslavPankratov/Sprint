@@ -15,7 +15,7 @@ namespace Sprint.Models
         /// <summary>
         /// Задать или получить класс автомобиля.
         /// </summary>
-        public CarClassesEnum CarClass { get; private set; }
+        public CarClassesEnum CarClass { get; set; }
 
         /// <summary>
         /// Задать или получить наименование автомобиля (марка, модель и тд).

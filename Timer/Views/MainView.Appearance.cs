@@ -123,6 +123,7 @@ namespace Sprint.Views
             MainPresenter.CurrentEditCarClass = CarClassesEnum.FWD;
             MainPresenter.CurrentEditRaceNumber = 1;
 
+            editRacer_Btn_fwdR1DGV.Enabled = Editable_fwdR1DGV;
             addRacer_Btn_fwdR1DGV.Enabled = Editable_fwdR1DGV;
             upRacer_Btn_fwdR1DGV.Enabled = Editable_fwdR1DGV;
             downRacer_Btn_fwdR1DGV.Enabled = Editable_fwdR1DGV;
@@ -194,6 +195,24 @@ namespace Sprint.Views
         private void addRacer_Btn_fwdR1DGV_Click(object sender, EventArgs e)
         {
             AddNewRacers(CarClassesEnum.FWD);
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку редактирования данных выделенного участника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButton81_Click(object sender, EventArgs e)
+        {
+            if (fwdR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+
+            var index = fwdR1DGV.SelectedRows[0].Index;
+            EditRacerInfo(MainPresenter.GetRacerFromIndex(index));
+            fwdR1DGV.ClearSelection();
+            fwdR1DGV.Rows[index].Selected = true;
         }
 
         #endregion
@@ -682,6 +701,30 @@ namespace Sprint.Views
 
                 Invoke(new Action(() => wnd.Close()));
             }
+        }
+
+        /// <summary>
+        /// Редактировать данные участника.
+        /// </summary>ч
+        /// <param name="racer">Редактируемый участник.</param>
+        private void EditRacerInfo(RacerModel racer)
+        {
+            if (racer == null)
+            {
+                return;
+            }
+
+            var dialog = new EditRacerView(racer);
+            dialog.ShowDialog();
+
+            var result = MainPresenter.UpdateRacer(racer);
+
+            if (!result.Result)
+            {
+                MessageBox.Show("Не удалось обновить данные участника в базе данных приложения.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            MainPresenter.DataBind();
         }
 
         #endregion
