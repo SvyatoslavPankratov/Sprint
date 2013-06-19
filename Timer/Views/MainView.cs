@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Reflection;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 
 using Sprint.Interfaces;
 using Sprint.Managers;
 using Sprint.Models;
 using Sprint.Presenters;
-using Sprint.Views.Interfaces;
 
 namespace Sprint.Views
 {
@@ -248,6 +246,12 @@ namespace Sprint.Views
         /// </summary>
         public bool AutomationResetOrClose { get; set; }
 
+        /// <summary>
+        /// Задать или получить глобально состояние доступности 
+        /// кнопок выбора текущего класса автомобилей.
+        /// </summary>
+        private bool GlobalCarClassSelectBtnEnable { get; set; }
+
         #endregion
 
         #region Конструкторы
@@ -258,6 +262,8 @@ namespace Sprint.Views
         public MainView()
         {
             InitializeComponent();
+
+            GlobalCarClassSelectBtnEnable = true;
 
             Type dgvType = fwdR1DGV.GetType();
             PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
@@ -333,7 +339,7 @@ namespace Sprint.Views
         /// </summary>
         private void StartStopwatch()
         {
-            LockAllButtonsForSelectCarClass();
+            SetValueForAllButtonsForSelectCarClass(false);
 
             startBtn.Enabled = false;
             cutOffBtn.Enabled = true;
@@ -419,7 +425,7 @@ namespace Sprint.Views
 
             MainPresenter.StopStopwatch();
 
-            UnlockAllButtonsForSelectCarClass();
+            SetValueForAllButtonsForSelectCarClass(true);
 
             ResetSelectedCarClass();
         }
@@ -531,231 +537,7 @@ namespace Sprint.Views
         {
             new AboutView().ShowDialog();
         }
-
-        #region Главное меню
-
-        /// <summary>
-        /// Действия при нажатии пользователем в меню проверки датчика отсечки.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void проверкаДатчикаОтсечкиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            WindowHookManager.UnregisterHooks();
-
-            var checkSensorView = new CheckSensorView();
-            checkSensorView.ShowDialog();
-
-            WindowHookManager.RegisterHooks(false, true);
-        }
-
-        /// <summary>
-        /// Действия при нажатии пользователя в меню выгрузки всех данных в Excel.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void excelToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var wnd = new ExportProcessView();
-
-            this.Invoke(new Action(() => wnd.Show()));
-
-            MainPresenter.ExportToExcel();
-
-            this.Invoke(new Action(() => wnd.Close()));
-        }
-
-        /// <summary>
-        /// Действия при нажатии пользователем кнопки очистки данных программы.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void очиститьДанныеПрограммыToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var q_res = MessageBox.Show("Вы уверены, что хотите удалить все данные программы?", "Подтверждение действия",
-                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (q_res == System.Windows.Forms.DialogResult.Yes)
-            {
-                var res = MainPresenter.DeleteData();
-
-                if (!res.Result)
-                {
-                    MessageBox.Show("Не удалось удалить данные программы.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Действия при нажатии пользователем кнопки очистки логов программы.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void очиститьЛогиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var q_res = MessageBox.Show("Вы уверены, что хотите удалить все логи программы?", "Подтверждение действия", 
-                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (q_res == System.Windows.Forms.DialogResult.Yes)
-            {
-                var res = MainPresenter.DeleteLogs();
-
-                if (!res.Result)
-                {
-                    MessageBox.Show("Не удалось удалить логи программы.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Действия при нажатии пользователем в меню настройки программы.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void опцииToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var wnd = new OptionsView();
-            wnd.ShowDialog();
-        }
-
-        /// <summary>
-        /// Действия при нажатии пользователем в меню печати результатов.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void печатьРезультатовToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var wnd = new PrintView();
-            wnd.Show();
-        }
-
-        /// <summary>
-        /// Действия при нажатии пользователем по кнопке удаления всех резервных копий данных приложения.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void удалитьРезервныеКопииToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var q_res = MessageBox.Show("Вы уверены, что хотите удалить все резервные копии данных программы?", "Подтверждение действия",
-                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (q_res == System.Windows.Forms.DialogResult.Yes)
-            {
-                var res_1 = MainPresenter.DeleteBackupFiles();
-                //var res_2 удалим все резервные копии файлов Excel
-
-                if (!res_1.Result)
-                {
-                    MessageBox.Show("Не удалось удалить резервные копии базы данных приложения.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Действия при нажатии пользователем по кнопке восстановления данных программы из файла резервной копии.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void восстановитьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var dialog = new RestoreAppDateFromBackupView();
-            dialog.ShowDialog();
-        }
-
-        #endregion
-
-        #region Печать
-
-        /// <summary>
-        /// Действия при нажатии на печать результатов переднеприводных автомобилей 1-го тура.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toolStripButton3_Click_1(object sender, EventArgs e)
-        {
-            var wnd = new PrintView(CarClassesEnum.FWD.ToString(), 1, false);
-            wnd.Show();
-        }
-
-        /// <summary>
-        /// Действия при нажатии на печать результатов переднеприводных автомобилей 2-го тура.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toolStripButton8_Click(object sender, EventArgs e)
-        {
-            var wnd = new PrintView(CarClassesEnum.FWD.ToString(), 2, false);
-            wnd.Show();
-        }
-
-        /// <summary>
-        /// Действия при нажатии на печать результатов заднеприводных автомобилей 1-го тура.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toolStripButton12_Click(object sender, EventArgs e)
-        {
-            var wnd = new PrintView(CarClassesEnum.RWD.ToString(), 1, false);
-            wnd.Show();
-        }
-
-        /// <summary>
-        /// Действия при нажатии на печать результатов заднеприводных автомобилей 2-го тура.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toolStripButton16_Click(object sender, EventArgs e)
-        {
-            var wnd = new PrintView(CarClassesEnum.RWD.ToString(), 2, false);
-            wnd.Show();
-        }
-
-        /// <summary>
-        /// Действия при нажатии на печать результатов полноприводных автомобилей 1-го тура.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toolStripButton20_Click(object sender, EventArgs e)
-        {
-            var wnd = new PrintView(CarClassesEnum.AWD.ToString(), 1, false);
-            wnd.Show();
-        }
-
-        /// <summary>
-        /// Действия при нажатии на печать результатов полноприводных автомобилей 2-го тура.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toolStripButton21_Click(object sender, EventArgs e)
-        {
-            var wnd = new PrintView(CarClassesEnum.AWD.ToString(), 2, false);
-            wnd.Show();
-        }
-
-        /// <summary>
-        /// Действия при нажатии на печать результатов спортивных автомобилей 1-го тура.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toolStripButton25_Click(object sender, EventArgs e)
-        {
-            var wnd = new PrintView(CarClassesEnum.Sport.ToString(), 1, false);
-            wnd.Show();
-        }
-
-        /// <summary>
-        /// Действия при нажатии на печать результатов спортивных автомобилей 2-го тура.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toolStripButton26_Click(object sender, EventArgs e)
-        {
-            var wnd = new PrintView(CarClassesEnum.Sport.ToString(), 2, false);
-            wnd.Show();
-        }
-
-        #endregion        
-
+        
         #region Фиксация выбранного класса автомобилей
 
         /// <summary>
@@ -765,10 +547,19 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void toolStripButton32_Click(object sender, EventArgs e)
         {
-            LockAllButtonsForSelectCarClass();
+            var car_class = CarClassesEnum.FWD;
+
+            if (MainPresenter.CarClassIsFinished(car_class, 1).Result)
+            {
+                MessageBox.Show("Класс автомобилей с передним приводом уже закончил первый заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
+            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
             selectFwdCarClass1_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = CarClassesEnum.FWD;
-            ReverseBtnEnable();
+            MainPresenter.CurrentCarClass = car_class;
+            ReverseStartBtnEnable();
         }
 
         /// <summary>
@@ -778,10 +569,19 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void toolStripButton9_Click(object sender, EventArgs e)
         {
-            LockAllButtonsForSelectCarClass();
+            var car_class = CarClassesEnum.RWD;
+
+            if (MainPresenter.CarClassIsFinished(car_class, 1).Result)
+            {
+                MessageBox.Show("Класс автомобилей с задним приводом уже закончил первый заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
+            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
             selectRwdCarClass1_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = CarClassesEnum.RWD;
-            ReverseBtnEnable();
+            MainPresenter.CurrentCarClass = car_class;
+            ReverseStartBtnEnable();
         }
 
         /// <summary>
@@ -791,10 +591,19 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void toolStripButton13_Click(object sender, EventArgs e)
         {
-            LockAllButtonsForSelectCarClass();
+            var car_class = CarClassesEnum.AWD;
+
+            if (MainPresenter.CarClassIsFinished(car_class, 1).Result)
+            {
+                MessageBox.Show("Класс автомобилей с полним приводом уже закончил первый заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
+            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
             selectAwdCarClass1_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = CarClassesEnum.AWD;
-            ReverseBtnEnable();
+            MainPresenter.CurrentCarClass = car_class;
+            ReverseStartBtnEnable();
         }
 
         /// <summary>
@@ -804,10 +613,19 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void toolStripButton22_Click(object sender, EventArgs e)
         {
-            LockAllButtonsForSelectCarClass();
+            var car_class = CarClassesEnum.Sport;
+
+            if (MainPresenter.CarClassIsFinished(car_class, 1).Result)
+            {
+                MessageBox.Show("Класс спортивных автомобилей уже закончил первый заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
+            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
             selectSportCarClass1_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = CarClassesEnum.Sport;
-            ReverseBtnEnable();
+            MainPresenter.CurrentCarClass = car_class;
+            ReverseStartBtnEnable();
         }
 
         /// <summary>
@@ -817,10 +635,19 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void selectFwdCarClass2_BT_Click(object sender, EventArgs e)
         {
-            LockAllButtonsForSelectCarClass();
+            var car_class = CarClassesEnum.FWD;
+
+            if (MainPresenter.CarClassIsFinished(car_class, 2).Result)
+            {
+                MessageBox.Show("Класс автомобилей с передним приводом уже закончил второй заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
+            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
             selectFwdCarClass2_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = CarClassesEnum.FWD;
-            ReverseBtnEnable();
+            MainPresenter.CurrentCarClass = car_class;
+            ReverseStartBtnEnable();
         }
 
         /// <summary>
@@ -830,10 +657,19 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void selectRwdCarClass2_BT_Click(object sender, EventArgs e)
         {
-            LockAllButtonsForSelectCarClass();
+            var car_class = CarClassesEnum.RWD;
+
+            if (MainPresenter.CarClassIsFinished(car_class, 2).Result)
+            {
+                MessageBox.Show("Класс автомобилей с задним приводом уже закончил второй заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
+            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
             selectRwdCarClass2_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = CarClassesEnum.RWD;
-            ReverseBtnEnable();
+            MainPresenter.CurrentCarClass = car_class;
+            ReverseStartBtnEnable();
         }
 
         /// <summary>
@@ -843,10 +679,19 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void selectAwdCarClass2_BT_Click(object sender, EventArgs e)
         {
-            LockAllButtonsForSelectCarClass();
+            var car_class = CarClassesEnum.AWD;
+
+            if (MainPresenter.CarClassIsFinished(car_class, 2).Result)
+            {
+                MessageBox.Show("Класс автомобилей с полным приводом уже закончил второй заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
+            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
             selectAwdCarClass2_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = CarClassesEnum.AWD;
-            ReverseBtnEnable();
+            MainPresenter.CurrentCarClass = car_class;
+            ReverseStartBtnEnable();
         }
 
         /// <summary>
@@ -856,52 +701,184 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void selectSportCarClass2_BT_Click(object sender, EventArgs e)
         {
-            LockAllButtonsForSelectCarClass();
+            var car_class = CarClassesEnum.Sport;
+
+            if (MainPresenter.CarClassIsFinished(car_class, 2).Result)
+            {
+                MessageBox.Show("Класс спортивных автомобилей уже закончил второй заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
+            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
             selectSportCarClass2_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = CarClassesEnum.Sport;
-            ReverseBtnEnable();
+            MainPresenter.CurrentCarClass = car_class;
+            ReverseStartBtnEnable();
         }
 
         /// <summary>
-        /// Заблокировать все кнопки выбора текущего класса автомобилей.
+        /// Фиксация текущего класса автомобилей, которые поедут заезд (до 100 л/с 1 заезд).
         /// </summary>
-        private void LockAllButtonsForSelectCarClass()
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void selectK100CarClass1_BT_Click(object sender, EventArgs e)
         {
-            selectFwdCarClass1_BT.Enabled = false;
-            selectFwdCarClass2_BT.Enabled = false;
-            selectRwdCarClass1_BT.Enabled = false;
-            selectRwdCarClass2_BT.Enabled = false;
-            selectAwdCarClass1_BT.Enabled = false;
-            selectAwdCarClass2_BT.Enabled = false;
-            selectSportCarClass1_BT.Enabled = false;
-            selectSportCarClass2_BT.Enabled = false;
+            var car_class = CarClassesEnum.K100;
+
+            if (MainPresenter.CarClassIsFinished(car_class, 1).Result)
+            {
+                MessageBox.Show("Класс автомобилей с мощностью до 100 л/с уже закончил первый заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
+            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
+            selectK100CarClass1_BT.Enabled = true;
+            MainPresenter.CurrentCarClass = car_class;
+            ReverseStartBtnEnable();
+        }
+        
+        /// <summary>
+        /// Фиксация текущего класса автомобилей, которые поедут заезд (до 100 л/с 2 заезд).
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void selectK100CarClass2_BT_Click(object sender, EventArgs e)
+        {
+            var car_class = CarClassesEnum.K100;
+
+            if (MainPresenter.CarClassIsFinished(car_class, 2).Result)
+            {
+                MessageBox.Show("Класс автомобилей с мощностью до 100 л/с уже закончил второй заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
+            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
+            selectK100CarClass2_BT.Enabled = true;
+            MainPresenter.CurrentCarClass = car_class;
+            ReverseStartBtnEnable();
         }
 
         /// <summary>
-        /// Разблокировать все кнопки выбора текущего класса автомобилей.
+        /// Фиксация текущего класса автомобилей, которые поедут заезд (от 100 л/с до 160 л/с 1 заезд).
         /// </summary>
-        private void UnlockAllButtonsForSelectCarClass()
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void selectK160CarClass1_BT_Click(object sender, EventArgs e)
         {
-            selectFwdCarClass1_BT.Enabled = true;
-            selectFwdCarClass2_BT.Enabled = true;
-            selectRwdCarClass1_BT.Enabled = true;
-            selectRwdCarClass2_BT.Enabled = true;
-            selectAwdCarClass1_BT.Enabled = true;
-            selectAwdCarClass2_BT.Enabled = true;
-            selectSportCarClass1_BT.Enabled = true;
-            selectSportCarClass2_BT.Enabled = true;
+            var car_class = CarClassesEnum.K160;
+
+            if (MainPresenter.CarClassIsFinished(car_class, 1).Result)
+            {
+                MessageBox.Show("Класс автомобилей с мощностью от 100 л/с до 160 л/с уже закончил первый заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
+            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
+            selectK160CarClass1_BT.Enabled = true;
+            MainPresenter.CurrentCarClass = car_class;
+            ReverseStartBtnEnable();
+        }
+               
+        /// <summary>
+        /// Фиксация текущего класса автомобилей, которые поедут заезд (от 100 л/с до 160 л/с 2 заезд).
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void selectK160CarClass2_BT_Click(object sender, EventArgs e)
+        {
+            var car_class = CarClassesEnum.K160;
+
+            if (MainPresenter.CarClassIsFinished(car_class, 2).Result)
+            {
+                MessageBox.Show("Класс автомобилей с мощностью от 100 л/с до 160 л/с уже закончил второй заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
+            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
+            selectK160CarClass2_BT.Enabled = true;
+            MainPresenter.CurrentCarClass = car_class;
+            ReverseStartBtnEnable();
+        }
+
+        /// <summary>
+        /// Фиксация текущего класса автомобилей, которые поедут заезд (свыше 160 л/с 1 заезд).
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void selectKACarClass1_BT_Click(object sender, EventArgs e)
+        {
+            var car_class = CarClassesEnum.KA;
+
+            if (MainPresenter.CarClassIsFinished(car_class, 1).Result)
+            {
+                MessageBox.Show("Класс автомобилей с мощностью свыше 160 л/с уже закончил первый заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
+            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
+            selectKACarClass1_BT.Enabled = true;
+            MainPresenter.CurrentCarClass = car_class;
+            ReverseStartBtnEnable();
+        }
+
+        /// <summary>
+        /// Фиксация текущего класса автомобилей, которые поедут заезд (свыше 160 л/с 2 заезд).
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void selectKACarClass2_BT_Click(object sender, EventArgs e)
+        {
+            var car_class = CarClassesEnum.KA;
+
+            if (MainPresenter.CarClassIsFinished(car_class, 2).Result)
+            {
+                MessageBox.Show("Класс автомобилей с мощностью свыше 160 л/с уже закончил второй заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
+            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
+            selectKACarClass2_BT.Enabled = true;
+            MainPresenter.CurrentCarClass = car_class;
+            ReverseStartBtnEnable();
+        }
+
+        /// <summary>
+        /// Задать значение доступности у всех кнопок выбора текущего класса автомобилей.
+        /// </summary>
+        private void SetValueForAllButtonsForSelectCarClass(bool value)
+        {
+            selectFwdCarClass1_BT.Enabled = value;
+            selectFwdCarClass2_BT.Enabled = value;
+            selectRwdCarClass1_BT.Enabled = value;
+            selectRwdCarClass2_BT.Enabled = value;
+            selectAwdCarClass1_BT.Enabled = value;
+            selectAwdCarClass2_BT.Enabled = value;
+            selectSportCarClass1_BT.Enabled = value;
+            selectSportCarClass2_BT.Enabled = value;
+            selectK100CarClass1_BT.Enabled = value;
+            selectK100CarClass2_BT.Enabled = value;
+            selectK160CarClass1_BT.Enabled = value;
+            selectK160CarClass2_BT.Enabled = value;
+            selectKACarClass1_BT.Enabled = value;
+            selectKACarClass2_BT.Enabled = value;
         }
 
         /// <summary>
         /// Сделать кнопку запуска секундомера доступной.
         /// </summary>
-        private void ReverseBtnEnable()
+        private void ReverseStartBtnEnable()
         {
             startBtn.Enabled = !startBtn.Enabled;
         } 
 
         #endregion        
-        
-        #endregion        
-    }
+
+        #endregion
+        }
 }

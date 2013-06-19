@@ -30,9 +30,12 @@ namespace Sprint.Models
         public int RaceNumber { get; set; }
 
         /// <summary>
-        /// Задать или получить значение финишировала-ли группа.
+        /// Получить значение финишировала-ли группа.
         /// </summary>
-        public bool IsFinished { get; set; }
+        public bool IsFinished
+        {
+            get { return Racers.All(racer => racer.Results.Finished); }
+        }
 
         #endregion
 

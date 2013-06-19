@@ -65,22 +65,34 @@ namespace Sprint.Presenters
         /// </summary>
         public void SetRacersForTableForFirstRace()
         {
-            MainView.FwdFirstRace = SetNamesToTable(CarClassesEnum.FWD);
-            MainView.RwdFirstRace = SetNamesToTable(CarClassesEnum.RWD);
-            MainView.AwdFirstRace = SetNamesToTable(CarClassesEnum.AWD);
-            MainView.SportFirstRace = SetNamesToTable(CarClassesEnum.Sport);
+            MainView.FwdFirstRace = SetNamesToTable(CarClassesEnum.FWD, 0);
+            MainView.RwdFirstRace = SetNamesToTable(CarClassesEnum.RWD, 0);
+            MainView.AwdFirstRace = SetNamesToTable(CarClassesEnum.AWD, 0);
+            MainView.SportFirstRace = SetNamesToTable(CarClassesEnum.Sport, 0);
+        }
+
+        /// <summary>
+        /// Генерация и заполнение таблицы финалистами для второго заезда.
+        /// </summary>
+        public void SetRacersForTableForSecondRace()
+        {
+            MainView.FwdSecondRace = SetNamesToTable(CarClassesEnum.FWD, 1);
+            MainView.RwdSecondRace = SetNamesToTable(CarClassesEnum.RWD, 1);
+            MainView.AwdSecondRace = SetNamesToTable(CarClassesEnum.AWD, 1);
+            MainView.SportSecondRace = SetNamesToTable(CarClassesEnum.Sport, 1);
         }
 
         /// <summary>
         /// Заполним таблицу именами из заданной группы участников в списке групп.
         /// </summary>
         /// <param name="carClass">Класс группы автомобилей.</param>
+        /// <param name="raceNumber">Номер заезда из которого необходимо брать участников (начиная с 0).</param>
         /// <returns>Таблица, заполненная участниками.</returns>
-        private DataTable SetNamesToTable(CarClassesEnum carClass)
+        private DataTable SetNamesToTable(CarClassesEnum carClass, int raceNumber)
         {
             var table = InitializeTable();
 
-            var group = RacerGroups.FirstOrDefault(gr => gr.CarClass == carClass);
+            var group = RacerGroups.FirstOrDefault(gr => gr.CarClass == carClass && gr.RaceNumber == raceNumber);
 
             if (group == null)
             {
@@ -231,51 +243,25 @@ namespace Sprint.Presenters
         /// <returns>Таблица с результатами.</returns>
         private DataTable GetTableWithResults(RacersGroupModel group, int raceNumber)
         {
-            var table = SetNamesToTable(group.CarClass);
+            var table = SetNamesToTable(group.CarClass, raceNumber);
 
             for (int row = 0; row < group.Racers.Count(); row++)
             {
                 var racer = group.Racers.ElementAt(row);
 
-                switch (raceNumber)
+                if (racer.Results.ResultsList.ElementAt(raceNumber) == null)
                 {
-                    case 0:
-                        {
-                            if (racer.Results.ResultsList.ElementAt(raceNumber) == null)
-                            {
-                                return table;
-                            }
+                    return table;
+                }
 
-                            for (int circle = 0; circle < ConstantsModel.MaxCircleCount; circle++)
-                            {
-                                var time = racer.Results.ResultsList.ElementAt(raceNumber).ElementAt(circle);
+                for (int circle = 0; circle < ConstantsModel.MaxCircleCount; circle++)
+                {
+                    var time = racer.Results.ResultsList.ElementAt(raceNumber).ElementAt(circle);
 
-                                if (time != null)
-                                {
-                                    table.Rows[row][circle + 3] = time.ToString();
-                                }
-                            }
-                        } break;
-                    case 1:
-                        {
-                            break;
-                            throw new NotImplementedException();
-
-                            if (racer.Results.ResultsList.ElementAt(raceNumber) == null)
-                            {
-                                return table;
-                            }
-
-                            for (int circle = 0; circle < ConstantsModel.MaxCircleCount; circle++)
-                            {
-                                var time = racer.Results.ResultsList.ElementAt(raceNumber).ElementAt(circle);
-
-                                if (time != null)
-                                {
-                                    table.Rows[row][circle + 3] = time.ToString();
-                                }
-                            }
-                        } break;
+                    if (time != null)
+                    {
+                        table.Rows[row][circle + 3] = time.ToString();
+                    }
                 }
             }
 

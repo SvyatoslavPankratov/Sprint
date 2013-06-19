@@ -94,6 +94,7 @@ namespace Sprint.Views
                 Close();
                 ((MainView) Application.OpenForms[0]).AutomationResetOrClose = true;
                 Application.Restart();
+                return;
             }
 
             MessageBox.Show("Не удалось произвести восстановление данных программы из заданного файла с резервной копией.", "Ошибка", 

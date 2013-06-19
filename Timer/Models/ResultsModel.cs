@@ -159,6 +159,23 @@ namespace Sprint.Models
             ResetState();
         }
 
+        /// <summary>
+        /// Удалить последний результат в списке результатов участника.
+        /// </summary>
+        /// <param name="raceNumber">Номер заезда (начиная с 0).</param>
+        public void DeleteLastResult(int raceNumber)
+        {
+            if (CurrentCircleNumber.HasValue)
+            {
+                var list = ResultsList.ElementAt(raceNumber) as List<TimeModel>;
+
+                if (list != null)
+                {
+                    list[CurrentCircleNumber.Value - 1] = null;
+                }
+            }
+        }
+
         #endregion
     }
 }

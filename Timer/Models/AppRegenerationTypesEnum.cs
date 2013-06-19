@@ -11,7 +11,7 @@ namespace Sprint.Models
     public enum AppRegenerationTypesEnum
     {
         AllLapReRun,
-        NullLapReRun,
+        LastLapReRun,
         LoadData
     }
 }

@@ -6,7 +6,7 @@ using System.Linq;
 using Sprint.Managers;
 using Sprint.Models;
 using Sprint.Views;
-using Sprint.Views.Interfaces;
+using Sprint.Interfaces;
 
 namespace Sprint.Presenters
 {

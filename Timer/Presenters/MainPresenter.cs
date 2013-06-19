@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows;
 
-using Sprint.Exceptions;
 using Sprint.Extensions;
 using Sprint.Interfaces;
 using Sprint.Managers;
@@ -82,11 +79,6 @@ namespace Sprint.Presenters
         }
 
         /// <summary>
-        /// Задать или получить список лидеров по классам автомобилей.
-        /// </summary>
-        public IEnumerable<RacersGroupModel> LiderRacerGroups { get; set; }
-
-        /// <summary>
         /// Задать или получить текущий номер заезда.
         /// </summary>
         public int? CurrentRaceNum { get; private set; }
@@ -132,7 +124,6 @@ namespace Sprint.Presenters
 
             Racers              = new List<RacerModel>();
             Stopwatch           = new StopwatchModel();
-            LiderRacerGroups    = new List<RacersGroupModel>();
             Track               = new TrackModel(ConstantsModel.MaxRacersForRace);
             RacerGroups = new List<RacersGroupModel>
                                     {
@@ -172,12 +163,12 @@ namespace Sprint.Presenters
                 {
                     case AppRegenerationTypesEnum.AllLapReRun:                              // Текущие участники на треке перезаезжают полностью свои заезды
                         {
-                            ClearAllResultsForRacersAtTheTrack(racers, app_state);
                             SetApplicationState(app_state);
+                            ClearAllResultsForRacersAtTheTrack(racers, app_state);
                             Racers = racers;
                             DataBind();
                         } break;
-                    case AppRegenerationTypesEnum.NullLapReRun:                             // Участники на треке перезаезжают только неудачные круги
+                    case AppRegenerationTypesEnum.LastLapReRun:                             // Участники на треке перезаезжают только последние круги, при проезде которых произошел сбой системы
                         {
                             SetApplicationState(app_state);
                             Racers = racers;
@@ -204,8 +195,32 @@ namespace Sprint.Presenters
         private void SetApplicationState(ApplicationStateModel app_state)
         {
             CurrentRaceNum = app_state.CurrentRaceNumber;
+        }
 
-            //throw new NotImplementedException();
+        /// <summary>
+        /// Удалить все последние круги у участников, которые находятся на треке в данный момент времени.
+        /// </summary>
+        /// <param name="racers">Список вссех участников в соревнованиях.</param>
+        /// <param name="app_state">Текущее состояние приложения.</param>
+        private void ClearLastResultsForRacersAtTheTrack(IEnumerable<RacerModel> racers, ApplicationStateModel app_state)
+        {
+            if (app_state != null)
+            {
+                var racers_at_the_track = app_state.RacersAtTheTrack;
+
+                if (racers_at_the_track != null)
+                {
+                    foreach (var racer_id in racers_at_the_track)
+                    {
+                        var racer = racers.FirstOrDefault(r => r.Id == racer_id);
+
+                        if (racer != null && CurrentRaceNum.HasValue)
+                        {
+                            racer.Results.DeleteLastResult(CurrentRaceNum.Value);
+                        }
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -213,7 +228,7 @@ namespace Sprint.Presenters
         /// </summary>
         /// <param name="racers">Список вссех участников в соревнованиях.</param>
         /// <param name="app_state">Текущее состояние приложения.</param>
-        private static void ClearAllResultsForRacersAtTheTrack(IEnumerable<RacerModel> racers, ApplicationStateModel app_state)
+        private void ClearAllResultsForRacersAtTheTrack(IEnumerable<RacerModel> racers, ApplicationStateModel app_state)
         {
             if (app_state != null)
             {
@@ -371,15 +386,49 @@ namespace Sprint.Presenters
             // Поиск повторных заездов
             
             // Переход к следующему классу автомобилей
+            
+            if (CheckCurrentGroupFinishedRace())
+            {
+                StopStopwatch();
+                SetLidersForSecondRound(CurrentCarClass);
+            }
 
             SaveApplicationState();
             DataBind();
+        }
 
-            if (CheckCurrentGroupFinishedRace())
+        /// <summary>
+        /// Определить список финалистов в заданной группе и вывести их в список участников 
+        /// второго тура текущего класса атомобилей.
+        /// </summary>
+        /// <param name="carClass">Заданный класс автомобилей.</param>
+        private void SetLidersForSecondRound(CarClassesEnum carClass)
+        {
+            var racer_group = RacerGroups.FirstOrDefault(g => g.CarClass == carClass);
+
+            if (racer_group == null)
             {
-                SaveApplicationState();
-                StopStopwatch();
                 return;
+            }
+
+            var options = OptionsDbManager.GetOptions(carClass);
+            var race_count = options == null ? 2 : options.RaceCount;
+            
+            if (race_count == 2)
+            {
+                var liders_count = options == null ? 5 : options.LidersCount;
+                var liders = racer_group.GetLeaders(liders_count);
+
+                if (liders != null)
+                {
+                    var new_racer_groups = new RacersGroupModel(carClass) {RaceNumber = 1, Racers = liders};
+                    var rgs = RacerGroups as List<RacersGroupModel>;
+
+                    if (rgs != null)
+                    {
+                        rgs.Add(new_racer_groups);
+                    }
+                }
             }
         }
 
@@ -402,6 +451,7 @@ namespace Sprint.Presenters
         {
             ApplicationStateDbManager.SetApplicationState(new ApplicationStateModel
                                                                 {
+                                                                    CurrentRaceNumber = CurrentRaceNum,
                                                                     CurrentCarClass = CurrentCarClass,
                                                                     CurrentRacer = Track.CurrentRacer == null ? (Guid?) null : Track.CurrentRacer.Id,
                                                                     RacersAtTheTrack = Track.CurrentRacers.Select(r => r.Id)
@@ -436,29 +486,6 @@ namespace Sprint.Presenters
             }
 
             return curCarGroup.Racers.All(racer => racer.Results.Finished);
-        }
-
-        /// <summary>
-        /// Задать список лидеров по заданной группе.
-        /// </summary>
-        /// <param name="count">Количество получаемых лидеров в заданном классе.</param>
-        /// <param name="carClass"></param>
-        public void SetLeaders(int count, CarClassesEnum carClass)
-        {
-            var rg = RacerGroups.FirstOrDefault(g => g.CarClass == carClass);
-
-            if (rg == null)
-            {
-                return;
-            }
-
-            if (LiderRacerGroups as List<RacersGroupModel> != null)
-            {
-                (LiderRacerGroups as List<RacersGroupModel>).Add(new RacersGroupModel(carClass)
-                                                                        {
-                                                                            Racers = rg.GetLeaders(count)
-                                                                        });
-            }
         }
 
         /// <summary>
@@ -737,6 +764,18 @@ namespace Sprint.Presenters
         public OperationResult UpdateRacer(RacerModel racer)
         {
             return RacersDbManager.SetRacer(racer);
+        }
+
+        /// <summary>
+        /// Проверить заданный заезд у заданного класса на финиширование.
+        /// </summary>
+        /// <param name="car_class">Заданный класс автомобилей.</param>
+        /// <param name="race_number"></param>
+        /// <returns></returns>
+        public OperationResult CarClassIsFinished(CarClassesEnum car_class, int race_number)
+        {
+            var cc = RacerGroups.FirstOrDefault(rg => rg.CarClass == car_class && rg.RaceNumber == race_number && rg.IsFinished);
+            return cc == null ? new OperationResult(false) : new OperationResult(true);
         }
 
         #endregion

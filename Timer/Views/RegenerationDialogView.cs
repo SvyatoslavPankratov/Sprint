@@ -24,7 +24,7 @@ namespace Sprint.Views
 
                 if (null_rb.Checked)
                 {
-                    return AppRegenerationTypesEnum.NullLapReRun;
+                    return AppRegenerationTypesEnum.LastLapReRun;
                 }
 
                 return AppRegenerationTypesEnum.LoadData;

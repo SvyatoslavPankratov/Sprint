@@ -6,7 +6,7 @@ using System.Text;
 
 using Sprint.Models;
 
-namespace Sprint.Views.Interfaces
+namespace Sprint.Interfaces
 {
     /// <summary>
     /// Интерфейс окна ввода участников.

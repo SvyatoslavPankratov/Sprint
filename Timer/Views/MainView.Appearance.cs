@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 using Sprint.Models;
-using Sprint.Views.Interfaces;
+using Sprint.Interfaces;
 
 namespace Sprint.Views
 {
@@ -121,7 +121,7 @@ namespace Sprint.Views
         {
             Editable_fwdR1DGV = !Editable_fwdR1DGV;
             MainPresenter.CurrentEditCarClass = CarClassesEnum.FWD;
-            MainPresenter.CurrentEditRaceNumber = 1;
+            MainPresenter.CurrentEditRaceNumber = 0;
 
             editRacer_Btn_fwdR1DGV.Enabled = Editable_fwdR1DGV;
             addRacer_Btn_fwdR1DGV.Enabled = Editable_fwdR1DGV;
@@ -269,7 +269,7 @@ namespace Sprint.Views
         {
             Editable_rwdR1DGV = !Editable_rwdR1DGV;
             MainPresenter.CurrentEditCarClass = CarClassesEnum.FWD;
-            MainPresenter.CurrentEditRaceNumber = 1;
+            MainPresenter.CurrentEditRaceNumber = 0;
 
             addRacer_Btn_rwdR1DGV.Enabled = Editable_rwdR1DGV;
             upRacer_Btn_rwdR1DGV.Enabled = Editable_rwdR1DGV;
@@ -330,7 +330,7 @@ namespace Sprint.Views
         {
             Editable_awdR1DGV = !Editable_awdR1DGV;
             MainPresenter.CurrentEditCarClass = CarClassesEnum.FWD;
-            MainPresenter.CurrentEditRaceNumber = 1;
+            MainPresenter.CurrentEditRaceNumber = 0;
 
             addRacer_Btn_awdR1DGV.Enabled = Editable_awdR1DGV;
             upRacer_Btn_awdR1DGV.Enabled = Editable_awdR1DGV;
@@ -391,7 +391,7 @@ namespace Sprint.Views
         {
             Editable_sportR1DGV = !Editable_sportR1DGV;
             MainPresenter.CurrentEditCarClass = CarClassesEnum.FWD;
-            MainPresenter.CurrentEditRaceNumber = 1;
+            MainPresenter.CurrentEditRaceNumber = 0;
 
             addRacer_Btn_sportR1DGV.Enabled = Editable_sportR1DGV;
             upRacer_Btn_sportR1DGV.Enabled = Editable_sportR1DGV;
@@ -454,7 +454,6 @@ namespace Sprint.Views
             MainPresenter.CurrentEditCarClass = CarClassesEnum.FWD;
             MainPresenter.CurrentEditRaceNumber = 1;
 
-            addRacer_Btn_fwdR2DGV.Enabled = Editable_fwdR2DGV;
             upRacer_Btn_fwdR2DGV.Enabled = Editable_fwdR2DGV;
             downRacer_Btn_fwdR2DGV.Enabled = Editable_fwdR2DGV;
         }
@@ -515,7 +514,6 @@ namespace Sprint.Views
             MainPresenter.CurrentEditCarClass = CarClassesEnum.FWD;
             MainPresenter.CurrentEditRaceNumber = 1;
 
-            addRacer_Btn_rwdR2DGV.Enabled = Editable_rwdR2DGV;
             upRacer_Btn_rwdR2DGV.Enabled = Editable_rwdR2DGV;
             downRacer_Btn_rwdR2DGV.Enabled = Editable_rwdR2DGV;
         }
@@ -573,7 +571,6 @@ namespace Sprint.Views
             MainPresenter.CurrentEditCarClass = CarClassesEnum.FWD;
             MainPresenter.CurrentEditRaceNumber = 1;
 
-            addRacer_Btn_awdR2DGV.Enabled = Editable_awdR2DGV;
             upRacer_Btn_awdR2DGV.Enabled = Editable_awdR2DGV;
             downRacer_Btn_awdR2DGV.Enabled = Editable_awdR2DGV;
         }
@@ -634,7 +631,6 @@ namespace Sprint.Views
             MainPresenter.CurrentEditCarClass = CarClassesEnum.FWD;
             MainPresenter.CurrentEditRaceNumber = 1;
 
-            addRacer_Btn_sportR2DGV.Enabled = Editable_sportR2DGV;
             upRacer_Btn_sportR2DGV.Enabled = Editable_sportR2DGV;
             downRacer_Btn_sportR2DGV.Enabled = Editable_sportR2DGV;
         }

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 using Sprint.Managers;
 using Sprint.Presenters;
-using Sprint.Views.Interfaces;
+using Sprint.Interfaces;
 
 namespace Sprint.Views
 {

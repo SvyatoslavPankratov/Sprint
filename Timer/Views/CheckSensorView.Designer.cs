@@ -53,7 +53,7 @@
             this.Off_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Off_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Off_Panel.Controls.Add(this.label2);
-            this.Off_Panel.Location = new System.Drawing.Point(10, 73);
+            this.Off_Panel.Location = new System.Drawing.Point(10, 12);
             this.Off_Panel.Name = "Off_Panel";
             this.Off_Panel.Size = new System.Drawing.Size(400, 100);
             this.Off_Panel.TabIndex = 0;
@@ -71,7 +71,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(10, 7);
+            this.groupBox1.Location = new System.Drawing.Point(10, 119);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(400, 58);
             this.groupBox1.TabIndex = 1;
@@ -93,7 +93,7 @@
             this.On_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.On_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.On_Panel.Controls.Add(this.label3);
-            this.On_Panel.Location = new System.Drawing.Point(10, 73);
+            this.On_Panel.Location = new System.Drawing.Point(10, 12);
             this.On_Panel.Name = "On_Panel";
             this.On_Panel.Size = new System.Drawing.Size(400, 100);
             this.On_Panel.TabIndex = 1;
