@@ -17,17 +17,10 @@ namespace Sprint.Models
         public IEnumerable<IEnumerable<TimeModel>> ResultsList { get; private set; }
 
         /// <summary>
-        /// Получить флаг финиширования гонщика.
+        /// Задать или получить номер проезжаемого круга начиная с 0.
+        /// Номер элемента в списке соответсвует номеру заезда.
         /// </summary>
-        public bool Finished
-        {
-            get { return CurrentCircleNumber == ConstantsModel.MaxCircleCount; }
-        }
-
-        /// <summary>
-        /// Задать или получить номер проезжаемого круга начиная с 1.
-        /// </summary>
-        public int? CurrentCircleNumber { get; set; }
+        private IEnumerable<int?> CurrentCircleNumber { get; set; }
 
         /// <summary>
         /// Задать или получить значение времени начала круга.
@@ -56,6 +49,8 @@ namespace Sprint.Models
         /// </summary>
         private void InitializeObject()
         {
+            CurrentCircleNumber = new List<int?>(2) {null, null};
+
             var resultsList = new List<List<TimeModel>>(ConstantsModel.MaxRaceCount);
 
             for (int race = 0; race < ConstantsModel.MaxRaceCount; race++)
@@ -130,15 +125,15 @@ namespace Sprint.Models
         /// <param name="result">Добавляемый результат.</param>
         public void AddResult(int currentRace, TimeModel result)
         {
-            if (!CurrentCircleNumber.HasValue)
+            if (!GetCurrentCircleNumber(currentRace).HasValue)
             {
-                CurrentCircleNumber = 0;
+                SetCurrentCircleNumber(currentRace, 0);
             }
 
             if (ResultsList as List<List<TimeModel>> != null)
             {
-                (ResultsList as List<List<TimeModel>>)[currentRace][CurrentCircleNumber.Value] = result;
-                CurrentCircleNumber = CurrentCircleNumber.Value + 1;
+                (ResultsList as List<List<TimeModel>>)[currentRace][GetCurrentCircleNumber(currentRace).Value] = result;
+                SetCurrentCircleNumber(currentRace, GetCurrentCircleNumber(currentRace).Value + 1);
             }
         }
 
@@ -147,7 +142,7 @@ namespace Sprint.Models
         /// </summary>
         public void ResetState()
         {
-            CurrentCircleNumber = null;
+            CurrentCircleNumber = new List<int?>(2) { null, null };
         }
 
         /// <summary>
@@ -165,14 +160,50 @@ namespace Sprint.Models
         /// <param name="raceNumber">Номер заезда (начиная с 0).</param>
         public void DeleteLastResult(int raceNumber)
         {
-            if (CurrentCircleNumber.HasValue)
+            if (GetCurrentCircleNumber(raceNumber).HasValue)
             {
                 var list = ResultsList.ElementAt(raceNumber) as List<TimeModel>;
 
                 if (list != null)
                 {
-                    list[CurrentCircleNumber.Value - 1] = null;
+                    list[GetCurrentCircleNumber(raceNumber).Value - 1] = null;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Узнать финишировал-ли участник заданый номер заезда.
+        /// </summary>
+        /// <param name="race_number">Номер заезда (начиная с 0).</param>
+        /// <returns>Результат.</returns>
+        public bool IsFinished(int race_number)
+        {
+            var cn = GetCurrentCircleNumber(race_number);
+            return cn.HasValue ? cn.Value == ConstantsModel.MaxCircleCount : false;
+        }
+
+        /// <summary>
+        /// Получить номер проезжаемого круга (начиная с 0) в заданном заезде.
+        /// </summary>
+        /// <param name="race_number">Номер заезда.</param>
+        /// <returns>Результат.</returns>
+        public int? GetCurrentCircleNumber(int race_number)
+        {
+            return CurrentCircleNumber.ElementAt(race_number);
+        }
+
+        /// <summary>
+        /// Задать номер проезжаемого круга (начиная с 0) в заданном заезде.
+        /// </summary>
+        /// <param name="race_number">Номер заезда.</param>
+        /// <param name="value">Задаваемое значение.</param>
+        public void SetCurrentCircleNumber(int race_number, int? value)
+        {
+            var list = CurrentCircleNumber as List<int?>;
+
+            if (list != null)
+            {
+                list[race_number] = value;
             }
         }
 

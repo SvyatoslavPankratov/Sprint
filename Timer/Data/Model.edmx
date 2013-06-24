@@ -14,6 +14,7 @@
           <EntitySet Name="RacersAtTheTrack" EntityType="SprintModel.Store.RacersAtTheTrack" store:Type="Tables" />
           <EntitySet Name="RacesOptions" EntityType="SprintModel.Store.RacesOptions" store:Type="Tables" />
           <EntitySet Name="Results" EntityType="SprintModel.Store.Results" store:Type="Tables" />
+          <EntitySet Name="UserDataAboutCircles" EntityType="SprintModel.Store.UserDataAboutCircles" store:Type="Tables" />
           <AssociationSet Name="FK_ApplicationState_CurrentCarClass" Association="SprintModel.Store.FK_ApplicationState_CurrentCarClass">
             <End Role="CarClasses" EntitySet="CarClasses" />
             <End Role="ApplicationState" EntitySet="ApplicationState" />
@@ -41,6 +42,10 @@
           <AssociationSet Name="FK_Results_Racers" Association="SprintModel.Store.FK_Results_Racers">
             <End Role="Racers" EntitySet="Racers" />
             <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserDataAboutCircles_ID_Racer" Association="SprintModel.Store.FK_UserDataAboutCircles_ID_Racer">
+            <End Role="Racers" EntitySet="Racers" />
+            <End Role="UserDataAboutCircles" EntitySet="UserDataAboutCircles" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="ApplicationState">
@@ -87,7 +92,6 @@
           <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="100" />
           <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="100" />
           <Property Name="MiddleName" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="CurrentCircleNumber" Type="int" />
         </EntityType>
         <EntityType Name="RacersAtTheTrack">
           <Key>
@@ -114,6 +118,15 @@
           <Property Name="RaceNumber" Type="int" Nullable="false" />
           <Property Name="LapNumber" Type="int" Nullable="false" />
           <Property Name="Time" Type="bigint" />
+        </EntityType>
+        <EntityType Name="UserDataAboutCircles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FK_Racer" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RaceNumber" Type="int" Nullable="false" />
+          <Property Name="CircleNumber" Type="int" />
         </EntityType>
         <Association Name="FK_ApplicationState_CurrentCarClass">
           <End Role="CarClasses" Type="SprintModel.Store.CarClasses" Multiplicity="0..1" />
@@ -205,6 +218,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_UserDataAboutCircles_ID_Racer">
+          <End Role="Racers" Type="SprintModel.Store.Racers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserDataAboutCircles" Type="SprintModel.Store.UserDataAboutCircles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Racers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserDataAboutCircles">
+              <PropertyRef Name="FK_Racer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -245,6 +272,11 @@
           <AssociationSet Name="FK_ApplicationState_CurrentCarClass" Association="SprintModel.FK_ApplicationState_CurrentCarClass">
             <End Role="CarClass" EntitySet="CarClasses" />
             <End Role="ApplicationState" EntitySet="ApplicationStates" />
+          </AssociationSet>
+          <EntitySet Name="UserDataAboutCircles" EntityType="SprintModel.UserDataAboutCircle" />
+          <AssociationSet Name="FK_UserDataAboutCircles_ID_Racer" Association="SprintModel.FK_UserDataAboutCircles_ID_Racer">
+            <End Role="Racer" EntitySet="Racers" />
+            <End Role="UserDataAboutCircle" EntitySet="UserDataAboutCircles" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="CarClass">
@@ -293,7 +325,7 @@
           <NavigationProperty Name="Results" Relationship="SprintModel.FK_Results_Racers" FromRole="Racer" ToRole="Result" />
           <NavigationProperty Name="ApplicationStates" Relationship="SprintModel.FK_ApplicationState_CurrentRacer_Racer" FromRole="Racer" ToRole="ApplicationState" />
           <NavigationProperty Name="RacersAtTheTracks" Relationship="SprintModel.FK_RacersAtTheTrack_Racer" FromRole="Racer" ToRole="RacersAtTheTrack" />
-          <Property Type="Int32" Name="CurrentCircleNumber" />
+          <NavigationProperty Name="UserDataAboutCircles" Relationship="SprintModel.FK_UserDataAboutCircles_ID_Racer" FromRole="Racer" ToRole="UserDataAboutCircle" />
         </EntityType>
         <Association Name="FK_Cars_CarClasses">
           <End Type="SprintModel.CarClass" Role="CarClass" Multiplicity="1">
@@ -439,6 +471,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="UserDataAboutCircle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="FK_Racer" Nullable="false" />
+          <Property Type="Int32" Name="RaceNumber" Nullable="false" />
+          <Property Type="Int32" Name="CircleNumber" />
+          <NavigationProperty Name="Racer" Relationship="SprintModel.FK_UserDataAboutCircles_ID_Racer" FromRole="UserDataAboutCircle" ToRole="Racer" />
+        </EntityType>
+        <Association Name="FK_UserDataAboutCircles_ID_Racer">
+          <End Type="SprintModel.Racer" Role="Racer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SprintModel.UserDataAboutCircle" Role="UserDataAboutCircle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Racer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserDataAboutCircle">
+              <PropertyRef Name="FK_Racer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -466,7 +522,6 @@
           <EntitySetMapping Name="Racers">
             <EntityTypeMapping TypeName="SprintModel.Racer">
               <MappingFragment StoreEntitySet="Racers">
-                <ScalarProperty Name="CurrentCircleNumber" ColumnName="CurrentCircleNumber" />
                 <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -520,6 +575,16 @@
           <EntitySetMapping Name="RacersAtTheTracks">
             <EntityTypeMapping TypeName="SprintModel.RacersAtTheTrack">
               <MappingFragment StoreEntitySet="RacersAtTheTrack">
+                <ScalarProperty Name="FK_Racer" ColumnName="FK_Racer" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDataAboutCircles">
+            <EntityTypeMapping TypeName="SprintModel.UserDataAboutCircle">
+              <MappingFragment StoreEntitySet="UserDataAboutCircles">
+                <ScalarProperty Name="CircleNumber" ColumnName="CircleNumber" />
+                <ScalarProperty Name="RaceNumber" ColumnName="RaceNumber" />
                 <ScalarProperty Name="FK_Racer" ColumnName="FK_Racer" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>

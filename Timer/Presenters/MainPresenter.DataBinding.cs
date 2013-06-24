@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using System.Linq;
 
 using Sprint.Models;
@@ -27,6 +26,12 @@ namespace Sprint.Presenters
             MainView.AwdSecondRace = InitializeTable();
             MainView.SportFirstRace = InitializeTable();
             MainView.SportSecondRace = InitializeTable();
+            MainView.K100FirstRace = InitializeTable();
+            MainView.K100SecondRace = InitializeTable();
+            MainView.K160FirstRace = InitializeTable();
+            MainView.K160SecondRace = InitializeTable();
+            MainView.KAFirstRace = InitializeTable();
+            MainView.KASecondRace = InitializeTable();
         }
 
         /// <summary>
@@ -69,6 +74,9 @@ namespace Sprint.Presenters
             MainView.RwdFirstRace = SetNamesToTable(CarClassesEnum.RWD, 0);
             MainView.AwdFirstRace = SetNamesToTable(CarClassesEnum.AWD, 0);
             MainView.SportFirstRace = SetNamesToTable(CarClassesEnum.Sport, 0);
+            MainView.K100FirstRace = SetNamesToTable(CarClassesEnum.K100, 0);
+            MainView.K160FirstRace = SetNamesToTable(CarClassesEnum.K160, 0);
+            MainView.KAFirstRace = SetNamesToTable(CarClassesEnum.KA, 0);
         }
 
         /// <summary>
@@ -80,6 +88,9 @@ namespace Sprint.Presenters
             MainView.RwdSecondRace = SetNamesToTable(CarClassesEnum.RWD, 1);
             MainView.AwdSecondRace = SetNamesToTable(CarClassesEnum.AWD, 1);
             MainView.SportSecondRace = SetNamesToTable(CarClassesEnum.Sport, 1);
+            MainView.K100SecondRace = SetNamesToTable(CarClassesEnum.K100, 1);
+            MainView.K160SecondRace = SetNamesToTable(CarClassesEnum.K160, 1);
+            MainView.KASecondRace = SetNamesToTable(CarClassesEnum.KA, 1);
         }
 
         /// <summary>
@@ -151,6 +162,20 @@ namespace Sprint.Presenters
                     case CarClassesEnum.Sport:
                         {
                             OutSportResultForGroup(group);
+                        } break;
+                    case CarClassesEnum.K100:
+                        {
+                            OutK100ResultForGroup(group);
+                        } break;
+
+                    case CarClassesEnum.K160:
+                        {
+                            OutK160ResultForGroup(group);
+                        } break;
+
+                    case CarClassesEnum.KA:
+                        {
+                            OutKAResultForGroup(group);
                         } break;
                     default: break;
                 }
@@ -229,6 +254,63 @@ namespace Sprint.Presenters
                 case 1:
                     {
                         MainView.SportSecondRace = GetTableWithResults(group, group.RaceNumber);
+                    } break;
+            }
+        }
+
+        /// <summary>
+        /// Вывести результаты на форму у автомобилей мощностью до 100 л/с.
+        /// </summary>
+        /// <param name="group">Заднеприводная группа гонщиков.</param>
+        private void OutK100ResultForGroup(RacersGroupModel group)
+        {
+            switch (group.RaceNumber)
+            {
+                case 0:
+                    {
+                        MainView.K100FirstRace = GetTableWithResults(group, group.RaceNumber);
+                    } break;
+                case 1:
+                    {
+                        MainView.K100SecondRace = GetTableWithResults(group, group.RaceNumber);
+                    } break;
+            }
+        }
+
+        /// <summary>
+        /// Вывести результаты на форму у автомобилей мощностью от 100 л/с до 160 л/с.
+        /// </summary>
+        /// <param name="group">Полноприводная группа гонщиков.</param>
+        private void OutK160ResultForGroup(RacersGroupModel group)
+        {
+            switch (group.RaceNumber)
+            {
+                case 0:
+                    {
+                        MainView.K160FirstRace = GetTableWithResults(group, group.RaceNumber);
+                    } break;
+                case 1:
+                    {
+                        MainView.K160SecondRace = GetTableWithResults(group, group.RaceNumber);
+                    } break;
+            }
+        }
+
+        /// <summary>
+        /// Вывести результаты на форму у автомобилей свыше 160 л/с.
+        /// </summary>
+        /// <param name="group">Спортивная группа гонщиков.</param>
+        private void OutKAResultForGroup(RacersGroupModel group)
+        {
+            switch (group.RaceNumber)
+            {
+                case 0:
+                    {
+                        MainView.KAFirstRace = GetTableWithResults(group, group.RaceNumber);
+                    } break;
+                case 1:
+                    {
+                        MainView.KASecondRace = GetTableWithResults(group, group.RaceNumber);
                     } break;
             }
         }

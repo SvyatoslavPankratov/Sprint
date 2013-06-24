@@ -1,6 +1,7 @@
 ﻿using System.Windows.Forms;
 
 using Sprint.Interfaces;
+using Sprint.Models;
 using Sprint.Presenters;
 
 namespace Sprint.Views
@@ -59,6 +60,114 @@ namespace Sprint.Views
                 else
                 {
                     secondCurrentRacerNumber_L.Text = value.ToString("D3");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Задать результат первого круга первого участника находящегося в данный момент на треке.
+        /// </summary>
+        public TimeModel FirstRacer1Time
+        {
+            set
+            {
+                if (value == null)
+                {
+                    R1_1_L.Text = "-";
+                }
+                else
+                {
+                    R1_1_L.Text = value.ToString();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Задать результат второго круга первого участника находящегося в данный момент на треке.
+        /// </summary>
+        public TimeModel FirstRacer2Time
+        {
+            set
+            {
+                if (value == null)
+                {
+                    R1_2_L.Text = "-";
+                }
+                else
+                {
+                    R1_2_L.Text = value.ToString();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Задать результат третьего круга первого участника находящегося в данный момент на треке.
+        /// </summary>
+        public TimeModel FirstRacer3Time
+        {
+            set
+            {
+                if (value == null)
+                {
+                    R1_3_L.Text = "-";
+                }
+                else
+                {
+                    R1_3_L.Text = value.ToString();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Задать результат первого круга второго участника находящегося в данный момент на треке.
+        /// </summary>
+        public TimeModel SecondRacer1Time
+        {
+            set
+            {
+                if (value == null)
+                {
+                    R2_1_L.Text = "-";
+                }
+                else
+                {
+                    R2_1_L.Text = value.ToString();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Задать результат второго круга второго участника находящегося в данный момент на треке.
+        /// </summary>
+        public TimeModel SecondRacer2Time
+        {
+            set
+            {
+                if (value == null)
+                {
+                    R2_2_L.Text = "-";
+                }
+                else
+                {
+                    R2_2_L.Text = value.ToString();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Задать результат третьего круга второго участника находящегося в данный момент на треке.
+        /// </summary>
+        public TimeModel SecondRacer3Time
+        {
+            set
+            {
+                if (value == null)
+                {
+                    R2_3_L.Text = "-";
+                }
+                else
+                {
+                    R2_3_L.Text = value.ToString();
                 }
             }
         }

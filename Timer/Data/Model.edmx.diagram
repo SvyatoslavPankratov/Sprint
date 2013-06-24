@@ -5,21 +5,23 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f630c30a98fd4c959b53e2c1709b4087" Name="Diagram1" ZoomLevel="86" ShowGrid="false" DisplayType="true">
-        <EntityTypeShape EntityType="SprintModel.CarClass" Width="1.5" PointX="3" PointY="6.625" />
-        <EntityTypeShape EntityType="SprintModel.Car" Width="1.5" PointX="0.5" PointY="6.625" />
-        <EntityTypeShape EntityType="SprintModel.Racer" Width="2.125" PointX="0.5" PointY="2.25" />
+        <EntityTypeShape EntityType="SprintModel.CarClass" Width="1.5" PointX="8.375" PointY="4.5" />
+        <EntityTypeShape EntityType="SprintModel.Car" Width="1.5" PointX="6" PointY="4.5" />
+        <EntityTypeShape EntityType="SprintModel.Racer" Width="2.125" PointX="3.125" PointY="2.625" />
         <AssociationConnector Association="SprintModel.FK_Cars_CarClasses" />
         <AssociationConnector Association="SprintModel.FK_Racers_Cars" />
-        <EntityTypeShape EntityType="SprintModel.RacesOption" Width="1.625" PointX="5.375" PointY="6.625" />
+        <EntityTypeShape EntityType="SprintModel.RacesOption" Width="1.625" PointX="10.625" PointY="4.5" />
         <AssociationConnector Association="SprintModel.FK_RaceOptions_CarClass" />
-        <EntityTypeShape EntityType="SprintModel.LogEntry" Width="1.875" PointX="10.625" PointY="0.5" />
-        <EntityTypeShape EntityType="SprintModel.Result" Width="1.75" PointX="3.625" PointY="0.75" />
+        <EntityTypeShape EntityType="SprintModel.LogEntry" Width="1.875" PointX="13.25" PointY="0.5" />
+        <EntityTypeShape EntityType="SprintModel.Result" Width="1.75" PointX="0.625" PointY="1.375" />
         <AssociationConnector Association="SprintModel.FK_Results_Racers" />
-        <EntityTypeShape EntityType="SprintModel.ApplicationState" Width="2.125" PointX="3.625" PointY="3.5" />
-        <EntityTypeShape EntityType="SprintModel.RacersAtTheTrack" Width="1.75" PointX="6.25" PointY="2.5" />
+        <EntityTypeShape EntityType="SprintModel.ApplicationState" Width="2.125" PointX="7.125" PointY="1.75" />
+        <EntityTypeShape EntityType="SprintModel.RacersAtTheTrack" Width="1.75" PointX="3.375" PointY="0.5" />
         <AssociationConnector Association="SprintModel.FK_ApplicationState_CurrentRacer_Racer" />
         <AssociationConnector Association="SprintModel.FK_RacersAtTheTrack_Racer" />
         <AssociationConnector Association="SprintModel.FK_ApplicationState_CurrentCarClass" />
+        <EntityTypeShape EntityType="SprintModel.UserDataAboutCircle" Width="1.875" PointX="0.5" PointY="4.375" />
+        <AssociationConnector Association="SprintModel.FK_UserDataAboutCircles_ID_Racer" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -639,37 +639,265 @@ namespace Sprint.Views
 
         #region Таблица первого заезда автомобилей мощностью до 100 л/с
 
+        /// <summary>
+        /// Действия после изменении привязки данных к таблице с участниками первого заезда автомобилей мощностью до 100 л/с.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void k100R1DGV_DataSourceChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewColumn column in K100R1DGV.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                column.HeaderCell.Style.Padding = new Padding(2);
+            }
 
+            if (K100R1DGV.Columns.Count > 0)
+            {
+                K100R1DGV.Columns[0].Width = 50;
+                K100R1DGV.Columns[1].Width = 350;
+                K100R1DGV.Columns[2].Width = 250;
+                K100R1DGV.Columns[3].Width = 150;
+                K100R1DGV.Columns[4].Width = 150;
+                K100R1DGV.Columns[5].Width = 150;
+                K100R1DGV.Columns[6].Width = 150;
+            }
+        }
+
+        /// <summary>
+        /// Действия при перересовке таблицы с участниками первого заезда автомобилей мощностью до 100 л/с.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void K100R1DGV_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (DataGridViewRow row in K100R1DGV.Rows)
+            {
+                row.Cells[0].Style.BackColor = Color.MediumAquamarine;
+                row.Cells[1].Style.BackColor = Color.PowderBlue;
+                row.Height = 30;
+            }
+        }
 
         #endregion
 
         #region Таблица второго заезда автомобилей мощностью до 100 л/с
 
+        /// <summary>
+        /// Действия после изменении привязки данных к таблице с участниками второго заезда автомобилей мощностью до 100 л/с.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void k100R2DGV_DataSourceChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewColumn column in K100R2DGV.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                column.HeaderCell.Style.Padding = new Padding(2);
+            }
 
+            if (K100R2DGV.Columns.Count > 0)
+            {
+                K100R2DGV.Columns[0].Width = 50;
+                K100R2DGV.Columns[1].Width = 350;
+                K100R2DGV.Columns[2].Width = 250;
+                K100R2DGV.Columns[3].Width = 150;
+                K100R2DGV.Columns[4].Width = 150;
+                K100R2DGV.Columns[5].Width = 150;
+                K100R2DGV.Columns[6].Width = 150;
+            }
+        }
+
+        /// <summary>
+        /// Действия при перересовке таблицы с участниками второго заезда автомобилей мощностью до 100 л/с.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void K100R2DGV_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (DataGridViewRow row in K100R2DGV.Rows)
+            {
+                row.Cells[0].Style.BackColor = Color.MediumAquamarine;
+                row.Cells[1].Style.BackColor = Color.PowderBlue;
+                row.Height = 30;
+            }
+        }
 
         #endregion
 
         #region Таблица первого заезда автомобилей мощностью от 100 л/с до 160 л/с
 
+        /// <summary>
+        /// Действия после изменении привязки данных к таблице с участниками первого заезда автомобилей мощностью от 100 л/с до 160 л/с.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void k160R1DGV_DataSourceChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewColumn column in K160R1DGV.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                column.HeaderCell.Style.Padding = new Padding(2);
+            }
 
+            if (K160R1DGV.Columns.Count > 0)
+            {
+                K160R1DGV.Columns[0].Width = 50;
+                K160R1DGV.Columns[1].Width = 350;
+                K160R1DGV.Columns[2].Width = 250;
+                K160R1DGV.Columns[3].Width = 150;
+                K160R1DGV.Columns[4].Width = 150;
+                K160R1DGV.Columns[5].Width = 150;
+                K160R1DGV.Columns[6].Width = 150;
+            }
+        }
+
+        /// <summary>
+        /// Действия при перересовке таблицы с участниками первого заезда автомобилей мощностью от 100 л/с до 160 л/с.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void K160R1DGV_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (DataGridViewRow row in K160R1DGV.Rows)
+            {
+                row.Cells[0].Style.BackColor = Color.MediumAquamarine;
+                row.Cells[1].Style.BackColor = Color.PowderBlue;
+                row.Height = 30;
+            }
+        }
 
         #endregion
 
         #region Таблица второго заезда автомобилей мощностью от 100 л/с до 160 л/с
 
+        /// <summary>
+        /// Действия после изменении привязки данных к таблице с участниками второго заезда автомобилей мощностью от 100 л/с до 160 л/с.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void k160R2DGV_DataSourceChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewColumn column in K160R2DGV.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                column.HeaderCell.Style.Padding = new Padding(2);
+            }
 
+            if (K160R2DGV.Columns.Count > 0)
+            {
+                K160R2DGV.Columns[0].Width = 50;
+                K160R2DGV.Columns[1].Width = 350;
+                K160R2DGV.Columns[2].Width = 250;
+                K160R2DGV.Columns[3].Width = 150;
+                K160R2DGV.Columns[4].Width = 150;
+                K160R2DGV.Columns[5].Width = 150;
+                K160R2DGV.Columns[6].Width = 150;
+            }
+        }
+
+        /// <summary>
+        /// Действия при перересовке таблицы с участниками второго заезда автомобилей мощностью от 100 л/с до 160 л/с.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void K160R2DGV_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (DataGridViewRow row in K160R2DGV.Rows)
+            {
+                row.Cells[0].Style.BackColor = Color.MediumAquamarine;
+                row.Cells[1].Style.BackColor = Color.PowderBlue;
+                row.Height = 30;
+            }
+        }
 
         #endregion
 
         #region Таблица первого заезда автомобилей мощностью свыше 160 л/с
 
+        /// <summary>
+        /// Действия после изменении привязки данных к таблице с участниками первого заезда автомобилей мощностью свыше 160 л/с.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void kaR1DGV_DataSourceChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewColumn column in KAR1DGV.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                column.HeaderCell.Style.Padding = new Padding(2);
+            }
 
+            if (KAR1DGV.Columns.Count > 0)
+            {
+                KAR1DGV.Columns[0].Width = 50;
+                KAR1DGV.Columns[1].Width = 350;
+                KAR1DGV.Columns[2].Width = 250;
+                KAR1DGV.Columns[3].Width = 150;
+                KAR1DGV.Columns[4].Width = 150;
+                KAR1DGV.Columns[5].Width = 150;
+                KAR1DGV.Columns[6].Width = 150;
+            }
+        }
+
+        /// <summary>
+        /// Действия при перересовке таблицы с участниками первого заезда автомобилей мощностью свыше 160 л/с.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void kaR1DGV_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (DataGridViewRow row in KAR1DGV.Rows)
+            {
+                row.Cells[0].Style.BackColor = Color.MediumAquamarine;
+                row.Cells[1].Style.BackColor = Color.PowderBlue;
+                row.Height = 30;
+            }
+        }
 
         #endregion
 
         #region Таблица второго заезда автомобилей мощностью свыше 160 л/с
 
+        /// <summary>
+        /// Действия после изменении привязки данных к таблице с участниками второго заезда автомобилей мощностью свыше 160 л/с.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void kaR2DGV_DataSourceChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewColumn column in KAR2DGV.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                column.HeaderCell.Style.Padding = new Padding(2);
+            }
 
+            if (KAR2DGV.Columns.Count > 0)
+            {
+                KAR2DGV.Columns[0].Width = 50;
+                KAR2DGV.Columns[1].Width = 350;
+                KAR2DGV.Columns[2].Width = 250;
+                KAR2DGV.Columns[3].Width = 150;
+                KAR2DGV.Columns[4].Width = 150;
+                KAR2DGV.Columns[5].Width = 150;
+                KAR2DGV.Columns[6].Width = 150;
+            }
+        }
+
+        /// <summary>
+        /// Действия при перересовке таблицы с участниками второго заезда автомобилей мощностью свыше 160 л/с.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void kaR2DGV_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (DataGridViewRow row in KAR2DGV.Rows)
+            {
+                row.Cells[0].Style.BackColor = Color.MediumAquamarine;
+                row.Cells[1].Style.BackColor = Color.PowderBlue;
+                row.Height = 30;
+            }
+        }
 
         #endregion
 

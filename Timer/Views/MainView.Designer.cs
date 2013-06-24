@@ -265,7 +265,7 @@
             this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton26 = new System.Windows.Forms.ToolStripButton();
             this.tabPage13 = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.k100RacesTabs = new System.Windows.Forms.TabControl();
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.K100R1DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip9 = new System.Windows.Forms.ToolStrip();
@@ -296,7 +296,7 @@
             this.toolStripSeparator32 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton32 = new System.Windows.Forms.ToolStripButton();
             this.tabPage14 = new System.Windows.Forms.TabPage();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.k160RacesTabs = new System.Windows.Forms.TabControl();
             this.tabPage18 = new System.Windows.Forms.TabPage();
             this.K160R1DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip11 = new System.Windows.Forms.ToolStrip();
@@ -327,7 +327,7 @@
             this.toolStripSeparator38 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton64 = new System.Windows.Forms.ToolStripButton();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.kaRacesTabs = new System.Windows.Forms.TabControl();
             this.tabPage20 = new System.Windows.Forms.TabPage();
             this.KAR1DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip13 = new System.Windows.Forms.ToolStrip();
@@ -410,7 +410,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.sportR2DGV)).BeginInit();
             this.toolStrip7.SuspendLayout();
             this.tabPage13.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.k100RacesTabs.SuspendLayout();
             this.tabPage16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.K100R1DGV)).BeginInit();
             this.toolStrip9.SuspendLayout();
@@ -418,7 +418,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.K100R2DGV)).BeginInit();
             this.toolStrip10.SuspendLayout();
             this.tabPage14.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            this.k160RacesTabs.SuspendLayout();
             this.tabPage18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.K160R1DGV)).BeginInit();
             this.toolStrip11.SuspendLayout();
@@ -426,7 +426,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.K160R2DGV)).BeginInit();
             this.toolStrip12.SuspendLayout();
             this.tabPage15.SuspendLayout();
-            this.tabControl3.SuspendLayout();
+            this.kaRacesTabs.SuspendLayout();
             this.tabPage20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KAR1DGV)).BeginInit();
             this.toolStrip13.SuspendLayout();
@@ -2649,7 +2649,7 @@
             // 
             // tabPage13
             // 
-            this.tabPage13.Controls.Add(this.tabControl1);
+            this.tabPage13.Controls.Add(this.k100RacesTabs);
             this.tabPage13.Location = new System.Drawing.Point(4, 34);
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
@@ -2658,17 +2658,17 @@
             this.tabPage13.Text = "До 100 л.с.";
             this.tabPage13.UseVisualStyleBackColor = true;
             // 
-            // tabControl1
+            // k100RacesTabs
             // 
-            this.tabControl1.Controls.Add(this.tabPage16);
-            this.tabControl1.Controls.Add(this.tabPage17);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.ImageList = this.imageList1;
-            this.tabControl1.Location = new System.Drawing.Point(3, 3);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1335, 387);
-            this.tabControl1.TabIndex = 6;
+            this.k100RacesTabs.Controls.Add(this.tabPage16);
+            this.k100RacesTabs.Controls.Add(this.tabPage17);
+            this.k100RacesTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.k100RacesTabs.ImageList = this.imageList1;
+            this.k100RacesTabs.Location = new System.Drawing.Point(3, 3);
+            this.k100RacesTabs.Name = "k100RacesTabs";
+            this.k100RacesTabs.SelectedIndex = 0;
+            this.k100RacesTabs.Size = new System.Drawing.Size(1335, 387);
+            this.k100RacesTabs.TabIndex = 6;
             // 
             // tabPage16
             // 
@@ -2727,6 +2727,8 @@
             this.K100R1DGV.ShowEditingIcon = false;
             this.K100R1DGV.Size = new System.Drawing.Size(1321, 315);
             this.K100R1DGV.TabIndex = 3;
+            this.K100R1DGV.DataSourceChanged += new System.EventHandler(this.k100R1DGV_DataSourceChanged);
+            this.K100R1DGV.Paint += new System.Windows.Forms.PaintEventHandler(this.K100R1DGV_Paint);
             // 
             // toolStrip9
             // 
@@ -2918,6 +2920,8 @@
             this.K100R2DGV.ShowEditingIcon = false;
             this.K100R2DGV.Size = new System.Drawing.Size(1321, 315);
             this.K100R2DGV.TabIndex = 6;
+            this.K100R2DGV.DataSourceChanged += new System.EventHandler(this.k100R2DGV_DataSourceChanged);
+            this.K100R2DGV.Paint += new System.Windows.Forms.PaintEventHandler(this.K100R2DGV_Paint);
             // 
             // toolStrip10
             // 
@@ -3042,7 +3046,7 @@
             // 
             // tabPage14
             // 
-            this.tabPage14.Controls.Add(this.tabControl2);
+            this.tabPage14.Controls.Add(this.k160RacesTabs);
             this.tabPage14.Location = new System.Drawing.Point(4, 34);
             this.tabPage14.Name = "tabPage14";
             this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
@@ -3051,17 +3055,17 @@
             this.tabPage14.Text = "От 100 до 160 л.с.";
             this.tabPage14.UseVisualStyleBackColor = true;
             // 
-            // tabControl2
+            // k160RacesTabs
             // 
-            this.tabControl2.Controls.Add(this.tabPage18);
-            this.tabControl2.Controls.Add(this.tabPage19);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.ImageList = this.imageList1;
-            this.tabControl2.Location = new System.Drawing.Point(3, 3);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1335, 387);
-            this.tabControl2.TabIndex = 6;
+            this.k160RacesTabs.Controls.Add(this.tabPage18);
+            this.k160RacesTabs.Controls.Add(this.tabPage19);
+            this.k160RacesTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.k160RacesTabs.ImageList = this.imageList1;
+            this.k160RacesTabs.Location = new System.Drawing.Point(3, 3);
+            this.k160RacesTabs.Name = "k160RacesTabs";
+            this.k160RacesTabs.SelectedIndex = 0;
+            this.k160RacesTabs.Size = new System.Drawing.Size(1335, 387);
+            this.k160RacesTabs.TabIndex = 6;
             // 
             // tabPage18
             // 
@@ -3120,6 +3124,8 @@
             this.K160R1DGV.ShowEditingIcon = false;
             this.K160R1DGV.Size = new System.Drawing.Size(1321, 315);
             this.K160R1DGV.TabIndex = 3;
+            this.K160R1DGV.DataSourceChanged += new System.EventHandler(this.k160R1DGV_DataSourceChanged);
+            this.K160R1DGV.Paint += new System.Windows.Forms.PaintEventHandler(this.K160R1DGV_Paint);
             // 
             // toolStrip11
             // 
@@ -3311,6 +3317,8 @@
             this.K160R2DGV.ShowEditingIcon = false;
             this.K160R2DGV.Size = new System.Drawing.Size(1321, 315);
             this.K160R2DGV.TabIndex = 6;
+            this.K160R2DGV.DataSourceChanged += new System.EventHandler(this.k160R2DGV_DataSourceChanged);
+            this.K160R2DGV.Paint += new System.Windows.Forms.PaintEventHandler(this.K160R2DGV_Paint);
             // 
             // toolStrip12
             // 
@@ -3435,7 +3443,7 @@
             // 
             // tabPage15
             // 
-            this.tabPage15.Controls.Add(this.tabControl3);
+            this.tabPage15.Controls.Add(this.kaRacesTabs);
             this.tabPage15.Location = new System.Drawing.Point(4, 34);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
@@ -3444,17 +3452,17 @@
             this.tabPage15.Text = "Свыше 160 л.с.";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
-            // tabControl3
+            // kaRacesTabs
             // 
-            this.tabControl3.Controls.Add(this.tabPage20);
-            this.tabControl3.Controls.Add(this.tabPage21);
-            this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl3.ImageList = this.imageList1;
-            this.tabControl3.Location = new System.Drawing.Point(3, 3);
-            this.tabControl3.Name = "tabControl3";
-            this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(1335, 387);
-            this.tabControl3.TabIndex = 6;
+            this.kaRacesTabs.Controls.Add(this.tabPage20);
+            this.kaRacesTabs.Controls.Add(this.tabPage21);
+            this.kaRacesTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kaRacesTabs.ImageList = this.imageList1;
+            this.kaRacesTabs.Location = new System.Drawing.Point(3, 3);
+            this.kaRacesTabs.Name = "kaRacesTabs";
+            this.kaRacesTabs.SelectedIndex = 0;
+            this.kaRacesTabs.Size = new System.Drawing.Size(1335, 387);
+            this.kaRacesTabs.TabIndex = 6;
             // 
             // tabPage20
             // 
@@ -3513,6 +3521,8 @@
             this.KAR1DGV.ShowEditingIcon = false;
             this.KAR1DGV.Size = new System.Drawing.Size(1321, 315);
             this.KAR1DGV.TabIndex = 3;
+            this.KAR1DGV.DataSourceChanged += new System.EventHandler(this.kaR1DGV_DataSourceChanged);
+            this.KAR1DGV.Paint += new System.Windows.Forms.PaintEventHandler(this.kaR1DGV_Paint);
             // 
             // toolStrip13
             // 
@@ -3704,6 +3714,8 @@
             this.KAR2DGV.ShowEditingIcon = false;
             this.KAR2DGV.Size = new System.Drawing.Size(1321, 315);
             this.KAR2DGV.TabIndex = 6;
+            this.KAR2DGV.DataSourceChanged += new System.EventHandler(this.kaR2DGV_DataSourceChanged);
+            this.KAR2DGV.Paint += new System.Windows.Forms.PaintEventHandler(this.kaR2DGV_Paint);
             // 
             // toolStrip14
             // 
@@ -3929,7 +3941,7 @@
             this.toolStrip7.ResumeLayout(false);
             this.toolStrip7.PerformLayout();
             this.tabPage13.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.k100RacesTabs.ResumeLayout(false);
             this.tabPage16.ResumeLayout(false);
             this.tabPage16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.K100R1DGV)).EndInit();
@@ -3941,7 +3953,7 @@
             this.toolStrip10.ResumeLayout(false);
             this.toolStrip10.PerformLayout();
             this.tabPage14.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
+            this.k160RacesTabs.ResumeLayout(false);
             this.tabPage18.ResumeLayout(false);
             this.tabPage18.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.K160R1DGV)).EndInit();
@@ -3953,7 +3965,7 @@
             this.toolStrip12.ResumeLayout(false);
             this.toolStrip12.PerformLayout();
             this.tabPage15.ResumeLayout(false);
-            this.tabControl3.ResumeLayout(false);
+            this.kaRacesTabs.ResumeLayout(false);
             this.tabPage20.ResumeLayout(false);
             this.tabPage20.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KAR1DGV)).EndInit();
@@ -4131,7 +4143,7 @@
         private System.Windows.Forms.ToolStripButton addRacer_Btn_fwdR1DGV;
         private System.Windows.Forms.ToolStripButton addRacer_Btn_awdR1DGV;
         private System.Windows.Forms.ToolStripButton addRacer_Btn_sportR1DGV;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl k100RacesTabs;
         private System.Windows.Forms.TabPage tabPage16;
         private System.Windows.Forms.DataGridView K100R1DGV;
         private System.Windows.Forms.ToolStrip toolStrip9;
@@ -4159,7 +4171,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton31;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator32;
         private System.Windows.Forms.ToolStripButton toolStripButton32;
-        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabControl k160RacesTabs;
         private System.Windows.Forms.TabPage tabPage18;
         private System.Windows.Forms.DataGridView K160R1DGV;
         private System.Windows.Forms.ToolStrip toolStrip11;
@@ -4187,7 +4199,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton63;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator38;
         private System.Windows.Forms.ToolStripButton toolStripButton64;
-        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabControl kaRacesTabs;
         private System.Windows.Forms.TabPage tabPage20;
         private System.Windows.Forms.DataGridView KAR1DGV;
         private System.Windows.Forms.ToolStrip toolStrip13;

@@ -129,6 +129,9 @@
     <Compile Include="Data\Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\UserDataAboutCircle.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Exceptions\SprintBusinessLogicException.cs" />
     <Compile Include="Exceptions\SprintDataException.cs" />
     <Compile Include="Exceptions\SprintExcelException.cs" />

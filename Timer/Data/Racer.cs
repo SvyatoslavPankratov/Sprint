@@ -20,6 +20,7 @@ namespace Sprint.Data
             this.Results = new HashSet<Result>();
             this.ApplicationStates = new HashSet<ApplicationState>();
             this.RacersAtTheTracks = new HashSet<RacersAtTheTrack>();
+            this.UserDataAboutCircles = new HashSet<UserDataAboutCircle>();
         }
     
         public System.Guid Id { get; set; }
@@ -27,11 +28,11 @@ namespace Sprint.Data
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MiddleName { get; set; }
-        public Nullable<int> CurrentCircleNumber { get; set; }
     
         public virtual ICollection<Car> Cars { get; set; }
         public virtual ICollection<Result> Results { get; set; }
         public virtual ICollection<ApplicationState> ApplicationStates { get; set; }
         public virtual ICollection<RacersAtTheTrack> RacersAtTheTracks { get; set; }
+        public virtual ICollection<UserDataAboutCircle> UserDataAboutCircles { get; set; }
     }
 }

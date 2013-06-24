@@ -52,6 +52,36 @@ namespace Sprint.Interfaces
         DataTable SportSecondRace { get; set; }
 
         /// <summary>
+        /// Задать или получить таблицу с результатами автомобилей с мощностью до 100 л/с за первый заезд.
+        /// </summary>
+        DataTable K100FirstRace { get; set; }
+
+        /// <summary>
+        /// Задать или получить таблицу с результатами автомобилей с мощностью до 100 л/с за второй заезд.
+        /// </summary>
+        DataTable K100SecondRace { get; set; }
+
+        /// <summary>
+        /// Задать или получить таблицу с результатами автомобилей с мощностью от 100 л/с до 160 л/с за первый заезд.
+        /// </summary>
+        DataTable K160FirstRace { get; set; }
+
+        /// <summary>
+        /// Задать или получить таблицу с результатами автомобилей  с мощностью от 100 л/с до 160 л/с за второй заезд.
+        /// </summary>
+        DataTable K160SecondRace { get; set; }
+
+        /// <summary>
+        /// Задать или получить таблицу с результатами автомобилей с мощностью от 160 л/с за первый заезд.
+        /// </summary>
+        DataTable KAFirstRace { get; set; }
+
+        /// <summary>
+        /// Задать или получить таблицу с результатами автомобилей с мощностью от 160 л/с за второй заезд.
+        /// </summary>
+        DataTable KASecondRace { get; set; }
+
+        /// <summary>
         /// Задать или получть количество минут.
         /// </summary>
         int Min { set; }
@@ -85,6 +115,17 @@ namespace Sprint.Interfaces
         /// Задать или получить состояние секундомера.
         /// </summary>
         StopwatchStatesEnum StopwatchState { get; set; }
+
+        #endregion
+
+        #region Методы
+
+        /// <summary>
+        /// Задать положение окна относительно положения рабочего стола.
+        /// </summary>
+        /// <param name="x">Координата по X.</param>
+        /// <param name="y">Координата по Y.</param>
+        void SetDesktopLocation(int x, int y);
 
         #endregion
     }

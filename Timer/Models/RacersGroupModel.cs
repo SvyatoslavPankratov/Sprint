@@ -34,7 +34,7 @@ namespace Sprint.Models
         /// </summary>
         public bool IsFinished
         {
-            get { return Racers.All(racer => racer.Results.Finished); }
+            get { return Racers.Any() ? Racers.All(racer => racer.Results.IsFinished(RaceNumber)) : false; }
         }
 
         #endregion
@@ -104,9 +104,9 @@ namespace Sprint.Models
         /// <param name="count">Количество получаемых лидеров в заданном классе.</param>
         public IEnumerable<RacerModel> GetLeaders(int count)
         {
-            var racers = (from racer in Racers
-                          orderby racer.Results.GetMinTime(RaceNumber)
-                          select racer).Reverse();
+            var racers = from racer in Racers
+                         orderby racer.Results.GetMinTime(RaceNumber)
+                         select racer;
 
             return racers.Take(count);
         }
@@ -122,7 +122,7 @@ namespace Sprint.Models
             {
                 foreach (var racer in Racers)
                 {
-                    if (!racer.Results.Finished)
+                    if (!racer.Results.IsFinished(RaceNumber))
                     {
                         return racer;
                     }

@@ -92,7 +92,15 @@ namespace Sprint.Views
             if (res.Result)
             {
                 Close();
-                ((MainView) Application.OpenForms[0]).AutomationResetOrClose = true;
+
+                foreach (var window in Application.OpenForms)
+                {
+                    if (window != null && window is MainView)
+                    {
+                        ((MainView) window).AutomationResetOrClose = true;
+                    }
+                }
+
                 Application.Restart();
                 return;
             }

@@ -133,13 +133,11 @@ namespace Sprint.Presenters
             var racers = RacersDbManager.GetRacers(cc);
             
             // Вначале добавяем участников у ктороых есть результаты
-            var racers_with_results = from racer in
-                                          (from racer in racers
-                                           where racer.Results.HasValues(raceNumber)
-                                           orderby racer.Results.GetMinTime(raceNumber)
-                                           select racer)
-                                      orderby racer.RacerNumber
+            var racers_with_results = from racer in racers
+                                      where racer.Results.HasValues(raceNumber)
+                                      orderby racer.Results.GetMinTime(raceNumber)
                                       select racer;
+            ;
 
             if (racers_with_results.Any())
             {

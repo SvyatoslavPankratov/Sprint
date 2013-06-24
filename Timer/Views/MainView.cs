@@ -94,6 +94,60 @@ namespace Sprint.Views
         }
 
         /// <summary>
+        /// Задать или получить таблицу с результатами переднеприводных автомобилей с мощностью до 100 л/с за первый заезд.
+        /// </summary>
+        public DataTable K100FirstRace
+        {
+            get { return (DataTable)K100R1DGV.DataSource; }
+            set { K100R1DGV.DataSource = value; }
+        }
+
+        /// <summary>
+        /// Задать или получить таблицу с результатами автомобилей с мощностью до 100 л/с за второй заезд.
+        /// </summary>
+        public DataTable K100SecondRace
+        {
+            get { return (DataTable)K100R2DGV.DataSource; }
+            set { K100R2DGV.DataSource = value; }
+        }
+
+        /// <summary>
+        /// Задать или получить таблицу с результатами автомобилей с мощностью от 100 л/с до 160 л/с за первый заезд.
+        /// </summary>
+        public DataTable K160FirstRace
+        {
+            get { return (DataTable)K160R1DGV.DataSource; }
+            set { K160R1DGV.DataSource = value; }
+        }
+
+        /// <summary>
+        /// Задать или получить таблицу с результатами автомобилей с мощностью от 100 л/с до 160 л/с за второй заезд.
+        /// </summary>
+        public DataTable K160SecondRace
+        {
+            get { return (DataTable)K160R2DGV.DataSource; }
+            set { K160R2DGV.DataSource = value; }
+        }
+
+        /// <summary>
+        /// Задать или получить таблицу с результатами автомобилей с мощностью от 160 л/с за первый заезд.
+        /// </summary>
+        public DataTable KAFirstRace
+        {
+            get { return (DataTable)KAR1DGV.DataSource; }
+            set { KAR1DGV.DataSource = value; }
+        }
+
+        /// <summary>
+        /// Задать или получить таблицу с результатами автомобилей с мощностью от 160 л/с за второй заезд.
+        /// </summary>
+        public DataTable KASecondRace
+        {
+            get { return (DataTable)KAR2DGV.DataSource; }
+            set { KAR2DGV.DataSource = value; }
+        }
+
+        /// <summary>
         /// Задать количество минут.
         /// </summary>
         public int Min
@@ -132,11 +186,6 @@ namespace Sprint.Views
                 {
                     firstCurrentRacer_L.Text = value.ToString("D3");
                 }
-
-                if (SecondMonitor != null)
-                {
-                    SecondMonitor.FirstCurrentRacerNumber = value;
-                }
             }
         }
 
@@ -155,11 +204,6 @@ namespace Sprint.Views
                 {
                     secondCurrentRacer_L.Text = value.ToString("D3");
                 }
-
-                if (SecondMonitor != null)
-                {
-                    SecondMonitor.SecondCurrentRacerNumber = value;
-                }
             }
         }
 
@@ -177,11 +221,6 @@ namespace Sprint.Views
                 else
                 {
                     nextCurrentRacer_L.Text = value.ToString("D3");
-                }
-
-                if (SecondMonitor != null)
-                {
-                    SecondMonitor.NextRacerNumber = value;
                 }
             }
         }
@@ -226,11 +265,6 @@ namespace Sprint.Views
         private MainPresenter MainPresenter { get; set; }
 
         /// <summary>
-        /// Задать или получить сплеш скрин.
-        /// </summary>
-        private ISplashScreenView SpleshScreen { get; set; }
-
-        /// <summary>
         /// Задать или получить второй экран приложения.
         /// </summary>
         private ISecondMonitorView SecondMonitor { get; set; }
@@ -261,6 +295,25 @@ namespace Sprint.Views
         /// </summary>
         public MainView()
         {
+            InitMainWindow();
+        }
+
+        /// <summary>
+        /// Конструктор для главного окна.
+        /// </summary>
+        /// <param name="secondMonitor">Второй монитор приложения.</param>
+        public MainView(ISecondMonitorView secondMonitor)
+        {
+            SecondMonitor = secondMonitor;
+
+            InitMainWindow();
+        }
+
+        /// <summary>
+        /// Тело основного конструктора.
+        /// </summary>
+        private void InitMainWindow()
+        {
             InitializeComponent();
 
             GlobalCarClassSelectBtnEnable = true;
@@ -269,23 +322,11 @@ namespace Sprint.Views
             PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
             pi.SetValue(fwdR1DGV, true, null);
 
-            KeyPreview = true;                          // Изменено, чтобы заработали горячие клавиши
+            KeyPreview = true; // Изменено, чтобы заработали горячие клавиши
             AutomationResetOrClose = false;
 
-            MainPresenter = new MainPresenter(this);
+            MainPresenter = new MainPresenter(this, SecondMonitor);
             WindowHookManager = new WindowHookManager(false, false);
-        }
-
-        /// <summary>
-        /// Конструктор для главного окна.
-        /// </summary>
-        /// <param name="splashScreen">Сплеш скрин приложения.</param>
-        /// <param name="secondMonitor">Второй монитор приложения.</param>
-        public MainView(ISplashScreenView splashScreen, ISecondMonitorView secondMonitor) 
-            : this()
-        {
-            SpleshScreen = splashScreen;
-            SecondMonitor = secondMonitor;
         }
 
         #endregion
@@ -299,8 +340,6 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void MainView_Shown(object sender, EventArgs e)
         {
-            SpleshScreen.CloseSplashScreen();
-
             var checkSensorView = new CheckSensorView();
             checkSensorView.ShowDialog();
 
@@ -312,11 +351,11 @@ namespace Sprint.Views
                 if (res == DialogResult.OK)
                 {
                     var wnd = new AddedRacersProcessView();
-                    Invoke(new Action(() => wnd.Show()));
+                    Invoke(new Action(wnd.Show));
 
                     MainPresenter.SetRacersFromNewRacersDialog(newRacerView.NewRacerPresenter.Racers);
 
-                    Invoke(new Action(() => wnd.Close()));
+                    Invoke(new Action(wnd.Close));
                 }
             }
 
@@ -355,7 +394,7 @@ namespace Sprint.Views
                         {
                             fwdRacesTabs.TabPages[0].ImageIndex = 0;
                         }
-                        else
+                        else if (MainPresenter.CurrentRaceNum == 1)
                         {
                             fwdRacesTabs.TabPages[1].ImageIndex = 0;
                         }
@@ -397,6 +436,45 @@ namespace Sprint.Views
                         else
                         {
                             sportRacesTabs.TabPages[1].ImageIndex = 0;
+                        }
+                    } break;
+                case CarClassesEnum.K100:
+                    {
+                        carClassesTabs.TabPages[4].ImageIndex = 0;
+
+                        if (MainPresenter.CurrentRaceNum == 0)
+                        {
+                            k100RacesTabs.TabPages[0].ImageIndex = 0;
+                        }
+                        else
+                        {
+                            rwdRacesTabs.TabPages[1].ImageIndex = 0;
+                        }
+                    } break;
+                case CarClassesEnum.K160:
+                    {
+                        carClassesTabs.TabPages[5].ImageIndex = 0;
+
+                        if (MainPresenter.CurrentRaceNum == 0)
+                        {
+                            k160RacesTabs.TabPages[0].ImageIndex = 0;
+                        }
+                        else
+                        {
+                            k160RacesTabs.TabPages[1].ImageIndex = 0;
+                        }
+                    } break;
+                case CarClassesEnum.KA:
+                    {
+                        carClassesTabs.TabPages[6].ImageIndex = 0;
+
+                        if (MainPresenter.CurrentRaceNum == 0)
+                        {
+                            kaRacesTabs.TabPages[0].ImageIndex = 0;
+                        }
+                        else
+                        {
+                            kaRacesTabs.TabPages[1].ImageIndex = 0;
                         }
                     } break;
             }
@@ -488,6 +566,12 @@ namespace Sprint.Views
             awdRacesTabs.TabPages[1].ImageIndex = -1;
             sportRacesTabs.TabPages[0].ImageIndex = -1;
             sportRacesTabs.TabPages[1].ImageIndex = -1;
+            k100RacesTabs.TabPages[0].ImageIndex = -1;
+            k100RacesTabs.TabPages[1].ImageIndex = -1;
+            k160RacesTabs.TabPages[0].ImageIndex = -1;
+            k160RacesTabs.TabPages[1].ImageIndex = -1;
+            kaRacesTabs.TabPages[0].ImageIndex = -1;
+            kaRacesTabs.TabPages[1].ImageIndex = -1;
         }
         
         /// <summary>
@@ -547,19 +631,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void toolStripButton32_Click(object sender, EventArgs e)
         {
-            var car_class = CarClassesEnum.FWD;
-
-            if (MainPresenter.CarClassIsFinished(car_class, 1).Result)
-            {
-                MessageBox.Show("Класс автомобилей с передним приводом уже закончил первый заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
-            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
-            selectFwdCarClass1_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = car_class;
-            ReverseStartBtnEnable();
+            SetCurrentCarClass(CarClassesEnum.FWD, 0);
         }
 
         /// <summary>
@@ -569,19 +641,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void toolStripButton9_Click(object sender, EventArgs e)
         {
-            var car_class = CarClassesEnum.RWD;
-
-            if (MainPresenter.CarClassIsFinished(car_class, 1).Result)
-            {
-                MessageBox.Show("Класс автомобилей с задним приводом уже закончил первый заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
-            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
-            selectRwdCarClass1_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = car_class;
-            ReverseStartBtnEnable();
+            SetCurrentCarClass(CarClassesEnum.RWD, 0);
         }
 
         /// <summary>
@@ -591,19 +651,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void toolStripButton13_Click(object sender, EventArgs e)
         {
-            var car_class = CarClassesEnum.AWD;
-
-            if (MainPresenter.CarClassIsFinished(car_class, 1).Result)
-            {
-                MessageBox.Show("Класс автомобилей с полним приводом уже закончил первый заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
-            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
-            selectAwdCarClass1_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = car_class;
-            ReverseStartBtnEnable();
+            SetCurrentCarClass(CarClassesEnum.AWD, 0);
         }
 
         /// <summary>
@@ -613,19 +661,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void toolStripButton22_Click(object sender, EventArgs e)
         {
-            var car_class = CarClassesEnum.Sport;
-
-            if (MainPresenter.CarClassIsFinished(car_class, 1).Result)
-            {
-                MessageBox.Show("Класс спортивных автомобилей уже закончил первый заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
-            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
-            selectSportCarClass1_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = car_class;
-            ReverseStartBtnEnable();
+            SetCurrentCarClass(CarClassesEnum.Sport, 0);
         }
 
         /// <summary>
@@ -635,19 +671,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void selectFwdCarClass2_BT_Click(object sender, EventArgs e)
         {
-            var car_class = CarClassesEnum.FWD;
-
-            if (MainPresenter.CarClassIsFinished(car_class, 2).Result)
-            {
-                MessageBox.Show("Класс автомобилей с передним приводом уже закончил второй заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
-            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
-            selectFwdCarClass2_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = car_class;
-            ReverseStartBtnEnable();
+            SetCurrentCarClass(CarClassesEnum.FWD, 1);
         }
 
         /// <summary>
@@ -657,19 +681,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void selectRwdCarClass2_BT_Click(object sender, EventArgs e)
         {
-            var car_class = CarClassesEnum.RWD;
-
-            if (MainPresenter.CarClassIsFinished(car_class, 2).Result)
-            {
-                MessageBox.Show("Класс автомобилей с задним приводом уже закончил второй заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
-            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
-            selectRwdCarClass2_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = car_class;
-            ReverseStartBtnEnable();
+            SetCurrentCarClass(CarClassesEnum.RWD, 1);
         }
 
         /// <summary>
@@ -679,19 +691,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void selectAwdCarClass2_BT_Click(object sender, EventArgs e)
         {
-            var car_class = CarClassesEnum.AWD;
-
-            if (MainPresenter.CarClassIsFinished(car_class, 2).Result)
-            {
-                MessageBox.Show("Класс автомобилей с полным приводом уже закончил второй заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
-            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
-            selectAwdCarClass2_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = car_class;
-            ReverseStartBtnEnable();
+            SetCurrentCarClass(CarClassesEnum.AWD, 1);
         }
 
         /// <summary>
@@ -701,19 +701,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void selectSportCarClass2_BT_Click(object sender, EventArgs e)
         {
-            var car_class = CarClassesEnum.Sport;
-
-            if (MainPresenter.CarClassIsFinished(car_class, 2).Result)
-            {
-                MessageBox.Show("Класс спортивных автомобилей уже закончил второй заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
-            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
-            selectSportCarClass2_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = car_class;
-            ReverseStartBtnEnable();
+            SetCurrentCarClass(CarClassesEnum.Sport, 1);
         }
 
         /// <summary>
@@ -723,19 +711,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void selectK100CarClass1_BT_Click(object sender, EventArgs e)
         {
-            var car_class = CarClassesEnum.K100;
-
-            if (MainPresenter.CarClassIsFinished(car_class, 1).Result)
-            {
-                MessageBox.Show("Класс автомобилей с мощностью до 100 л/с уже закончил первый заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
-            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
-            selectK100CarClass1_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = car_class;
-            ReverseStartBtnEnable();
+            SetCurrentCarClass(CarClassesEnum.K100, 0);
         }
         
         /// <summary>
@@ -745,19 +721,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void selectK100CarClass2_BT_Click(object sender, EventArgs e)
         {
-            var car_class = CarClassesEnum.K100;
-
-            if (MainPresenter.CarClassIsFinished(car_class, 2).Result)
-            {
-                MessageBox.Show("Класс автомобилей с мощностью до 100 л/с уже закончил второй заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
-            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
-            selectK100CarClass2_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = car_class;
-            ReverseStartBtnEnable();
+            SetCurrentCarClass(CarClassesEnum.K100, 1);
         }
 
         /// <summary>
@@ -767,19 +731,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void selectK160CarClass1_BT_Click(object sender, EventArgs e)
         {
-            var car_class = CarClassesEnum.K160;
-
-            if (MainPresenter.CarClassIsFinished(car_class, 1).Result)
-            {
-                MessageBox.Show("Класс автомобилей с мощностью от 100 л/с до 160 л/с уже закончил первый заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
-            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
-            selectK160CarClass1_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = car_class;
-            ReverseStartBtnEnable();
+            SetCurrentCarClass(CarClassesEnum.K160, 0);
         }
                
         /// <summary>
@@ -789,19 +741,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void selectK160CarClass2_BT_Click(object sender, EventArgs e)
         {
-            var car_class = CarClassesEnum.K160;
-
-            if (MainPresenter.CarClassIsFinished(car_class, 2).Result)
-            {
-                MessageBox.Show("Класс автомобилей с мощностью от 100 л/с до 160 л/с уже закончил второй заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
-            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
-            selectK160CarClass2_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = car_class;
-            ReverseStartBtnEnable();
+            SetCurrentCarClass(CarClassesEnum.K160, 1);
         }
 
         /// <summary>
@@ -811,19 +751,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void selectKACarClass1_BT_Click(object sender, EventArgs e)
         {
-            var car_class = CarClassesEnum.KA;
-
-            if (MainPresenter.CarClassIsFinished(car_class, 1).Result)
-            {
-                MessageBox.Show("Класс автомобилей с мощностью свыше 160 л/с уже закончил первый заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
-            SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
-            selectKACarClass1_BT.Enabled = true;
-            MainPresenter.CurrentCarClass = car_class;
-            ReverseStartBtnEnable();
+            SetCurrentCarClass(CarClassesEnum.KA, 0);
         }
 
         /// <summary>
@@ -833,19 +761,255 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void selectKACarClass2_BT_Click(object sender, EventArgs e)
         {
-            var car_class = CarClassesEnum.KA;
+            SetCurrentCarClass(CarClassesEnum.KA, 1);
+        }
 
-            if (MainPresenter.CarClassIsFinished(car_class, 2).Result)
+        /// <summary>
+        /// Задать текущий класс автомобилей в презентере, которые поедут.
+        /// </summary>
+        /// <param name="car_class">Класс автомобилей.</param>
+        /// <param name="race_number">Номер заезда.</param>
+        private void SetCurrentCarClass(CarClassesEnum car_class, int race_number)
+        {
+            var info_message_text = GetMessageAboutFinishedCarClass(car_class, race_number);
+
+            if (MainPresenter.CarClassIsFinished(car_class, race_number).Result)
             {
-                MessageBox.Show("Класс автомобилей с мощностью свыше 160 л/с уже закончил второй заезд.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(info_message_text, "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             GlobalCarClassSelectBtnEnable = !GlobalCarClassSelectBtnEnable;
             SetValueForAllButtonsForSelectCarClass(GlobalCarClassSelectBtnEnable);
-            selectKACarClass2_BT.Enabled = true;
+            SetEnableValueSelectCarClassBtn(car_class, race_number);
             MainPresenter.CurrentCarClass = car_class;
+            MainPresenter.CurrentRaceNum = race_number;
             ReverseStartBtnEnable();
+        }
+
+        /// <summary>
+        /// Получить сообщение для диалогового окна о том, что в заданном классе автомобилей 
+        /// в заданном заезде все участники уже завершили заезд.
+        /// </summary>
+        /// <param name="car_class">Класс автомобилей.</param>
+        /// <param name="race_number">Номер заезда (начиная с 0).</param>
+        /// <returns>Сообщение для вывода его в окно с сообщением.</returns>
+        private string GetMessageAboutFinishedCarClass(CarClassesEnum car_class, int race_number)
+        {
+            switch (car_class)
+            {
+                case CarClassesEnum.FWD:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    return "Класс автомобилей с передним приводом уже закончил первый заезд.";
+                                }
+                            case 1:
+                                {
+                                    return "Класс автомобилей с передним приводом уже закончил второй заезд.";
+                                }
+                        }
+                    } break;
+                case CarClassesEnum.RWD:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    return "Класс автомобилей с задним приводом уже закончил первый заезд.";
+                                }
+                            case 1:
+                                {
+                                    return "Класс автомобилей с задним приводом уже закончил второй заезд.";
+                                }
+                        }
+                    } break;
+                case CarClassesEnum.AWD:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    return "Класс автомобилей с полним приводом уже закончил первый заезд.";
+                                }
+                            case 1:
+                                {
+                                    return "Класс автомобилей с полним приводом уже закончил второй заезд.";
+                                }
+                        }
+                    } break;
+                case CarClassesEnum.Sport:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    return "Класс спортивных автомобилей уже закончил первый заезд.";
+                                }
+                            case 1:
+                                {
+                                    return "Класс спортивных автомобилей уже закончил второй заезд.";
+                                }
+                        }
+                    } break;
+                case CarClassesEnum.K100:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    return "Класс автомобилей с мощностью до 100 л/с уже закончил первый заезд.";
+                                }
+                            case 1:
+                                {
+                                    return "Класс автомобилей с мощностью до 100 л/с уже закончил второй заезд.";
+                                }
+                        }
+                    } break;
+                case CarClassesEnum.K160:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    return "Класс автомобилей с мощностью от 100 л/с до 160 л/с уже закончил первый заезд.";
+                                }
+                            case 1:
+                                {
+                                    return "Класс автомобилей с мощностью от 100 л/с до 160 л/с уже закончил второй заезд.";
+                                }
+                        }
+                    } break;
+                case CarClassesEnum.KA:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    return "Класс автомобилей с мощностью свыше 160 л/с уже закончил первый заезд.";
+                                }
+                            case 1:
+                                {
+                                    return "Класс автомобилей с мощностью свыше 160 л/с уже закончил второй заезд.";
+                                }
+                        }
+                    } break;
+            }
+
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// Задать значение доступности кнопки выбора класса автомобилей, которые будут выполнять заезд.
+        /// </summary>
+        /// <param name="car_class">Класс автомобилей.</param>
+        /// <param name="race_number">Номер заезда (начиная с 0).</param>
+        /// <returns>Сообщение для вывода его в окно с сообщением.</returns>
+        private void SetEnableValueSelectCarClassBtn(CarClassesEnum car_class, int race_number)
+        {
+            switch (car_class)
+            {
+                case CarClassesEnum.FWD:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    selectFwdCarClass1_BT.Enabled = true;
+                                } break;
+                            case 1:
+                                {
+                                    selectFwdCarClass2_BT.Enabled = true;
+                                } break;
+                        }
+                    } break;
+                case CarClassesEnum.RWD:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    selectRwdCarClass1_BT.Enabled = true;
+                                } break;
+                            case 1:
+                                {
+                                    selectRwdCarClass2_BT.Enabled = true;
+                                } break;
+                        }
+                    } break;
+                case CarClassesEnum.AWD:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    selectAwdCarClass1_BT.Enabled = true;
+                                } break;
+                            case 1:
+                                {
+                                    selectAwdCarClass2_BT.Enabled = true;
+                                } break;
+                        }
+                    } break;
+                case CarClassesEnum.Sport:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    selectSportCarClass1_BT.Enabled = true;
+                                } break;
+                            case 1:
+                                {
+                                    selectSportCarClass2_BT.Enabled = true;
+                                } break;
+                        }
+                    } break;
+                case CarClassesEnum.K100:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    selectK100CarClass1_BT.Enabled = true;
+                                } break;
+                            case 1:
+                                {
+                                    selectK100CarClass2_BT.Enabled = true;
+                                } break;
+                        }
+                    } break;
+                case CarClassesEnum.K160:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    selectK160CarClass1_BT.Enabled = true;
+                                } break;
+                            case 1:
+                                {
+                                    selectK160CarClass2_BT.Enabled = true;
+                                } break;
+                        }
+                    } break;
+                case CarClassesEnum.KA:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    selectKACarClass1_BT.Enabled = true;
+                                } break;
+                            case 1:
+                                {
+                                    selectKACarClass2_BT.Enabled = true;
+                                } break;
+                        }
+                    } break;
+            }
         }
 
         /// <summary>
@@ -877,8 +1041,8 @@ namespace Sprint.Views
             startBtn.Enabled = !startBtn.Enabled;
         } 
 
-        #endregion        
+        #endregion
 
         #endregion
-        }
+    }
 }

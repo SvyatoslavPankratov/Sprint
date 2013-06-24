@@ -31,6 +31,11 @@ namespace Sprint.Presenters
         private IMainView MainView { get; set; }
 
         /// <summary>
+        /// Задать или получить интерфейс на второй экран.
+        /// </summary>
+        private ISecondMonitorView SecondView { get; set; }
+
+        /// <summary>
         /// Задать или получить секундомер.
         /// </summary>
         private StopwatchModel Stopwatch { get; set; }
@@ -75,13 +80,13 @@ namespace Sprint.Presenters
         /// </summary>
         public RacersGroupModel CurrentRaserGroup
         {
-            get { return RacerGroups.FirstOrDefault(rg => rg.CarClass == CurrentCarClass); }
+            get { return RacerGroups.FirstOrDefault(rg => rg.CarClass == CurrentCarClass && rg.RaceNumber == CurrentRaceNum); }
         }
 
         /// <summary>
-        /// Задать или получить текущий номер заезда.
+        /// Задать или получить текущий номер заезда (начиная с 0).
         /// </summary>
-        public int? CurrentRaceNum { get; private set; }
+        public int? CurrentRaceNum { get; set; }
 
         /// <summary>
         /// Задать или получить текущий класс автомобилей проходящих заезд.
@@ -118,9 +123,11 @@ namespace Sprint.Presenters
         /// Конструктор.
         /// </summary>
         /// <param name="mainView">Интерфейс на главную форму.</param>
-        public MainPresenter(IMainView mainView)
+        /// <param name="secondView">Интерфейс на второй экран.</param>
+        public MainPresenter(IMainView mainView, ISecondMonitorView secondView)
         {
             MainView = mainView;
+            SecondView = secondView;
 
             Racers              = new List<RacerModel>();
             Stopwatch           = new StopwatchModel();
@@ -293,6 +300,11 @@ namespace Sprint.Presenters
             {
                 var racer = CurrentRaserGroup.GetNextRacer(Track.CurrentRacer);
                 MainView.NextCurrentRacer = racer == null ? 0 : racer.RacerNumber;
+
+                if (SecondView != null)
+                {
+                    SecondView.NextRacerNumber = racer == null ? 0 : racer.RacerNumber;
+                }
             }
 
             Stopwatch.Start();
@@ -333,7 +345,10 @@ namespace Sprint.Presenters
             }
 
             // Определимся какому участнику мы сейчас будем отрабатывать отсечку
-            if (Track.CurrentRacer != null && Track.CurrentRacers.Count() == 2 && Track.CurrentRacerNum == 0 && Track.CurrentRacer.Results.CurrentCircleNumber >= 3)
+            if (Track.CurrentRacer != null 
+                && Track.CurrentRacers.Count() == 2 
+                && Track.CurrentRacerNum == 0 
+                && Track.CurrentRacer.Results.GetCurrentCircleNumber(CurrentRaceNum.Value) >= 3)
             {
                 Track.CurrentRacerNum = 1;
             }
@@ -351,14 +366,28 @@ namespace Sprint.Presenters
                 racer.Results.StartTime = time;
                 (Track.CurrentRacers as List<RacerModel>).Add(racer);
                 MainView.FirstCurrentRacer = racer.RacerNumber;
+
+                if (SecondView != null)
+                {
+                    SecondView.FirstCurrentRacerNumber = racer.RacerNumber;
+                }
+
                 racer = SetNextRacerInfo(racer);
             } 
             // Если на треке уже есть участник и он проезжает уже 2 круг, то добавим еще одного участника
-            else if (Track.CurrentRacer != null && Track.CurrentRacer.Results.CurrentCircleNumber == 2 && Track.CurrentRacers.Count() == 1 && racer != null)
+            else if (Track.CurrentRacer != null 
+                     && Track.CurrentRacer.Results.GetCurrentCircleNumber(CurrentRaceNum.Value) == 2 
+                     && Track.CurrentRacers.Count() == 1 && racer != null)
             {
                 racer.Results.StartTime = time;
                 (Track.CurrentRacers as List<RacerModel>).Add(racer);
                 MainView.SecondCurrentRacer = racer.RacerNumber;
+
+                if (SecondView != null)
+                {
+                    SecondView.SecondCurrentRacerNumber = racer.RacerNumber;
+                }
+
                 racer = SetNextRacerInfo(racer);
             }
             // Запишем текущему автомобилю новое время, если он завершает круг
@@ -371,7 +400,7 @@ namespace Sprint.Presenters
             }
 
             // Если автомобиль финишировал, то убираем его с трека
-            if (Track.CurrentRacer != null && Track.CurrentRacer.Results.Finished)
+            if (Track.CurrentRacer != null && Track.CurrentRacer.Results.IsFinished(CurrentRaceNum.Value))
             {
                 var list = new List<RacerModel>(Track.CurrentRacers);
                 list.Remove(Track.CurrentRacer);
@@ -379,7 +408,13 @@ namespace Sprint.Presenters
 
                 MainView.FirstCurrentRacer = !Track.CurrentRacers.Any() ? 0 : Track.CurrentRacers.ElementAt(0).RacerNumber;
                 MainView.SecondCurrentRacer = 0;
-            }                 
+
+                if (SecondView != null)
+                {
+                    SecondView.FirstCurrentRacerNumber = !Track.CurrentRacers.Any() ? 0 : Track.CurrentRacers.ElementAt(0).RacerNumber;
+                    SecondView.SecondCurrentRacerNumber = 0;
+                }
+            }
 
             // Закрытие неудачных заездов
 
@@ -395,6 +430,98 @@ namespace Sprint.Presenters
 
             SaveApplicationState();
             DataBind();
+            SetRacerResultsToSecondView();
+        }
+
+        /// <summary>
+        /// Вывести результаты всех участников на трассе на второй экран.
+        /// </summary>
+        private void SetRacerResultsToSecondView()
+        {
+            if (SecondView == null || !CurrentRaceNum.HasValue)
+            {
+                return;
+            }
+
+            switch (Track.CurrentRacers.Count())
+            {
+                case 1:
+                    {
+                        OutFirstRacerResultsToSecondView();
+                        ResetSecondRacerResultsToSecondView();
+                    }
+                    break;
+                case 2:
+                    {
+                        OutFirstRacerResultsToSecondView();
+                        OutSecondRacerResultsToSecondView();
+                    }
+                    break;
+                default:
+                    {
+                        ResetFirstRacerResultsToSecondView();
+                        ResetSecondRacerResultsToSecondView();
+                    }
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Вывести результаты первого участника на второй экран.
+        /// </summary>
+        private void OutFirstRacerResultsToSecondView()
+        {
+            var racer_first = Track.CurrentRacers.ElementAt(0);
+
+            if (racer_first != null)
+            {
+                SecondView.FirstRacer1Time = racer_first.Results.ResultsList.ElementAt(CurrentRaceNum.Value).ElementAt(1);
+                SecondView.FirstRacer2Time = racer_first.Results.ResultsList.ElementAt(CurrentRaceNum.Value).ElementAt(2);
+                SecondView.FirstRacer3Time = racer_first.Results.ResultsList.ElementAt(CurrentRaceNum.Value).ElementAt(3);
+            }
+            else
+            {
+                ResetFirstRacerResultsToSecondView();
+            }
+        }
+        
+        /// <summary>
+        /// Вывести результаты первого участника на второй экран.
+        /// </summary>
+        private void OutSecondRacerResultsToSecondView()
+        {
+            var racer_second = Track.CurrentRacers.ElementAt(1);
+
+            if (racer_second != null)
+            {
+                SecondView.SecondRacer1Time = racer_second.Results.ResultsList.ElementAt(CurrentRaceNum.Value).ElementAt(1);
+                SecondView.SecondRacer2Time = racer_second.Results.ResultsList.ElementAt(CurrentRaceNum.Value).ElementAt(2);
+                SecondView.SecondRacer3Time = racer_second.Results.ResultsList.ElementAt(CurrentRaceNum.Value).ElementAt(3);
+            }
+            else
+            {
+                ResetSecondRacerResultsToSecondView();
+            }
+        }
+
+        /// <summary>
+        /// Сбросить результаты первого участника на втором экране.
+        /// </summary>
+        private void ResetFirstRacerResultsToSecondView()
+        {
+            SecondView.FirstRacer1Time = null;
+            SecondView.FirstRacer2Time = null;
+            SecondView.FirstRacer3Time = null;
+        }
+
+        /// <summary>
+        /// Сбросить результаты второго участника на втором экране.
+        /// </summary>
+        private void ResetSecondRacerResultsToSecondView()
+        {
+            SecondView.SecondRacer1Time = null;
+            SecondView.SecondRacer2Time = null;
+            SecondView.SecondRacer3Time = null;
         }
 
         /// <summary>
@@ -441,6 +568,12 @@ namespace Sprint.Presenters
         {
             last_racer = CurrentRaserGroup.GetNextRacer(last_racer);
             MainView.NextCurrentRacer = last_racer == null ? 0 : last_racer.RacerNumber;
+
+            if (SecondView != null)
+            {
+                SecondView.NextRacerNumber = last_racer == null ? 0 : last_racer.RacerNumber;
+            }
+
             return last_racer;
         }
 
@@ -485,7 +618,7 @@ namespace Sprint.Presenters
                 throw new Exception("Не удалось определить текущий класс автомобилей, проходящих заезд.");
             }
 
-            return curCarGroup.Racers.All(racer => racer.Results.Finished);
+            return curCarGroup.Racers.All(racer => racer.Results.IsFinished(CurrentRaceNum.Value));
         }
 
         /// <summary>
@@ -598,11 +731,17 @@ namespace Sprint.Presenters
         /// </summary>
         /// <param name="racer">Перемещаемый гонщик.</param>
         /// <param name="carClass">Номер перемещаемого участника.</param>
-        /// <param name="raceNum">Номер заезда внутри которого мы двигаем гонщика.</param>
+        /// <param name="raceNum">Номер заезда внутри которого мы двигаем гонщика (начиная с 0).</param>
         /// <returns></returns>
         private bool CheckMoveUp(RacerModel racer, CarClassesEnum carClass, int raceNum)
         {
             var res = false;
+
+            // Посмотрим, а не пытаемся-ли мы передвинуть уже проехавшего заезд гонщика?
+            if (racer.Results.ResultsList.ElementAt(raceNum).Count(r => r == null) < ConstantsModel.MaxCircleCount)
+            {
+                return false;
+            }
 
             // Посмторим, а вообще присутствуют-ли сейчас на трассе участники?
             if (!Track.CurrentRacers.Any())
@@ -617,7 +756,7 @@ namespace Sprint.Presenters
 
             if (currentRacerNumber == 0)
             {
-                res = false;
+                return false;
             }
 
             // Посмотрим, перемещаемый гонщик не на трассе-ли случаянно находится?
@@ -641,13 +780,6 @@ namespace Sprint.Presenters
                         res = false;
                     }
                 }
-
-                // Посмотрим, а не пытаемся-ли мы передвинуть уже проехавшего заезд гонщика?
-                if (racer.Results.ResultsList.ElementAt(raceNum - 1).Count(r => r == null) < ConstantsModel.MaxCircleCount)
-                {
-                    res = false;
-                }
-
             }
 
             return res;
@@ -658,12 +790,18 @@ namespace Sprint.Presenters
         /// </summary>
         /// <param name="racer">Перемещаемый гонщик.</param>
         /// <param name="carClass">Номер перемещаемого участника.</param>
-        /// <param name="raceNum">Номер заезда внутри которого мы двигаем гонщика.</param>
+        /// <param name="raceNum">Номер заезда внутри которого мы двигаем гонщика (начиная с 0).</param>
         /// <returns></returns>
         private bool CheckMoveDown(RacerModel racer, CarClassesEnum carClass, int raceNum)
         {
             // Посмторим, а вообще присутствуют-ли сейчас на трассе участники?
             bool res = !Track.CurrentRacers.Any();
+
+            // Посмотрим, а не пытаемся-ли мы передвинуть уже проехавшего заезд гонщика?
+            if (racer.Results.ResultsList.ElementAt(raceNum).Count(r => r == null) < ConstantsModel.MaxCircleCount)
+            {
+                return false;
+            }
 
             // Посмотрим, а не последним-ли в списке находится перемещаемый участник
             var raserGroup = RacerGroups.FirstOrDefault(rg => rg.CarClass == carClass && rg.RaceNumber == raceNum);
@@ -672,7 +810,7 @@ namespace Sprint.Presenters
 
             if (currentRacerNumber == raserGroup.Racers.Count() - 1)
             {
-                res = false;
+                return false;
             }
 
             // Посмотрим, перемещаемый гонщик не на трассе-ли случаянно находится?
@@ -684,12 +822,6 @@ namespace Sprint.Presenters
                     {
                         res = false;
                     }
-                }
-
-                // Посмотрим, а не пытаемся-ли мы передвинуть уже проехавшего заезд гонщика?
-                if (racer.Results.ResultsList.ElementAt(raceNum - 1).Count(r => r == null) < ConstantsModel.MaxCircleCount)
-                {
-                    res = false;
                 }
             }
 
@@ -770,12 +902,23 @@ namespace Sprint.Presenters
         /// Проверить заданный заезд у заданного класса на финиширование.
         /// </summary>
         /// <param name="car_class">Заданный класс автомобилей.</param>
-        /// <param name="race_number"></param>
+        /// <param name="race_number">Номер заезда для проверки (начиная с 0).</param>
         /// <returns></returns>
         public OperationResult CarClassIsFinished(CarClassesEnum car_class, int race_number)
         {
             var cc = RacerGroups.FirstOrDefault(rg => rg.CarClass == car_class && rg.RaceNumber == race_number && rg.IsFinished);
             return cc == null ? new OperationResult(false) : new OperationResult(true);
+        }
+
+        /// <summary>
+        /// Обнуление заезда у заданного участника.
+        /// </summary>
+        /// <returns>Результат операции.</returns>
+        public OperationResult NullableRaceForRacer()
+        {
+
+
+            throw  new NotImplementedException();
         }
 
         #endregion
