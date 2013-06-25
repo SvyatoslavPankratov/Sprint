@@ -420,8 +420,7 @@ namespace Sprint.Presenters
 
             // Поиск повторных заездов
             
-            // Переход к следующему классу автомобилей
-            
+            // Если заезд завершен, то закрываем текущей заезд у текущего класса автомобилей 
             if (CheckCurrentGroupFinishedRace())
             {
                 StopStopwatch();
@@ -471,6 +470,11 @@ namespace Sprint.Presenters
         /// </summary>
         private void OutFirstRacerResultsToSecondView()
         {
+            if (!CurrentRaceNum.HasValue)
+            {
+                return;
+            }
+
             var racer_first = Track.CurrentRacers.ElementAt(0);
 
             if (racer_first != null)
@@ -490,6 +494,11 @@ namespace Sprint.Presenters
         /// </summary>
         private void OutSecondRacerResultsToSecondView()
         {
+            if (!CurrentRaceNum.HasValue)
+            {
+                return;
+            }
+
             var racer_second = Track.CurrentRacers.ElementAt(1);
 
             if (racer_second != null)

@@ -148,6 +148,7 @@
     <Compile Include="Managers\ApplicationStateDbManager.cs" />
     <Compile Include="Managers\CarClassesDbMeneger.cs" />
     <Compile Include="Managers\DatabaseBackupManager.cs" />
+    <Compile Include="Managers\DiscSpaceManager.cs" />
     <Compile Include="Managers\WindowHookManager.cs" />
     <Compile Include="Managers\ExcelManager.cs" />
     <Compile Include="Managers\ExceptionsManager.cs" />
@@ -369,7 +370,9 @@
     <None Include="Properties\DataSources\Sprint.Models.ResultsForReport.datasource" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Strings\" />
