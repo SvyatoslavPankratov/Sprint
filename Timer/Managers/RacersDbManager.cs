@@ -45,7 +45,7 @@ namespace Sprint.Managers
                 foreach (var racer in dc.Racers)
                 {
                     var rm = new RacerModel(racer.FirstName, racer.LastName, racer.MiddleName, racer.Cars.First().Name,
-                                            (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), racer.Cars.First().CarClass.Name));
+                                            (CarClassesEnum)Enum.Parse(typeof(CarClassesEnum), racer.Cars.First().CarClass.Name));
                     rm.Id = racer.Id;
                     rm.RacerNumber = racer.Number;
                     rm.Results = new ResultsModel();
@@ -139,8 +139,8 @@ namespace Sprint.Managers
 
                 foreach (var racer in racers)
                 {
-                    var rm = new RacerModel(racer.FirstName, racer.LastName, racer.MiddleName, racer.Cars.First().Name, 
-                                            (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), racer.Cars.First().CarClass.Name));
+                    var rm = new RacerModel(racer.FirstName, racer.LastName, racer.MiddleName, racer.Cars.First().Name,
+                                            (CarClassesEnum)Enum.Parse(typeof(CarClassesEnum), racer.Cars.First().CarClass.Name));
                     rm.Id = racer.Id;
                     rm.RacerNumber = racer.Number;
                     rm.Results = new ResultsModel();
@@ -186,6 +186,29 @@ namespace Sprint.Managers
             {
                 var exception = new SprintException("Не удалось получить список участников в заданном классе автомобилей.",
                                                         "Sprint.Managers.RacersManager.GetRacers(CarClass carClass)", ex);
+                logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
+                throw exception;
+            }
+        }
+
+        /// <summary>
+        /// Получить список участников в заданном классе автомобилей и заданном номере заезда.
+        /// </summary>
+        /// <param name="carClass">Класс автомобилей.</param>
+        /// <param name="raceNumber">Заданный номер заезда.</param>
+        /// <returns>Список участников в заданном классе автомобилей и заданном номере заезда.</returns>
+        public static IEnumerable<RacerModel> GetRacers(CarClassesEnum carClass, int raceNumber)
+        {
+            try
+            {
+
+
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                var exception = new SprintException("Не удалось получить список участников в заданном классе автомобилей и заданном заезде.",
+                                                        "Sprint.Managers.RacersManager.GetRacers(CarClassesEnum carClass, int raceNumber)", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 throw exception;
             }

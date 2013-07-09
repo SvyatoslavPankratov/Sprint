@@ -13,6 +13,7 @@
           <EntitySet Name="Racers" EntityType="SprintModel.Store.Racers" store:Type="Tables" />
           <EntitySet Name="RacersAtTheTrack" EntityType="SprintModel.Store.RacersAtTheTrack" store:Type="Tables" />
           <EntitySet Name="RacesOptions" EntityType="SprintModel.Store.RacesOptions" store:Type="Tables" />
+          <EntitySet Name="RaceState" EntityType="SprintModel.Store.RaceState" store:Type="Tables" />
           <EntitySet Name="Results" EntityType="SprintModel.Store.Results" store:Type="Tables" />
           <EntitySet Name="UserDataAboutCircles" EntityType="SprintModel.Store.UserDataAboutCircles" store:Type="Tables" />
           <AssociationSet Name="FK_ApplicationState_CurrentCarClass" Association="SprintModel.Store.FK_ApplicationState_CurrentCarClass">
@@ -46,6 +47,14 @@
           <AssociationSet Name="FK_UserDataAboutCircles_ID_Racer" Association="SprintModel.Store.FK_UserDataAboutCircles_ID_Racer">
             <End Role="Racers" EntitySet="Racers" />
             <End Role="UserDataAboutCircles" EntitySet="UserDataAboutCircles" />
+          </AssociationSet>
+          <AssociationSet Name="RaceSate_CarClass" Association="SprintModel.Store.RaceSate_CarClass">
+            <End Role="CarClasses" EntitySet="CarClasses" />
+            <End Role="RaceState" EntitySet="RaceState" />
+          </AssociationSet>
+          <AssociationSet Name="RaceState_Racer" Association="SprintModel.Store.RaceState_Racer">
+            <End Role="Racers" EntitySet="Racers" />
+            <End Role="RaceState" EntitySet="RaceState" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="ApplicationState">
@@ -108,6 +117,16 @@
           <Property Name="Id_CarClass" Type="uniqueidentifier" />
           <Property Name="RaceCount" Type="int" Nullable="false" />
           <Property Name="LidersCount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RaceState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RaceNumber" Type="int" Nullable="false" />
+          <Property Name="FK_Racer" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FK_CarClass" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IndexInsideCarClass" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Results">
           <Key>
@@ -232,6 +251,34 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="RaceSate_CarClass">
+          <End Role="CarClasses" Type="SprintModel.Store.CarClasses" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="RaceState" Type="SprintModel.Store.RaceState" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CarClasses">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RaceState">
+              <PropertyRef Name="FK_CarClass" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RaceState_Racer">
+          <End Role="Racers" Type="SprintModel.Store.Racers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="RaceState" Type="SprintModel.Store.RaceState" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Racers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RaceState">
+              <PropertyRef Name="FK_Racer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -278,7 +325,16 @@
             <End Role="Racer" EntitySet="Racers" />
             <End Role="UserDataAboutCircle" EntitySet="UserDataAboutCircles" />
           </AssociationSet>
-        </EntityContainer>
+          <EntitySet Name="RaceStates" EntityType="SprintModel.RaceState" />
+          <AssociationSet Name="RaceSate_CarClass" Association="SprintModel.RaceSate_CarClass">
+            <End Role="CarClass" EntitySet="CarClasses" />
+            <End Role="RaceState" EntitySet="RaceStates" />
+          </AssociationSet>
+          <AssociationSet Name="RaceState_Racer" Association="SprintModel.RaceState_Racer">
+            <End Role="Racer" EntitySet="Racers" />
+            <End Role="RaceState" EntitySet="RaceStates" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="CarClass">
           <Documentation>
             <Summary>Классы автомобилей.</Summary>
@@ -292,6 +348,7 @@
           <NavigationProperty Name="Cars" Relationship="SprintModel.FK_Cars_CarClasses" FromRole="CarClass" ToRole="Car" />
           <NavigationProperty Name="RacesOptions" Relationship="SprintModel.FK_RaceOptions_CarClass" FromRole="CarClass" ToRole="RacesOption" />
           <NavigationProperty Name="ApplicationStates" Relationship="SprintModel.FK_ApplicationState_CurrentCarClass" FromRole="CarClass" ToRole="ApplicationState" />
+          <NavigationProperty Name="RaceStates" Relationship="SprintModel.RaceSate_CarClass" FromRole="CarClass" ToRole="RaceState" />
         </EntityType>
         <EntityType Name="Car">
           <Documentation>
@@ -326,6 +383,7 @@
           <NavigationProperty Name="ApplicationStates" Relationship="SprintModel.FK_ApplicationState_CurrentRacer_Racer" FromRole="Racer" ToRole="ApplicationState" />
           <NavigationProperty Name="RacersAtTheTracks" Relationship="SprintModel.FK_RacersAtTheTrack_Racer" FromRole="Racer" ToRole="RacersAtTheTrack" />
           <NavigationProperty Name="UserDataAboutCircles" Relationship="SprintModel.FK_UserDataAboutCircles_ID_Racer" FromRole="Racer" ToRole="UserDataAboutCircle" />
+          <NavigationProperty Name="RaceStates" Relationship="SprintModel.RaceState_Racer" FromRole="Racer" ToRole="RaceState" />
         </EntityType>
         <Association Name="FK_Cars_CarClasses">
           <End Type="SprintModel.CarClass" Role="CarClass" Multiplicity="1">
@@ -495,6 +553,46 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="RaceState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="RaceNumber" Nullable="false" />
+          <Property Type="Guid" Name="FK_Racer" Nullable="false" />
+          <Property Type="Guid" Name="FK_CarClass" Nullable="false" />
+          <NavigationProperty Name="CarClass" Relationship="SprintModel.RaceSate_CarClass" FromRole="RaceState" ToRole="CarClass" />
+          <NavigationProperty Name="Racer" Relationship="SprintModel.RaceState_Racer" FromRole="RaceState" ToRole="Racer" />
+          <Property Type="Int32" Name="IndexInsideCarClass" Nullable="false" />
+        </EntityType>
+        <Association Name="RaceSate_CarClass">
+          <End Type="SprintModel.CarClass" Role="CarClass" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SprintModel.RaceState" Role="RaceState" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CarClass">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RaceState">
+              <PropertyRef Name="FK_CarClass" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RaceState_Racer">
+          <End Type="SprintModel.Racer" Role="Racer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SprintModel.RaceState" Role="RaceState" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Racer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RaceState">
+              <PropertyRef Name="FK_Racer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -586,6 +684,17 @@
                 <ScalarProperty Name="CircleNumber" ColumnName="CircleNumber" />
                 <ScalarProperty Name="RaceNumber" ColumnName="RaceNumber" />
                 <ScalarProperty Name="FK_Racer" ColumnName="FK_Racer" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RaceStates">
+            <EntityTypeMapping TypeName="SprintModel.RaceState">
+              <MappingFragment StoreEntitySet="RaceState">
+                <ScalarProperty Name="IndexInsideCarClass" ColumnName="IndexInsideCarClass" />
+                <ScalarProperty Name="FK_CarClass" ColumnName="FK_CarClass" />
+                <ScalarProperty Name="FK_Racer" ColumnName="FK_Racer" />
+                <ScalarProperty Name="RaceNumber" ColumnName="RaceNumber" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

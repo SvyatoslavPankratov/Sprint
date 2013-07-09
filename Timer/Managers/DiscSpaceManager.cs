@@ -10,7 +10,7 @@ namespace Sprint.Managers
 	/// <summary>
 	/// Менеджер по работе с дисковым пространством.
 	/// </summary>
-	public class DiscSpaceManager
+	public static class DiscSpaceManager
 	{
         #region Поля только для чтения
 

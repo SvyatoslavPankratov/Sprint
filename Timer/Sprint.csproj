@@ -126,6 +126,9 @@
     <Compile Include="Data\RacesOption.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\RaceState.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -149,6 +152,7 @@
     <Compile Include="Managers\CarClassesDbMeneger.cs" />
     <Compile Include="Managers\DatabaseBackupManager.cs" />
     <Compile Include="Managers\DiscSpaceManager.cs" />
+    <Compile Include="Managers\RaceStateDbManager.cs" />
     <Compile Include="Managers\WindowHookManager.cs" />
     <Compile Include="Managers\ExcelManager.cs" />
     <Compile Include="Managers\ExceptionsManager.cs" />
@@ -168,6 +172,7 @@
     <Compile Include="Models\RaceOptionsModel.cs" />
     <Compile Include="Models\RacerModel.cs" />
     <Compile Include="Models\RacersGroupModel.cs" />
+    <Compile Include="Models\RaceStateModel.cs" />
     <Compile Include="Models\ResultsForReport.cs" />
     <Compile Include="Models\ResultsModel.cs" />
     <Compile Include="Models\StopwatchModel.cs" />
@@ -359,6 +364,7 @@
     <None Include="Diagrams\Classes diagrams\RacingModel.cd" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <None Include="Diagrams\Sequence diagrams\StartProgram.sequencediagram" />
     <None Include="Diagrams\Sequence diagrams\WorkProgram.sequencediagram" />
@@ -375,6 +381,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controls\Intrefaces\" />
+    <Folder Include="Controls\Presenters\" />
+    <Folder Include="Controls\Views\" />
     <Folder Include="Resources\Strings\" />
   </ItemGroup>
   <ItemGroup>

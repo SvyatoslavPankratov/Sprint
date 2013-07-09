@@ -3,7 +3,7 @@
   <Class Name="Sprint.Managers.ExcelManager">
     <Position X="4.25" Y="7" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAABAAAAAAAAAAAAEAAAQAABAEAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAACAABAAAAIAAAAAAAEAAAQAABAEAA=</HashCode>
       <FileName>Managers\ExcelManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -105,8 +105,22 @@
   <Class Name="Sprint.Managers.DatabaseBackupManager">
     <Position X="10.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAABAACAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Managers\DatabaseBackupManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sprint.Managers.DiscSpaceManager">
+    <Position X="15.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Managers\DiscSpaceManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sprint.Managers.RaceStateDbManager">
+    <Position X="13.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAACAAAAAAAAAAAgAAIAIAAAAAAAAAA=</HashCode>
+      <FileName>Managers\RaceStateDbManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -14,6 +14,11 @@ namespace Sprint.Models
         #region Свойства
 
         /// <summary>
+        /// Задать или получить состояния заедов по классам автомобилей.
+        /// </summary>
+        public IEnumerable<RaceStateModel> RaceStates { get; set; } 
+
+        /// <summary>
         /// Задать или получить id всех гонщиков на треке в текущий момент времени.
         /// </summary>
         public IEnumerable<Guid> RacersAtTheTrack { get; set; }
@@ -33,6 +38,19 @@ namespace Sprint.Models
         /// </summary>
         public int? CurrentRaceNumber { get; set; }
         
+        #endregion
+
+        #region Конструкторы
+
+        /// <summary>
+        /// Конструктор.
+        /// </summary>
+        public ApplicationStateModel()
+        {
+            RaceStates = new List<RaceStateModel>();
+            RacersAtTheTrack = new List<Guid>();
+        }
+
         #endregion
     }
 }

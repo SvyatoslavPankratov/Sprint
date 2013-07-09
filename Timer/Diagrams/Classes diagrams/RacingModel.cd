@@ -66,39 +66,39 @@
     </AssociationLine>
     <AssociationLine Name="CurrentRaserGroup" Type="Sprint.Models.RacersGroupModel" FixedFromPoint="true">
       <Path>
-        <Point X="10.5" Y="7.016" />
-        <Point X="12.25" Y="7.016" />
+        <Point X="10.5" Y="7.013" />
+        <Point X="12.25" Y="7.013" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="CurrentCarClass" Type="Sprint.Models.CarClassesEnum" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="10.5" Y="9.004" />
-        <Point X="15.375" Y="9.004" />
+        <Point X="10.5" Y="8.989" />
+        <Point X="15.375" Y="8.989" />
         <Point X="15.375" Y="7.008" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="3.574" Y="1.778" />
+        <Position X="3.587" Y="1.661" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="CurrentEditCarClass" Type="Sprint.Models.CarClassesEnum" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="10.5" Y="9.299" />
-        <Point X="15.625" Y="9.299" />
+        <Point X="10.5" Y="9.282" />
+        <Point X="15.625" Y="9.282" />
         <Point X="15.625" Y="7.008" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="3.615" Y="2.076" />
+        <Position X="3.602" Y="2.349" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="Track" Type="Sprint.Models.TrackModel" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.5" Y="7.938" />
-        <Point X="7.062" Y="7.938" />
+        <Point X="7.5" Y="7.929" />
+        <Point X="7.062" Y="7.929" />
         <Point X="7.062" Y="5.305" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>QQOKmAtUAPY1AQAjIIEkIAwoAAg8QEkCAEAgABQIJAA=</HashCode>
+      <HashCode>QQOKiAtUAfY1AQAjIYEkIAwoAAg8QEkCAEAgABQIJAA=</HashCode>
       <FileName>Presenters\MainPresenter.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -249,14 +249,14 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Sprint.Models.ResultsForReport">
-    <Position X="21" Y="5.75" Width="1.5" />
+    <Position X="25.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAAAAAAAACAAAAAAAAEIABgAAAABgA=</HashCode>
       <FileName>Models\ResultsForReport.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sprint.Models.ConstantsModel">
-    <Position X="23.25" Y="5.75" Width="1.75" />
+    <Position X="19" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAIBAAAAAAAAAABAAAAAAIAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\ConstantsModel.cs</FileName>
@@ -265,12 +265,15 @@
   <Class Name="Sprint.Models.ApplicationStateModel">
     <Position X="18.25" Y="5.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAAAAAAYAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAABAAAAAAAYAAAAAgAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Models\ApplicationStateModel.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="CurrentCarClass" />
     </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="RaceStates" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Sprint.Presenters.RegenerationDialogPresenter">
     <Position X="18.25" Y="15" Width="2.5" />
@@ -323,6 +326,16 @@
       <Property Name="SplashScreenView" />
       <Property Name="MainView" />
       <Property Name="SecondMonitorView" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sprint.Models.RaceStateModel">
+    <Position X="22.25" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ASAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Models\RaceStateModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CarClass" />
     </ShowAsAssociation>
   </Class>
   <Interface Name="Sprint.Interfaces.IMainView">

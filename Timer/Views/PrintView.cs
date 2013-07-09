@@ -71,7 +71,7 @@ namespace Sprint.Views
         /// <summary>
         /// Конструктор.
         /// </summary>
-        /// <param name="enableEdit"></param>
+        /// <param name="enableEdit">Есть ли возможность изменять параметры отчета в диалоговом окне.</param>
         public PrintView(bool enableEdit)
             : this()
         {
@@ -82,25 +82,26 @@ namespace Sprint.Views
         /// <summary>
         /// Конструктор.
         /// </summary>
-        /// <param name="carClass"></param>
-        /// <param name="raceNumber"></param>
+        /// <param name="carClass">Класс автомобилей.</param>
+        /// <param name="raceNumber">Номер заезда (начиная с 0).</param>
         public PrintView(string carClass, int raceNumber)
             : this()
         {
             carClassesLB.SelectedItem = carClass;
-            raceNumberLB.SelectedItem = raceNumber;
+            raceNumberLB.SelectedItem = raceNumber + 1;
         }
 
         /// <summary>
         /// Конструктор.
         /// </summary>
-        /// <param name="carClass"></param>
-        /// <param name="raceNumber"></param>
+        /// <param name="carClass">Класс автомобилей.</param>
+        /// <param name="raceNumber">Номер заезда (начиная с 0).</param>
+        /// <param name="enableEdit">Есть ли возможность изменять параметры отчета в диалоговом окне.</param>
         public PrintView(string carClass, int raceNumber, bool enableEdit)
             : this(enableEdit)
         {
             carClassesLB.SelectedItem = carClass;
-            raceNumberLB.SelectedItem = raceNumber;
+            raceNumberLB.SelectedItem = raceNumber + 1;
         }
 
         #endregion

@@ -44,7 +44,7 @@ namespace Sprint.Managers
 
                 foreach(var option in options)
                 {
-                    var cc = (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), option.CarClass.Name);
+                    var cc = (CarClassesEnum)Enum.Parse(typeof(CarClassesEnum), option.CarClass.Name);
 
                     res.Add(new RaceOptionsModel(cc)
                                     {
@@ -57,7 +57,7 @@ namespace Sprint.Managers
             catch (Exception ex)
             {
                 var exception = new SprintException("Не удалось получить список опций заездов.",
-                                                        "Sprint.Managers.OptionsManager.GetOptions()", ex);
+                                                        "Sprint.Managers.OptionsDbManager.GetOptions()", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 throw exception;
             }
@@ -78,8 +78,8 @@ namespace Sprint.Managers
 
                 if (cc == null)
                 {
-                    var exception = new SprintDataException("Не удалось получить список опций заездов, т.к. заданный класс автомобилей не был найден в БД в таблице [CarClasses].", 
-                                                            "Sprint.Managers.OptionsManager.GetOptions(CarClass carClass)");
+                    var exception = new SprintDataException("Не удалось получить список опций заездов, т.к. заданный класс автомобилей не был найден в БД в таблице [CarClasses].",
+                                                            "Sprint.Managers.OptionsManager.OptionsDbManager(CarClass carClass)");
                     logger.Trace(ExceptionsManager.CreateExceptionMessage(exception));
                     return null;
                 }
@@ -132,7 +132,7 @@ namespace Sprint.Managers
                 if (cc == null)
                 {
                     var exception = new SprintDataException("Не удалось задать опции заезда, т.к. заданный класс автомобилей не был найден в БД в таблице [CarClasses].",
-                                                            "Sprint.Managers.OptionsManager.SetOptions(RacesOption options)");
+                                                            "Sprint.Managers.OptionsDbManager.SetOptions(RacesOption options)");
                     logger.Trace(ExceptionsManager.CreateExceptionMessage(exception));
                     return new OperationResult(false, exception.Message, exception);
                 }
@@ -163,7 +163,7 @@ namespace Sprint.Managers
             catch (Exception ex)
             {
                 var exception = new SprintException("Не удалось задать заданные опции заездов в заданном классе автомобилей.",
-                                                        "Sprint.Managers.OptionsManager.SetOptions(RacesOption options)", ex);
+                                                        "Sprint.Managers.OptionsDbManager.SetOptions(RacesOption options)", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 throw exception;
             }
@@ -185,7 +185,7 @@ namespace Sprint.Managers
                 if (cc == null)
                 {
                     var exception = new SprintDataException("Не удалось удалить заданные опции гонок, т.к. заданный класс автомобилей не был найден в БД в таблице [CarClasses].",
-                                                            "Sprint.Managers.OptionsManager.DeleteOptions(CarClass carClass)");
+                                                            "Sprint.Managers.OptionsDbManager.DeleteOptions(CarClass carClass)");
                     logger.Trace(ExceptionsManager.CreateExceptionMessage(exception));
                     return null;
                 }
@@ -195,7 +195,7 @@ namespace Sprint.Managers
                 if (ro == null)
                 {
                     var exception = new SprintDataException("Не удалось удалить заданные опции гонок, т.к. заданные опции не были найдены в БД в таблице [RaceOptions].",
-                                                            "Sprint.Managers.OptionsManager.DeleteOptions(CarClass carClass)");
+                                                            "Sprint.Managers.OptionsDbManager.DeleteOptions(CarClass carClass)");
                     logger.Trace(ExceptionsManager.CreateExceptionMessage(exception));
                     return new OperationResult(false, exception.Message, exception);
                 }
@@ -206,8 +206,8 @@ namespace Sprint.Managers
             }
             catch (Exception ex)
             {
-                var exception = new SprintException("Не удалось удалить заданные опции гонок.", 
-                                                        "Sprint.Managers.OptionsManager.DeleteOptions(Guid Id)", ex);
+                var exception = new SprintException("Не удалось удалить заданные опции гонок.",
+                                                        "Sprint.Managers.OptionsDbManager.DeleteOptions(Guid Id)", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 throw exception;
             }
@@ -232,7 +232,7 @@ namespace Sprint.Managers
             catch (Exception ex)
             {
                 var exception = new SprintException("Не удалось удалить заданные опции гонок.",
-                                                        "Sprint.Managers.OptionsManager.DeleteOptions()", ex);
+                                                        "Sprint.Managers.OptionsDbManager.DeleteOptions()", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 throw exception;
             }

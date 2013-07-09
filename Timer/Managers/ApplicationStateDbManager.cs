@@ -13,7 +13,7 @@ namespace Sprint.Managers
     /// <summary>
     /// Менеджер для работы с состоянием приложения в БД.
     /// </summary>
-    public class ApplicationStateDbManager
+    public static class ApplicationStateDbManager
     {
         #region Поля только для чтения
 
@@ -40,13 +40,17 @@ namespace Sprint.Managers
             try
             {
                 var state = dc.ApplicationStates.FirstOrDefault();
-                var racers = dc.RacersAtTheTracks.ToArray();
 
-                var app_state = new ApplicationStateModel { RacersAtTheTrack = racers.Select(r => r.Racer.Id).ToList() };
+                var app_state = new ApplicationStateModel
+                                    {
+                                        RacersAtTheTrack = dc.RacersAtTheTracks.Select(r => r.Racer.Id).ToList(),
+                                        RaceStates = RaceStateDbManager.GetRaceStates()
+                                    };
 
+                // Получим остальные данные о внутреннем состоянии приложения
                 if (state != null)
                 {
-                    app_state.CurrentCarClass = (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), state.CarClass.Name);
+                    app_state.CurrentCarClass = (CarClassesEnum)Enum.Parse(typeof (CarClassesEnum), state.CarClass.Name);
                     app_state.CurrentRacer = state.CurrentRacer == null ? (Guid?) null : state.CurrentRacer.Id;
                     app_state.CurrentRaceNumber = state.CurrentRaceNumber;
                 }
@@ -128,20 +132,23 @@ namespace Sprint.Managers
 
         /// <summary>
         /// Удалить состояние приложения.
+        /// Удаляется полностью, кроме
         /// </summary>
         /// <returns>Результат удаления состояния приложения.</returns>
         public static OperationResult DeleteApplicationState()
         {
             try
             {
-                foreach (var racer in dc.RacersAtTheTracks)
+                var rat = dc.RacersAtTheTracks.ToArray();
+                for (int i = 0; i < rat.Count(); i++)
                 {
-                    dc.RacersAtTheTracks.Remove(racer);
+                    dc.RacersAtTheTracks.Remove(rat[i]);
                 }
 
-                foreach (var state in dc.ApplicationStates)
+                var ast = dc.ApplicationStates.ToArray();
+                for (int i = 0; i < ast.Count(); i++)
                 {
-                    dc.ApplicationStates.Remove(state);
+                    dc.ApplicationStates.Remove(ast[i]);
                 }
 
                 dc.SaveChanges();

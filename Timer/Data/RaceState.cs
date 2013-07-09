@@ -12,13 +12,15 @@ namespace Sprint.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class RacesOption
+    public partial class RaceState
     {
         public System.Guid Id { get; set; }
-        public Nullable<System.Guid> Id_CarClass { get; set; }
-        public int RaceCount { get; set; }
-        public int LidersCount { get; set; }
+        public int RaceNumber { get; set; }
+        public System.Guid FK_Racer { get; set; }
+        public System.Guid FK_CarClass { get; set; }
+        public int IndexInsideCarClass { get; set; }
     
         public virtual CarClass CarClass { get; set; }
+        public virtual Racer Racer { get; set; }
     }
 }

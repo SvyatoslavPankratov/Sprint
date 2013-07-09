@@ -19,6 +19,7 @@ namespace Sprint.Data
             this.Cars = new HashSet<Car>();
             this.RacesOptions = new HashSet<RacesOption>();
             this.ApplicationStates = new HashSet<ApplicationState>();
+            this.RaceStates = new HashSet<RaceState>();
         }
     
         public System.Guid Id { get; set; }
@@ -27,5 +28,6 @@ namespace Sprint.Data
         public virtual ICollection<Car> Cars { get; set; }
         public virtual ICollection<RacesOption> RacesOptions { get; set; }
         public virtual ICollection<ApplicationState> ApplicationStates { get; set; }
+        public virtual ICollection<RaceState> RaceStates { get; set; }
     }
 }

@@ -64,6 +64,11 @@ namespace Sprint.Models
             var racers = (List<RacerModel>)Racers;
             racers.Add(racer);
             RacersDbManager.SetRacer(racer);
+
+            var rs = new RaceStateModel(CarClass, RaceNumber);
+            rs.AddRacers(racers);
+
+            RaceStateDbManager.SetRaceStates(rs);
         }
 
         /// <summary>
@@ -80,6 +85,14 @@ namespace Sprint.Models
             list.Insert(index - 1, racer);
 
             Racers = list;
+
+            var rs_collection = new RaceStateModel(CarClass, RaceNumber)
+                                    {
+                                        Racers = from r in Racers
+                                                 select r.Id
+                                    };
+
+            RaceStateDbManager.SetRaceStates(rs_collection);
         }
 
         /// <summary>
@@ -96,6 +109,14 @@ namespace Sprint.Models
             list.Insert(index + 1, racer);
 
             Racers = list;
+
+            var rs_collection = new RaceStateModel(CarClass, RaceNumber)
+                                    {
+                                        Racers = from r in Racers
+                                                 select r.Id
+                                    };
+
+            RaceStateDbManager.SetRaceStates(rs_collection);
         }
 
         /// <summary>

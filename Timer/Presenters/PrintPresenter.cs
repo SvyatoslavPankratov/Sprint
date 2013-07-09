@@ -36,7 +36,7 @@ namespace Sprint.Presenters
             PrintView = printView;
             Options = GetOptions();
 
-            PrintView.CarClasses = Enum.GetNames(Type.GetType("Sprint.Models.CarClassesEnum")).ToList();
+            PrintView.CarClasses = Enum.GetNames(typeof(CarClassesEnum)).ToList();
         }
 
         #endregion
@@ -58,9 +58,9 @@ namespace Sprint.Presenters
 
             var options = new List<RaceOptionsModel>();
 
-            foreach (var cc in Enum.GetNames(Type.GetType("Sprint.Models.CarClassesEnum")))
+            foreach (var cc in Enum.GetNames(typeof(CarClassesEnum)))
             {
-                var carClass = (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), cc);
+                var carClass = (CarClassesEnum)Enum.Parse(typeof(CarClassesEnum), cc);
 
                 if (db_o.Any(o => o.CarClass == carClass))
                 {
@@ -130,14 +130,13 @@ namespace Sprint.Presenters
         {
             var results = new List<ResultsForReport>();
             var cc = ParseCarClass(carClass);
-            var racers = RacersDbManager.GetRacers(cc);
+            var racers = RacersDbManager.GetRacers(cc, raceNumber);
             
             // Вначале добавяем участников у ктороых есть результаты
             var racers_with_results = from racer in racers
                                       where racer.Results.HasValues(raceNumber)
                                       orderby racer.Results.GetMinTime(raceNumber)
                                       select racer;
-            ;
 
             if (racers_with_results.Any())
             {
@@ -206,7 +205,7 @@ namespace Sprint.Presenters
         /// <returns></returns>
         public static CarClassesEnum ParseCarClass(string carClass)
         {
-            return (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), carClass);
+            return (CarClassesEnum)Enum.Parse(typeof(CarClassesEnum), carClass);
         }
 
         /// <summary>
