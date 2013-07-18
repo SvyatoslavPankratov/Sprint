@@ -7,7 +7,7 @@ using Sprint.Models;
 
 namespace Sprint.Interfaces
 {
-    public interface IOptionsView
+    public interface IOptions
     {
         #region Свойства
 

@@ -44,11 +44,15 @@ namespace Sprint.Managers
 
                 foreach (var racer in dc.Racers)
                 {
-                    var rm = new RacerModel(racer.FirstName, racer.LastName, racer.MiddleName, racer.Cars.First().Name,
-                                            (CarClassesEnum)Enum.Parse(typeof(CarClassesEnum), racer.Cars.First().CarClass.Name));
-                    rm.Id = racer.Id;
-                    rm.RacerNumber = racer.Number;
-                    rm.Results = new ResultsModel();
+                    var car = racer.Cars.First();
+                    var rm = new RacerModel(racer.FirstName, racer.LastName, racer.MiddleName,
+                                            car.Manufacturer, car.Model, car.EngineSize, car.EnginePower,
+                                            (CarClassesEnum)Enum.Parse(typeof(CarClassesEnum), racer.Cars.First().CarClass.Name))
+                                {
+                                    Id = racer.Id,
+                                    RacerNumber = racer.Number,
+                                    Results = new ResultsModel()
+                                };
 
                     // Добавить результаты 1 тура
                     foreach (var result in racer.Results.Where(r => r.RaceNumber == 0).OrderBy(r => r.LapNumber))
@@ -96,102 +100,6 @@ namespace Sprint.Managers
         }
 
         /// <summary>
-        /// Получить список участников в заданном классе автомобилей.
-        /// </summary>
-        /// <param name="carClass">Класс автомобилей.</param>
-        /// <returns>Список участников в заданном классе автомобилей.</returns>
-        public static IEnumerable<RacerModel> GetRacers(CarClassesEnum carClass)
-        {
-            try
-            {
-                var str_car_class = carClass.ToString();
-                var car_class = dc.CarClasses.FirstOrDefault(row => row.Name == str_car_class);
-
-                if (car_class == null)
-                {
-                    var exception = new SprintDataException("Не удалось получить список участников в заданном классе автомобилей, т.к. заданный класс автомобилей не был найден в БД в таблице [CarClasses].",
-                                                            "Sprint.Managers.RacersManager.GetRacers(CarClass carClass)");
-                    logger.Trace(ExceptionsManager.CreateExceptionMessage(exception));
-                    return null;
-                }
-
-                var cc = dc.CarClasses.FirstOrDefault(row => row.Name == str_car_class);
-
-                if (cc == null)
-                {
-                    var exception = new SprintDataException("Не удалось получить список участников в заданном классе автомобилей, т.к. заданный класс автомобилей не был найден в БД в таблице [CarClasses].",
-                                                            "Sprint.Managers.RacersManager.GetRacers(CarClass carClass)");
-                    logger.Trace(ExceptionsManager.CreateExceptionMessage(exception));
-                    return null;
-                }
-
-                var racers = dc.Racers.Where(r => r.Cars.Any(c => c.CarClass.Id== cc.Id));
-
-                if (racers == null)
-                {
-                    var exception = new SprintDataException("Не удалось получить список участников в заданном классе автомобилей, т.к. участников для заданного класса автомобилей на данный момент не существует.",
-                                                            "Sprint.Managers.RacersManager.GetRacers(CarClass carClass)");
-                    logger.Trace(ExceptionsManager.CreateExceptionMessage(exception));
-                    return null;
-                }
-
-                var results = new List<RacerModel>();
-
-                foreach (var racer in racers)
-                {
-                    var rm = new RacerModel(racer.FirstName, racer.LastName, racer.MiddleName, racer.Cars.First().Name,
-                                            (CarClassesEnum)Enum.Parse(typeof(CarClassesEnum), racer.Cars.First().CarClass.Name));
-                    rm.Id = racer.Id;
-                    rm.RacerNumber = racer.Number;
-                    rm.Results = new ResultsModel();
-
-                    // Добавить результаты 1 тура
-                    foreach (var result in racer.Results.Where(r => r.RaceNumber == 0).OrderBy(r => r.LapNumber))
-                    {
-                        if (result.Time.HasValue)
-                        {
-                            rm.Results.AddResult(result.RaceNumber, new TimeModel(new TimeSpan(result.Time.GetValueOrDefault())));
-                        }
-                        else
-                        {
-                            rm.Results.AddResult(result.RaceNumber, null);
-                        }
-                    }
-
-                    var user_data = racer.UserDataAboutCircles.FirstOrDefault(ud => ud.RaceNumber == 0);
-                    rm.Results.SetCurrentCircleNumber(0, user_data == null ? null : user_data.CircleNumber);
-
-                    // Добавить результаты 2 тура
-                    foreach (var result in racer.Results.Where(r => r.RaceNumber == 1).OrderBy(r => r.LapNumber))
-                    {
-                        if (result.Time.HasValue)
-                        {
-                            rm.Results.AddResult(result.RaceNumber, new TimeModel(new TimeSpan(result.Time.GetValueOrDefault())));
-                        }
-                        else
-                        {
-                            rm.Results.AddResult(result.RaceNumber, null);
-                        }
-                    }
-
-                    user_data = racer.UserDataAboutCircles.FirstOrDefault(ud => ud.RaceNumber == 0);
-                    rm.Results.SetCurrentCircleNumber(0, user_data == null ? null : user_data.CircleNumber);
-
-                    results.Add(rm);
-                }
-
-                return results;
-            }
-            catch (Exception ex)
-            {
-                var exception = new SprintException("Не удалось получить список участников в заданном классе автомобилей.",
-                                                        "Sprint.Managers.RacersManager.GetRacers(CarClass carClass)", ex);
-                logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
-                throw exception;
-            }
-        }
-
-        /// <summary>
         /// Получить список участников в заданном классе автомобилей и заданном номере заезда.
         /// </summary>
         /// <param name="carClass">Класс автомобилей.</param>
@@ -201,9 +109,85 @@ namespace Sprint.Managers
         {
             try
             {
+                var car_class_str = carClass.ToString();
+                var car_class = (from cc in dc.CarClasses
+                                 where cc.Name == car_class_str
+                                 select cc).FirstOrDefault();
 
+                if (car_class == null)
+                {
+                    var exception = new SprintDataException("Не удалось получить список участников в заданном классе автомобилей и заданном номере заезда, т.к. заданный класс автомобилей не был найден в БД в таблице [CarClasses].",
+                                                            "Sprint.Managers.RacersManager.GetRacers(CarClass carClass)");
+                    logger.Trace(ExceptionsManager.CreateExceptionMessage(exception));
+                    return null;
+                }
 
-                throw new NotImplementedException();
+                var results = new List<RacerModel>();
+                var rase_state = RaceStateDbManager.GetRaceState(carClass, raceNumber);
+                var racers = from racer in dc.Racers
+                             where racer.Cars.Any(c => c.CarClass.Id == car_class.Id)
+                             select racer;
+
+                if (rase_state != null)
+                {
+                    foreach (var racer in racers)
+                    {
+                        var valid_racer = (from r in rase_state.Racers
+                                           where r == racer.Id
+                                           select r).Any();
+
+                        if (valid_racer)
+                        {
+                            var car = racer.Cars.First();
+                            var rm = new RacerModel(racer.FirstName, racer.LastName, racer.MiddleName,
+                                                    car.Manufacturer, car.Model, car.EngineSize, car.EnginePower,
+                                                    (CarClassesEnum) Enum.Parse(typeof (CarClassesEnum), racer.Cars.First().CarClass.Name))
+                                            {
+                                                Id = racer.Id,
+                                                RacerNumber = racer.Number,
+                                                Results = new ResultsModel()
+                                            };
+
+                            // Добавить результаты 1 тура
+                            foreach (var result in racer.Results.Where(r => r.RaceNumber == 0).OrderBy(r => r.LapNumber)
+                                )
+                            {
+                                if (result.Time.HasValue)
+                                {
+                                    rm.Results.AddResult(result.RaceNumber, new TimeModel(new TimeSpan(result.Time.GetValueOrDefault())));
+                                }
+                                else
+                                {
+                                    rm.Results.AddResult(result.RaceNumber, null);
+                                }
+                            }
+
+                            var user_data = racer.UserDataAboutCircles.FirstOrDefault(ud => ud.RaceNumber == 0);
+                            rm.Results.SetCurrentCircleNumber(0, user_data == null ? null : user_data.CircleNumber);
+
+                            // Добавить результаты 2 тура
+                            foreach (var result in racer.Results.Where(r => r.RaceNumber == 1).OrderBy(r => r.LapNumber)
+                                )
+                            {
+                                if (result.Time.HasValue)
+                                {
+                                    rm.Results.AddResult(result.RaceNumber, new TimeModel(new TimeSpan(result.Time.GetValueOrDefault())));
+                                }
+                                else
+                                {
+                                    rm.Results.AddResult(result.RaceNumber, null);
+                                }
+                            }
+
+                            user_data = racer.UserDataAboutCircles.FirstOrDefault(ud => ud.RaceNumber == 0);
+                            rm.Results.SetCurrentCircleNumber(0, user_data == null ? null : user_data.CircleNumber);
+
+                            results.Add(rm);
+                        }
+                    }
+                }
+
+                return results;
             }
             catch (Exception ex)
             {
@@ -320,7 +304,10 @@ namespace Sprint.Managers
                             {
                                 Id = Guid.NewGuid(),
                                 CarClass = car_class,
-                                Name = racerModel.Car.Name
+                                Manufacturer = racerModel.Car.Manufacturer,
+                                Model = racerModel.Car.Model,
+                                EngineSize = racerModel.Car.EngineSize,
+                                EnginePower = racerModel.Car.EnginePower
                             };                
 
                 cur_racer.Cars.Add(car);                

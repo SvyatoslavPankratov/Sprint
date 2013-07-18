@@ -6,7 +6,7 @@ using Sprint.Presenters;
 
 namespace Sprint.Views
 {
-    public partial class RegenerationDialogView : Form, IRegenerationDialogView
+    public partial class RegenerationDialogView : Form, IRegenerationDialog
     {
         #region Реализация интерфейса IRegenerationDialogView
 

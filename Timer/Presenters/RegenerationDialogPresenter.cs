@@ -14,7 +14,7 @@ namespace Sprint.Presenters
         /// <summary>
         /// Задать или получить диалог восстановления состояния приложения.
         /// </summary>
-        private IRegenerationDialogView RegenerationDialogView { get; set; }
+        private IRegenerationDialog RegenerationDialogView { get; set; }
 
         #endregion
 
@@ -24,7 +24,7 @@ namespace Sprint.Presenters
         /// Конструктор.
         /// </summary>
         /// <param name="regenerationDialogView"></param>
-        public RegenerationDialogPresenter(IRegenerationDialogView regenerationDialogView)
+        public RegenerationDialogPresenter(IRegenerationDialog regenerationDialogView)
         {
             RegenerationDialogView = regenerationDialogView;
         }

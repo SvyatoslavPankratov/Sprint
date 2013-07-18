@@ -7,7 +7,7 @@ using Sprint.Models;
 
 namespace Sprint.Interfaces
 {
-    public interface IRegenerationDialogView
+    public interface IRegenerationDialog
     {
         #region Свойства
 

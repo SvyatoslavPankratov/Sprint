@@ -17,7 +17,7 @@ namespace Sprint.Presenters
         /// <summary>
         /// Задать или получить интерфейс главной формы.
         /// </summary>
-        private IMainView MainView { get; set; }
+        private IMain MainView { get; set; }
 
         #endregion
 
@@ -27,7 +27,7 @@ namespace Sprint.Presenters
         /// Конструктор.
         /// </summary>
         /// <param name="mainView">Интерфейс главной формы.</param>
-        public CarClassPresenter(IMainView mainView)
+        public CarClassPresenter(IMain mainView)
         {
             MainView = mainView;
         }

@@ -59,6 +59,16 @@ namespace Sprint.Views
                 {
                     MessageBox.Show("Не удалось удалить данные программы.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                foreach (var window in Application.OpenForms)
+                {
+                    if (window != null && window is MainView)
+                    {
+                        ((MainView)window).AutomationResetOrClose = true;
+                    }
+                }
+
+                Application.Restart();
             }
         }
 

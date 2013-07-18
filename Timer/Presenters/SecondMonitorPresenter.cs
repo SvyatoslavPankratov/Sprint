@@ -14,7 +14,7 @@ namespace Sprint.Presenters
         /// <summary>
         /// Задать иои получить представление второго монитора.
         /// </summary>
-        private ISecondMonitorView SecondMonitorView { get; set; }
+        private ISecondMonitor SecondMonitorView { get; set; }
 
         #endregion
 
@@ -24,7 +24,7 @@ namespace Sprint.Presenters
         /// Конструктор.
         /// </summary>
         /// <param name="secondMonitorView">Экземпляр интерфейса на представление второго монитора.</param>
-        public SecondMonitorPresenter(ISecondMonitorView secondMonitorView)
+        public SecondMonitorPresenter(ISecondMonitor secondMonitorView)
         {
             SecondMonitorView = secondMonitorView;
         }

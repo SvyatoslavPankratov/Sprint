@@ -6,7 +6,7 @@ using Sprint.Presenters;
 
 namespace Sprint.Views
 {
-    public partial class OptionsView : Form, IOptionsView
+    public partial class OptionsView : Form, IOptions
     {
         #region Fields
 

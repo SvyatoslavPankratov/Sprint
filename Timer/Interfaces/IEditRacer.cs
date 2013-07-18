@@ -30,9 +30,24 @@ namespace Sprint.Interfaces
         string MiddleName { get; set; }
 
         /// <summary>
-        /// Задать или получить наименование автомобиля участника.
+        /// Задать или получить марку автомобиля.
         /// </summary>
-        string CarName { get; set; }
+        string Manufacturer { get; set; }
+
+        /// <summary>
+        /// Задать или получить модель автомобиля.
+        /// </summary>
+        string Model { get; set; }
+
+        /// <summary>
+        /// Задать или получить объем двигателя.
+        /// </summary>
+        double EngineSize { get; set; }
+
+        /// <summary>
+        /// Задать или получить мощность двигателя.
+        /// </summary>
+        double EnginePower { get; set; }
 
         /// <summary>
         /// Получить выбранный класс автомобиля.

@@ -7,7 +7,7 @@ using Sprint.Interfaces;
 
 namespace Sprint.Views
 {
-    public partial class CheckSensorView : Form, ICheckSensorView
+    public partial class CheckSensorView : Form, ICheckSensor
     {
         #region Реализация интерфейса ICheckSensorView
 

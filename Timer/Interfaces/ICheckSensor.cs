@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Sprint.Interfaces
 {
-    public interface ICheckSensorView
+    public interface ICheckSensor
     {
         #region Свойства
 

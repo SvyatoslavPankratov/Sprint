@@ -16,7 +16,7 @@ namespace Sprint.Presenters
         /// <summary>
         /// Задать или получить интерфейс на форму с опциями.
         /// </summary>
-        private IOptionsView OptionsView { get; set; }
+        private IOptions OptionsView { get; set; }
 
         /// <summary>
         /// Задать или получить опции гонок по классам автомобилей.
@@ -31,7 +31,7 @@ namespace Sprint.Presenters
         /// Конструктор.
         /// </summary>
         /// <param name="optionsView">Интерфейс на форму с опциями.</param>
-        public OptionsPresenter(IOptionsView optionsView)
+        public OptionsPresenter(IOptions optionsView)
         {
             OptionsView = optionsView;
             RaceOptions = GetOptions();

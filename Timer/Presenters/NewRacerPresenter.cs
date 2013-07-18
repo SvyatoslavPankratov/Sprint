@@ -20,7 +20,7 @@ namespace Sprint.Presenters
         /// <summary>
         /// Задать или получить интерфейс на визуальное представление формы.
         /// </summary>
-        private INewRacerView NewRacerView { get; set; }
+        private INewRacer NewRacerView { get; set; }
 
         /// <summary>
         /// Задать или получить список гонщиков.
@@ -51,7 +51,7 @@ namespace Sprint.Presenters
         /// Конструктор.
         /// </summary>
         /// <param name="newRaserForm">Ссылка на форму.</param>
-        public NewRacerPresenter(INewRacerView newRaserForm)
+        public NewRacerPresenter(INewRacer newRaserForm)
         {
             NewRacerView = newRaserForm;
 
@@ -77,11 +77,13 @@ namespace Sprint.Presenters
         public void AddNewRacer()
         {
             // Добавлениее новго гонщика в структуру
-            Racers.Add(new RacerModel(NewRacerView.FirstName,
-                                        NewRacerView.LastName,
-                                        NewRacerView.MiddleName,
-                                        NewRacerView.CarName,
-                                        NewRacerView.CarClass) { RacerNumber = NextRacerNumber });
+            Racers.Add(new RacerModel(NewRacerView.FirstName, NewRacerView.LastName, NewRacerView.MiddleName,
+                                        NewRacerView.Manufacturer, NewRacerView.Model,
+                                        NewRacerView.EngineSize, NewRacerView.EnginePower,
+                                        NewRacerView.CarClass)
+                            {
+                                RacerNumber = NextRacerNumber
+                            });
 
             // Добавление нового гонщика в таблицу
             var racer   = Racers.Last();
@@ -92,7 +94,7 @@ namespace Sprint.Presenters
             row[1] = racer.FirstName;
             row[2] = racer.LastName;
             row[3] = racer.MiddleName;
-            row[4] = racer.Car.Name;
+            row[4] = racer.Car.ToString();
             row[5] = racer.Car.CarClass.ToString();
 
             table.Rows.Add(row);
@@ -100,7 +102,10 @@ namespace Sprint.Presenters
             NewRacerView.FirstName  = string.Empty;
             NewRacerView.LastName   = string.Empty;
             NewRacerView.MiddleName = string.Empty;
-            NewRacerView.CarName    = string.Empty;
+            NewRacerView.Manufacturer    = string.Empty;
+            NewRacerView.Model = string.Empty;
+            NewRacerView.EngineSize = 0.0;
+            NewRacerView.EnginePower = 0.0;
 
             NextRacerNumber++;
         }

@@ -18,7 +18,7 @@ namespace Sprint.Presenters
         /// <summary>
         /// Задать или получить интерфейс на визуальное представление формы.
         /// </summary>
-        private ICheckSensorView CheckSensorView { get; set; }
+        private ICheckSensor CheckSensorView { get; set; }
 
         #endregion
 
@@ -28,7 +28,7 @@ namespace Sprint.Presenters
         /// Конструктор.
         /// </summary>
         /// <param name="checkSensorView">Ссылку на форму.</param>
-        public CheckSensorPresenter(ICheckSensorView checkSensorView)
+        public CheckSensorPresenter(ICheckSensor checkSensorView)
         {
             CheckSensorView = checkSensorView;
         }

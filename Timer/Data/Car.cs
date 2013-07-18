@@ -15,9 +15,12 @@ namespace Sprint.Data
     public partial class Car
     {
         public System.Guid Id { get; set; }
-        public System.Guid Id_CarClass { get; set; }
-        public string Name { get; set; }
-        public System.Guid Id_Racer { get; set; }
+        public string Manufacturer { get; set; }
+        public string Model { get; set; }
+        public double EngineSize { get; set; }
+        public double EnginePower { get; set; }
+        public System.Guid FK_Racer { get; set; }
+        public System.Guid FK_CarClass { get; set; }
     
         public virtual CarClass CarClass { get; set; }
         public virtual Racer Racer { get; set; }

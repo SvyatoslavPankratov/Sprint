@@ -10,7 +10,7 @@ using Sprint.Interfaces;
 
 namespace Sprint.Views
 {
-    public partial class NewRacerView : Form, INewRacerView
+    public partial class NewRacerView : Form, INewRacer
     {
         #region Реализация интерфейса INewRacerView
 
@@ -42,12 +42,39 @@ namespace Sprint.Views
         }
 
         /// <summary>
-        /// Задать или получить наименование автомобиля участника.
+        /// Задать или получить марку автомобиля.
         /// </summary>
-        public string CarName
+        public string Manufacturer
         {
-            get { return carNameTB.Text; }
-            set { carNameTB.Text = value; }
+            get { return manufacturer_TB.Text; }
+            set { manufacturer_TB.Text = value; }
+        }
+
+        /// <summary>
+        /// Задать или получить модель автомобиля.
+        /// </summary>
+        public string Model
+        {
+            get { return model_TB.Text; }
+            set { model_TB.Text = value; }
+        }
+
+        /// <summary>
+        /// Задать или получить объем двигателя.
+        /// </summary>
+        public double EngineSize
+        {
+            get { return double.Parse(engine_size_TB.Text); }
+            set { engine_size_TB.Text = value.ToString("N1"); }
+        }
+
+        /// <summary>
+        /// Задать или получить мощность двигателя.
+        /// </summary>
+        public double EnginePower
+        {
+            get { return double.Parse(engine_power_TB.Text); }
+            set { engine_power_TB.Text = value.ToString("N1"); }
         }
 
         /// <summary>
@@ -130,10 +157,13 @@ namespace Sprint.Views
             if (string.IsNullOrEmpty(FirstName) || string.IsNullOrWhiteSpace(FirstName) ||
                 string.IsNullOrEmpty(LastName) || string.IsNullOrWhiteSpace(LastName) ||
                 string.IsNullOrEmpty(MiddleName) || string.IsNullOrWhiteSpace(MiddleName) ||
-                string.IsNullOrEmpty(CarName) || string.IsNullOrWhiteSpace(CarName) || 
+                string.IsNullOrEmpty(Manufacturer) || string.IsNullOrWhiteSpace(Manufacturer) ||
+                string.IsNullOrEmpty(Model) || string.IsNullOrWhiteSpace(Model) ||
+                EngineSize == 0.0 || EnginePower == 0.0 ||
                 carClassesCB.SelectedItem == null)
             {
-                MessageBox.Show("Введите пожалуйста фамилию, имя, отчетсво участника, наименование и класс его автомобиля.", "Проверка введенных данных",
+                MessageBox.Show("Введите пожалуйста фамилию, имя, отчетсво участника, класс автомобиля, его производителя, марку, объем двигателя и мощность.", 
+                                "Проверка введенных данных",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 return;

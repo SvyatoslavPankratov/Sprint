@@ -41,18 +41,23 @@ namespace Sprint.Models
         /// <summary>
         /// Констрктор.
         /// </summary>
-        /// <param name="firstName">Имя.</param>
-        /// <param name="lastName">Фамилия.</param>
-        /// <param name="MiddleName">Отчество.</param>
-        /// <param name="carClass">Наименование автомобиля.</param>
+        /// <param name="first_name">Имя.</param>
+        /// <param name="last_name">Фамилия.</param>
+        /// <param name="middle_name">Отчество.</param>
+        /// <param name="manufacturer">Марка автомобиля.</param>
+        /// <param name="model">Модель автомобиля.</param>
+        /// <param name="engine_size">Объем двигателя.</param>
+        /// <param name="engine_power">Мощность двигателя.</param>
         /// <param name="carClass">Класс автомобиля.</param>
-        public RacerModel(string firstName, string lastName, string middleName, string carName, CarClassesEnum carClass)
+        public RacerModel(string first_name, string last_name, string middle_name, 
+                          string manufacturer, string model, double engine_size, double engine_power, 
+                          CarClassesEnum carClass)
         {
-            FirstName   = firstName;
-            LastName    = lastName;
-            MiddleName  = middleName;
+            FirstName   = first_name;
+            LastName    = last_name;
+            MiddleName  = middle_name;
 
-            Car = new CarModel(carName, carClass);
+            Car = new CarModel(manufacturer, model, engine_size, engine_power, carClass);
             
             Id = Guid.NewGuid();
         }

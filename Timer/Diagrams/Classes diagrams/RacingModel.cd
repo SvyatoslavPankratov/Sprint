@@ -4,15 +4,15 @@
     <Position X="3.77" Y="3.743" Height="0.75" Width="1.7" />
   </Comment>
   <Class Name="Sprint.Models.CarModel">
-    <Position X="12.25" Y="4" Width="1.75" />
+    <Position X="12.25" Y="3.5" Width="2" />
     <AssociationLine Name="CarClass" Type="Sprint.Models.CarClassesEnum" FixedToPoint="true">
       <Path>
-        <Point X="14" Y="5.188" />
+        <Point X="14.25" Y="5.188" />
         <Point X="15.25" Y="5.188" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAgQAAgAAAAAAAAEAAAAAAQAAAgAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Models\CarModel.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -60,34 +60,34 @@
     </AssociationLine>
     <AssociationLine Name="RacerGroups" Type="Sprint.Models.RacersGroupModel" FixedToPoint="true">
       <Path>
-        <Point X="10.5" Y="7.875" />
-        <Point X="12.25" Y="7.875" />
+        <Point X="10.5" Y="8.375" />
+        <Point X="12.25" Y="8.375" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="CurrentRaserGroup" Type="Sprint.Models.RacersGroupModel" FixedFromPoint="true">
       <Path>
-        <Point X="10.5" Y="7.013" />
-        <Point X="12.25" Y="7.013" />
+        <Point X="10.5" Y="7.375" />
+        <Point X="12.25" Y="7.375" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="CurrentCarClass" Type="Sprint.Models.CarClassesEnum" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="10.5" Y="8.989" />
-        <Point X="15.375" Y="8.989" />
+        <Point X="10.5" Y="9.25" />
+        <Point X="15.375" Y="9.25" />
         <Point X="15.375" Y="7.008" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="3.587" Y="1.661" />
+        <Position X="3.6" Y="2.039" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="CurrentEditCarClass" Type="Sprint.Models.CarClassesEnum" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="10.5" Y="9.282" />
-        <Point X="15.625" Y="9.282" />
+        <Point X="10.5" Y="9.5" />
+        <Point X="15.625" Y="9.5" />
         <Point X="15.625" Y="7.008" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="3.602" Y="2.349" />
+        <Position X="3.615" Y="2.531" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="Track" Type="Sprint.Models.TrackModel" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
@@ -98,7 +98,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>QQOKiAtUAfY1AQAjIYEkIAwoAAg8QEkCAEAgABQIJAA=</HashCode>
+      <HashCode>QQOKiAtUAfY1AQAjIYEkIAwoAAg8QE0CAEAgQBQIJAA=</HashCode>
       <FileName>Presenters\MainPresenter.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -149,17 +149,17 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Sprint.Models.RacersGroupModel">
-    <Position X="12.25" Y="5.75" Width="1.75" />
+    <Position X="12.25" Y="6.25" Width="1.75" />
     <AssociationLine Name="CarClass" Type="Sprint.Models.CarClassesEnum" FixedFromPoint="true">
       <Path>
-        <Point X="14" Y="6.186" />
-        <Point X="15.25" Y="6.186" />
+        <Point X="14" Y="6.686" />
+        <Point X="15.25" Y="6.686" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="Racers" Type="Sprint.Models.RacerModel" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="12.25" Y="6.36" />
-        <Point X="11.344" Y="6.36" />
+        <Point X="12.25" Y="6.86" />
+        <Point X="11.344" Y="6.86" />
         <Point X="11.344" Y="4.377" />
       </Path>
     </AssociationLine>
@@ -306,13 +306,13 @@
   </Class>
   <Class Name="Sprint.Program">
     <Position X="0.5" Y="10.75" Width="1.75" />
-    <AssociationLine Name="SplashScreenView" Type="Sprint.Interfaces.ISplashScreenView" FixedFromPoint="true">
+    <AssociationLine Name="SplashScreenView" Type="Sprint.Interfaces.ISplashScreen" FixedFromPoint="true">
       <Path>
         <Point X="1.5" Y="10.75" />
         <Point X="1.5" Y="9.738" />
       </Path>
     </AssociationLine>
-    <AssociationLine Name="MainView" Type="Sprint.Interfaces.IMainView" FixedFromPoint="true">
+    <AssociationLine Name="MainView" Type="Sprint.Interfaces.IMain" FixedFromPoint="true">
       <Path>
         <Point X="2.25" Y="11.171" />
         <Point X="4.5" Y="11.171" />
@@ -338,39 +338,39 @@
       <Property Name="CarClass" />
     </ShowAsAssociation>
   </Class>
-  <Interface Name="Sprint.Interfaces.IMainView">
+  <Interface Name="Sprint.Interfaces.IMain">
     <Position X="4.5" Y="6" Width="1.75" />
     <TypeIdentifier>
       <HashCode>kgAAAIAAAAAABAAAEAgQAAIAMAAAAAAIAAAEAAFgEEA=</HashCode>
-      <FileName>Interfaces\IMainView.cs</FileName>
+      <FileName>Interfaces\IMain.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Sprint.Interfaces.IOptionsView">
+  <Interface Name="Sprint.Interfaces.IOptions">
     <Position X="21" Y="9.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IOptionsView.cs</FileName>
+      <FileName>Interfaces\IOptions.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Sprint.Interfaces.IPrintView">
+  <Interface Name="Sprint.Interfaces.IPrint">
     <Position X="25.75" Y="0.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AABQAAAAAAACAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IPrintView.cs</FileName>
+      <FileName>Interfaces\IPrint.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Sprint.Interfaces.INewRacerView">
+  <Interface Name="Sprint.Interfaces.INewRacer">
     <Position X="3.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAFgAAAAAAAAAAAAQAAAAAAAAEAAAAAAAAAAAAAg=</HashCode>
-      <FileName>Interfaces\INewRacerView.cs</FileName>
+      <FileName>Interfaces\INewRacer.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Sprint.Interfaces.IRegenerationDialogView">
+  <Interface Name="Sprint.Interfaces.IRegenerationDialog">
     <Position X="18.25" Y="13.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IRegenerationDialogView.cs</FileName>
+      <FileName>Interfaces\IRegenerationDialog.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="SelectedAppRegenerationType" />
@@ -383,18 +383,18 @@
       <FileName>Interfaces\IEditRacer.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Sprint.Interfaces.ISecondMonitorView">
+  <Interface Name="Sprint.Interfaces.ISecondMonitor">
     <Position X="4" Y="13.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>CAAAAAAAAAAAAAAAAAAAAAAACSAEAAAAAAAAAAAgAkA=</HashCode>
-      <FileName>Interfaces\ISecondMonitorView.cs</FileName>
+      <FileName>Interfaces\ISecondMonitor.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Sprint.Interfaces.ISplashScreenView">
+  <Interface Name="Sprint.Interfaces.ISplashScreen">
     <Position X="0.75" Y="8.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAAEA=</HashCode>
-      <FileName>Interfaces\ISplashScreenView.cs</FileName>
+      <FileName>Interfaces\ISplashScreen.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="Sprint.Models.CarClassesEnum">

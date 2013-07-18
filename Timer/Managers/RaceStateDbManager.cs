@@ -86,6 +86,40 @@ namespace Sprint.Managers
         }
 
         /// <summary>
+        /// Получить состояние заезда на текущий момент времени в заданном классе у заданного номера тура.
+        /// </summary>
+        /// <param name="car_class">Заданный класс автомобилей.</param>
+        /// <param name="race_number">Заданный номер заезда в заданном классе автомобилей.</param>
+        /// <returns>Состояние заезда.</returns>
+        public static RaceStateModel GetRaceState(CarClassesEnum car_class, int race_number)
+        {
+            try
+            {
+                var cc_str = car_class.ToString();
+
+                var racers = from race_state in dc.RaceStates
+                             where race_state.CarClass.Name == cc_str
+                                   && race_state.RaceNumber == race_number
+                             orderby race_state.IndexInsideCarClass
+                             select race_state.FK_Racer;
+
+                    if (racers.Any())
+                    {
+                        return new RaceStateModel(car_class, race_number) { Racers = racers.ToArray() };
+                    }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                var exception = new SprintException("Не удалось получить состояние заезда на текущий момент времени в заданном классе у заданного номера тура.",
+                                                    "Sprint.Managers.RaceStateDbManager.GetRaceState(CarClassesEnum car_class, int race_number)", ex);
+                logger.Trace(ExceptionsManager.CreateExceptionMessage(exception));
+                throw exception;
+            }
+        }
+
+        /// <summary>
         /// Задать состояние заезда.
         /// </summary>
         /// <param name="race_state">Задаваемое состояние заезда.</param>

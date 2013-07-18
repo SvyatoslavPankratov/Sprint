@@ -40,12 +40,39 @@ namespace Sprint.Views
         }
 
         /// <summary>
-        /// Задать или получить наименование автомобиля участника.
+        /// Задать или получить марку автомобиля.
         /// </summary>
-        public string CarName
+        public string Manufacturer
         {
-            get { return carNameTB.Text; }
-            set { carNameTB.Text = value; }
+            get { return manufacturer_TB.Text; }
+            set { manufacturer_TB.Text = value; }
+        }
+
+        /// <summary>
+        /// Задать или получить модель автомобиля.
+        /// </summary>
+        public string Model
+        {
+            get { return model_TB.Text; }
+            set { model_TB.Text = value; }
+        }
+
+        /// <summary>
+        /// Задать или получить объем двигателя.
+        /// </summary>
+        public double EngineSize
+        {
+            get { return double.Parse(engine_size_TB.Text); }
+            set { engine_size_TB.Text = value.ToString("N1"); }
+        }
+
+        /// <summary>
+        /// Задать или получить мощность двигателя.
+        /// </summary>
+        public double EnginePower
+        {
+            get { return double.Parse(engine_power_TB.Text); }
+            set { engine_power_TB.Text = value.ToString("N1"); }
         }
 
         /// <summary>
@@ -67,14 +94,8 @@ namespace Sprint.Views
         /// </summary>
         public CarClassesEnum CarClass
         {
-            get
-            {
-                return (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), carClassesCB.SelectedItem.ToString());
-            }
-            set
-            {
-                carClassesCB.SelectedItem = value.ToString();
-            }
+            get { return (CarClassesEnum) Enum.Parse(typeof (CarClassesEnum), carClassesCB.SelectedItem.ToString()); }
+            set { carClassesCB.SelectedItem = value.ToString(); }
         }
 
         #endregion
@@ -121,7 +142,7 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            Presenter.UpdateRacer(FirstName, LastName, MiddleName, CarClass, CarName);
+            Presenter.UpdateRacer(FirstName, LastName, MiddleName, Manufacturer, Model, EngineSize, EnginePower, CarClass);
             Close();
         }
 

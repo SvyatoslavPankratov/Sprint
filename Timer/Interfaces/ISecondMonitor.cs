@@ -5,7 +5,7 @@ namespace Sprint.Interfaces{
     /// <summary>
     /// Интерфейс второго монитора.
     /// </summary>
-    public interface ISecondMonitorView
+    public interface ISecondMonitor
     {
         #region Свойства
 

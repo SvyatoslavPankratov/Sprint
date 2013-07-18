@@ -7,7 +7,7 @@ namespace Sprint.Interfaces
     /// <summary>
     /// Интерфейс главного окна.
     /// </summary>
-    public interface IMainView
+    public interface IMain
     {
         #region Свойства
 

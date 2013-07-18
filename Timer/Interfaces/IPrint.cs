@@ -7,7 +7,7 @@ namespace Sprint.Interfaces
     /// <summary>
     /// Интерфейс представления печати.
     /// </summary>
-    public interface IPrintView
+    public interface IPrint
     {
         #region Свойства
 

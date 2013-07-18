@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Sprint.Interfaces
 {
-    public interface ISplashScreenView
+    public interface ISplashScreen
     {
         #region Методы
 

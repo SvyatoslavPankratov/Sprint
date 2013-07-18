@@ -12,7 +12,7 @@ using Sprint.Presenters;
 
 namespace Sprint.Views
 {
-    public partial class PrintView : Form, IPrintView
+    public partial class PrintView : Form, IPrint
     {
         #region Реализация интерфейса IPrintView
 

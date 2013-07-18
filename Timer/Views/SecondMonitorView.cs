@@ -6,7 +6,7 @@ using Sprint.Presenters;
 
 namespace Sprint.Views
 {
-    public partial class SecondMonitorView : Form, ISecondMonitorView
+    public partial class SecondMonitorView : Form, ISecondMonitor
     {
         #region Реализация интерфейса ISecondMonitorView
 

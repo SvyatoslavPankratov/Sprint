@@ -30,8 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditRacerView));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.carNameTB = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.engine_power_TB = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.engine_size_TB = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.model_TB = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.manufacturer_TB = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.carClassesCB = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -56,46 +64,124 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.carNameTB);
-            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.engine_power_TB);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.engine_size_TB);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.model_TB);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.manufacturer_TB);
+            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.carClassesCB);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(12, 127);
+            this.groupBox2.Location = new System.Drawing.Point(334, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(290, 91);
+            this.groupBox2.Size = new System.Drawing.Size(559, 109);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Автомобиль участника";
             // 
-            // carNameTB
+            // label10
             // 
-            this.carNameTB.Location = new System.Drawing.Point(102, 25);
-            this.carNameTB.Name = "carNameTB";
-            this.carNameTB.Size = new System.Drawing.Size(170, 20);
-            this.carNameTB.TabIndex = 4;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(526, 51);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(24, 13);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "л/с";
             // 
-            // label5
+            // label11
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Наименование";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(526, 25);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(13, 13);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "л";
+            // 
+            // engine_power_TB
+            // 
+            this.engine_power_TB.Location = new System.Drawing.Point(409, 48);
+            this.engine_power_TB.Name = "engine_power_TB";
+            this.engine_power_TB.Size = new System.Drawing.Size(108, 20);
+            this.engine_power_TB.TabIndex = 23;
+            this.engine_power_TB.Text = "0.0";
+            this.engine_power_TB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(288, 51);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(115, 13);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Мощность двигателя";
+            // 
+            // engine_size_TB
+            // 
+            this.engine_size_TB.Location = new System.Drawing.Point(409, 22);
+            this.engine_size_TB.Name = "engine_size_TB";
+            this.engine_size_TB.Size = new System.Drawing.Size(108, 20);
+            this.engine_size_TB.TabIndex = 21;
+            this.engine_size_TB.Text = "0.0";
+            this.engine_size_TB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(288, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 13);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Объем двигателя";
+            // 
+            // model_TB
+            // 
+            this.model_TB.Location = new System.Drawing.Point(102, 49);
+            this.model_TB.Name = "model_TB";
+            this.model_TB.Size = new System.Drawing.Size(170, 20);
+            this.model_TB.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 52);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Модель";
+            // 
+            // manufacturer_TB
+            // 
+            this.manufacturer_TB.Location = new System.Drawing.Point(102, 23);
+            this.manufacturer_TB.Name = "manufacturer_TB";
+            this.manufacturer_TB.Size = new System.Drawing.Size(170, 20);
+            this.manufacturer_TB.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Марка";
             // 
             // carClassesCB
             // 
             this.carClassesCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.carClassesCB.FormattingEnabled = true;
-            this.carClassesCB.Location = new System.Drawing.Point(103, 54);
+            this.carClassesCB.Location = new System.Drawing.Point(102, 77);
             this.carClassesCB.Name = "carClassesCB";
-            this.carClassesCB.Size = new System.Drawing.Size(169, 21);
+            this.carClassesCB.Size = new System.Drawing.Size(170, 21);
             this.carClassesCB.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 57);
+            this.label4.Location = new System.Drawing.Point(13, 80);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 0;
@@ -171,16 +257,16 @@
             this.panel12.Controls.Add(this.panel1);
             this.panel12.Controls.Add(this.panel16);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel12.Location = new System.Drawing.Point(0, 230);
+            this.panel12.Location = new System.Drawing.Point(0, 135);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(315, 65);
+            this.panel12.Size = new System.Drawing.Size(904, 65);
             this.panel12.TabIndex = 10;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(609, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(10);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
@@ -206,7 +292,7 @@
             // 
             this.panel16.Controls.Add(this.button1);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel16.Location = new System.Drawing.Point(172, 0);
+            this.panel16.Location = new System.Drawing.Point(761, 0);
             this.panel16.Margin = new System.Windows.Forms.Padding(10);
             this.panel16.Name = "panel16";
             this.panel16.Padding = new System.Windows.Forms.Padding(10);
@@ -233,7 +319,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(315, 295);
+            this.ClientSize = new System.Drawing.Size(904, 200);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -257,8 +343,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox carNameTB;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox carClassesCB;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -273,5 +357,15 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox engine_power_TB;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox engine_size_TB;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox model_TB;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox manufacturer_TB;
+        private System.Windows.Forms.Label label6;
     }
 }

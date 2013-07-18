@@ -39,7 +39,10 @@ namespace Sprint.Presenters
                 View.LastName = Racer.LastName;
                 View.MiddleName = Racer.MiddleName;
                 View.CarClass = (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), Racer.Car.CarClass.ToString());
-                View.CarName = Racer.Car.Name;
+                View.Manufacturer = Racer.Car.Manufacturer;
+                View.Model = Racer.Car.Model;
+                View.EngineSize = Racer.Car.EngineSize;
+                View.EnginePower = Racer.Car.EnginePower;
             }
         }
 
@@ -87,13 +90,16 @@ namespace Sprint.Presenters
         /// <param name="middle_name">Отчество участника.</param>
         /// <param name="car_class">Класс автомобиля.</param>
         /// <param name="car_name">Наименование автомобиля.</param>
-        public void UpdateRacer(string first_name, string last_name, string middle_name, CarClassesEnum car_class, string car_name)
+        public void UpdateRacer(string first_name, string last_name, string middle_name, string manufacturer, string model, double engine_size, double engine_power, CarClassesEnum car_class)
         {
             Racer.FirstName = first_name;
             Racer.LastName = last_name;
             Racer.MiddleName = middle_name;
             Racer.Car.CarClass = car_class;
-            Racer.Car.Name = car_name;
+            Racer.Car.Manufacturer = manufacturer;
+            Racer.Car.Model = model;
+            Racer.Car.EngineSize = engine_size;
+            Racer.Car.EnginePower = engine_power;
         }
 
         #endregion

@@ -16,18 +16,18 @@ namespace Sprint.Data
     {
         public CarClass()
         {
-            this.Cars = new HashSet<Car>();
             this.RacesOptions = new HashSet<RacesOption>();
             this.ApplicationStates = new HashSet<ApplicationState>();
             this.RaceStates = new HashSet<RaceState>();
+            this.Cars = new HashSet<Car>();
         }
     
         public System.Guid Id { get; set; }
         public string Name { get; set; }
     
-        public virtual ICollection<Car> Cars { get; set; }
         public virtual ICollection<RacesOption> RacesOptions { get; set; }
         public virtual ICollection<ApplicationState> ApplicationStates { get; set; }
         public virtual ICollection<RaceState> RaceStates { get; set; }
+        public virtual ICollection<Car> Cars { get; set; }
     }
 }

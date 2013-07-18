@@ -1239,7 +1239,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton2.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
-            this.toolStripButton2.ToolTipText = "Перезаезд текущего круга вместе";
+            this.toolStripButton2.ToolTipText = "Перезаезд текущего круга вместе с не закрытым заездом";
             // 
             // toolStripSeparator19
             // 

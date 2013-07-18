@@ -11,7 +11,7 @@ using Sprint.Presenters;
 
 namespace Sprint.Views
 {
-    public partial class MainView : Form, IMainView
+    public partial class MainView : Form, IMain
     {
         #region Поля
 
@@ -267,7 +267,7 @@ namespace Sprint.Views
         /// <summary>
         /// Задать или получить второй экран приложения.
         /// </summary>
-        private ISecondMonitorView SecondMonitor { get; set; }
+        private ISecondMonitor SecondMonitor { get; set; }
 
         /// <summary>
         /// Задать или получить менеджер системных хуков.
@@ -302,7 +302,7 @@ namespace Sprint.Views
         /// Конструктор для главного окна.
         /// </summary>
         /// <param name="secondMonitor">Второй монитор приложения.</param>
-        public MainView(ISecondMonitorView secondMonitor)
+        public MainView(ISecondMonitor secondMonitor)
         {
             SecondMonitor = secondMonitor;
 

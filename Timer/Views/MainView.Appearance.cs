@@ -2603,7 +2603,7 @@ namespace Sprint.Views
         private void AddNewRacers(CarClassesEnum car_class_selected)
         {
             var newRacerView = new NewRacerView();
-            ((INewRacerView)newRacerView).CarClass = car_class_selected;
+            ((INewRacer)newRacerView).CarClass = car_class_selected;
             var res = newRacerView.ShowDialog();
 
             if (res == DialogResult.OK)

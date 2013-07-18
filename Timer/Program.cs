@@ -21,17 +21,17 @@ namespace Sprint
         /// <summary>
         /// Задать или получить интерфейс на сплеш скрин приложения.
         /// </summary>
-        private static ISplashScreenView SplashScreenView { get; set; }
+        private static ISplashScreen SplashScreenView { get; set; }
 
         /// <summary>
         /// Задать или получить интерфейс на главное окно приложения.
         /// </summary>
-        private static IMainView MainView { get; set; }
+        private static IMain MainView { get; set; }
 
         /// <summary>
         /// Задать или получить интерфейс на второй экран приложения.
         /// </summary>
-        private static ISecondMonitorView SecondMonitorView { get; set; }
+        private static ISecondMonitor SecondMonitorView { get; set; }
 
         #endregion
 

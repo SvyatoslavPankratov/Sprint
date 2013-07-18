@@ -115,7 +115,7 @@ namespace Sprint.Presenters
                 var row = table.NewRow();
                 row[0] = racer.RacerNumber;
                 row[1] = string.Format("{0} {1} {2}", racer.FirstName, racer.LastName, racer.MiddleName);
-                row[2] = racer.Car.Name;
+                row[2] = racer.Car.ToString();
                 table.Rows.Add(row);
             }
 

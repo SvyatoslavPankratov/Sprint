@@ -11,7 +11,7 @@ using Sprint.Interfaces;
 
 namespace Sprint.Views
 {
-    public partial class SplashScreenView : Form, ISplashScreenView
+    public partial class SplashScreenView : Form, ISplashScreen
     {
         #region Реализация интерфейса ISplashScreenView
 

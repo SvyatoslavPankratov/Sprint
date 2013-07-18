@@ -22,12 +22,12 @@ namespace Sprint.Presenters
         /// <summary>
         /// Задать или получить интерфейс на главную форму.
         /// </summary>
-        private IMainView MainView { get; set; }
+        private IMain MainView { get; set; }
 
         /// <summary>
         /// Задать или получить интерфейс на второй экран.
         /// </summary>
-        private ISecondMonitorView SecondView { get; set; }
+        private ISecondMonitor SecondView { get; set; }
 
         /// <summary>
         /// Задать или получить секундомер.
@@ -98,7 +98,7 @@ namespace Sprint.Presenters
         /// </summary>
         /// <param name="mainView">Интерфейс на главную форму.</param>
         /// <param name="secondView">Интерфейс на второй экран.</param>
-        public MainPresenter(IMainView mainView, ISecondMonitorView secondView)
+        public MainPresenter(IMain mainView, ISecondMonitor secondView)
         {
             MainView = mainView;
             SecondView = secondView;
@@ -147,7 +147,7 @@ namespace Sprint.Presenters
 
                 DatabaseBackupManager.CreateNewDatabaseBackup();
 
-                switch (((IRegenerationDialogView)reg_dlg).SelectedAppRegenerationType)
+                switch (((IRegenerationDialog)reg_dlg).SelectedAppRegenerationType)
                 {
                     case AppRegenerationTypesEnum.AllLapReRun:                              // Текущие участники на треке перезаезжают полностью свои заезды
                         {
@@ -678,7 +678,7 @@ namespace Sprint.Presenters
         /// Процесс, осуществляющий постоянный вывод данных секундомера на форму.
         /// </summary>
         /// <param name="mainView"></param>
-        private void StopwatchDataBindingProcess(IMainView mainView, StopwatchModel stopwatch)
+        private void StopwatchDataBindingProcess(IMain mainView, StopwatchModel stopwatch)
         {
             while (true)
             {
@@ -769,6 +769,24 @@ namespace Sprint.Presenters
             }
 
             return new OperationResult(true);
+        }
+
+        /// <summary>
+        /// Перезаезд текущего круга вместе с не закрытым заездом.
+        /// </summary>
+        /// <param name="racer">Участник, для которого будет перезаезд проезжаемого круга.</param>
+        public void SetNullResultForCurrenrRacer(RacerModel racer)
+        {
+            
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="racer"></param>
+        public void CloseCurrentRaceForCurrenrRacer(RacerModel racer)
+        {
+            
         }
 
         #region Перемещение гонщиков по списку участников

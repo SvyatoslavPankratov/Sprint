@@ -16,7 +16,7 @@ namespace Sprint.Presenters
         /// <summary>
         /// Задать или получить представление печати.
         /// </summary>
-        private IPrintView PrintView { get; set; }
+        private IPrint PrintView { get; set; }
 
         /// <summary>
         /// Задать или получить опции гонок по классам автомобилей.
@@ -31,7 +31,7 @@ namespace Sprint.Presenters
         /// Конструктор.
         /// </summary>
         /// <param name="printView">Представление печати.</param>
-        public PrintPresenter(IPrintView printView)
+        public PrintPresenter(IPrint printView)
         {
             PrintView = printView;
             Options = GetOptions();
@@ -174,7 +174,7 @@ namespace Sprint.Presenters
             var result = new ResultsForReport
                                 {
                                     RacerName = racer.FirstName + " " + racer.LastName + " " + racer.MiddleName,
-                                    CarName = racer.Car.Name,
+                                    CarName = racer.Car.ToString(),
                                     RacerNumber = racer.RacerNumber
                                 };
 
