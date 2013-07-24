@@ -81,8 +81,10 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ExportProcessView";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Выгрузка данных";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

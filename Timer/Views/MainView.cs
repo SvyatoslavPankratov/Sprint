@@ -2,6 +2,7 @@
 using System.Data;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Windows.Forms;
 
 using Sprint.Interfaces;
@@ -352,10 +353,9 @@ namespace Sprint.Views
                 if (res == DialogResult.OK)
                 {
                     var wnd = new AddedRacersProcessView();
+                    
                     Invoke(new Action(wnd.Show));
-
                     MainPresenter.SetRacersFromNewRacersDialog(newRacerView.NewRacerPresenter.Racers);
-
                     Invoke(new Action(wnd.Close));
                 }
             }

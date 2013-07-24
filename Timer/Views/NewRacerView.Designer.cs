@@ -108,7 +108,7 @@
             this.newRacerB.Name = "newRacerB";
             this.newRacerB.Padding = new System.Windows.Forms.Padding(10);
             this.newRacerB.Size = new System.Drawing.Size(121, 41);
-            this.newRacerB.TabIndex = 6;
+            this.newRacerB.TabIndex = 9;
             this.newRacerB.Text = "Добавить";
             this.newRacerB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.newRacerB.UseVisualStyleBackColor = true;
@@ -223,7 +223,7 @@
             this.engine_power_TB.Location = new System.Drawing.Point(404, 50);
             this.engine_power_TB.Name = "engine_power_TB";
             this.engine_power_TB.Size = new System.Drawing.Size(108, 20);
-            this.engine_power_TB.TabIndex = 13;
+            this.engine_power_TB.TabIndex = 8;
             this.engine_power_TB.Text = "0.0";
             this.engine_power_TB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -241,7 +241,7 @@
             this.engine_size_TB.Location = new System.Drawing.Point(404, 24);
             this.engine_size_TB.Name = "engine_size_TB";
             this.engine_size_TB.Size = new System.Drawing.Size(108, 20);
-            this.engine_size_TB.TabIndex = 11;
+            this.engine_size_TB.TabIndex = 7;
             this.engine_size_TB.Text = "0.0";
             this.engine_size_TB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -259,7 +259,7 @@
             this.model_TB.Location = new System.Drawing.Point(102, 50);
             this.model_TB.Name = "model_TB";
             this.model_TB.Size = new System.Drawing.Size(170, 20);
-            this.model_TB.TabIndex = 9;
+            this.model_TB.TabIndex = 5;
             // 
             // label7
             // 
@@ -275,7 +275,7 @@
             this.manufacturer_TB.Location = new System.Drawing.Point(102, 24);
             this.manufacturer_TB.Name = "manufacturer_TB";
             this.manufacturer_TB.Size = new System.Drawing.Size(170, 20);
-            this.manufacturer_TB.TabIndex = 7;
+            this.manufacturer_TB.TabIndex = 4;
             // 
             // label6
             // 
@@ -293,7 +293,7 @@
             this.carClassesCB.Location = new System.Drawing.Point(102, 77);
             this.carClassesCB.Name = "carClassesCB";
             this.carClassesCB.Size = new System.Drawing.Size(170, 21);
-            this.carClassesCB.TabIndex = 5;
+            this.carClassesCB.TabIndex = 6;
             // 
             // label4
             // 

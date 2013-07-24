@@ -34,11 +34,9 @@ namespace Sprint.Views
         {
             var wnd = new ExportProcessView();
 
-            this.Invoke(new Action(wnd.Show));
-
+            BeginInvoke(new Action(wnd.Show));
             MainPresenter.ExportToExcel();
-
-            this.Invoke(new Action(wnd.Close));
+            BeginInvoke(new Action(wnd.Close));
         }
 
         /// <summary>

@@ -2609,11 +2609,10 @@ namespace Sprint.Views
             if (res == DialogResult.OK)
             {
                 var wnd = new AddedRacersProcessView();
-                Invoke(new Action(() => wnd.Show()));
 
+                Invoke(new Action(wnd.Show));
                 MainPresenter.AddRacerAddNewRacer(newRacerView.NewRacerPresenter.Racers);
-
-                Invoke(new Action(() => wnd.Close()));
+                Invoke(new Action(wnd.Close));
             }
         }
 
