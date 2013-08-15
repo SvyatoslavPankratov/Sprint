@@ -417,7 +417,7 @@ namespace Sprint.Presenters
             if (!CurrentRaserGroup.Racers.Any() || Track.CurrentRacers as List<RacerModel> == null)
             {
                 return;
-            }
+            } 
 
             // Определимся какому участнику мы сейчас будем отрабатывать отсечку
             if (Track.CurrentRacers.Count() == 2
