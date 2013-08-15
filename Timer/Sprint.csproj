@@ -125,7 +125,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Data\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Data\Racer.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RacerRaceState.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\RacersAtTheTrack.cs">
@@ -149,13 +162,17 @@
     <Compile Include="Exceptions\SprintException.cs" />
     <Compile Include="Exceptions\SprintSystemException.cs" />
     <Compile Include="Extensions\IEnumerableExtesions.cs" />
+    <Compile Include="Interfaces\IAddedRacersProcess.cs" />
     <Compile Include="Interfaces\IEditRacer.cs" />
+    <Compile Include="Interfaces\IExportProcess.cs" />
     <Compile Include="Interfaces\IOptions.cs" />
     <Compile Include="Interfaces\IPrint.cs" />
     <Compile Include="Interfaces\IRegenerationDialog.cs" />
     <Compile Include="Interfaces\IRestoreAppDateFromBackup.cs" />
     <Compile Include="Interfaces\ISecondMonitor.cs" />
     <Compile Include="Interfaces\ISplashScreen.cs" />
+    <Compile Include="Interfaces\ITimeMessageNotification.cs" />
+    <Compile Include="Interfaces\IWindows.cs" />
     <Compile Include="Managers\ApplicationStateDbManager.cs" />
     <Compile Include="Managers\CarClassesDbMeneger.cs" />
     <Compile Include="Managers\DatabaseBackupManager.cs" />
@@ -175,11 +192,13 @@
     <Compile Include="Models\CarClassesEnum.cs" />
     <Compile Include="Models\CarModel.cs" />
     <Compile Include="Models\ConstantsModel.cs" />
+    <Compile Include="Models\NextRacerState.cs" />
     <Compile Include="Models\OperationResult.cs" />
     <Compile Include="Models\PeopleModel.cs" />
     <Compile Include="Models\RaceOptionsModel.cs" />
     <Compile Include="Models\RacerModel.cs" />
     <Compile Include="Models\RacersGroupModel.cs" />
+    <Compile Include="Models\RacerRaceStateEnum.cs" />
     <Compile Include="Models\RaceStateModel.cs" />
     <Compile Include="Models\ResultsForReport.cs" />
     <Compile Include="Models\ResultsModel.cs" />
@@ -187,9 +206,11 @@
     <Compile Include="Models\StopwatchStatesEnum.cs" />
     <Compile Include="Models\TimeModel.cs" />
     <Compile Include="Models\TrackModel.cs" />
+    <Compile Include="Presenters\AddedRacersProcessPresenter.cs" />
     <Compile Include="Presenters\CarClassPresenter.cs" />
     <Compile Include="Presenters\CheckSensorPresenter.cs" />
     <Compile Include="Presenters\EditRacerPresenter.cs" />
+    <Compile Include="Presenters\ExportProcessPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.DataBinding.cs" />
     <Compile Include="Presenters\NewRacerPresenter.cs" />
@@ -198,6 +219,7 @@
     <Compile Include="Presenters\RegenerationDialogPresenter.cs" />
     <Compile Include="Presenters\RestoreAppDateFromBackupPresenter.cs" />
     <Compile Include="Presenters\SecondMonitorPresenter.cs" />
+    <Compile Include="Presenters\TimeMessageNotificationPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\AboutView.cs">
@@ -290,6 +312,12 @@
     <Compile Include="Views\SplashScreenView.Designer.cs">
       <DependentUpon>SplashScreenView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\TimeMessageNotificationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TimeMessageNotificationView.Designer.cs">
+      <DependentUpon>TimeMessageNotificationView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Controls\Views\ResultTableControlView.resx">
       <DependentUpon>ResultTableControlView.cs</DependentUpon>
     </EmbeddedResource>
@@ -352,9 +380,12 @@
     <EmbeddedResource Include="Views\SplashScreenView.resx">
       <DependentUpon>SplashScreenView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\TimeMessageNotificationView.resx">
+      <DependentUpon>TimeMessageNotificationView.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Data\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="Data\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -367,7 +398,7 @@
     <None Include="Data\Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.cs</LastGenOutput>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </None>
     <None Include="Diagrams\Classes diagrams\ManagersModel.cd" />
     <None Include="Diagrams\Sequence diagrams\CloseProgram.sequencediagram" />
@@ -434,11 +465,14 @@
     <Content Include="Resources\Images\Export.png" />
     <Content Include="Resources\Images\Import.png" />
     <Content Include="Resources\Images\Info.png" />
+    <Content Include="Resources\Images\Loading.gif" />
+    <Content Include="Resources\Images\Loading_2.gif" />
     <Content Include="Resources\Images\Logo.png" />
     <Content Include="Resources\Images\Printer.png" />
     <Content Include="Resources\Images\Record.png" />
     <Content Include="Resources\Images\Refresh.png" />
     <Content Include="Resources\Images\Restore backup.png" />
+    <Content Include="Resources\Images\Restore.png" />
     <Content Include="Resources\Images\Select.png" />
     <Content Include="Resources\Images\Settings.png" />
     <Content Include="Resources\Images\Stop.png" />

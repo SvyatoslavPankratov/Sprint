@@ -10,6 +10,7 @@
           <EntitySet Name="CarClasses" EntityType="SprintModel.Store.CarClasses" store:Type="Tables" />
           <EntitySet Name="Cars" EntityType="SprintModel.Store.Cars" store:Type="Tables" />
           <EntitySet Name="LogEntries" EntityType="SprintModel.Store.LogEntries" store:Type="Tables" />
+          <EntitySet Name="RacerRaceState" EntityType="SprintModel.Store.RacerRaceState" store:Type="Tables" />
           <EntitySet Name="Racers" EntityType="SprintModel.Store.Racers" store:Type="Tables" />
           <EntitySet Name="RacersAtTheTrack" EntityType="SprintModel.Store.RacersAtTheTrack" store:Type="Tables" />
           <EntitySet Name="RacesOptions" EntityType="SprintModel.Store.RacesOptions" store:Type="Tables" />
@@ -94,6 +95,13 @@
           <Property Name="Level" Type="nvarchar" MaxLength="10" />
           <Property Name="Logger" Type="nvarchar" MaxLength="128" />
           <Property Name="TimeStamp" Type="datetime" />
+        </EntityType>
+        <EntityType Name="RacerRaceState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Racers">
           <Key>
@@ -337,6 +345,7 @@
             <End Role="Racer" EntitySet="Racers" />
             <End Role="Car" EntitySet="Cars" />
           </AssociationSet>
+          <EntitySet Name="RacerRaceStates" EntityType="SprintModel.RacerRaceState" />
           </EntityContainer>
         <EntityType Name="CarClass">
           <Documentation>
@@ -599,6 +608,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="RacerRaceState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -704,6 +720,14 @@
                 <ScalarProperty Name="FK_CarClass" ColumnName="FK_CarClass" />
                 <ScalarProperty Name="FK_Racer" ColumnName="FK_Racer" />
                 <ScalarProperty Name="RaceNumber" ColumnName="RaceNumber" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RacerRaceStates">
+            <EntityTypeMapping TypeName="SprintModel.RacerRaceState">
+              <MappingFragment StoreEntitySet="RacerRaceState">
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -5,7 +5,7 @@ namespace Sprint.Interfaces{
     /// <summary>
     /// Интерфейс второго монитора.
     /// </summary>
-    public interface ISecondMonitor
+    public interface ISecondMonitor : IWindows
     {
         #region Свойства
 
@@ -13,6 +13,11 @@ namespace Sprint.Interfaces{
         /// Задать номер участника готовящегося к выезду на трек.
         /// </summary>
         int NextRacerNumber { set; }
+
+        /// <summary>
+        /// Задать состояние готовности следующему участнику, который должен будет выходить на трек.
+        /// </summary>
+        NextRacerState NextRacerState { set; }
 
         /// <summary>
         /// Задать номер первого участника находящегося в данный момент на треке.
@@ -58,17 +63,7 @@ namespace Sprint.Interfaces{
 
         #region Методы
 
-        /// <summary>
-        /// Показать окно.
-        /// </summary>
-        void Show();
-
-        /// <summary>
-        /// Задать положение окна относительно положения рабочего стола.
-        /// </summary>
-        /// <param name="x">Координата по X.</param>
-        /// <param name="y">Координата по Y.</param>
-        void SetDesktopLocation(int x, int y);
+        
 
         #endregion
     }

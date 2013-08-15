@@ -13,7 +13,7 @@ using Sprint.Presenters;
 
 namespace Sprint.Views
 {
-    public partial class AddedRacersProcessView : Form, IAddedRacersProcess
+    public partial class TimeMessageNotificationView : Form, ITimeMessageNotification
     {
         #region Реализация интерфейса ITimeMessageNotification
 
@@ -36,27 +36,29 @@ namespace Sprint.Views
         #region Свойства
 
         /// <summary>
-        /// Задать или получить презентер для представления.
+        /// Задать или получить презентер для данной въюхи.
         /// </summary>
-        private AddedRacersProcessPresenter Presenter { get; set; }
+        private TimeMessageNotificationPresenter Presenter { get; set; }
 
         #endregion
 
         #region Конструкторы
 
         /// <summary>
-        /// Конструкор.
+        /// Конструктор.
         /// </summary>
-        public AddedRacersProcessView()
+        public TimeMessageNotificationView()
         {
             InitializeComponent();
 
-            Presenter = new AddedRacersProcessPresenter(this);
+            Presenter = new TimeMessageNotificationPresenter(this);
         }
 
         #endregion
         
         #region Методы
+
+
 
         #endregion
     }

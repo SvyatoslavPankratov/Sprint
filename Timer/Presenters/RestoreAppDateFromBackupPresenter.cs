@@ -50,12 +50,21 @@ namespace Sprint.Presenters
         {
             if (View.SelectedFile != null)
             {
-                DatabaseBackupManager.RestoreDatabaseBackups(View.SelectedFile.Name);
-
-                return new OperationResult(true);
+                try
+                {
+                    DatabaseBackupManager.RestoreDatabaseBackups(View.SelectedFile.Name);
+                    return new OperationResult(true);
+                }
+                catch (Exception ex)
+                {
+                    return new OperationResult(false, ex);
+                }
             }
-
-            return new OperationResult(false);
+            else
+            {
+                var message = "Выберите, пожалуйста, требуемую резервную копию для восстановления данных приложения.";
+                return new OperationResult(false, message);
+            }
         }
 
         /// <summary>

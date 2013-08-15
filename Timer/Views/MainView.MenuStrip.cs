@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Sprint.Interfaces;
 
 namespace Sprint.Views
 {
@@ -32,11 +33,15 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void excelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var wnd = new ExportProcessView();
+            IExportProcess wnd = new ExportProcessView();
 
-            BeginInvoke(new Action(wnd.Show));
+            BeginInvoke(new Action(() =>
+                            {
+                                wnd.Show();
+                                wnd.Refresh();
+                            }));
             MainPresenter.ExportToExcel();
-            BeginInvoke(new Action(wnd.Close));
+            BeginInvoke(new Action(wnd.CloseForm));
         }
 
         /// <summary>

@@ -35,5 +35,6 @@ namespace Sprint.Data
         public DbSet<RacersAtTheTrack> RacersAtTheTracks { get; set; }
         public DbSet<UserDataAboutCircle> UserDataAboutCircles { get; set; }
         public DbSet<RaceState> RaceStates { get; set; }
+        public DbSet<RacerRaceState> RacerRaceStates { get; set; }
     }
 }

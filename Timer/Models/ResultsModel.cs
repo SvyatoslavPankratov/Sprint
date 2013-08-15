@@ -23,6 +23,11 @@ namespace Sprint.Models
         private IEnumerable<int?> CurrentCircleNumber { get; set; }
 
         /// <summary>
+        /// Задать или получить состояния заездов.
+        /// </summary>
+        private IEnumerable<RacerRaceStateEnum> RaceStates { get; set; } 
+
+        /// <summary>
         /// Задать или получить значение времени начала круга.
         /// </summary>
         public TimeModel StartTime { get; set; }
@@ -142,7 +147,24 @@ namespace Sprint.Models
         /// </summary>
         public void ResetState()
         {
-            CurrentCircleNumber = new List<int?>(2) { null, null };
+            var list_1 = new List<int?>(ConstantsModel.MaxRaceCount);
+
+            for (int i = 0; i < CurrentCircleNumber.Count(); i++)
+            {
+                list_1.Add(null);
+            }
+
+            CurrentCircleNumber = list_1;
+
+
+            var list_2 = new List<RacerRaceStateEnum>(ConstantsModel.MaxRaceCount);
+
+            for (int i = 0; i < CurrentCircleNumber.Count(); i++)
+            {
+                list_2.Add(RacerRaceStateEnum.Run);
+            }
+
+            RaceStates = list_2;
         }
 
         /// <summary>
@@ -205,6 +227,31 @@ namespace Sprint.Models
             {
                 list[race_number] = value;
             }
+        }
+
+        /// <summary>
+        /// Задать значение состояния заданного заезда у участника.
+        /// </summary>
+        /// <param name="race_number">Заданный номер заезда (от 0 до 1)</param>
+        /// <param name="state">Задаваемое значение заезда.</param>
+        public void SetRaceState(int race_number, RacerRaceStateEnum state)
+        {
+            var list = RaceStates as List<RacerRaceStateEnum>;
+
+            if (list != null)
+            {
+                list[race_number] = state;
+            }
+        }
+
+        /// <summary>
+        /// Получить состояние заданного заезда у участника.
+        /// </summary>
+        /// <param name="race_number">Заданный номер заезда.</param>
+        /// <returns>Состояние заезда.</returns>
+        public RacerRaceStateEnum GetRaceState(int race_number)
+        {
+            return RaceStates.ElementAt(race_number);
         }
 
         #endregion

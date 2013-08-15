@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 using Sprint.Interfaces;
@@ -13,15 +14,7 @@ namespace Sprint.Views
 {
     public partial class SplashScreenView : Form, ISplashScreen
     {
-        #region Реализация интерфейса ISplashScreenView
-
-        /// <summary>
-        /// Закрыть сплеш экран.
-        /// </summary>
-        public void CloseSplashScreen()
-        {
-            Close();
-        }
+        #region Реализация интерфейса ISplashScreen
 
         #endregion
 
@@ -34,6 +27,24 @@ namespace Sprint.Views
         {
             InitializeComponent();
         } 
+
+        #endregion
+
+        #region Методы
+
+        /// <summary>
+        /// Действия при закрытии формы.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SplashScreenView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            while (Opacity != 0)
+            {
+                Opacity -= 0.1;
+                Thread.Sleep(100);
+            }
+        }
 
         #endregion
     }

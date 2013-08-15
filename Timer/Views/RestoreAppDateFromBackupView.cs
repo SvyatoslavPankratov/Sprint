@@ -35,7 +35,7 @@ namespace Sprint.Views
         /// </summary>
         public FileInfo SelectedFile
         {
-            get { return BackupFiles.ElementAt(fileNames_lb.SelectedIndex); }
+            get { return BackupFiles.Any() ? BackupFiles.ElementAt(fileNames_lb.SelectedIndex) : null; }
         }
 
         #endregion
@@ -104,9 +104,18 @@ namespace Sprint.Views
                 Application.Restart();
                 return;
             }
-
-            MessageBox.Show("Не удалось произвести восстановление данных программы из заданного файла с резервной копией.", "Ошибка", 
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                if (res.Exception != null || string.IsNullOrEmpty(res.Details) || string.IsNullOrWhiteSpace(res.Details))
+                {
+                    MessageBox.Show("Не удалось произвести восстановление данных программы из заданного файла с резервной копией.", "Ошибка",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show(res.Details, "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         #endregion

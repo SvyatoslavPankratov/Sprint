@@ -136,14 +136,15 @@ namespace Sprint.Models
         /// Получить следующего участника, который будет готовиться к выезду на трассу.
         /// </summary>
         /// <param name="last_racer">Последний участник, вышедший на трассу.</param>
+        /// <param name="racer_state">Статус участников, которых требуется учитывать.</param>
         /// <returns>Участник, который будет готовиться к выезду на трассу.</returns>
-        public RacerModel GetNextRacer(RacerModel last_racer)
+        public RacerModel GetNextRacer(RacerModel last_racer, RacerRaceStateEnum racer_state)
         {
             if (last_racer == null)
             {
                 foreach (var racer in Racers)
                 {
-                    if (!racer.Results.IsFinished(RaceNumber))
+                    if (!racer.Results.IsFinished(RaceNumber) && racer.Results.GetRaceState(RaceNumber) == racer_state)
                     {
                         return racer;
                     }
@@ -157,7 +158,18 @@ namespace Sprint.Models
 
                     if (racer.Id == last_racer.Id)
                     {
-                        return Racers.Count() == i + 1 ? null : Racers.ElementAt(i + 1);
+                        if (Racers.Count() == i + 1)
+                        {
+                            return null;
+                        }
+
+                        for (int n = i + 1; n < Racers.Count(); n++)
+                        {
+                            if (Racers.ElementAt(n).Results.GetRaceState(RaceNumber) == racer_state)
+                            {
+                                return Racers.ElementAt(n);
+                            }
+                        }
                     }
                 }
             }

@@ -5,22 +5,17 @@ using System.Text;
 
 namespace Sprint.Interfaces
 {
-    public interface ISplashScreen
+    public interface IWindows
     {
         #region Методы
 
         /// <summary>
-        /// Закрыть сплеш экран.
-        /// </summary>
-        void Close();
-
-        /// <summary>
-        /// Показать окно.
+        /// Отобразить окно.
         /// </summary>
         void Show();
 
         /// <summary>
-        /// Оновить содержимое окна.
+        /// Обновить содержимое окна.
         /// </summary>
         void Refresh();
 

@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading;
 using System.Windows;
 
+using NLog;
+
+using Sprint.Exceptions;
 using Sprint.Extensions;
 using Sprint.Interfaces;
 using Sprint.Managers;
@@ -17,6 +21,15 @@ namespace Sprint.Presenters
     /// </summary>
     partial class MainPresenter : IDisposable
     {
+        #region Поля только для чтения
+
+        /// <summary>
+        /// Логгер.
+        /// </summary>
+        private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+
+        #endregion
+
         #region Свойства
 
         /// <summary>
@@ -88,6 +101,12 @@ namespace Sprint.Presenters
         /// Задать или получить опции гонок по классам автомобилей.
         /// </summary>
         private IEnumerable<RaceOptionsModel> RaceOptions { get; set; }
+
+        /// <summary>
+        /// Задать или получить статус заезда у участников текущего класса автомобилей, 
+        /// который учитывается в текущий момент времени.
+        /// </summary>
+        private RacerRaceStateEnum CurrentRacerRaceState { get; set; }
 
         #endregion
 
@@ -348,15 +367,18 @@ namespace Sprint.Presenters
         public void StartStopwatch()
         {
             CurrentRaceNum = CurrentRaserGroup.RaceNumber;
+            CurrentRacerRaceState = RacerRaceStateEnum.Run;
 
             if (CurrentRaserGroup.Racers.Any())
             {
-                var racer = CurrentRaserGroup.GetNextRacer(Track.CurrentRacer);
+                var racer = CurrentRaserGroup.GetNextRacer(Track.CurrentRacer, RacerRaceStateEnum.Run);
                 MainView.NextCurrentRacer = racer == null ? 0 : racer.RacerNumber;
+                MainView.NextRacerState = NextRacerState.Start;
 
                 if (SecondView != null)
                 {
                     SecondView.NextRacerNumber = racer == null ? 0 : racer.RacerNumber;
+                    SecondView.NextRacerState = NextRacerState.Start;
                 }
             }
 
@@ -398,8 +420,8 @@ namespace Sprint.Presenters
             }
 
             // Определимся какому участнику мы сейчас будем отрабатывать отсечку
-            if (Track.CurrentRacer != null 
-                && Track.CurrentRacers.Count() == 2 
+            if (Track.CurrentRacers.Count() == 2
+                && Track.CurrentRacer != null
                 && Track.CurrentRacerNum == 0 
                 && Track.CurrentRacer.Results.GetCurrentCircleNumber(CurrentRaceNum.Value) >= 3)
             {
@@ -411,10 +433,10 @@ namespace Sprint.Presenters
             }
 
             var time = new TimeModel(Stopwatch.Time.TimeSpan);
-            var racer = CurrentRaserGroup.GetNextRacer(Track.CurrentRacer);
+            var racer = CurrentRaserGroup.GetNextRacer(Track.CurrentRacer, CurrentRacerRaceState);
 
             // Если трек пустой, то добавить на него одного гонщика
-            if (!Track.CurrentRacers.Any())
+            if (!Track.CurrentRacers.Any() && racer != null)
             {
                 racer.Results.StartTime = time;
                 (Track.CurrentRacers as List<RacerModel>).Add(racer);
@@ -426,10 +448,10 @@ namespace Sprint.Presenters
                 }
 
                 racer = SetNextRacerInfo(racer);
-            } 
-            // Если на треке уже есть участник и он проезжает уже 2 круг, то добавим еще одного участника
-            else if (Track.CurrentRacer != null 
-                     && Track.CurrentRacer.Results.GetCurrentCircleNumber(CurrentRaceNum.Value) == 2 
+            }
+            // Если на треке уже есть участник и он проезжает уже 3 круг, то добавим еще одного участника
+            else if (Track.CurrentRacer != null
+                     && Track.CurrentRacer.Results.GetCurrentCircleNumber(CurrentRaceNum.Value) == 2
                      && Track.CurrentRacers.Count() == 1 && racer != null)
             {
                 racer.Results.StartTime = time;
@@ -450,6 +472,17 @@ namespace Sprint.Presenters
                 Track.CurrentRacer.Results.AddResult(CurrentRaceNum.Value, res);
                 Track.CurrentRacer.Results.StartTime = time;
                 RacersDbManager.SetRacer(Track.CurrentRacer);
+
+                // Если автомобиль теперь проехал 2 круга и пошел на 3-й, то дадим сигнал следующему участнику, чтобы он выезжал на трассу
+                if (Track.CurrentRacer.Results.GetCurrentCircleNumber(CurrentRaceNum.Value) == 2 && Track.CurrentRacers.Count() == 1 && racer != null)
+                {
+                    MainView.NextRacerState = NextRacerState.Start;
+
+                    if (SecondView != null)
+                    {
+                        SecondView.NextRacerState = NextRacerState.Start;
+                    }
+                }
             }
 
             // Если автомобиль финишировал, то убираем его с трека
@@ -467,13 +500,70 @@ namespace Sprint.Presenters
                     SecondView.FirstCurrentRacerNumber = !Track.CurrentRacers.Any() ? 0 : Track.CurrentRacers.ElementAt(0).RacerNumber;
                     SecondView.SecondCurrentRacerNumber = 0;
                 }
+
+                if (MainView.NextCurrentRacer != 0)
+                {
+                    MainView.NextRacerState = NextRacerState.Start;
+
+                    if (SecondView != null)
+                    {
+                        SecondView.NextRacerState = NextRacerState.Start;
+                    }
+                }
             }
 
-            // Закрытие неудачных заездов
+            // Если все участники с текущим статусом заезда закрылись
+            // То начинаем закрывать неудачные заезды
+            // Для этого мы предупреждаем оператора временным сообщением и ищем повторные заезды
+            if (CurrentRacerRaceState == RacerRaceStateEnum.Run
+                && Track.CurrentRacer == null
+                && CurrentRaserGroup.GetNextRacer(Track.CurrentRacer, CurrentRacerRaceState) == null)
+            {
+                CurrentRacerRaceState = RacerRaceStateEnum.Rerun;
 
-            // Поиск повторных заездов
-            
-            // Если заезд завершен, то закрываем текущей заезд у текущего класса автомобилей 
+                var worker = new BackgroundWorker();
+                worker.DoWork += (sender, args) =>
+                    {
+                        ITimeMessageNotification wnd = new TimeMessageNotificationView();
+
+                        wnd.Show();
+                        wnd.Refresh();
+
+                        Thread.Sleep(5000);
+
+                        wnd.CloseForm();
+                    };
+
+                worker.RunWorkerAsync();
+
+                var next_racer = CurrentRaserGroup.GetNextRacer(Track.CurrentRacer, CurrentRacerRaceState);
+
+                if (next_racer != null)
+                {
+                    // Обновим данные на форме
+                    MainView.FirstCurrentRacer = 0;
+                    MainView.SecondCurrentRacer = 0;
+                    
+
+                    if (SecondView != null)
+                    {
+                        SecondView.FirstCurrentRacerNumber = 0;
+                        SecondView.SecondCurrentRacerNumber = 0;
+                        SecondView.NextRacerState = NextRacerState.Start;
+                    }
+
+                    racer = SetNextRacerInfo(racer);
+
+                    MainView.NextRacerState = NextRacerState.Start;
+
+                    if (SecondView != null)
+                    {
+                        SecondView.NextRacerState = NextRacerState.Start;
+                    }
+                }
+            }
+
+            // Если заезд завершен, то закрываем текущей заезд у текущего класса автомобилей
             if (CheckCurrentGroupFinishedRace())
             {
                 StopStopwatch();
@@ -488,6 +578,21 @@ namespace Sprint.Presenters
             SaveApplicationState();
             DataBind();
             SetRacerResultsToSecondView();
+        }
+
+        /// <summary>
+        /// Проверим на треке-ли сейчас находится заданный участник.
+        /// </summary>
+        /// <param name="racer">Заданный участник.</param>
+        /// <returns>Результат проверки.</returns>
+        public bool CheckRacerForSetRerunStatus(RacerModel racer)
+        {
+            if (racer == null)
+            {
+                return false;
+            }
+
+            return Track.CheckRacer(racer);
         }
 
         /// <summary>
@@ -645,19 +750,21 @@ namespace Sprint.Presenters
         /// <summary>
         /// Задать информацию о следующем участнике, готовящемся для выхода на трассу.
         /// </summary>
-        /// <param name="last_racer">Текущий участник, который последний вышел на трассу.</param>
+        /// <param name="second_racer">Текущий участник, который последний вышел на трассу.</param>
         /// <returns></returns>
-        private RacerModel SetNextRacerInfo(RacerModel last_racer)
+        private RacerModel SetNextRacerInfo(RacerModel second_racer)
         {
-            last_racer = CurrentRaserGroup.GetNextRacer(last_racer);
-            MainView.NextCurrentRacer = last_racer == null ? 0 : last_racer.RacerNumber;
+            var next_racer = CurrentRaserGroup.GetNextRacer(second_racer, CurrentRacerRaceState);
+            MainView.NextCurrentRacer = next_racer == null ? 0 : next_racer.RacerNumber;
+            MainView.NextRacerState = NextRacerState.Stop;
 
             if (SecondView != null)
             {
-                SecondView.NextRacerNumber = last_racer == null ? 0 : last_racer.RacerNumber;
+                SecondView.NextRacerNumber = next_racer == null ? 0 : next_racer.RacerNumber;
+                SecondView.NextRacerState = NextRacerState.Stop;
             }
 
-            return last_racer;
+            return next_racer;
         }
 
         /// <summary>
@@ -772,29 +879,157 @@ namespace Sprint.Presenters
         }
 
         /// <summary>
-        /// Перезаезд текущего круга вместе с не закрытым заездом для заданного участника.
+        /// Убираем заданного участника с трека с перезаездом текущего круга вместе с не закрытым заездом.
         /// </summary>
         /// <param name="racer">Участник, для которого будет перезаезд проезжаемого круга.</param>
-        public void SetNullResultForCurrenrRacer(RacerModel racer)
+        public bool SetNullResultForCurrenrRacer(RacerModel racer)
         {
-            // Проверим на треке-ли находится участник
+            if (racer == null)
+            {
+                return false;
+            }
 
-            // Если участник готовится к заезду, то его круги уже нельзя обнулить
+            try
+            {
+                // Проверим на треке-ли находится участник
+                if (Track.CheckRacer(racer))
+                {
+                    // Вычтем у участника текущий круг
+                    //racer.Results.SetCurrentCircleNumber(CurrentRaceNum.Value, racer.Results.GetCurrentCircleNumber(CurrentRaceNum.Value).Value - 1);
 
-            // Если участник уже проехал заезд, то его круги уже нельзя обнулить
+                    // Изменим у участника статус у текущего заезда
+                    racer.Results.SetRaceState(CurrentRaceNum.Value, RacerRaceStateEnum.Rerun);
+
+                    // Снимем участника с трека
+                    // Для этого нам вначале надо определить не он ли сейчас будет пересекать финишную прямую
+                    if (Track.CurrentRacer != null && Track.CurrentRacers.Count() == 2
+                        && Track.CurrentRacerNum == 0 && Track.CurrentRacer.Results.GetCurrentCircleNumber(CurrentRaceNum.Value) >= 3)
+                    {
+                        Track.CurrentRacerNum = 1;
+                    }
+                    else
+                    {
+                        Track.CurrentRacerNum = 0;
+                    }
+
+                    // Если он
+                    if (Track.CheckCurrentRacer(racer))
+                    {
+                        // То надо вначале убрать его с трека
+                        var list = new List<RacerModel>(Track.CurrentRacers);
+                        list.Remove(Track.CurrentRacer);
+                        Track.CurrentRacers = list;
+
+                        // Затем, переместить указатель текущего участника (который сечас будет пересекать финишную прямую) 
+                        // на следующего участника, находящегося на треке
+                        Track.CurrentRacerNum = 0;
+    
+                        // Обновим данные на форме
+                        MainView.FirstCurrentRacer = !Track.CurrentRacers.Any() ? 0: Track.CurrentRacers.ElementAt(0).RacerNumber;
+                        MainView.SecondCurrentRacer = 0;
+
+                        if (SecondView != null)
+                        {
+                            SecondView.FirstCurrentRacerNumber = !Track.CurrentRacers.Any() ? 0 : Track.CurrentRacers.ElementAt(0).RacerNumber;
+                            SecondView.SecondCurrentRacerNumber = 0;
+                        }
+                    }
+                    // Если сейчас не он будет пересекать финишную прямую
+                    else
+                    {
+                        // То просто уберем его с трека
+                        var list = new List<RacerModel>(Track.CurrentRacers);
+                        list.Remove(racer);
+                        Track.CurrentRacers = list;
+
+                        // Обновим данные на форме
+                        MainView.FirstCurrentRacer = !Track.CurrentRacers.Any() ? 0 : Track.CurrentRacers.ElementAt(0).RacerNumber;
+                        MainView.SecondCurrentRacer = 0;
+
+                        if (SecondView != null)
+                        {
+                            SecondView.FirstCurrentRacerNumber = !Track.CurrentRacers.Any() ? 0 : Track.CurrentRacers.ElementAt(0).RacerNumber;
+                            SecondView.SecondCurrentRacerNumber = 0;
+                        }
+                    }
+                }
+
+                // Если участник готовится к заезду, то у него нету текущего круга
+                // Если участник уже проехал заезд, то у него тоже уже нету текущего круна
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                var message = "Не удалось убрать заданного участника с трека с перезаездом текущего круга вместе с не закрытым заездом.";
+                var exception = new SprintException(message, "Sprint.Presenters.MainPresenter.SetNullResultForCurrenrRacer(RacerModel racer)", ex);
+                logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
+                return false;
+            }
         }
 
         /// <summary>
-        /// Закрытие текущего заезда для заданного участника.
+        /// Убираем заданного участника с трека (или не допускаем его выход на трек, 
+        /// если он на нем еще не был) с закрытием текущего заезда.
         /// </summary>
         /// <param name="racer">Участник, для которого будет закрыт текущий заезд.</param>
-        public void CloseCurrentRaceForCurrenrRacer(RacerModel racer)
+        public bool CloseCurrentRaceForCurrenrRacer(RacerModel racer)
         {
+            if (racer == null)
+            {
+                return false;
+            }
+
             // Проверим на треке-ли находится участник
+            if (Track.CheckRacer(racer))
+            {
+                // Поставим ему текущим последний круг
+                racer.Results.SetCurrentCircleNumber(CurrentRaceNum.Value, ConstantsModel.MaxCircleCount);
+
+                // Изменим у участника статус у текущего заезда
+                racer.Results.SetRaceState(CurrentRaceNum.Value, RacerRaceStateEnum.Break);
+
+                // Снимем участника с трека
+
+                // Для этого нам вначале надо определить не он ли сейчас будет пересекать финишную прямую
+
+                // Если он
+                if (Track.CheckCurrentRacer(racer))
+                {
+                    // То надо вначале убрать его с трека
+
+                    // Затем, переместить указатель текущего участника (который сечас будет пересекать финишную прямую) 
+                    // на следующего участника, находящегося на треке
+                }
+                // Если сейчас не он будет пересекать финишную прямую
+                else
+                {
+                    // То просто уберем его с трека
+                }
+
+                // После всего этого обновим данные на форме
+
+                return true;
+            }
 
             // Проверим участник готовится к заезду
+            if (CurrentRaserGroup.GetNextRacer(Track.CurrentRacer, CurrentRacerRaceState).Id == racer.Id)
+            {
+                // Поставим ему текущий круг последним
+                racer.Results.SetCurrentCircleNumber(CurrentRaceNum.Value, ConstantsModel.MaxCircleCount);
 
-            // Если участник уже проехал заезд, то его заезд уже нельзя обнулить
+                // Надо заменить другим участником, идущим за ним в списке и имеющим возможность выйти на трассу
+
+                // После всего этого обновим данные на форме
+
+                return true;
+            }
+
+            // Если участник не идет следующим, то поставим ему текущий круг последним и ничего с ним больше делать не надо
+            racer.Results.SetCurrentCircleNumber(CurrentRaceNum.Value, ConstantsModel.MaxCircleCount);
+            return true;
+
+            // Если участник уже проехал заезд, то его заезд уже нельзя закрыть
         }
 
         #region Перемещение гонщиков по списку участников

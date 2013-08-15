@@ -680,6 +680,41 @@ namespace Sprint.Views
             fwdR1DGV.Rows[index].Selected = true;
         }
 
+        /// <summary>
+        /// Действия при нажатии на кнопку перезаезда текущего круга вместе с незакрытым заездом.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void reraceRace_Btn_fwdR1DGV_Click(object sender, EventArgs e)
+        {
+            if (fwdR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = fwdR1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (!MainPresenter.CheckRacerForSetRerunStatus(racer))
+            {
+                MessageBox.Show("Нельзя задать перезаезд текущего круга вместе с незакрытым заездом для участника, который не находится в текущий момент на треке.",
+                                "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                
+
+                if (!MainPresenter.SetNullResultForCurrenrRacer(racer))
+                {
+                    MessageBox.Show("Не удалось для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
         #endregion
 
         #region Таблица второго заезда переднеприводных автомобилей
@@ -2610,9 +2645,13 @@ namespace Sprint.Views
             {
                 var wnd = new AddedRacersProcessView();
 
-                Invoke(new Action(wnd.Show));
+                Invoke(new Action(() =>
+                            {
+                                wnd.Show();
+                                wnd.Refresh();
+                            }));
                 MainPresenter.AddRacerAddNewRacer(newRacerView.NewRacerPresenter.Racers);
-                Invoke(new Action(wnd.Close));
+                Invoke(new Action(wnd.CloseForm));
             }
         }
 

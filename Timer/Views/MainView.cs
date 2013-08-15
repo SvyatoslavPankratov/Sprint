@@ -20,7 +20,7 @@ namespace Sprint.Views
 
         #endregion
 
-        #region Реализация интерфейса IMainView
+        #region Реализация интерфейса IMain
 
         /// <summary>
         /// Задать или получить таблицу с результатами переднеприводных автомобилей за 1 заезд.
@@ -177,6 +177,17 @@ namespace Sprint.Views
         /// </summary>
         public int FirstCurrentRacer
         {
+            get
+            {
+                if (firstCurrentRacer_L.Text == "-")
+                {
+                    return 0;
+                }
+                else
+                {
+                    return int.Parse(firstCurrentRacer_L.Text);
+                }
+            }
             set 
             {
                 if (value == 0)
@@ -195,6 +206,17 @@ namespace Sprint.Views
         /// </summary>
         public int SecondCurrentRacer
         {
+            get
+            {
+                if (secondCurrentRacer_L.Text == "-")
+                {
+                    return 0;
+                }
+                else
+                {
+                    return int.Parse(secondCurrentRacer_L.Text);
+                }
+            }
             set
             {
                 if (value == 0)
@@ -213,6 +235,17 @@ namespace Sprint.Views
         /// </summary>
         public int NextCurrentRacer
         {
+            get
+            {
+                if (nextCurrentRacer_L.Text == "-")
+                {
+                    return 0;
+                }
+                else
+                {
+                    return int.Parse(nextCurrentRacer_L.Text);
+                }
+            }
             set
             {
                 if (value == 0)
@@ -222,6 +255,40 @@ namespace Sprint.Views
                 else
                 {
                     nextCurrentRacer_L.Text = value.ToString("D3");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Задать состояние готовности следующему участнику, который должен будет выходить на трек.
+        /// </summary>
+        public NextRacerState NextRacerState
+        {
+            get
+            {
+                if (StartPanel.Visible)
+                {
+                    return NextRacerState.Start;
+                }
+                else
+                {
+                    return NextRacerState.Stop;
+                }
+            }
+            set
+            {
+                switch (value)
+                {
+                    case NextRacerState.Stop:
+                        {
+                            StopPanel.Visible = true;
+                            StartPanel.Visible = false;
+                        } break;
+                    case NextRacerState.Start:
+                        {
+                            StopPanel.Visible = false;
+                            StartPanel.Visible = true;
+                        } break;
                 }
             }
         }
@@ -352,11 +419,15 @@ namespace Sprint.Views
 
                 if (res == DialogResult.OK)
                 {
-                    var wnd = new AddedRacersProcessView();
-                    
-                    Invoke(new Action(wnd.Show));
+                    IAddedRacersProcess wnd = new AddedRacersProcessView();
+
+                    Invoke(new Action(() =>
+                                {
+                                    wnd.Show();
+                                    wnd.Refresh();
+                                }));
                     MainPresenter.SetRacersFromNewRacersDialog(newRacerView.NewRacerPresenter.Racers);
-                    Invoke(new Action(wnd.Close));
+                    Invoke(new Action(wnd.CloseForm));
                 }
             }
 

@@ -25,6 +25,7 @@
         <AssociationConnector Association="SprintModel.RaceState_Racer" />
         <AssociationConnector Association="SprintModel.Car_CarClass" />
         <AssociationConnector Association="SprintModel.Car_Racer" />
+        <EntityTypeShape EntityType="SprintModel.RacerRaceState" Width="1.5" PointX="0.5" PointY="7.375" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

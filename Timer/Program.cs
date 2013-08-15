@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Configuration;
 using System.IO;
 using System.Windows.Forms;
@@ -17,6 +18,11 @@ namespace Sprint
         /// Задать или получить менеджер по работе с экранами.
         /// </summary>
         private static ScreenManager ScreenManager { get; set; }
+
+        /// <summary>
+        /// Задать или получить фонового работника для выполнения операций в фоновом режиме.
+        /// </summary>
+        private static BackgroundWorker BackgroundWorker { get; set; }
 
         /// <summary>
         /// Задать или получить интерфейс на сплеш скрин приложения.
@@ -51,6 +57,15 @@ namespace Sprint
             SplashScreenView = new SplashScreenView();
             SplashScreenView.SetDesktopLocation(ScreenManager.ScreenPoints[0].X, ScreenManager.ScreenPoints[0].Y);
             SplashScreenView.Show();
+            SplashScreenView.Refresh();
+
+            //BackgroundWorker = new BackgroundWorker {WorkerSupportsCancellation = true};
+            //BackgroundWorker.DoWork += (sender, args) =>
+            //                            {
+            //                                ((SplashScreenView)args.Argument).Show();
+            //                                ((SplashScreenView)args.Argument).Refresh();
+            //                            };
+            //BackgroundWorker.RunWorkerAsync(SplashScreenView);
 
             CheckFreeSpace();
             
@@ -64,7 +79,8 @@ namespace Sprint
             MainView = new MainView(SecondMonitorView);
             MainView.SetDesktopLocation(ScreenManager.ScreenPoints[0].X, ScreenManager.ScreenPoints[0].Y);
 
-            SplashScreenView.CloseSplashScreen();
+            //BackgroundWorker.Dispose();
+            SplashScreenView.Close();
 
             Application.Run(MainView as Form);
         }

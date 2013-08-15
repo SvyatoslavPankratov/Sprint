@@ -99,17 +99,22 @@ namespace Sprint.Interfaces
         /// <summary>
         /// Задать первого текущего участника на трассе.
         /// </summary>
-        int FirstCurrentRacer { set; }
+        int FirstCurrentRacer { get;  set; }
 
         /// <summary>
         /// Задать второго текущего участника на трассе.
         /// </summary>
-        int SecondCurrentRacer { set; }
+        int SecondCurrentRacer { get;  set; }
 
         /// <summary>
         /// Задать следующего текущего участника на трассе.
         /// </summary>
-        int NextCurrentRacer { set; }
+        int NextCurrentRacer { get; set; }
+
+        /// <summary>
+        /// Задать состояние готовности следующему участнику, который должен будет выходить на трек.
+        /// </summary>
+        NextRacerState NextRacerState { get; set; }
 
         /// <summary>
         /// Задать или получить состояние секундомера.

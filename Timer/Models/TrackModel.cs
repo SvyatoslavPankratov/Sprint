@@ -27,7 +27,7 @@ namespace Sprint.Models
         {
             get
             {
-                if (CurrentRacers.Count() > 0)
+                if (CurrentRacers.Count() > 0 && CurrentRacers.Count() < 3)
                 {
                     return CurrentRacers.ElementAt(CurrentRacerNum);
                 }
@@ -47,6 +47,30 @@ namespace Sprint.Models
         public TrackModel(int maxRacersForRace)
         {
             CurrentRacers = new List<RacerModel>(maxRacersForRace);
+        }
+
+        #endregion
+
+        #region Методы
+
+        /// <summary>
+        /// Проверить заданного гонщика на наличие его на треке в текущий момент времени.
+        /// </summary>
+        /// <param name="racer">Проверяемый участник.</param>
+        /// <returns>Результат проверки.</returns>
+        public bool CheckRacer(RacerModel racer)
+        {
+            return CurrentRacers.Any(r => r.Id == racer.Id);
+        }
+
+        /// <summary>
+        /// Проверить заданного гонщика не он ли сейчас будет пересекать финишную прямую.
+        /// </summary>
+        /// <param name="racer">Проверяемый участник.</param>
+        /// <returns>Результата проверки.</returns>
+        public bool CheckCurrentRacer(RacerModel racer)
+        {
+            return CurrentRacer.Id == racer.Id;
         }
 
         #endregion

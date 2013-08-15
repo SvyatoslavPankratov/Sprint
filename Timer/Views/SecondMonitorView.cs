@@ -172,6 +172,29 @@ namespace Sprint.Views
             }
         }
 
+        /// <summary>
+        /// Задать состояние готовности следующему участнику, который должен будет выходить на трек.
+        /// </summary>
+        public NextRacerState NextRacerState
+        {
+            set
+            {
+                switch (value)
+                {
+                    case NextRacerState.Stop:
+                        {
+                            StopPanel.Visible = true;
+                            StartPanel.Visible = false;
+                        } break;
+                    case NextRacerState.Start:
+                        {
+                            StopPanel.Visible = false;
+                            StartPanel.Visible = true;
+                        } break;
+                }
+            }
+        }
+
         #endregion
 
         #region Свойства
