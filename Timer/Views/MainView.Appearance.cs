@@ -554,20 +554,17 @@ namespace Sprint.Views
                 fwdR1DGV.Columns[5].Width = 150;
                 fwdR1DGV.Columns[6].Width = 150;
             }
-        }
 
-        /// <summary>
-        /// Действия при перересовке таблицы с участниками первого заезда на переднеприводных автомобилях.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void fwdR1DGV_Paint(object sender, PaintEventArgs e)
-        {
             foreach (DataGridViewRow row in fwdR1DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
                 row.Height = 30;
+            }
+
+            if (TablePainted != null)
+            {
+                TablePainted(this, new CarClassEventArgs(CarClassesEnum.FWD, 0));
             }
         }
 
@@ -705,11 +702,60 @@ namespace Sprint.Views
             if (MessageBox.Show("Вы уверены, что хотите для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом?",
                                 "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                
-
-                if (!MainPresenter.SetNullResultForCurrenrRacer(racer))
+                if (!MainPresenter.RerunCurrenrRacer(racer))
                 {
                     MessageBox.Show("Не удалось для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку, чтобы убрать заданного участника с трека (или не допустить его выход на трек, 
+        /// если он на нем еще не был) с закрытием текущего заезда.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void breakRace_Btn_fwdR1DGV_Click(object sender, EventArgs e)
+        {
+            if (fwdR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = fwdR1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.BreakCurrenrRacer(racer))
+                {
+                    MessageBox.Show("Не удалось убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезд.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку для полного перезаеда текущего заезда для выделенного участника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void restartRace_Btn_fwdR1DGV_Click(object sender, EventArgs e)
+        {
+            if (fwdR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = fwdR1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите задать выбранному участнику полный перезаезд теущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RestartCurrentRacer(racer))
+                {
+                    MessageBox.Show("Не удалось задать полный перезаезд текущего заезда выбранному участнику.",
                                     "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
@@ -742,20 +788,17 @@ namespace Sprint.Views
                 fwdR2DGV.Columns[5].Width = 150;
                 fwdR2DGV.Columns[6].Width = 150;
             }
-        }
 
-        /// <summary>
-        /// Действия при перересовке таблицы с участниками второго заезда на переднеприводных автомобилях.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void fwdR2DGV_Paint(object sender, PaintEventArgs e)
-        {
             foreach (DataGridViewRow row in fwdR2DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
                 row.Height = 30;
+            }
+
+            if (TablePainted != null)
+            {
+                TablePainted(this, new CarClassEventArgs(CarClassesEnum.FWD, 1));
             }
         }
 
@@ -884,23 +927,20 @@ namespace Sprint.Views
                 rwdR1DGV.Columns[5].Width = 150;
                 rwdR1DGV.Columns[6].Width = 150;
             }
-        }
 
-        /// <summary>
-        /// Действия при перересовке таблицы с участниками первого заезда на заднеприводных автомобилях.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void rwdR1DGV_Paint(object sender, PaintEventArgs e)
-        {
             foreach (DataGridViewRow row in rwdR1DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
                 row.Height = 30;
             }
-        }
 
+            if (TablePainted != null)
+            {
+                TablePainted(this, new CarClassEventArgs(CarClassesEnum.RWD, 0));
+            }
+        }
+        
         /// <summary>
         /// Включить или отключить возможность редактирования списка гонщиков 
         /// в первом заезде на заднеприводных автомобилях.
@@ -1037,20 +1077,17 @@ namespace Sprint.Views
                 rwdR2DGV.Columns[5].Width = 150;
                 rwdR2DGV.Columns[6].Width = 150;
             }
-        }
 
-        /// <summary>
-        /// Действия при перересовке таблицы с участниками второго заезда на заднеприводных автомобилях.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void rwdR2DGV_Paint(object sender, PaintEventArgs e)
-        {
             foreach (DataGridViewRow row in rwdR2DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
                 row.Height = 30;
+            }
+
+            if (TablePainted != null)
+            {
+                TablePainted(this, new CarClassEventArgs(CarClassesEnum.RWD, 1));
             }
         }
 
@@ -1179,20 +1216,17 @@ namespace Sprint.Views
                 awdR1DGV.Columns[5].Width = 150;
                 awdR1DGV.Columns[6].Width = 150;
             }
-        }
 
-        /// <summary>
-        /// Действия при перересовке таблицы с участниками первого заезда на полноприводных автомобилях.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void awdR1DGV_Paint(object sender, PaintEventArgs e)
-        {
             foreach (DataGridViewRow row in awdR1DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
                 row.Height = 30;
+            }
+
+            if (TablePainted != null)
+            {
+                TablePainted(this, new CarClassEventArgs(CarClassesEnum.AWD, 0));
             }
         }
 
@@ -1329,20 +1363,17 @@ namespace Sprint.Views
             awdR2DGV.Columns[4].Width = 150;
             awdR2DGV.Columns[5].Width = 150;
             awdR2DGV.Columns[6].Width = 150;
-        }
 
-        /// <summary>
-        /// Действия при перересовке таблицы с участниками второго заезда на полноприводных автомобилях.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void awdR2DGV_Paint(object sender, PaintEventArgs e)
-        {
             foreach (DataGridViewRow row in awdR2DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
                 row.Height = 30;
+            }
+
+            if (TablePainted != null)
+            {
+                TablePainted(this, new CarClassEventArgs(CarClassesEnum.AWD, 1));
             }
         }
 
@@ -1471,20 +1502,17 @@ namespace Sprint.Views
                 sportR1DGV.Columns[5].Width = 150;
                 sportR1DGV.Columns[6].Width = 150;
             }
-        }
 
-        /// <summary>
-        /// Действия при перересовке таблицы с участниками первого заезда на спортивных автомобилях.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void sportR1DGV_Paint(object sender, PaintEventArgs e)
-        {
             foreach (DataGridViewRow row in sportR1DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
                 row.Height = 30;
+            }
+
+            if (TablePainted != null)
+            {
+                TablePainted(this, new CarClassEventArgs(CarClassesEnum.Sport, 1));
             }
         }
 
@@ -1624,20 +1652,17 @@ namespace Sprint.Views
                 sportR2DGV.Columns[5].Width = 150;
                 sportR2DGV.Columns[6].Width = 150;
             }
-        }
 
-        /// <summary>
-        /// Действия при перересовке таблицы с участниками второго заезда на спортивных автомобилях.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void sportR2DGV_Paint(object sender, PaintEventArgs e)
-        {
             foreach (DataGridViewRow row in sportR2DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
                 row.Height = 30;
+            }
+
+            if (TablePainted != null)
+            {
+                TablePainted(this, new CarClassEventArgs(CarClassesEnum.Sport, 1));
             }
         }
 
@@ -1766,20 +1791,17 @@ namespace Sprint.Views
                 K100R1DGV.Columns[5].Width = 150;
                 K100R1DGV.Columns[6].Width = 150;
             }
-        }
 
-        /// <summary>
-        /// Действия при перересовке таблицы с участниками первого заезда автомобилей мощностью до 100 л/с.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void K100R1DGV_Paint(object sender, PaintEventArgs e)
-        {
             foreach (DataGridViewRow row in K100R1DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
                 row.Height = 30;
+            }
+
+            if (TablePainted != null)
+            {
+                TablePainted(this, new CarClassEventArgs(CarClassesEnum.K100, 0));
             }
         }
 
@@ -1919,20 +1941,17 @@ namespace Sprint.Views
                 K100R2DGV.Columns[5].Width = 150;
                 K100R2DGV.Columns[6].Width = 150;
             }
-        }
 
-        /// <summary>
-        /// Действия при перересовке таблицы с участниками второго заезда автомобилей мощностью до 100 л/с.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void K100R2DGV_Paint(object sender, PaintEventArgs e)
-        {
             foreach (DataGridViewRow row in K100R2DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
                 row.Height = 30;
+            }
+
+            if (TablePainted != null)
+            {
+                TablePainted(this, new CarClassEventArgs(CarClassesEnum.K100, 1));
             }
         }
 
@@ -2061,20 +2080,17 @@ namespace Sprint.Views
                 K160R1DGV.Columns[5].Width = 150;
                 K160R1DGV.Columns[6].Width = 150;
             }
-        }
 
-        /// <summary>
-        /// Действия при перересовке таблицы с участниками первого заезда автомобилей с мощностью от 100 л/с до 160 л/с.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void K160R1DGV_Paint(object sender, PaintEventArgs e)
-        {
             foreach (DataGridViewRow row in K160R1DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
                 row.Height = 30;
+            }
+
+            if (TablePainted != null)
+            {
+                TablePainted(this, new CarClassEventArgs(CarClassesEnum.K160, 0));
             }
         }
 
@@ -2214,23 +2230,20 @@ namespace Sprint.Views
                 K160R2DGV.Columns[5].Width = 150;
                 K160R2DGV.Columns[6].Width = 150;
             }
-        }
 
-        /// <summary>
-        /// Действия при перересовке таблицы с участниками второго заезда автомобилей мощностью от 100 л/с до 160 л/с.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void K160R2DGV_Paint(object sender, PaintEventArgs e)
-        {
             foreach (DataGridViewRow row in K160R2DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
                 row.Height = 30;
             }
-        }
 
+            if (TablePainted != null)
+            {
+                TablePainted(this, new CarClassEventArgs(CarClassesEnum.K160, 1));
+            }
+        }
+        
         /// <summary>
         /// Включить или отключить возможность редактирования списка гонщиков 
         /// в первом заезде на автомобилях мощностью от 100 л/с до 160 л/с.
@@ -2356,20 +2369,17 @@ namespace Sprint.Views
                 KAR1DGV.Columns[5].Width = 150;
                 KAR1DGV.Columns[6].Width = 150;
             }
-        }
 
-        /// <summary>
-        /// Действия при перересовке таблицы с участниками первого заезда автомобилей мощностью свыше 160 л/с.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void kaR1DGV_Paint(object sender, PaintEventArgs e)
-        {
             foreach (DataGridViewRow row in KAR1DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
                 row.Height = 30;
+            }
+
+            if (TablePainted != null)
+            {
+                TablePainted(this, new CarClassEventArgs(CarClassesEnum.KA, 0));
             }
         }
 
@@ -2509,20 +2519,17 @@ namespace Sprint.Views
                 KAR2DGV.Columns[5].Width = 150;
                 KAR2DGV.Columns[6].Width = 150;
             }
-        }
 
-        /// <summary>
-        /// Действия при перересовке таблицы с участниками второго заезда автомобилей мощностью свыше 160 л/с вниз.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void kaR2DGV_Paint(object sender, PaintEventArgs e)
-        {
             foreach (DataGridViewRow row in KAR2DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
                 row.Height = 30;
+            }
+
+            if (TablePainted != null)
+            {
+                TablePainted(this, new CarClassEventArgs(CarClassesEnum.KA, 1));
             }
         }
 

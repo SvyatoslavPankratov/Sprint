@@ -18,6 +18,15 @@ namespace Sprint.Views
         #region Реализация интерфейса ITimeMessageNotification
 
         /// <summary>
+        /// Задать или получить текст информационного сообщения.
+        /// </summary>
+        public string TextMessage
+        {
+            get { return text_message.Text; }
+            set { text_message.Text = value; }
+        }
+
+        /// <summary>
         /// Закрыть окошко.
         /// </summary>
         public void CloseForm()

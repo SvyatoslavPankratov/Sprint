@@ -9,7 +9,10 @@ namespace Sprint.Interfaces
     {
         #region Свойства
 
-
+        /// <summary>
+        /// Задать или получить текст информационного сообщения.
+        /// </summary>
+        string TextMessage { get; set; }
 
         #endregion
 

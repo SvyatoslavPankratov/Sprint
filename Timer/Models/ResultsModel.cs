@@ -247,7 +247,7 @@ namespace Sprint.Models
         /// <summary>
         /// Получить состояние заданного заезда у участника.
         /// </summary>
-        /// <param name="race_number">Заданный номер заезда.</param>
+        /// <param name="race_number">Заданный номер заезда (от 0 до 1).</param>
         /// <returns>Состояние заезда.</returns>
         public RacerRaceStateEnum GetRaceState(int race_number)
         {

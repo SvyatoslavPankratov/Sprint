@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using Sprint.Models;
 
 namespace Sprint.Interfaces
@@ -9,6 +11,17 @@ namespace Sprint.Interfaces
     /// </summary>
     public interface IMain
     {
+        #region Делегаты
+
+        /// <summary>
+        /// Задать или получиь делегат на метод, который будет 
+        /// отрабатывать после окончания перерисовки какой-либо 
+        /// таблицы с результатами.
+        /// </summary>
+        EventHandler TablePainted { get; set; }
+
+        #endregion
+
         #region Свойства
 
         /// <summary>
@@ -131,6 +144,15 @@ namespace Sprint.Interfaces
         /// <param name="x">Координата по X.</param>
         /// <param name="y">Координата по Y.</param>
         void SetDesktopLocation(int x, int y);
+
+        /// <summary>
+        /// Задать цвет для заданной строки в таблице у заданного класса автомобилей для заданного заезда.
+        /// </summary>
+        /// <param name="car_class">Класс автомобилей.</param>
+        /// <param name="race_number">Номер заезда (0 или 1).</param>
+        /// <param name="row_number">Номер строчки в таблице, которую будем красить.</param>
+        /// <param name="row_color">Задаваемый цвет.</param>
+        void SetRowColor(CarClassesEnum car_class, int race_number, int row_number, Color row_color);
 
         #endregion
     }

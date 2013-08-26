@@ -126,6 +126,8 @@ namespace Sprint.Models
         public IEnumerable<RacerModel> GetLeaders(int count)
         {
             var racers = from racer in Racers
+                         where racer.Results.GetRaceState(0) != RacerRaceStateEnum.Break
+                               && racer.Results.GetRaceState(0) != RacerRaceStateEnum.Disqualification
                          orderby racer.Results.GetMinTime(RaceNumber)
                          select racer;
 

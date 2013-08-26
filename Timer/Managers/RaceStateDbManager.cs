@@ -196,7 +196,7 @@ namespace Sprint.Managers
         /// <summary>
         /// Задать состояние заезда.
         /// </summary>
-        /// <param name="race_state">Коллекция задаваемых состояний заездов.</param>
+        /// <param name="race_states">Коллекция задаваемых состояний заездов.</param>
         /// <returns>Результат операции.</returns>
         public static OperationResult SetRaceStates(IEnumerable<RaceStateModel> race_states)
         {

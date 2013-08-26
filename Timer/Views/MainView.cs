@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
@@ -323,6 +324,168 @@ namespace Sprint.Views
             }
         }
 
+        /// <summary>
+        /// Задать или получиь делегат на метод, который будет 
+        /// отрабатывать после окончания перерисовки какой-либо 
+        /// таблицы с результатами.
+        /// </summary>
+        public EventHandler TablePainted { get; set; }
+
+        /// <summary>
+        /// Задать цвет для заданной строки в таблице у заданного класса автомобилей для заданного заезда.
+        /// </summary>
+        /// <param name="car_class">Класс автомобилей.</param>
+        /// <param name="race_number">Номер заезда (0 или 1).</param>
+        /// <param name="row_number">Номер строчки в таблице, которую будем красить.</param>
+        /// <param name="row_color">Задаваемый цвет.</param>
+        public void SetRowColor(CarClassesEnum car_class, int race_number, int row_number, Color row_color)
+        {
+            switch (car_class)
+            {
+                case CarClassesEnum.FWD:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    foreach (DataGridViewCell cell in fwdR1DGV.Rows[row_number].Cells)
+                                    {
+                                        cell.Style.BackColor = row_color;
+                                    }
+                                    
+                                } break;
+                            case 1:
+                                {
+                                    foreach (DataGridViewCell cell in fwdR2DGV.Rows[row_number].Cells)
+                                    {
+                                        cell.Style.BackColor = row_color;
+                                    }
+                                } break;
+                        }
+                    } break;
+                case CarClassesEnum.RWD:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    foreach (DataGridViewCell cell in rwdR1DGV.Rows[row_number].Cells)
+                                    {
+                                        cell.Style.BackColor = row_color;
+                                    }
+                                } break;
+                            case 1:
+                                {
+                                    foreach (DataGridViewCell cell in rwdR2DGV.Rows[row_number].Cells)
+                                    {
+                                        cell.Style.BackColor = row_color;
+                                    }
+                                } break;
+                        }
+                    } break;
+                case CarClassesEnum.AWD:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    foreach (DataGridViewCell cell in awdR1DGV.Rows[row_number].Cells)
+                                    {
+                                        cell.Style.BackColor = row_color;
+                                    }
+                                } break;
+                            case 1:
+                                {
+                                    foreach (DataGridViewCell cell in awdR2DGV.Rows[row_number].Cells)
+                                    {
+                                        cell.Style.BackColor = row_color;
+                                    }
+                                } break;
+                        }
+                    } break;
+                case CarClassesEnum.Sport:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    foreach (DataGridViewCell cell in sportR1DGV.Rows[row_number].Cells)
+                                    {
+                                        cell.Style.BackColor = row_color;
+                                    }
+                                } break;
+                            case 1:
+                                {
+                                    foreach (DataGridViewCell cell in sportR2DGV.Rows[row_number].Cells)
+                                    {
+                                        cell.Style.BackColor = row_color;
+                                    }
+                                } break;
+                        }
+                    } break;
+                case CarClassesEnum.K100:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    foreach (DataGridViewCell cell in K100R1DGV.Rows[row_number].Cells)
+                                    {
+                                        cell.Style.BackColor = row_color;
+                                    }
+                                } break;
+                            case 1:
+                                {
+                                    foreach (DataGridViewCell cell in K100R2DGV.Rows[row_number].Cells)
+                                    {
+                                        cell.Style.BackColor = row_color;
+                                    }
+                                } break;
+                        }
+                    } break;
+                case CarClassesEnum.K160:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    foreach (DataGridViewCell cell in K160R1DGV.Rows[row_number].Cells)
+                                    {
+                                        cell.Style.BackColor = row_color;
+                                    }
+                                } break;
+                            case 1:
+                                {
+                                    foreach (DataGridViewCell cell in K160R2DGV.Rows[row_number].Cells)
+                                    {
+                                        cell.Style.BackColor = row_color;
+                                    }
+                                } break;
+                        }
+                    } break;
+                case CarClassesEnum.KA:
+                    {
+                        switch (race_number)
+                        {
+                            case 0:
+                                {
+                                    foreach (DataGridViewCell cell in KAR1DGV.Rows[row_number].Cells)
+                                    {
+                                        cell.Style.BackColor = row_color;
+                                    }
+                                } break;
+                            case 1:
+                                {
+                                    foreach (DataGridViewCell cell in KAR2DGV.Rows[row_number].Cells)
+                                    {
+                                        cell.Style.BackColor = row_color;
+                                    }
+                                } break;
+                        }
+                    } break;
+            }
+        }
+
         #endregion
 
         #region Свойства
@@ -433,6 +596,21 @@ namespace Sprint.Views
 
             WindowHookManager.RegisterHooks(true, false);
             WindowHookManager.OnMouseActivity += CutOffStopwatch;
+
+            fwdR1DGV_DataSourceChanged(this, EventArgs.Empty);
+            fwdR2DGV_DataSourceChanged(this, EventArgs.Empty);
+            rwdR1DGV_DataSourceChanged(this, EventArgs.Empty);
+            rwdR2DGV_DataSourceChanged(this, EventArgs.Empty);
+            awdR1DGV_DataSourceChanged(this, EventArgs.Empty);
+            awdR2DGV_DataSourceChanged(this, EventArgs.Empty);
+            sportR1DGV_DataSourceChanged(this, EventArgs.Empty);
+            sportR2DGV_DataSourceChanged(this, EventArgs.Empty);
+            k100R1DGV_DataSourceChanged(this, EventArgs.Empty);
+            k100R2DGV_DataSourceChanged(this, EventArgs.Empty);
+            k160R1DGV_DataSourceChanged(this, EventArgs.Empty);
+            k160R2DGV_DataSourceChanged(this, EventArgs.Empty);
+            kaR1DGV_DataSourceChanged(this, EventArgs.Empty);
+            kaR2DGV_DataSourceChanged(this, EventArgs.Empty);
         }
 
         /// <summary>

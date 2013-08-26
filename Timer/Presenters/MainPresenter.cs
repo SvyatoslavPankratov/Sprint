@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Threading;
 using System.Windows;
@@ -13,6 +14,7 @@ using Sprint.Interfaces;
 using Sprint.Managers;
 using Sprint.Models;
 using Sprint.Views;
+using Point = System.Windows.Point;
 
 namespace Sprint.Presenters
 {
@@ -143,6 +145,8 @@ namespace Sprint.Presenters
                                         new RacersGroupModel(CarClassesEnum.KA)     { RaceNumber = 1 }
                                     };
 
+            MainView.TablePainted = (sender, args) =>  SetColorsForRows();
+
             InitializeAllTables();
 
             ThreadSync = new Thread(() => StopwatchDataBindingProcess(MainView, Stopwatch));
@@ -194,6 +198,229 @@ namespace Sprint.Presenters
         #endregion
 
         #region Методы
+
+        /// <summary>
+        /// Задать цвета всем строчкам, где есть участники выбывшие из заезда, 
+        /// перезаезжающие заезд с нуля или с неудачного круга.
+        /// </summary>
+        private void SetColorsForRows()
+        {
+            var race_state = RacerRaceStateEnum.Break;
+            var color = Color.Firebrick;
+            SetColor(race_state, color);
+
+            race_state = RacerRaceStateEnum.Rerun;
+            color = Color.Gold;
+            SetColor(race_state, color);
+
+            race_state = RacerRaceStateEnum.Restart;
+            color = Color.DarkOrange;
+            SetColor(race_state, color);
+        }
+
+        /// <summary>
+        /// Задать заданный цвет строчкам с участниками у всех классов автомобилей для заданного состояния заеда.
+        /// </summary>
+        /// <param name="race_state"Состояние заезда.></param>
+        /// <param name="color">Цвет, в который окрасится строчка.</param>
+        private void SetColor(RacerRaceStateEnum race_state, Color color)
+        {
+            var car_class = CarClassesEnum.FWD;
+
+            var race_num = 0;
+            var fwd_r1_racers = RacerGroups.FirstOrDefault(rg => rg.CarClass == car_class && rg.RaceNumber == race_num).Racers;
+
+            for (int i = 0; i < fwd_r1_racers.Count(); i++)
+            {
+                var racer = fwd_r1_racers.ElementAt(i);
+
+                if (racer.Results.GetRaceState(0) == race_state)
+                {
+                    MainView.SetRowColor(car_class, race_num, i, color);
+                }
+            }
+
+            race_num = 1;
+            var fwd_r2_racers = RacerGroups.FirstOrDefault(rg => rg.CarClass == car_class && rg.RaceNumber == race_num).Racers;
+
+            for (int i = 0; i < fwd_r2_racers.Count(); i++)
+            {
+                var racer = fwd_r2_racers.ElementAt(i);
+
+                if (racer.Results.GetRaceState(0) == race_state)
+                {
+                    MainView.SetRowColor(car_class, race_num, i, color);
+                }
+            }
+
+            car_class = CarClassesEnum.RWD;
+
+            race_num = 0;
+            var rwd_r1_racers = RacerGroups.FirstOrDefault(rg => rg.CarClass == car_class && rg.RaceNumber == race_num).Racers;
+
+            for (int i = 0; i < rwd_r1_racers.Count(); i++)
+            {
+                var racer = rwd_r1_racers.ElementAt(i);
+
+                if (racer.Results.GetRaceState(0) == race_state)
+                {
+                    MainView.SetRowColor(car_class, race_num, i, color);
+                }
+            }
+
+            race_num = 1;
+            var rwd_r2_racers = RacerGroups.FirstOrDefault(rg => rg.CarClass == car_class && rg.RaceNumber == race_num).Racers;
+
+            for (int i = 0; i < rwd_r2_racers.Count(); i++)
+            {
+                var racer = rwd_r2_racers.ElementAt(i);
+
+                if (racer.Results.GetRaceState(0) == race_state)
+                {
+                    MainView.SetRowColor(car_class, race_num, i, color);
+                }
+            }
+
+            car_class = CarClassesEnum.AWD;
+
+            race_num = 0;
+            var awd_r1_racers = RacerGroups.FirstOrDefault(rg => rg.CarClass == car_class && rg.RaceNumber == race_num).Racers;
+
+            for (int i = 0; i < awd_r1_racers.Count(); i++)
+            {
+                var racer = awd_r1_racers.ElementAt(i);
+
+                if (racer.Results.GetRaceState(0) == race_state)
+                {
+                    MainView.SetRowColor(car_class, race_num, i, color);
+                }
+            }
+
+            race_num = 1;
+            var awd_r2_racers = RacerGroups.FirstOrDefault(rg => rg.CarClass == car_class && rg.RaceNumber == race_num).Racers;
+
+            for (int i = 0; i < awd_r2_racers.Count(); i++)
+            {
+                var racer = awd_r2_racers.ElementAt(i);
+
+                if (racer.Results.GetRaceState(0) == race_state)
+                {
+                    MainView.SetRowColor(car_class, race_num, i, color);
+                }
+            }
+
+            car_class = CarClassesEnum.Sport;
+
+            race_num = 0;
+            var sport_r1_racers = RacerGroups.FirstOrDefault(rg => rg.CarClass == car_class && rg.RaceNumber == race_num).Racers;
+
+            for (int i = 0; i < sport_r1_racers.Count(); i++)
+            {
+                var racer = sport_r1_racers.ElementAt(i);
+
+                if (racer.Results.GetRaceState(0) == race_state)
+                {
+                    MainView.SetRowColor(car_class, race_num, i, color);
+                }
+            }
+
+            race_num = 1;
+            var sport_r2_racers = RacerGroups.FirstOrDefault(rg => rg.CarClass == car_class && rg.RaceNumber == race_num).Racers;
+
+            for (int i = 0; i < sport_r2_racers.Count(); i++)
+            {
+                var racer = sport_r2_racers.ElementAt(i);
+
+                if (racer.Results.GetRaceState(0) == race_state)
+                {
+                    MainView.SetRowColor(car_class, race_num, i, color);
+                }
+            }
+
+            car_class = CarClassesEnum.K100;
+
+            race_num = 0;
+            var K100_r1_racers = RacerGroups.FirstOrDefault(rg => rg.CarClass == car_class && rg.RaceNumber == race_num).Racers;
+
+            for (int i = 0; i < K100_r1_racers.Count(); i++)
+            {
+                var racer = K100_r1_racers.ElementAt(i);
+
+                if (racer.Results.GetRaceState(0) == race_state)
+                {
+                    MainView.SetRowColor(car_class, race_num, i, color);
+                }
+            }
+
+            race_num = 1;
+            var K100_r2_racers = RacerGroups.FirstOrDefault(rg => rg.CarClass == car_class && rg.RaceNumber == race_num).Racers;
+
+            for (int i = 0; i < K100_r2_racers.Count(); i++)
+            {
+                var racer = K100_r2_racers.ElementAt(i);
+
+                if (racer.Results.GetRaceState(0) == race_state)
+                {
+                    MainView.SetRowColor(car_class, race_num, i, color);
+                }
+            }
+
+            car_class = CarClassesEnum.K100;
+
+            race_num = 0;
+            var K160_r1_racers = RacerGroups.FirstOrDefault(rg => rg.CarClass == car_class && rg.RaceNumber == race_num).Racers;
+
+            for (int i = 0; i < K160_r1_racers.Count(); i++)
+            {
+                var racer = K160_r1_racers.ElementAt(i);
+
+                if (racer.Results.GetRaceState(0) == race_state)
+                {
+                    MainView.SetRowColor(car_class, race_num, i, color);
+                }
+            }
+
+            race_num = 1;
+            var K160_r2_racers = RacerGroups.FirstOrDefault(rg => rg.CarClass == car_class && rg.RaceNumber == race_num).Racers;
+
+            for (int i = 0; i < K160_r2_racers.Count(); i++)
+            {
+                var racer = K160_r2_racers.ElementAt(i);
+
+                if (racer.Results.GetRaceState(0) == race_state)
+                {
+                    MainView.SetRowColor(car_class, race_num, i, color);
+                }
+            }
+
+            car_class = CarClassesEnum.KA;
+
+            race_num = 0;
+            var KA_r1_racers = RacerGroups.FirstOrDefault(rg => rg.CarClass == car_class && rg.RaceNumber == race_num).Racers;
+
+            for (int i = 0; i < KA_r1_racers.Count(); i++)
+            {
+                var racer = KA_r1_racers.ElementAt(i);
+
+                if (racer.Results.GetRaceState(0) == race_state)
+                {
+                    MainView.SetRowColor(car_class, race_num, i, color);
+                }
+            }
+
+            race_num = 1;
+            var KA_r2_racers = RacerGroups.FirstOrDefault(rg => rg.CarClass == car_class && rg.RaceNumber == race_num).Racers;
+
+            for (int i = 0; i < KA_r2_racers.Count(); i++)
+            {
+                var racer = KA_r2_racers.ElementAt(i);
+
+                if (racer.Results.GetRaceState(0) == race_state)
+                {
+                    MainView.SetRowColor(car_class, race_num, i, color);
+                }
+            }
+        }
 
         /// <summary>
         /// Задать состояние приложения.
@@ -523,16 +750,19 @@ namespace Sprint.Presenters
 
                 var worker = new BackgroundWorker();
                 worker.DoWork += (sender, args) =>
-                    {
-                        ITimeMessageNotification wnd = new TimeMessageNotificationView();
+                                    {
+                                        ITimeMessageNotification wnd = new TimeMessageNotificationView
+                                                                            {
+                                                                                TextMessage = "На трассу выходят участники, которые будут доезжать не закрытый заезд"
+                                                                            };
 
-                        wnd.Show();
-                        wnd.Refresh();
+                                        wnd.Show();
+                                        wnd.Refresh();
 
-                        Thread.Sleep(5000);
+                                        Thread.Sleep(5000);
 
-                        wnd.CloseForm();
-                    };
+                                        wnd.CloseForm();
+                                    };
 
                 worker.RunWorkerAsync();
 
@@ -544,6 +774,60 @@ namespace Sprint.Presenters
                     MainView.FirstCurrentRacer = 0;
                     MainView.SecondCurrentRacer = 0;
                     
+
+                    if (SecondView != null)
+                    {
+                        SecondView.FirstCurrentRacerNumber = 0;
+                        SecondView.SecondCurrentRacerNumber = 0;
+                        SecondView.NextRacerState = NextRacerState.Start;
+                    }
+
+                    racer = SetNextRacerInfo(racer);
+
+                    MainView.NextRacerState = NextRacerState.Start;
+
+                    if (SecondView != null)
+                    {
+                        SecondView.NextRacerState = NextRacerState.Start;
+                    }
+                }
+            }
+
+            // Если все участники с текущим статусом заезда закрылись
+            // То начинаем закрывать тех, кто перезаезжает заезды с нуля
+            // Для этого мы предупреждаем оператора временным сообщением и ищем повторные заезды
+            if (CurrentRacerRaceState == RacerRaceStateEnum.Rerun
+                && Track.CurrentRacer == null
+                && CurrentRaserGroup.GetNextRacer(Track.CurrentRacer, CurrentRacerRaceState) == null)
+            {
+                CurrentRacerRaceState = RacerRaceStateEnum.Restart;
+
+                var worker = new BackgroundWorker();
+                worker.DoWork += (sender, args) =>
+                                    {
+                                        ITimeMessageNotification wnd = new TimeMessageNotificationView
+                                                                            {
+                                                                                TextMessage = "На трассу выходят участники, которые будут перезаезжать заезд с нуля"
+                                                                            };
+
+                                        wnd.Show();
+                                        wnd.Refresh();
+
+                                        Thread.Sleep(5000);
+
+                                        wnd.CloseForm();
+                                    };
+
+                worker.RunWorkerAsync();
+
+                var next_racer = CurrentRaserGroup.GetNextRacer(Track.CurrentRacer, CurrentRacerRaceState);
+
+                if (next_racer != null)
+                {
+                    // Обновим данные на форме
+                    MainView.FirstCurrentRacer = 0;
+                    MainView.SecondCurrentRacer = 0;
+
 
                     if (SecondView != null)
                     {
@@ -882,7 +1166,7 @@ namespace Sprint.Presenters
         /// Убираем заданного участника с трека с перезаездом текущего круга вместе с не закрытым заездом.
         /// </summary>
         /// <param name="racer">Участник, для которого будет перезаезд проезжаемого круга.</param>
-        public bool SetNullResultForCurrenrRacer(RacerModel racer)
+        public bool RerunCurrenrRacer(RacerModel racer)
         {
             if (racer == null)
             {
@@ -894,9 +1178,6 @@ namespace Sprint.Presenters
                 // Проверим на треке-ли находится участник
                 if (Track.CheckRacer(racer))
                 {
-                    // Вычтем у участника текущий круг
-                    //racer.Results.SetCurrentCircleNumber(CurrentRaceNum.Value, racer.Results.GetCurrentCircleNumber(CurrentRaceNum.Value).Value - 1);
-
                     // Изменим у участника статус у текущего заезда
                     racer.Results.SetRaceState(CurrentRaceNum.Value, RacerRaceStateEnum.Rerun);
 
@@ -957,12 +1238,17 @@ namespace Sprint.Presenters
                 // Если участник готовится к заезду, то у него нету текущего круга
                 // Если участник уже проехал заезд, то у него тоже уже нету текущего круна
 
+                RacersDbManager.SetRacer(racer);
+                SaveApplicationState();
+                DataBind();
+                SetRacerResultsToSecondView();
+
                 return true;
             }
             catch (Exception ex)
             {
                 var message = "Не удалось убрать заданного участника с трека с перезаездом текущего круга вместе с не закрытым заездом.";
-                var exception = new SprintException(message, "Sprint.Presenters.MainPresenter.SetNullResultForCurrenrRacer(RacerModel racer)", ex);
+                var exception = new SprintException(message, "Sprint.Presenters.MainPresenter.RerunCurrenrRacer(RacerModel racer)", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 return false;
             }
@@ -973,63 +1259,225 @@ namespace Sprint.Presenters
         /// если он на нем еще не был) с закрытием текущего заезда.
         /// </summary>
         /// <param name="racer">Участник, для которого будет закрыт текущий заезд.</param>
-        public bool CloseCurrentRaceForCurrenrRacer(RacerModel racer)
+        public bool BreakCurrenrRacer(RacerModel racer)
         {
             if (racer == null)
             {
                 return false;
             }
 
-            // Проверим на треке-ли находится участник
-            if (Track.CheckRacer(racer))
+            try
             {
-                // Поставим ему текущим последний круг
-                racer.Results.SetCurrentCircleNumber(CurrentRaceNum.Value, ConstantsModel.MaxCircleCount);
-
-                // Изменим у участника статус у текущего заезда
-                racer.Results.SetRaceState(CurrentRaceNum.Value, RacerRaceStateEnum.Break);
-
-                // Снимем участника с трека
-
-                // Для этого нам вначале надо определить не он ли сейчас будет пересекать финишную прямую
-
-                // Если он
-                if (Track.CheckCurrentRacer(racer))
+                // Проверим на треке-ли находится участник
+                if (Track.CheckRacer(racer))
                 {
-                    // То надо вначале убрать его с трека
+                    // Поставим ему текущим последний круг
+                    racer.Results.SetCurrentCircleNumber(CurrentRaceNum.Value, ConstantsModel.MaxCircleCount);
 
-                    // Затем, переместить указатель текущего участника (который сечас будет пересекать финишную прямую) 
-                    // на следующего участника, находящегося на треке
+                    // Изменим у участника статус у текущего заезда
+                    racer.Results.SetRaceState(CurrentRaceNum.Value, RacerRaceStateEnum.Break);
+
+                    // Снимем участника с трека
+                    // Для этого нам вначале надо определить не он ли сейчас будет пересекать финишную прямую
+                    if (Track.CurrentRacer != null && Track.CurrentRacers.Count() == 2
+                        && Track.CurrentRacerNum == 0 &&
+                        Track.CurrentRacer.Results.GetCurrentCircleNumber(CurrentRaceNum.Value) >= 3)
+                    {
+                        Track.CurrentRacerNum = 1;
+                    }
+                    else
+                    {
+                        Track.CurrentRacerNum = 0;
+                    }
+
+                    // Если он
+                    if (Track.CheckCurrentRacer(racer))
+                    {
+                        // То надо вначале убрать его с трека
+                        var list = new List<RacerModel>(Track.CurrentRacers);
+                        list.Remove(Track.CurrentRacer);
+                        Track.CurrentRacers = list;
+
+                        // Затем, переместить указатель текущего участника (который сечас будет пересекать финишную прямую) 
+                        // на следующего участника, находящегося на треке
+                        Track.CurrentRacerNum = 0;
+
+                        // Обновим данные на форме
+                        MainView.FirstCurrentRacer = !Track.CurrentRacers.Any() ? 0 : Track.CurrentRacers.ElementAt(0).RacerNumber;
+                        MainView.SecondCurrentRacer = 0;
+
+                        if (SecondView != null)
+                        {
+                            SecondView.FirstCurrentRacerNumber = !Track.CurrentRacers.Any() ? 0 : Track.CurrentRacers.ElementAt(0).RacerNumber;
+                            SecondView.SecondCurrentRacerNumber = 0;
+                        }
+                    }
+                    // Если сейчас не он будет пересекать финишную прямую
+                    else
+                    {
+                        // То просто уберем его с трека
+                        var list = new List<RacerModel>(Track.CurrentRacers);
+                        list.Remove(racer);
+                        Track.CurrentRacers = list;
+
+                        // Обновим данные на форме
+                        MainView.FirstCurrentRacer = !Track.CurrentRacers.Any() ? 0 : Track.CurrentRacers.ElementAt(0).RacerNumber;
+                        MainView.SecondCurrentRacer = 0;
+
+                        if (SecondView != null)
+                        {
+                            SecondView.FirstCurrentRacerNumber = !Track.CurrentRacers.Any() ? 0 : Track.CurrentRacers.ElementAt(0).RacerNumber;
+                            SecondView.SecondCurrentRacerNumber = 0;
+                        }
+                    }
                 }
-                // Если сейчас не он будет пересекать финишную прямую
+                // Проверим участник готовится к заезду
+                else if (CurrentRaserGroup.GetNextRacer(Track.CurrentRacer, CurrentRacerRaceState).Id == racer.Id)
+                {
+                    // Поставим ему текущий круг последним
+                    racer.Results.SetCurrentCircleNumber(CurrentRaceNum.Value, ConstantsModel.MaxCircleCount);
+
+                    // Изменим у участника статус у текущего заезда
+                    racer.Results.SetRaceState(CurrentRaceNum.Value, RacerRaceStateEnum.Break);
+
+                    // После всего этого обновим данные на форме, чтобы готовящийся к выезду участник на форме изменился
+                    racer = SetNextRacerInfo(racer);
+                }
                 else
                 {
-                    // То просто уберем его с трека
+                    // Если участник не идет следующим, то поставим ему текущий круг последним и ничего с ним больше делать не надо
+                    racer.Results.SetCurrentCircleNumber(CurrentRaceNum.Value, ConstantsModel.MaxCircleCount);
+
+                    // Изменим у участника статус у текущего заезда
+                    racer.Results.SetRaceState(CurrentRaceNum.Value, RacerRaceStateEnum.Break);
                 }
 
-                // После всего этого обновим данные на форме
+                // Если участник уже проехал заезд, то его заезд уже нельзя закрыть
+
+                RacersDbManager.SetRacer(racer);
+                SaveApplicationState();
+                DataBind();
+                SetRacerResultsToSecondView();
 
                 return true;
             }
-
-            // Проверим участник готовится к заезду
-            if (CurrentRaserGroup.GetNextRacer(Track.CurrentRacer, CurrentRacerRaceState).Id == racer.Id)
+            catch (Exception ex)
             {
-                // Поставим ему текущий круг последним
-                racer.Results.SetCurrentCircleNumber(CurrentRaceNum.Value, ConstantsModel.MaxCircleCount);
+                var message ="Не удалось убрать заданного участника с трека с закрытием текущего заездом или просто снять участника с гонок.";
+                var exception = new SprintException(message, "Sprint.Presenters.MainPresenter.BreakCurrenrRacer(RacerModel racer)", ex);
+                logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
+                return false;
+            }
+        }
 
-                // Надо заменить другим участником, идущим за ним в списке и имеющим возможность выйти на трассу
+        /// <summary>
+        /// Перезаезд у заданного участника всего заезда с нуля.
+        /// </summary>
+        /// <param name="racer">Заданный участник.</param>
+        /// <returns>Результат выполнения операции.</returns>
+        public bool RestartCurrentRacer(RacerModel racer)
+        {
+            if (racer == null)
+            {
+                return false;
+            }
 
-                // После всего этого обновим данные на форме
+            try
+            {
+                // Проверим на треке-ли находится участник
+                if (Track.CheckRacer(racer))
+                {
+                    // Сбросим у участника все круги
+                    racer.Results.SetCurrentCircleNumber(CurrentRaceNum.Value, 0);
+
+                    // Очистим у него все результаты
+                    racer.Results.Clear();
+
+                    // Изменим у участника статус у текущего заезда
+                    racer.Results.SetRaceState(CurrentRaceNum.Value, RacerRaceStateEnum.Restart);
+
+                    // Снимем участника с трека
+                    // Для этого нам вначале надо определить не он ли сейчас будет пересекать финишную прямую
+                    if (Track.CurrentRacer != null && Track.CurrentRacers.Count() == 2
+                        && Track.CurrentRacerNum == 0 && Track.CurrentRacer.Results.GetCurrentCircleNumber(CurrentRaceNum.Value) >= 3)
+                    {
+                        Track.CurrentRacerNum = 1;
+                    }
+                    else
+                    {
+                        Track.CurrentRacerNum = 0;
+                    }
+
+                    // Если он
+                    if (Track.CheckCurrentRacer(racer))
+                    {
+                        // То надо вначале убрать его с трека
+                        var list = new List<RacerModel>(Track.CurrentRacers);
+                        list.Remove(Track.CurrentRacer);
+                        Track.CurrentRacers = list;
+
+                        // Затем, переместить указатель текущего участника (который сечас будет пересекать финишную прямую) 
+                        // на следующего участника, находящегося на треке
+                        Track.CurrentRacerNum = 0;
+
+                        // Обновим данные на форме
+                        MainView.FirstCurrentRacer = !Track.CurrentRacers.Any() ? 0 : Track.CurrentRacers.ElementAt(0).RacerNumber;
+                        MainView.SecondCurrentRacer = 0;
+
+                        if (SecondView != null)
+                        {
+                            SecondView.FirstCurrentRacerNumber = !Track.CurrentRacers.Any() ? 0 : Track.CurrentRacers.ElementAt(0).RacerNumber;
+                            SecondView.SecondCurrentRacerNumber = 0;
+                        }
+                    }
+                    // Если сейчас не он будет пересекать финишную прямую
+                    else
+                    {
+                        // То просто уберем его с трека
+                        var list = new List<RacerModel>(Track.CurrentRacers);
+                        list.Remove(racer);
+                        Track.CurrentRacers = list;
+
+                        // Обновим данные на форме
+                        MainView.FirstCurrentRacer = !Track.CurrentRacers.Any() ? 0 : Track.CurrentRacers.ElementAt(0).RacerNumber;
+                        MainView.SecondCurrentRacer = 0;
+
+                        if (SecondView != null)
+                        {
+                            SecondView.FirstCurrentRacerNumber = !Track.CurrentRacers.Any() ? 0 : Track.CurrentRacers.ElementAt(0).RacerNumber;
+                            SecondView.SecondCurrentRacerNumber = 0;
+                        }
+                    }
+                }
+                // Если участник уже проехал заезд, то надо сбросить у него все результаты
+                else if(racer.Results.IsFinished(CurrentRaceNum.Value))
+                {
+                    // Сбросим у участника все круги
+                    racer.Results.SetCurrentCircleNumber(CurrentRaceNum.Value, 0);
+
+                    // Очистим у него все результаты
+                    racer.Results.Clear();
+
+                    // Изменим у участника статус у текущего заезда
+                    racer.Results.SetRaceState(CurrentRaceNum.Value, RacerRaceStateEnum.Restart);
+                }
+
+                // Если участник готовится к заезду, то у него нечего сбрасывать
+
+                RacersDbManager.SetRacer(racer);
+                SaveApplicationState();
+                DataBind();
+                SetRacerResultsToSecondView();
 
                 return true;
             }
-
-            // Если участник не идет следующим, то поставим ему текущий круг последним и ничего с ним больше делать не надо
-            racer.Results.SetCurrentCircleNumber(CurrentRaceNum.Value, ConstantsModel.MaxCircleCount);
-            return true;
-
-            // Если участник уже проехал заезд, то его заезд уже нельзя закрыть
+            catch (Exception ex)
+            {
+                var message = "Не удалось задать у заданного учатсника перезаезд всего заезда.";
+                var exception = new SprintException(message, "Sprint.Presenters.MainPresenter.RestartCurrentRacer(RacerModel racer)", ex);
+                logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
+                return false;
+            }
         }
 
         #region Перемещение гонщиков по списку участников

@@ -69,6 +69,7 @@ namespace Sprint.Managers
 
                     var user_data = racer.UserDataAboutCircles.FirstOrDefault(ud => ud.RaceNumber == 0);
                     rm.Results.SetCurrentCircleNumber(0, user_data == null ? null : user_data.CircleNumber);
+                    rm.Results.SetRaceState(0, (RacerRaceStateEnum) Enum.Parse(typeof (RacerRaceStateEnum), user_data.RacerRaceState.Name));
 
                     // Добавить результаты 2 тура
                     foreach (var result in racer.Results.Where(r => r.RaceNumber == 1).OrderBy(r => r.LapNumber))
@@ -85,6 +86,7 @@ namespace Sprint.Managers
 
                     user_data = racer.UserDataAboutCircles.FirstOrDefault(ud => ud.RaceNumber == 1);
                     rm.Results.SetCurrentCircleNumber(1, user_data == null ? null : user_data.CircleNumber);
+                    rm.Results.SetRaceState(1, (RacerRaceStateEnum) Enum.Parse(typeof (RacerRaceStateEnum), user_data.RacerRaceState.Name));
 
                     racers.Add(rm);
                 }
@@ -149,8 +151,7 @@ namespace Sprint.Managers
                                             };
 
                             // Добавить результаты 1 тура
-                            foreach (var result in racer.Results.Where(r => r.RaceNumber == 0).OrderBy(r => r.LapNumber)
-                                )
+                            foreach (var result in racer.Results.Where(r => r.RaceNumber == 0).OrderBy(r => r.LapNumber))
                             {
                                 if (result.Time.HasValue)
                                 {
@@ -164,10 +165,10 @@ namespace Sprint.Managers
 
                             var user_data = racer.UserDataAboutCircles.FirstOrDefault(ud => ud.RaceNumber == 0);
                             rm.Results.SetCurrentCircleNumber(0, user_data == null ? null : user_data.CircleNumber);
+                            rm.Results.SetRaceState(0, (RacerRaceStateEnum) Enum.Parse(typeof (RacerRaceStateEnum), user_data.RacerRaceState.Name));
 
                             // Добавить результаты 2 тура
-                            foreach (var result in racer.Results.Where(r => r.RaceNumber == 1).OrderBy(r => r.LapNumber)
-                                )
+                            foreach (var result in racer.Results.Where(r => r.RaceNumber == 1).OrderBy(r => r.LapNumber))
                             {
                                 if (result.Time.HasValue)
                                 {
@@ -179,8 +180,9 @@ namespace Sprint.Managers
                                 }
                             }
 
-                            user_data = racer.UserDataAboutCircles.FirstOrDefault(ud => ud.RaceNumber == 0);
-                            rm.Results.SetCurrentCircleNumber(0, user_data == null ? null : user_data.CircleNumber);
+                            user_data = racer.UserDataAboutCircles.FirstOrDefault(ud => ud.RaceNumber == 1);
+                            rm.Results.SetCurrentCircleNumber(1, user_data == null ? null : user_data.CircleNumber);
+                            rm.Results.SetRaceState(1, (RacerRaceStateEnum) Enum.Parse(typeof (RacerRaceStateEnum), user_data.RacerRaceState.Name));
 
                             results.Add(rm);
                         }
@@ -333,22 +335,29 @@ namespace Sprint.Managers
                 }
 
                 // Зададим участнику его текущие круги в заездах
+                var rrs_1_str = racerModel.Results.GetRaceState(0).ToString();
+                var rrs_2_str = racerModel.Results.GetRaceState(1).ToString();
+
+                var rrs_1_db = dc.RacerRaceStates.FirstOrDefault(rrs => rrs.Name == rrs_1_str);
+                var rrs_2_db = dc.RacerRaceStates.FirstOrDefault(rrs => rrs.Name == rrs_2_str);
+
                 cur_racer.UserDataAboutCircles.Add(new UserDataAboutCircle
                                                         {
                                                             Id = Guid.NewGuid(),
                                                             RaceNumber = 0,
-                                                            CircleNumber = racerModel.Results.GetCurrentCircleNumber(0)
+                                                            CircleNumber = racerModel.Results.GetCurrentCircleNumber(0),
+                                                            FK_RacerRaceState = rrs_1_db.Id
                                                         });
 
                 cur_racer.UserDataAboutCircles.Add(new UserDataAboutCircle
                                                         {
                                                             Id = Guid.NewGuid(),
                                                             RaceNumber = 1,
-                                                            CircleNumber = racerModel.Results.GetCurrentCircleNumber(1)
+                                                            CircleNumber = racerModel.Results.GetCurrentCircleNumber(1),
+                                                            FK_RacerRaceState = rrs_2_db.Id
                                                         });
                 
                 dc.SaveChanges();
-
                 return new OperationResult(true);
             }
             catch (Exception ex)

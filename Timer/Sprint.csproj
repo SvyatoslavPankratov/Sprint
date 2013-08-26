@@ -190,6 +190,7 @@
     <Compile Include="Models\ApplicationStateModel.cs" />
     <Compile Include="Models\AppRegenerationTypesEnum.cs" />
     <Compile Include="Models\CarClassesEnum.cs" />
+    <Compile Include="Models\CarClassEventArgs.cs" />
     <Compile Include="Models\CarModel.cs" />
     <Compile Include="Models\ConstantsModel.cs" />
     <Compile Include="Models\NextRacerState.cs" />
@@ -453,6 +454,7 @@
     <Content Include="Resources\Images\Clear logs.png" />
     <Content Include="Resources\Images\Clear table.png" />
     <Content Include="Resources\Images\Clock.png" />
+    <Content Include="Resources\Images\Close_current_race.png" />
     <Content Include="Resources\Images\Data.png" />
     <Content Include="Resources\Images\Delete backup.png" />
     <Content Include="Resources\Images\Down.png" />
@@ -480,6 +482,8 @@
     <Content Include="Resources\Images\Stopwatch start.png" />
     <Content Include="Resources\Images\Tag.png" />
     <Content Include="Resources\Images\Undo.png" />
+    <Content Include="Resources\Images\Undo_current_circle.png" />
+    <Content Include="Resources\Images\Undo_race.png" />
     <Content Include="Resources\Images\Up.png" />
     <Content Include="Resources\Images\Updae.png" />
     <Content Include="Resources\Images\User accept.png" />

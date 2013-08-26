@@ -18,7 +18,9 @@ namespace Sprint.Data
         public System.Guid FK_Racer { get; set; }
         public int RaceNumber { get; set; }
         public Nullable<int> CircleNumber { get; set; }
+        public System.Guid FK_RacerRaceState { get; set; }
     
         public virtual Racer Racer { get; set; }
+        public virtual RacerRaceState RacerRaceState { get; set; }
     }
 }

@@ -14,7 +14,14 @@ namespace Sprint.Data
     
     public partial class RacerRaceState
     {
+        public RacerRaceState()
+        {
+            this.UserDataAboutCircles = new HashSet<UserDataAboutCircle>();
+        }
+    
         public System.Guid Id { get; set; }
         public string Name { get; set; }
+    
+        public virtual ICollection<UserDataAboutCircle> UserDataAboutCircles { get; set; }
     }
 }
