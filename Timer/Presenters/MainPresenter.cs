@@ -727,16 +727,6 @@ namespace Sprint.Presenters
                     SecondView.FirstCurrentRacerNumber = !Track.CurrentRacers.Any() ? 0 : Track.CurrentRacers.ElementAt(0).RacerNumber;
                     SecondView.SecondCurrentRacerNumber = 0;
                 }
-
-                if (MainView.NextCurrentRacer != 0)
-                {
-                    MainView.NextRacerState = NextRacerState.Start;
-
-                    if (SecondView != null)
-                    {
-                        SecondView.NextRacerState = NextRacerState.Start;
-                    }
-                }
             }
 
             // Если все участники с текущим статусом заезда закрылись
@@ -744,7 +734,8 @@ namespace Sprint.Presenters
             // Для этого мы предупреждаем оператора временным сообщением и ищем повторные заезды
             if (CurrentRacerRaceState == RacerRaceStateEnum.Run
                 && Track.CurrentRacer == null
-                && CurrentRaserGroup.GetNextRacer(Track.CurrentRacer, CurrentRacerRaceState) == null)
+                && CurrentRaserGroup.GetNextRacer(Track.CurrentRacer, CurrentRacerRaceState) == null
+                && !CurrentRaserGroup.IsFinished)
             {
                 CurrentRacerRaceState = RacerRaceStateEnum.Rerun;
 
@@ -798,7 +789,8 @@ namespace Sprint.Presenters
             // Для этого мы предупреждаем оператора временным сообщением и ищем повторные заезды
             if (CurrentRacerRaceState == RacerRaceStateEnum.Rerun
                 && Track.CurrentRacer == null
-                && CurrentRaserGroup.GetNextRacer(Track.CurrentRacer, CurrentRacerRaceState) == null)
+                && CurrentRaserGroup.GetNextRacer(Track.CurrentRacer, CurrentRacerRaceState) == null
+                && !CurrentRaserGroup.IsFinished)
             {
                 CurrentRacerRaceState = RacerRaceStateEnum.Restart;
 
@@ -1259,7 +1251,7 @@ namespace Sprint.Presenters
         /// если он на нем еще не был) с закрытием текущего заезда.
         /// </summary>
         /// <param name="racer">Участник, для которого будет закрыт текущий заезд.</param>
-        public bool BreakCurrenrRacer(RacerModel racer)
+        public bool BreakSelectedRacer(RacerModel racer)
         {
             if (racer == null)
             {
@@ -1364,7 +1356,7 @@ namespace Sprint.Presenters
             catch (Exception ex)
             {
                 var message ="Не удалось убрать заданного участника с трека с закрытием текущего заездом или просто снять участника с гонок.";
-                var exception = new SprintException(message, "Sprint.Presenters.MainPresenter.BreakCurrenrRacer(RacerModel racer)", ex);
+                var exception = new SprintException(message, "Sprint.Presenters.MainPresenter.BreakSelectedRacer(RacerModel racer)", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 return false;
             }
@@ -1497,7 +1489,7 @@ namespace Sprint.Presenters
             }
 
             racerGroup.MoveUpRacer(racerNum);
-            SetRacersState(CurrentEditCarClass, CurrentEditRaceNumber);
+            //SetRacersState(CurrentEditCarClass, CurrentEditRaceNumber);
             DataBind();
 
             return true;
@@ -1518,7 +1510,7 @@ namespace Sprint.Presenters
             }
 
             racerGroup.MoveDownRacer(racerNum);
-            SetRacersState(CurrentEditCarClass, CurrentEditRaceNumber);
+            //SetRacersState(CurrentEditCarClass, CurrentEditRaceNumber);
             DataBind();
 
             return true;

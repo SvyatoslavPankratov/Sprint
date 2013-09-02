@@ -30,62 +30,62 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2129 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2130 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2131 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2132 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2137 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2138 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2139 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2140 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2141 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2142 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2143 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2144 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2145 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2146 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2147 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2148 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2149 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2150 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2151 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2152 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2153 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2154 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2155 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2156 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2157 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2158 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2159 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2160 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2161 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2162 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2163 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2164 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2165 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2166 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2167 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2168 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2169 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2170 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2171 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2172 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2173 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2174 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2175 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2176 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2177 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2178 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2179 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2180 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2181 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2182 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2183 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2184 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2133 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2134 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2135 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2136 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel10 = new System.Windows.Forms.Panel();
             this.mlsecLbl = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -170,8 +170,8 @@
             this.upRacer_Btn_fwdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_fwdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton42 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton50 = new System.Windows.Forms.ToolStripButton();
+            this.breakRace_Btn_fwdR2DGV = new System.Windows.Forms.ToolStripButton();
+            this.reraceRace_Btn_fwdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.restartRace_Btn_fwdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
             this.Print_Btn_fwdR2DGV = new System.Windows.Forms.ToolStripButton();
@@ -190,9 +190,9 @@
             this.upRacer_Btn_rwdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_rwdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton43 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton51 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.breakRace_Btn_rwdR1DGV = new System.Windows.Forms.ToolStripButton();
+            this.reraceRace_Btn_rwdR1DGV = new System.Windows.Forms.ToolStripButton();
+            this.restartRace_Btn_rwdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator21 = new System.Windows.Forms.ToolStripSeparator();
             this.Print_Btn_rwdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
@@ -206,9 +206,9 @@
             this.upRacer_Btn_rwdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_rwdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton44 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton52 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.breakRace_Btn_rwdR2DGV = new System.Windows.Forms.ToolStripButton();
+            this.reraceRace_Btn_rwdR2DGV = new System.Windows.Forms.ToolStripButton();
+            this.restartRace_Btn_rwdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
             this.Print_Btn_rwdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -225,9 +225,9 @@
             this.upRacer_Btn_awdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_awdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton45 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton53 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.breakRace_Btn_awdR1DGV = new System.Windows.Forms.ToolStripButton();
+            this.reraceRace_Btn_awdR1DGV = new System.Windows.Forms.ToolStripButton();
+            this.restartRace_Btn_awdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
             this.Print_Btn_awdR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
@@ -241,9 +241,9 @@
             this.upRacer_Btn_awdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_awdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton46 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton54 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.breakRace_Btn_awdR2DGV = new System.Windows.Forms.ToolStripButton();
+            this.reraceRace_Btn_awdR2DGV = new System.Windows.Forms.ToolStripButton();
+            this.restartRace_Btn_awdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
             this.Print_Btn_awdR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
@@ -260,9 +260,9 @@
             this.upRacer_Btn_sportR1DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_sportR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton47 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton55 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.breakRace_Btn_sportR1DGV = new System.Windows.Forms.ToolStripButton();
+            this.reraceRace_Btn_sportR1DGV = new System.Windows.Forms.ToolStripButton();
+            this.restartRace_Btn_sportR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
             this.Print_Btn_sportR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
@@ -276,9 +276,9 @@
             this.upRacer_Btn_sportR2DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_sportR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton48 = new System.Windows.Forms.ToolStripButton();
+            this.breakRace_Btn_sportR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton56 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.restartRace_Btn_sportR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
             this.Print_Btn_sportR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator53 = new System.Windows.Forms.ToolStripSeparator();
@@ -287,7 +287,7 @@
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.k100RacesTabs = new System.Windows.Forms.TabControl();
             this.tabPage16 = new System.Windows.Forms.TabPage();
-            this.K100R1DGV = new System.Windows.Forms.DataGridView();
+            this.k100R1DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip9 = new System.Windows.Forms.ToolStrip();
             this.OnOffEditTable_Btn_k100R1DGV = new System.Windows.Forms.ToolStripButton();
             this.addRacer_Btn_K100R1DGV = new System.Windows.Forms.ToolStripButton();
@@ -295,25 +295,25 @@
             this.upRacer_Btn_K100R1DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_K100R1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.breakRace_Btn_k100R1DGV = new System.Windows.Forms.ToolStripButton();
+            this.reraceRace_Btn_k100R1DGV = new System.Windows.Forms.ToolStripButton();
+            this.restartRace_Btn_k100R1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
             this.Print_Btn_k100R1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator54 = new System.Windows.Forms.ToolStripSeparator();
             this.selectK100CarClass1_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
             this.tabPage17 = new System.Windows.Forms.TabPage();
-            this.K100R2DGV = new System.Windows.Forms.DataGridView();
+            this.k100R2DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip10 = new System.Windows.Forms.ToolStrip();
             this.OnOffEditTable_Btn_k100R2DGV = new System.Windows.Forms.ToolStripButton();
             this.editRacer_Btn_K100R2DGV = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_K100R2DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_K100R2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator31 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton30 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton31 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
+            this.breakRace_Btn_k100R2DGV = new System.Windows.Forms.ToolStripButton();
+            this.reraceRace_Btn_k100R2DGV = new System.Windows.Forms.ToolStripButton();
+            this.restartRace_Btn_k100R2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator32 = new System.Windows.Forms.ToolStripSeparator();
             this.Print_Btn_k100R2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator55 = new System.Windows.Forms.ToolStripSeparator();
@@ -322,7 +322,7 @@
             this.tabPage14 = new System.Windows.Forms.TabPage();
             this.k160RacesTabs = new System.Windows.Forms.TabControl();
             this.tabPage18 = new System.Windows.Forms.TabPage();
-            this.K160R1DGV = new System.Windows.Forms.DataGridView();
+            this.k160R1DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip11 = new System.Windows.Forms.ToolStrip();
             this.OnOffEditTable_Btn_k160R1DGV = new System.Windows.Forms.ToolStripButton();
             this.addRacer_Btn_K160R1DGV = new System.Windows.Forms.ToolStripButton();
@@ -330,25 +330,25 @@
             this.upRacer_Btn_K160R1DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_K160R1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator34 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton39 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton40 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
+            this.breakRace_Btn_k160R1DGV = new System.Windows.Forms.ToolStripButton();
+            this.reraceRace_Btn_k160R1DGV = new System.Windows.Forms.ToolStripButton();
+            this.restartRace_Btn_k160R1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator35 = new System.Windows.Forms.ToolStripSeparator();
             this.Print_Btn_k160R1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator56 = new System.Windows.Forms.ToolStripSeparator();
             this.selectK160CarClass1_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator33 = new System.Windows.Forms.ToolStripSeparator();
             this.tabPage19 = new System.Windows.Forms.TabPage();
-            this.K160R2DGV = new System.Windows.Forms.DataGridView();
+            this.k160R2DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip12 = new System.Windows.Forms.ToolStrip();
             this.OnOffEditTable_Btn_k160R2DGV = new System.Windows.Forms.ToolStripButton();
             this.editRacer_Btn_K160R2DGV = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_K160R2DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_K160R2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator37 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton62 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton63 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
+            this.breakRace_Btn_k160R2DGV = new System.Windows.Forms.ToolStripButton();
+            this.reraceRace_Btn_k160R2DGV = new System.Windows.Forms.ToolStripButton();
+            this.restartRace_Btn_k160R2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator38 = new System.Windows.Forms.ToolStripSeparator();
             this.Print_Btn_k160R2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator57 = new System.Windows.Forms.ToolStripSeparator();
@@ -357,7 +357,7 @@
             this.tabPage15 = new System.Windows.Forms.TabPage();
             this.kaRacesTabs = new System.Windows.Forms.TabControl();
             this.tabPage20 = new System.Windows.Forms.TabPage();
-            this.KAR1DGV = new System.Windows.Forms.DataGridView();
+            this.kaR1DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip13 = new System.Windows.Forms.ToolStrip();
             this.OnOffEditTable_Btn_kaR1DGV = new System.Windows.Forms.ToolStripButton();
             this.addRacer_Btn_KAR1DGV = new System.Windows.Forms.ToolStripButton();
@@ -365,25 +365,25 @@
             this.upRacer_Btn_KAR1DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_KAR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator40 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton70 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton71 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
+            this.breakRace_Btn_kaR1DGV = new System.Windows.Forms.ToolStripButton();
+            this.reraceRace_Btn_kaR1DGV = new System.Windows.Forms.ToolStripButton();
+            this.restartRace_Btn_kaR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator41 = new System.Windows.Forms.ToolStripSeparator();
             this.Print_Btn_kaR1DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator58 = new System.Windows.Forms.ToolStripSeparator();
             this.selectKACarClass1_BT = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator39 = new System.Windows.Forms.ToolStripSeparator();
             this.tabPage21 = new System.Windows.Forms.TabPage();
-            this.KAR2DGV = new System.Windows.Forms.DataGridView();
+            this.kaR2DGV = new System.Windows.Forms.DataGridView();
             this.toolStrip14 = new System.Windows.Forms.ToolStrip();
             this.OnOffEditTable_Btn_kaR2DGV = new System.Windows.Forms.ToolStripButton();
             this.editRacer_Btn_KAR2DGV = new System.Windows.Forms.ToolStripButton();
             this.upRacer_Btn_KAR2DGV = new System.Windows.Forms.ToolStripButton();
             this.downRacer_Btn_KAR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator43 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton78 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton79 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
+            this.breakRace_Btn_kaR2DGV = new System.Windows.Forms.ToolStripButton();
+            this.reraceRace_Btn_kaR2DGV = new System.Windows.Forms.ToolStripButton();
+            this.restartRace_Btn_kaR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator44 = new System.Windows.Forms.ToolStripSeparator();
             this.Print_Btn_kaR2DGV = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator59 = new System.Windows.Forms.ToolStripSeparator();
@@ -446,26 +446,26 @@
             this.tabPage13.SuspendLayout();
             this.k100RacesTabs.SuspendLayout();
             this.tabPage16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.K100R1DGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.k100R1DGV)).BeginInit();
             this.toolStrip9.SuspendLayout();
             this.tabPage17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.K100R2DGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.k100R2DGV)).BeginInit();
             this.toolStrip10.SuspendLayout();
             this.tabPage14.SuspendLayout();
             this.k160RacesTabs.SuspendLayout();
             this.tabPage18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.K160R1DGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.k160R1DGV)).BeginInit();
             this.toolStrip11.SuspendLayout();
             this.tabPage19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.K160R2DGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.k160R2DGV)).BeginInit();
             this.toolStrip12.SuspendLayout();
             this.tabPage15.SuspendLayout();
             this.kaRacesTabs.SuspendLayout();
             this.tabPage20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.KAR1DGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kaR1DGV)).BeginInit();
             this.toolStrip13.SuspendLayout();
             this.tabPage21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.KAR2DGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kaR2DGV)).BeginInit();
             this.toolStrip14.SuspendLayout();
             this.panel11.SuspendLayout();
             this.SuspendLayout();
@@ -720,49 +720,48 @@
             // 
             this.fwdR1DGV.AllowUserToAddRows = false;
             this.fwdR1DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.fwdR1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2129.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2129.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2129.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2129.SelectionForeColor = System.Drawing.Color.White;
+            this.fwdR1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2129;
             this.fwdR1DGV.BackgroundColor = System.Drawing.Color.White;
             this.fwdR1DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fwdR1DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.fwdR1DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.fwdR1DGV.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle2130.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2130.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2130.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2130.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2130.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2130.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2130.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.fwdR1DGV.DefaultCellStyle = dataGridViewCellStyle2130;
             this.fwdR1DGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fwdR1DGV.GridColor = System.Drawing.Color.Silver;
             this.fwdR1DGV.Location = new System.Drawing.Point(3, 42);
             this.fwdR1DGV.Name = "fwdR1DGV";
             this.fwdR1DGV.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.fwdR1DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2131.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2131.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2131.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2131.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2131.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2131.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2131.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.fwdR1DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2131;
             this.fwdR1DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.fwdR1DGV.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2132.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2132.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2132.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2132.SelectionForeColor = System.Drawing.Color.White;
+            this.fwdR1DGV.RowsDefaultCellStyle = dataGridViewCellStyle2132;
             this.fwdR1DGV.RowTemplate.ReadOnly = true;
             this.fwdR1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.fwdR1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.fwdR1DGV.ShowEditingIcon = false;
             this.fwdR1DGV.Size = new System.Drawing.Size(1321, 315);
             this.fwdR1DGV.TabIndex = 3;
-            this.fwdR1DGV.DataSourceChanged += new System.EventHandler(this.fwdR1DGV_DataSourceChanged);
             // 
             // panel1
             // 
@@ -1376,41 +1375,41 @@
             // 
             this.fwdR2DGV.AllowUserToAddRows = false;
             this.fwdR2DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.fwdR2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2137.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2137.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2137.SelectionForeColor = System.Drawing.Color.White;
+            this.fwdR2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2137;
             this.fwdR2DGV.BackgroundColor = System.Drawing.Color.White;
             this.fwdR2DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fwdR2DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.fwdR2DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.fwdR2DGV.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2138.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2138.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2138.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2138.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2138.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2138.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2138.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.fwdR2DGV.DefaultCellStyle = dataGridViewCellStyle2138;
             this.fwdR2DGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fwdR2DGV.GridColor = System.Drawing.Color.Silver;
             this.fwdR2DGV.Location = new System.Drawing.Point(3, 42);
             this.fwdR2DGV.Name = "fwdR2DGV";
             this.fwdR2DGV.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.fwdR2DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2139.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2139.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2139.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2139.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2139.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2139.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2139.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.fwdR2DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2139;
             this.fwdR2DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.fwdR2DGV.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2140.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2140.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2140.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2140.SelectionForeColor = System.Drawing.Color.White;
+            this.fwdR2DGV.RowsDefaultCellStyle = dataGridViewCellStyle2140;
             this.fwdR2DGV.RowTemplate.ReadOnly = true;
             this.fwdR2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.fwdR2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1429,8 +1428,8 @@
             this.upRacer_Btn_fwdR2DGV,
             this.downRacer_Btn_fwdR2DGV,
             this.toolStripSeparator17,
-            this.toolStripButton42,
-            this.toolStripButton50,
+            this.breakRace_Btn_fwdR2DGV,
+            this.reraceRace_Btn_fwdR2DGV,
             this.restartRace_Btn_fwdR2DGV,
             this.toolStripSeparator20,
             this.Print_Btn_fwdR2DGV,
@@ -1495,26 +1494,28 @@
             this.toolStripSeparator17.Name = "toolStripSeparator17";
             this.toolStripSeparator17.Size = new System.Drawing.Size(6, 39);
             // 
-            // toolStripButton42
+            // breakRace_Btn_fwdR2DGV
             // 
-            this.toolStripButton42.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton42.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton42.Image")));
-            this.toolStripButton42.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton42.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton42.Name = "toolStripButton42";
-            this.toolStripButton42.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton42.Text = "Обнуление заезда";
+            this.breakRace_Btn_fwdR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.breakRace_Btn_fwdR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("breakRace_Btn_fwdR2DGV.Image")));
+            this.breakRace_Btn_fwdR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.breakRace_Btn_fwdR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.breakRace_Btn_fwdR2DGV.Name = "breakRace_Btn_fwdR2DGV";
+            this.breakRace_Btn_fwdR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.breakRace_Btn_fwdR2DGV.Text = "Обнуление заезда";
+            this.breakRace_Btn_fwdR2DGV.Click += new System.EventHandler(this.breakRace_Btn_fwdR2DGV_Click);
             // 
-            // toolStripButton50
+            // reraceRace_Btn_fwdR2DGV
             // 
-            this.toolStripButton50.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton50.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton50.Image")));
-            this.toolStripButton50.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton50.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton50.Name = "toolStripButton50";
-            this.toolStripButton50.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton50.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
-            this.toolStripButton50.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_fwdR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.reraceRace_Btn_fwdR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("reraceRace_Btn_fwdR2DGV.Image")));
+            this.reraceRace_Btn_fwdR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.reraceRace_Btn_fwdR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.reraceRace_Btn_fwdR2DGV.Name = "reraceRace_Btn_fwdR2DGV";
+            this.reraceRace_Btn_fwdR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.reraceRace_Btn_fwdR2DGV.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
+            this.reraceRace_Btn_fwdR2DGV.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_fwdR2DGV.Click += new System.EventHandler(this.reraceRace_Btn_fwdR2DGV_Click);
             // 
             // restartRace_Btn_fwdR2DGV
             // 
@@ -1526,6 +1527,7 @@
             this.restartRace_Btn_fwdR2DGV.Size = new System.Drawing.Size(36, 36);
             this.restartRace_Btn_fwdR2DGV.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
             this.restartRace_Btn_fwdR2DGV.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_fwdR2DGV.Click += new System.EventHandler(this.restartRace_Btn_fwdR2DGV_Click);
             // 
             // toolStripSeparator20
             // 
@@ -1614,41 +1616,41 @@
             // 
             this.rwdR1DGV.AllowUserToAddRows = false;
             this.rwdR1DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.rwdR1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2141.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2141.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2141.SelectionForeColor = System.Drawing.Color.White;
+            this.rwdR1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2141;
             this.rwdR1DGV.BackgroundColor = System.Drawing.Color.White;
             this.rwdR1DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rwdR1DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.rwdR1DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.rwdR1DGV.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2142.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2142.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2142.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2142.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2142.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2142.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2142.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.rwdR1DGV.DefaultCellStyle = dataGridViewCellStyle2142;
             this.rwdR1DGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rwdR1DGV.GridColor = System.Drawing.Color.Silver;
             this.rwdR1DGV.Location = new System.Drawing.Point(3, 42);
             this.rwdR1DGV.Name = "rwdR1DGV";
             this.rwdR1DGV.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.rwdR1DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2143.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2143.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2143.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2143.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2143.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2143.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2143.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.rwdR1DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2143;
             this.rwdR1DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            this.rwdR1DGV.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2144.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2144.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2144.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2144.SelectionForeColor = System.Drawing.Color.White;
+            this.rwdR1DGV.RowsDefaultCellStyle = dataGridViewCellStyle2144;
             this.rwdR1DGV.RowTemplate.ReadOnly = true;
             this.rwdR1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.rwdR1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1668,9 +1670,9 @@
             this.upRacer_Btn_rwdR1DGV,
             this.downRacer_Btn_rwdR1DGV,
             this.toolStripSeparator7,
-            this.toolStripButton43,
-            this.toolStripButton51,
-            this.toolStripButton4,
+            this.breakRace_Btn_rwdR1DGV,
+            this.reraceRace_Btn_rwdR1DGV,
+            this.restartRace_Btn_rwdR1DGV,
             this.toolStripSeparator21,
             this.Print_Btn_rwdR1DGV,
             this.toolStripSeparator6,
@@ -1748,37 +1750,40 @@
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             this.toolStripSeparator7.Size = new System.Drawing.Size(6, 39);
             // 
-            // toolStripButton43
+            // breakRace_Btn_rwdR1DGV
             // 
-            this.toolStripButton43.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton43.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton43.Image")));
-            this.toolStripButton43.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton43.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton43.Name = "toolStripButton43";
-            this.toolStripButton43.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton43.Text = "Обнуление заезда";
+            this.breakRace_Btn_rwdR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.breakRace_Btn_rwdR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("breakRace_Btn_rwdR1DGV.Image")));
+            this.breakRace_Btn_rwdR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.breakRace_Btn_rwdR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.breakRace_Btn_rwdR1DGV.Name = "breakRace_Btn_rwdR1DGV";
+            this.breakRace_Btn_rwdR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.breakRace_Btn_rwdR1DGV.Text = "Обнуление заезда";
+            this.breakRace_Btn_rwdR1DGV.Click += new System.EventHandler(this.breakRace_Btn_rwdR1DGV_Click);
             // 
-            // toolStripButton51
+            // reraceRace_Btn_rwdR1DGV
             // 
-            this.toolStripButton51.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton51.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton51.Image")));
-            this.toolStripButton51.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton51.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton51.Name = "toolStripButton51";
-            this.toolStripButton51.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton51.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
-            this.toolStripButton51.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_rwdR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.reraceRace_Btn_rwdR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("reraceRace_Btn_rwdR1DGV.Image")));
+            this.reraceRace_Btn_rwdR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.reraceRace_Btn_rwdR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.reraceRace_Btn_rwdR1DGV.Name = "reraceRace_Btn_rwdR1DGV";
+            this.reraceRace_Btn_rwdR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.reraceRace_Btn_rwdR1DGV.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
+            this.reraceRace_Btn_rwdR1DGV.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_rwdR1DGV.Click += new System.EventHandler(this.reraceRace_Btn_rwdR1DGV_Click);
             // 
-            // toolStripButton4
+            // restartRace_Btn_rwdR1DGV
             // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton4.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
-            this.toolStripButton4.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_rwdR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.restartRace_Btn_rwdR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("restartRace_Btn_rwdR1DGV.Image")));
+            this.restartRace_Btn_rwdR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.restartRace_Btn_rwdR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.restartRace_Btn_rwdR1DGV.Name = "restartRace_Btn_rwdR1DGV";
+            this.restartRace_Btn_rwdR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.restartRace_Btn_rwdR1DGV.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_rwdR1DGV.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_rwdR1DGV.Click += new System.EventHandler(this.restartRace_Btn_rwdR1DGV_Click);
             // 
             // toolStripSeparator21
             // 
@@ -1838,42 +1843,42 @@
             // 
             this.rwdR2DGV.AllowUserToAddRows = false;
             this.rwdR2DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
-            this.rwdR2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle2145.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2145.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2145.SelectionForeColor = System.Drawing.Color.White;
+            this.rwdR2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2145;
             this.rwdR2DGV.BackgroundColor = System.Drawing.Color.White;
             this.rwdR2DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rwdR2DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.rwdR2DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.rwdR2DGV.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2146.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2146.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2146.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2146.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2146.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2146.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2146.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.rwdR2DGV.DefaultCellStyle = dataGridViewCellStyle2146;
             this.rwdR2DGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rwdR2DGV.GridColor = System.Drawing.Color.Silver;
             this.rwdR2DGV.Location = new System.Drawing.Point(3, 42);
             this.rwdR2DGV.Name = "rwdR2DGV";
             this.rwdR2DGV.ReadOnly = true;
             this.rwdR2DGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.rwdR2DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle2147.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2147.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2147.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2147.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2147.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2147.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2147.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.rwdR2DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2147;
             this.rwdR2DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-            this.rwdR2DGV.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle2148.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2148.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2148.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2148.SelectionForeColor = System.Drawing.Color.White;
+            this.rwdR2DGV.RowsDefaultCellStyle = dataGridViewCellStyle2148;
             this.rwdR2DGV.RowTemplate.ReadOnly = true;
             this.rwdR2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.rwdR2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1892,9 +1897,9 @@
             this.upRacer_Btn_rwdR2DGV,
             this.downRacer_Btn_rwdR2DGV,
             this.toolStripSeparator5,
-            this.toolStripButton44,
-            this.toolStripButton52,
-            this.toolStripButton5,
+            this.breakRace_Btn_rwdR2DGV,
+            this.reraceRace_Btn_rwdR2DGV,
+            this.restartRace_Btn_rwdR2DGV,
             this.toolStripSeparator22,
             this.Print_Btn_rwdR2DGV,
             this.toolStripSeparator4,
@@ -1959,37 +1964,40 @@
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 39);
             // 
-            // toolStripButton44
+            // breakRace_Btn_rwdR2DGV
             // 
-            this.toolStripButton44.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton44.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton44.Image")));
-            this.toolStripButton44.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton44.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton44.Name = "toolStripButton44";
-            this.toolStripButton44.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton44.Text = "Обнуление заезда";
+            this.breakRace_Btn_rwdR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.breakRace_Btn_rwdR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("breakRace_Btn_rwdR2DGV.Image")));
+            this.breakRace_Btn_rwdR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.breakRace_Btn_rwdR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.breakRace_Btn_rwdR2DGV.Name = "breakRace_Btn_rwdR2DGV";
+            this.breakRace_Btn_rwdR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.breakRace_Btn_rwdR2DGV.Text = "Обнуление заезда";
+            this.breakRace_Btn_rwdR2DGV.Click += new System.EventHandler(this.breakRace_Btn_rwdR2DGV_Click);
             // 
-            // toolStripButton52
+            // reraceRace_Btn_rwdR2DGV
             // 
-            this.toolStripButton52.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton52.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton52.Image")));
-            this.toolStripButton52.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton52.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton52.Name = "toolStripButton52";
-            this.toolStripButton52.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton52.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
-            this.toolStripButton52.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_rwdR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.reraceRace_Btn_rwdR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("reraceRace_Btn_rwdR2DGV.Image")));
+            this.reraceRace_Btn_rwdR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.reraceRace_Btn_rwdR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.reraceRace_Btn_rwdR2DGV.Name = "reraceRace_Btn_rwdR2DGV";
+            this.reraceRace_Btn_rwdR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.reraceRace_Btn_rwdR2DGV.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
+            this.reraceRace_Btn_rwdR2DGV.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_rwdR2DGV.Click += new System.EventHandler(this.reraceRace_Btn_rwdR2DGV_Click);
             // 
-            // toolStripButton5
+            // restartRace_Btn_rwdR2DGV
             // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton5.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
-            this.toolStripButton5.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_rwdR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.restartRace_Btn_rwdR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("restartRace_Btn_rwdR2DGV.Image")));
+            this.restartRace_Btn_rwdR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.restartRace_Btn_rwdR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.restartRace_Btn_rwdR2DGV.Name = "restartRace_Btn_rwdR2DGV";
+            this.restartRace_Btn_rwdR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.restartRace_Btn_rwdR2DGV.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_rwdR2DGV.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_rwdR2DGV.Click += new System.EventHandler(this.restartRace_Btn_rwdR2DGV_Click);
             // 
             // toolStripSeparator22
             // 
@@ -2072,41 +2080,41 @@
             // 
             this.awdR1DGV.AllowUserToAddRows = false;
             this.awdR1DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
-            this.awdR1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2149.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2149.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2149.SelectionForeColor = System.Drawing.Color.White;
+            this.awdR1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2149;
             this.awdR1DGV.BackgroundColor = System.Drawing.Color.White;
             this.awdR1DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.awdR1DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.awdR1DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.awdR1DGV.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2150.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2150.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2150.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2150.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2150.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2150.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2150.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.awdR1DGV.DefaultCellStyle = dataGridViewCellStyle2150;
             this.awdR1DGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.awdR1DGV.GridColor = System.Drawing.Color.Silver;
             this.awdR1DGV.Location = new System.Drawing.Point(3, 42);
             this.awdR1DGV.Name = "awdR1DGV";
             this.awdR1DGV.ReadOnly = true;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.awdR1DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle2151.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2151.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2151.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2151.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2151.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2151.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2151.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.awdR1DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2151;
             this.awdR1DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            this.awdR1DGV.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2152.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2152.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2152.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2152.SelectionForeColor = System.Drawing.Color.White;
+            this.awdR1DGV.RowsDefaultCellStyle = dataGridViewCellStyle2152;
             this.awdR1DGV.RowTemplate.ReadOnly = true;
             this.awdR1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.awdR1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -2126,9 +2134,9 @@
             this.upRacer_Btn_awdR1DGV,
             this.downRacer_Btn_awdR1DGV,
             this.toolStripSeparator9,
-            this.toolStripButton45,
-            this.toolStripButton53,
-            this.toolStripButton6,
+            this.breakRace_Btn_awdR1DGV,
+            this.reraceRace_Btn_awdR1DGV,
+            this.restartRace_Btn_awdR1DGV,
             this.toolStripSeparator23,
             this.Print_Btn_awdR1DGV,
             this.toolStripSeparator8,
@@ -2206,37 +2214,40 @@
             this.toolStripSeparator9.Name = "toolStripSeparator9";
             this.toolStripSeparator9.Size = new System.Drawing.Size(6, 39);
             // 
-            // toolStripButton45
+            // breakRace_Btn_awdR1DGV
             // 
-            this.toolStripButton45.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton45.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton45.Image")));
-            this.toolStripButton45.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton45.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton45.Name = "toolStripButton45";
-            this.toolStripButton45.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton45.Text = "Обнуление заезда";
+            this.breakRace_Btn_awdR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.breakRace_Btn_awdR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("breakRace_Btn_awdR1DGV.Image")));
+            this.breakRace_Btn_awdR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.breakRace_Btn_awdR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.breakRace_Btn_awdR1DGV.Name = "breakRace_Btn_awdR1DGV";
+            this.breakRace_Btn_awdR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.breakRace_Btn_awdR1DGV.Text = "Обнуление заезда";
+            this.breakRace_Btn_awdR1DGV.Click += new System.EventHandler(this.breakRace_Btn_awdR1DGV_Click);
             // 
-            // toolStripButton53
+            // reraceRace_Btn_awdR1DGV
             // 
-            this.toolStripButton53.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton53.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton53.Image")));
-            this.toolStripButton53.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton53.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton53.Name = "toolStripButton53";
-            this.toolStripButton53.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton53.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
-            this.toolStripButton53.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_awdR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.reraceRace_Btn_awdR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("reraceRace_Btn_awdR1DGV.Image")));
+            this.reraceRace_Btn_awdR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.reraceRace_Btn_awdR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.reraceRace_Btn_awdR1DGV.Name = "reraceRace_Btn_awdR1DGV";
+            this.reraceRace_Btn_awdR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.reraceRace_Btn_awdR1DGV.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
+            this.reraceRace_Btn_awdR1DGV.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_awdR1DGV.Click += new System.EventHandler(this.reraceRace_Btn_awdR1DGV_Click);
             // 
-            // toolStripButton6
+            // restartRace_Btn_awdR1DGV
             // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton6.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
-            this.toolStripButton6.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_awdR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.restartRace_Btn_awdR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("restartRace_Btn_awdR1DGV.Image")));
+            this.restartRace_Btn_awdR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.restartRace_Btn_awdR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.restartRace_Btn_awdR1DGV.Name = "restartRace_Btn_awdR1DGV";
+            this.restartRace_Btn_awdR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.restartRace_Btn_awdR1DGV.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_awdR1DGV.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_awdR1DGV.Click += new System.EventHandler(this.restartRace_Btn_awdR1DGV_Click);
             // 
             // toolStripSeparator23
             // 
@@ -2296,41 +2307,41 @@
             // 
             this.awdR2DGV.AllowUserToAddRows = false;
             this.awdR2DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
-            this.awdR2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle2153.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2153.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2153.SelectionForeColor = System.Drawing.Color.White;
+            this.awdR2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2153;
             this.awdR2DGV.BackgroundColor = System.Drawing.Color.White;
             this.awdR2DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.awdR2DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.awdR2DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.awdR2DGV.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2154.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2154.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2154.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2154.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2154.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2154.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2154.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.awdR2DGV.DefaultCellStyle = dataGridViewCellStyle2154;
             this.awdR2DGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.awdR2DGV.GridColor = System.Drawing.Color.Silver;
             this.awdR2DGV.Location = new System.Drawing.Point(3, 42);
             this.awdR2DGV.Name = "awdR2DGV";
             this.awdR2DGV.ReadOnly = true;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.awdR2DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle2155.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2155.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2155.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2155.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2155.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2155.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2155.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.awdR2DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2155;
             this.awdR2DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
-            this.awdR2DGV.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle2156.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2156.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2156.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2156.SelectionForeColor = System.Drawing.Color.White;
+            this.awdR2DGV.RowsDefaultCellStyle = dataGridViewCellStyle2156;
             this.awdR2DGV.RowTemplate.ReadOnly = true;
             this.awdR2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.awdR2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -2349,9 +2360,9 @@
             this.upRacer_Btn_awdR2DGV,
             this.downRacer_Btn_awdR2DGV,
             this.toolStripSeparator11,
-            this.toolStripButton46,
-            this.toolStripButton54,
-            this.toolStripButton7,
+            this.breakRace_Btn_awdR2DGV,
+            this.reraceRace_Btn_awdR2DGV,
+            this.restartRace_Btn_awdR2DGV,
             this.toolStripSeparator24,
             this.Print_Btn_awdR2DGV,
             this.toolStripSeparator10,
@@ -2416,37 +2427,40 @@
             this.toolStripSeparator11.Name = "toolStripSeparator11";
             this.toolStripSeparator11.Size = new System.Drawing.Size(6, 39);
             // 
-            // toolStripButton46
+            // breakRace_Btn_awdR2DGV
             // 
-            this.toolStripButton46.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton46.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton46.Image")));
-            this.toolStripButton46.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton46.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton46.Name = "toolStripButton46";
-            this.toolStripButton46.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton46.Text = "Обнуление заезда";
+            this.breakRace_Btn_awdR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.breakRace_Btn_awdR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("breakRace_Btn_awdR2DGV.Image")));
+            this.breakRace_Btn_awdR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.breakRace_Btn_awdR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.breakRace_Btn_awdR2DGV.Name = "breakRace_Btn_awdR2DGV";
+            this.breakRace_Btn_awdR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.breakRace_Btn_awdR2DGV.Text = "Обнуление заезда";
+            this.breakRace_Btn_awdR2DGV.Click += new System.EventHandler(this.breakRace_Btn_awdR2DGV_Click);
             // 
-            // toolStripButton54
+            // reraceRace_Btn_awdR2DGV
             // 
-            this.toolStripButton54.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton54.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton54.Image")));
-            this.toolStripButton54.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton54.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton54.Name = "toolStripButton54";
-            this.toolStripButton54.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton54.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
-            this.toolStripButton54.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_awdR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.reraceRace_Btn_awdR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("reraceRace_Btn_awdR2DGV.Image")));
+            this.reraceRace_Btn_awdR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.reraceRace_Btn_awdR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.reraceRace_Btn_awdR2DGV.Name = "reraceRace_Btn_awdR2DGV";
+            this.reraceRace_Btn_awdR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.reraceRace_Btn_awdR2DGV.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
+            this.reraceRace_Btn_awdR2DGV.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_awdR2DGV.Click += new System.EventHandler(this.reraceRace_Btn_awdR2DGV_Click);
             // 
-            // toolStripButton7
+            // restartRace_Btn_awdR2DGV
             // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton7.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
-            this.toolStripButton7.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_awdR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.restartRace_Btn_awdR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("restartRace_Btn_awdR2DGV.Image")));
+            this.restartRace_Btn_awdR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.restartRace_Btn_awdR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.restartRace_Btn_awdR2DGV.Name = "restartRace_Btn_awdR2DGV";
+            this.restartRace_Btn_awdR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.restartRace_Btn_awdR2DGV.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_awdR2DGV.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_awdR2DGV.Click += new System.EventHandler(this.restartRace_Btn_awdR2DGV_Click);
             // 
             // toolStripSeparator24
             // 
@@ -2529,41 +2543,41 @@
             // 
             this.sportR1DGV.AllowUserToAddRows = false;
             this.sportR1DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
-            this.sportR1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle2157.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2157.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2157.SelectionForeColor = System.Drawing.Color.White;
+            this.sportR1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2157;
             this.sportR1DGV.BackgroundColor = System.Drawing.Color.White;
             this.sportR1DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.sportR1DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.sportR1DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.sportR1DGV.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2158.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2158.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2158.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2158.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2158.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2158.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2158.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.sportR1DGV.DefaultCellStyle = dataGridViewCellStyle2158;
             this.sportR1DGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sportR1DGV.GridColor = System.Drawing.Color.Silver;
             this.sportR1DGV.Location = new System.Drawing.Point(3, 42);
             this.sportR1DGV.Name = "sportR1DGV";
             this.sportR1DGV.ReadOnly = true;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.sportR1DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle2159.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2159.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2159.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2159.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2159.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2159.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2159.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.sportR1DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2159;
             this.sportR1DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.White;
-            this.sportR1DGV.RowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle2160.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2160.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2160.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2160.SelectionForeColor = System.Drawing.Color.White;
+            this.sportR1DGV.RowsDefaultCellStyle = dataGridViewCellStyle2160;
             this.sportR1DGV.RowTemplate.ReadOnly = true;
             this.sportR1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.sportR1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -2583,9 +2597,9 @@
             this.upRacer_Btn_sportR1DGV,
             this.downRacer_Btn_sportR1DGV,
             this.toolStripSeparator13,
-            this.toolStripButton47,
-            this.toolStripButton55,
-            this.toolStripButton8,
+            this.breakRace_Btn_sportR1DGV,
+            this.reraceRace_Btn_sportR1DGV,
+            this.restartRace_Btn_sportR1DGV,
             this.toolStripSeparator25,
             this.Print_Btn_sportR1DGV,
             this.toolStripSeparator12,
@@ -2663,37 +2677,40 @@
             this.toolStripSeparator13.Name = "toolStripSeparator13";
             this.toolStripSeparator13.Size = new System.Drawing.Size(6, 39);
             // 
-            // toolStripButton47
+            // breakRace_Btn_sportR1DGV
             // 
-            this.toolStripButton47.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton47.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton47.Image")));
-            this.toolStripButton47.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton47.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton47.Name = "toolStripButton47";
-            this.toolStripButton47.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton47.Text = "Обнуление заезда";
+            this.breakRace_Btn_sportR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.breakRace_Btn_sportR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("breakRace_Btn_sportR1DGV.Image")));
+            this.breakRace_Btn_sportR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.breakRace_Btn_sportR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.breakRace_Btn_sportR1DGV.Name = "breakRace_Btn_sportR1DGV";
+            this.breakRace_Btn_sportR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.breakRace_Btn_sportR1DGV.Text = "Обнуление заезда";
+            this.breakRace_Btn_sportR1DGV.Click += new System.EventHandler(this.breakRace_Btn_sportR1DGV_Click);
             // 
-            // toolStripButton55
+            // reraceRace_Btn_sportR1DGV
             // 
-            this.toolStripButton55.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton55.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton55.Image")));
-            this.toolStripButton55.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton55.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton55.Name = "toolStripButton55";
-            this.toolStripButton55.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton55.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
-            this.toolStripButton55.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_sportR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.reraceRace_Btn_sportR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("reraceRace_Btn_sportR1DGV.Image")));
+            this.reraceRace_Btn_sportR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.reraceRace_Btn_sportR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.reraceRace_Btn_sportR1DGV.Name = "reraceRace_Btn_sportR1DGV";
+            this.reraceRace_Btn_sportR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.reraceRace_Btn_sportR1DGV.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
+            this.reraceRace_Btn_sportR1DGV.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_sportR1DGV.Click += new System.EventHandler(this.reraceRace_Btn_sportR1DGV_Click);
             // 
-            // toolStripButton8
+            // restartRace_Btn_sportR1DGV
             // 
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
-            this.toolStripButton8.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton8.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
-            this.toolStripButton8.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_sportR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.restartRace_Btn_sportR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("restartRace_Btn_sportR1DGV.Image")));
+            this.restartRace_Btn_sportR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.restartRace_Btn_sportR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.restartRace_Btn_sportR1DGV.Name = "restartRace_Btn_sportR1DGV";
+            this.restartRace_Btn_sportR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.restartRace_Btn_sportR1DGV.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_sportR1DGV.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_sportR1DGV.Click += new System.EventHandler(this.restartRace_Btn_sportR1DGV_Click);
             // 
             // toolStripSeparator25
             // 
@@ -2753,41 +2770,41 @@
             // 
             this.sportR2DGV.AllowUserToAddRows = false;
             this.sportR2DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
-            this.sportR2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle2161.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2161.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2161.SelectionForeColor = System.Drawing.Color.White;
+            this.sportR2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2161;
             this.sportR2DGV.BackgroundColor = System.Drawing.Color.White;
             this.sportR2DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.sportR2DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.sportR2DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.sportR2DGV.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle2162.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2162.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2162.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2162.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2162.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2162.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2162.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.sportR2DGV.DefaultCellStyle = dataGridViewCellStyle2162;
             this.sportR2DGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sportR2DGV.GridColor = System.Drawing.Color.Silver;
             this.sportR2DGV.Location = new System.Drawing.Point(3, 42);
             this.sportR2DGV.Name = "sportR2DGV";
             this.sportR2DGV.ReadOnly = true;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.sportR2DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle2163.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2163.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2163.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2163.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2163.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2163.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2163.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.sportR2DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2163;
             this.sportR2DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.White;
-            this.sportR2DGV.RowsDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle2164.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2164.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2164.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2164.SelectionForeColor = System.Drawing.Color.White;
+            this.sportR2DGV.RowsDefaultCellStyle = dataGridViewCellStyle2164;
             this.sportR2DGV.RowTemplate.ReadOnly = true;
             this.sportR2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.sportR2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -2806,9 +2823,9 @@
             this.upRacer_Btn_sportR2DGV,
             this.downRacer_Btn_sportR2DGV,
             this.toolStripSeparator15,
-            this.toolStripButton48,
+            this.breakRace_Btn_sportR2DGV,
             this.toolStripButton56,
-            this.toolStripButton9,
+            this.restartRace_Btn_sportR2DGV,
             this.toolStripSeparator26,
             this.Print_Btn_sportR2DGV,
             this.toolStripSeparator53,
@@ -2873,15 +2890,16 @@
             this.toolStripSeparator15.Name = "toolStripSeparator15";
             this.toolStripSeparator15.Size = new System.Drawing.Size(6, 39);
             // 
-            // toolStripButton48
+            // breakRace_Btn_sportR2DGV
             // 
-            this.toolStripButton48.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton48.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton48.Image")));
-            this.toolStripButton48.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton48.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton48.Name = "toolStripButton48";
-            this.toolStripButton48.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton48.Text = "Обнуление заезда";
+            this.breakRace_Btn_sportR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.breakRace_Btn_sportR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("breakRace_Btn_sportR2DGV.Image")));
+            this.breakRace_Btn_sportR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.breakRace_Btn_sportR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.breakRace_Btn_sportR2DGV.Name = "breakRace_Btn_sportR2DGV";
+            this.breakRace_Btn_sportR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.breakRace_Btn_sportR2DGV.Text = "Обнуление заезда";
+            this.breakRace_Btn_sportR2DGV.Click += new System.EventHandler(this.breakRace_Btn_sportR2DGV_Click);
             // 
             // toolStripButton56
             // 
@@ -2893,17 +2911,19 @@
             this.toolStripButton56.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton56.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
             this.toolStripButton56.ToolTipText = "Перезаезд текущего круга вместе";
+            this.toolStripButton56.Click += new System.EventHandler(this.toolStripButton56_Click);
             // 
-            // toolStripButton9
+            // restartRace_Btn_sportR2DGV
             // 
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
-            this.toolStripButton9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton9.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
-            this.toolStripButton9.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_sportR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.restartRace_Btn_sportR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("restartRace_Btn_sportR2DGV.Image")));
+            this.restartRace_Btn_sportR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.restartRace_Btn_sportR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.restartRace_Btn_sportR2DGV.Name = "restartRace_Btn_sportR2DGV";
+            this.restartRace_Btn_sportR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.restartRace_Btn_sportR2DGV.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_sportR2DGV.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_sportR2DGV.Click += new System.EventHandler(this.restartRace_Btn_sportR2DGV_Click);
             // 
             // toolStripSeparator26
             // 
@@ -2972,7 +2992,7 @@
             // 
             // tabPage16
             // 
-            this.tabPage16.Controls.Add(this.K100R1DGV);
+            this.tabPage16.Controls.Add(this.k100R1DGV);
             this.tabPage16.Controls.Add(this.toolStrip9);
             this.tabPage16.Location = new System.Drawing.Point(4, 23);
             this.tabPage16.Name = "tabPage16";
@@ -2982,52 +3002,52 @@
             this.tabPage16.Text = "1 тур";
             this.tabPage16.UseVisualStyleBackColor = true;
             // 
-            // K100R1DGV
+            // k100R1DGV
             // 
-            this.K100R1DGV.AllowUserToAddRows = false;
-            this.K100R1DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.White;
-            this.K100R1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
-            this.K100R1DGV.BackgroundColor = System.Drawing.Color.White;
-            this.K100R1DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.K100R1DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.K100R1DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.K100R1DGV.DefaultCellStyle = dataGridViewCellStyle34;
-            this.K100R1DGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.K100R1DGV.GridColor = System.Drawing.Color.Silver;
-            this.K100R1DGV.Location = new System.Drawing.Point(3, 42);
-            this.K100R1DGV.Name = "K100R1DGV";
-            this.K100R1DGV.ReadOnly = true;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.K100R1DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle35;
-            this.K100R1DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.White;
-            this.K100R1DGV.RowsDefaultCellStyle = dataGridViewCellStyle36;
-            this.K100R1DGV.RowTemplate.ReadOnly = true;
-            this.K100R1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.K100R1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.K100R1DGV.ShowEditingIcon = false;
-            this.K100R1DGV.Size = new System.Drawing.Size(1321, 315);
-            this.K100R1DGV.TabIndex = 3;
-            this.K100R1DGV.DataSourceChanged += new System.EventHandler(this.k100R1DGV_DataSourceChanged);
+            this.k100R1DGV.AllowUserToAddRows = false;
+            this.k100R1DGV.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2165.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2165.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2165.SelectionForeColor = System.Drawing.Color.White;
+            this.k100R1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2165;
+            this.k100R1DGV.BackgroundColor = System.Drawing.Color.White;
+            this.k100R1DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.k100R1DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.k100R1DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2166.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2166.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2166.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2166.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2166.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2166.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2166.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.k100R1DGV.DefaultCellStyle = dataGridViewCellStyle2166;
+            this.k100R1DGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.k100R1DGV.GridColor = System.Drawing.Color.Silver;
+            this.k100R1DGV.Location = new System.Drawing.Point(3, 42);
+            this.k100R1DGV.Name = "k100R1DGV";
+            this.k100R1DGV.ReadOnly = true;
+            dataGridViewCellStyle2167.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2167.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2167.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2167.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2167.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2167.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2167.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.k100R1DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2167;
+            this.k100R1DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle2168.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2168.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2168.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2168.SelectionForeColor = System.Drawing.Color.White;
+            this.k100R1DGV.RowsDefaultCellStyle = dataGridViewCellStyle2168;
+            this.k100R1DGV.RowTemplate.ReadOnly = true;
+            this.k100R1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.k100R1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.k100R1DGV.ShowEditingIcon = false;
+            this.k100R1DGV.Size = new System.Drawing.Size(1321, 315);
+            this.k100R1DGV.TabIndex = 3;
+            this.k100R1DGV.DataSourceChanged += new System.EventHandler(this.K100R1DGV_DataSourceChanged);
             // 
             // toolStrip9
             // 
@@ -3040,9 +3060,9 @@
             this.upRacer_Btn_K100R1DGV,
             this.downRacer_Btn_K100R1DGV,
             this.toolStripSeparator28,
-            this.toolStripButton13,
-            this.toolStripButton14,
-            this.toolStripButton10,
+            this.breakRace_Btn_k100R1DGV,
+            this.reraceRace_Btn_k100R1DGV,
+            this.restartRace_Btn_k100R1DGV,
             this.toolStripSeparator29,
             this.Print_Btn_k100R1DGV,
             this.toolStripSeparator54,
@@ -3120,37 +3140,40 @@
             this.toolStripSeparator28.Name = "toolStripSeparator28";
             this.toolStripSeparator28.Size = new System.Drawing.Size(6, 39);
             // 
-            // toolStripButton13
+            // breakRace_Btn_k100R1DGV
             // 
-            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton13.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton13.Image")));
-            this.toolStripButton13.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton13.Name = "toolStripButton13";
-            this.toolStripButton13.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton13.Text = "Обнуление заезда";
+            this.breakRace_Btn_k100R1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.breakRace_Btn_k100R1DGV.Image = ((System.Drawing.Image)(resources.GetObject("breakRace_Btn_k100R1DGV.Image")));
+            this.breakRace_Btn_k100R1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.breakRace_Btn_k100R1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.breakRace_Btn_k100R1DGV.Name = "breakRace_Btn_k100R1DGV";
+            this.breakRace_Btn_k100R1DGV.Size = new System.Drawing.Size(36, 36);
+            this.breakRace_Btn_k100R1DGV.Text = "Обнуление заезда";
+            this.breakRace_Btn_k100R1DGV.Click += new System.EventHandler(this.breakRace_Btn_k100R1DGV_Click);
             // 
-            // toolStripButton14
+            // reraceRace_Btn_k100R1DGV
             // 
-            this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton14.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton14.Image")));
-            this.toolStripButton14.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton14.Name = "toolStripButton14";
-            this.toolStripButton14.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton14.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
-            this.toolStripButton14.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_k100R1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.reraceRace_Btn_k100R1DGV.Image = ((System.Drawing.Image)(resources.GetObject("reraceRace_Btn_k100R1DGV.Image")));
+            this.reraceRace_Btn_k100R1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.reraceRace_Btn_k100R1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.reraceRace_Btn_k100R1DGV.Name = "reraceRace_Btn_k100R1DGV";
+            this.reraceRace_Btn_k100R1DGV.Size = new System.Drawing.Size(36, 36);
+            this.reraceRace_Btn_k100R1DGV.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
+            this.reraceRace_Btn_k100R1DGV.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_k100R1DGV.Click += new System.EventHandler(this.reraceRace_Btn_k100R1DGV_Click);
             // 
-            // toolStripButton10
+            // restartRace_Btn_k100R1DGV
             // 
-            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
-            this.toolStripButton10.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton10.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
-            this.toolStripButton10.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_k100R1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.restartRace_Btn_k100R1DGV.Image = ((System.Drawing.Image)(resources.GetObject("restartRace_Btn_k100R1DGV.Image")));
+            this.restartRace_Btn_k100R1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.restartRace_Btn_k100R1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.restartRace_Btn_k100R1DGV.Name = "restartRace_Btn_k100R1DGV";
+            this.restartRace_Btn_k100R1DGV.Size = new System.Drawing.Size(36, 36);
+            this.restartRace_Btn_k100R1DGV.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_k100R1DGV.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_k100R1DGV.Click += new System.EventHandler(this.restartRace_Btn_k100R1DGV_Click);
             // 
             // toolStripSeparator29
             // 
@@ -3196,7 +3219,7 @@
             // 
             // tabPage17
             // 
-            this.tabPage17.Controls.Add(this.K100R2DGV);
+            this.tabPage17.Controls.Add(this.k100R2DGV);
             this.tabPage17.Controls.Add(this.toolStrip10);
             this.tabPage17.Location = new System.Drawing.Point(4, 23);
             this.tabPage17.Name = "tabPage17";
@@ -3206,52 +3229,52 @@
             this.tabPage17.Text = "2 тур";
             this.tabPage17.UseVisualStyleBackColor = true;
             // 
-            // K100R2DGV
+            // k100R2DGV
             // 
-            this.K100R2DGV.AllowUserToAddRows = false;
-            this.K100R2DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.White;
-            this.K100R2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
-            this.K100R2DGV.BackgroundColor = System.Drawing.Color.White;
-            this.K100R2DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.K100R2DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.K100R2DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.K100R2DGV.DefaultCellStyle = dataGridViewCellStyle38;
-            this.K100R2DGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.K100R2DGV.GridColor = System.Drawing.Color.Silver;
-            this.K100R2DGV.Location = new System.Drawing.Point(3, 42);
-            this.K100R2DGV.Name = "K100R2DGV";
-            this.K100R2DGV.ReadOnly = true;
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.K100R2DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle39;
-            this.K100R2DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle40.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle40.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.Color.White;
-            this.K100R2DGV.RowsDefaultCellStyle = dataGridViewCellStyle40;
-            this.K100R2DGV.RowTemplate.ReadOnly = true;
-            this.K100R2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.K100R2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.K100R2DGV.ShowEditingIcon = false;
-            this.K100R2DGV.Size = new System.Drawing.Size(1321, 315);
-            this.K100R2DGV.TabIndex = 6;
-            this.K100R2DGV.DataSourceChanged += new System.EventHandler(this.k100R2DGV_DataSourceChanged);
+            this.k100R2DGV.AllowUserToAddRows = false;
+            this.k100R2DGV.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2169.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2169.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2169.SelectionForeColor = System.Drawing.Color.White;
+            this.k100R2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2169;
+            this.k100R2DGV.BackgroundColor = System.Drawing.Color.White;
+            this.k100R2DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.k100R2DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.k100R2DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2170.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2170.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2170.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2170.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2170.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2170.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2170.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.k100R2DGV.DefaultCellStyle = dataGridViewCellStyle2170;
+            this.k100R2DGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.k100R2DGV.GridColor = System.Drawing.Color.Silver;
+            this.k100R2DGV.Location = new System.Drawing.Point(3, 42);
+            this.k100R2DGV.Name = "k100R2DGV";
+            this.k100R2DGV.ReadOnly = true;
+            dataGridViewCellStyle2171.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2171.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2171.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2171.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2171.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2171.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2171.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.k100R2DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2171;
+            this.k100R2DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle2172.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2172.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2172.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2172.SelectionForeColor = System.Drawing.Color.White;
+            this.k100R2DGV.RowsDefaultCellStyle = dataGridViewCellStyle2172;
+            this.k100R2DGV.RowTemplate.ReadOnly = true;
+            this.k100R2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.k100R2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.k100R2DGV.ShowEditingIcon = false;
+            this.k100R2DGV.Size = new System.Drawing.Size(1321, 315);
+            this.k100R2DGV.TabIndex = 6;
+            this.k100R2DGV.DataSourceChanged += new System.EventHandler(this.K100R2DGV_DataSourceChanged);
             // 
             // toolStrip10
             // 
@@ -3263,9 +3286,9 @@
             this.upRacer_Btn_K100R2DGV,
             this.downRacer_Btn_K100R2DGV,
             this.toolStripSeparator31,
-            this.toolStripButton30,
-            this.toolStripButton31,
-            this.toolStripButton11,
+            this.breakRace_Btn_k100R2DGV,
+            this.reraceRace_Btn_k100R2DGV,
+            this.restartRace_Btn_k100R2DGV,
             this.toolStripSeparator32,
             this.Print_Btn_k100R2DGV,
             this.toolStripSeparator55,
@@ -3330,37 +3353,40 @@
             this.toolStripSeparator31.Name = "toolStripSeparator31";
             this.toolStripSeparator31.Size = new System.Drawing.Size(6, 39);
             // 
-            // toolStripButton30
+            // breakRace_Btn_k100R2DGV
             // 
-            this.toolStripButton30.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton30.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton30.Image")));
-            this.toolStripButton30.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton30.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton30.Name = "toolStripButton30";
-            this.toolStripButton30.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton30.Text = "Обнуление заезда";
+            this.breakRace_Btn_k100R2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.breakRace_Btn_k100R2DGV.Image = ((System.Drawing.Image)(resources.GetObject("breakRace_Btn_k100R2DGV.Image")));
+            this.breakRace_Btn_k100R2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.breakRace_Btn_k100R2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.breakRace_Btn_k100R2DGV.Name = "breakRace_Btn_k100R2DGV";
+            this.breakRace_Btn_k100R2DGV.Size = new System.Drawing.Size(36, 36);
+            this.breakRace_Btn_k100R2DGV.Text = "Обнуление заезда";
+            this.breakRace_Btn_k100R2DGV.Click += new System.EventHandler(this.breakRace_Btn_k100R2DGV_Click);
             // 
-            // toolStripButton31
+            // reraceRace_Btn_k100R2DGV
             // 
-            this.toolStripButton31.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton31.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton31.Image")));
-            this.toolStripButton31.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton31.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton31.Name = "toolStripButton31";
-            this.toolStripButton31.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton31.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
-            this.toolStripButton31.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_k100R2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.reraceRace_Btn_k100R2DGV.Image = ((System.Drawing.Image)(resources.GetObject("reraceRace_Btn_k100R2DGV.Image")));
+            this.reraceRace_Btn_k100R2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.reraceRace_Btn_k100R2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.reraceRace_Btn_k100R2DGV.Name = "reraceRace_Btn_k100R2DGV";
+            this.reraceRace_Btn_k100R2DGV.Size = new System.Drawing.Size(36, 36);
+            this.reraceRace_Btn_k100R2DGV.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
+            this.reraceRace_Btn_k100R2DGV.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_k100R2DGV.Click += new System.EventHandler(this.reraceRace_Btn_k100R2DGV_Click);
             // 
-            // toolStripButton11
+            // restartRace_Btn_k100R2DGV
             // 
-            this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
-            this.toolStripButton11.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton11.Name = "toolStripButton11";
-            this.toolStripButton11.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton11.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
-            this.toolStripButton11.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_k100R2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.restartRace_Btn_k100R2DGV.Image = ((System.Drawing.Image)(resources.GetObject("restartRace_Btn_k100R2DGV.Image")));
+            this.restartRace_Btn_k100R2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.restartRace_Btn_k100R2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.restartRace_Btn_k100R2DGV.Name = "restartRace_Btn_k100R2DGV";
+            this.restartRace_Btn_k100R2DGV.Size = new System.Drawing.Size(36, 36);
+            this.restartRace_Btn_k100R2DGV.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_k100R2DGV.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_k100R2DGV.Click += new System.EventHandler(this.restartRace_Btn_k100R2DGV_Click);
             // 
             // toolStripSeparator32
             // 
@@ -3429,7 +3455,7 @@
             // 
             // tabPage18
             // 
-            this.tabPage18.Controls.Add(this.K160R1DGV);
+            this.tabPage18.Controls.Add(this.k160R1DGV);
             this.tabPage18.Controls.Add(this.toolStrip11);
             this.tabPage18.Location = new System.Drawing.Point(4, 23);
             this.tabPage18.Name = "tabPage18";
@@ -3439,52 +3465,52 @@
             this.tabPage18.Text = "1 тур";
             this.tabPage18.UseVisualStyleBackColor = true;
             // 
-            // K160R1DGV
+            // k160R1DGV
             // 
-            this.K160R1DGV.AllowUserToAddRows = false;
-            this.K160R1DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle41.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.Color.White;
-            this.K160R1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
-            this.K160R1DGV.BackgroundColor = System.Drawing.Color.White;
-            this.K160R1DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.K160R1DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.K160R1DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.K160R1DGV.DefaultCellStyle = dataGridViewCellStyle42;
-            this.K160R1DGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.K160R1DGV.GridColor = System.Drawing.Color.Silver;
-            this.K160R1DGV.Location = new System.Drawing.Point(3, 42);
-            this.K160R1DGV.Name = "K160R1DGV";
-            this.K160R1DGV.ReadOnly = true;
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.K160R1DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle43;
-            this.K160R1DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle44.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.White;
-            this.K160R1DGV.RowsDefaultCellStyle = dataGridViewCellStyle44;
-            this.K160R1DGV.RowTemplate.ReadOnly = true;
-            this.K160R1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.K160R1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.K160R1DGV.ShowEditingIcon = false;
-            this.K160R1DGV.Size = new System.Drawing.Size(1321, 315);
-            this.K160R1DGV.TabIndex = 3;
-            this.K160R1DGV.DataSourceChanged += new System.EventHandler(this.k160R1DGV_DataSourceChanged);
+            this.k160R1DGV.AllowUserToAddRows = false;
+            this.k160R1DGV.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2173.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2173.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2173.SelectionForeColor = System.Drawing.Color.White;
+            this.k160R1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2173;
+            this.k160R1DGV.BackgroundColor = System.Drawing.Color.White;
+            this.k160R1DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.k160R1DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.k160R1DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2174.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2174.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2174.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2174.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2174.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2174.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2174.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.k160R1DGV.DefaultCellStyle = dataGridViewCellStyle2174;
+            this.k160R1DGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.k160R1DGV.GridColor = System.Drawing.Color.Silver;
+            this.k160R1DGV.Location = new System.Drawing.Point(3, 42);
+            this.k160R1DGV.Name = "k160R1DGV";
+            this.k160R1DGV.ReadOnly = true;
+            dataGridViewCellStyle2175.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2175.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2175.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2175.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2175.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2175.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2175.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.k160R1DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2175;
+            this.k160R1DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle2176.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2176.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2176.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2176.SelectionForeColor = System.Drawing.Color.White;
+            this.k160R1DGV.RowsDefaultCellStyle = dataGridViewCellStyle2176;
+            this.k160R1DGV.RowTemplate.ReadOnly = true;
+            this.k160R1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.k160R1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.k160R1DGV.ShowEditingIcon = false;
+            this.k160R1DGV.Size = new System.Drawing.Size(1321, 315);
+            this.k160R1DGV.TabIndex = 3;
+            this.k160R1DGV.DataSourceChanged += new System.EventHandler(this.K160R1DGV_DataSourceChanged);
             // 
             // toolStrip11
             // 
@@ -3497,9 +3523,9 @@
             this.upRacer_Btn_K160R1DGV,
             this.downRacer_Btn_K160R1DGV,
             this.toolStripSeparator34,
-            this.toolStripButton39,
-            this.toolStripButton40,
-            this.toolStripButton12,
+            this.breakRace_Btn_k160R1DGV,
+            this.reraceRace_Btn_k160R1DGV,
+            this.restartRace_Btn_k160R1DGV,
             this.toolStripSeparator35,
             this.Print_Btn_k160R1DGV,
             this.toolStripSeparator56,
@@ -3577,37 +3603,40 @@
             this.toolStripSeparator34.Name = "toolStripSeparator34";
             this.toolStripSeparator34.Size = new System.Drawing.Size(6, 39);
             // 
-            // toolStripButton39
+            // breakRace_Btn_k160R1DGV
             // 
-            this.toolStripButton39.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton39.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton39.Image")));
-            this.toolStripButton39.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton39.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton39.Name = "toolStripButton39";
-            this.toolStripButton39.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton39.Text = "Обнуление заезда";
+            this.breakRace_Btn_k160R1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.breakRace_Btn_k160R1DGV.Image = ((System.Drawing.Image)(resources.GetObject("breakRace_Btn_k160R1DGV.Image")));
+            this.breakRace_Btn_k160R1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.breakRace_Btn_k160R1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.breakRace_Btn_k160R1DGV.Name = "breakRace_Btn_k160R1DGV";
+            this.breakRace_Btn_k160R1DGV.Size = new System.Drawing.Size(36, 36);
+            this.breakRace_Btn_k160R1DGV.Text = "Обнуление заезда";
+            this.breakRace_Btn_k160R1DGV.Click += new System.EventHandler(this.breakRace_Btn_k160R1DGV_Click);
             // 
-            // toolStripButton40
+            // reraceRace_Btn_k160R1DGV
             // 
-            this.toolStripButton40.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton40.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton40.Image")));
-            this.toolStripButton40.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton40.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton40.Name = "toolStripButton40";
-            this.toolStripButton40.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton40.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
-            this.toolStripButton40.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_k160R1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.reraceRace_Btn_k160R1DGV.Image = ((System.Drawing.Image)(resources.GetObject("reraceRace_Btn_k160R1DGV.Image")));
+            this.reraceRace_Btn_k160R1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.reraceRace_Btn_k160R1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.reraceRace_Btn_k160R1DGV.Name = "reraceRace_Btn_k160R1DGV";
+            this.reraceRace_Btn_k160R1DGV.Size = new System.Drawing.Size(36, 36);
+            this.reraceRace_Btn_k160R1DGV.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
+            this.reraceRace_Btn_k160R1DGV.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_k160R1DGV.Click += new System.EventHandler(this.reraceRace_Btn_k160R1DGV_Click);
             // 
-            // toolStripButton12
+            // restartRace_Btn_k160R1DGV
             // 
-            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
-            this.toolStripButton12.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton12.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
-            this.toolStripButton12.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_k160R1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.restartRace_Btn_k160R1DGV.Image = ((System.Drawing.Image)(resources.GetObject("restartRace_Btn_k160R1DGV.Image")));
+            this.restartRace_Btn_k160R1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.restartRace_Btn_k160R1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.restartRace_Btn_k160R1DGV.Name = "restartRace_Btn_k160R1DGV";
+            this.restartRace_Btn_k160R1DGV.Size = new System.Drawing.Size(36, 36);
+            this.restartRace_Btn_k160R1DGV.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_k160R1DGV.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_k160R1DGV.Click += new System.EventHandler(this.restartRace_Btn_k160R1DGV_Click);
             // 
             // toolStripSeparator35
             // 
@@ -3653,7 +3682,7 @@
             // 
             // tabPage19
             // 
-            this.tabPage19.Controls.Add(this.K160R2DGV);
+            this.tabPage19.Controls.Add(this.k160R2DGV);
             this.tabPage19.Controls.Add(this.toolStrip12);
             this.tabPage19.Location = new System.Drawing.Point(4, 23);
             this.tabPage19.Name = "tabPage19";
@@ -3663,52 +3692,52 @@
             this.tabPage19.Text = "2 тур";
             this.tabPage19.UseVisualStyleBackColor = true;
             // 
-            // K160R2DGV
+            // k160R2DGV
             // 
-            this.K160R2DGV.AllowUserToAddRows = false;
-            this.K160R2DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.Color.White;
-            this.K160R2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle45;
-            this.K160R2DGV.BackgroundColor = System.Drawing.Color.White;
-            this.K160R2DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.K160R2DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.K160R2DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle46.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.K160R2DGV.DefaultCellStyle = dataGridViewCellStyle46;
-            this.K160R2DGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.K160R2DGV.GridColor = System.Drawing.Color.Silver;
-            this.K160R2DGV.Location = new System.Drawing.Point(3, 42);
-            this.K160R2DGV.Name = "K160R2DGV";
-            this.K160R2DGV.ReadOnly = true;
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.K160R2DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle47;
-            this.K160R2DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle48.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.Color.White;
-            this.K160R2DGV.RowsDefaultCellStyle = dataGridViewCellStyle48;
-            this.K160R2DGV.RowTemplate.ReadOnly = true;
-            this.K160R2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.K160R2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.K160R2DGV.ShowEditingIcon = false;
-            this.K160R2DGV.Size = new System.Drawing.Size(1321, 315);
-            this.K160R2DGV.TabIndex = 6;
-            this.K160R2DGV.DataSourceChanged += new System.EventHandler(this.k160R2DGV_DataSourceChanged);
+            this.k160R2DGV.AllowUserToAddRows = false;
+            this.k160R2DGV.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2177.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2177.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2177.SelectionForeColor = System.Drawing.Color.White;
+            this.k160R2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2177;
+            this.k160R2DGV.BackgroundColor = System.Drawing.Color.White;
+            this.k160R2DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.k160R2DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.k160R2DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2178.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2178.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2178.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2178.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2178.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2178.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2178.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.k160R2DGV.DefaultCellStyle = dataGridViewCellStyle2178;
+            this.k160R2DGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.k160R2DGV.GridColor = System.Drawing.Color.Silver;
+            this.k160R2DGV.Location = new System.Drawing.Point(3, 42);
+            this.k160R2DGV.Name = "k160R2DGV";
+            this.k160R2DGV.ReadOnly = true;
+            dataGridViewCellStyle2179.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2179.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2179.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2179.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2179.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2179.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2179.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.k160R2DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2179;
+            this.k160R2DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle2180.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2180.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2180.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2180.SelectionForeColor = System.Drawing.Color.White;
+            this.k160R2DGV.RowsDefaultCellStyle = dataGridViewCellStyle2180;
+            this.k160R2DGV.RowTemplate.ReadOnly = true;
+            this.k160R2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.k160R2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.k160R2DGV.ShowEditingIcon = false;
+            this.k160R2DGV.Size = new System.Drawing.Size(1321, 315);
+            this.k160R2DGV.TabIndex = 6;
+            this.k160R2DGV.DataSourceChanged += new System.EventHandler(this.K160R2DGV_DataSourceChanged);
             // 
             // toolStrip12
             // 
@@ -3720,9 +3749,9 @@
             this.upRacer_Btn_K160R2DGV,
             this.downRacer_Btn_K160R2DGV,
             this.toolStripSeparator37,
-            this.toolStripButton62,
-            this.toolStripButton63,
-            this.toolStripButton16,
+            this.breakRace_Btn_k160R2DGV,
+            this.reraceRace_Btn_k160R2DGV,
+            this.restartRace_Btn_k160R2DGV,
             this.toolStripSeparator38,
             this.Print_Btn_k160R2DGV,
             this.toolStripSeparator57,
@@ -3786,37 +3815,40 @@
             this.toolStripSeparator37.Name = "toolStripSeparator37";
             this.toolStripSeparator37.Size = new System.Drawing.Size(6, 39);
             // 
-            // toolStripButton62
+            // breakRace_Btn_k160R2DGV
             // 
-            this.toolStripButton62.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton62.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton62.Image")));
-            this.toolStripButton62.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton62.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton62.Name = "toolStripButton62";
-            this.toolStripButton62.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton62.Text = "Обнуление заезда";
+            this.breakRace_Btn_k160R2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.breakRace_Btn_k160R2DGV.Image = ((System.Drawing.Image)(resources.GetObject("breakRace_Btn_k160R2DGV.Image")));
+            this.breakRace_Btn_k160R2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.breakRace_Btn_k160R2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.breakRace_Btn_k160R2DGV.Name = "breakRace_Btn_k160R2DGV";
+            this.breakRace_Btn_k160R2DGV.Size = new System.Drawing.Size(36, 36);
+            this.breakRace_Btn_k160R2DGV.Text = "Обнуление заезда";
+            this.breakRace_Btn_k160R2DGV.Click += new System.EventHandler(this.breakRace_Btn_k160R2DGV_Click);
             // 
-            // toolStripButton63
+            // reraceRace_Btn_k160R2DGV
             // 
-            this.toolStripButton63.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton63.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton63.Image")));
-            this.toolStripButton63.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton63.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton63.Name = "toolStripButton63";
-            this.toolStripButton63.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton63.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
-            this.toolStripButton63.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_k160R2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.reraceRace_Btn_k160R2DGV.Image = ((System.Drawing.Image)(resources.GetObject("reraceRace_Btn_k160R2DGV.Image")));
+            this.reraceRace_Btn_k160R2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.reraceRace_Btn_k160R2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.reraceRace_Btn_k160R2DGV.Name = "reraceRace_Btn_k160R2DGV";
+            this.reraceRace_Btn_k160R2DGV.Size = new System.Drawing.Size(36, 36);
+            this.reraceRace_Btn_k160R2DGV.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
+            this.reraceRace_Btn_k160R2DGV.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_k160R2DGV.Click += new System.EventHandler(this.reraceRace_Btn_k160R2DGV_Click);
             // 
-            // toolStripButton16
+            // restartRace_Btn_k160R2DGV
             // 
-            this.toolStripButton16.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton16.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton16.Image")));
-            this.toolStripButton16.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton16.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton16.Name = "toolStripButton16";
-            this.toolStripButton16.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton16.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
-            this.toolStripButton16.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_k160R2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.restartRace_Btn_k160R2DGV.Image = ((System.Drawing.Image)(resources.GetObject("restartRace_Btn_k160R2DGV.Image")));
+            this.restartRace_Btn_k160R2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.restartRace_Btn_k160R2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.restartRace_Btn_k160R2DGV.Name = "restartRace_Btn_k160R2DGV";
+            this.restartRace_Btn_k160R2DGV.Size = new System.Drawing.Size(36, 36);
+            this.restartRace_Btn_k160R2DGV.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_k160R2DGV.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_k160R2DGV.Click += new System.EventHandler(this.restartRace_Btn_k160R2DGV_Click);
             // 
             // toolStripSeparator38
             // 
@@ -3885,7 +3917,7 @@
             // 
             // tabPage20
             // 
-            this.tabPage20.Controls.Add(this.KAR1DGV);
+            this.tabPage20.Controls.Add(this.kaR1DGV);
             this.tabPage20.Controls.Add(this.toolStrip13);
             this.tabPage20.Location = new System.Drawing.Point(4, 23);
             this.tabPage20.Name = "tabPage20";
@@ -3895,52 +3927,52 @@
             this.tabPage20.Text = "1 тур";
             this.tabPage20.UseVisualStyleBackColor = true;
             // 
-            // KAR1DGV
+            // kaR1DGV
             // 
-            this.KAR1DGV.AllowUserToAddRows = false;
-            this.KAR1DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle49.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.Color.White;
-            this.KAR1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle49;
-            this.KAR1DGV.BackgroundColor = System.Drawing.Color.White;
-            this.KAR1DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.KAR1DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.KAR1DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle50.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle50.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.KAR1DGV.DefaultCellStyle = dataGridViewCellStyle50;
-            this.KAR1DGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.KAR1DGV.GridColor = System.Drawing.Color.Silver;
-            this.KAR1DGV.Location = new System.Drawing.Point(3, 42);
-            this.KAR1DGV.Name = "KAR1DGV";
-            this.KAR1DGV.ReadOnly = true;
-            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle51.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle51.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.KAR1DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle51;
-            this.KAR1DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle52.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle52.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.Color.White;
-            this.KAR1DGV.RowsDefaultCellStyle = dataGridViewCellStyle52;
-            this.KAR1DGV.RowTemplate.ReadOnly = true;
-            this.KAR1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.KAR1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.KAR1DGV.ShowEditingIcon = false;
-            this.KAR1DGV.Size = new System.Drawing.Size(1321, 315);
-            this.KAR1DGV.TabIndex = 3;
-            this.KAR1DGV.DataSourceChanged += new System.EventHandler(this.kaR1DGV_DataSourceChanged);
+            this.kaR1DGV.AllowUserToAddRows = false;
+            this.kaR1DGV.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2181.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2181.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2181.SelectionForeColor = System.Drawing.Color.White;
+            this.kaR1DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2181;
+            this.kaR1DGV.BackgroundColor = System.Drawing.Color.White;
+            this.kaR1DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.kaR1DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.kaR1DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2182.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2182.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2182.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2182.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2182.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2182.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2182.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.kaR1DGV.DefaultCellStyle = dataGridViewCellStyle2182;
+            this.kaR1DGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kaR1DGV.GridColor = System.Drawing.Color.Silver;
+            this.kaR1DGV.Location = new System.Drawing.Point(3, 42);
+            this.kaR1DGV.Name = "kaR1DGV";
+            this.kaR1DGV.ReadOnly = true;
+            dataGridViewCellStyle2183.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2183.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2183.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2183.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2183.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2183.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2183.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.kaR1DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2183;
+            this.kaR1DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle2184.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2184.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2184.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2184.SelectionForeColor = System.Drawing.Color.White;
+            this.kaR1DGV.RowsDefaultCellStyle = dataGridViewCellStyle2184;
+            this.kaR1DGV.RowTemplate.ReadOnly = true;
+            this.kaR1DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.kaR1DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.kaR1DGV.ShowEditingIcon = false;
+            this.kaR1DGV.Size = new System.Drawing.Size(1321, 315);
+            this.kaR1DGV.TabIndex = 3;
+            this.kaR1DGV.DataSourceChanged += new System.EventHandler(this.KAR1DGV_DataSourceChanged);
             // 
             // toolStrip13
             // 
@@ -3953,9 +3985,9 @@
             this.upRacer_Btn_KAR1DGV,
             this.downRacer_Btn_KAR1DGV,
             this.toolStripSeparator40,
-            this.toolStripButton70,
-            this.toolStripButton71,
-            this.toolStripButton17,
+            this.breakRace_Btn_kaR1DGV,
+            this.reraceRace_Btn_kaR1DGV,
+            this.restartRace_Btn_kaR1DGV,
             this.toolStripSeparator41,
             this.Print_Btn_kaR1DGV,
             this.toolStripSeparator58,
@@ -4031,37 +4063,40 @@
             this.toolStripSeparator40.Name = "toolStripSeparator40";
             this.toolStripSeparator40.Size = new System.Drawing.Size(6, 39);
             // 
-            // toolStripButton70
+            // breakRace_Btn_kaR1DGV
             // 
-            this.toolStripButton70.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton70.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton70.Image")));
-            this.toolStripButton70.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton70.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton70.Name = "toolStripButton70";
-            this.toolStripButton70.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton70.Text = "Обнуление заезда";
+            this.breakRace_Btn_kaR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.breakRace_Btn_kaR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("breakRace_Btn_kaR1DGV.Image")));
+            this.breakRace_Btn_kaR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.breakRace_Btn_kaR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.breakRace_Btn_kaR1DGV.Name = "breakRace_Btn_kaR1DGV";
+            this.breakRace_Btn_kaR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.breakRace_Btn_kaR1DGV.Text = "Обнуление заезда";
+            this.breakRace_Btn_kaR1DGV.Click += new System.EventHandler(this.breakRace_Btn_kaR1DGV_Click);
             // 
-            // toolStripButton71
+            // reraceRace_Btn_kaR1DGV
             // 
-            this.toolStripButton71.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton71.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton71.Image")));
-            this.toolStripButton71.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton71.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton71.Name = "toolStripButton71";
-            this.toolStripButton71.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton71.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
-            this.toolStripButton71.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_kaR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.reraceRace_Btn_kaR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("reraceRace_Btn_kaR1DGV.Image")));
+            this.reraceRace_Btn_kaR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.reraceRace_Btn_kaR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.reraceRace_Btn_kaR1DGV.Name = "reraceRace_Btn_kaR1DGV";
+            this.reraceRace_Btn_kaR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.reraceRace_Btn_kaR1DGV.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
+            this.reraceRace_Btn_kaR1DGV.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_kaR1DGV.Click += new System.EventHandler(this.reraceRace_Btn_kaR1DGV_Click);
             // 
-            // toolStripButton17
+            // restartRace_Btn_kaR1DGV
             // 
-            this.toolStripButton17.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton17.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton17.Image")));
-            this.toolStripButton17.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton17.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton17.Name = "toolStripButton17";
-            this.toolStripButton17.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton17.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
-            this.toolStripButton17.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_kaR1DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.restartRace_Btn_kaR1DGV.Image = ((System.Drawing.Image)(resources.GetObject("restartRace_Btn_kaR1DGV.Image")));
+            this.restartRace_Btn_kaR1DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.restartRace_Btn_kaR1DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.restartRace_Btn_kaR1DGV.Name = "restartRace_Btn_kaR1DGV";
+            this.restartRace_Btn_kaR1DGV.Size = new System.Drawing.Size(36, 36);
+            this.restartRace_Btn_kaR1DGV.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_kaR1DGV.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_kaR1DGV.Click += new System.EventHandler(this.restartRace_Btn_kaR1DGV_Click);
             // 
             // toolStripSeparator41
             // 
@@ -4107,7 +4142,7 @@
             // 
             // tabPage21
             // 
-            this.tabPage21.Controls.Add(this.KAR2DGV);
+            this.tabPage21.Controls.Add(this.kaR2DGV);
             this.tabPage21.Controls.Add(this.toolStrip14);
             this.tabPage21.Location = new System.Drawing.Point(4, 23);
             this.tabPage21.Name = "tabPage21";
@@ -4117,52 +4152,52 @@
             this.tabPage21.Text = "2 тур";
             this.tabPage21.UseVisualStyleBackColor = true;
             // 
-            // KAR2DGV
+            // kaR2DGV
             // 
-            this.KAR2DGV.AllowUserToAddRows = false;
-            this.KAR2DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle53.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.Color.White;
-            this.KAR2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle53;
-            this.KAR2DGV.BackgroundColor = System.Drawing.Color.White;
-            this.KAR2DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.KAR2DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.KAR2DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle54.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle54.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle54.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.KAR2DGV.DefaultCellStyle = dataGridViewCellStyle54;
-            this.KAR2DGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.KAR2DGV.GridColor = System.Drawing.Color.Silver;
-            this.KAR2DGV.Location = new System.Drawing.Point(3, 42);
-            this.KAR2DGV.Name = "KAR2DGV";
-            this.KAR2DGV.ReadOnly = true;
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle55.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.KAR2DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle55;
-            this.KAR2DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle56.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle56.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.Color.White;
-            this.KAR2DGV.RowsDefaultCellStyle = dataGridViewCellStyle56;
-            this.KAR2DGV.RowTemplate.ReadOnly = true;
-            this.KAR2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.KAR2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.KAR2DGV.ShowEditingIcon = false;
-            this.KAR2DGV.Size = new System.Drawing.Size(1321, 315);
-            this.KAR2DGV.TabIndex = 6;
-            this.KAR2DGV.DataSourceChanged += new System.EventHandler(this.kaR2DGV_DataSourceChanged);
+            this.kaR2DGV.AllowUserToAddRows = false;
+            this.kaR2DGV.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2133.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2133.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2133.SelectionForeColor = System.Drawing.Color.White;
+            this.kaR2DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2133;
+            this.kaR2DGV.BackgroundColor = System.Drawing.Color.White;
+            this.kaR2DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.kaR2DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.kaR2DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2134.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2134.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2134.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2134.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2134.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2134.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2134.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.kaR2DGV.DefaultCellStyle = dataGridViewCellStyle2134;
+            this.kaR2DGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kaR2DGV.GridColor = System.Drawing.Color.Silver;
+            this.kaR2DGV.Location = new System.Drawing.Point(3, 42);
+            this.kaR2DGV.Name = "kaR2DGV";
+            this.kaR2DGV.ReadOnly = true;
+            dataGridViewCellStyle2135.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2135.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2135.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2135.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2135.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2135.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2135.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.kaR2DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2135;
+            this.kaR2DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle2136.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2136.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2136.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2136.SelectionForeColor = System.Drawing.Color.White;
+            this.kaR2DGV.RowsDefaultCellStyle = dataGridViewCellStyle2136;
+            this.kaR2DGV.RowTemplate.ReadOnly = true;
+            this.kaR2DGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.kaR2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.kaR2DGV.ShowEditingIcon = false;
+            this.kaR2DGV.Size = new System.Drawing.Size(1321, 315);
+            this.kaR2DGV.TabIndex = 6;
+            this.kaR2DGV.DataSourceChanged += new System.EventHandler(this.KAR2DGV_DataSourceChanged);
             // 
             // toolStrip14
             // 
@@ -4174,9 +4209,9 @@
             this.upRacer_Btn_KAR2DGV,
             this.downRacer_Btn_KAR2DGV,
             this.toolStripSeparator43,
-            this.toolStripButton78,
-            this.toolStripButton79,
-            this.toolStripButton18,
+            this.breakRace_Btn_kaR2DGV,
+            this.reraceRace_Btn_kaR2DGV,
+            this.restartRace_Btn_kaR2DGV,
             this.toolStripSeparator44,
             this.Print_Btn_kaR2DGV,
             this.toolStripSeparator59,
@@ -4240,37 +4275,40 @@
             this.toolStripSeparator43.Name = "toolStripSeparator43";
             this.toolStripSeparator43.Size = new System.Drawing.Size(6, 39);
             // 
-            // toolStripButton78
+            // breakRace_Btn_kaR2DGV
             // 
-            this.toolStripButton78.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton78.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton78.Image")));
-            this.toolStripButton78.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton78.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton78.Name = "toolStripButton78";
-            this.toolStripButton78.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton78.Text = "Обнуление заезда";
+            this.breakRace_Btn_kaR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.breakRace_Btn_kaR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("breakRace_Btn_kaR2DGV.Image")));
+            this.breakRace_Btn_kaR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.breakRace_Btn_kaR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.breakRace_Btn_kaR2DGV.Name = "breakRace_Btn_kaR2DGV";
+            this.breakRace_Btn_kaR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.breakRace_Btn_kaR2DGV.Text = "Обнуление заезда";
+            this.breakRace_Btn_kaR2DGV.Click += new System.EventHandler(this.breakRace_Btn_kaR2DGV_Click);
             // 
-            // toolStripButton79
+            // reraceRace_Btn_kaR2DGV
             // 
-            this.toolStripButton79.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton79.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton79.Image")));
-            this.toolStripButton79.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton79.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton79.Name = "toolStripButton79";
-            this.toolStripButton79.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton79.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
-            this.toolStripButton79.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_kaR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.reraceRace_Btn_kaR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("reraceRace_Btn_kaR2DGV.Image")));
+            this.reraceRace_Btn_kaR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.reraceRace_Btn_kaR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.reraceRace_Btn_kaR2DGV.Name = "reraceRace_Btn_kaR2DGV";
+            this.reraceRace_Btn_kaR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.reraceRace_Btn_kaR2DGV.Text = "Перезаезд текущего круга вместе с не закрытым заездом";
+            this.reraceRace_Btn_kaR2DGV.ToolTipText = "Перезаезд текущего круга вместе";
+            this.reraceRace_Btn_kaR2DGV.Click += new System.EventHandler(this.reraceRace_Btn_kaR2DGV_Click);
             // 
-            // toolStripButton18
+            // restartRace_Btn_kaR2DGV
             // 
-            this.toolStripButton18.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton18.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton18.Image")));
-            this.toolStripButton18.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton18.Name = "toolStripButton18";
-            this.toolStripButton18.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton18.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
-            this.toolStripButton18.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_kaR2DGV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.restartRace_Btn_kaR2DGV.Image = ((System.Drawing.Image)(resources.GetObject("restartRace_Btn_kaR2DGV.Image")));
+            this.restartRace_Btn_kaR2DGV.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.restartRace_Btn_kaR2DGV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.restartRace_Btn_kaR2DGV.Name = "restartRace_Btn_kaR2DGV";
+            this.restartRace_Btn_kaR2DGV.Size = new System.Drawing.Size(36, 36);
+            this.restartRace_Btn_kaR2DGV.Text = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_kaR2DGV.ToolTipText = "Перезаезд текущего круга вместе с незакрытым заездом";
+            this.restartRace_Btn_kaR2DGV.Click += new System.EventHandler(this.restartRace_Btn_kaR2DGV_Click);
             // 
             // toolStripSeparator44
             // 
@@ -4422,36 +4460,36 @@
             this.k100RacesTabs.ResumeLayout(false);
             this.tabPage16.ResumeLayout(false);
             this.tabPage16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.K100R1DGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.k100R1DGV)).EndInit();
             this.toolStrip9.ResumeLayout(false);
             this.toolStrip9.PerformLayout();
             this.tabPage17.ResumeLayout(false);
             this.tabPage17.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.K100R2DGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.k100R2DGV)).EndInit();
             this.toolStrip10.ResumeLayout(false);
             this.toolStrip10.PerformLayout();
             this.tabPage14.ResumeLayout(false);
             this.k160RacesTabs.ResumeLayout(false);
             this.tabPage18.ResumeLayout(false);
             this.tabPage18.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.K160R1DGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.k160R1DGV)).EndInit();
             this.toolStrip11.ResumeLayout(false);
             this.toolStrip11.PerformLayout();
             this.tabPage19.ResumeLayout(false);
             this.tabPage19.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.K160R2DGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.k160R2DGV)).EndInit();
             this.toolStrip12.ResumeLayout(false);
             this.toolStrip12.PerformLayout();
             this.tabPage15.ResumeLayout(false);
             this.kaRacesTabs.ResumeLayout(false);
             this.tabPage20.ResumeLayout(false);
             this.tabPage20.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.KAR1DGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kaR1DGV)).EndInit();
             this.toolStrip13.ResumeLayout(false);
             this.toolStrip13.PerformLayout();
             this.tabPage21.ResumeLayout(false);
             this.tabPage21.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.KAR2DGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kaR2DGV)).EndInit();
             this.toolStrip14.ResumeLayout(false);
             this.toolStrip14.PerformLayout();
             this.panel11.ResumeLayout(false);
@@ -4532,8 +4570,8 @@
         private System.Windows.Forms.ToolStripButton upRacer_Btn_rwdR1DGV;
         private System.Windows.Forms.ToolStripButton downRacer_Btn_rwdR1DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripButton toolStripButton43;
-        private System.Windows.Forms.ToolStripButton toolStripButton51;
+        private System.Windows.Forms.ToolStripButton breakRace_Btn_rwdR1DGV;
+        private System.Windows.Forms.ToolStripButton reraceRace_Btn_rwdR1DGV;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton selectRwdCarClass2_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
@@ -4541,8 +4579,8 @@
         private System.Windows.Forms.ToolStripButton upRacer_Btn_rwdR2DGV;
         private System.Windows.Forms.ToolStripButton downRacer_Btn_rwdR2DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripButton toolStripButton44;
-        private System.Windows.Forms.ToolStripButton toolStripButton52;
+        private System.Windows.Forms.ToolStripButton breakRace_Btn_rwdR2DGV;
+        private System.Windows.Forms.ToolStripButton reraceRace_Btn_rwdR2DGV;
         private System.Windows.Forms.ToolStrip toolStrip4;
         private System.Windows.Forms.ToolStripButton selectAwdCarClass1_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
@@ -4550,8 +4588,8 @@
         private System.Windows.Forms.ToolStripButton upRacer_Btn_awdR1DGV;
         private System.Windows.Forms.ToolStripButton downRacer_Btn_awdR1DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
-        private System.Windows.Forms.ToolStripButton toolStripButton45;
-        private System.Windows.Forms.ToolStripButton toolStripButton53;
+        private System.Windows.Forms.ToolStripButton breakRace_Btn_awdR1DGV;
+        private System.Windows.Forms.ToolStripButton reraceRace_Btn_awdR1DGV;
         private System.Windows.Forms.ToolStrip toolStrip5;
         private System.Windows.Forms.ToolStripButton selectAwdCarClass2_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
@@ -4559,8 +4597,8 @@
         private System.Windows.Forms.ToolStripButton upRacer_Btn_awdR2DGV;
         private System.Windows.Forms.ToolStripButton downRacer_Btn_awdR2DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
-        private System.Windows.Forms.ToolStripButton toolStripButton46;
-        private System.Windows.Forms.ToolStripButton toolStripButton54;
+        private System.Windows.Forms.ToolStripButton breakRace_Btn_awdR2DGV;
+        private System.Windows.Forms.ToolStripButton reraceRace_Btn_awdR2DGV;
         private System.Windows.Forms.ToolStrip toolStrip6;
         private System.Windows.Forms.ToolStripButton selectSportCarClass1_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
@@ -4568,8 +4606,8 @@
         private System.Windows.Forms.ToolStripButton upRacer_Btn_sportR1DGV;
         private System.Windows.Forms.ToolStripButton downRacer_Btn_sportR1DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
-        private System.Windows.Forms.ToolStripButton toolStripButton47;
-        private System.Windows.Forms.ToolStripButton toolStripButton55;
+        private System.Windows.Forms.ToolStripButton breakRace_Btn_sportR1DGV;
+        private System.Windows.Forms.ToolStripButton reraceRace_Btn_sportR1DGV;
         private System.Windows.Forms.ToolStrip toolStrip7;
         private System.Windows.Forms.ToolStripButton selectSportCarClass2_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
@@ -4577,7 +4615,7 @@
         private System.Windows.Forms.ToolStripButton upRacer_Btn_sportR2DGV;
         private System.Windows.Forms.ToolStripButton downRacer_Btn_sportR2DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
-        private System.Windows.Forms.ToolStripButton toolStripButton48;
+        private System.Windows.Forms.ToolStripButton breakRace_Btn_sportR2DGV;
         private System.Windows.Forms.ToolStripButton toolStripButton56;
         private System.Windows.Forms.ToolStripMenuItem печатьРезультатовToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem инструментыToolStripMenuItem;
@@ -4621,7 +4659,7 @@
         private System.Windows.Forms.ToolStripButton addRacer_Btn_sportR1DGV;
         private System.Windows.Forms.TabControl k100RacesTabs;
         private System.Windows.Forms.TabPage tabPage16;
-        private System.Windows.Forms.DataGridView K100R1DGV;
+        private System.Windows.Forms.DataGridView k100R1DGV;
         private System.Windows.Forms.ToolStrip toolStrip9;
         private System.Windows.Forms.ToolStripButton selectK100CarClass1_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator27;
@@ -4630,12 +4668,12 @@
         private System.Windows.Forms.ToolStripButton upRacer_Btn_K100R1DGV;
         private System.Windows.Forms.ToolStripButton downRacer_Btn_K100R1DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator28;
-        private System.Windows.Forms.ToolStripButton toolStripButton13;
-        private System.Windows.Forms.ToolStripButton toolStripButton14;
+        private System.Windows.Forms.ToolStripButton breakRace_Btn_k100R1DGV;
+        private System.Windows.Forms.ToolStripButton reraceRace_Btn_k100R1DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator29;
         private System.Windows.Forms.ToolStripButton Print_Btn_k100R1DGV;
         private System.Windows.Forms.TabPage tabPage17;
-        private System.Windows.Forms.DataGridView K100R2DGV;
+        private System.Windows.Forms.DataGridView k100R2DGV;
         private System.Windows.Forms.ToolStrip toolStrip10;
         private System.Windows.Forms.ToolStripButton selectK100CarClass2_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator30;
@@ -4643,13 +4681,13 @@
         private System.Windows.Forms.ToolStripButton upRacer_Btn_K100R2DGV;
         private System.Windows.Forms.ToolStripButton downRacer_Btn_K100R2DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator31;
-        private System.Windows.Forms.ToolStripButton toolStripButton30;
-        private System.Windows.Forms.ToolStripButton toolStripButton31;
+        private System.Windows.Forms.ToolStripButton breakRace_Btn_k100R2DGV;
+        private System.Windows.Forms.ToolStripButton reraceRace_Btn_k100R2DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator32;
         private System.Windows.Forms.ToolStripButton Print_Btn_k100R2DGV;
         private System.Windows.Forms.TabControl k160RacesTabs;
         private System.Windows.Forms.TabPage tabPage18;
-        private System.Windows.Forms.DataGridView K160R1DGV;
+        private System.Windows.Forms.DataGridView k160R1DGV;
         private System.Windows.Forms.ToolStrip toolStrip11;
         private System.Windows.Forms.ToolStripButton selectK160CarClass1_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator33;
@@ -4658,12 +4696,12 @@
         private System.Windows.Forms.ToolStripButton upRacer_Btn_K160R1DGV;
         private System.Windows.Forms.ToolStripButton downRacer_Btn_K160R1DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator34;
-        private System.Windows.Forms.ToolStripButton toolStripButton39;
-        private System.Windows.Forms.ToolStripButton toolStripButton40;
+        private System.Windows.Forms.ToolStripButton breakRace_Btn_k160R1DGV;
+        private System.Windows.Forms.ToolStripButton reraceRace_Btn_k160R1DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator35;
         private System.Windows.Forms.ToolStripButton Print_Btn_k160R1DGV;
         private System.Windows.Forms.TabPage tabPage19;
-        private System.Windows.Forms.DataGridView K160R2DGV;
+        private System.Windows.Forms.DataGridView k160R2DGV;
         private System.Windows.Forms.ToolStrip toolStrip12;
         private System.Windows.Forms.ToolStripButton selectK160CarClass2_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator36;
@@ -4671,13 +4709,13 @@
         private System.Windows.Forms.ToolStripButton upRacer_Btn_K160R2DGV;
         private System.Windows.Forms.ToolStripButton downRacer_Btn_K160R2DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator37;
-        private System.Windows.Forms.ToolStripButton toolStripButton62;
-        private System.Windows.Forms.ToolStripButton toolStripButton63;
+        private System.Windows.Forms.ToolStripButton breakRace_Btn_k160R2DGV;
+        private System.Windows.Forms.ToolStripButton reraceRace_Btn_k160R2DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator38;
         private System.Windows.Forms.ToolStripButton Print_Btn_k160R2DGV;
         private System.Windows.Forms.TabControl kaRacesTabs;
         private System.Windows.Forms.TabPage tabPage20;
-        private System.Windows.Forms.DataGridView KAR1DGV;
+        private System.Windows.Forms.DataGridView kaR1DGV;
         private System.Windows.Forms.ToolStrip toolStrip13;
         private System.Windows.Forms.ToolStripButton selectKACarClass1_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator39;
@@ -4686,20 +4724,20 @@
         private System.Windows.Forms.ToolStripButton upRacer_Btn_KAR1DGV;
         private System.Windows.Forms.ToolStripButton downRacer_Btn_KAR1DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator40;
-        private System.Windows.Forms.ToolStripButton toolStripButton70;
-        private System.Windows.Forms.ToolStripButton toolStripButton71;
+        private System.Windows.Forms.ToolStripButton breakRace_Btn_kaR1DGV;
+        private System.Windows.Forms.ToolStripButton reraceRace_Btn_kaR1DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator41;
         private System.Windows.Forms.ToolStripButton Print_Btn_kaR1DGV;
         private System.Windows.Forms.TabPage tabPage21;
-        private System.Windows.Forms.DataGridView KAR2DGV;
+        private System.Windows.Forms.DataGridView kaR2DGV;
         private System.Windows.Forms.ToolStrip toolStrip14;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator42;
         private System.Windows.Forms.ToolStripButton OnOffEditTable_Btn_kaR2DGV;
         private System.Windows.Forms.ToolStripButton upRacer_Btn_KAR2DGV;
         private System.Windows.Forms.ToolStripButton downRacer_Btn_KAR2DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator43;
-        private System.Windows.Forms.ToolStripButton toolStripButton78;
-        private System.Windows.Forms.ToolStripButton toolStripButton79;
+        private System.Windows.Forms.ToolStripButton breakRace_Btn_kaR2DGV;
+        private System.Windows.Forms.ToolStripButton reraceRace_Btn_kaR2DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator44;
         private System.Windows.Forms.ToolStripMenuItem удалитьРезервныеКопииToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator45;
@@ -4725,8 +4763,8 @@
         private System.Windows.Forms.ToolStripButton upRacer_Btn_fwdR2DGV;
         private System.Windows.Forms.ToolStripButton downRacer_Btn_fwdR2DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
-        private System.Windows.Forms.ToolStripButton toolStripButton42;
-        private System.Windows.Forms.ToolStripButton toolStripButton50;
+        private System.Windows.Forms.ToolStripButton breakRace_Btn_fwdR2DGV;
+        private System.Windows.Forms.ToolStripButton reraceRace_Btn_fwdR2DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator20;
         private System.Windows.Forms.ToolStripButton Print_Btn_fwdR2DGV;
         private System.Windows.Forms.ToolStripButton addRacer_Btn_rwdR1DGV;
@@ -4736,18 +4774,18 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.ToolStripButton restartRace_Btn_fwdR1DGV;
         private System.Windows.Forms.ToolStripButton restartRace_Btn_fwdR2DGV;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
-        private System.Windows.Forms.ToolStripButton toolStripButton8;
-        private System.Windows.Forms.ToolStripButton toolStripButton9;
-        private System.Windows.Forms.ToolStripButton toolStripButton10;
-        private System.Windows.Forms.ToolStripButton toolStripButton11;
-        private System.Windows.Forms.ToolStripButton toolStripButton12;
-        private System.Windows.Forms.ToolStripButton toolStripButton16;
-        private System.Windows.Forms.ToolStripButton toolStripButton17;
-        private System.Windows.Forms.ToolStripButton toolStripButton18;
+        private System.Windows.Forms.ToolStripButton restartRace_Btn_rwdR1DGV;
+        private System.Windows.Forms.ToolStripButton restartRace_Btn_rwdR2DGV;
+        private System.Windows.Forms.ToolStripButton restartRace_Btn_awdR1DGV;
+        private System.Windows.Forms.ToolStripButton restartRace_Btn_awdR2DGV;
+        private System.Windows.Forms.ToolStripButton restartRace_Btn_sportR1DGV;
+        private System.Windows.Forms.ToolStripButton restartRace_Btn_sportR2DGV;
+        private System.Windows.Forms.ToolStripButton restartRace_Btn_k100R1DGV;
+        private System.Windows.Forms.ToolStripButton restartRace_Btn_k100R2DGV;
+        private System.Windows.Forms.ToolStripButton restartRace_Btn_k160R1DGV;
+        private System.Windows.Forms.ToolStripButton restartRace_Btn_k160R2DGV;
+        private System.Windows.Forms.ToolStripButton restartRace_Btn_kaR1DGV;
+        private System.Windows.Forms.ToolStripButton restartRace_Btn_kaR2DGV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator19;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator46;

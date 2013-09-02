@@ -30,6 +30,7 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.StopPanel = new System.Windows.Forms.Panel();
             this.StartPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,9 +56,9 @@
             this.R2_3_L = new System.Windows.Forms.Label();
             this.R2_2_L = new System.Windows.Forms.Label();
             this.R2_1_L = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -68,7 +69,6 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -98,6 +98,16 @@
             this.panel1.Size = new System.Drawing.Size(1146, 92);
             this.panel1.TabIndex = 0;
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.StopPanel);
+            this.panel8.Controls.Add(this.StartPanel);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel8.Location = new System.Drawing.Point(984, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(162, 92);
+            this.panel8.TabIndex = 5;
+            // 
             // StopPanel
             // 
             this.StopPanel.BackColor = System.Drawing.Color.Red;
@@ -105,7 +115,7 @@
             this.StopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StopPanel.Location = new System.Drawing.Point(0, 0);
             this.StopPanel.Name = "StopPanel";
-            this.StopPanel.Size = new System.Drawing.Size(103, 92);
+            this.StopPanel.Size = new System.Drawing.Size(162, 92);
             this.StopPanel.TabIndex = 3;
             // 
             // StartPanel
@@ -115,7 +125,7 @@
             this.StartPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StartPanel.Location = new System.Drawing.Point(0, 0);
             this.StartPanel.Name = "StartPanel";
-            this.StartPanel.Size = new System.Drawing.Size(103, 92);
+            this.StartPanel.Size = new System.Drawing.Size(162, 92);
             this.StartPanel.TabIndex = 4;
             // 
             // label1
@@ -400,16 +410,6 @@
             this.R2_1_L.Text = "-";
             this.R2_1_L.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.StopPanel);
-            this.panel8.Controls.Add(this.StartPanel);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(1043, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(103, 92);
-            this.panel8.TabIndex = 5;
-            // 
             // SecondMonitorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,6 +423,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -433,7 +434,6 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -161,7 +161,7 @@
     <Compile Include="Exceptions\SprintExcelException.cs" />
     <Compile Include="Exceptions\SprintException.cs" />
     <Compile Include="Exceptions\SprintSystemException.cs" />
-    <Compile Include="Extensions\IEnumerableExtesions.cs" />
+    <Compile Include="Extensions\EnumerableExtesions.cs" />
     <Compile Include="Interfaces\IAddedRacersProcess.cs" />
     <Compile Include="Interfaces\IEditRacer.cs" />
     <Compile Include="Interfaces\IExportProcess.cs" />

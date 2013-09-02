@@ -29,7 +29,15 @@ namespace Sprint.Views
         public DataTable FwdFirstRace
         {
             get { return (DataTable)fwdR1DGV.DataSource; }
-            set { fwdR1DGV.DataSource = value; }
+            set
+            {
+                fwdR1DGV.DataSource = value;
+
+                if (fwdR1DGV.DataSource.Equals(value))
+                {
+                    fwdR1DGV_DataSourceChanged(this, EventArgs.Empty);
+                }
+            }
         }
 
         /// <summary>
@@ -38,7 +46,15 @@ namespace Sprint.Views
         public DataTable FwdSecondRace
         {
             get { return (DataTable)fwdR2DGV.DataSource; }
-            set { fwdR2DGV.DataSource = value; }
+            set
+            {
+                fwdR2DGV.DataSource = value;
+
+                if (fwdR2DGV.DataSource.Equals(value))
+                {
+                    fwdR2DGV_DataSourceChanged(this, EventArgs.Empty);
+                }
+            }
         }
 
         /// <summary>
@@ -47,7 +63,15 @@ namespace Sprint.Views
         public DataTable RwdFirstRace
         {
             get { return (DataTable)rwdR1DGV.DataSource; }
-            set { rwdR1DGV.DataSource = value; }
+            set
+            {
+                rwdR1DGV.DataSource = value;
+
+                if (rwdR1DGV.DataSource.Equals(value))
+                {
+                    rwdR1DGV_DataSourceChanged(this, EventArgs.Empty);
+                }
+            }
         }
 
         /// <summary>
@@ -56,7 +80,15 @@ namespace Sprint.Views
         public DataTable RwdSecondRace
         {
             get { return (DataTable)rwdR2DGV.DataSource; }
-            set { rwdR2DGV.DataSource = value; }
+            set
+            {
+                rwdR2DGV.DataSource = value;
+
+                if (rwdR2DGV.DataSource.Equals(value))
+                {
+                    rwdR2DGV_DataSourceChanged(this, EventArgs.Empty);
+                }
+            }
         }
 
         /// <summary>
@@ -65,7 +97,15 @@ namespace Sprint.Views
         public DataTable AwdFirstRace
         {
             get { return (DataTable)awdR1DGV.DataSource; }
-            set { awdR1DGV.DataSource = value; }
+            set
+            {
+                awdR1DGV.DataSource = value;
+
+                if (awdR1DGV.DataSource.Equals(value))
+                {
+                    awdR1DGV_DataSourceChanged(this, EventArgs.Empty);
+                }
+            }
         }
 
         /// <summary>
@@ -74,7 +114,15 @@ namespace Sprint.Views
         public DataTable AwdSecondRace
         {
             get { return (DataTable)awdR2DGV.DataSource; }
-            set { awdR2DGV.DataSource = value; }
+            set
+            {
+                awdR2DGV.DataSource = value;
+
+                if (awdR2DGV.DataSource.Equals(value))
+                {
+                    awdR2DGV_DataSourceChanged(this, EventArgs.Empty);
+                }
+            }
         }
 
         /// <summary>
@@ -83,7 +131,15 @@ namespace Sprint.Views
         public DataTable SportFirstRace
         {
             get { return (DataTable)sportR1DGV.DataSource; }
-            set { sportR1DGV.DataSource = value; }
+            set
+            {
+                sportR1DGV.DataSource = value;
+
+                if (sportR1DGV.DataSource.Equals(value))
+                {
+                    sportR1DGV_DataSourceChanged(this, EventArgs.Empty);
+                }
+            }
         }
 
         /// <summary>
@@ -92,7 +148,15 @@ namespace Sprint.Views
         public DataTable SportSecondRace
         {
             get { return (DataTable)sportR2DGV.DataSource; }
-            set { sportR2DGV.DataSource = value; }
+            set
+            {
+                sportR2DGV.DataSource = value;
+
+                if (sportR2DGV.DataSource.Equals(value))
+                {
+                    sportR2DGV_DataSourceChanged(this, EventArgs.Empty);
+                }
+            }
         }
 
         /// <summary>
@@ -100,8 +164,16 @@ namespace Sprint.Views
         /// </summary>
         public DataTable K100FirstRace
         {
-            get { return (DataTable)K100R1DGV.DataSource; }
-            set { K100R1DGV.DataSource = value; }
+            get { return (DataTable)k100R1DGV.DataSource; }
+            set
+            {
+                k100R1DGV.DataSource = value;
+
+                if (k100R1DGV.DataSource.Equals(value))
+                {
+                    K100R1DGV_DataSourceChanged(this, EventArgs.Empty);
+                }
+            }
         }
 
         /// <summary>
@@ -109,8 +181,16 @@ namespace Sprint.Views
         /// </summary>
         public DataTable K100SecondRace
         {
-            get { return (DataTable)K100R2DGV.DataSource; }
-            set { K100R2DGV.DataSource = value; }
+            get { return (DataTable)k100R2DGV.DataSource; }
+            set
+            {
+                k100R2DGV.DataSource = value;
+
+                if (k100R2DGV.DataSource.Equals(value))
+                {
+                    K100R2DGV_DataSourceChanged(this, EventArgs.Empty);
+                }
+            }
         }
 
         /// <summary>
@@ -118,8 +198,16 @@ namespace Sprint.Views
         /// </summary>
         public DataTable K160FirstRace
         {
-            get { return (DataTable)K160R1DGV.DataSource; }
-            set { K160R1DGV.DataSource = value; }
+            get { return (DataTable)k160R1DGV.DataSource; }
+            set
+            {
+                k160R1DGV.DataSource = value;
+
+                if (k160R1DGV.DataSource.Equals(value))
+                {
+                    K160R1DGV_DataSourceChanged(this, EventArgs.Empty);
+                }
+            }
         }
 
         /// <summary>
@@ -127,8 +215,16 @@ namespace Sprint.Views
         /// </summary>
         public DataTable K160SecondRace
         {
-            get { return (DataTable)K160R2DGV.DataSource; }
-            set { K160R2DGV.DataSource = value; }
+            get { return (DataTable)k160R2DGV.DataSource; }
+            set
+            {
+                k160R2DGV.DataSource = value;
+
+                if (k160R2DGV.DataSource.Equals(value))
+                {
+                    K160R2DGV_DataSourceChanged(this, EventArgs.Empty);
+                }
+            }
         }
 
         /// <summary>
@@ -136,8 +232,16 @@ namespace Sprint.Views
         /// </summary>
         public DataTable KAFirstRace
         {
-            get { return (DataTable)KAR1DGV.DataSource; }
-            set { KAR1DGV.DataSource = value; }
+            get { return (DataTable)kaR1DGV.DataSource; }
+            set
+            {
+                kaR1DGV.DataSource = value;
+
+                if (kaR1DGV.DataSource.Equals(value))
+                {
+                    KAR1DGV_DataSourceChanged(this, EventArgs.Empty);
+                }
+            }
         }
 
         /// <summary>
@@ -145,8 +249,16 @@ namespace Sprint.Views
         /// </summary>
         public DataTable KASecondRace
         {
-            get { return (DataTable)KAR2DGV.DataSource; }
-            set { KAR2DGV.DataSource = value; }
+            get { return (DataTable)kaR2DGV.DataSource; }
+            set
+            {
+                kaR2DGV.DataSource = value;
+
+                if (kaR2DGV.DataSource.Equals(value))
+                {
+                    KAR2DGV_DataSourceChanged(this, EventArgs.Empty);
+                }
+            }
         }
 
         /// <summary>
@@ -429,14 +541,14 @@ namespace Sprint.Views
                         {
                             case 0:
                                 {
-                                    foreach (DataGridViewCell cell in K100R1DGV.Rows[row_number].Cells)
+                                    foreach (DataGridViewCell cell in k100R1DGV.Rows[row_number].Cells)
                                     {
                                         cell.Style.BackColor = row_color;
                                     }
                                 } break;
                             case 1:
                                 {
-                                    foreach (DataGridViewCell cell in K100R2DGV.Rows[row_number].Cells)
+                                    foreach (DataGridViewCell cell in k100R2DGV.Rows[row_number].Cells)
                                     {
                                         cell.Style.BackColor = row_color;
                                     }
@@ -449,14 +561,14 @@ namespace Sprint.Views
                         {
                             case 0:
                                 {
-                                    foreach (DataGridViewCell cell in K160R1DGV.Rows[row_number].Cells)
+                                    foreach (DataGridViewCell cell in k160R1DGV.Rows[row_number].Cells)
                                     {
                                         cell.Style.BackColor = row_color;
                                     }
                                 } break;
                             case 1:
                                 {
-                                    foreach (DataGridViewCell cell in K160R2DGV.Rows[row_number].Cells)
+                                    foreach (DataGridViewCell cell in k160R2DGV.Rows[row_number].Cells)
                                     {
                                         cell.Style.BackColor = row_color;
                                     }
@@ -469,14 +581,14 @@ namespace Sprint.Views
                         {
                             case 0:
                                 {
-                                    foreach (DataGridViewCell cell in KAR1DGV.Rows[row_number].Cells)
+                                    foreach (DataGridViewCell cell in kaR1DGV.Rows[row_number].Cells)
                                     {
                                         cell.Style.BackColor = row_color;
                                     }
                                 } break;
                             case 1:
                                 {
-                                    foreach (DataGridViewCell cell in KAR2DGV.Rows[row_number].Cells)
+                                    foreach (DataGridViewCell cell in kaR2DGV.Rows[row_number].Cells)
                                     {
                                         cell.Style.BackColor = row_color;
                                     }
@@ -527,6 +639,8 @@ namespace Sprint.Views
         public MainView()
         {
             InitMainWindow();
+
+            fwdR1DGV_DataSourceChanged(this, EventArgs.Empty);
         }
 
         /// <summary>
@@ -538,6 +652,8 @@ namespace Sprint.Views
             SecondMonitor = secondMonitor;
 
             InitMainWindow();
+
+            fwdR1DGV_DataSourceChanged(this, EventArgs.Empty);
         }
 
         /// <summary>
@@ -552,6 +668,58 @@ namespace Sprint.Views
             // Включаем на всех таблицах двойную буфферизацию через рефлексию
             Type dgvType = fwdR1DGV.GetType();
             PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(fwdR1DGV, true, null);
+
+            dgvType = fwdR2DGV.GetType();
+            pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(fwdR1DGV, true, null);
+
+            dgvType = rwdR1DGV.GetType();
+            pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(fwdR1DGV, true, null);
+
+            dgvType = rwdR2DGV.GetType();
+            pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(fwdR1DGV, true, null);
+
+            dgvType = awdR1DGV.GetType();
+            pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(fwdR1DGV, true, null);
+
+            dgvType = awdR2DGV.GetType();
+            pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(fwdR1DGV, true, null);
+
+            dgvType = sportR1DGV.GetType();
+            pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(fwdR1DGV, true, null);
+
+            dgvType = sportR2DGV.GetType();
+            pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(fwdR1DGV, true, null);
+
+            dgvType = k100R1DGV.GetType();
+            pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(fwdR1DGV, true, null);
+
+            dgvType = k100R2DGV.GetType();
+            pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(fwdR1DGV, true, null);
+
+            dgvType = k160R1DGV.GetType();
+            pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(fwdR1DGV, true, null);
+
+            dgvType = k160R2DGV.GetType();
+            pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(fwdR1DGV, true, null);
+
+            dgvType = kaR1DGV.GetType();
+            pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(fwdR1DGV, true, null);
+
+            dgvType = kaR2DGV.GetType();
+            pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
             pi.SetValue(fwdR1DGV, true, null);
 
             KeyPreview = true; // Изменено, чтобы заработали горячие клавиши
@@ -605,12 +773,12 @@ namespace Sprint.Views
             awdR2DGV_DataSourceChanged(this, EventArgs.Empty);
             sportR1DGV_DataSourceChanged(this, EventArgs.Empty);
             sportR2DGV_DataSourceChanged(this, EventArgs.Empty);
-            k100R1DGV_DataSourceChanged(this, EventArgs.Empty);
-            k100R2DGV_DataSourceChanged(this, EventArgs.Empty);
-            k160R1DGV_DataSourceChanged(this, EventArgs.Empty);
-            k160R2DGV_DataSourceChanged(this, EventArgs.Empty);
-            kaR1DGV_DataSourceChanged(this, EventArgs.Empty);
-            kaR2DGV_DataSourceChanged(this, EventArgs.Empty);
+            K100R1DGV_DataSourceChanged(this, EventArgs.Empty);
+            K100R2DGV_DataSourceChanged(this, EventArgs.Empty);
+            K160R1DGV_DataSourceChanged(this, EventArgs.Empty);
+            K160R2DGV_DataSourceChanged(this, EventArgs.Empty);
+            KAR1DGV_DataSourceChanged(this, EventArgs.Empty);
+            KAR2DGV_DataSourceChanged(this, EventArgs.Empty);
         }
 
         /// <summary>

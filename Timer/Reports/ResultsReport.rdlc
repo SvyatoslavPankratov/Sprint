@@ -56,7 +56,7 @@
                           <Color>DimGray</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#494949</BackgroundColor>
+                        <BackgroundColor>Gray</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -97,7 +97,7 @@
                         <BottomBorder>
                           <Style>Solid</Style>
                         </BottomBorder>
-                        <BackgroundColor>#494949</BackgroundColor>
+                        <BackgroundColor>Gray</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -135,7 +135,7 @@
                           <Color>DimGray</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#494949</BackgroundColor>
+                        <BackgroundColor>Gray</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -173,7 +173,7 @@
                           <Color>DimGray</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#494949</BackgroundColor>
+                        <BackgroundColor>Gray</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -211,7 +211,7 @@
                           <Color>DimGray</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#494949</BackgroundColor>
+                        <BackgroundColor>Gray</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -249,7 +249,7 @@
                           <Color>DimGray</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#494949</BackgroundColor>
+                        <BackgroundColor>Gray</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -554,7 +554,7 @@
                         <RightBorder>
                           <Style>Solid</Style>
                         </RightBorder>
-                        <BackgroundColor>#494949</BackgroundColor>
+                        <BackgroundColor>Gray</BackgroundColor>
                         <VerticalAlign>Bottom</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -648,7 +648,7 @@
                         <RightBorder>
                           <Style>Solid</Style>
                         </RightBorder>
-                        <BackgroundColor>#9aff9a</BackgroundColor>
+                        <BackgroundColor>LightGreen</BackgroundColor>
                         <VerticalAlign>Bottom</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -835,7 +835,7 @@
                         <LeftBorder>
                           <Style>Solid</Style>
                         </LeftBorder>
-                        <BackgroundColor>#494949</BackgroundColor>
+                        <BackgroundColor>Gray</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -881,7 +881,7 @@
                         <RightBorder>
                           <Style>Solid</Style>
                         </RightBorder>
-                        <BackgroundColor>#494949</BackgroundColor>
+                        <BackgroundColor>Gray</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -926,7 +926,7 @@
                         <RightBorder>
                           <Style>Solid</Style>
                         </RightBorder>
-                        <BackgroundColor>#9aff9a</BackgroundColor>
+                        <BackgroundColor>LightGreen</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1156,7 +1156,7 @@
               <Color>DimGray</Color>
               <Style>Solid</Style>
             </Border>
-            <BackgroundColor>#494949</BackgroundColor>
+            <BackgroundColor>Gray</BackgroundColor>
             <VerticalAlign>Middle</VerticalAlign>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
@@ -1235,7 +1235,7 @@
               <Color>DimGray</Color>
               <Style>Solid</Style>
             </Border>
-            <BackgroundColor>#494949</BackgroundColor>
+            <BackgroundColor>Gray</BackgroundColor>
             <VerticalAlign>Middle</VerticalAlign>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>

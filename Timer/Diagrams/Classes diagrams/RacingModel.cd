@@ -82,7 +82,7 @@
         <Point X="18.375" Y="10.258" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="3.587" Y="2.039" />
+        <Position X="3.587" Y="2.182" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="CurrentEditCarClass" Type="Sprint.Models.CarClassesEnum" FixedFromPoint="true" FixedToPoint="true">
@@ -92,7 +92,7 @@
         <Point X="18.625" Y="10.258" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="3.654" Y="2.57" />
+        <Position X="3.654" Y="2.76" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="Track" Type="Sprint.Models.TrackModel" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
@@ -218,10 +218,10 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Sprint.Models.RaceOptionsModel">
-    <Position X="18" Y="13" Width="1.75" />
+    <Position X="18" Y="13.5" Width="1.75" />
     <AssociationLine Name="CarClass" Type="Sprint.Models.CarClassesEnum" FixedFromPoint="true">
       <Path>
-        <Point X="19.625" Y="13" />
+        <Point X="19.625" Y="13.5" />
         <Point X="19.625" Y="10.258" />
       </Path>
     </AssociationLine>
@@ -409,8 +409,8 @@
       <FileName>Interfaces\IMain.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="NextRacerState" />
       <Property Name="TablePainted" />
+      <Property Name="NextRacerState" />
     </ShowAsAssociation>
   </Interface>
   <Interface Name="Sprint.Interfaces.IOptions">

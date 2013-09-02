@@ -728,7 +728,7 @@ namespace Sprint.Views
             if (MessageBox.Show("Вы уверены, что хотите убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезда?",
                                 "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (!MainPresenter.BreakCurrenrRacer(racer))
+                if (!MainPresenter.BreakSelectedRacer(racer))
                 {
                     MessageBox.Show("Не удалось убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезд.",
                                     "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -900,6 +900,90 @@ namespace Sprint.Views
             fwdR2DGV.Rows[index].Selected = true;
         }
 
+        /// <summary>
+        /// Действия при нажатии на кнопку, чтобы убрать заданного участника с трека (или не допустить его выход на трек, 
+        /// если он на нем еще не был) с закрытием текущего заезда.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void breakRace_Btn_fwdR2DGV_Click(object sender, EventArgs e)
+        {
+            if (fwdR2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = fwdR2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.BreakSelectedRacer(racer))
+                {
+                    MessageBox.Show("Не удалось убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезд.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку перезаезда текущего круга вместе с незакрытым заездом.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void reraceRace_Btn_fwdR2DGV_Click(object sender, EventArgs e)
+        {
+            if (fwdR2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = fwdR2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (!MainPresenter.CheckRacerForSetRerunStatus(racer))
+            {
+                MessageBox.Show("Нельзя задать перезаезд текущего круга вместе с незакрытым заездом для участника, который не находится в текущий момент на треке.",
+                                "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RerunCurrenrRacer(racer))
+                {
+                    MessageBox.Show("Не удалось для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку для полного перезаеда текущего заезда для выделенного участника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void restartRace_Btn_fwdR2DGV_Click(object sender, EventArgs e)
+        {
+            if (fwdR2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = fwdR2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите задать выбранному участнику полный перезаезд теущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RestartCurrentRacer(racer))
+                {
+                    MessageBox.Show("Не удалось задать полный перезаезд текущего заезда выбранному участнику.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
         #endregion
 
         #region Таблица первого заезда заднеприводных автомобилей
@@ -1050,6 +1134,90 @@ namespace Sprint.Views
             }
         }
 
+        /// <summary>
+        /// Действия при нажатии на кнопку, чтобы убрать заданного участника с трека (или не допустить его выход на трек, 
+        /// если он на нем еще не был) с закрытием текущего заезда.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void breakRace_Btn_rwdR1DGV_Click(object sender, EventArgs e)
+        {
+            if (rwdR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = rwdR1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.BreakSelectedRacer(racer))
+                {
+                    MessageBox.Show("Не удалось убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезд.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку перезаезда текущего круга вместе с незакрытым заездом.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void reraceRace_Btn_rwdR1DGV_Click(object sender, EventArgs e)
+        {
+            if (rwdR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = rwdR1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (!MainPresenter.CheckRacerForSetRerunStatus(racer))
+            {
+                MessageBox.Show("Нельзя задать перезаезд текущего круга вместе с незакрытым заездом для участника, который не находится в текущий момент на треке.",
+                                "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RerunCurrenrRacer(racer))
+                {
+                    MessageBox.Show("Не удалось для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку для полного перезаеда текущего заезда для выделенного участника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void restartRace_Btn_rwdR1DGV_Click(object sender, EventArgs e)
+        {
+            if (rwdR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = rwdR1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите задать выбранному участнику полный перезаезд теущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RestartCurrentRacer(racer))
+                {
+                    MessageBox.Show("Не удалось задать полный перезаезд текущего заезда выбранному участнику.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
         #endregion
 
         #region Таблица второго заезда заднеприводных автомобилей
@@ -1188,7 +1356,91 @@ namespace Sprint.Views
                 }
             }
         }
-        
+
+        /// <summary>
+        /// Действия при нажатии на кнопку, чтобы убрать заданного участника с трека (или не допустить его выход на трек, 
+        /// если он на нем еще не был) с закрытием текущего заезда.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void breakRace_Btn_rwdR2DGV_Click(object sender, EventArgs e)
+        {
+            if (rwdR2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = rwdR2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.BreakSelectedRacer(racer))
+                {
+                    MessageBox.Show("Не удалось убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезд.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку перезаезда текущего круга вместе с незакрытым заездом.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void reraceRace_Btn_rwdR2DGV_Click(object sender, EventArgs e)
+        {
+            if (rwdR2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = rwdR2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (!MainPresenter.CheckRacerForSetRerunStatus(racer))
+            {
+                MessageBox.Show("Нельзя задать перезаезд текущего круга вместе с незакрытым заездом для участника, который не находится в текущий момент на треке.",
+                                "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RerunCurrenrRacer(racer))
+                {
+                    MessageBox.Show("Не удалось для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку для полного перезаеда текущего заезда для выделенного участника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void restartRace_Btn_rwdR2DGV_Click(object sender, EventArgs e)
+        {
+            if (rwdR2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = rwdR2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите задать выбранному участнику полный перезаезд теущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RestartCurrentRacer(racer))
+                {
+                    MessageBox.Show("Не удалось задать полный перезаезд текущего заезда выбранному участнику.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
         #endregion
 
         #region Таблица первого заезда полноприводных автомобилей
@@ -1339,6 +1591,90 @@ namespace Sprint.Views
             }
         }
 
+        /// <summary>
+        /// Действия при нажатии на кнопку, чтобы убрать заданного участника с трека (или не допустить его выход на трек, 
+        /// если он на нем еще не был) с закрытием текущего заезда.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void breakRace_Btn_awdR1DGV_Click(object sender, EventArgs e)
+        {
+            if (awdR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = awdR1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.BreakSelectedRacer(racer))
+                {
+                    MessageBox.Show("Не удалось убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезд.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку перезаезда текущего круга вместе с незакрытым заездом.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void reraceRace_Btn_awdR1DGV_Click(object sender, EventArgs e)
+        {
+            if (awdR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = awdR1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (!MainPresenter.CheckRacerForSetRerunStatus(racer))
+            {
+                MessageBox.Show("Нельзя задать перезаезд текущего круга вместе с незакрытым заездом для участника, который не находится в текущий момент на треке.",
+                                "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RerunCurrenrRacer(racer))
+                {
+                    MessageBox.Show("Не удалось для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку для полного перезаеда текущего заезда для выделенного участника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void restartRace_Btn_awdR1DGV_Click(object sender, EventArgs e)
+        {
+            if (awdR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = awdR1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите задать выбранному участнику полный перезаезд теущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RestartCurrentRacer(racer))
+                {
+                    MessageBox.Show("Не удалось задать полный перезаезд текущего заезда выбранному участнику.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
         #endregion
 
         #region Таблица второго заезда полноприводных автомобилей
@@ -1471,6 +1807,90 @@ namespace Sprint.Views
                 else
                 {
                     awdR2DGV.Rows[index].Selected = true;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку, чтобы убрать заданного участника с трека (или не допустить его выход на трек, 
+        /// если он на нем еще не был) с закрытием текущего заезда.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void breakRace_Btn_awdR2DGV_Click(object sender, EventArgs e)
+        {
+            if (awdR2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = awdR2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.BreakSelectedRacer(racer))
+                {
+                    MessageBox.Show("Не удалось убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезд.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку перезаезда текущего круга вместе с незакрытым заездом.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void reraceRace_Btn_awdR2DGV_Click(object sender, EventArgs e)
+        {
+            if (awdR2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = awdR2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (!MainPresenter.CheckRacerForSetRerunStatus(racer))
+            {
+                MessageBox.Show("Нельзя задать перезаезд текущего круга вместе с незакрытым заездом для участника, который не находится в текущий момент на треке.",
+                                "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RerunCurrenrRacer(racer))
+                {
+                    MessageBox.Show("Не удалось для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку для полного перезаеда текущего заезда для выделенного участника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void restartRace_Btn_awdR2DGV_Click(object sender, EventArgs e)
+        {
+            if (awdR2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = awdR2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите задать выбранному участнику полный перезаезд теущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RestartCurrentRacer(racer))
+                {
+                    MessageBox.Show("Не удалось задать полный перезаезд текущего заезда выбранному участнику.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -1624,7 +2044,91 @@ namespace Sprint.Views
                 }
             }
         }
-        
+
+        /// <summary>
+        /// Действия при нажатии на кнопку, чтобы убрать заданного участника с трека (или не допустить его выход на трек, 
+        /// если он на нем еще не был) с закрытием текущего заезда.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void breakRace_Btn_sportR1DGV_Click(object sender, EventArgs e)
+        {
+            if (sportR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = sportR1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.BreakSelectedRacer(racer))
+                {
+                    MessageBox.Show("Не удалось убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезд.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку перезаезда текущего круга вместе с незакрытым заездом.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void reraceRace_Btn_sportR1DGV_Click(object sender, EventArgs e)
+        {
+            if (sportR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = sportR1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (!MainPresenter.CheckRacerForSetRerunStatus(racer))
+            {
+                MessageBox.Show("Нельзя задать перезаезд текущего круга вместе с незакрытым заездом для участника, который не находится в текущий момент на треке.",
+                                "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RerunCurrenrRacer(racer))
+                {
+                    MessageBox.Show("Не удалось для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку для полного перезаеда текущего заезда для выделенного участника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void restartRace_Btn_sportR1DGV_Click(object sender, EventArgs e)
+        {
+            if (sportR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = sportR1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите задать выбранному участнику полный перезаезд теущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RestartCurrentRacer(racer))
+                {
+                    MessageBox.Show("Не удалось задать полный перезаезд текущего заезда выбранному участнику.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
         #endregion
 
         #region Таблица второго заезда спортивных автомобилей
@@ -1764,6 +2268,90 @@ namespace Sprint.Views
             }
         }
 
+        /// <summary>
+        /// Действия при нажатии на кнопку, чтобы убрать заданного участника с трека (или не допустить его выход на трек, 
+        /// если он на нем еще не был) с закрытием текущего заезда.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void breakRace_Btn_sportR2DGV_Click(object sender, EventArgs e)
+        {
+            if (sportR2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = sportR2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.BreakSelectedRacer(racer))
+                {
+                    MessageBox.Show("Не удалось убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезд.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку перезаезда текущего круга вместе с незакрытым заездом.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButton56_Click(object sender, EventArgs e)
+        {
+            if (sportR2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = sportR2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (!MainPresenter.CheckRacerForSetRerunStatus(racer))
+            {
+                MessageBox.Show("Нельзя задать перезаезд текущего круга вместе с незакрытым заездом для участника, который не находится в текущий момент на треке.",
+                                "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RerunCurrenrRacer(racer))
+                {
+                    MessageBox.Show("Не удалось для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку для полного перезаеда текущего заезда для выделенного участника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void restartRace_Btn_sportR2DGV_Click(object sender, EventArgs e)
+        {
+            if (sportR2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = sportR2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите задать выбранному участнику полный перезаезд теущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RestartCurrentRacer(racer))
+                {
+                    MessageBox.Show("Не удалось задать полный перезаезд текущего заезда выбранному участнику.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
         #endregion
 
         #region Таблица первого заезда автомобилей мощностью до 100 л/с
@@ -1773,26 +2361,26 @@ namespace Sprint.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void k100R1DGV_DataSourceChanged(object sender, EventArgs e)
+        private void K100R1DGV_DataSourceChanged(object sender, EventArgs e)
         {
-            foreach (DataGridViewColumn column in K100R1DGV.Columns)
+            foreach (DataGridViewColumn column in k100R1DGV.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.HeaderCell.Style.Padding = new Padding(2);
             }
 
-            if (K100R1DGV.Columns.Count > 0)
+            if (k100R1DGV.Columns.Count > 0)
             {
-                K100R1DGV.Columns[0].Width = 50;
-                K100R1DGV.Columns[1].Width = 350;
-                K100R1DGV.Columns[2].Width = 250;
-                K100R1DGV.Columns[3].Width = 150;
-                K100R1DGV.Columns[4].Width = 150;
-                K100R1DGV.Columns[5].Width = 150;
-                K100R1DGV.Columns[6].Width = 150;
+                k100R1DGV.Columns[0].Width = 50;
+                k100R1DGV.Columns[1].Width = 350;
+                k100R1DGV.Columns[2].Width = 250;
+                k100R1DGV.Columns[3].Width = 150;
+                k100R1DGV.Columns[4].Width = 150;
+                k100R1DGV.Columns[5].Width = 150;
+                k100R1DGV.Columns[6].Width = 150;
             }
 
-            foreach (DataGridViewRow row in K100R1DGV.Rows)
+            foreach (DataGridViewRow row in k100R1DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
@@ -1845,15 +2433,15 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void editRacer_Btn_K100R1DGV_Click(object sender, EventArgs e)
         {
-            if (K100R1DGV.SelectedRows.Count == 0)
+            if (k100R1DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = K100R1DGV.SelectedRows[0].Index;
+            var index = k100R1DGV.SelectedRows[0].Index;
             EditRacerInfo(MainPresenter.GetRacerFromIndex(index));
-            K100R1DGV.ClearSelection();
-            K100R1DGV.Rows[index].Selected = true;
+            k100R1DGV.ClearSelection();
+            k100R1DGV.Rows[index].Selected = true;
         }
 
         /// <summary>
@@ -1863,24 +2451,24 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void upRacer_Btn_k100R1DGV_Click(object sender, EventArgs e)
         {
-            if (K100R1DGV.SelectedRows.Count == 0)
+            if (k100R1DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = K100R1DGV.SelectedRows[0].Index;
+            var index = k100R1DGV.SelectedRows[0].Index;
 
             if (MainPresenter.MoveUpRacer(index))
             {
-                K100R1DGV.ClearSelection();
+                k100R1DGV.ClearSelection();
 
                 if (index > 0)
                 {
-                    K100R1DGV.Rows[index - 1].Selected = true;
+                    k100R1DGV.Rows[index - 1].Selected = true;
                 }
                 else
                 {
-                    K100R1DGV.Rows[0].Selected = true;
+                    k100R1DGV.Rows[0].Selected = true;
                 }
             }
         }
@@ -1892,28 +2480,112 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void downRacer_Btn_k100R1DGV_Click(object sender, EventArgs e)
         {
-            if (K100R1DGV.SelectedRows.Count == 0)
+            if (k100R1DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = K100R1DGV.SelectedRows[0].Index;
+            var index = k100R1DGV.SelectedRows[0].Index;
 
             if (MainPresenter.MoveDownRacer(index))
             {
-                K100R1DGV.ClearSelection();
+                k100R1DGV.ClearSelection();
 
-                if (index < K100R1DGV.Rows.Count - 1)
+                if (index < k100R1DGV.Rows.Count - 1)
                 {
-                    K100R1DGV.Rows[index + 1].Selected = true;
+                    k100R1DGV.Rows[index + 1].Selected = true;
                 }
                 else
                 {
-                    K100R1DGV.Rows[index].Selected = true;
+                    k100R1DGV.Rows[index].Selected = true;
                 }
             }
         }
-        
+
+        /// <summary>
+        /// Действия при нажатии на кнопку, чтобы убрать заданного участника с трека (или не допустить его выход на трек, 
+        /// если он на нем еще не был) с закрытием текущего заезда.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void breakRace_Btn_k100R1DGV_Click(object sender, EventArgs e)
+        {
+            if (k100R1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = k100R1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.BreakSelectedRacer(racer))
+                {
+                    MessageBox.Show("Не удалось убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезд.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку перезаезда текущего круга вместе с незакрытым заездом.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void reraceRace_Btn_k100R1DGV_Click(object sender, EventArgs e)
+        {
+            if (k100R1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = k100R1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (!MainPresenter.CheckRacerForSetRerunStatus(racer))
+            {
+                MessageBox.Show("Нельзя задать перезаезд текущего круга вместе с незакрытым заездом для участника, который не находится в текущий момент на треке.",
+                                "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RerunCurrenrRacer(racer))
+                {
+                    MessageBox.Show("Не удалось для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку для полного перезаеда текущего заезда для выделенного участника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void restartRace_Btn_k100R1DGV_Click(object sender, EventArgs e)
+        {
+            if (k100R1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = k100R1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите задать выбранному участнику полный перезаезд теущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RestartCurrentRacer(racer))
+                {
+                    MessageBox.Show("Не удалось задать полный перезаезд текущего заезда выбранному участнику.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
         #endregion
 
         #region Таблица второго заезда автомобилей мощностью до 100 л/с
@@ -1923,26 +2595,26 @@ namespace Sprint.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void k100R2DGV_DataSourceChanged(object sender, EventArgs e)
+        private void K100R2DGV_DataSourceChanged(object sender, EventArgs e)
         {
-            foreach (DataGridViewColumn column in K100R2DGV.Columns)
+            foreach (DataGridViewColumn column in k100R2DGV.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.HeaderCell.Style.Padding = new Padding(2);
             }
 
-            if (K100R2DGV.Columns.Count > 0)
+            if (k100R2DGV.Columns.Count > 0)
             {
-                K100R2DGV.Columns[0].Width = 50;
-                K100R2DGV.Columns[1].Width = 350;
-                K100R2DGV.Columns[2].Width = 250;
-                K100R2DGV.Columns[3].Width = 150;
-                K100R2DGV.Columns[4].Width = 150;
-                K100R2DGV.Columns[5].Width = 150;
-                K100R2DGV.Columns[6].Width = 150;
+                k100R2DGV.Columns[0].Width = 50;
+                k100R2DGV.Columns[1].Width = 350;
+                k100R2DGV.Columns[2].Width = 250;
+                k100R2DGV.Columns[3].Width = 150;
+                k100R2DGV.Columns[4].Width = 150;
+                k100R2DGV.Columns[5].Width = 150;
+                k100R2DGV.Columns[6].Width = 150;
             }
 
-            foreach (DataGridViewRow row in K100R2DGV.Rows)
+            foreach (DataGridViewRow row in k100R2DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
@@ -1984,15 +2656,15 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void editRacer_Btn_K100R2DGV_Click(object sender, EventArgs e)
         {
-            if (K100R2DGV.SelectedRows.Count == 0)
+            if (k100R2DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = K100R2DGV.SelectedRows[0].Index;
+            var index = k100R2DGV.SelectedRows[0].Index;
             EditRacerInfo(MainPresenter.GetRacerFromIndex(index));
-            K100R2DGV.ClearSelection();
-            K100R2DGV.Rows[index].Selected = true;
+            k100R2DGV.ClearSelection();
+            k100R2DGV.Rows[index].Selected = true;
         }
 
         /// <summary>
@@ -2002,24 +2674,24 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void upRacer_Btn_k100R2DGV_Click(object sender, EventArgs e)
         {
-            if (K100R2DGV.SelectedRows.Count == 0)
+            if (k100R2DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = K100R2DGV.SelectedRows[0].Index;
+            var index = k100R2DGV.SelectedRows[0].Index;
 
             if (MainPresenter.MoveUpRacer(index))
             {
-                K100R2DGV.ClearSelection();
+                k100R2DGV.ClearSelection();
 
                 if (index > 0)
                 {
-                    K100R2DGV.Rows[index - 1].Selected = true;
+                    k100R2DGV.Rows[index - 1].Selected = true;
                 }
                 else
                 {
-                    K100R2DGV.Rows[0].Selected = true;
+                    k100R2DGV.Rows[0].Selected = true;
                 }
             }
         }
@@ -2031,24 +2703,108 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void downRacer_Btn_k100R2DGV_Click(object sender, EventArgs e)
         {
-            if (K100R2DGV.SelectedRows.Count == 0)
+            if (k100R2DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = K100R2DGV.SelectedRows[0].Index;
+            var index = k100R2DGV.SelectedRows[0].Index;
 
             if (MainPresenter.MoveDownRacer(index))
             {
-                K100R2DGV.ClearSelection();
+                k100R2DGV.ClearSelection();
 
-                if (index < K100R2DGV.Rows.Count - 1)
+                if (index < k100R2DGV.Rows.Count - 1)
                 {
-                    K100R2DGV.Rows[index + 1].Selected = true;
+                    k100R2DGV.Rows[index + 1].Selected = true;
                 }
                 else
                 {
-                    K100R2DGV.Rows[index].Selected = true;
+                    k100R2DGV.Rows[index].Selected = true;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку, чтобы убрать заданного участника с трека (или не допустить его выход на трек, 
+        /// если он на нем еще не был) с закрытием текущего заезда.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void breakRace_Btn_k100R2DGV_Click(object sender, EventArgs e)
+        {
+            if (k100R2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = k100R2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.BreakSelectedRacer(racer))
+                {
+                    MessageBox.Show("Не удалось убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезд.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку перезаезда текущего круга вместе с незакрытым заездом.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void reraceRace_Btn_k100R2DGV_Click(object sender, EventArgs e)
+        {
+            if (k100R2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = k100R2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (!MainPresenter.CheckRacerForSetRerunStatus(racer))
+            {
+                MessageBox.Show("Нельзя задать перезаезд текущего круга вместе с незакрытым заездом для участника, который не находится в текущий момент на треке.",
+                                "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RerunCurrenrRacer(racer))
+                {
+                    MessageBox.Show("Не удалось для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку для полного перезаеда текущего заезда для выделенного участника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void restartRace_Btn_k100R2DGV_Click(object sender, EventArgs e)
+        {
+            if (k100R2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = k100R2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите задать выбранному участнику полный перезаезд теущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RestartCurrentRacer(racer))
+                {
+                    MessageBox.Show("Не удалось задать полный перезаезд текущего заезда выбранному участнику.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -2062,26 +2818,26 @@ namespace Sprint.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void k160R1DGV_DataSourceChanged(object sender, EventArgs e)
+        private void K160R1DGV_DataSourceChanged(object sender, EventArgs e)
         {
-            foreach (DataGridViewColumn column in K160R1DGV.Columns)
+            foreach (DataGridViewColumn column in k160R1DGV.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.HeaderCell.Style.Padding = new Padding(2);
             }
 
-            if (K160R1DGV.Columns.Count > 0)
+            if (k160R1DGV.Columns.Count > 0)
             {
-                K160R1DGV.Columns[0].Width = 50;
-                K160R1DGV.Columns[1].Width = 350;
-                K160R1DGV.Columns[2].Width = 250;
-                K160R1DGV.Columns[3].Width = 150;
-                K160R1DGV.Columns[4].Width = 150;
-                K160R1DGV.Columns[5].Width = 150;
-                K160R1DGV.Columns[6].Width = 150;
+                k160R1DGV.Columns[0].Width = 50;
+                k160R1DGV.Columns[1].Width = 350;
+                k160R1DGV.Columns[2].Width = 250;
+                k160R1DGV.Columns[3].Width = 150;
+                k160R1DGV.Columns[4].Width = 150;
+                k160R1DGV.Columns[5].Width = 150;
+                k160R1DGV.Columns[6].Width = 150;
             }
 
-            foreach (DataGridViewRow row in K160R1DGV.Rows)
+            foreach (DataGridViewRow row in k160R1DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
@@ -2134,15 +2890,15 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void editRacer_Btn_K160R1DGV_Click(object sender, EventArgs e)
         {
-            if (K160R1DGV.SelectedRows.Count == 0)
+            if (k160R1DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = K160R1DGV.SelectedRows[0].Index;
+            var index = k160R1DGV.SelectedRows[0].Index;
             EditRacerInfo(MainPresenter.GetRacerFromIndex(index));
-            K160R1DGV.ClearSelection();
-            K160R1DGV.Rows[index].Selected = true;
+            k160R1DGV.ClearSelection();
+            k160R1DGV.Rows[index].Selected = true;
         }
 
         /// <summary>
@@ -2152,24 +2908,24 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void upRacer_Btn_K160R1DGV_Click(object sender, EventArgs e)
         {
-            if (K160R1DGV.SelectedRows.Count == 0)
+            if (k160R1DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = K160R1DGV.SelectedRows[0].Index;
+            var index = k160R1DGV.SelectedRows[0].Index;
 
             if (MainPresenter.MoveUpRacer(index))
             {
-                K160R1DGV.ClearSelection();
+                k160R1DGV.ClearSelection();
 
                 if (index > 0)
                 {
-                    K160R1DGV.Rows[index - 1].Selected = true;
+                    k160R1DGV.Rows[index - 1].Selected = true;
                 }
                 else
                 {
-                    K160R1DGV.Rows[0].Selected = true;
+                    k160R1DGV.Rows[0].Selected = true;
                 }
             }
         }
@@ -2181,24 +2937,108 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void downRacer_Btn_K160R1DGV_Click(object sender, EventArgs e)
         {
-            if (K160R1DGV.SelectedRows.Count == 0)
+            if (k160R1DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = K160R1DGV.SelectedRows[0].Index;
+            var index = k160R1DGV.SelectedRows[0].Index;
 
             if (MainPresenter.MoveDownRacer(index))
             {
-                K160R1DGV.ClearSelection();
+                k160R1DGV.ClearSelection();
 
-                if (index < K160R1DGV.Rows.Count - 1)
+                if (index < k160R1DGV.Rows.Count - 1)
                 {
-                    K160R1DGV.Rows[index + 1].Selected = true;
+                    k160R1DGV.Rows[index + 1].Selected = true;
                 }
                 else
                 {
-                    K160R1DGV.Rows[index].Selected = true;
+                    k160R1DGV.Rows[index].Selected = true;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку, чтобы убрать заданного участника с трека (или не допустить его выход на трек, 
+        /// если он на нем еще не был) с закрытием текущего заезда.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void breakRace_Btn_k160R1DGV_Click(object sender, EventArgs e)
+        {
+            if (k160R1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = k160R1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.BreakSelectedRacer(racer))
+                {
+                    MessageBox.Show("Не удалось убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезд.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку перезаезда текущего круга вместе с незакрытым заездом.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void reraceRace_Btn_k160R1DGV_Click(object sender, EventArgs e)
+        {
+            if (k160R1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = k160R1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (!MainPresenter.CheckRacerForSetRerunStatus(racer))
+            {
+                MessageBox.Show("Нельзя задать перезаезд текущего круга вместе с незакрытым заездом для участника, который не находится в текущий момент на треке.",
+                                "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RerunCurrenrRacer(racer))
+                {
+                    MessageBox.Show("Не удалось для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку для полного перезаеда текущего заезда для выделенного участника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void restartRace_Btn_k160R1DGV_Click(object sender, EventArgs e)
+        {
+            if (k160R1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = k160R1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите задать выбранному участнику полный перезаезд теущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RestartCurrentRacer(racer))
+                {
+                    MessageBox.Show("Не удалось задать полный перезаезд текущего заезда выбранному участнику.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -2212,26 +3052,26 @@ namespace Sprint.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void k160R2DGV_DataSourceChanged(object sender, EventArgs e)
+        private void K160R2DGV_DataSourceChanged(object sender, EventArgs e)
         {
-            foreach (DataGridViewColumn column in K160R2DGV.Columns)
+            foreach (DataGridViewColumn column in k160R2DGV.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.HeaderCell.Style.Padding = new Padding(2);
             }
 
-            if (K160R2DGV.Columns.Count > 0)
+            if (k160R2DGV.Columns.Count > 0)
             {
-                K160R2DGV.Columns[0].Width = 50;
-                K160R2DGV.Columns[1].Width = 350;
-                K160R2DGV.Columns[2].Width = 250;
-                K160R2DGV.Columns[3].Width = 150;
-                K160R2DGV.Columns[4].Width = 150;
-                K160R2DGV.Columns[5].Width = 150;
-                K160R2DGV.Columns[6].Width = 150;
+                k160R2DGV.Columns[0].Width = 50;
+                k160R2DGV.Columns[1].Width = 350;
+                k160R2DGV.Columns[2].Width = 250;
+                k160R2DGV.Columns[3].Width = 150;
+                k160R2DGV.Columns[4].Width = 150;
+                k160R2DGV.Columns[5].Width = 150;
+                k160R2DGV.Columns[6].Width = 150;
             }
 
-            foreach (DataGridViewRow row in K160R2DGV.Rows)
+            foreach (DataGridViewRow row in k160R2DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
@@ -2273,15 +3113,15 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void editRacer_Btn_K160R2DGV_Click(object sender, EventArgs e)
         {
-            if (K160R2DGV.SelectedRows.Count == 0)
+            if (k160R2DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = K160R2DGV.SelectedRows[0].Index;
+            var index = k160R2DGV.SelectedRows[0].Index;
             EditRacerInfo(MainPresenter.GetRacerFromIndex(index));
-            K160R2DGV.ClearSelection();
-            K160R2DGV.Rows[index].Selected = true;
+            k160R2DGV.ClearSelection();
+            k160R2DGV.Rows[index].Selected = true;
         }
 
         /// <summary>
@@ -2291,24 +3131,24 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void upRacer_Btn_K160R2DGV_Click(object sender, EventArgs e)
         {
-            if (K160R2DGV.SelectedRows.Count == 0)
+            if (k160R2DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = K160R2DGV.SelectedRows[0].Index;
+            var index = k160R2DGV.SelectedRows[0].Index;
 
             if (MainPresenter.MoveUpRacer(index))
             {
-                K160R2DGV.ClearSelection();
+                k160R2DGV.ClearSelection();
 
                 if (index > 0)
                 {
-                    K160R2DGV.Rows[index - 1].Selected = true;
+                    k160R2DGV.Rows[index - 1].Selected = true;
                 }
                 else
                 {
-                    K160R2DGV.Rows[0].Selected = true;
+                    k160R2DGV.Rows[0].Selected = true;
                 }
             }
         }
@@ -2320,24 +3160,108 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void downRacer_Btn_K160R2DGV_Click(object sender, EventArgs e)
         {
-            if (K160R2DGV.SelectedRows.Count == 0)
+            if (k160R2DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = K160R2DGV.SelectedRows[0].Index;
+            var index = k160R2DGV.SelectedRows[0].Index;
 
             if (MainPresenter.MoveDownRacer(index))
             {
-                K160R2DGV.ClearSelection();
+                k160R2DGV.ClearSelection();
 
-                if (index < K160R2DGV.Rows.Count - 1)
+                if (index < k160R2DGV.Rows.Count - 1)
                 {
-                    K160R2DGV.Rows[index + 1].Selected = true;
+                    k160R2DGV.Rows[index + 1].Selected = true;
                 }
                 else
                 {
-                    K160R2DGV.Rows[index].Selected = true;
+                    k160R2DGV.Rows[index].Selected = true;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку, чтобы убрать заданного участника с трека (или не допустить его выход на трек, 
+        /// если он на нем еще не был) с закрытием текущего заезда.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void breakRace_Btn_k160R2DGV_Click(object sender, EventArgs e)
+        {
+            if (k160R2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = k160R2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.BreakSelectedRacer(racer))
+                {
+                    MessageBox.Show("Не удалось убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезд.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку перезаезда текущего круга вместе с незакрытым заездом.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void reraceRace_Btn_k160R2DGV_Click(object sender, EventArgs e)
+        {
+            if (k160R2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = k160R2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (!MainPresenter.CheckRacerForSetRerunStatus(racer))
+            {
+                MessageBox.Show("Нельзя задать перезаезд текущего круга вместе с незакрытым заездом для участника, который не находится в текущий момент на треке.",
+                                "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RerunCurrenrRacer(racer))
+                {
+                    MessageBox.Show("Не удалось для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку для полного перезаеда текущего заезда для выделенного участника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void restartRace_Btn_k160R2DGV_Click(object sender, EventArgs e)
+        {
+            if (k160R2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = k160R2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите задать выбранному участнику полный перезаезд теущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RestartCurrentRacer(racer))
+                {
+                    MessageBox.Show("Не удалось задать полный перезаезд текущего заезда выбранному участнику.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -2351,26 +3275,26 @@ namespace Sprint.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void kaR1DGV_DataSourceChanged(object sender, EventArgs e)
+        private void KAR1DGV_DataSourceChanged(object sender, EventArgs e)
         {
-            foreach (DataGridViewColumn column in KAR1DGV.Columns)
+            foreach (DataGridViewColumn column in kaR1DGV.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.HeaderCell.Style.Padding = new Padding(2);
             }
 
-            if (KAR1DGV.Columns.Count > 0)
+            if (kaR1DGV.Columns.Count > 0)
             {
-                KAR1DGV.Columns[0].Width = 50;
-                KAR1DGV.Columns[1].Width = 350;
-                KAR1DGV.Columns[2].Width = 250;
-                KAR1DGV.Columns[3].Width = 150;
-                KAR1DGV.Columns[4].Width = 150;
-                KAR1DGV.Columns[5].Width = 150;
-                KAR1DGV.Columns[6].Width = 150;
+                kaR1DGV.Columns[0].Width = 50;
+                kaR1DGV.Columns[1].Width = 350;
+                kaR1DGV.Columns[2].Width = 250;
+                kaR1DGV.Columns[3].Width = 150;
+                kaR1DGV.Columns[4].Width = 150;
+                kaR1DGV.Columns[5].Width = 150;
+                kaR1DGV.Columns[6].Width = 150;
             }
 
-            foreach (DataGridViewRow row in KAR1DGV.Rows)
+            foreach (DataGridViewRow row in kaR1DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
@@ -2423,15 +3347,15 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void editRacer_Btn_KAR1DGV_Click(object sender, EventArgs e)
         {
-            if (KAR1DGV.SelectedRows.Count == 0)
+            if (kaR1DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = KAR1DGV.SelectedRows[0].Index;
+            var index = kaR1DGV.SelectedRows[0].Index;
             EditRacerInfo(MainPresenter.GetRacerFromIndex(index));
-            KAR1DGV.ClearSelection();
-            KAR1DGV.Rows[index].Selected = true;
+            kaR1DGV.ClearSelection();
+            kaR1DGV.Rows[index].Selected = true;
         }
 
         /// <summary>
@@ -2441,24 +3365,24 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void upRacer_Btn_KAR1DGV_Click(object sender, EventArgs e)
         {
-            if (KAR1DGV.SelectedRows.Count == 0)
+            if (kaR1DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = KAR1DGV.SelectedRows[0].Index;
+            var index = kaR1DGV.SelectedRows[0].Index;
 
             if (MainPresenter.MoveUpRacer(index))
             {
-                KAR1DGV.ClearSelection();
+                kaR1DGV.ClearSelection();
 
                 if (index > 0)
                 {
-                    KAR1DGV.Rows[index - 1].Selected = true;
+                    kaR1DGV.Rows[index - 1].Selected = true;
                 }
                 else
                 {
-                    KAR1DGV.Rows[0].Selected = true;
+                    kaR1DGV.Rows[0].Selected = true;
                 }
             }
         }
@@ -2470,24 +3394,108 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void downRacer_Btn_KAR1DGV_Click(object sender, EventArgs e)
         {
-            if (KAR1DGV.SelectedRows.Count == 0)
+            if (kaR1DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = KAR1DGV.SelectedRows[0].Index;
+            var index = kaR1DGV.SelectedRows[0].Index;
 
             if (MainPresenter.MoveDownRacer(index))
             {
-                KAR1DGV.ClearSelection();
+                kaR1DGV.ClearSelection();
 
-                if (index < KAR1DGV.Rows.Count - 1)
+                if (index < kaR1DGV.Rows.Count - 1)
                 {
-                    KAR1DGV.Rows[index + 1].Selected = true;
+                    kaR1DGV.Rows[index + 1].Selected = true;
                 }
                 else
                 {
-                    KAR1DGV.Rows[index].Selected = true;
+                    kaR1DGV.Rows[index].Selected = true;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку, чтобы убрать заданного участника с трека (или не допустить его выход на трек, 
+        /// если он на нем еще не был) с закрытием текущего заезда.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void breakRace_Btn_kaR1DGV_Click(object sender, EventArgs e)
+        {
+            if (kaR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = kaR1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.BreakSelectedRacer(racer))
+                {
+                    MessageBox.Show("Не удалось убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезд.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку перезаезда текущего круга вместе с незакрытым заездом.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void reraceRace_Btn_kaR1DGV_Click(object sender, EventArgs e)
+        {
+            if (kaR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = kaR1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (!MainPresenter.CheckRacerForSetRerunStatus(racer))
+            {
+                MessageBox.Show("Нельзя задать перезаезд текущего круга вместе с незакрытым заездом для участника, который не находится в текущий момент на треке.",
+                                "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RerunCurrenrRacer(racer))
+                {
+                    MessageBox.Show("Не удалось для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку для полного перезаеда текущего заезда для выделенного участника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void restartRace_Btn_kaR1DGV_Click(object sender, EventArgs e)
+        {
+            if (kaR1DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = kaR1DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите задать выбранному участнику полный перезаезд теущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RestartCurrentRacer(racer))
+                {
+                    MessageBox.Show("Не удалось задать полный перезаезд текущего заезда выбранному участнику.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -2501,26 +3509,26 @@ namespace Sprint.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void kaR2DGV_DataSourceChanged(object sender, EventArgs e)
+        private void KAR2DGV_DataSourceChanged(object sender, EventArgs e)
         {
-            foreach (DataGridViewColumn column in KAR2DGV.Columns)
+            foreach (DataGridViewColumn column in kaR2DGV.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.HeaderCell.Style.Padding = new Padding(2);
             }
 
-            if (KAR2DGV.Columns.Count > 0)
+            if (kaR2DGV.Columns.Count > 0)
             {
-                KAR2DGV.Columns[0].Width = 50;
-                KAR2DGV.Columns[1].Width = 350;
-                KAR2DGV.Columns[2].Width = 250;
-                KAR2DGV.Columns[3].Width = 150;
-                KAR2DGV.Columns[4].Width = 150;
-                KAR2DGV.Columns[5].Width = 150;
-                KAR2DGV.Columns[6].Width = 150;
+                kaR2DGV.Columns[0].Width = 50;
+                kaR2DGV.Columns[1].Width = 350;
+                kaR2DGV.Columns[2].Width = 250;
+                kaR2DGV.Columns[3].Width = 150;
+                kaR2DGV.Columns[4].Width = 150;
+                kaR2DGV.Columns[5].Width = 150;
+                kaR2DGV.Columns[6].Width = 150;
             }
 
-            foreach (DataGridViewRow row in KAR2DGV.Rows)
+            foreach (DataGridViewRow row in kaR2DGV.Rows)
             {
                 row.Cells[0].Style.BackColor = Color.MediumAquamarine;
                 row.Cells[1].Style.BackColor = Color.PowderBlue;
@@ -2562,15 +3570,15 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void editRacer_Btn_KAR2DGV_Click(object sender, EventArgs e)
         {
-            if (KAR2DGV.SelectedRows.Count == 0)
+            if (kaR2DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = KAR2DGV.SelectedRows[0].Index;
+            var index = kaR2DGV.SelectedRows[0].Index;
             EditRacerInfo(MainPresenter.GetRacerFromIndex(index));
-            KAR2DGV.ClearSelection();
-            KAR2DGV.Rows[index].Selected = true;
+            kaR2DGV.ClearSelection();
+            kaR2DGV.Rows[index].Selected = true;
         }
 
         /// <summary>
@@ -2580,24 +3588,24 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void upRacer_Btn_KAR2DGV_Click(object sender, EventArgs e)
         {
-            if (KAR2DGV.SelectedRows.Count == 0)
+            if (kaR2DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = KAR2DGV.SelectedRows[0].Index;
+            var index = kaR2DGV.SelectedRows[0].Index;
 
             if (MainPresenter.MoveUpRacer(index))
             {
-                KAR2DGV.ClearSelection();
+                kaR2DGV.ClearSelection();
 
                 if (index > 0)
                 {
-                    KAR2DGV.Rows[index - 1].Selected = true;
+                    kaR2DGV.Rows[index - 1].Selected = true;
                 }
                 else
                 {
-                    KAR2DGV.Rows[0].Selected = true;
+                    kaR2DGV.Rows[0].Selected = true;
                 }
             }
         }
@@ -2609,24 +3617,108 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void downRacer_Btn_KAR2DGV_Click(object sender, EventArgs e)
         {
-            if (KAR2DGV.SelectedRows.Count == 0)
+            if (kaR2DGV.SelectedRows.Count == 0)
             {
                 return;
             }
 
-            var index = KAR2DGV.SelectedRows[0].Index;
+            var index = kaR2DGV.SelectedRows[0].Index;
 
             if (MainPresenter.MoveDownRacer(index))
             {
-                KAR2DGV.ClearSelection();
+                kaR2DGV.ClearSelection();
 
-                if (index < KAR2DGV.Rows.Count - 1)
+                if (index < kaR2DGV.Rows.Count - 1)
                 {
-                    KAR2DGV.Rows[index + 1].Selected = true;
+                    kaR2DGV.Rows[index + 1].Selected = true;
                 }
                 else
                 {
-                    KAR2DGV.Rows[index].Selected = true;
+                    kaR2DGV.Rows[index].Selected = true;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку, чтобы убрать заданного участника с трека (или не допустить его выход на трек, 
+        /// если он на нем еще не был) с закрытием текущего заезда.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void breakRace_Btn_kaR2DGV_Click(object sender, EventArgs e)
+        {
+            if (kaR2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = kaR2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.BreakSelectedRacer(racer))
+                {
+                    MessageBox.Show("Не удалось убрать выбранного участника с трека (или не допустить его выезд на трек, если он на нем еще не был) с закрытием для него текущего заезд.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку перезаезда текущего круга вместе с незакрытым заездом.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void reraceRace_Btn_kaR2DGV_Click(object sender, EventArgs e)
+        {
+            if (kaR2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = kaR2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (!MainPresenter.CheckRacerForSetRerunStatus(racer))
+            {
+                MessageBox.Show("Нельзя задать перезаезд текущего круга вместе с незакрытым заездом для участника, который не находится в текущий момент на треке.",
+                                "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RerunCurrenrRacer(racer))
+                {
+                    MessageBox.Show("Не удалось для выбранного участника задать перезаезд текущего круга вместе с незакрытым заездом.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Действия при нажатии на кнопку для полного перезаеда текущего заезда для выделенного участника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void restartRace_Btn_kaR2DGV_Click(object sender, EventArgs e)
+        {
+            if (kaR2DGV.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var index = kaR2DGV.SelectedRows[0].Index;
+            var racer = MainPresenter.GetRacerFromIndex(index);
+
+            if (MessageBox.Show("Вы уверены, что хотите задать выбранному участнику полный перезаезд теущего заезда?",
+                                "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!MainPresenter.RestartCurrentRacer(racer))
+                {
+                    MessageBox.Show("Не удалось задать полный перезаезд текущего заезда выбранному участнику.",
+                                    "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
