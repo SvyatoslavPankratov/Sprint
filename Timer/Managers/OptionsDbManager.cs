@@ -32,31 +32,40 @@ namespace Sprint.Managers
         #region Методы
 
         /// <summary>
-        /// Получить список всех опций гонок во всех классах автомобилей.
+        /// Получить настройки приложения.
         /// </summary>
-        /// <returns>Списко всех опций.</returns>
-        public static IEnumerable<RaceOptionsModel> GetOptions()
+        /// <returns>Настройки приложения.</returns>
+        public static AppOptionsModel GetOptions()
         {
             try
             {
-                var res = new List<RaceOptionsModel>();
-                var options = dc.RacesOptions;
+                var app_options = new AppOptionsModel { RaceOptions = new List<RaceOptionsModel>() };
 
-                foreach(var option in options)
+                foreach(var option in dc.RacesOptions)
                 {
                     var cc = (CarClassesEnum)Enum.Parse(typeof(CarClassesEnum), option.CarClass.Name);
 
-                    res.Add(new RaceOptionsModel(cc)
-                                    {
-                                        LidersCount = option.LidersCount,
-                                        RaceCount = option.RaceCount
-                                    });
+                    app_options.RaceOptions.Add(new RaceOptionsModel(cc)
+                                                    {
+                                                        LidersCount = option.LidersCount,
+                                                        RaceCount = option.RaceCount
+                                                    });
                 }
-                return res;
+
+                if (dc.AppOptions.Any())
+                {
+                    app_options.DelayTime = dc.AppOptions.First().DelayTime;
+                }
+                else
+                {
+                    app_options.DelayTime = 0.0;
+                }
+
+                return app_options;
             }
             catch (Exception ex)
             {
-                var exception = new SprintException("Не удалось получить список опций заездов.",
+                var exception = new SprintException("Не удалось получить настройки приложения.",
                                                         "Sprint.Managers.OptionsDbManager.GetOptions()", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 throw exception;
@@ -64,10 +73,10 @@ namespace Sprint.Managers
         }
 
         /// <summary>
-        /// Получить список всек опций гонок в заданном классе автомобилей.
+        /// Получить опции гонок в заданном классе автомобилей.
         /// </summary>
         /// <param name="carClass">Заданный класс автомобилей.</param>
-        /// <returns>Список опций в заданном классе автомобилей.</returns>
+        /// <returns>Опции в заданном классе автомобилей.</returns>
         public static RaceOptionsModel GetOptions(CarClassesEnum carClass)
         {
             try
@@ -148,7 +157,6 @@ namespace Sprint.Managers
                                                 LidersCount = options.LidersCount,
                                                 RaceCount = options.RaceCount
                                             };
-
                     dc.RacesOptions.Add(racesOptions);
                 }
                 else
@@ -164,6 +172,82 @@ namespace Sprint.Managers
             {
                 var exception = new SprintException("Не удалось задать заданные опции заездов в заданном классе автомобилей.",
                                                         "Sprint.Managers.OptionsDbManager.SetOptions(RacesOption options)", ex);
+                logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
+                throw exception;
+            }
+        }
+
+        /// <summary>
+        /// Задать опции приложения.
+        /// </summary>
+        /// <param name="options">Задаваемые опции приложения.</param>
+        /// <returns>Результат задания опций.</returns>
+        public static OperationResult SetOptions(AppOptionsModel options)
+        {
+            try
+            {
+                if (options == null)
+                {
+                    var exception = new SprintDataException("Не удалось задать опции заезда, т.к. не заданы опции заезда.",
+                                                            "Sprint.Managers.OptionsManager.SetOptions(AppOptionsModel options)");
+                    logger.Trace(ExceptionsManager.CreateExceptionMessage(exception));
+                    return new OperationResult(false, exception.Message, exception);
+                }
+
+                if (options.RaceOptions != null)
+                {
+                    foreach (var race_option in options.RaceOptions)
+                    {
+                        var str_cc = race_option.CarClass.ToString();
+                        CarClass cc = dc.CarClasses.FirstOrDefault(row => row.Name == str_cc);
+
+                        if (cc == null)
+                        {
+                            var exception = new SprintDataException("Не удалось задать опции заезда, т.к. заданный класс автомобилей не был найден в БД в таблице [CarClasses].",
+                                                                    "Sprint.Managers.OptionsDbManager.SetOptions(AppOptionsModel options)");
+                            logger.Trace(ExceptionsManager.CreateExceptionMessage(exception));
+                            return new OperationResult(false, exception.Message, exception);
+                        }
+
+                        var ro = dc.RacesOptions.FirstOrDefault(row => row.Id_CarClass == cc.Id);
+
+                        if (ro == null)
+                        {
+                            var racesOptions = new RacesOption
+                                                    {
+                                                        Id = Guid.NewGuid(),
+                                                        Id_CarClass = cc.Id,
+                                                        LidersCount = race_option.LidersCount,
+                                                        RaceCount = race_option.RaceCount
+                                                    };
+                            dc.RacesOptions.Add(racesOptions);
+                        }
+                        else
+                        {
+                            ro.LidersCount = race_option.LidersCount;
+                            ro.RaceCount = race_option.RaceCount;
+                        }
+                    }
+                }
+
+                if (dc.AppOptions.Any())
+                {
+                    var app_option = dc.AppOptions.First();
+                    app_option.DelayTime = options.DelayTime;
+                }
+                else
+                {
+                    var app_option = new AppOption { Id = Guid.NewGuid(), DelayTime = options.DelayTime };
+                    dc.AppOptions.Add(app_option);
+                }
+
+                dc.SaveChanges();
+                return new OperationResult(true);
+            }
+            catch (Exception ex)
+            {
+                var exception = new SprintException("Не удалось задать заданные опции заездов в заданном классе автомобилей.",
+                                                        "Sprint.Managers.OptionsDbManager.SetOptions(AppOptionsModel options)", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 throw exception;
             }
@@ -224,6 +308,11 @@ namespace Sprint.Managers
                 foreach (var ro in dc.RacesOptions)
                 {
                     dc.RacesOptions.Remove(ro);
+                }
+
+                foreach (var ap in dc.AppOptions)
+                {
+                    dc.AppOptions.Remove(ap);
                 }
 
                 dc.SaveChanges();

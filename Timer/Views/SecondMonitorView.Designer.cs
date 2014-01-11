@@ -131,7 +131,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Calibri", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1146, 92);
@@ -170,7 +170,7 @@
             // nextRacerNumber_L
             // 
             this.nextRacerNumber_L.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nextRacerNumber_L.Font = new System.Drawing.Font("Microsoft Sans Serif", 300F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextRacerNumber_L.Font = new System.Drawing.Font("Calibri", 300F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nextRacerNumber_L.Location = new System.Drawing.Point(3, 0);
             this.nextRacerNumber_L.Name = "nextRacerNumber_L";
             this.nextRacerNumber_L.Size = new System.Drawing.Size(1140, 345);
@@ -191,7 +191,7 @@
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(1140, 36);
@@ -231,7 +231,7 @@
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(565, 26);
@@ -252,7 +252,7 @@
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(566, 26);
@@ -273,7 +273,7 @@
             // firstCurrentRacerNumber_L
             // 
             this.firstCurrentRacerNumber_L.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.firstCurrentRacerNumber_L.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstCurrentRacerNumber_L.Font = new System.Drawing.Font("Calibri", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstCurrentRacerNumber_L.Location = new System.Drawing.Point(0, 0);
             this.firstCurrentRacerNumber_L.Name = "firstCurrentRacerNumber_L";
             this.firstCurrentRacerNumber_L.Size = new System.Drawing.Size(565, 79);
@@ -302,7 +302,7 @@
             // R1_3_L
             // 
             this.R1_3_L.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.R1_3_L.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.R1_3_L.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.R1_3_L.Location = new System.Drawing.Point(377, 1);
             this.R1_3_L.Margin = new System.Windows.Forms.Padding(0);
             this.R1_3_L.Name = "R1_3_L";
@@ -314,7 +314,7 @@
             // R1_2_L
             // 
             this.R1_2_L.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.R1_2_L.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.R1_2_L.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.R1_2_L.Location = new System.Drawing.Point(189, 1);
             this.R1_2_L.Margin = new System.Windows.Forms.Padding(0);
             this.R1_2_L.Name = "R1_2_L";
@@ -326,7 +326,7 @@
             // R1_1_L
             // 
             this.R1_1_L.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.R1_1_L.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.R1_1_L.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.R1_1_L.Location = new System.Drawing.Point(1, 1);
             this.R1_1_L.Margin = new System.Windows.Forms.Padding(0);
             this.R1_1_L.Name = "R1_1_L";
@@ -348,7 +348,7 @@
             // secondCurrentRacerNumber_L
             // 
             this.secondCurrentRacerNumber_L.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.secondCurrentRacerNumber_L.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondCurrentRacerNumber_L.Font = new System.Drawing.Font("Calibri", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.secondCurrentRacerNumber_L.Location = new System.Drawing.Point(0, 0);
             this.secondCurrentRacerNumber_L.Name = "secondCurrentRacerNumber_L";
             this.secondCurrentRacerNumber_L.Size = new System.Drawing.Size(566, 79);
@@ -377,7 +377,7 @@
             // R2_3_L
             // 
             this.R2_3_L.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.R2_3_L.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.R2_3_L.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.R2_3_L.Location = new System.Drawing.Point(377, 1);
             this.R2_3_L.Margin = new System.Windows.Forms.Padding(0);
             this.R2_3_L.Name = "R2_3_L";
@@ -389,7 +389,7 @@
             // R2_2_L
             // 
             this.R2_2_L.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.R2_2_L.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.R2_2_L.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.R2_2_L.Location = new System.Drawing.Point(189, 1);
             this.R2_2_L.Margin = new System.Windows.Forms.Padding(0);
             this.R2_2_L.Name = "R2_2_L";
@@ -401,7 +401,7 @@
             // R2_1_L
             // 
             this.R2_1_L.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.R2_1_L.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.R2_1_L.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.R2_1_L.Location = new System.Drawing.Point(1, 1);
             this.R2_1_L.Margin = new System.Windows.Forms.Padding(0);
             this.R2_1_L.Name = "R2_1_L";

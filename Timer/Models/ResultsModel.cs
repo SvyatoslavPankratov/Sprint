@@ -168,12 +168,40 @@ namespace Sprint.Models
         }
 
         /// <summary>
-        /// Очистить все результаты.
+        /// Удалить все результаты всех заездов.
         /// </summary>
         public void Clear()
         {
             InitializeObject();
             ResetState();
+        }
+
+        /// <summary>
+        /// Удалить все результаты заданного заезда.
+        /// </summary>
+        /// <param name="race_number">Номер заезда в котором будут удалены все результаты (Начиная с 0).</param>
+        public void Clear(int race_number)
+        {
+            switch (race_number)
+            {
+                case 0:
+                    {
+                        Clear();
+                    } break;
+                case 1:
+                    {
+                        SetCurrentCircleNumber(1, null);
+                        SetRaceState(0, RacerRaceStateEnum.Run);
+
+                        var results = ResultsList.ElementAt(race_number) as List<TimeModel>;
+
+                        for (int i = 0; i < ConstantsModel.MaxCircleCount; i++)
+                        {
+                            results[i] = null;
+                        }
+                    } break;
+                default: break;
+            }
         }
 
         /// <summary>

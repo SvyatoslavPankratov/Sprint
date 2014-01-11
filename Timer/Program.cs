@@ -68,7 +68,9 @@ namespace Sprint
             //BackgroundWorker.RunWorkerAsync(SplashScreenView);
 
             CheckFreeSpace();
-            
+
+            StartWcfService();
+
             if (ScreenManager.MonitorCount > 1)
             {
                 SecondMonitorView = new SecondMonitorView();
@@ -111,6 +113,14 @@ namespace Sprint
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private static void StartWcfService()
+        {
+
         }
 
         #endregion

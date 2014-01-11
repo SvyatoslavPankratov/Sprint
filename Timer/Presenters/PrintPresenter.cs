@@ -51,7 +51,7 @@ namespace Sprint.Presenters
         {
             var db_o = OptionsDbManager.GetOptions();
 
-            if (!db_o.Any())
+            if (db_o == null || db_o.RaceOptions == null || !db_o.RaceOptions.Any())
             {
                 return CreateEmptyOptions();
             }
@@ -62,9 +62,9 @@ namespace Sprint.Presenters
             {
                 var carClass = (CarClassesEnum)Enum.Parse(typeof(CarClassesEnum), cc);
 
-                if (db_o.Any(o => o.CarClass == carClass))
+                if (db_o.RaceOptions.Any(o => o.CarClass == carClass))
                 {
-                    var option = db_o.First(o => o.CarClass == carClass);
+                    var option = db_o.RaceOptions.First(o => o.CarClass == carClass);
 
                     options.Add(new RaceOptionsModel(carClass)
                     {

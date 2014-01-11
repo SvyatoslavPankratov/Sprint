@@ -274,14 +274,16 @@ namespace Sprint.Managers
         /// Удалить состояние заданного заезда у заданного класса автомобилей.
         /// </summary>
         /// <param name="car_class">Класс автомобилей для которого удаляем состояние заезда.</param>
-        /// <param name="race_namber">Номер заезда внутри заданного класса автомобилей для которого удаляем состояние заезда.</param>
+        /// <param name="race_namber">Номер заезда внутри заданного класса автомобилей для которого удаляем состояние заезда (от 0).</param>
         /// <returns>Результат опреации.</returns>
         public static OperationResult DeleteRaceStates(CarClassesEnum car_class, int race_namber)
         {
             try
             {
+                var cc_str = car_class.ToString();
+
                 var racer_states = from rs in dc.RaceStates
-                                   where rs.CarClass.Name == car_class.ToString()
+                                   where rs.CarClass.Name == cc_str
                                          && rs.RaceNumber == race_namber
                                    select rs;
 
@@ -289,6 +291,8 @@ namespace Sprint.Managers
                 {
                     dc.RaceStates.Remove(racer_state);
                 }
+
+                dc.SaveChanges();
 
                 return new OperationResult(true);
             }
@@ -316,6 +320,8 @@ namespace Sprint.Managers
                 {
                     dc.RaceStates.Remove(racer_state);
                 }
+
+                dc.SaveChanges();
 
                 return new OperationResult(true);
             }

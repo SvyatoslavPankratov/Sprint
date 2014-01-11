@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
@@ -907,7 +908,13 @@ namespace Sprint.Views
         /// <param name="e"></param>
         private void stopBtn_Click(object sender, EventArgs e)
         {
-            StopwatchState = StopwatchStatesEnum.Stop;
+            var res = MessageBox.Show("Вы уверены, что хотите остановить секундомер и проведение гонок?", "Подтверждение действия", 
+                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (res == DialogResult.Yes)
+            {
+                StopwatchState = StopwatchStatesEnum.Stop;
+            }
         }
 
         /// <summary>
@@ -1040,6 +1047,6 @@ namespace Sprint.Views
             new AboutView().ShowDialog();
         }
 
-        #endregion
+        #endregion        
     }
 }

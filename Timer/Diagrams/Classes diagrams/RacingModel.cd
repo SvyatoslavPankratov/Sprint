@@ -3,6 +3,9 @@
   <Comment CommentText="На треке одновременно может быть максимум 2 автомобиля.">
     <Position X="4.77" Y="6.993" Height="0.75" Width="1.7" />
   </Comment>
+  <Comment CommentText="Максимальное количество заездов равно 2-м">
+    <Position X="13.796" Y="11.475" Height="0.75" Width="1.361" />
+  </Comment>
   <Class Name="Sprint.Models.CarModel">
     <Position X="15.25" Y="6.75" Width="2" />
     <AssociationLine Name="CarClass" Type="Sprint.Models.CarClassesEnum" FixedToPoint="true">
@@ -49,7 +52,7 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Sprint.Models.TimeModel">
-    <Position X="17.5" Y="15.75" Width="2" />
+    <Position X="17.5" Y="19.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAABAAEEAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
       <FileName>Models\TimeModel.cs</FileName>
@@ -65,45 +68,45 @@
     </AssociationLine>
     <AssociationLine Name="RacerGroups" Type="Sprint.Models.RacersGroupModel" FixedToPoint="true">
       <Path>
-        <Point X="13.5" Y="10.854" />
-        <Point X="15.25" Y="10.854" />
+        <Point X="13.5" Y="10.95" />
+        <Point X="15.25" Y="10.95" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="CurrentRaserGroup" Type="Sprint.Models.RacersGroupModel" FixedFromPoint="true">
       <Path>
-        <Point X="13.5" Y="11.217" />
-        <Point X="15.25" Y="11.217" />
+        <Point X="13.5" Y="11.26" />
+        <Point X="15.25" Y="11.26" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="CurrentCarClass" Type="Sprint.Models.CarClassesEnum" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="13.5" Y="12.708" />
-        <Point X="18.375" Y="12.708" />
+        <Point X="13.5" Y="12.817" />
+        <Point X="18.375" Y="12.817" />
         <Point X="18.375" Y="10.258" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="3.587" Y="2.182" />
+        <Position X="3.574" Y="2.338" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="CurrentEditCarClass" Type="Sprint.Models.CarClassesEnum" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="13.5" Y="12.974" />
-        <Point X="18.625" Y="12.974" />
+        <Point X="13.5" Y="13.095" />
+        <Point X="18.625" Y="13.095" />
         <Point X="18.625" Y="10.258" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="3.654" Y="2.76" />
+        <Position X="3.628" Y="2.851" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="Track" Type="Sprint.Models.TrackModel" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="10.5" Y="11.828" />
-        <Point X="8.062" Y="11.828" />
+        <Point X="10.5" Y="11.898" />
+        <Point X="8.062" Y="11.898" />
         <Point X="8.062" Y="8.689" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>QQOKiAtUhfY1AQAjIYFkIAwoAAg8QEkCIEggABQIJAA=</HashCode>
+      <HashCode>QQOKiBtUhfY1AQAjIYFkIAQoAAp8QEkCIEggAFQIJCA=</HashCode>
       <FileName>Presenters\MainPresenter.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -114,17 +117,17 @@
       <Property Name="CurrentCarClass" />
       <Property Name="CurrentEditCarClass" />
       <Property Name="Track" />
+      <Property Name="AppOptions" />
       <Property Name="CurrentRacerRaceState" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="Racers" />
       <Property Name="RacerGroups" />
-      <Property Name="RaceOptions" />
     </ShowAsCollectionAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Sprint.Models.StopwatchModel">
-    <Position X="15.25" Y="15.75" Width="1.5" />
+    <Position X="15.25" Y="19.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAACAAAASAAAAAAAAAAAAAAAAAAAAAAIAQAAAAAAQA=</HashCode>
       <FileName>Models\StopwatchModel.cs</FileName>
@@ -158,21 +161,21 @@
     <Position X="15.25" Y="9.5" Width="1.75" />
     <AssociationLine Name="CarClass" Type="Sprint.Models.CarClassesEnum" FixedFromPoint="true">
       <Path>
-        <Point X="17" Y="9.936" />
-        <Point X="18.25" Y="9.936" />
+        <Point X="17" Y="9.967" />
+        <Point X="18.25" Y="9.967" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="Racers" Type="Sprint.Models.RacerModel" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="15.25" Y="9.812" />
-        <Point X="13.333" Y="9.812" Type="JumpStart" />
-        <Point X="13.167" Y="9.812" Type="JumpEnd" />
-        <Point X="12.11" Y="9.812" />
+        <Point X="15.25" Y="9.834" />
+        <Point X="13.333" Y="9.834" Type="JumpStart" />
+        <Point X="13.167" Y="9.834" Type="JumpEnd" />
+        <Point X="12.11" Y="9.834" />
         <Point X="12.11" Y="7.627" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>ASAAAAgEAAAAAAABgAAAAAAAIAAAAAAABAAgAAAAAAA=</HashCode>
+      <HashCode>ASAAAAgEAAAAACABgAAAAAAAIAAAAAAABAAgAAAAAAA=</HashCode>
       <FileName>Models\RacersGroupModel.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -234,17 +237,15 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Sprint.Presenters.OptionsPresenter">
-    <Position X="21" Y="12.5" Width="1.75" />
+    <Position X="15" Y="16.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAIAAAAQAAAABEAAAAgAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAIAAAAQAAAABEAAAAAAAAAAAAAAAAQAAAAAACA=</HashCode>
       <FileName>Presenters\OptionsPresenter.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="OptionsView" />
+      <Property Name="AppOptions" />
     </ShowAsAssociation>
-    <ShowAsCollectionAssociation>
-      <Property Name="RaceOptions" />
-    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Sprint.Presenters.PrintPresenter">
     <Position X="26" Y="3.75" Width="1.75" />
@@ -271,7 +272,13 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Sprint.Models.ApplicationStateModel">
-    <Position X="21.25" Y="9" Width="2" />
+    <Position X="22" Y="9.5" Width="2" />
+    <AssociationLine Name="CurrentCarClass" Type="Sprint.Models.CarClassesEnum" FixedFromPoint="true">
+      <Path>
+        <Point X="22" Y="9.812" />
+        <Point X="19.75" Y="9.812" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAAAAYAAAAAgAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Models\ApplicationStateModel.cs</FileName>
@@ -284,7 +291,7 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Sprint.Presenters.RegenerationDialogPresenter">
-    <Position X="21.25" Y="18.25" Width="2.5" />
+    <Position X="23.25" Y="18.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Presenters\RegenerationDialogPresenter.cs</FileName>
@@ -330,13 +337,13 @@
     </AssociationLine>
     <AssociationLine Name="SecondMonitorView" Type="Sprint.Interfaces.ISecondMonitor" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="3.375" Y="15.94" />
-        <Point X="3.375" Y="17.312" />
-        <Point X="5" Y="17.312" />
+        <Point X="3.406" Y="16.132" />
+        <Point X="3.406" Y="17.375" />
+        <Point X="5" Y="17.375" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAoAAAABABQAAAAAAAAAAAAAAAAAAAAAAAABgAAAAA=</HashCode>
+      <HashCode>AAAoAAAABABQAAAAIAAAAAAAAAAAAAAAAAAABgAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -346,7 +353,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Sprint.Models.RaceStateModel">
-    <Position X="25.25" Y="8.25" Width="2" />
+    <Position X="25.25" Y="8.75" Width="2" />
     <TypeIdentifier>
       <HashCode>ASAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Models\RaceStateModel.cs</FileName>
@@ -395,6 +402,26 @@
       <Property Name="View" />
     </ShowAsAssociation>
   </Class>
+  <Class Name="Sprint.Models.AppOptionsModel">
+    <Position X="15" Y="14" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Models\OptionsModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="RaceOptions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Sprint.Presenters.DeleteResultsDialogPresenter">
+    <Position X="25" Y="12.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Presenters\DeleteResultsDialogPresenter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DeleteResultDialogView" />
+    </ShowAsAssociation>
+  </Class>
   <Interface Name="Sprint.Interfaces.IMain">
     <Position X="5.75" Y="9.25" Width="1.75" />
     <AssociationLine Name="NextRacerState" Type="Sprint.Models.NextRacerState" FixedFromPoint="true" FixedToPoint="true">
@@ -414,9 +441,9 @@
     </ShowAsAssociation>
   </Interface>
   <Interface Name="Sprint.Interfaces.IOptions">
-    <Position X="24" Y="12.5" Width="2" />
+    <Position X="18" Y="16.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>Interfaces\IOptions.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -435,7 +462,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Sprint.Interfaces.IRegenerationDialog">
-    <Position X="21.25" Y="16.75" Width="2.5" />
+    <Position X="23.25" Y="16.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IRegenerationDialog.cs</FileName>
@@ -496,6 +523,13 @@
       <FileName>Interfaces\IExportProcess.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="Sprint.Interfaces.IDeleteResultsDialog">
+    <Position X="21.25" Y="12.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAQAAAAAAAAAAAAAAAAAAEAAAAAEAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Interfaces\IDeleteResultsDialog.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Enum Name="Sprint.Models.CarClassesEnum">
     <Position X="18.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
@@ -504,7 +538,7 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="Sprint.Models.AppRegenerationTypesEnum">
-    <Position X="21.25" Y="15" Width="2.5" />
+    <Position X="23.25" Y="15" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAQAEAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\AppRegenerationTypesEnum.cs</FileName>

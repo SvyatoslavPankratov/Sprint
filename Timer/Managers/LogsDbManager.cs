@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Linq;
 
 using NLog;
 
@@ -43,6 +45,14 @@ namespace Sprint.Managers
                 }
 
                 dc.SaveChanges();
+
+                var log_files = new DirectoryInfo(string.Format("{0}/{1}", Environment.CurrentDirectory, "Logs"));
+
+                foreach(var log_file in log_files.GetFiles())
+                {
+                    File.Delete(log_file.FullName);
+                }
+
                 return new OperationResult(true);
             }
             catch (Exception ex)

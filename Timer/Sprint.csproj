@@ -27,6 +27,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -82,6 +83,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
@@ -99,6 +101,9 @@
       <DependentUpon>ResultTableControlView.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\ApplicationState.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AppOption.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Car.cs">
@@ -163,6 +168,7 @@
     <Compile Include="Exceptions\SprintSystemException.cs" />
     <Compile Include="Extensions\EnumerableExtesions.cs" />
     <Compile Include="Interfaces\IAddedRacersProcess.cs" />
+    <Compile Include="Interfaces\IDeleteResultsDialog.cs" />
     <Compile Include="Interfaces\IEditRacer.cs" />
     <Compile Include="Interfaces\IExportProcess.cs" />
     <Compile Include="Interfaces\IOptions.cs" />
@@ -171,6 +177,7 @@
     <Compile Include="Interfaces\IRestoreAppDateFromBackup.cs" />
     <Compile Include="Interfaces\ISecondMonitor.cs" />
     <Compile Include="Interfaces\ISplashScreen.cs" />
+    <Compile Include="Interfaces\IThirdMonitor.cs" />
     <Compile Include="Interfaces\ITimeMessageNotification.cs" />
     <Compile Include="Interfaces\IWindows.cs" />
     <Compile Include="Managers\ApplicationStateDbManager.cs" />
@@ -195,6 +202,7 @@
     <Compile Include="Models\ConstantsModel.cs" />
     <Compile Include="Models\NextRacerState.cs" />
     <Compile Include="Models\OperationResult.cs" />
+    <Compile Include="Models\OptionsModel.cs" />
     <Compile Include="Models\PeopleModel.cs" />
     <Compile Include="Models\RaceOptionsModel.cs" />
     <Compile Include="Models\RacerModel.cs" />
@@ -210,6 +218,7 @@
     <Compile Include="Presenters\AddedRacersProcessPresenter.cs" />
     <Compile Include="Presenters\CarClassPresenter.cs" />
     <Compile Include="Presenters\CheckSensorPresenter.cs" />
+    <Compile Include="Presenters\DeleteResultsDialogPresenter.cs" />
     <Compile Include="Presenters\EditRacerPresenter.cs" />
     <Compile Include="Presenters\ExportProcessPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
@@ -220,9 +229,12 @@
     <Compile Include="Presenters\RegenerationDialogPresenter.cs" />
     <Compile Include="Presenters\RestoreAppDateFromBackupPresenter.cs" />
     <Compile Include="Presenters\SecondMonitorPresenter.cs" />
+    <Compile Include="Presenters\ThirdMonitorPresenter.cs" />
     <Compile Include="Presenters\TimeMessageNotificationPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interfaces\ISprintWcfService.cs" />
+    <Compile Include="Services\SprintWcfService.cs" />
     <Compile Include="Views\AboutView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +256,12 @@
     <Compile Include="Interfaces\ICheckSensor.cs" />
     <Compile Include="Interfaces\IMain.cs" />
     <Compile Include="Interfaces\INewRacer.cs" />
+    <Compile Include="Views\DeleteResultsDialogView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DeleteResultsDialogView.Designer.cs">
+      <DependentUpon>DeleteResultsDialogView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\EditRacerView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,6 +331,12 @@
     <Compile Include="Views\SplashScreenView.Designer.cs">
       <DependentUpon>SplashScreenView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ThirdMonitorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ThirdMonitorView.Designer.cs">
+      <DependentUpon>ThirdMonitorView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\TimeMessageNotificationView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +375,9 @@
     <EmbeddedResource Include="Views\CheckSensorView.resx">
       <DependentUpon>CheckSensorView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\DeleteResultsDialogView.resx">
+      <DependentUpon>DeleteResultsDialogView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\EditRacerView.resx">
       <DependentUpon>EditRacerView.cs</DependentUpon>
     </EmbeddedResource>
@@ -380,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SplashScreenView.resx">
       <DependentUpon>SplashScreenView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ThirdMonitorView.resx">
+      <DependentUpon>ThirdMonitorView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TimeMessageNotificationView.resx">
       <DependentUpon>TimeMessageNotificationView.cs</DependentUpon>
@@ -457,6 +487,7 @@
     <Content Include="Resources\Images\Close_current_race.png" />
     <Content Include="Resources\Images\Data.png" />
     <Content Include="Resources\Images\Delete backup.png" />
+    <Content Include="Resources\Images\Delete results.png" />
     <Content Include="Resources\Images\Down.png" />
     <Content Include="Resources\Images\Download.png" />
     <Content Include="Resources\Images\Draw freehand.png" />

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
+
 using Sprint.Interfaces;
+using Sprint.Models;
+using Sprint.Managers;
 
 namespace Sprint.Views
 {
@@ -10,6 +13,44 @@ namespace Sprint.Views
     public partial class MainView
     {
         #region Методы
+
+        /// <summary>
+        /// Действия при нажатии пользователем кнопки удаления всех результатов участников.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void удалитьВсеРезультатыУчастниковToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Удаление результатов можно производить только когда гонка остановлена
+            if (StopwatchState == StopwatchStatesEnum.Start)
+            {
+                MessageBox.Show("Удалить все результаты у участников можно только при остановленном состоянии секундомера и самих гонок.", "Сообщение", 
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            IDeleteResultsDialog dialog = new DeleteResultsDialogView();
+            var dial_res = dialog.ShowDialog();
+
+            if (dial_res == DialogResult.OK)
+            {
+                var res = MainPresenter.DeleteRacerResults(dialog.SelectedCarClass, dialog.RaceNumber, dialog.BackupData);
+
+                if (!res.Result)
+                {
+                    if (dialog.SelectedCarClass.HasValue)
+                    {
+                        MessageBox.Show(string.Format("Не удалось удалить у участников {0} класса автомобилей {1} заезда все результаты.", dialog.SelectedCarClass.Value.ToString(), dialog.RaceNumber),
+                                        "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show(string.Format("Не удалось удалить у участников всех классов автомобилей {0} заезда все результаты.", dialog.RaceNumber),
+                                        "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
 
         /// <summary>
         /// Действия при нажатии пользователем в меню проверки датчика отсечки.
@@ -105,6 +146,7 @@ namespace Sprint.Views
         {
             var wnd = new OptionsView();
             wnd.ShowDialog();
+            MainPresenter.UpdateAppOptionsFromDatabase();
         }
 
         /// <summary>

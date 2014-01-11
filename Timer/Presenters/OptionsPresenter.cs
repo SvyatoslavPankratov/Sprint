@@ -17,11 +17,11 @@ namespace Sprint.Presenters
         /// Задать или получить интерфейс на форму с опциями.
         /// </summary>
         private IOptions OptionsView { get; set; }
-
+        
         /// <summary>
-        /// Задать или получить опции гонок по классам автомобилей.
+        /// Задать или получить опции приложения.
         /// </summary>
-        private IEnumerable<RaceOptionsModel> RaceOptions { get; set; }
+        private AppOptionsModel AppOptions { get; set; }
 
         #endregion
 
@@ -34,7 +34,9 @@ namespace Sprint.Presenters
         public OptionsPresenter(IOptions optionsView)
         {
             OptionsView = optionsView;
-            RaceOptions = GetOptions();
+            AppOptions = GetOptions();
+
+            OptionsView.DelayTime = AppOptions.DelayTime;
         }
 
         #endregion
@@ -47,35 +49,36 @@ namespace Sprint.Presenters
         /// <param name="carClass"></param>
         public void ChangeCarClass(string carClass)
         {
-            var cc = (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), carClass);
-
-            OptionsView.RaceOptionsForCarClass = RaceOptions.FirstOrDefault(ro => ro.CarClass == cc);
+            if (AppOptions != null && AppOptions.RaceOptions != null)
+            {
+                OptionsView.RaceOptionsForCarClass = AppOptions.RaceOptions.FirstOrDefault(ro => ro.CarClass == OptionsView.SelectedCarClass);
+            }
         }
 
         /// <summary>
         /// Загрузить все опции из БД.
         /// </summary>
         /// <returns></returns>
-        private IEnumerable<RaceOptionsModel> GetOptions()
+        private AppOptionsModel GetOptions()
         {
             var db_o = OptionsDbManager.GetOptions();
 
-            if (!db_o.Any())
+            if (db_o == null || db_o.RaceOptions == null || !db_o.RaceOptions.Any())
             {
                 return CreateEmptyOptions();
             }
-
-            var options = new List<RaceOptionsModel>();
+            
+            var race_options = new List<RaceOptionsModel>();
 
             foreach (var cc in Enum.GetNames(Type.GetType("Sprint.Models.CarClassesEnum")))
             {
                 var carClass = (CarClassesEnum)Enum.Parse(Type.GetType("Sprint.Models.CarClassesEnum"), cc);
 
-                if(db_o.Any(o => o.CarClass == carClass))
+                if(db_o.RaceOptions.Any(o => o.CarClass == carClass))
                 {
-                    var option = db_o.First(o => o.CarClass == carClass);                    
+                    var option = db_o.RaceOptions.First(o => o.CarClass == carClass);                    
 
-                    options.Add(new RaceOptionsModel(carClass)
+                    race_options.Add(new RaceOptionsModel(carClass)
                                     {
                                         RaceCount = option.RaceCount,
                                         LidersCount = option.LidersCount
@@ -83,7 +86,7 @@ namespace Sprint.Presenters
                 }
                 else
                 {
-                    options.Add(new RaceOptionsModel(carClass)
+                    race_options.Add(new RaceOptionsModel(carClass)
                                     {
                                         RaceCount = ConstantsModel.RaceCount,
                                         LidersCount = ConstantsModel.LidersCount
@@ -91,7 +94,9 @@ namespace Sprint.Presenters
                 }
             }
 
-            return options;
+            var app_options = new AppOptionsModel { RaceOptions = race_options, DelayTime = db_o.DelayTime };
+
+            return app_options;
         }
 
         /// <summary>
@@ -102,16 +107,8 @@ namespace Sprint.Presenters
         {
             try
             {
-                foreach (var options in RaceOptions)
-                {
-                    var res = OptionsDbManager.SetOptions(options);
-
-                    if (!res.Result)
-                    {
-                        throw new Exception(res.Details, res.Exception);
-                    }
-                }
-                return new OperationResult(true);
+                AppOptions.DelayTime = OptionsView.DelayTime;
+                return OptionsDbManager.SetOptions(AppOptions);
             }
             catch(Exception ex)
             {
@@ -121,21 +118,29 @@ namespace Sprint.Presenters
         }
 
         /// <summary>
-        /// Сгенерировать список пустых опций по классам автомобилей.
+        /// Сгенерировать пустые опции для приложения.
         /// </summary>
-        /// <returns>Список пустых опций по классам автомобилей.</returns>
-        private IEnumerable<RaceOptionsModel> CreateEmptyOptions()
+        /// <returns>Пустые опции для приложения.</returns>
+        private AppOptionsModel CreateEmptyOptions()
         {
-            return new List<RaceOptionsModel> 
-                        { 
-                            new RaceOptionsModel(CarClassesEnum.FWD) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
-                            new RaceOptionsModel(CarClassesEnum.RWD) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
-                            new RaceOptionsModel(CarClassesEnum.AWD) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
-                            new RaceOptionsModel(CarClassesEnum.Sport) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
-                            new RaceOptionsModel(CarClassesEnum.K100) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
-                            new RaceOptionsModel(CarClassesEnum.K160) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
-                            new RaceOptionsModel(CarClassesEnum.KA) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount }
-                        };
+            var race_options = new List<RaceOptionsModel> 
+                                    { 
+                                        new RaceOptionsModel(CarClassesEnum.FWD) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
+                                        new RaceOptionsModel(CarClassesEnum.RWD) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
+                                        new RaceOptionsModel(CarClassesEnum.AWD) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
+                                        new RaceOptionsModel(CarClassesEnum.Sport) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
+                                        new RaceOptionsModel(CarClassesEnum.K100) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
+                                        new RaceOptionsModel(CarClassesEnum.K160) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount },
+                                        new RaceOptionsModel(CarClassesEnum.KA) { RaceCount = ConstantsModel.RaceCount, LidersCount = ConstantsModel.LidersCount }
+                                    };
+
+            var app_option = new AppOptionsModel
+                                    {
+                                        DelayTime = 0.0,
+                                        RaceOptions = race_options
+                                    };
+
+            return app_option;
         }
 
         #endregion

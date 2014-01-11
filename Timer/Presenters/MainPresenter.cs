@@ -100,15 +100,20 @@ namespace Sprint.Presenters
         private TrackModel Track { get; set; }
 
         /// <summary>
-        /// Задать или получить опции гонок по классам автомобилей.
+        /// Задать или получить опции приложения.
         /// </summary>
-        private IEnumerable<RaceOptionsModel> RaceOptions { get; set; }
+        private AppOptionsModel AppOptions { get; set; }
 
         /// <summary>
         /// Задать или получить статус заезда у участников текущего класса автомобилей, 
         /// который учитывается в текущий момент времени.
         /// </summary>
         private RacerRaceStateEnum CurrentRacerRaceState { get; set; }
+
+        /// <summary>
+        /// Задать или получить время последней отсечки.
+        /// </summary>
+        private TimeModel LastTime { get; set; }
 
         #endregion
 
@@ -121,6 +126,8 @@ namespace Sprint.Presenters
         /// <param name="secondView">Интерфейс на второй экран.</param>
         public MainPresenter(IMain mainView, ISecondMonitor secondView)
         {
+            UpdateAppOptionsFromDatabase();
+
             MainView = mainView;
             SecondView = secondView;
 
@@ -435,7 +442,7 @@ namespace Sprint.Presenters
         }
 
         /// <summary>
-        ///  Восстановить всех участников во всех заездах во всех классах автомобилей.
+        /// Восстановить всех участников во всех заездах во всех классах автомобилей.
         /// </summary>
         /// <param name="racers"></param>
         /// <param name="app_state"></param>
@@ -593,6 +600,7 @@ namespace Sprint.Presenters
         /// </summary>
         public void StartStopwatch()
         {
+            LastTime = null;
             CurrentRaceNum = CurrentRaserGroup.RaceNumber;
             CurrentRacerRaceState = RacerRaceStateEnum.Run;
 
@@ -641,10 +649,31 @@ namespace Sprint.Presenters
         /// </summary>
         public void CutOffStopwatch()
         {
-            if (!CurrentRaserGroup.Racers.Any() || Track.CurrentRacers as List<RacerModel> == null)
+            if (CurrentRaserGroup == null || Track == null || !CurrentRaserGroup.Racers.Any() || Track.CurrentRacers as List<RacerModel> == null)
             {
                 return;
             } 
+
+            var time = new TimeModel(Stopwatch.Time.TimeSpan);
+
+            // Проверить отсечку на ложность
+            if(LastTime != null)
+            {
+                var razn_min = time.Min = LastTime.Min;
+                var razn_sec = time.Sec - LastTime.Sec;
+                var razn_Mlsec = time.Mlsec = LastTime.Mlsec;
+
+                razn_sec += razn_min * 60;
+
+                var razn = double.Parse(string.Format("{0}.{1}", razn_sec, razn_Mlsec));
+
+                if (razn <= AppOptions.DelayTime)
+                {
+                    return;
+                }
+            }
+
+            LastTime = time;
 
             // Определимся какому участнику мы сейчас будем отрабатывать отсечку
             if (Track.CurrentRacers.Count() == 2
@@ -658,8 +687,7 @@ namespace Sprint.Presenters
             {
                 Track.CurrentRacerNum = 0;
             }
-
-            var time = new TimeModel(Stopwatch.Time.TimeSpan);
+            
             var racer = CurrentRaserGroup.GetNextRacer(Track.CurrentRacer, CurrentRacerRaceState);
 
             // Если трек пустой, то добавить на него одного гонщика
@@ -1007,7 +1035,9 @@ namespace Sprint.Presenters
                 return;
             }
 
-            var options = OptionsDbManager.GetOptions(carClass);
+            var options = !AppOptions.RaceOptions.Any() || AppOptions.RaceOptions == null ? 
+                            null : AppOptions.RaceOptions.FirstOrDefault(ro => ro.CarClass == CurrentCarClass);
+                        
             var race_count = options == null ? 2 : options.RaceCount;
             
             if (race_count == 2)
@@ -1469,6 +1499,111 @@ namespace Sprint.Presenters
                 var exception = new SprintException(message, "Sprint.Presenters.MainPresenter.RestartCurrentRacer(RacerModel racer)", ex);
                 logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// Обновить текущие настройки приложения из БД.
+        /// </summary>
+        public void UpdateAppOptionsFromDatabase()
+        {
+            AppOptions = OptionsDbManager.GetOptions();
+        }
+
+        /// <summary>
+        /// Удалить у участников все результаты.
+        /// </summary>
+        /// <param name="car_class">Класс автомобилей.</param>
+        /// <param name="race_number">Номер заезда.</param>
+        /// <param name="backup">Делать-ли перед удалением резервную копию данных.</param>
+        /// <returns></returns>
+        public OperationResult DeleteRacerResults(CarClassesEnum? car_class, int race_number, bool backup)
+        {
+            try
+            {
+                if (backup)
+                {
+                    DatabaseBackupManager.CreateNewDatabaseBackup();
+                }
+
+                // Удалим данные из модели в памяти
+                IEnumerable<RacersGroupModel> race_groups = null;
+
+                if (car_class.HasValue)
+                {
+                    race_groups = RacerGroups.Where(rg => rg.CarClass == car_class);
+                }
+                else
+                {
+                    race_groups = RacerGroups;
+                }
+
+                switch (race_number)
+                {
+                    case 1:
+                        {
+                            // Удаляем все результаты обоих заездов у заданных классов автомобилей
+                            var race_groups_1 = race_groups.Where(rg => rg.RaceNumber == 0);
+
+                            foreach (var race_group in race_groups_1)
+                            {
+                                foreach (var racer in race_group.Racers)
+                                {
+                                    racer.Results.Clear();
+                                }
+                            }
+
+                            // Удаляем всех участников из второго заезда у заданных классов автомобилей
+                            var race_groups_2 = race_groups.Where(rg => rg.RaceNumber == 1);
+
+                            foreach (var race_group in race_groups_2)
+                            {
+                                race_group.ClearRacers();
+                            }
+                        } break;
+                    case 2:
+                        {
+                            // Удаляем все результаты 2-го заезда у заданных классов автомобилей
+                            var race_groups_2 = race_groups.Where(rg => rg.RaceNumber == 1);
+
+                            foreach (var race_group in race_groups_2)
+                            {
+                                foreach (var racer in race_group.Racers)
+                                {
+                                    racer.Results.Clear(1);
+                                }
+                            }
+                        } break;
+                    default: break;
+                }
+
+                // Обновим данные в БД
+                foreach (var racer in Racers)
+                {
+                    RacersDbManager.SetRacer(racer);                    
+                }
+
+                SaveApplicationState();                
+                DataBind();
+
+                return new OperationResult(true);
+            }
+            catch (Exception ex)
+            {
+                string message = null;
+
+                if (car_class.HasValue)
+                {
+                    message = string.Format("Не удалось удалить у участников {0} класса автомобилей {1} заезда все результаты.", car_class.Value.ToString(), race_number);
+                }
+                else
+                {
+                    message = string.Format("Не удалось удалить у участников всех классов автомобилей {0} заезда все результаты.", race_number);
+                }
+
+                var exception = new SprintException(message, "Sprint.Presenters.MainPresenter.DeleteRacerResults(CarClassesEnum car_class, int race_number, bool backup)", ex);
+                logger.Error(ExceptionsManager.CreateExceptionMessage(exception));
+                return new OperationResult(false, exception);
             }
         }
 

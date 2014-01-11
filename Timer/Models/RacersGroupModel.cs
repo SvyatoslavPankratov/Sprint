@@ -56,6 +56,15 @@ namespace Sprint.Models
         #region Методы
 
         /// <summary>
+        /// Очистить список участников в данном классе автомобилей у данного номера заезда.
+        /// </summary>
+        public void ClearRacers()
+        {
+            Racers = new List<RacerModel>();
+            RaceStateDbManager.DeleteRaceStates(CarClass, RaceNumber);
+        }
+
+        /// <summary>
         /// Добавим в группу нового участника.
         /// </summary>
         /// <param name="racer"></param>

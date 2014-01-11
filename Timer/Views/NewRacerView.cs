@@ -170,6 +170,8 @@ namespace Sprint.Views
             }
 
             NewRacerPresenter.AddNewRacer();
+            racersDGV.Rows[racersDGV.Rows.Count - 1].Selected = true;
+            racersDGV.FirstDisplayedScrollingRowIndex = racersDGV.RowCount - 1;
         }
 
         /// <summary>

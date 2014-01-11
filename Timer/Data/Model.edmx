@@ -7,6 +7,7 @@
     <Schema Namespace="SprintModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="SprintModelStoreContainer">
           <EntitySet Name="ApplicationState" EntityType="SprintModel.Store.ApplicationState" store:Type="Tables" />
+          <EntitySet Name="AppOptions" EntityType="SprintModel.Store.AppOptions" store:Type="Tables" />
           <EntitySet Name="CarClasses" EntityType="SprintModel.Store.CarClasses" store:Type="Tables" />
           <EntitySet Name="Cars" EntityType="SprintModel.Store.Cars" store:Type="Tables" />
           <EntitySet Name="LogEntries" EntityType="SprintModel.Store.LogEntries" store:Type="Tables" />
@@ -66,6 +67,13 @@
           <Property Name="FK_CurrentRacer" Type="uniqueidentifier" />
           <Property Name="FK_CurrentCarClass" Type="uniqueidentifier" />
           <Property Name="CurrentRaceNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="AppOptions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DelayTime" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="CarClasses">
           <Key>
@@ -351,6 +359,7 @@
             <End Role="RacerRaceState" EntitySet="RacerRaceStates" />
             <End Role="UserDataAboutCircle" EntitySet="UserDataAboutCircles" />
           </AssociationSet>
+          <EntitySet Name="AppOptions" EntityType="SprintModel.AppOption" />
           </EntityContainer>
         <EntityType Name="CarClass">
           <Documentation>
@@ -637,6 +646,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="AppOption">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Double" Name="DelayTime" Nullable="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -751,6 +767,14 @@
             <EntityTypeMapping TypeName="SprintModel.RacerRaceState">
               <MappingFragment StoreEntitySet="RacerRaceState">
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppOptions">
+            <EntityTypeMapping TypeName="SprintModel.AppOption">
+              <MappingFragment StoreEntitySet="AppOptions">
+                <ScalarProperty Name="DelayTime" ColumnName="DelayTime" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

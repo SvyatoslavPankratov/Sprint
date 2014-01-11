@@ -22,23 +22,20 @@ namespace Sprint.Managers
             if (ex != null)
             {
                 message += "Message: " + ex.Message;
-                message += (string.IsNullOrWhiteSpace(message) && string.IsNullOrEmpty(message))
+
+                message += ex.TargetSite == null
                                 ? string.Empty
                                 : Environment.NewLine + Environment.NewLine +
-                                    "--------------------------------------------------------------------------------------" + Environment.NewLine +
-                                    "StackTrace: " + Environment.NewLine + Environment.NewLine + 
-                                    ex.StackTrace;
+                                    "Method name: " + ex.TargetSite.Name;
 
-                message += CreateExceptionMessage(ex.InnerException);
+                message += string.IsNullOrEmpty(ex.StackTrace)
+                                ? string.Empty
+                                : Environment.NewLine + Environment.NewLine +
+                                    "StackTrace: " + Environment.NewLine + Environment.NewLine + ex.StackTrace + Environment.NewLine +
+                                    "-----------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+
+                message += Environment.NewLine + Environment.NewLine + CreateExceptionMessage(ex.InnerException);
             }
-
-            message = ex == null
-                        ? message
-                        : "Method name: " + (ex is SprintException
-                                                ? ((SprintException)ex).MethodName + Environment.NewLine + Environment.NewLine + message
-                                                : ex.TargetSite == null
-                                                    ? message
-                                                    : ex.TargetSite.Name + Environment.NewLine + Environment.NewLine + message);
 
             return message;
         }
